@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MESSRS JHAMELA KINI — Reed Books</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0b0906',
+            soot: '#050403',
+            emberGold: '#e7b657',
+            paleGold: '#ffe9b0',
+            ashGrey: '#a9a49b',
+            eyeBlue: '#8fd3e8',
+            lamp: '#f6d78a'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            prose: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-amber': '0 0 30px rgba(231, 182, 87, 0.28)',
+            'glow-pale': '0 0 26px rgba(255, 233, 176, 0.18)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #050403; }
+    ::-webkit-scrollbar-thumb {
+      background: #2b2620; border-radius: 4px;
+      border: 1px solid rgba(231, 182, 87, 0.22);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: #e7b657; }
+
+    #petal-canvas {
+      position: fixed; inset: 0; width: 100vw; height: 100vh;
+      z-index: 0; pointer-events: none; opacity: 0.9;
+    }
+    header, main, footer { position: relative; z-index: 10; }
+
+    body {
+      background-image:
+        radial-gradient(ellipse 70% 50% at 18% 0%, rgba(246, 215, 138, 0.12), transparent 60%),
+        radial-gradient(ellipse 60% 45% at 88% 30%, rgba(255, 233, 176, 0.07), transparent 65%),
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(143, 211, 232, 0.05), transparent 70%);
+      background-attachment: fixed;
+    }
+
+    .grain::after {
+      content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
+
+    .glass-card {
+      background: rgba(15, 12, 9, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(231, 182, 87, 0.16);
+    }
+
+    .hairline {
+      background: linear-gradient(90deg, transparent, rgba(231, 182, 87, 0.5), transparent);
+      height: 1px;
+    }
+
+    .book-prose p { margin-bottom: 1.15em; text-align: justify; hyphens: auto; }
+    .book-prose p:first-child::first-letter {
+      float: left; font-family: 'Cinzel', serif; font-size: 3.4em; line-height: 0.82;
+      padding: 0.06em 0.12em 0 0; color: #ffe9b0;
+    }
+    .book-prose em { color: #ffe9b0; }
+
+    /* Cover — floats in a soft yellow lamp-light */
+    .cover-stage {
+      display: flex; justify-content: center; perspective: 1200px;
+      padding: 6px 0 2px; position: relative;
+      animation: coverFloat 8s ease-in-out infinite;
+    }
+    .cover-stage::before {
+      content: ""; position: absolute; inset: -8% -12%;
+      background: radial-gradient(ellipse at 50% 45%, rgba(246, 215, 138, 0.28), transparent 62%);
+      filter: blur(18px); z-index: 0;
+    }
+    .cover-frame {
+      position: relative; width: min(300px, 72vw); aspect-ratio: 3 / 4;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(255, 233, 176, 0.38);
+      transform: rotateX(5deg) rotateZ(-1.2deg);
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+      box-shadow:
+        0 0 0 1px rgba(231, 182, 87, 0.10),
+        0 20px 50px -14px rgba(0, 0, 0, 0.95),
+        0 0 45px rgba(246, 215, 138, 0.24);
+      will-change: transform; background: #0b0906; z-index: 1;
+    }
+    .cover-frame:hover {
+      transform: rotateX(0) rotateZ(0) translateY(-7px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(255, 233, 176, 0.25),
+        0 28px 65px -12px rgba(0, 0, 0, 0.96),
+        0 0 70px rgba(246, 215, 138, 0.42);
+    }
+    .cover-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .cover-frame::after {
+      content: ""; position: absolute; inset: -20%; z-index: 2; pointer-events: none;
+      background: linear-gradient(112deg, transparent 34%, rgba(255, 240, 205, 0.22) 46%, rgba(255, 240, 205, 0.04) 54%, transparent 66%);
+      mix-blend-mode: screen; transform: translateX(-130%);
+      animation: coverSheen 7s ease-in-out infinite;
+    }
+    .cover-frame::before {
+      content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 42%, transparent 55%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.12) 2px 3px);
+      animation: coverFlicker 7s steps(1, end) infinite;
+    }
+    @keyframes coverFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @keyframes coverSheen {
+      0%, 58% { transform: translateX(-130%); }
+      88%, 100% { transform: translateX(130%); }
+    }
+    @keyframes coverFlicker {
+      0%,100% { opacity: 1; } 46% { opacity: 0.85; } 47% { opacity: 1; }
+      71% { opacity: 0.9; } 72% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+
+    #readerModal { scrollbar-width: thin; }
+    #modalStoryText { font-size: 1.075rem; line-height: 1.95; }
+    #modalStoryText[data-size="sm"] { font-size: 0.98rem; }
+    #modalStoryText[data-size="lg"] { font-size: 1.2rem; }
+  </style>
+</head>
+<body class="bg-soot text-stone-200 font-sans min-h-screen relative flex flex-col selection:bg-emberGold selection:text-soot overflow-x-hidden grain">
+
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-ink/85 backdrop-blur-md border-b border-stone-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-lamp via-emberGold to-eyeBlue p-[1px] shadow-glow-amber">
+          <div class="w-full h-full bg-soot rounded-[11px] flex items-center justify-center group-hover:bg-stone-900 transition">
+            <i class="fa-solid fa-book-open-reader text-emberGold text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-emberGold uppercase font-bold">REED BOOKS</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-paleGold border border-amber-500/25">READER</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">Messrs Jhamela Kini</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <a href="#hero" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 transition">Book Card</a>
+        <a href="#reader" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">7 Chapters</a>
+        <a href="#reviews" class="px-3 py-1.5 rounded-lg bg-amber-900/20 hover:bg-amber-900/40 border border-amber-800/40 text-paleGold transition">Reviews</a>
+        <a href="#ambient" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-eyeBlue transition">Music</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="ambientBtn" onclick="toggleAmbient()" class="px-3 py-1.5 text-xs font-mono rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-700 transition flex items-center gap-1.5" title="Toggle the yellow room music">
+          <i id="ambientIcon" class="fa-solid fa-volume-xmark"></i>
+          <span id="ambientLabel">Music</span>
+        </button>
+        <button onclick="openChapterModal(1)" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-amber-400/10 border border-amber-400/40 text-paleGold hover:bg-amber-400/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-play"></i> Read
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- BOOK CARD / HERO -->
+    <section id="hero" class="scroll-mt-24 relative rounded-3xl bg-gradient-to-b from-ink via-soot to-soot border border-emberGold/25 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-28 -right-24 w-80 h-80 bg-lamp/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-24 w-96 h-96 bg-eyeBlue/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- COVER -->
+        <div class="lg:col-span-5">
+          <div class="cover-stage">
+            <div class="cover-frame">
+              <img src="../Mass-Q-Rade-Book-Covers/Jhamela%20Kini_cropped.png" alt="Messrs Jhamela Kini book cover — a woman's eye in soft yellow light, Reed Books" loading="eager" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAILS -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-900 border border-emberGold/35 text-xs font-mono text-paleGold">
+            <span class="w-2 h-2 rounded-full bg-lamp animate-pulse"></span>
+            <span>Reed Books &middot; A Novel of Love, Work and Trouble</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-paleGold to-emberGold tracking-tight">
+              Messrs Jhamela Kini
+            </h1>
+            <h2 class="text-base sm:text-lg font-mono text-ashGrey tracking-wider uppercase font-semibold">
+              Trouble Traders Co.
+            </h2>
+          </div>
+
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+            Nilufa has everything a Dhaka winter can offer: a flat in Dhanmondi, a husband who buys diamonds, two yellow birds, and a birthday she spends waiting for the telephone.
+            <strong class="text-white">Suman</strong> works late. A famous writer sends jasmine. A girl in the kitchen smiles through a childhood nobody should survive.
+            Between them, quietly, a firm is incorporated — <em class="text-paleGold not-italic">Messrs Jhamela Kini</em> — and every one of them is a partner.
+          </p>
+
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono pt-1">
+            <div class="flex justify-between gap-2 border-b border-stone-800/80 pb-1.5"><dt class="text-stone-500">Author</dt><dd class="text-stone-200">Amimul Ahsan</dd></div>
+            <div class="flex justify-between gap-2 border-b border-stone-800/80 pb-1.5"><dt class="text-stone-500">Publisher</dt><dd class="text-paleGold">Reed Books</dd></div>
+            <div class="flex justify-between gap-2 border-b border-stone-800/80 pb-1.5"><dt class="text-stone-500">Genre</dt><dd class="text-stone-200">Contemporary Fiction</dd></div>
+            <div class="flex justify-between gap-2 border-b border-stone-800/80 pb-1.5"><dt class="text-stone-500">Setting</dt><dd class="text-stone-200">Dhaka, 2017</dd></div>
+          </dl>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 font-mono">
+            <div class="p-3 rounded-xl bg-soot/80 border border-stone-800">
+              <div class="text-[10px] text-stone-400 uppercase">Chapters</div>
+              <div class="text-base font-bold text-paleGold">7</div>
+            </div>
+            <div class="p-3 rounded-xl bg-soot/80 border border-stone-800">
+              <div class="text-[10px] text-stone-400 uppercase">Setting</div>
+              <div class="text-base font-bold text-ashGrey">Dhanmondi</div>
+            </div>
+            <div class="p-3 rounded-xl bg-soot/80 border border-stone-800">
+              <div class="text-[10px] text-stone-400 uppercase">Read</div>
+              <div id="heroProgressPct" class="text-base font-bold text-emerald-400">0% Read</div>
+            </div>
+            <div class="p-3 rounded-xl bg-soot/80 border border-stone-800">
+              <div class="text-[10px] text-stone-400 uppercase">Bookmark</div>
+              <div id="heroBookmark" class="text-base font-bold text-stone-200">None</div>
+            </div>
+          </div>
+
+          <!-- CTA + publisher under the button -->
+          <div class="pt-1">
+            <button onclick="openChapterModal(1)" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-lamp via-emberGold to-amber-500 text-soot font-extrabold text-sm hover:opacity-95 transition shadow-glow-amber flex items-center gap-2.5">
+              <i class="fa-solid fa-book-open"></i> Read the Book
+            </button>
+            <div class="mt-2.5 flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] uppercase text-stone-400">
+              <span class="h-px w-6 bg-emberGold/50"></span>
+              <span>Reed Books</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (REWRITE) -->
+    <section id="reviews" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pb-4 border-b border-stone-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-feather-pointed text-emberGold"></i> Reviews <span class="text-sm font-mono font-normal text-stone-500">(Rewrite)</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">Three rewritten notes on the novel — what it does, where it hurts, and why the title is a joke with a straight face.</p>
+        </div>
+        <span class="text-[10px] font-mono tracking-widest uppercase text-stone-500">Reed Books review desk</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="glass-card rounded-2xl p-5 space-y-3 border-l-2 border-l-emberGold/70">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-paleGold">On the prose</span>
+            <span class="text-emberGold text-[11px] tracking-widest"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Ahsan writes the way a room fills with cigarette smoke: nothing dramatic happens for a page, and then you cannot see the window. The domestic detail is exact — the flask of tea, the note in large letters by the telephone, the four cigarettes in seventeen minutes — and it does the work that plot usually has to.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">Slow, close, deliberately unglamorous.</p>
+        </article>
+
+        <article class="glass-card rounded-2xl p-5 space-y-3 border-l-2 border-l-eyeBlue/60">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-eyeBlue">On Nilufa</span>
+            <span class="text-emberGold text-[11px] tracking-widest"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            The novel's real subject is not infidelity but the labour of appearing content. Nilufa notices everything and says almost none of it; her forgiveness is not weakness and not nobility, but a decision taken in the dark because the alternative would require a different life. That is a harder portrait than a betrayal plot, and a better one.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">A heroine written without either pity or decoration.</p>
+        </article>
+
+        <article class="glass-card rounded-2xl p-5 space-y-3 border-l-2 border-l-stone-500/60">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-stone-300">On the title</span>
+            <span class="text-emberGold text-[11px] tracking-widest"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            <em class="text-paleGold not-italic">Messrs Jhamela Kini</em> sounds like a trading house and behaves like one. Everyone in the book is buying trouble at a fair price and calling it love, duty, salary or friendship. The joke is never explained, which is why it keeps working after the last page.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">A satire that never raises its voice.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHAPTER DIRECTORY -->
+    <section id="reader" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-4 border-b border-stone-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-emberGold"></i> Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">Seven chapters. One winter. Choose a chapter to open the reader.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search chapters, places, lines..." class="w-full bg-stone-900 border border-stone-800 rounded-xl pl-9 pr-4 py-2 text-xs text-stone-200 placeholder-stone-500 focus:outline-none focus:border-emberGold transition">
+          </div>
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-stone-900 border border-stone-800 text-stone-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-emberGold font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="partFilters" class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="setPart('all')" data-part="all" class="part-btn px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 transition">All Parts</button>
+        <button onclick="setPart(1)" data-part="1" class="part-btn px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">I &middot; The Birthday</button>
+        <button onclick="setPart(2)" data-part="2" class="part-btn px-3 py-1.5 rounded-lg bg-stone-800/60 hover:bg-stone-700 border border-stone-700 text-stone-300 transition">II &middot; The Rain</button>
+        <button onclick="setPart(3)" data-part="3" class="part-btn px-3 py-1.5 rounded-lg bg-cyan-950/30 hover:bg-cyan-900/50 border border-cyan-900/60 text-eyeBlue transition">III &middot; The Visitor</button>
+        <button onclick="setPart(4)" data-part="4" class="part-btn px-3 py-1.5 rounded-lg bg-yellow-950/40 hover:bg-yellow-900/50 border border-yellow-800/50 text-lamp transition">IV &middot; The Distance</button>
+      </div>
+
+      <div id="chaptersContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      <p id="noResults" class="hidden text-center text-sm text-stone-500 font-mono py-8">No chapter matches that search.</p>
+    </section>
+
+    <!-- AUTHOR + AMBIENT -->
+    <section id="ambient" class="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+          <i class="fa-solid fa-pen-nib text-emberGold"></i> From the Author
+        </h2>
+        <p class="text-sm text-stone-300 leading-relaxed">
+          <span class="text-paleGold">Amimul Ahsan</span> wrote his first novel in Room 113 of Sir F. Rahman Hall, Dhaka University — three chapters at a friend's flat in Gazipur, the rest back on campus, mostly on a mobile phone. When it was finished he took a rickshaw out with no destination, then sat in the TSC field at night trying to name it.
+        </p>
+        <p class="text-sm text-stone-300 leading-relaxed">
+          The name he found was <em class="text-paleGold not-italic">Messrs. Trouble Buy</em>. The novel follows a woman who has everything and still cannot be still; two people standing in front of each other, making a conflict out of what they cannot say. Ahsan writes that it is best read in one sitting. He is a vegetarian, believes in a green digital world, and calls solitude the room where creation happens.
+        </p>
+        <p class="text-[11px] font-mono text-stone-500">Dhaka &middot; March 2017 &middot; Reed Books edition &middot; 7 chapters</p>
+      </div>
+
+      <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 border border-amber-500/20 space-y-3 flex flex-col justify-center">
+        <h2 class="text-lg font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-music text-lamp"></i> The Yellow Room
+        </h2>
+        <p class="text-sm text-stone-300 leading-relaxed">
+          A soft score for the flat in Dhanmondi: slow, warm notes over a low amber hum, with ash and thin petals drifting across the page.
+          Use <span class="font-mono text-paleGold">A&minus; / A / A+</span> inside the reader to set your text size.
+        </p>
+        <button onclick="toggleAmbient()" id="ambientBtnLarge" class="w-full mt-2 px-5 py-3 rounded-xl bg-amber-400/10 border border-amber-400/40 text-paleGold text-sm font-semibold hover:bg-amber-400/20 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-headphones"></i> <span id="ambientLabelLarge">Play Yellow Room Music</span>
+        </button>
+        <button onclick="openChapterModal(1)" class="w-full px-5 py-3 rounded-xl bg-stone-800 border border-stone-700 text-stone-200 text-sm font-semibold hover:bg-stone-700 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-book-open"></i> Begin at Chapter One
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-soot border border-amber-500/35 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[92vh]">
+
+      <div class="p-4 sm:p-5 border-b border-stone-800 flex items-start sm:items-center justify-between gap-3 bg-ink/90 rounded-t-2xl">
+        <div class="min-w-0">
+          <span id="modalPartTag" class="text-[10px] font-mono text-paleGold uppercase tracking-widest block">PART I · THE BIRTHDAY</span>
+          <h3 id="modalChapterTitle" class="text-base sm:text-xl font-serif font-bold text-white truncate">Chapter 1: The Woman in the Yellow Room</h3>
+        </div>
+
+        <div class="flex items-center gap-1.5 shrink-0">
+          <div class="hidden sm:flex items-center gap-1 bg-stone-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-stone-800 rounded text-stone-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-stone-800 rounded text-stone-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-stone-800 rounded text-stone-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-emberGold text-xs font-mono transition flex items-center gap-1" title="Bookmark this chapter">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText" class="hidden sm:inline">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 flex items-center justify-center transition" aria-label="Close reader">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-5 flex-1 text-stone-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-stone-900/80 border border-stone-800 text-[11px] sm:text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-stone-500">CHAPTER:</span> <span id="modalChNum" class="text-paleGold font-bold">1 of 7</span></div>
+          <div><span class="text-stone-500">SETTING:</span> <span id="modalChSetting" class="text-stone-200">Dhanmondi, Dhaka</span></div>
+          <div><span class="text-stone-500">LENGTH:</span> <span id="modalChWords" class="text-emberGold">890 words</span></div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-paleGold">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+          <div class="p-4 rounded-xl bg-stone-900/60 border border-stone-700/60 text-xs font-mono text-stone-300">
+            <strong class="text-lamp">KEY IMAGE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+        </div>
+
+        <div id="modalStoryText" data-size="md" class="book-prose font-prose text-stone-200 whitespace-pre-line pt-2 border-t border-stone-800">
+          <!-- Injected -->
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-stone-800 flex items-center justify-between gap-2 bg-ink/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-3 sm:px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Previous</span>
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-3 sm:px-4 py-2 rounded-xl bg-amber-950/40 border border-amber-800 text-paleGold text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-3 sm:px-4 py-2 rounded-xl bg-lamp hover:bg-amber-300 text-soot font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <span class="hidden sm:inline">Next</span> Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-stone-800/80 bg-soot/90 py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
+      <div class="text-center sm:text-left">
+        <span class="font-bold text-stone-300">MESSRS JHAMELA KINI</span>
+        <span class="block text-[11px]">By Amimul Ahsan &middot; Published by Reed Books</span>
+      </div>
+      <div class="text-center">Soft amber edition &middot; 7 Chapters &middot; Dhaka</div>
+      <a href="#hero" class="hover:text-paleGold transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+    </div>
+  </footer>
+
+  <!-- CHAPTER DATA -->
+  <script src="chapters.js"></script>
+
+  <script>
+    const PART_NAMES = {
+      1: 'PART I · THE BIRTHDAY',
+      2: 'PART II · THE RAIN',
+      3: 'PART III · THE VISITOR',
+      4: 'PART IV · THE DISTANCE'
+    };
+
+    const PART_STYLES = {
+      1: { badge: 'bg-amber-500/10 text-amber-300 border-amber-700/50', bar: 'from-lamp to-emberGold' },
+      2: { badge: 'bg-stone-500/10 text-stone-300 border-stone-600/60', bar: 'from-stone-500 to-ashGrey' },
+      3: { badge: 'bg-cyan-500/10 text-eyeBlue border-cyan-800/50', bar: 'from-eyeBlue/70 to-cyan-500' },
+      4: { badge: 'bg-yellow-500/10 text-lamp border-yellow-700/50', bar: 'from-yellow-500 to-lamp' }
+    };
+
+    const STORAGE = { read: 'mjk-read', bookmark: 'mjk-bookmark' };
+
+    let readSet = new Set(safeParse(localStorage.getItem(STORAGE.read), []));
+    let bookmarkId = Number(safeParse(localStorage.getItem(STORAGE.bookmark), 0)) || 0;
+    let currentId = 1;
+    let activePart = 'all';
+
+    function safeParse(raw, fallback) {
+      try { return JSON.parse(raw); } catch (e) { return fallback; }
+    }
+
+    function esc(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function chapterById(id) {
+      return chaptersData.find(c => c.id === id);
+    }
+
+    /* ---------------- Rendering ---------------- */
+
+    function renderChapters() {
+      const query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      const host = document.getElementById('chaptersContainer');
+      const filtered = chaptersData.filter(ch => {
+        const inPart = activePart === 'all' || ch.part === Number(activePart);
+        const haystack = (ch.title + ' ' + ch.summary + ' ' + ch.setting + ' ' + ch.keyScene).toLowerCase();
+        return inPart && (!query || haystack.includes(query));
+      });
+
+      document.getElementById('noResults').classList.toggle('hidden', filtered.length !== 0);
+
+      host.innerHTML = filtered.map(ch => {
+        const style = PART_STYLES[ch.part];
+        const isRead = readSet.has(ch.id);
+        const isBookmarked = bookmarkId === ch.id;
+        return `
+          <article class="glass-card rounded-2xl overflow-hidden flex flex-col group hover:border-emberGold/50 transition">
+            <div class="h-1.5 bg-gradient-to-r ${style.bar}"></div>
+            <div class="p-5 flex-1 flex flex-col gap-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-mono px-2 py-1 rounded border ${style.badge} uppercase tracking-widest">${esc(PART_NAMES[ch.part])}</span>
+                <span class="flex items-center gap-2 text-[10px] font-mono text-stone-500">
+                  ${isBookmarked ? '<i class="fa-solid fa-bookmark text-emberGold"></i>' : ''}
+                  ${isRead ? '<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Read</span>' : `<span>${esc(ch.wordCount)}</span>`}
+                </span>
+              </div>
+
+              <button onclick="openChapterModal(${ch.id})" class="text-left">
+                <h3 class="font-serif text-lg font-bold text-white leading-snug group-hover:text-paleGold transition">
+                  <span class="text-emberGold/80 font-mono text-xs mr-1.5">${String(ch.id).padStart(2, '0')}</span>${esc(ch.title)}
+                </h3>
+              </button>
+
+              <p class="text-xs text-stone-400 leading-relaxed flex-1">${esc(ch.summary)}</p>
+
+              <div class="flex items-center justify-between border-t border-stone-800 pt-3 gap-2">
+                <span class="text-[10px] font-mono text-stone-500 truncate"><i class="fa-solid fa-location-dot mr-1"></i>${esc(ch.setting)}</span>
+                <button onclick="openChapterModal(${ch.id})" class="shrink-0 text-xs font-semibold text-paleGold hover:text-lamp transition flex items-center gap-1">
+                  Read <i class="fa-solid fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    function populateJump() {
+      const select = document.getElementById('quickJumpSelect');
+      select.innerHTML = '<option value="">-- Jump to Chapter --</option>' +
+        chaptersData.map(ch => `<option value="${ch.id}">${ch.id}. ${esc(ch.title)}</option>`).join('');
+    }
+
+    function updateProgress() {
+      const pct = Math.round((readSet.size / chaptersData.length) * 100);
+      document.getElementById('heroProgressPct').textContent = pct + '% Read';
+      document.getElementById('heroBookmark').textContent = bookmarkId ? ('Ch. ' + bookmarkId) : 'None';
+    }
+
+    function setPart(part) {
+      activePart = String(part);
+      document.querySelectorAll('.part-btn').forEach(btn => {
+        const on = btn.getAttribute('data-part') === activePart;
+        btn.classList.toggle('ring-1', on);
+        btn.classList.toggle('ring-emberGold', on);
+        btn.classList.toggle('text-white', on);
+      });
+      renderChapters();
+    }
+
+    function filterChapters() { renderChapters(); }
+
+    function jumpToChapter(id) {
+      if (!id) return;
+      openChapterModal(Number(id));
+    }
+
+    /* ---------------- Reader modal ---------------- */
+
+    function openChapterModal(id) {
+      const ch = chapterById(id);
+      if (!ch) return;
+      currentId = id;
+
+      document.getElementById('modalPartTag').textContent = PART_NAMES[ch.part];
+      document.getElementById('modalChapterTitle').textContent = 'Chapter ' + ch.id + ': ' + ch.title;
+      document.getElementById('modalChNum').textContent = ch.id + ' of ' + chaptersData.length;
+      document.getElementById('modalChSetting').textContent = ch.setting;
+      document.getElementById('modalChWords').textContent = ch.wordCount;
+      document.getElementById('modalSummaryText').textContent = ch.summary;
+      document.getElementById('modalKeySceneText').textContent = ch.keyScene;
+
+      document.getElementById('modalStoryText').innerHTML = ch.text
+        .split(/\n\n+/)
+        .map(par => '<p>' + esc(par).replace(/\n/g, '<br>') + '</p>')
+        .join('');
+
+      const modal = document.getElementById('readerModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+      modal.scrollTop = 0;
+      document.getElementById('modalBodyText').scrollTop = 0;
+
+      document.getElementById('modalPrevBtn').disabled = ch.id === 1;
+      document.getElementById('modalNextBtn').disabled = ch.id === chaptersData.length;
+
+      refreshModalState();
+      renderChapters();
+    }
+
+    function closeChapterModal() {
+      const modal = document.getElementById('readerModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+      updateProgress();
+    }
+
+    function navigateModalChapter(direction) {
+      const next = chapterById(currentId + direction);
+      if (next) openChapterModal(next.id);
+    }
+
+    function refreshModalState() {
+      const isRead = readSet.has(currentId);
+      document.getElementById('modalReadBtnText').textContent = isRead ? 'Completed' : 'Mark Complete';
+      document.getElementById('modalMarkReadBtn').classList.toggle('bg-emerald-950/40', isRead);
+      document.getElementById('modalMarkReadBtn').classList.toggle('border-emerald-700', isRead);
+      document.getElementById('modalMarkReadBtn').classList.toggle('text-emerald-300', isRead);
+
+      const isBookmarked = bookmarkId === currentId;
+      document.getElementById('bookmarkText').textContent = isBookmarked ? 'Bookmarked' : 'Bookmark';
+      document.getElementById('modalBookmarkBtn').classList.toggle('bg-amber-500/15', isBookmarked);
+      document.getElementById('modalBookmarkBtn').classList.toggle('border', isBookmarked);
+      document.getElementById('modalBookmarkBtn').classList.toggle('border-emberGold/40', isBookmarked);
+    }
+
+    function toggleModalReadStatus() {
+      if (readSet.has(currentId)) readSet.delete(currentId);
+      else readSet.add(currentId);
+      localStorage.setItem(STORAGE.read, JSON.stringify([...readSet]));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function toggleModalBookmark() {
+      bookmarkId = bookmarkId === currentId ? 0 : currentId;
+      localStorage.setItem(STORAGE.bookmark, JSON.stringify(bookmarkId));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function setModalFontSize(size) {
+      document.getElementById('modalStoryText').setAttribute('data-size', size);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('readerModal').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeChapterModal();
+      if (e.key === 'ArrowRight') navigateModalChapter(1);
+      if (e.key === 'ArrowLeft') navigateModalChapter(-1);
+    });
+
+    /* ---------------- Yellow Room score (Web Audio, no assets) ---------------- */
+
+    let audioCtx = null;
+    let ambientTimer = null;
+    let padOsc = null;
+    let ambientOn = false;
+    const SCALE = [293.66, 329.63, 369.99, 440.0, 493.88, 587.33];
+
+    function makeTone(freq, duration, peak, type) {
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(peak, now + 0.6);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.1);
+    }
+
+    function ambientStep() {
+      if (!ambientOn || !audioCtx) return;
+      const idx = Math.floor(Math.random() * SCALE.length);
+      makeTone(SCALE[idx], 6.5, 0.03, 'sine');
+      if (Math.random() > 0.5) {
+        makeTone(SCALE[(idx + 2) % SCALE.length], 4.5, 0.014, 'triangle');
+      }
+    }
+
+    function toggleAmbient() {
+      if (!ambientOn) {
+        try {
+          audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+          audioCtx.resume();
+        } catch (err) {
+          return;
+        }
+        ambientOn = true;
+
+        const now = audioCtx.currentTime;
+        padOsc = audioCtx.createOscillator();
+        const padGain = audioCtx.createGain();
+        padOsc.type = 'sine';
+        padOsc.frequency.value = 146.83;
+        padGain.gain.setValueAtTime(0.0001, now);
+        padGain.gain.linearRampToValueAtTime(0.018, now + 4);
+        padOsc.connect(padGain).connect(audioCtx.destination);
+        padOsc.start(now);
+
+        ambientStep();
+        ambientTimer = setInterval(ambientStep, 2600);
+      } else {
+        ambientOn = false;
+        clearInterval(ambientTimer);
+        ambientTimer = null;
+        if (padOsc) {
+          try { padOsc.stop(); } catch (e) {}
+          padOsc = null;
+        }
+      }
+
+      const icon = document.getElementById('ambientIcon');
+      icon.className = ambientOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+      document.getElementById('ambientLabel').textContent = ambientOn ? 'Music On' : 'Music';
+      document.getElementById('ambientLabelLarge').textContent = ambientOn ? 'Stop Yellow Room Music' : 'Play Yellow Room Music';
+      document.getElementById('ambientBtnLarge').classList.toggle('bg-amber-400/20', ambientOn);
+    }
+
+    /* ---------------- Live background: lamp glow, ash, petals, notes ---------------- */
+
+    (function liveBackground() {
+      const canvas = document.getElementById('petal-canvas');
+      const ctx = canvas.getContext('2d');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let W = 0, H = 0;
+      let glows = [], ash = [], petals = [], notes = [];
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function seed() {
+        glows = Array.from({ length: 5 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 200 + Math.random() * 260,
+          dx: (Math.random() - 0.5) * 0.1,
+          dy: (Math.random() - 0.5) * 0.04,
+          a: 0.04 + Math.random() * 0.045
+        }));
+
+        ash = Array.from({ length: 60 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 0.5 + Math.random() * 1.5,
+          vy: -(0.05 + Math.random() * 0.22),
+          vx: (Math.random() - 0.5) * 0.14,
+          a: 0.1 + Math.random() * 0.28
+        }));
+
+        petals = Array.from({ length: 16 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          size: 4 + Math.random() * 7,
+          vy: 0.1 + Math.random() * 0.25,
+          vx: 0.06 + Math.random() * 0.2,
+          rot: Math.random() * Math.PI,
+          spin: (Math.random() - 0.5) * 0.012,
+          a: 0.14 + Math.random() * 0.3
+        }));
+
+        notes = Array.from({ length: 10 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          size: 11 + Math.random() * 15,
+          vy: -(0.12 + Math.random() * 0.26),
+          sway: Math.random() * Math.PI * 2,
+          a: 0.05 + Math.random() * 0.1,
+          glyph: Math.random() > 0.5 ? '\u266A' : '\u266B'
+        }));
+      }
+
+      function drawPetal(p) {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.beginPath();
+        ctx.moveTo(0, -p.size);
+        ctx.bezierCurveTo(p.size * 0.9, -p.size * 0.4, p.size * 0.7, p.size * 0.6, 0, p.size);
+        ctx.bezierCurveTo(-p.size * 0.7, p.size * 0.6, -p.size * 0.9, -p.size * 0.4, 0, -p.size);
+        ctx.fillStyle = 'rgba(255, 233, 176, ' + p.a + ')';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        glows.forEach(g => {
+          const grad = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, g.r);
+          grad.addColorStop(0, 'rgba(246, 215, 138, ' + g.a + ')');
+          grad.addColorStop(1, 'rgba(246, 215, 138, 0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          g.x += g.dx;
+          g.y += g.dy;
+          if (g.x < -g.r) g.x = W + g.r;
+          if (g.x > W + g.r) g.x = -g.r;
+          if (g.y < -g.r) g.y = H + g.r;
+          if (g.y > H + g.r) g.y = -g.r;
+        });
+
+        ash.forEach(p => {
+          ctx.fillStyle = 'rgba(190, 184, 172, ' + p.a + ')';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; }
+          if (p.x < -6) p.x = W + 6;
+          if (p.x > W + 6) p.x = -6;
+        });
+
+        petals.forEach(p => {
+          drawPetal(p);
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.spin;
+          if (p.y > H + 20) { p.y = -20; p.x = Math.random() * W; }
+          if (p.x > W + 20) p.x = -20;
+        });
+
+        notes.forEach(n => {
+          ctx.fillStyle = 'rgba(255, 233, 176, ' + n.a + ')';
+          ctx.font = n.size + 'px "Cormorant Garamond", serif';
+          ctx.fillText(n.glyph, n.x, n.y);
+
+          n.sway += 0.01;
+          n.x += Math.sin(n.sway) * 0.3;
+          n.y += n.vy;
+          if (n.y < -30) { n.y = H + 30; n.x = Math.random() * W; }
+        });
+      }
+
+      function loop() {
+        draw();
+        requestAnimationFrame(loop);
+      }
+
+      resize();
+      seed();
+      window.addEventListener('resize', () => { resize(); seed(); });
+
+      draw();
+      if (!reduceMotion) requestAnimationFrame(loop);
+    })();
+
+    /* ---------------- Boot ---------------- */
+
+    populateJump();
+    setPart('all');
+    updateProgress();
+  </script>
+
+</body>
+</html>
