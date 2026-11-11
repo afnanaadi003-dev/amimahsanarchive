@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK FOUR — THE FORGOTTEN SOLDIER</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    /* Book Cover — cinematic animated image box */
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 896 / 1200;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Light sweep across the cover */
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0.06) 53%,
+        transparent 64%
+      );
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    /* Film vignette + projector flicker */
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes coverSheen {
+      0%, 55% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+
+    @keyframes coverFlicker {
+      0%, 100% { opacity: 1; }
+      47% { opacity: 0.84; }
+      48% { opacity: 1; }
+      73% { opacity: 0.9; }
+      74% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+  </style>
+</head>
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      
+      <!-- Brand & Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-user-shield text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 4</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Forgotten Soldier</span>
+        </div>
+      </a>
+
+      <!-- Part Filters -->
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Rise (1-5)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: Transformation (6-9)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part III: The Mission (10-13)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part IV: Reckoning (14-20)</button>
+        <button onclick="filterPart(5)" class="px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/60 text-rose-300 transition">Part V: Final (21-25)</button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book Four Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE FORGOTTEN SOLDIER
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Captain Elena Volkov &amp; The Betrayal of the Motherland
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+Born in the shadow of the Motherland Calls to a decorated Afghan-war colonel and a schoolteacher, <strong class="text-white">Captain Elena Volkov</strong> becomes the Spetsnaz officer the system never wanted: one who protects civilians instead of orders. When the state that raised her answers her with a farcical inquiry and the murder of her father, she is recruited into <strong class="text-cyanGlow">Mass-Q-Rade</strong> and reborn as <strong class="text-goldGlow">The Ghost</strong>: the shadow that exposes the system from inside.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">25 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">1988 – 2026</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 25 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 25-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, IV, and V.</p>
+        </div>
+
+        <!-- Search & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE BIO-SPOOF CLI TERMINAL -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> BIO-SPOOF &amp; TELEMETRY CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating The Ghost's sub-dermal neural interface and FSB records override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: URAL_COMMAND_REDOUBT
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // GHOST_AGENT_04</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: QUANTUM_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_SOKOLOV')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-skull text-red-400"></i> EXPOSE SOKOLOV
+            </button>
+            <button onclick="runTerminalAction('BIOSPOOF')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> BIO-SPOOF
+            </button>
+            <button onclick="runTerminalAction('AUDIT_LOGS')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT LOGS
+            </button>
+            <button onclick="runTerminalAction('EXTRACT_STATUS')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mountain text-violet-400"></i> SANCTUARY PING
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade bio-spoof terminal online. Ural uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Capt. Elena Volkov -&gt; The Ghost (Agent Four).</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target Gen. Mikhail Sokolov: EXPOSED.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action button above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">GHOST_CONSOLE&gt;</span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, spoof, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Capt. Elena Volkov / The Ghost, Viktor and Irina Volkov, General Mikhail Sokolov, Sabrina, Q, and Anna Sokolova.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE (1988 – 2026) -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (1988 – 2026)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From a Volgograd military base to Chechnya, the FSB, and the Kremlin — the making of the Ghost.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE RISE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Girl Who Loved Her Country</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 25</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Volgograd, Russia (1988)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">3,000 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800">
+            <!-- Full narrative expansion -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK FOUR — THE FORGOTTEN SOLDIER</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 25-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 25-CHAPTER SERIALIZATION DATA
+    const chaptersData = [
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 1: The Girl Who Loved Her Country",
+        setting: "Volgograd, Russia. 1988.",
+        wordCount: "4,000 words",
+        summary: "Elena Volkov is born in the shadow of the Motherland Calls to a decorated Afghan-war colonel and a schoolteacher who taught generations to trust the system. At fourteen, her father is jailed for six months on a false treason charge, and the girl decides to become a soldier.",
+        keyScene: "Watching her father cry after Lefortovo Prison — a hero released without apology or compensation — fourteen-year-old Elena stops believing in the system and decides to learn how to break it.",
+        text: "The girl who would become the Forgotten Soldier was born in the shadow of the Motherland Calls — the colossal statue that commemorated the Battle of Stalingrad, the battle that had turned the tide of the Great Patriotic War, the battle that had cost two million lives.\n\nHer father, COLONEL VIKTOR VOLKOV, was a military man — a decorated veteran of the Soviet-Afghan War, a man who had served his country with honor, a man who had believed in the promise of the Soviet Union. Her mother, IRINA VOLKOVA, was a schoolteacher — a woman of quiet strength and unshakeable faith, a woman who had taught generations of children to love their country, to respect their leaders, to trust the system.\n\nElena was born into the invisible majority. She was born into the class of people who serve their country, follow the orders, and believe in the promise of the Motherland — the promise that if you sacrifice, if you serve, if you trust the system, you will be protected.\n\nShe would learn, in time, that the promise was a lie.\n\nBut in 1988, she was just a baby. A baby with a future. A baby with a dream.\n\nElena grew up in a military family. She grew up moving from base to base — from Volgograd to Moscow, from Moscow to Vladivostok, from Vladivostok to Kaliningrad. She grew up learning to salute, to march, to obey. She grew up learning that the Motherland was everything, that the individual was nothing, that sacrifice was the highest virtue.\n\nHer father would come home from training exercises and tell her stories. Stories about the war. Stories about heroism. Stories about the soldiers who had given their lives for their country.\n\n'Russia is the greatest country in the world,' he would say. 'Here, if you serve, if you sacrifice, if you give everything to the Motherland, you will be honored. You will be remembered. You will be immortal.'\n\nElena believed him. She believed in the dream. She believed in the system.\n\nShe would learn, in time, that the dream was a nightmare dressed in military uniform.\n\nElena was fourteen years old when she learned her first lesson about the Russian justice system.\n\nHer father had been arrested. He had been accused of treason — of selling military secrets to a foreign power. The evidence was circumstantial — a meeting with a foreign diplomat, a phone call to a suspicious number, a letter that had been intercepted by the FSB. But the authorities did not care about the evidence. The authorities cared about power.\n\nColonel Viktor Volkov was a hero. Colonel Viktor Volkov was a threat. Colonel Viktor Volkov was the perfect scapegoat.\n\nHe spent six months in Lefortovo Prison before the real traitor was caught — a senior officer who had been selling secrets for years. Viktor Volkov was released. He was not apologized to. He was not compensated. He was simply released — a broken man, a humiliated man, a man who had learned that the system did not protect people like him.\n\nElena watched her father cry that night. She had never seen him cry before. She had never seen him break. And in that moment, something inside her hardened. Something inside her calcified.\n\nShe decided to become a soldier.\n\nNot because she believed in the system. But because she wanted to understand it. She wanted to know how it worked. She wanted to know why it failed. She wanted to know how to fix it.\n\nShe would learn, in time, that the system could not be fixed.\n\nIt could only be destroyed."
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 2: The Education of a Warrior",
+        setting: "Moscow Military Academy. 2006.",
+        wordCount: "3,500 words",
+        summary: "Elena graduates at the top of her class — not the smartest or the best connected, but the most determined, studying eighteen hours a day. She takes a commission in the Spetsnaz and begins to learn what the elite unit is really used for.",
+        keyScene: "Her first Spetsnaz briefing makes it plain that the unit silences dissent rather than defends the country, and Elena realizes the system is not broken — it is working exactly as designed.",
+        text: "Elena Volkov graduated from the Moscow Military Academy at the top of her class.\n\nShe was not the smartest student. She was not the most connected. She was not the most privileged. But she was the most determined. She studied eighteen hours a day. She trained until her body was broken. She slept four hours a night. And she did it all with a single-minded focus that terrified her classmates and impressed her professors.\n\nShe was going to change the system. She was going to serve her country. She was going to make her father proud.\n\nShe was going to be the Forgotten Soldier.\n\nBut first, she had to learn how the system worked. She had to learn its rules. She had to learn its weaknesses. She had to learn its secrets.\n\nShe took a commission in the SPETSNAZ — the elite special forces unit of the Russian military. The Spetsnaz was the spearhead of the Motherland — the unit that was called upon for the most dangerous missions, the most secret operations, the most brutal wars.\n\nShe would learn that the Spetsnaz was not what it seemed.\n\nShe would learn that the Spetsnaz was a tool of the state — a weapon that was used to silence dissent, to crush rebellion, to protect the powerful. She would learn that the Spetsnaz was ordered to commit atrocities — to kill civilians, to torture prisoners, to destroy villages. She would learn that the Spetsnaz was told that these atrocities were necessary, that they were serving the Motherland, that they were protecting the Russian people.\n\nShe would learn that the system was not broken.\n\nThe system was working exactly as designed."
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 3: The Soldier Who Believed",
+        setting: "Chechnya. 2009.",
+        wordCount: "4,000 words",
+        summary: "Captain Volkov becomes the officer every soldier prays for — leading her unit through the hell of Chechnya while disobeying orders to save civilians and keeping a journal of everything done in the Motherland's name. The soldiers call her the Lioness. The system starts to see her as a threat.",
+        keyScene: "After a village is burned, Elena writes the date, the unit, and the names of the dead into her journal — the first entry in the record that will one day destroy her enemies.",
+        text: "Captain Elena Volkov was a revelation.\n\nShe was not just a soldier. She was a leader. She did not just follow orders. She protected her people. She listened to their fears. She fought for them. She bled for them.\n\nShe led her unit through the hell of Chechnya — the war that the Russian government denied was a war, the war that was supposed to be a 'counter-terrorism operation,' the war that had killed tens of thousands of civilians.\n\nShe saw things that no human being should see. She saw children with their limbs blown off. She saw mothers weeping over the bodies of their sons. She saw villages burned to the ground. She saw men tortured in interrogation rooms. She saw women raped by soldiers who were supposed to protect them.\n\nShe followed orders. She did her duty. She served the Motherland.\n\nBut she also saved lives. She disobeyed orders when she could. She protected civilians when she could. She documented atrocities when she could. She kept a journal — a record of everything she saw, everything she did, everything that was done in the name of the Motherland.\n\nAnd the soldiers loved her.\n\nThey called her 'Captain Volkov.' They called her 'The Lioness.' They told her she was the best officer they had ever served under. They told her she was a hero.\n\nBut the system did not love her.\n\nThe system saw her as a threat."
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 4: The First Warning",
+        setting: "Grozny, Chechnya. 2010.",
+        wordCount: "3,000 words",
+        summary: "General Mikhail Sokolov calls Elena in to praise her combat record and then condemn her conscience: she is 'not a team player' because she protects civilians and questions orders. She walks out of the base and into the night.",
+        keyScene: "Sokolov tells her she is 'too human' for the unit; Elena answers that a unit which does not want human soldiers does not deserve to exist, and walks out.",
+        text: "The first warning came from her commanding officer.\n\nGENERAL MIKHAIL SOKOLOV was the commander of the Spetsnaz operations in Chechnya. He was brutal. He was corrupt. He was dangerous. He had been at war for twenty years, and he had never lost a soldier he cared about. He had never saved a civilian he did not need. He had never sacrificed anything for anyone.\n\nHe called Elena into his office.\n\n'Captain Volkov,' he said. 'I've been reviewing your performance.'\n\nElena waited. She knew what was coming. She had been through this before.\n\n'Your combat record is excellent,' General Sokolov continued. 'Your leadership is impressive. Your dedication is admirable.'\n\nHe paused.\n\n'But you're not a team player.'\n\nElena stared at him. 'I'm sorry?'\n\n'You spend too much time with civilians. You protect them. You document their suffering. You question orders. That's not what soldiers do. Soldiers follow orders. Soldiers complete the mission. Soldiers move on to the next objective.'\n\nElena felt her blood boil. 'With respect, General, that's exactly what soldiers should do. We should protect the innocent. We should document the truth. We should question unjust orders.'\n\nGeneral Sokolov smiled. It was not a warm smile. It was the smile of a man who had power and knew it.\n\n'Captain Volkov,' he said. 'You're a good soldier. But you're not a good fit for this unit. You care too much. You feel too much. You're too... human.'\n\nElena stood up. She was shaking with rage.\n\n'I'm not too human,' she said. 'I'm human. And if this unit doesn't want human soldiers, then maybe this unit doesn't deserve to exist.'\n\nShe walked out of the office. She walked out of the base. She walked into the night.\n\nAnd she did not look back."
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 5: The Fall",
+        setting: "Moscow. 2011–2018.",
+        wordCount: "5,000 words",
+        summary: "Elena's investigation into war crimes in Chechnya, Syria, Ukraine, and Georgia is answered with a desk job, an FSB inquiry, and the murder of her father in a 'random' car accident. She moves to St. Petersburg, stops answering calls, and waits to die.",
+        keyScene: "The police call Viktor Volkov's death a tragedy still under investigation; Elena understands the system murdered him to send her a message — and the message works.",
+        text: "The fall came slowly. Then all at once.\n\nElena had become a target. Not because she had challenged General Sokolov — that was expected. Soldiers challenge their superiors. That was the system working as designed.\n\nShe had become a target because she had started asking questions. She had started investigating. She had started connecting the dots.\n\nShe had discovered that the Chechen War was not an isolated case. She had discovered that the system was rigged. She had discovered that the Russian government was committing war crimes — not just in Chechnya, but in Syria, in Ukraine, in Georgia. She had discovered that the FSB was covering up these crimes — hiding evidence, silencing whistleblowers, protecting the powerful.\n\nShe had discovered the truth.\n\nAnd the system could not allow that.\n\nThe first attack came in the form of a transfer. Elena was reassigned to a desk job in Moscow — a meaningless position that was designed to break her spirit, to silence her voice, to make her irrelevant.\n\nThe second attack came in the form of an investigation. The FSB launched an inquiry into Elena's conduct. They claimed that she had disobeyed orders. They claimed that she had endangered her unit. They claimed that she was a traitor.\n\nThe investigation was a farce. It was designed to destroy her. It was designed to imprison her. It was designed to silence her.\n\nThe third attack came in the form of a murder.\n\nHer father — Colonel Viktor Volkov, the man who had taught her to love her country, the man who had believed in the promise of the Motherland — was killed in a 'car accident.' The police said it was random. The police said it was a tragedy. The police said they were investigating.\n\nBut Elena knew the truth.\n\nHer father had been murdered by the system. He had been murdered to send a message. He had been murdered to silence her.\n\nAnd it worked.\n\nElena Volkov broke.\n\nShe stopped fighting. She stopped investigating. She stopped believing. She withdrew from the world. She moved to a small apartment in St. Petersburg. She stopped answering calls. She stopped seeing friends. She stopped living.\n\nShe was waiting to die.\n\nBut the system had other plans."
+      },
+      {
+        id: 6, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 6: The Visitor",
+        setting: "St. Petersburg, Russia. 2019.",
+        wordCount: "3,500 words",
+        summary: "Three days without food, a month without speech, Elena is waiting to die when a woman named Sabrina knocks on her door. She offers no rescue and no comfort — only the news that Elena is the one they have been waiting for.",
+        keyScene: "Sabrina stands in the doorway and says the words that pull Elena back into the world: 'We are Mass-Q-Rade, and we have a proposition for you.'",
+        text: "She came on a Tuesday.\n\nElena was sitting in her apartment, staring at the wall. She had not eaten in three days. She had not showered in a week. She had not spoken to anyone in a month.\n\nThe knock on the door was soft. Persistent. Unavoidable.\n\nElena did not answer. She did not want to answer. She did not want to see anyone. She did not want to talk to anyone. She did not want to live.\n\nBut the knock continued.\n\nAnd then, a voice.\n\n'Captain Volkov. I know you're in there. I know you're hurting. I know you've lost everything. I know you've given up.'\n\nElena did not respond.\n\n'I'm not here to save you,' the voice continued. 'I'm not here to rescue you. I'm not here to tell you that everything will be alright. Because it won't. Everything will not be alright. Everything will never be alright again.'\n\nElena stood up. She walked to the door. She opened it.\n\nStanding in the hallway was a woman. She was tall. She was elegant. She was dangerous. She had eyes that had seen too much, that had lost too much, that had been betrayed too many times.\n\n'My name is Sabrina,' the woman said. 'I'm here because you are the one we've been waiting for.'\n\nElena stared at her. 'Who is 'we'?'\n\nSabrina smiled. It was not a warm smile. It was the smile of someone who had been where Elena was, who had felt what Elena was feeling, who had made the same journey from obedient to disobedient.\n\n'We are Mass-Q-Rade,' she said. 'And we have a proposition for you.'"
+      },
+      {
+        id: 7, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 7: The Proposition",
+        setting: "A hidden facility in the Ural Mountains. 2019.",
+        wordCount: "4,000 words",
+        summary: "Blindfolded and driven eight hours into the Urals, Elena is brought to a facility that exists on no map and meets a man she recognizes from the news: Rahul Banerjee, the film star who died in prison — now Q, offering her a choice.",
+        keyScene: "Q offers Elena two futures — go home and wait to die, or become a shadow — and Elena, thinking of her father, answers: 'I'm in.'",
+        text: "Elena did not trust Sabrina. She did not trust anyone. She had learned, through bitter experience, that trust was a weakness. Trust was a vulnerability. Trust was a weapon that the system used against the obedient.\n\nBut she was curious.\n\nShe followed Sabrina to a black SUV. She was driven for eight hours into the Ural Mountains. She was blindfolded for the last hour. She was led into a facility that did not exist on any map — a facility hidden beneath the mountains, protected by technology that Elena could not understand.\n\nShe was seated in a room. The room was white. The room was empty. The room was silent.\n\nAnd then, the door opened.\n\nA man walked in. He was tall. He was handsome. He was familiar.\n\nElena recognized him.\n\n'You're Rahul Banerjee,' she said. 'The film star. The one who was convicted of murder. The one who died in prison.'\n\nRahul smiled. It was not the smile of a film star. It was the smile of a man who had been destroyed and reborn.\n\n'I was Rahul Banerjee,' he said. 'Now I am Q. And I am here to offer you a choice.'\n\nElena stared at him. 'What choice?'\n\nQ sat down across from her. He looked at Elena with eyes that had seen too much, that had lost too much, that had been betrayed too many times.\n\n'You can go back to your apartment,' he said. 'You can continue to wait to die. You can let the system win. You can let your father's murder go unpunished. You can let the Russian government continue to commit war crimes. You can let the system continue to devour the obedient.'\n\nHe paused.\n\n'Or you can join us. You can become something new. You can become something powerful. You can become something the system cannot control, cannot predict, cannot stop.'\n\nHe leaned forward.\n\n'You can become a shadow.'\n\nElena did not respond. She was thinking. She was processing. She was deciding.\n\nShe thought of her father. She thought of his laugh. She thought of his stories. She thought of his belief in the Russian dream — a dream that had been denied to him, a dream that had been stolen from him, a dream that had been destroyed by the system.\n\nShe thought of the civilians she had seen in Chechnya. She thought of the children with their limbs blown off. She thought of the mothers weeping over the bodies of their sons. She thought of the villages burned to the ground.\n\nShe thought of the system. She thought of its corruption. She thought of its cruelty. She thought of its power.\n\nAnd she made her choice.\n\n'I'm in,' she said.\n\nQ nodded. He did not smile. He did not celebrate. He simply nodded — as if he had known all along that this moment would come.\n\n'Welcome to Mass-Q-Rade,' he said. 'Welcome to the family of the betrayed.'"
+      },
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 8: The Training",
+        setting: "A hidden facility in the Ural Mountains. 2019–2020.",
+        wordCount: "4,500 words",
+        summary: "Physical, mental, technical, combat, and spiritual conditioning strip Elena down past her limits and rebuild her. She learns to fight, to disappear, to become anyone — and to kill in ways the system cannot trace.",
+        keyScene: "Forced to relive her father's murder in a sensory suite, Elena does not break; something old in her finally stops breathing and something new takes over.",
+        text: "The training was brutal.\n\nElena had always been strong. She had always been determined. She had always been a warrior. But Mass-Q-Rade demanded more than strength. It demanded transformation. It demanded death. It demanded rebirth.\n\nPHYSICAL TRAINING: She was pushed to her limits and beyond. She ran until her legs gave out. She fought until her body was broken. She endured pain that would have killed a lesser woman. And when she thought she could not continue, she continued.\n\nMENTAL TRAINING: She was forced to confront her demons. She was forced to relive her father's murder. She was forced to remember the atrocities she had witnessed. She was forced to feel the pain that she had buried so deep. And when she thought she could not bear it, she bore it.\n\nTECHNICAL TRAINING: She learned to fight. She learned to disappear. She learned to become anyone — a corporate executive, a homeless woman, a politician, a ghost. She learned to use technology — not to control but to liberate, not to spy but to expose, not to manipulate but to reveal. She learned to become the shadow that the system could not see.\n\nCOMBAT TRAINING: She learned to kill in new ways. She learned to use her hands, her feet, her mind. She learned to become the Ghost — the one who could infiltrate any facility, extract any target, disappear without a trace.\n\nSPIRITUAL TRAINING: She learned the philosophy of Mass-Q-Rade. She learned that obedience to justice is the highest form of rebellion. She learned that the obedient are not weak — they are the foundation of civilization. She learned that the system betrays the obedient because the system is made of people, and people are flawed. She learned that the only way to protect the obedient is to become the system's shadow.\n\nAnd slowly, painfully, inevitably, Elena Volkov began to disappear."
+      },
+      {
+        id: 9, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 9: The New Face",
+        setting: "A medical facility in the Ural Mountains. 2020.",
+        wordCount: "2,500 words",
+        summary: "Biometric spoofing, neural interface manipulation, and deepfake technology erase Elena Volkov — her face, her voice, her records. What walks out of the chamber is no longer a soldier, a victim, or a daughter.",
+        keyScene: "Elena looks at a face that exists in no database and accepts her new name: 'The Ghost.'",
+        text: "The transformation was complete.\n\nElena Volkov — the soldier, the warrior, the Forgotten One — was gone.\n\nHer face had been changed. Not through surgery — through technology. Advanced biometric spoofing. Neural interface manipulation. Deepfake technology that could make her look like anyone, sound like anyone, become anyone.\n\nShe was no longer Elena Volkov. She was no longer a soldier. She was no longer a victim.\n\nShe was THE GHOST.\n\nAnd the Ghost had a mission."
+      },
+      {
+        id: 10, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 10: The Target",
+        setting: "Moscow. 2020.",
+        wordCount: "2,500 words",
+        summary: "The target is General Mikhail Sokolov — commander of the Spetsnaz, architect of the Chechen war, silencer of whistleblowers, and the man who ordered Viktor Volkov's murder.",
+        keyScene: "The Ghost watches Sokolov's motorcade from a rooftop and understands that she is not hunting a man; she is hunting the system wearing a man's face.",
+        text: "The target was GENERAL MIKHAIL SOKOLOV.\n\nHe was the most powerful man in the Russian military. He was the commander of the Spetsnaz. He was the architect of the Chechen War. He was the man who had silenced whistleblowers. He was the man who had covered up atrocities. He was the man who had ordered Viktor Volkov's murder.\n\nHe was the system.\n\nAnd the Ghost was going to destroy him."
+      },
+      {
+        id: 11, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 11: The Investigation",
+        setting: "Moscow. 2020–2021.",
+        wordCount: "3,000 words",
+        summary: "Six months of quiet, patient intelligence work: Sokolov's finances, his connections, his secrets. The Ghost uncovers $100 million in bribes from oligarchs, blocked reforms that would have saved lives, and three ordered murders — one of them her father's.",
+        keyScene: "Cross-referencing a defence ledger with an oligarch's wire transfer, Elena finds the payment that leads straight back to her father's 'car accident.'",
+        text: "The Ghost spent six months investigating General Sokolov.\n\nShe studied his finances. She studied his connections. She studied his secrets.\n\nShe discovered that Sokolov had received $100 million in bribes from oligarchs. She discovered that he had used his position to block reforms that would have saved lives. She discovered that he had personally ordered the murder of three whistleblowers — including Viktor Volkov.\n\nShe discovered the truth.\n\nAnd she prepared to expose it."
+      },
+      {
+        id: 12, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 12: The Strike",
+        setting: "Moscow. 2021.",
+        wordCount: "4,500 words",
+        summary: "At a military parade, the screens behind General Sokolov flicker and play his own voice — contempt for Chechens, bribes from oligarchs, orders to murder a soldier's father. The parade, the media, and the nation erupt; Sokolov is convicted and sentenced to life.",
+        keyScene: "The parade falls silent as Sokolov's recorded voice fills it: 'They don't deserve to live. They deserve to die.'",
+        text: "The strike came on a Thursday.\n\nGeneral Sokolov was giving a speech at a military parade. He was talking about honor. He was talking about duty. He was talking about the glory of the Motherland.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The soldiers stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of General Sokolov. He was in a hotel room. He was talking to an oligarch. He was laughing.\n\n'Those Chechens?' he said. 'They're nothing. They're animals. They don't deserve to live. They deserve to die. And that soldier — Elena Volkov? She's a problem. But don't worry. We'll take care of her. We'll take care of her father. We'll take care of everyone she loves.'\n\nThe video continued. It showed Sokolov accepting bribes. It showed him ordering murders. It showed him laughing at the suffering of the civilians he had sworn to protect.\n\nThe parade erupted. The media erupted. The nation erupted.\n\nGeneral Mikhail Sokolov was arrested. He was charged with corruption, conspiracy, and war crimes. He was convicted. He was sentenced to life in prison.\n\nAnd the Ghost — the woman who had been destroyed by the system, the woman who had been reborn by Mass-Q-Rade, the woman who had become the shadow — disappeared into the night."
+      },
+      {
+        id: 13, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 13: The Legend Begins",
+        setting: "Unknown. 2021.",
+        wordCount: "3,500 words",
+        summary: "The Ghost does not stop with Sokolov. She targets the generals who committed atrocities, the politicians who protected them, the judges who enabled them, the media that silenced them — exposing rather than killing, demanding reckoning rather than revenge.",
+        keyScene: "A widow whose husband died in a 'counter-terrorism operation' reads the leaked files and, for the first time in a decade, believes justice is possible.",
+        text: "The Ghost did not stop with General Sokolov.\n\nShe continued. She exposed. She revealed. She destroyed.\n\nShe targeted the generals who had committed atrocities. She targeted the politicians who had protected them. She targeted the judges who had enabled them. She targeted the media that had silenced them.\n\nShe did not kill. She exposed. She did not destroy. She revealed. She did not seek revenge. She sought reckoning.\n\nAnd the world began to change.\n\nThe obedient — the forgotten ones, the betrayed ones, the ones who had believed in the system and been destroyed by it — began to hope. They began to believe that justice was possible. They began to believe that the system could be held accountable.\n\nAnd the system — the corrupt, the powerful, the guilty — began to fear.\n\nThey did not know who the Ghost was. They did not know where she came from. They did not know how to stop her.\n\nThey only knew that she was coming.\n\nAnd they were right."
+      },
+      {
+        id: 14, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 14: The Heart of the Ghost",
+        setting: "Unknown. 2022.",
+        wordCount: "3,000 words",
+        summary: "Late at night, alone in her quarters, the Ghost remembers her father — his laugh, his stories, the way he looked at her as a daughter rather than a success. She cries, and then she makes a vow.",
+        keyScene: "In the dark of her quarters she whispers the vow that defines her: 'I will become the justice that the system cannot provide.'",
+        text: "Late at night, when the missions were over and the world was asleep, the Ghost would sit alone in her quarters and remember.\n\nShe would remember her father. His laugh. His stories. His belief in the Russian dream.\n\nShe would remember the way he looked at her — not as a soldier, not as a success, but as a daughter. A daughter who had made him proud. A daughter who had fought for justice. A daughter who had never given up.\n\nShe would remember the way he died. The way the system took him from her. The way the system took everything from her.\n\nShe would remember. And she would cry.\n\nNot because she was weak. Not because she was broken. But because she was human. Because she had loved. Because she had lost. Because the system had taken the only thing that mattered.\n\nAnd in that moment — in the darkness of her quarters, in the silence of the night — the Ghost would make a vow.\n\nI will not let them win. I will not let them destroy the obedient. I will not let them take everything from me.\n\nI will fight. I will expose. I will reveal.\n\nI will become the shadow that the system cannot see.\n\nI will become the justice that the system cannot provide.\n\nI will become the Ghost."
+      },
+      {
+        id: 15, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 15: The Family of the Betrayed",
+        setting: "Unknown. 2022.",
+        wordCount: "3,500 words",
+        summary: "Elena meets the rest of Mass-Q-Rade — Q, the Silent Advocate, the Broken Healer, the Eye, the Voice, and the Hand — a family bound not by blood but by betrayal, found in the darkness and turned into light.",
+        keyScene: "Around a table of damaged people, Elena realizes she is no longer the only one the system failed — and that this is the first family she has had since her father died.",
+        text: "The Ghost was not alone.\n\nShe was part of a family — the family of the betrayed. She was part of Mass-Q-Rade.\n\nShe had met the other agents. She had trained with them. She had fought with them. She had bled with them.\n\nThere was Q — the leader, the inspiration, the man who had been destroyed by the system and reborn as the shadow.\n\nThere was THE SILENT ADVOCATE — the lawyer, the woman who could expose any corruption, the woman who had been destroyed by the American justice system.\n\nThere was THE BROKEN HEALER — the doctor, the man who could heal any wound, the man who had been destroyed by the NHS.\n\nThere was THE EYE — the surveillance expert, the man who could see everything, the man who had been silenced by the media.\n\nThere was THE VOICE — the communication expert, the woman who could speak to any mind, any heart, the woman who had been silenced by the educational system.\n\nThere was THE HAND — the technology expert, the man who could manipulate any system, the man who had been crushed by the corporate machine.\n\nAnd there was THE GHOST — the soldier, the woman who could infiltrate any facility, the woman who had been destroyed by the Russian military.\n\nThey were not just a team. They were not just an organization. They were a family. They were bound not by blood but by betrayal. They were the ones who had been destroyed by the system. They were the ones who had been forgotten by the world. They were the ones who had found each other in the darkness and decided to become the light."
+      },
+      {
+        id: 16, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 16: The Secret Command Committee",
+        setting: "Unknown. 2022.",
+        wordCount: "3,500 words",
+        summary: "Summoned before the founders of Mass-Q-Rade in a dark, silent room, Elena is told her mission is not complete: the system is vast, and there are more generals, politicians, judges, and media to expose. The reward is freedom; the penalty is rebirth.",
+        keyScene: "The voice from the shadows tells her what awaits if she dies: a new body, a new face, a new purpose — 'Mass-Q-Rade never dies.'",
+        text: "The Ghost was summoned to a meeting of the Secret Command Committee.\n\nShe had never met them before. She had only heard stories. They were the original founders of Mass-Q-Rade. They were the ones who had been obedient, who had been betrayed, who had been reborn. They were the ones who now guided the mission.\n\nShe was led into a room. The room was dark. The room was silent. The room was filled with shadows.\n\nAnd then, a voice.\n\n'Captain Elena Volkov. The Ghost. The one who disappears.'\n\nElena did not respond. She waited.\n\n'You have done well,' the voice continued. 'You have exposed the corruption of the Russian military. You have brought justice to the forgotten. You have become the shadow that the system cannot see.'\n\nThe voice paused.\n\n'But your mission is not complete.'\n\nElena looked up. 'What do you mean?'\n\n'The system is vast. The system is powerful. The system is everywhere. You have exposed one part of it. But there are others. There are generals who kill. There are politicians who lie. There are judges who enable them. There are media who silence them.'\n\nThe voice paused again.\n\n'You will find them. You will expose them. You will destroy them.'\n\nElena nodded. She understood.\n\n'And when your mission is complete,' the voice continued, 'you will be freed. You will be given a new life. A life where you can have anything you want. A life where you can be anyone you choose. A life where you are finally, truly, completely free.'\n\nElena looked up. 'And if I die before my mission is complete?'\n\nThe voice was silent for a moment.\n\n'Then you will be reborn. You will be given a new body. A new face. A new purpose. You will continue the mission. You will never die. You will never stop. You will never rest.'\n\nElena nodded. She understood.\n\nShe was not just a soldier. She was not just a shadow. She was not just an agent.\n\nShe was Mass-Q-Rade.\n\nAnd Mass-Q-Rade never dies."
+      },
+      {
+        id: 17, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 17: The New Mission",
+        setting: "Unknown. 2023.",
+        wordCount: "3,000 words",
+        summary: "The Ghost is sent after the Federal Security Service — successor to the KGB, the most powerful intelligence agency in Russia, compromised by oligarchs, corrupted by power, and silenced by politics.",
+        keyScene: "Reading the FSB mission brief, Elena recognizes the same architecture that destroyed her father, scaled to the entire state.",
+        text: "The Ghost was given a new mission.\n\nShe was to infiltrate the FEDERAL SECURITY SERVICE — the FSB, the successor to the KGB, the most powerful intelligence agency in Russia. The FSB had been compromised. It had been infiltrated by oligarchs. It had been corrupted by power. It had been silenced by politics.\n\nThe Ghost was to expose the corruption. She was to reveal the truth. She was to destroy the system.\n\nShe accepted the mission.\n\nShe began her training. She learned to become a spy. She learned to become a bureaucrat. She learned to become a ghost.\n\nAnd she prepared to strike."
+      },
+      {
+        id: 18, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 18: The Infiltration",
+        setting: "Moscow, Russia. 2023.",
+        wordCount: "4,000 words",
+        summary: "Elena enters Moscow as Anna Sokolova, a young widow recruited as an FSB analyst. Inside she finds oligarchs who paid for assassinations, a government that ordered the poisoning of dissidents, and hundreds of covered-up deaths.",
+        keyScene: "In an FSB archive, Anna Sokolova finds the sealed files on the poisoning programme and understands that the agency she served now employs her as a ghost.",
+        text: "The Ghost arrived in Moscow as ANNA SOKOLOVA — a young widow who had been recruited by the FSB to work as an analyst. The cover was perfect. The credentials were flawless. The background was untraceable.\n\nShe was welcomed into the FSB with open arms. She was given an office. She was given a staff. She was given access to everything.\n\nAnd she began to investigate.\n\nShe discovered that the FSB had been compromised. She discovered that oligarchs had bribed officials to approve assassinations. She discovered that the government had ordered the poisoning of dissidents. She discovered that the FSB had covered up the deaths of hundreds of people.\n\nShe discovered the truth.\n\nAnd she prepared to expose it."
+      },
+      {
+        id: 19, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 19: The Strike",
+        setting: "Moscow, Russia. 2024.",
+        wordCount: "4,500 words",
+        summary: "During the FSB's annual conference, the screens behind the Director play his own recorded contempt for dissidents and his bribes. The conference erupts, the world erupts, and he is convicted of corruption, conspiracy and murder.",
+        keyScene: "Agents from every region of Russia watch their Director laugh about 'those dissidents' — and the room built for loyalty turns into an indictment.",
+        text: "The strike came on a Monday.\n\nThe FSB was holding its annual conference. Agents from every part of Russia had gathered to discuss the future of intelligence. The Director was giving a speech. He was talking about security. He was talking about loyalty. He was talking about the glory of the Motherland.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The agents stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of the Director. He was in a hotel room. He was talking to an oligarch. He was laughing.\n\n'Those dissidents?' he said. 'They're nothing. They're animals. They don't deserve to live. They deserve to die. And that soldier — Elena Volkov? She's a problem. But don't worry. We'll take care of her. We'll take care of everyone she loves.'\n\nThe video continued. It showed the Director accepting bribes. It showed him ordering assassinations. It showed him laughing at the suffering of the people he had sworn to protect.\n\nThe conference erupted. The media erupted. The world erupted.\n\nThe Director was arrested. He was charged with corruption, conspiracy, and murder. He was convicted. He was sentenced to life in prison.\n\nAnd the Ghost — the woman who had been destroyed by the system, the woman who had been reborn by Mass-Q-Rade, the woman who had become the shadow — disappeared into the night."
+      },
+      {
+        id: 20, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 20: The Legend Grows",
+        setting: "Unknown. 2024.",
+        wordCount: "3,000 words",
+        summary: "The Ghost keeps going — oligarchs who stole from the people, politicians who protected them, judges who enabled them, media that silenced them. Exposure, not execution. Reckoning, not revenge.",
+        keyScene: "An internal memo circulates through a Moscow security contractor: 'We do not know who she is. We do not know how to stop her. She is coming.'",
+        text: "The Ghost did not stop with the FSB.\n\nShe continued. She exposed. She revealed. She destroyed.\n\nShe targeted the oligarchs who had stolen from the people. She targeted the politicians who had protected them. She targeted the judges who had enabled them. She targeted the media that had silenced them.\n\nShe did not kill. She exposed. She did not destroy. She revealed. She did not seek revenge. She sought reckoning.\n\nAnd the world began to change.\n\nThe obedient — the forgotten ones, the betrayed ones, the ones who had believed in the system and been destroyed by it — began to hope. They began to believe that justice was possible. They began to believe that the system could be held accountable.\n\nAnd the system — the corrupt, the powerful, the guilty — began to fear.\n\nThey did not know who the Ghost was. They did not know where she came from. They did not know how to stop her.\n\nThey only knew that she was coming.\n\nAnd they were right."
+      },
+      {
+        id: 21, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 21: The Heart of the Ghost",
+        setting: "Unknown. 2025.",
+        wordCount: "3,000 words",
+        summary: "Six years into the war, the ritual of remembrance returns: her father's laugh, his stories, his death. The vow is renewed because the wound has never closed.",
+        keyScene: "Sitting alone in the dark, she repeats the words that keep her alive: 'I will become the shadow that the system cannot see.'",
+        text: "Late at night, when the missions were over and the world was asleep, the Ghost would sit alone in her quarters and remember.\n\nShe would remember her father. His laugh. His stories. His belief in the Russian dream.\n\nShe would remember the way he looked at her — not as a soldier, not as a success, but as a daughter. A daughter who had made him proud. A daughter who had fought for justice. A daughter who had never given up.\n\nShe would remember the way he died. The way the system took him from her. The way the system took everything from her.\n\nShe would remember. And she would cry.\n\nNot because she was weak. Not because she was broken. But because she was human. Because she had loved. Because she had lost. Because the system had taken the only thing that mattered.\n\nAnd in that moment — in the darkness of her quarters, in the silence of the night — the Ghost would make a vow.\n\nI will not let them win. I will not let them destroy the obedient. I will not let them take everything from me.\n\nI will fight. I will expose. I will reveal.\n\nI will become the shadow that the system cannot see.\n\nI will become the justice that the system cannot provide.\n\nI will become the Ghost."
+      },
+      {
+        id: 22, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 22: The Family of the Betrayed",
+        setting: "Unknown. 2025.",
+        wordCount: "3,500 words",
+        summary: "The family of the betrayed has grown: Q, the Silent Advocate, the Broken Healer, the Eye, the Voice, the Hand, and the Ghost — bound by what was taken from them, not by blood.",
+        keyScene: "The network gathers after a long operation, and Elena understands that the family is the only thing the system never managed to take.",
+        text: "The Ghost was not alone.\n\nShe was part of a family — the family of the betrayed. She was part of Mass-Q-Rade.\n\nShe had met the other agents. She had trained with them. She had fought with them. She had bled with them.\n\nThere was Q — the leader, the inspiration, the man who had been destroyed by the system and reborn as the shadow.\n\nThere was THE SILENT ADVOCATE — the lawyer, the woman who could expose any corruption, the woman who had been destroyed by the American justice system.\n\nThere was THE BROKEN HEALER — the doctor, the man who could heal any wound, the man who had been destroyed by the NHS.\n\nThere was THE EYE — the surveillance expert, the man who could see everything, the man who had been silenced by the media.\n\nThere was THE VOICE — the communication expert, the woman who could speak to any mind, any heart, the woman who had been silenced by the educational system.\n\nThere was THE HAND — the technology expert, the man who could manipulate any system, the man who had been crushed by the corporate machine.\n\nAnd there was THE GHOST — the soldier, the woman who could infiltrate any facility, the woman who had been destroyed by the Russian military.\n\nThey were not just a team. They were not just an organization. They were a family. They were bound not by blood but by betrayal. They were the ones who had been destroyed by the system. They were the ones who had been forgotten by the world. They were the ones who had found each other in the darkness and decided to become the light."
+      },
+      {
+        id: 23, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 23: The Secret Command Committee",
+        setting: "Unknown. 2025.",
+        wordCount: "3,500 words",
+        summary: "A second summons, darker than the first: the FSB exposure is acknowledged, but the mission continues. Freedom is promised on completion; rebirth on death. Elena accepts that she is Mass-Q-Rade.",
+        keyScene: "The shadows repeat the promise and the threat in the same breath, and Elena answers with silence — the only answer the Committee respects.",
+        text: "The Ghost was summoned to a meeting of the Secret Command Committee.\n\nShe had met them before. She had been given her mission. She had been given her purpose. She had been given her freedom.\n\nBut this time, the meeting was different.\n\nThe room was darker. The silence was deeper. The shadows were thicker.\n\nAnd the voice was different.\n\n'Captain Elena Volkov. The Ghost. The one who disappears.'\n\nElena did not respond. She waited.\n\n'You have done well,' the voice continued. 'You have exposed the corruption of the FSB. You have brought justice to the forgotten. You have become the shadow that the system cannot see.'\n\nThe voice paused.\n\n'But your mission is not complete.'\n\nElena looked up. 'What do you mean?'\n\n'The system is vast. The system is powerful. The system is everywhere. You have exposed one part of it. But there are others. There are generals who kill. There are politicians who lie. There are judges who enable them. There are media who silence them.'\n\nThe voice paused again.\n\n'You will find them. You will expose them. You will destroy them.'\n\nElena nodded. She understood.\n\n'And when your mission is complete,' the voice continued, 'you will be freed. You will be given a new life. A life where you can have anything you want. A life where you can be anyone you choose. A life where you are finally, truly, completely free.'\n\nElena looked up. 'And if I die before my mission is complete?'\n\nThe voice was silent for a moment.\n\n'Then you will be reborn. You will be given a new body. A new face. A new purpose. You will continue the mission. You will never die. You will never stop. You will never rest.'\n\nElena nodded. She understood.\n\nShe was not just a soldier. She was not just a shadow. She was not just an agent.\n\nShe was Mass-Q-Rade.\n\nAnd Mass-Q-Rade never dies."
+      },
+      {
+        id: 24, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 24: The Final Mission",
+        setting: "Unknown. 2026.",
+        wordCount: "3,000 words",
+        summary: "The last target is the Kremlin — the heart of the Russian government, the place where the system was designed. Elena trains to become a leader, a politician, and a ghost, and prepares to strike at the institution itself.",
+        keyScene: "Walking the Kremlin's public corridors under a stolen face, Elena sees the names on the state guest list and circles every one that appears in her father's file.",
+        text: "The Ghost was given her final mission.\n\nShe was to infiltrate the KREMLIN — the heart of the Russian government, the seat of power, the place where the system was designed. The Kremlin had been compromised. It had been infiltrated by oligarchs. It had been corrupted by power. It had been silenced by politics.\n\nThe Ghost was to expose the corruption. She was to reveal the truth. She was to destroy the system.\n\nShe accepted the mission.\n\nShe began her training. She learned to become a leader. She learned to become a politician. She learned to become a ghost.\n\nAnd she prepared to strike."
+      },
+      {
+        id: 25, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 25: The Reckoning",
+        setting: "Moscow, Russia. 2026.",
+        wordCount: "5,000 words",
+        summary: "At a state dinner in the Kremlin, the President's own recorded contempt for protesters and his bribes play across every screen in the hall. The dinner erupts, the President is arrested and convicted, and the Ghost walks out into the Moscow night.",
+        keyScene: "The President's voice fills the hall — 'They don't deserve to live' — and the people who spent careers staying silent finally have to look at themselves.",
+        text: "The strike came on a Friday.\n\nThe Kremlin was holding a state dinner. The most powerful people in Russia had gathered to celebrate the glory of the Motherland. The President was giving a speech. He was talking about strength. He was talking about honor. He was talking about the future of Russia.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The guests stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of the President. He was in a hotel room. He was talking to an oligarch. He was laughing.\n\n'Those protesters?' he said. 'They're nothing. They're animals. They don't deserve to live. They deserve to die. And that soldier — Elena Volkov? She's a problem. But don't worry. We'll take care of her. We'll take care of everyone she loves.'\n\nThe video continued. It showed the President accepting bribes. It showed him ordering assassinations. It showed him laughing at the suffering of the people he had sworn to protect.\n\nThe dinner erupted. The media erupted. The nation erupted.\n\nThe President was arrested. He was charged with corruption, conspiracy, and crimes against humanity. He was convicted. He was sentenced to life in prison.\n\nAnd the Ghost — the woman who had been destroyed by the system, the woman who had been reborn by Mass-Q-Rade, the woman who had become the shadow — stood in the snow outside the Kremlin walls and watched the sirens gather.\n\nShe thought of her father. Of the man who had believed in the Russian dream and been killed by it. Of the soldiers who had died for a country that never protected them. Of the civilians in Chechnya whose names existed only in her journal.\n\nShe did not feel triumph. She felt the quiet, terrible calm of a debt finally paid.\n\nSomewhere across the city, a phone rang in a dark room, and a voice said: 'It's done.'\n\n'Then come home,' Q answered. 'There is more work.'\n\nThe Ghost stepped out of the lamplight, dissolved into the Moscow night, and was gone — a shadow the system could not see, the justice the system could not provide.\n\nShe had been the forgotten soldier.\n\nNow she was the one they would never forget."
+      }
+    ];
+
+
+    // CHARACTER DOSSIERS DATA
+    const dossiersData = [
+      {
+        name: "Captain Elena Volkov (The Ghost)",
+        title: "The Soldier Who Believed",
+        role: "Protagonist",
+        desc: "Born in the shadow of the Motherland Calls to a decorated colonel and a schoolteacher. A Spetsnaz officer destroyed by a farcical FSB inquiry and the murder of her father; reborn in the Urals as Mass-Q-Rade's infiltration specialist.",
+        icon: "fa-user-secret",
+        color: "border-goldAccent/40 text-goldGlow"
+      },
+      {
+        name: "Colonel Viktor Volkov",
+        title: "The Hero Who Was Sacrificed",
+        role: "Moral Compass",
+        desc: "Afghan-war veteran jailed six months in Lefortovo on a fabricated treason charge, then released without apology. Taught his daughter to love the Motherland — and was killed in a staged 'car accident' to silence her.",
+        icon: "fa-medal",
+        color: "border-amber-500/40 text-amber-300"
+      },
+      {
+        name: "Irina Volkova",
+        title: "The Schoolteacher",
+        role: "The Faith That Broke",
+        desc: "Taught generations of children to respect their leaders and trust the system, and raised Elena on the promise of the Russian dream. Watched that promise cost her husband his reputation and her daughter everything.",
+        icon: "fa-chalkboard-user",
+        color: "border-pink-500/40 text-pink-300"
+      },
+      {
+        name: "General Mikhail Sokolov",
+        title: "The Architect of the System",
+        role: "Primary Antagonist",
+        desc: "Commander of Spetsnaz operations in Chechnya and the most powerful man in the Russian military. Took $100 million in oligarch bribes, blocked life-saving reforms, ordered three murders, and told Elena she was 'too human.'",
+        icon: "fa-skull-crossbones",
+        color: "border-red-500/40 text-red-400"
+      },
+      {
+        name: "Sabrina",
+        title: "The Vanguard Handler",
+        role: "Mass-Q-Rade Operative",
+        desc: "The recruiter who came to a St. Petersburg apartment on a Tuesday and offered no comfort, only a proposition. Guides broken souls from the moment the system discards them.",
+        icon: "fa-user-ninja",
+        color: "border-cyan-500/40 text-cyanGlow"
+      },
+      {
+        name: "Q (Rahul Banerjee)",
+        title: "The Leader of the Betrayed",
+        role: "Mass-Q-Rade Founder",
+        desc: "The film star who died in a Mumbai prison and returned as Q. Built the sanctuary beneath the Ural Mountains where Elena was unmade and remade.",
+        icon: "fa-star",
+        color: "border-violet-500/40 text-violet-300"
+      },
+      {
+        name: "Anna Sokolova",
+        title: "The FSB Cover",
+        role: "Infiltration Identity",
+        desc: "The untraceable young widow Elena becomes to enter the FSB — flawless credentials, spotless background, and an analyst's clearance used as a key to every locked archive in the building.",
+        icon: "fa-passport",
+        color: "border-emerald-500/40 text-emerald-300"
+      }
+    ];
+
+
+    // TIMELINE DATA
+    const timelineData = [
+      { year: "1988", title: "Born in the Shadow of the Motherland Calls", loc: "Volgograd, Russia", text: "Elena is born to Viktor, a decorated Afghan-war colonel, and Irina, a schoolteacher who taught generations to trust the system." },
+      { year: "2002", title: "The First Betrayal", loc: "Moscow", text: "Fourteen-year-old Elena watches her father jailed for six months in Lefortovo on a fabricated treason charge, released without apology or compensation. She decides to become a soldier." },
+      { year: "2006", title: "Top of the Class", loc: "Moscow Military Academy", text: "Graduates at the top of her class after eighteen-hour study days, then takes a commission in the Spetsnaz and learns what the elite unit is really used for." },
+      { year: "2009", title: "The Lioness of Chechnya", loc: "Chechnya", text: "Captain Volkov leads her unit through the 'counter-terrorism operation,' saving civilians where she can and recording every atrocity in her journal." },
+      { year: "2010", title: "Sokolov's Warning", loc: "Grozny, Chechnya", text: "General Mikhail Sokolov tells Elena she is a good soldier but 'not a team player' — too human — and she walks out of the base for good." },
+      { year: "2011–2018", title: "The Investigation and the Murder", loc: "Moscow", text: "Elena uncovers war crimes in Chechnya, Syria, Ukraine and Georgia and is answered with a desk job, an FSB inquiry, and the engineered car crash that kills her father." },
+      { year: "2019", title: "The Visitor and the Proposition", loc: "St. Petersburg & the Ural Mountains", text: "Sabrina comes to her apartment; eight hours later, blindfolded beneath the mountains, Elena meets Q and chooses to become a shadow: 'I'm in.'" },
+      { year: "2020", title: "The Ghost Is Born", loc: "Ural Command Redoubt", text: "After brutal physical, mental, technical and combat conditioning, biometric spoofing erases Elena Volkov and creates an untraceable face." },
+      { year: "2021", title: "Sokolov Exposed", loc: "Moscow", text: "A parade feed hijack broadcasts Sokolov's own voice — bribes, blocked reforms, three murders — and he is convicted and sentenced to life." },
+      { year: "2022", title: "The Committee and the Family", loc: "Unknown", text: "Elena meets the Secret Command Committee and the rest of the network: Q, the Silent Advocate, the Broken Healer, the Eye, the Voice, and the Hand." },
+      { year: "2023", title: "FSB Infiltration", loc: "Moscow, Russia", text: "Enters the Federal Security Service as Anna Sokolova and finds paid-for assassinations, ordered poisonings, and hundreds of covered-up deaths." },
+      { year: "2024", title: "The FSB Conference Strike", loc: "Moscow, Russia", text: "The Director's recorded contempt for dissidents plays to every regional agent. He is convicted of corruption, conspiracy and murder." },
+      { year: "2026", title: "The Kremlin Reckoning", loc: "Moscow, Russia", text: "At a state dinner, the President's own words and bribes are broadcast to the hall. Arrested, convicted, sentenced to life — and the Ghost walks into the Moscow night." }
+    ];
+
+
+    // STATE STORAGE
+    let readChapters = JSON.parse(localStorage.getItem('mqr_book4_read') || '[]');
+    let activeBookmarkId = localStorage.getItem('mqr_book4_bookmark') ? parseInt(localStorage.getItem('mqr_book4_bookmark')) : null;
+    let scanlinesEnabled = localStorage.getItem('mqr_book4_scanlines') === 'true';
+    let currentModalChapterId = 1;
+
+    window.onload = function() {
+      if(scanlinesEnabled) {
+        document.getElementById('mainBody').classList.add('scanlines-overlay');
+      }
+      renderQuickJumpSelect();
+      renderChapters();
+      renderDossiersAndTimeline();
+      updateProgressStats();
+    };
+
+    function toggleScanlines() {
+      scanlinesEnabled = !scanlinesEnabled;
+      localStorage.setItem('mqr_book4_scanlines', scanlinesEnabled);
+      const body = document.getElementById('mainBody');
+      if(scanlinesEnabled) body.classList.add('scanlines-overlay');
+      else body.classList.remove('scanlines-overlay');
+    }
+
+    function renderQuickJumpSelect() {
+      const select = document.getElementById('quickJumpSelect');
+      let html = '<option value="">-- Jump to Chapter --</option>';
+      chaptersData.forEach(ch => {
+        html += `<option value="${ch.id}">Ch ${ch.id}: ${ch.title.split(': ')[1]}</option>`;
+      });
+      select.innerHTML = html;
+    }
+
+    function jumpToChapter(id) {
+      if(!id) return;
+      openChapterModal(parseInt(id));
+      document.getElementById('quickJumpSelect').value = "";
+    }
+
+    function renderChapters(filteredList = null) {
+      const container = document.getElementById('chaptersContainer');
+      const list = filteredList || chaptersData;
+
+      if(list.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500 font-mono text-sm">No chapters found matching search query.</div>`;
+        return;
+      }
+
+      const partTitles = {
+        1: "Part I: The Rise (Chapters 1–5)",
+        2: "Part II: The Transformation (Chapters 6–9)",
+        3: "Part III: The Mission (Chapters 10–13)",
+        4: "Part IV: The Reckoning (Chapters 14–20)",
+        5: "Part V: The Final Reckoning (Chapters 21–25)"
+      };
+      const parts = {};
+      Object.keys(partTitles).forEach(k => { parts[partTitles[k]] = list.filter(c => c.partNum === Number(k)); });
+
+      let html = '';
+
+      for(const partTitle in parts) {
+        const partChs = parts[partTitle];
+        if(partChs.length === 0) continue;
+
+        let badgeStyle = "text-amber-300 bg-amber-950/40 border-amber-800/60";
+        if(partTitle.includes("Transformation")) badgeStyle = "text-blue-300 bg-blue-950/40 border-blue-800/60";
+        if(partTitle.includes("Mission")) badgeStyle = "text-emerald-300 bg-emerald-950/40 border-emerald-800/60";
+        if(partTitle.includes("Part IV")) badgeStyle = "text-violet-300 bg-violet-950/40 border-violet-800/60";
+        if(partTitle.includes("Part V")) badgeStyle = "text-rose-300 bg-rose-950/40 border-rose-800/60";
+
+        html += `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold border ${badgeStyle}">${partTitle.toUpperCase()}</span>
+              <span class="text-xs text-slate-500 font-mono">(${partChs.length} Chapters)</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        `;
+
+        partChs.forEach(ch => {
+          const isRead = readChapters.includes(ch.id);
+          const isBookmarked = (activeBookmarkId === ch.id);
+
+          html += `
+            <div class="glass-card rounded-2xl p-5 space-y-3 glass-card-hover transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-cyanGlow font-semibold">CHAPTER ${ch.id}</span>
+                  <div class="flex items-center gap-2">
+                    ${isBookmarked ? '<span class="text-goldAccent"><i class="fa-solid fa-bookmark"></i></span>' : ''}
+                    <button onclick="toggleReadStatus(${ch.id})" class="text-slate-500 hover:text-cyanGlow transition" title="Toggle read">
+                      <i class="fa-solid ${isRead ? 'fa-check-circle text-emerald-400' : 'fa-circle-notch'}"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <h3 onclick="openChapterModal(${ch.id})" class="text-base font-serif font-bold text-white group-hover:text-cyanGlow transition cursor-pointer leading-snug">
+                  ${ch.title}
+                </h3>
+
+                <div class="text-xs font-mono text-slate-400 flex items-center justify-between">
+                  <span><i class="fa-solid fa-location-dot text-cyanAccent"></i> ${ch.setting}</span>
+                  <span class="text-goldAccent">${ch.wordCount}</span>
+                </div>
+
+                <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed pt-1">
+                  ${ch.summary}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <button onclick="openChapterModal(${ch.id})" class="text-xs font-mono font-semibold text-cyanGlow hover:text-cyan-300 flex items-center gap-1.5 transition">
+                  Read Full Text <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+                <span class="text-[10px] font-mono ${isRead ? 'text-emerald-400' : 'text-slate-600'}">
+                  ${isRead ? 'COMPLETED' : 'UNREAD'}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderDossiersAndTimeline() {
+      // Dossiers
+      const dossiersGrid = document.getElementById('dossiersGrid');
+      let dHtml = '';
+      dossiersData.forEach(d => {
+        dHtml += `
+          <div class="glass-card rounded-2xl p-5 space-y-3 border ${d.color} glass-card-hover transition">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">${d.role}</span>
+              <i class="fa-solid ${d.icon} text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-serif font-bold text-white">${d.name}</h3>
+              <span class="text-xs font-mono text-cyanGlow block">${d.title}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          </div>
+        `;
+      });
+      dossiersGrid.innerHTML = dHtml;
+
+      // Timeline
+      const tContainer = document.getElementById('timelineContainer');
+      let tHtml = '';
+      timelineData.forEach(t => {
+        tHtml += `
+          <div class="relative space-y-1 group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-cyanAccent border-4 border-obsidian shadow-glow-cyan"></div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-cyanGlow font-bold">${t.year}</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-400">${t.loc}</span>
+            </div>
+            <h4 class="text-sm font-serif font-bold text-white group-hover:text-cyanGlow transition">${t.title}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${t.text}</p>
+          </div>
+        `;
+      });
+      tContainer.innerHTML = tHtml;
+    }
+
+    function filterPart(partNum) {
+      if(partNum === 'all') {
+        renderChapters(chaptersData);
+        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const filtered = chaptersData.filter(c => c.partNum === partNum);
+      renderChapters(filtered);
+      document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if(!query) {
+        renderChapters(chaptersData);
+        return;
+      }
+      const filtered = chaptersData.filter(ch => 
+        ch.title.toLowerCase().includes(query) ||
+        ch.summary.toLowerCase().includes(query) ||
+        ch.keyScene.toLowerCase().includes(query) ||
+        ch.setting.toLowerCase().includes(query) ||
+        ch.text.toLowerCase().includes(query)
+      );
+      renderChapters(filtered);
+    }
+
+    function toggleReadStatus(id) {
+      if(readChapters.includes(id)) {
+        readChapters = readChapters.filter(x => x !== id);
+      } else {
+        readChapters.push(id);
+      }
+      localStorage.setItem('mqr_book4_read', JSON.stringify(readChapters));
+      renderChapters();
+      updateProgressStats();
+      updateModalReadBtnState();
+    }
+
+    function updateProgressStats() {
+      const pct = Math.round((readChapters.length / 25) * 100);
+      document.getElementById('heroProgressPct').innerText = `${pct}% Read (${readChapters.length}/25)`;
+      const bkmkText = activeBookmarkId ? `Ch ${activeBookmarkId}` : 'None';
+      document.getElementById('heroBookmark').innerText = bkmkText;
+    }
+
+    function openChapterModal(id) {
+      currentModalChapterId = id;
+      const ch = chaptersData.find(c => c.id === id);
+      if(!ch) return;
+
+      document.getElementById('modalPartTag').innerText = ch.partTitle;
+      document.getElementById('modalChapterTitle').innerText = ch.title;
+      document.getElementById('modalChNum').innerText = `Chapter ${ch.id} of 25`;
+      document.getElementById('modalChSetting').innerText = ch.setting;
+      document.getElementById('modalChWords').innerText = ch.wordCount;
+      document.getElementById('modalSummaryText').innerText = ch.summary;
+      document.getElementById('modalKeySceneText').innerText = ch.keyScene;
+      document.getElementById('modalStoryText').innerText = ch.text;
+
+      document.getElementById('modalPrevBtn').disabled = (id === 1);
+      document.getElementById('modalNextBtn').disabled = (id === 25);
+
+      updateModalReadBtnState();
+      updateModalBookmarkState();
+
+      document.getElementById('readerModal').classList.remove('hidden');
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+    }
+
+    function navigateModalChapter(delta) {
+      const nextId = currentModalChapterId + delta;
+      if(nextId >= 1 && nextId <= 25) {
+        openChapterModal(nextId);
+      }
+    }
+
+    function toggleModalReadStatus() {
+      toggleReadStatus(currentModalChapterId);
+    }
+
+    function toggleModalBookmark() {
+      if(activeBookmarkId === currentModalChapterId) {
+        activeBookmarkId = null;
+        localStorage.removeItem('mqr_book4_bookmark');
+      } else {
+        activeBookmarkId = currentModalChapterId;
+        localStorage.setItem('mqr_book4_bookmark', currentModalChapterId);
+      }
+      updateModalBookmarkState();
+      updateProgressStats();
+      renderChapters();
+    }
+
+    function updateModalBookmarkState() {
+      const isBookmarked = (activeBookmarkId === currentModalChapterId);
+      document.getElementById('bookmarkText').innerText = isBookmarked ? 'Bookmarked' : 'Bookmark';
+    }
+
+    function updateModalReadBtnState() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const txt = document.getElementById('modalReadBtnText');
+      const isRead = readChapters.includes(currentModalChapterId);
+
+      if(isRead) {
+        btn.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold transition flex items-center gap-1.5 shadow-sm";
+        txt.innerText = "Completed";
+      } else {
+        btn.className = "px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5";
+        txt.innerText = "Mark Complete";
+      }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if(size === 'sm') body.className = "leading-relaxed text-xs font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'md') body.className = "leading-relaxed text-sm sm:text-base font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'lg') body.className = "leading-relaxed text-base sm:text-lg font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+    }
+
+    // TERMINAL LOGIC
+    function printTerminalMsg(msg, style = "normal") {
+      const log = document.getElementById('terminalOutputLog');
+      const div = document.createElement('div');
+      
+      if(style === 'gold') div.className = "text-goldGlow font-semibold";
+      else if(style === 'crimson') div.className = "text-red-400 font-semibold";
+      else if(style === 'cyan') div.className = "text-cyanGlow font-semibold";
+      else if(style === 'amber') div.className = "text-amber-400";
+      else div.className = "text-slate-400";
+
+      div.innerText = `> ${msg}`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function runTerminalAction(type) {
+      if(type === 'EXPOSE_SOKOLOV') {
+        printTerminalMsg("[INITIATING] Broadcast uplink to General Sokolov's military parade feed...", "crimson");
+        setTimeout(() => {
+          printTerminalMsg("[BROADCAST] Exposing $100M in oligarch bribes, blocked reforms, and three ordered murders.", "gold");
+          printTerminalMsg("[STATUS] System justice executed. General Mikhail Sokolov cornered.", "cyan");
+        }, 500);
+      }
+      else if(type === 'BIOSPOOF') {
+        printTerminalMsg("[ACTIVATING] Sub-dermal neural interface & biometric spoofing...", "cyan");
+        setTimeout(() => {
+          printTerminalMsg("[SUCCESS] Capt. Elena Volkov's commission and records erased from FSB servers. The Ghost is untraceable.", "gold");
+        }, 500);
+      }
+      else if(type === 'AUDIT_LOGS') {
+        printTerminalMsg("[DOWNLOADING] Spetsnaz operation logs & Chechnya casualty records...", "amber");
+        setTimeout(() => {
+          printTerminalMsg("[ANALYSIS] Village burnings, interrogation tapes, and suppressed whistleblower files verified.", "cyan");
+        }, 500);
+      }
+      else if(type === 'EXTRACT_STATUS') {
+        printTerminalMsg("[PINGING] Ural command redoubt sanctuary uplink...", "violet");
+        setTimeout(() => {
+          printTerminalMsg("[STATUS] Secure. Offline quantum encryption stable. All nodes synchronized.", "cyan");
+        }, 500);
+      }
+      else if(type === 'ROSTER') {
+        printTerminalMsg("[QUERYING] Mass-Q-Rade Global Core Network...", "cyan");
+        printTerminalMsg("• [GHOST] Agent Four (Capt. Elena Volkov) — Ural Redoubt", "gold");
+        printTerminalMsg("• [Q] Agent Zero (Rahul Banerjee) — Ural Sanctuary", "amber");
+        printTerminalMsg("• [SABRINA] Vanguard Handler & Extraction Lead", "cyan");
+      }
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const cmd = input.value.trim().toLowerCase();
+      if(!cmd) return;
+
+      printTerminalMsg(`CMD: ${cmd}`, "normal");
+
+      if(cmd === 'help') {
+        printTerminalMsg("Available commands: expose, spoof, audit, status, roster, clear", "cyan");
+      } else if(cmd.includes('expose') || cmd.includes('sokolov')) {
+        runTerminalAction('EXPOSE_SOKOLOV');
+      } else if(cmd.includes('spoof') || cmd.includes('bio')) {
+        runTerminalAction('BIOSPOOF');
+      } else if(cmd.includes('audit')) {
+        runTerminalAction('AUDIT_LOGS');
+      } else if(cmd.includes('status') || cmd.includes('ping')) {
+        runTerminalAction('EXTRACT_STATUS');
+      } else if(cmd.includes('roster') || cmd.includes('agents')) {
+        runTerminalAction('ROSTER');
+      } else if(cmd.includes('clear')) {
+        document.getElementById('terminalOutputLog').innerHTML = `
+          <div class="text-slate-500">[CONSOLE REBOOT] CLI terminal ready.</div>
+        `;
+      } else {
+        printTerminalMsg(`Unknown command '${cmd}'. Type 'help' for options.`, "crimson");
+      }
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
