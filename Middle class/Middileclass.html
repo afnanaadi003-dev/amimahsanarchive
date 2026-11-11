@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blossom">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIDDLE CLASS — Reed Books</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bark: '#0a0806',
+            moss: '#0d1410',
+            parchment: '#efe8d8'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            prose: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --accent: #f2a8c4;
+      --accent-soft: #ffe4ef;
+      --accent-rgb: 242, 168, 196;
+      --bg: #0a0709;
+      --panel: rgba(19, 13, 17, 0.78);
+      --leaf-a: #f2a8c4;
+      --leaf-b: #cfe8a8;
+      --leaf-c: #ffd9a0;
+    }
+
+    html[data-theme="meadow"] {
+      --accent: #a8d98a;
+      --accent-soft: #e9f7cf;
+      --accent-rgb: 168, 217, 138;
+      --bg: #070b07;
+      --panel: rgba(13, 20, 13, 0.78);
+      --leaf-a: #a8d98a;
+      --leaf-b: #d8efb0;
+      --leaf-c: #f5d98c;
+    }
+
+    html[data-theme="monsoon"] {
+      --accent: #7fd6c9;
+      --accent-soft: #d8fff8;
+      --accent-rgb: 127, 214, 201;
+      --bg: #05090a;
+      --panel: rgba(9, 18, 20, 0.78);
+      --leaf-a: #7fd6c9;
+      --leaf-b: #b9e6c8;
+      --leaf-c: #e7e2a8;
+    }
+
+    html[data-theme="marigold"] {
+      --accent: #f0bc5e;
+      --accent-soft: #ffe9b8;
+      --accent-rgb: 240, 188, 94;
+      --bg: #0a0804;
+      --panel: rgba(20, 15, 8, 0.78);
+      --leaf-a: #f0bc5e;
+      --leaf-b: #d9c78a;
+      --leaf-c: #f7e0a8;
+    }
+
+    html[data-theme="twilight"] {
+      --accent: #b6a2f0;
+      --accent-soft: #e7ddff;
+      --accent-rgb: 182, 162, 240;
+      --bg: #07060d;
+      --panel: rgba(14, 12, 24, 0.78);
+      --leaf-a: #b6a2f0;
+      --leaf-b: #a8d9c0;
+      --leaf-c: #f0c9b0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: #ddd9d1;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse 65% 45% at 20% 0%, rgba(var(--accent-rgb), 0.10), transparent 62%),
+        radial-gradient(ellipse 55% 40% at 85% 25%, rgba(var(--accent-rgb), 0.06), transparent 68%),
+        radial-gradient(ellipse 90% 55% at 50% 115%, rgba(140, 200, 160, 0.05), transparent 70%);
+      background-attachment: fixed;
+      transition: background-color 0.6s ease;
+    }
+
+    #leaf-canvas {
+      position: fixed; inset: 0; width: 100vw; height: 100vh;
+      z-index: 0; pointer-events: none;
+    }
+    header, main, footer { position: relative; z-index: 10; }
+
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #2b2a24; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    .accent { color: var(--accent); }
+    .accent-soft { color: var(--accent-soft); }
+    .accent-border { border-color: rgba(var(--accent-rgb), 0.35); }
+
+    .panel {
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .panel-accent { border-color: rgba(var(--accent-rgb), 0.3); }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #07100a;
+      font-weight: 700;
+      transition: filter 0.25s ease, transform 0.25s ease;
+    }
+    .btn-accent:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+    .chip {
+      background: rgba(var(--accent-rgb), 0.09);
+      border: 1px solid rgba(var(--accent-rgb), 0.3);
+      color: var(--accent-soft);
+    }
+
+    .grad-text {
+      background: linear-gradient(120deg, #f4f1e8 0%, var(--accent-soft) 45%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ---- Theme swatches ---- */
+    .theme-btn {
+      width: 30px; height: 30px; border-radius: 999px;
+      border: 2px solid transparent;
+      outline: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+    .theme-btn:hover { transform: scale(1.12); }
+    .theme-btn[aria-pressed="true"] { border-color: #fff; transform: scale(1.12); }
+    .theme-btn[data-theme="blossom"] { background: linear-gradient(135deg, #f2a8c4, #7c3550); }
+    .theme-btn[data-theme="meadow"] { background: linear-gradient(135deg, #a8d98a, #2f5a2c); }
+    .theme-btn[data-theme="monsoon"] { background: linear-gradient(135deg, #7fd6c9, #1d4a48); }
+    .theme-btn[data-theme="marigold"] { background: linear-gradient(135deg, #f0bc5e, #6e4813); }
+    .theme-btn[data-theme="twilight"] { background: linear-gradient(135deg, #b6a2f0, #3b2d66); }
+
+    /* ---- Cover: spring night, leaf, fireflies ---- */
+    .cover-stage { display: flex; justify-content: center; perspective: 1200px; padding: 4px 0; position: relative; }
+    .cover-stage::before {
+      content: ""; position: absolute; inset: -6% -10%;
+      background: radial-gradient(ellipse at 50% 40%, rgba(var(--accent-rgb), 0.24), transparent 65%);
+      filter: blur(22px);
+    }
+    .cover-art {
+      position: relative; width: min(300px, 72vw); aspect-ratio: 3 / 4;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(var(--accent-rgb), 0.5);
+      background:
+        radial-gradient(circle at 72% 19%, rgba(var(--accent-rgb), 0.32) 0 1.5%, transparent 2.2%),
+        radial-gradient(circle at 68% 21%, rgba(var(--accent-rgb), 0.55) 0 3.4%, transparent 4.4%),
+        radial-gradient(ellipse 90% 60% at 25% 105%, rgba(50, 92, 62, 0.55), transparent 70%),
+        radial-gradient(ellipse 70% 45% at 80% 100%, rgba(28, 58, 44, 0.6), transparent 72%),
+        linear-gradient(165deg, #0c1712 0%, #070d0a 55%, #040706 100%);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 22px 55px -16px rgba(0, 0, 0, 0.95),
+        0 0 55px rgba(var(--accent-rgb), 0.22);
+      transform: rotateX(4deg) rotateZ(-1deg);
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+      animation: coverFloat 9s ease-in-out infinite;
+    }
+    .cover-art:hover {
+      transform: rotateX(0) rotateZ(0) translateY(-7px) scale(1.03);
+      box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), 0 30px 65px -14px rgba(0,0,0,.96), 0 0 70px rgba(var(--accent-rgb), 0.4);
+    }
+    .cover-photo { position: absolute; inset: 0; z-index: 5; width: 100%; height: 100%; object-fit: cover; }
+    .cover-art::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.10) 47%, transparent 58%);
+      transform: translateX(-130%); animation: coverSheen 9s ease-in-out infinite;
+    }
+    @keyframes coverFloat { 0%,100% { transform: rotateX(4deg) rotateZ(-1deg) translateY(0); } 50% { transform: rotateX(4deg) rotateZ(-1deg) translateY(-9px); } }
+    @keyframes coverSheen { 0%, 60% { transform: translateX(-130%); } 90%,100% { transform: translateX(130%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .cover-art, .cover-art::after { animation: none !important; }
+      .cover-art::after { display: none; }
+    }
+
+    .cover-moon {
+      position: absolute; top: 7%; left: 12%;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fffaf0, #e8efc9 60%, rgba(210, 230, 190, 0.4));
+      box-shadow: 0 0 40px 12px rgba(var(--accent-rgb), 0.22);
+      opacity: 0.9;
+    }
+    .cover-hill {
+      position: absolute; left: -12%; right: -12%; bottom: 0; height: 34%;
+      background: radial-gradient(ellipse 70% 100% at 30% 100%, rgba(44, 82, 56, 0.95), transparent 70%),
+                  radial-gradient(ellipse 65% 100% at 80% 100%, rgba(26, 52, 40, 0.95), transparent 72%);
+    }
+    .cover-stars {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(var(--accent-rgb),.8) 0 1px, transparent 1.5px);
+      background-size: 63px 71px, 97px 89px;
+      background-position: 8px 12px, 40px 25px;
+      opacity: 0.5;
+    }
+    .cover-title {
+      position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+      text-align: center; padding: 0 18px;
+    }
+    .cover-title h1 {
+      font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 0.02em;
+      font-size: clamp(1.6rem, 7vw, 2.3rem); line-height: 1.05; color: #f6f2e6;
+      text-shadow: 0 2px 22px rgba(0,0,0,.75);
+    }
+    .cover-title .rule { width: 44px; height: 1px; background: rgba(var(--accent-rgb), .8); margin: 12px auto; }
+    .cover-publisher { z-index: 6; padding-top: 22px; background: linear-gradient(180deg, transparent, rgba(0,0,0,.75));
+      position: absolute; bottom: 16px; left: 0; right: 0; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.32em;
+      color: rgba(246, 242, 230, 0.72); text-transform: uppercase;
+    }
+    .cover-leaf {
+      position: absolute; color: var(--accent); opacity: .55;
+      font-size: 14px; animation: leafDrift 8s ease-in-out infinite;
+    }
+    .cover-leaf.l2 { color: var(--leaf-b); font-size: 11px; animation-delay: -2.5s; }
+    .cover-leaf.l3 { color: var(--leaf-c); font-size: 9px; animation-delay: -5s; }
+    @keyframes leafDrift {
+      0%,100% { transform: translate(0,0) rotate(0deg); }
+      50% { transform: translate(7px, 14px) rotate(24deg); }
+    }
+
+    /* ---- Reading nook illustration ---- */
+    .nook {
+      position: relative; overflow: hidden; border-radius: 20px;
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(var(--accent-rgb), 0.16), transparent 55%),
+        linear-gradient(170deg, #0d1712 0%, #080d0a 65%, #050806 100%);
+      border: 1px solid rgba(var(--accent-rgb), 0.28);
+      min-height: 320px;
+    }
+    .nook-window {
+      position: absolute; top: 34px; left: 50%; transform: translateX(-50%);
+      width: 150px; height: 190px; border-radius: 75px 75px 6px 6px;
+      background: linear-gradient(180deg, #12211c, #0a1512 70%, #07100c);
+      border: 3px solid rgba(120, 100, 76, 0.5);
+      box-shadow: inset 0 0 40px rgba(0,0,0,.7), 0 0 45px rgba(var(--accent-rgb), .12);
+    }
+    .nook-moon {
+      position: absolute; top: 18px; right: 26px; width: 34px; height: 34px; border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #fffbe9, #e6e9c6);
+      box-shadow: 0 0 26px 8px rgba(var(--accent-rgb), .25);
+    }
+    .nook-stars {
+      position: absolute; inset: 0; border-radius: 75px 75px 6px 6px;
+      background-image: radial-gradient(circle, rgba(255,255,255,.85) 0 1px, transparent 1.4px);
+      background-size: 29px 33px; opacity: .55;
+    }
+    .nook-branch {
+      position: absolute; top: 0; left: -10px; width: 120px; height: 120px;
+      border-left: 2px solid rgba(96, 74, 52, 0.7);
+      border-bottom: 2px solid rgba(96, 74, 52, 0.7);
+      border-bottom-left-radius: 60px; opacity: .8;
+    }
+    .nook-fly {
+      position: absolute; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent-soft);
+      box-shadow: 0 0 12px 3px rgba(var(--accent-rgb), 0.8);
+      animation: flyGlow 6s ease-in-out infinite;
+    }
+    @keyframes flyGlow {
+      0%,100% { opacity: .25; transform: translate(0,0); }
+      50% { opacity: 1; transform: translate(14px,-16px); }
+    }
+    .nook-desk {
+      position: absolute; left: 8%; right: 8%; bottom: 42px; height: 10px; border-radius: 3px;
+      background: linear-gradient(90deg, #2a1d12, #5a422a, #2a1d12);
+      box-shadow: 0 10px 20px rgba(0,0,0,.6);
+    }
+    .nook-book {
+      position: absolute; left: 50%; bottom: 52px; transform: translateX(-50%);
+      width: 108px; height: 24px; perspective: 300px;
+    }
+    .nook-book span {
+      position: absolute; top: 0; width: 54px; height: 24px;
+      background: linear-gradient(180deg, #f3ead6, #d9cbb2);
+      border: 1px solid rgba(90, 66, 42, .6);
+      box-shadow: 0 6px 10px rgba(0,0,0,.45);
+    }
+    .nook-book span:first-child { left: 0; transform: rotateY(18deg); transform-origin: right; }
+    .nook-book span:last-child { right: 0; transform: rotateY(-18deg); transform-origin: left; }
+    .nook-lamp {
+      position: absolute; right: 14%; bottom: 52px; width: 34px; height: 62px;
+    }
+    .nook-lamp::before {
+      content: ""; position: absolute; bottom: 0; left: 15px; width: 4px; height: 36px;
+      background: linear-gradient(180deg, #8a6a3e, #4a3520);
+    }
+    .nook-lamp::after {
+      content: ""; position: absolute; top: 0; left: 3px; width: 28px; height: 26px;
+      background: radial-gradient(ellipse at 50% 60%, #fff2c9, var(--accent) 70%, transparent 72%);
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 0 30px 10px rgba(var(--accent-rgb), .45);
+    }
+    .nook-glow {
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+      width: 260px; height: 130px;
+      background: radial-gradient(ellipse at 50% 80%, rgba(var(--accent-rgb), .18), transparent 70%);
+    }
+
+    /* ---- Reader modal prose ---- */
+    #modalStoryText { font-size: 1.06rem; line-height: 1.95; }
+    #modalStoryText[data-size="sm"] { font-size: 0.97rem; }
+    #modalStoryText[data-size="lg"] { font-size: 1.19rem; }
+    #modalStoryText p { margin-bottom: 1.1em; text-align: justify; }
+    #modalStoryText p:first-child::first-letter {
+      float: left; font-family: 'Cinzel', serif; font-size: 3.2em; line-height: .82;
+      padding: .06em .12em 0 0; color: var(--accent-soft);
+    }
+
+    input:focus, select:focus { border-color: var(--accent) !important; outline: none; }
+  </style>
+</head>
+<body class="min-h-screen relative flex flex-col antialiased">
+
+  <canvas id="leaf-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur-md border-b border-white/5 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-3">
+
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center border" style="border-color: rgba(var(--accent-rgb), .4); background: rgba(var(--accent-rgb), .08);">
+          <i class="fa-solid fa-seedling" style="color: var(--accent);"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest uppercase font-bold" style="color: var(--accent);">REED BOOKS</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded chip">READER</span>
+          </div>
+          <span class="text-base font-serif font-bold text-stone-100 tracking-tight">Middle Class</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <a href="#hero" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">Book Card</a>
+        <a href="#reader" class="px-3 py-1.5 rounded-lg chip transition">7 Chapters</a>
+        <a href="#nook" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">Reading Place</a>
+        <a href="#reviews" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">Reviews</a>
+        <a href="#music" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">Flute</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleFlute()" class="px-3 py-1.5 text-xs font-mono rounded-lg bg-white/5 hover:bg-white/10 text-stone-300 border border-white/10 transition flex items-center gap-1.5" title="Play the flute score">
+          <i id="fluteIcon" class="fa-solid fa-volume-xmark"></i>
+          <span id="fluteLabel">Flute</span>
+        </button>
+        <button onclick="openChapterModal(1)" class="px-3.5 py-1.5 text-xs font-mono font-semibold rounded-lg btn-accent flex items-center gap-1.5">
+          <i class="fa-solid fa-leaf"></i> Read
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- BOOK CARD / HERO -->
+    <section id="hero" class="scroll-mt-24 relative rounded-3xl overflow-hidden panel panel-accent p-6 sm:p-10 lg:p-12 shadow-2xl">
+      <div class="absolute -top-32 -right-24 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background: rgba(var(--accent-rgb), .10);"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- COVER -->
+        <div class="lg:col-span-5">
+          <div class="cover-stage">
+            <div class="cover-art" role="img" aria-label="Middle Class book cover — spring night, moon, leaves and fireflies, by Amim Ahsan, Reed Books">
+              <img src="../Mass-Q-Rade-Book-Covers/Middle%20class.png" alt="Middle Class cover — a candlelit dinner on a moonlit beach" class="cover-photo" onerror="this.remove()">
+              <div class="cover-stars"></div>
+              <div class="cover-moon"></div>
+              <div class="cover-hill"></div>
+              <i class="fa-solid fa-leaf cover-leaf" style="left:16%; bottom:26%;"></i>
+              <i class="fa-solid fa-leaf cover-leaf l2" style="left:82%; bottom:34%;"></i>
+              <i class="fa-solid fa-leaf cover-leaf l3" style="left:70%; bottom:18%;"></i>
+              <div class="cover-title">
+                <span class="block text-[9px] font-mono tracking-[0.35em] uppercase" style="color: var(--accent);">A Novel</span>
+                <div class="rule"></div>
+                <h1>Middle<br>Class</h1>
+                <div class="rule"></div>
+                <span class="block text-[10px] font-mono tracking-[0.3em] uppercase text-stone-300">Amim Ahsan</span>
+              </div>
+              <div class="cover-publisher">Reed Books</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAILS -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full chip text-xs font-mono">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--accent);"></span>
+            <span>Reed Books &middot; Contemporary Fiction</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold grad-text tracking-tight">Middle Class</h1>
+            <h2 class="text-sm sm:text-base font-mono tracking-[0.22em] uppercase font-semibold text-stone-400">
+              Love, Rain &amp; Second Marriages
+            </h2>
+          </div>
+
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+            Nirmal has a corporate job, a father who cannot sleep, and a wedding to attend where four old friends meet under one bright pandal.
+            Then the rain comes, and Nasha asks him to get wet with her. Over one spring — a blue saree, a rented flat, a highway bus —
+            everyone in this story is trying to be happy without quite knowing how to afford it.
+          </p>
+
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono pt-1">
+            <div class="flex justify-between gap-2 border-b border-white/10 pb-1.5"><dt class="text-stone-500">Author</dt><dd class="text-stone-200">Amimul Ahsan</dd></div>
+            <div class="flex justify-between gap-2 border-b border-white/10 pb-1.5"><dt class="text-stone-500">Publisher</dt><dd class="accent">Reed Books</dd></div>
+            <div class="flex justify-between gap-2 border-b border-white/10 pb-1.5"><dt class="text-stone-500">Genre</dt><dd class="text-stone-200">Literary Fiction</dd></div>
+            <div class="flex justify-between gap-2 border-b border-white/10 pb-1.5"><dt class="text-stone-500">Setting</dt><dd class="text-stone-200">Dhaka &amp; Mymensingh</dd></div>
+          </dl>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 font-mono">
+            <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+              <div class="text-[10px] text-stone-400 uppercase">Chapters</div>
+              <div class="text-base font-bold accent-soft">7</div>
+            </div>
+            <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+              <div class="text-[10px] text-stone-400 uppercase">Length</div>
+              <div id="heroWordTotal" class="text-base font-bold text-stone-200">&mdash;</div>
+            </div>
+            <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+              <div class="text-[10px] text-stone-400 uppercase">Read</div>
+              <div id="heroProgressPct" class="text-base font-bold text-emerald-400">0% Read</div>
+            </div>
+            <div class="p-3 rounded-xl bg-black/30 border border-white/10">
+              <div class="text-[10px] text-stone-400 uppercase">Bookmark</div>
+              <div id="heroBookmark" class="text-base font-bold text-stone-200">None</div>
+            </div>
+          </div>
+
+          <div class="pt-1 flex flex-wrap items-center gap-3">
+            <button onclick="openChapterModal(1)" class="px-7 py-3.5 rounded-xl btn-accent text-sm flex items-center gap-2.5">
+              <i class="fa-solid fa-book-open"></i> Read the Book
+            </button>
+            <a href="#reviews" class="px-5 py-3.5 rounded-xl border border-white/15 hover:border-white/30 text-stone-200 text-sm font-medium transition flex items-center gap-2">
+              <i class="fa-solid fa-feather-pointed accent"></i> Read Review / Details
+            </a>
+          </div>
+          <div class="mt-1 flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] uppercase text-stone-400">
+            <span class="h-px w-6" style="background: rgba(var(--accent-rgb), .6);"></span>
+            <span>Reed Books</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THEME SWITCHER -->
+    <section class="panel rounded-2xl px-5 sm:px-7 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left">
+        <span class="block text-[10px] font-mono uppercase tracking-[0.28em] accent">Spring Palettes</span>
+        <p class="text-xs text-stone-400 mt-1">Five colours for the season — the page, the leaves and the light all change with it.</p>
+      </div>
+      <div class="flex items-center gap-3" id="themeSwatches">
+        <button class="theme-btn" data-theme="blossom" aria-pressed="true" title="Blossom" aria-label="Blossom theme"></button>
+        <button class="theme-btn" data-theme="meadow" aria-pressed="false" title="Meadow" aria-label="Meadow theme"></button>
+        <button class="theme-btn" data-theme="monsoon" aria-pressed="false" title="Monsoon" aria-label="Monsoon theme"></button>
+        <button class="theme-btn" data-theme="marigold" aria-pressed="false" title="Marigold" aria-label="Marigold theme"></button>
+        <button class="theme-btn" data-theme="twilight" aria-pressed="false" title="Twilight" aria-label="Twilight theme"></button>
+      </div>
+    </section>
+
+    <!-- READING PLACE -->
+    <section id="nook" class="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <div class="lg:col-span-6 nook">
+        <div class="nook-window">
+          <div class="nook-stars"></div>
+          <div class="nook-moon"></div>
+        </div>
+        <div class="nook-branch"></div>
+        <div class="nook-glow"></div>
+        <div class="nook-fly" style="left:22%; top:34%;"></div>
+        <div class="nook-fly" style="left:74%; top:48%; animation-delay:-2s;"></div>
+        <div class="nook-fly" style="left:60%; top:26%; animation-delay:-4s;"></div>
+        <div class="nook-fly" style="left:34%; top:62%; animation-delay:-3s;"></div>
+        <div class="nook-desk"></div>
+        <div class="nook-book"><span></span><span></span></div>
+        <div class="nook-lamp"></div>
+        <div class="absolute bottom-3 left-0 right-0 text-center font-mono text-[10px] tracking-[0.28em] uppercase text-stone-400">
+          A reading place &middot; window, lamp, one book
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 panel panel-accent rounded-2xl p-6 sm:p-8 space-y-4 flex flex-col justify-center">
+        <span class="text-[10px] font-mono uppercase tracking-[0.28em] accent">The Reading Place</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-100 leading-snug">A window, a lamp, and the spring outside it</h2>
+        <p class="text-sm text-stone-300 leading-relaxed">
+          <em class="accent-soft not-italic">Middle Class</em> is a book for one quiet evening. Sit where the light is low, let the window stay open a little,
+          and read it in order — Dhaka in winter, a wedding in spring, then the long bus north. Each chapter is short enough for one sitting and long enough to leave a room behind.
+        </p>
+        <blockquote class="border-l-2 pl-4 py-1 text-prose text-lg italic text-stone-300 leading-relaxed" style="border-color: rgba(var(--accent-rgb), .55);">
+          &ldquo;A hundred and one candles on the sand, and the wind kept putting them out. We kept lighting them.&rdquo;
+        </blockquote>
+        <p class="text-xs text-stone-400 font-mono">Chapter One &middot; The Wedding of Words</p>
+        <div class="flex flex-wrap gap-3 pt-1">
+          <button onclick="openChapterModal(1)" class="px-5 py-2.5 rounded-xl btn-accent text-xs font-mono font-bold flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Begin Reading
+          </button>
+          <button onclick="toggleFlute()" class="px-5 py-2.5 rounded-xl border border-white/15 hover:border-white/30 text-stone-200 text-xs font-mono transition flex items-center gap-2">
+            <i class="fa-solid fa-music accent"></i> Play Flute
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (REWRITE) -->
+    <section id="reviews" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pb-4 border-b border-white/10">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-stone-100 flex items-center gap-2.5">
+            <i class="fa-solid fa-feather-pointed accent"></i> Reviews <span class="text-sm font-mono font-normal text-stone-500">(Rewrite)</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">Three rewritten notes on the novel — its weather, its women, and the class it is named after.</p>
+        </div>
+        <span class="text-[10px] font-mono tracking-widest uppercase text-stone-500">Reed Books review desk</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="panel rounded-2xl p-5 space-y-3 border-l-2" style="border-left-color: rgba(var(--accent-rgb), .7);">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest accent-soft">On the weather</span>
+            <span class="text-[11px] tracking-widest accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Rain does the work of a whole plot here. It begins as candlelight on a beach and ends as a downpour on a wedding pandal,
+            and every important sentence in between is said while somebody is wet, or about to be. Ahsan writes weather as if it were a relative —
+            familiar, intrusive, impossible to ask to leave.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">A novel that smells of wet earth and old houses.</p>
+        </article>
+
+        <article class="panel rounded-2xl p-5 space-y-3 border-l-2" style="border-left-color: rgba(var(--accent-rgb), .45);">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest accent-soft">On its women</span>
+            <span class="text-[11px] tracking-widest accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Netra gives her body and withholds her love; Nasha gives her smiles and withholds her plans; the new mother gives service and then withdraws it.
+            None of them are prizes, and none of them are villains. The book's quiet achievement is that its saddest line — <em>I will never be happy</em> —
+            is spoken by the woman everyone in the room is looking at.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">Beauty as labour, and the cost of being looked at.</p>
+        </article>
+
+        <article class="panel rounded-2xl p-5 space-y-3 border-l-2" style="border-left-color: rgba(255,255,255,.25);">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-stone-300">On the class</span>
+            <span class="text-[11px] tracking-widest accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Nobody in this novel is poor and nobody is free. There is a flat, a provident fund, a second-hand car and a job that pays fifty thousand;
+            there is also a father dialling strangers from a notebook called <em>Saved Beloved</em>. The middle class of the title is not an income bracket
+            but a waiting room — everyone politely waiting for a life that has already been spent.
+          </p>
+          <p class="text-[11px] font-mono text-stone-500">A comedy of manners with the manners taken out.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHAPTER DIRECTORY -->
+    <section id="reader" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-4 border-b border-white/10">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-stone-100 flex items-center gap-2.5">
+            <i class="fa-solid fa-book accent"></i> Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">Seven chapters in four parts. Open any one in the reader.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search chapters, people, places..." class="w-full bg-black/40 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-stone-200 placeholder-stone-500 transition">
+          </div>
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-black/40 border border-white/10 text-stone-300 text-xs rounded-xl py-2 px-3 font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="partFilters" class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="setPart('all')" data-part="all" class="part-btn px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">All Parts</button>
+        <button onclick="setPart(1)" data-part="1" class="part-btn px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 transition">I &middot; The Wedding</button>
+        <button onclick="setPart(2)" data-part="2" class="part-btn px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 transition">II &middot; The City Between</button>
+        <button onclick="setPart(3)" data-part="3" class="part-btn px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 transition">III &middot; Fathers</button>
+        <button onclick="setPart(4)" data-part="4" class="part-btn px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 transition">IV &middot; Fireflies</button>
+      </div>
+
+      <div id="chaptersContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      <p id="noResults" class="hidden text-center text-sm text-stone-500 font-mono py-8">No chapter matches that search.</p>
+    </section>
+
+    <!-- FLUTE MUSIC -->
+    <section id="music" class="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 panel rounded-2xl p-6 sm:p-8 space-y-5">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-[0.28em] accent">Five Flute Pieces</span>
+          <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-100 mt-1">A score for the reading place</h2>
+          <p class="text-sm text-stone-400 mt-2 leading-relaxed">Each piece is a short, repeating bamboo-flute phrase — picked for a different hour of the same spring day.</p>
+        </div>
+
+        <div id="trackList" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <button class="track-btn text-left p-3 rounded-xl border border-white/10 bg-black/25 hover:border-white/25 transition" data-track="0">
+            <span class="block text-xs font-semibold text-stone-100"><i class="fa-solid fa-music accent mr-2"></i>Spring Dawn</span>
+            <span class="block text-[10px] font-mono text-stone-500 mt-0.5">Bright, waking, D major</span>
+          </button>
+          <button class="track-btn text-left p-3 rounded-xl border border-white/10 bg-black/25 hover:border-white/25 transition" data-track="1">
+            <span class="block text-xs font-semibold text-stone-100"><i class="fa-solid fa-music accent mr-2"></i>Bamboo Grove</span>
+            <span class="block text-[10px] font-mono text-stone-500 mt-0.5">Low, patient, G major</span>
+          </button>
+          <button class="track-btn text-left p-3 rounded-xl border border-white/10 bg-black/25 hover:border-white/25 transition" data-track="2">
+            <span class="block text-xs font-semibold text-stone-100"><i class="fa-solid fa-music accent mr-2"></i>River at Dusk</span>
+            <span class="block text-[10px] font-mono text-stone-500 mt-0.5">Soft, unhurried, A minor</span>
+          </button>
+          <button class="track-btn text-left p-3 rounded-xl border border-white/10 bg-black/25 hover:border-white/25 transition" data-track="3">
+            <span class="block text-xs font-semibold text-stone-100"><i class="fa-solid fa-music accent mr-2"></i>Rain on Leaves</span>
+            <span class="block text-[10px] font-mono text-stone-500 mt-0.5">Quick, airy, E minor</span>
+          </button>
+          <button class="track-btn text-left p-3 rounded-xl border border-white/10 bg-black/25 hover:border-white/25 transition sm:col-span-2" data-track="4">
+            <span class="block text-xs font-semibold text-stone-100"><i class="fa-solid fa-music accent mr-2"></i>Night Fireflies</span>
+            <span class="block text-[10px] font-mono text-stone-500 mt-0.5">Sparse, high, C major — for the last chapter</span>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <button onclick="toggleFlute()" class="px-5 py-2.5 rounded-xl btn-accent text-xs font-mono font-bold flex items-center gap-2">
+            <i id="flutePlayIcon" class="fa-solid fa-play"></i> <span id="flutePlayLabel">Play</span>
+          </button>
+          <span class="text-[11px] font-mono text-stone-500">Now playing: <span id="nowPlaying" class="accent-soft">nothing yet</span></span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 panel rounded-2xl p-6 sm:p-8 space-y-4 flex flex-col justify-center">
+        <h2 class="text-lg font-serif font-bold text-stone-100 flex items-center gap-2">
+          <i class="fa-solid fa-leaf accent"></i> About the book
+        </h2>
+        <p class="text-sm text-stone-300 leading-relaxed">
+          <em class="accent-soft not-italic">Middle Class</em> was written in Dhaka between winters — a first novel about a city where everybody has a job,
+          nobody has enough, and love arrives either too early or on a bus that is already late.
+        </p>
+        <dl class="grid grid-cols-2 gap-3 text-[11px] font-mono pt-1">
+          <div><dt class="text-stone-500 uppercase text-[9px] tracking-wider">Publisher</dt><dd class="text-stone-200 mt-0.5">Reed Books</dd></div>
+          <div><dt class="text-stone-500 uppercase text-[9px] tracking-wider">Language</dt><dd class="text-stone-200 mt-0.5">English</dd></div>
+          <div><dt class="text-stone-500 uppercase text-[9px] tracking-wider">Parts</dt><dd class="text-stone-200 mt-0.5">Four</dd></div>
+          <div><dt class="text-stone-500 uppercase text-[9px] tracking-wider">Setting</dt><dd class="text-stone-200 mt-0.5">Dhaka, spring</dd></div>
+        </dl>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="chip text-[10px] font-mono px-2.5 py-1 rounded-full">Rain</span>
+          <span class="chip text-[10px] font-mono px-2.5 py-1 rounded-full">Marriage</span>
+          <span class="chip text-[10px] font-mono px-2.5 py-1 rounded-full">Insomnia</span>
+          <span class="chip text-[10px] font-mono px-2.5 py-1 rounded-full">Fireflies</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[92vh]" style="background: var(--bg); border: 1px solid rgba(var(--accent-rgb), .35);">
+
+      <div class="p-4 sm:p-5 border-b border-white/10 flex items-start sm:items-center justify-between gap-3 rounded-t-2xl" style="background: rgba(0,0,0,.35);">
+        <div class="min-w-0">
+          <span id="modalPartTag" class="text-[10px] font-mono uppercase tracking-widest block accent">PART I · THE WEDDING</span>
+          <h3 id="modalChapterTitle" class="text-base sm:text-xl font-serif font-bold text-stone-100 truncate">Chapter 1: The Wedding of Words</h3>
+        </div>
+
+        <div class="flex items-center gap-1.5 shrink-0">
+          <div class="hidden sm:flex items-center gap-1 bg-white/5 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-white/10 rounded text-stone-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-white/10 rounded text-stone-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-white/10 rounded text-stone-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono transition flex items-center gap-1" style="color: var(--accent);" title="Bookmark this chapter">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText" class="hidden sm:inline">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-stone-300 flex items-center justify-center transition" aria-label="Close reader">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-5 flex-1 text-stone-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-black/30 border border-white/10 text-[11px] sm:text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-stone-500">CHAPTER:</span> <span id="modalChNum" class="font-bold accent">1 of 7</span></div>
+          <div><span class="text-stone-500">SETTING:</span> <span id="modalChSetting" class="text-stone-200">Dhaka</span></div>
+          <div><span class="text-stone-500">LENGTH:</span> <span id="modalChWords" class="text-stone-200">&mdash;</span></div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl text-xs font-mono" style="background: rgba(var(--accent-rgb), .08); border: 1px solid rgba(var(--accent-rgb), .22); color: var(--accent-soft);">
+            <strong>SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+          <div class="p-4 rounded-xl bg-black/25 border border-white/10 text-xs font-mono text-stone-300">
+            <strong class="accent">KEY IMAGE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+        </div>
+
+        <div id="modalStoryText" data-size="md" class="font-prose text-stone-200 pt-2 border-t border-white/10">
+          <!-- Injected -->
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-white/10 flex items-center justify-between gap-2 rounded-b-2xl" style="background: rgba(0,0,0,.35);">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-3 sm:px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-stone-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Previous</span>
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold transition flex items-center gap-1.5" style="background: rgba(var(--accent-rgb), .12); border: 1px solid rgba(var(--accent-rgb), .4); color: var(--accent-soft);">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-3 sm:px-4 py-2 rounded-xl btn-accent text-xs flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <span class="hidden sm:inline">Next</span> Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 px-4 mt-12" style="background: rgba(0,0,0,.35);">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
+      <div class="text-center sm:text-left">
+        <span class="font-bold text-stone-300">MIDDLE CLASS</span>
+        <span class="block text-[11px]">By Amimul Ahsan &middot; Published by Reed Books</span>
+      </div>
+      <div class="text-center">Spring edition &middot; 7 Chapters &middot; Dhaka</div>
+      <a href="#hero" class="hover:text-stone-200 transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+    </div>
+  </footer>
+
+  <!-- CHAPTER DATA -->
+  <script src="chapters.js"></script>
+
+  <script>
+    const PART_NAMES = {
+      1: 'PART I · THE WEDDING',
+      2: 'PART II · THE CITY BETWEEN',
+      3: 'PART III · FATHERS',
+      4: 'PART IV · FIREFLIES'
+    };
+
+    const STORAGE = { read: 'mc-read', bookmark: 'mc-bookmark', theme: 'mc-theme' };
+
+    let readSet = new Set(safeParse(localStorage.getItem(STORAGE.read), []));
+    let bookmarkId = Number(safeParse(localStorage.getItem(STORAGE.bookmark), 0)) || 0;
+    let currentId = 1;
+    let activePart = 'all';
+    let accentRgb = [242, 168, 196];
+
+    function safeParse(raw, fallback) {
+      try { return JSON.parse(raw); } catch (e) { return fallback; }
+    }
+
+    function esc(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function chapterById(id) {
+      return chaptersData.find(c => c.id === id);
+    }
+
+    /* ---------------- Themes ---------------- */
+
+    function setTheme(name, persist) {
+      document.documentElement.setAttribute('data-theme', name);
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.setAttribute('aria-pressed', String(btn.getAttribute('data-theme') === name));
+      });
+      const rgb = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
+      accentRgb = rgb.split(',').map(n => Number(n.trim()));
+      if (persist) localStorage.setItem(STORAGE.theme, name);
+    }
+
+    /* ---------------- Rendering ---------------- */
+
+    function renderChapters() {
+      const query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      const host = document.getElementById('chaptersContainer');
+      const filtered = chaptersData.filter(ch => {
+        const inPart = activePart === 'all' || ch.part === Number(activePart);
+        const haystack = (ch.title + ' ' + ch.summary + ' ' + ch.setting + ' ' + ch.keyScene).toLowerCase();
+        return inPart && (!query || haystack.includes(query));
+      });
+
+      document.getElementById('noResults').classList.toggle('hidden', filtered.length !== 0);
+
+      host.innerHTML = filtered.map(ch => {
+        const isRead = readSet.has(ch.id);
+        const isBookmarked = bookmarkId === ch.id;
+        return `
+          <article class="panel rounded-2xl overflow-hidden flex flex-col group hover:border-white/25 transition-colors" style="border-color: rgba(var(--accent-rgb), .18);">
+            <div class="h-1.5" style="background: linear-gradient(90deg, rgba(var(--accent-rgb), .95), rgba(var(--accent-rgb), .18));"></div>
+            <div class="p-5 flex-1 flex flex-col gap-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-mono px-2 py-1 rounded chip uppercase tracking-widest">${esc(PART_NAMES[ch.part])}</span>
+                <span class="flex items-center gap-2 text-[10px] font-mono text-stone-500">
+                  ${isBookmarked ? '<i class="fa-solid fa-bookmark" style="color: var(--accent);"></i>' : ''}
+                  ${isRead ? '<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Read</span>' : `<span>${esc(ch.wordCount)}</span>`}
+                </span>
+              </div>
+
+              <button onclick="openChapterModal(${ch.id})" class="text-left">
+                <h3 class="font-serif text-lg font-bold text-stone-100 leading-snug group-hover:text-white transition">
+                  <span class="font-mono text-xs mr-1.5" style="color: var(--accent);">${String(ch.id).padStart(2, '0')}</span>${esc(ch.title)}
+                </h3>
+              </button>
+
+              <p class="text-xs text-stone-400 leading-relaxed flex-1">${esc(ch.summary)}</p>
+
+              <div class="flex items-center justify-between border-t border-white/10 pt-3 gap-2">
+                <span class="text-[10px] font-mono text-stone-500 truncate"><i class="fa-solid fa-location-dot mr-1"></i>${esc(ch.setting)}</span>
+                <button onclick="openChapterModal(${ch.id})" class="shrink-0 text-xs font-semibold transition flex items-center gap-1 accent hover:text-white">
+                  Read <i class="fa-solid fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    function populateJump() {
+      const select = document.getElementById('quickJumpSelect');
+      select.innerHTML = '<option value="">-- Jump to Chapter --</option>' +
+        chaptersData.map(ch => `<option value="${ch.id}">${ch.id}. ${esc(ch.title)}</option>`).join('');
+    }
+
+    function updateProgress() {
+      const pct = Math.round((readSet.size / chaptersData.length) * 100);
+      document.getElementById('heroProgressPct').textContent = pct + '% Read';
+      document.getElementById('heroBookmark').textContent = bookmarkId ? ('Ch. ' + bookmarkId) : 'None';
+    }
+
+    function setPart(part) {
+      activePart = String(part);
+      document.querySelectorAll('.part-btn').forEach(btn => {
+        const on = btn.getAttribute('data-part') === activePart;
+        btn.style.borderColor = on ? 'rgba(var(--accent-rgb), .65)' : '';
+        btn.style.background = on ? 'rgba(var(--accent-rgb), .12)' : '';
+        btn.style.color = on ? 'var(--accent-soft)' : '';
+      });
+      renderChapters();
+    }
+
+    function filterChapters() { renderChapters(); }
+
+    function jumpToChapter(id) {
+      if (!id) return;
+      openChapterModal(Number(id));
+    }
+
+    /* ---------------- Reader modal ---------------- */
+
+    function openChapterModal(id) {
+      const ch = chapterById(id);
+      if (!ch) return;
+      currentId = id;
+
+      document.getElementById('modalPartTag').textContent = PART_NAMES[ch.part];
+      document.getElementById('modalChapterTitle').textContent = 'Chapter ' + ch.id + ': ' + ch.title;
+      document.getElementById('modalChNum').textContent = ch.id + ' of ' + chaptersData.length;
+      document.getElementById('modalChSetting').textContent = ch.setting;
+      document.getElementById('modalChWords').textContent = ch.wordCount;
+      document.getElementById('modalSummaryText').textContent = ch.summary;
+      document.getElementById('modalKeySceneText').textContent = ch.keyScene;
+
+      document.getElementById('modalStoryText').innerHTML = ch.text
+        .split(/\n\n+/)
+        .map(par => '<p>' + esc(par).replace(/\n/g, '<br>') + '</p>')
+        .join('');
+
+      const modal = document.getElementById('readerModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      modal.scrollTop = 0;
+      document.getElementById('modalBodyText').scrollTop = 0;
+
+      document.getElementById('modalPrevBtn').disabled = ch.id === 1;
+      document.getElementById('modalNextBtn').disabled = ch.id === chaptersData.length;
+
+      refreshModalState();
+      renderChapters();
+    }
+
+    function closeChapterModal() {
+      const modal = document.getElementById('readerModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      updateProgress();
+    }
+
+    function navigateModalChapter(direction) {
+      const next = chapterById(currentId + direction);
+      if (next) openChapterModal(next.id);
+    }
+
+    function refreshModalState() {
+      const isRead = readSet.has(currentId);
+      document.getElementById('modalReadBtnText').textContent = isRead ? 'Completed' : 'Mark Complete';
+      document.getElementById('modalMarkReadBtn').style.background = isRead ? 'rgba(16, 185, 129, .14)' : 'rgba(var(--accent-rgb), .12)';
+      document.getElementById('modalMarkReadBtn').style.borderColor = isRead ? 'rgba(16, 185, 129, .5)' : 'rgba(var(--accent-rgb), .4)';
+      document.getElementById('modalMarkReadBtn').style.color = isRead ? '#6ee7b7' : 'var(--accent-soft)';
+
+      const isBookmarked = bookmarkId === currentId;
+      document.getElementById('bookmarkText').textContent = isBookmarked ? 'Bookmarked' : 'Bookmark';
+      document.getElementById('modalBookmarkBtn').style.background = isBookmarked ? 'rgba(var(--accent-rgb), .18)' : '';
+    }
+
+    function toggleModalReadStatus() {
+      if (readSet.has(currentId)) readSet.delete(currentId);
+      else readSet.add(currentId);
+      localStorage.setItem(STORAGE.read, JSON.stringify([...readSet]));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function toggleModalBookmark() {
+      bookmarkId = bookmarkId === currentId ? 0 : currentId;
+      localStorage.setItem(STORAGE.bookmark, JSON.stringify(bookmarkId));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function setModalFontSize(size) {
+      document.getElementById('modalStoryText').setAttribute('data-size', size);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('readerModal').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeChapterModal();
+      if (e.key === 'ArrowRight') navigateModalChapter(1);
+      if (e.key === 'ArrowLeft') navigateModalChapter(-1);
+    });
+
+    /* ---------------- Flute score (Web Audio, no assets) ---------------- */
+
+    const TRACKS = [
+      { name: 'Spring Dawn', notes: [293.66, 329.63, 369.99, 440.00, 493.88, 440.00, 369.99, 329.63], tempo: 620, dur: 1.9, level: 0.075, rest: 500 },
+      { name: 'Bamboo Grove', notes: [196.00, 220.00, 246.94, 293.66, 246.94, 220.00, 196.00], tempo: 980, dur: 2.6, level: 0.085, rest: 900 },
+      { name: 'River at Dusk', notes: [220.00, 261.63, 293.66, 329.63, 293.66, 261.63], tempo: 820, dur: 2.4, level: 0.07, rest: 700 },
+      { name: 'Rain on Leaves', notes: [329.63, 392.00, 440.00, 493.88, 440.00, 392.00, 329.63, 293.66], tempo: 470, dur: 1.4, level: 0.06, rest: 350 },
+      { name: 'Night Fireflies', notes: [523.25, 587.33, 659.25, 783.99, 659.25, 587.33, 523.25], tempo: 1150, dur: 3.0, level: 0.055, rest: 1200 }
+    ];
+
+    let audioCtx = null;
+    let masterGain = null;
+    let breathBuffer = null;
+    let playing = false;
+    let scheduleTimer = null;
+    let noteIndex = 0;
+    let trackIndex = 0;
+
+    function buildBreath() {
+      const length = Math.floor(audioCtx.sampleRate * 2);
+      const buffer = audioCtx.createBuffer(1, length, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < length; i++) data[i] = (Math.random() * 2 - 1) * 0.5;
+      return buffer;
+    }
+
+    function fluteNote(freq, time, dur, level) {
+      const osc = audioCtx.createOscillator();
+      const harmonic = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const harmonicGain = audioCtx.createGain();
+      const lfo = audioCtx.createOscillator();
+      const lfoGain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      harmonic.type = 'triangle';
+      harmonic.frequency.value = freq * 2;
+      harmonicGain.gain.value = 0.13;
+
+      lfo.frequency.value = 5.1;
+      lfoGain.gain.value = 2.4;
+      lfo.connect(lfoGain).connect(osc.frequency);
+
+      // breath
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = breathBuffer;
+      const bandpass = audioCtx.createBiquadFilter();
+      bandpass.type = 'bandpass';
+      bandpass.frequency.value = freq * 2;
+      bandpass.Q.value = 1.4;
+      const noiseGain = audioCtx.createGain();
+      noiseGain.gain.value = level * 0.45;
+
+      osc.connect(gain);
+      harmonic.connect(harmonicGain).connect(gain);
+      noise.connect(bandpass).connect(noiseGain).connect(gain);
+      gain.connect(masterGain);
+
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(level, time + 0.1);
+      gain.gain.exponentialRampToValueAtTime(level * 0.7, time + dur * 0.55);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+      osc.start(time);
+      harmonic.start(time);
+      noise.start(time);
+      lfo.start(time);
+      const end = time + dur + 0.1;
+      osc.stop(end);
+      harmonic.stop(end);
+      noise.stop(end);
+      lfo.stop(end);
+    }
+
+    function scheduleTrack() {
+      if (!playing || !audioCtx) return;
+      const track = TRACKS[trackIndex];
+      fluteNote(track.notes[noteIndex], audioCtx.currentTime + 0.05, track.dur, track.level);
+      noteIndex++;
+      if (noteIndex >= track.notes.length) {
+        noteIndex = 0;
+        scheduleTimer = setTimeout(scheduleTrack, track.dur * 1000 + track.rest);
+      } else {
+        scheduleTimer = setTimeout(scheduleTrack, track.tempo);
+      }
+    }
+
+    function updateFluteUI() {
+      document.getElementById('fluteIcon').className = playing ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+      document.getElementById('fluteLabel').textContent = playing ? 'Flute On' : 'Flute';
+      document.getElementById('flutePlayIcon').className = playing ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+      document.getElementById('flutePlayLabel').textContent = playing ? 'Pause' : 'Play';
+      document.getElementById('nowPlaying').textContent = playing ? TRACKS[trackIndex].name : (TRACKS[trackIndex].name + ' (paused)');
+      document.querySelectorAll('.track-btn').forEach(btn => {
+        const on = Number(btn.dataset.track) === trackIndex;
+        btn.style.borderColor = on ? 'rgba(var(--accent-rgb), .6)' : '';
+        btn.style.background = on ? 'rgba(var(--accent-rgb), .1)' : '';
+      });
+    }
+
+    function toggleFlute() {
+      if (!audioCtx) {
+        try {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = 0.55;
+          masterGain.connect(audioCtx.destination);
+          breathBuffer = buildBreath();
+        } catch (err) { return; }
+      }
+
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      playing = !playing;
+      if (playing) {
+        noteIndex = 0;
+        scheduleTrack();
+      } else {
+        clearTimeout(scheduleTimer);
+        scheduleTimer = null;
+      }
+      updateFluteUI();
+    }
+
+    function selectTrack(i) {
+      trackIndex = i;
+      noteIndex = 0;
+      if (playing) {
+        clearTimeout(scheduleTimer);
+        scheduleTrack();
+      }
+      updateFluteUI();
+    }
+
+    /* ---------------- Live background: stars, fireflies, flying leaves ---------------- */
+
+    let leafPalette = ['#f2a8c4', '#cfe8a8', '#ffd9a0'];
+
+    function hexToRgb(hex) {
+      const h = hex.trim().replace('#', '');
+      const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+      return [parseInt(full.slice(0, 2), 16), parseInt(full.slice(2, 4), 16), parseInt(full.slice(4, 6), 16)];
+    }
+
+    function readLeafPalette() {
+      const cs = getComputedStyle(document.documentElement);
+      leafPalette = [cs.getPropertyValue('--leaf-a'), cs.getPropertyValue('--leaf-b'), cs.getPropertyValue('--leaf-c')].map(c => c.trim());
+    }
+
+    (function livingSeason() {
+      const canvas = document.getElementById('leaf-canvas');
+      const ctx = canvas.getContext('2d');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let W = 0, H = 0;
+      let stars = [], flies = [], leaves = [];
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function seed() {
+        stars = Array.from({ length: 90 }, () => ({
+          x: Math.random() * W, y: Math.random() * H * 0.85,
+          r: Math.random() * 1.1 + 0.3,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.0008 + Math.random() * 0.0016
+        }));
+
+        flies = Array.from({ length: 26 }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          r: 1.2 + Math.random() * 1.8,
+          vx: (Math.random() - 0.5) * 0.22,
+          vy: (Math.random() - 0.5) * 0.16,
+          phase: Math.random() * Math.PI * 2,
+          glow: 0.35 + Math.random() * 0.45
+        }));
+
+        leaves = Array.from({ length: 22 }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          size: 5 + Math.random() * 8,
+          vy: 0.18 + Math.random() * 0.3,
+          vx: -0.15 + Math.random() * 0.3,
+          rot: Math.random() * Math.PI * 2,
+          spin: (Math.random() - 0.5) * 0.02,
+          sway: Math.random() * Math.PI * 2,
+          color: Math.floor(Math.random() * 3),
+          alpha: 0.25 + Math.random() * 0.4
+        }));
+      }
+
+      function drawLeaf(l) {
+        const [r, g, b] = hexToRgb(leafPalette[l.color] || leafPalette[0]);
+        ctx.save();
+        ctx.translate(l.x, l.y);
+        ctx.rotate(l.rot);
+        ctx.beginPath();
+        ctx.moveTo(0, -l.size);
+        ctx.quadraticCurveTo(l.size * 0.85, -l.size * 0.1, 0, l.size);
+        ctx.quadraticCurveTo(-l.size * 0.85, -l.size * 0.1, 0, -l.size);
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${l.alpha})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${l.alpha * 0.6})`;
+        ctx.lineWidth = 0.6;
+        ctx.beginPath();
+        ctx.moveTo(0, -l.size * 0.8);
+        ctx.lineTo(0, l.size * 0.75);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        const t = performance.now();
+
+        stars.forEach(s => {
+          const a = 0.25 + 0.55 * Math.abs(Math.sin(t * s.speed + s.phase));
+          ctx.fillStyle = `rgba(255, 255, 245, ${a})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        flies.forEach(f => {
+          const pulse = 0.55 + 0.45 * Math.sin(t * 0.0016 + f.phase);
+          const [r, g, b] = accentRgb;
+          const glow = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 9);
+          glow.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${0.55 * f.glow * pulse})`);
+          glow.addColorStop(0.35, `rgba(255, 245, 190, ${0.28 * f.glow * pulse})`);
+          glow.addColorStop(1, 'rgba(255, 245, 190, 0)');
+          ctx.fillStyle = glow;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r * 9, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = `rgba(255, 252, 220, ${0.7 * pulse})`;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          f.phase += 0.004;
+          f.x += f.vx + Math.sin(f.phase * 0.7) * 0.12;
+          f.y += f.vy + Math.cos(f.phase * 0.5) * 0.08;
+          if (f.x < -20) f.x = W + 20;
+          if (f.x > W + 20) f.x = -20;
+          if (f.y < -20) f.y = H + 20;
+          if (f.y > H + 20) f.y = -20;
+        });
+
+        leaves.forEach(l => {
+          drawLeaf(l);
+          l.sway += 0.012;
+          l.x += l.vx + Math.sin(l.sway) * 0.35;
+          l.y += l.vy;
+          l.rot += l.spin;
+          if (l.y > H + 24) { l.y = -24; l.x = Math.random() * W; }
+          if (l.x < -30) l.x = W + 30;
+          if (l.x > W + 30) l.x = -30;
+        });
+      }
+
+      function loop() {
+        draw();
+        requestAnimationFrame(loop);
+      }
+
+      resize();
+      seed();
+      window.addEventListener('resize', () => { resize(); seed(); });
+      draw();
+      if (!reduceMotion) requestAnimationFrame(loop);
+    })();
+
+    /* ---------------- Boot ---------------- */
+
+    const totalWords = chaptersData.reduce((sum, ch) => sum + (parseInt(String(ch.wordCount).replace(/[^0-9]/g, ''), 10) || 0), 0);
+    document.getElementById('heroWordTotal').textContent = totalWords.toLocaleString('en-US');
+
+    const savedTheme = localStorage.getItem(STORAGE.theme) || 'blossom';
+    setTheme(savedTheme, false);
+    readLeafPalette();
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTheme(btn.getAttribute('data-theme'), true);
+        readLeafPalette();
+      });
+    });
+
+    document.querySelectorAll('.track-btn').forEach(btn => {
+      btn.addEventListener('click', () => selectTrack(Number(btn.dataset.track)));
+    });
+
+    populateJump();
+    setPart('all');
+    updateProgress();
+    updateFluteUI();
+  </script>
+
+</body>
+</html>
