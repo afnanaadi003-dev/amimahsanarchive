@@ -313,7 +313,7 @@
                         <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
                             <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
                             <h3 class="font-cinzel text-2xl font-bold text-slate-100">Mass-Q-Rade</h3>
-                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Volumes 5 - 15</p>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Volumes 1 - 15</p>
                         </div>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
@@ -590,7 +590,7 @@
 
     <!-- Modal Dialog for Book Details -->
     <div id="book-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-obsidian/80 backdrop-blur-md">
-        <div class="glass-panel max-w-2xl w-full p-6 sm:p-8 rounded-3xl relative border border-amberGold/30 space-y-6">
+        <div class="glass-panel max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 rounded-3xl relative border border-amberGold/30 space-y-6">
             <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-900/80 flex items-center justify-center text-slate-400 hover:text-amberGold border border-slate-700">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -670,11 +670,25 @@
         // Modal Details Data (English Translated)
         const bookData = {
             massqrade: {
-                title: "Mass-Q-Rade (Volumes 5 - 15)",
+                title: "Mass-Q-Rade (Volumes 1 - 15)",
                 author: "Amimul Ahsan",
                 genre: "Psychological Thriller / Cyber Suspense",
                 synopsis: "Mass-Q-Rade investigates the unseen masks worn by modern individuals. Navigating psychological intrigue, digital surveillance, and hidden identities, the narrative dissects the fine line between the true self and artificial persona.",
-                link: "#"
+                link: "#",
+                volumes: [
+                    { no: 1, title: "The Falling Star", country: "India", protagonist: "Rahul Banerjee (Film Star)", themes: "Political corruption, media manipulation" },
+                    { no: 2, title: "The Silent Advocate", country: "United States", protagonist: "Sarah Chen (Lawyer)", themes: "Corporate greed, racial injustice", link: "Mass-Q-Rade%20Book%202%20-%20The%20Silent%20Advocate.html" },
+                    { no: 3, title: "The Broken Healer", country: "United Kingdom", protagonist: "Dr. James Okafor (Doctor)", themes: "NHS bureaucracy, systemic racism" },
+                    { no: 4, title: "The Forgotten Soldier", country: "Russia", protagonist: "Captain Elena Volkov (Military)", themes: "Government betrayal, war crimes" },
+                    { no: 5, title: "The Invisible Worker", country: "China", protagonist: "Li Wei (Factory Worker)", themes: "Labor exploitation, surveillance state" },
+                    { no: 6, title: "The Drowned Fisherman", country: "Philippines", protagonist: "Miguel Santos (Fisherman)", themes: "Environmental destruction, corporate impunity" },
+                    { no: 7, title: "The Erased Teacher", country: "Nigeria", protagonist: "Amara Okonkwo (Teacher)", themes: "Educational neglect, gender discrimination" },
+                    { no: 8, title: "The Ghost Journalist", country: "Brazil", protagonist: "Carlos Mendes (Journalist)", themes: "Media censorship, political violence" },
+                    { no: 9, title: "The Stateless Refugee", country: "Syria", protagonist: "Fatima Al-Hassan (Refugee)", themes: "War, displacement, international indifference" },
+                    { no: 10, title: "The Caged Artist", country: "North Korea", protagonist: "Kim Jong-soo (Artist)", themes: "Totalitarian control, artistic suppression" },
+                    { no: 11, title: "The Fallen Priest", country: "Ireland", protagonist: "Father Michael O'Brien (Priest)", themes: "Institutional abuse, religious corruption" },
+                    { no: 12, title: "The Unseen Engineer", country: "Japan", protagonist: "Yuki Tanaka (Engineer)", themes: "Corporate culture, mental health crisis" }
+                ]
             },
             joborde: {
                 title: "Joborde (The Joborde Series)",
@@ -720,6 +734,28 @@
             const data = bookData[key];
             if (!data) return;
 
+            const volumesList = data.volumes ? `
+                <div class="pt-2">
+                    <p class="text-[11px] uppercase tracking-widest text-amberGold font-semibold mb-3">The Complete Series &mdash; Books 1 &ndash; 15</p>
+                    <ol class="space-y-2">
+                        ${data.volumes.map(v => `
+                            <li class="glass-card rounded-xl p-3 flex gap-3 items-start">
+                                <span class="w-6 h-6 shrink-0 rounded-full bg-amberGold/15 border border-amberGold/30 text-amberGold text-[11px] font-bold flex items-center justify-center">${v.no}</span>
+                                <div class="min-w-0">
+                                    <h4 class="text-sm font-semibold text-slate-100">
+                                        ${v.link
+                                            ? `<a href="${v.link}" class="hover:text-amberGold hover:underline transition-colors">${v.title} <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i></a>`
+                                            : v.title}
+                                    </h4>
+                                    <p class="text-[11px] text-slate-400 mt-0.5">${v.country} <span class="text-slate-600">&middot;</span> ${v.protagonist}</p>
+                                    <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">${v.themes}</p>
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ol>
+                </div>
+            ` : '';
+
             modalContent.innerHTML = `
                 <div class="space-y-4">
                     <span class="text-xs uppercase tracking-widest text-amberGold font-semibold">${data.genre}</span>
@@ -727,6 +763,7 @@
                     <p class="text-xs text-slate-400">Written by <span class="text-amber-200">${data.author}</span></p>
                     <div class="h-px w-full bg-slate-800"></div>
                     <p class="text-slate-300 text-sm leading-relaxed">${data.synopsis}</p>
+                    ${volumesList}
                     <div class="pt-4 flex items-center gap-4">
                         <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl border border-slate-700 text-xs font-semibold text-slate-300 hover:text-white">Close</button>
                         <a href="${data.link}" onclick="showToast('Redirecting to digital reader preview...')" class="px-5 py-2.5 rounded-xl bg-amberGold text-slate-950 font-semibold text-xs hover:bg-brightGold transition-all">Read Preview / Details</a>

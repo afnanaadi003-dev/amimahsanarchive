@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK TWO — THE SILENT ADVOCATE</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0a0f1d',
+            obsidian: '#05070c',
+            slateGold: '#d4af37',
+            goldGlow: '#e6ca65',
+            imperialCrimson: '#8b0000',
+            crimsonGlow: '#ff4d4d',
+            terminalBg: '#03050a',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-crimson': '0 0 25px rgba(255, 77, 77, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #05070c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    /* Cyber Grid Pattern */
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Scanline Overlay */
+    .scanlines-overlay {
+      position: relative;
+    }
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Glassmorphic Elements */
+    .glass-card {
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+  </style>
+</head>
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-slateGold selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      
+      <!-- Brand & Book Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-slateGold via-amber-600 to-imperialCrimson p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-scale-balanced text-slateGold text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-slateGold uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-goldGlow border border-amber-500/30">BOOK 2</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Silent Advocate</span>
+        </div>
+      </a>
+
+      <!-- Parts Navigation Filters -->
+      <nav class="flex items-center gap-1 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Parts</button>
+        <button onclick="filterPart(1)" class="px-2.5 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Rise</button>
+        <button onclick="filterPart(2)" class="px-2.5 py-1.5 rounded-lg bg-red-950/40 hover:bg-red-900/60 border border-red-800/60 text-red-300 transition">Part II: Transformation</button>
+        <button onclick="filterPart(3)" class="px-2.5 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part III: Mission</button>
+        <button onclick="filterPart(4)" class="px-2.5 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part IV: Reckoning</button>
+        <button onclick="filterPart(5)" class="px-2.5 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Epilogue</button>
+      </nav>
+
+      <!-- Quick Controls -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" id="scanlineBtn" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-slateGold/10 border border-slateGold/40 text-goldGlow hover:bg-slateGold/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> Legal CLI
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION & LIVE DASHBOARD -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-slateGold/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      
+      <!-- Ambient Backlight -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-slateGold/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-imperialCrimson/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        
+        <!-- Universe Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slateGold/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-slateGold animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book 2 Serialization</span>
+        </div>
+
+        <!-- Book Title Header -->
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE SILENT ADVOCATE
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-crimsonGlow tracking-wider uppercase font-semibold">
+            Sarah Chen & The Architecture of American Injustice
+          </h2>
+        </div>
+
+        <!-- Author Attribution -->
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-slateGold underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <!-- Book Core Concept -->
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+          From a laundromat back room in San Francisco to Stanford Law, corporate warfare in Oakland, and the halls of the US Senate—<strong class="text-white">Sarah Chen</strong> discovers that the justice system isn't broken, but working exactly as designed. Destroyed by corporate corruption and the murder of her father, she is reborn through Mass-Q-Rade as <strong class="text-goldGlow">The Heart</strong> of the network: an uncatchable shadow dismantling systemic oppression.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">15 Ch + Epilogue</div>
+          </div>
+          <div class="text-left p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-crimsonGlow">1995 – 2025</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-slateGold text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-gold flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> View All Chapters
+          </a>
+          <a href="#agents" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-goldGlow text-xs sm:text-sm font-mono border border-slateGold/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-users-viewfinder"></i> Agent Dossiers
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERIALIZATION DIRECTORY & INTERACTIVE READER -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-scale-balanced text-goldGlow"></i> Full Serialization Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Read complete verbatim story text across all 15 Chapters and Epilogue.</p>
+        </div>
+
+        <!-- Search Controls & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <!-- Keyword Filter -->
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search chapters, settings, words..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-slateGold transition">
+          </div>
+
+          <!-- Quick Jump Dropdown -->
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-slateGold font-mono">
+            <option value="">-- Jump to Chapter --</option>
+            <!-- Generated via JS -->
+          </select>
+        </div>
+      </div>
+
+      <!-- CHAPTER CARDS CONTAINER -->
+      <div id="chaptersContainer" class="space-y-10">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </section>
+
+    <!-- MASS-Q-RADE LEGAL OVERRIDE TERMINAL (CLI) -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-goldGlow"></i> MASS-Q-RADE LEGAL OVERRIDE CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive command console simulating Sarah Chen's sub-dermal legal override interface.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-goldGlow text-xs font-mono">
+          NODE: US-DESERT-FACILITY-ACTIVE
+        </span>
+      </div>
+
+      <!-- Terminal Console Box -->
+      <div class="bg-terminalBg rounded-2xl border border-slateGold/30 shadow-glow-gold/10 overflow-hidden font-mono">
+        
+        <!-- Header Bar -->
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_AGENT_HEART // SARAH_CHEN</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: DEEPFAKE_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          
+          <!-- Macro Execution Buttons -->
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_HARRINGTON')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-gavel text-crimsonGlow"></i> EXPOSE HARRINGTON
+            </button>
+            <button onclick="runTerminalAction('APEX_DOSSIER')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-biohazard text-goldGlow"></i> APEX DOSSIER
+            </button>
+            <button onclick="runTerminalAction('STERLING_AUDIT')" class="p-2.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/50 border border-blue-700/50 text-blue-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-building-columns text-blue-400"></i> STERLING AUDIT
+            </button>
+            <button onclick="runTerminalAction('BIOMETRIC_SPOOF')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mask text-violet-400"></i> BIOMETRIC SPOOF
+            </button>
+            <button onclick="runTerminalAction('AGENT_ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> AGENT ROSTER
+            </button>
+          </div>
+
+          <!-- Terminal Output Log -->
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-goldGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade sub-dermal node online. Desert facility link active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Sarah Chen (Agent Heart / The Silent Advocate)</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target Senator Harrington: SENTENCED (Life).</div>
+            <div class="text-crimsonGlow">[READY] Select a macro action button above or type commands below.</div>
+          </div>
+
+          <!-- Input Line -->
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-goldGlow font-bold text-sm">SILENT_ADVOCATE&gt;</span>
+            <input type="text" id="terminalInput" placeholder="Type command (e.g., help, status, agents, expose, apex, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-slateGold/20 text-goldGlow text-xs border border-slateGold/40 hover:bg-slateGold/30 transition">EXEC</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CHARACTER DOSSIERS & 7 CORE AGENTS MATRIX -->
+    <section id="agents" class="scroll-mt-20 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-address-card text-goldGlow"></i> Character & Mass-Q-Rade Agent Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Sarah Chen, her family, antagonists, and the 7 Mass-Q-Rade Core Agents.</p>
+      </div>
+
+      <!-- Primary Key Characters Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="primaryCharacters">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- 7 Core Mass-Q-Rade Agents Grid -->
+      <div class="space-y-4 pt-4">
+        <div class="flex items-center gap-2 text-goldGlow font-mono font-bold text-sm uppercase">
+          <i class="fa-solid fa-shield-halved"></i> The Mass-Q-Rade Family of the Betrayed (7 Core Agents)
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="agentGrid">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- INTERACTIVE NARRATIVE TIMELINE -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-crimsonGlow"></i> Narrative Arc Timeline (1995 – 2025)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Step-by-step evolution of Sarah Chen from Laundromat daughter to Capitol reckoning.</p>
+      </div>
+
+      <div class="relative border-l-2 border-slateGold/30 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL DRAWER -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-slateGold/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-slateGold uppercase tracking-widest block">PART I: THE RISE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Girl Who Learned to Fight</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Text Resizer -->
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <!-- Bookmark Toggle -->
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <!-- Close Modal -->
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        
+        <!-- Metadata Strip -->
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">SERIALIZATION:</span> <span id="modalChNum" class="text-goldGlow font-bold">Chapter 1 of 16</span></div>
+          <div><span class="text-slate-500">PRIMARY SETTING:</span> <span id="modalChSetting" class="text-slate-200">San Francisco, CA (1995)</span></div>
+          <div><span class="text-slate-500">STATUS:</span> <span id="modalChStatus" class="text-emerald-400">Decrypted</span></div>
+        </div>
+
+        <!-- Story Text -->
+        <div class="space-y-4">
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Controls -->
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-amber-950/40 border border-amber-800 text-goldGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-slateGold hover:bg-amber-600 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK TWO — THE SILENT ADVOCATE</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+
+      <div>
+        Mass-Q-Rade Sci-Fi Universe &copy; Complete Serialization
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-goldGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DATA MATRIX & SCRIPT -->
+  <script>
+    // VERBATIM COMPLETE SERIALIZATION CHAPTERS DATA (CHAPTERS 1-15 + EPILOGUE)
+    const chaptersData = [
+      {
+        id: 1,
+        partNum: 1,
+        partTitle: "Part I: The Rise",
+        title: "Chapter 1: The Girl Who Learned to Fight",
+        setting: "San Francisco, California. 1995.",
+        text: `The girl who would become the Silent Advocate was born in the back room of a laundromat.
+Her mother, MEI-LIN CHEN, was a seamstress who worked sixteen-hour days in a sweatshop in Chinatown. Her father, DAVID CHEN, was a janitor who cleaned office buildings in the Financial District — the same buildings where billionaires made deals that destroyed communities, where corporations planned the displacement of thousands, where the system designed its architecture of inequality.
+Sarah Chen was born into the invisible majority. She was born into the class of people who pay their taxes, follow the laws, and believe in the promise of America — the promise that if you work hard, if you play by the rules, if you trust the system, you will be rewarded.
+She would learn, in time, that the promise was a lie.
+But in 1995, she was just a baby. A baby with a future. A baby with a dream.
+
+The Childhood of Shadows
+Sarah grew up in a two-bedroom apartment that housed seven people — her parents, her grandmother, her two brothers, her aunt, and herself. The apartment was small. The apartment was cramped. The apartment was filled with the smell of cooking oil and the sound of Cantonese opera. But the apartment was also filled with love.
+Her father would come home at midnight, exhausted from cleaning toilets, and he would sit with Sarah and tell her stories. Stories about China. Stories about the journey to America. Stories about the dream that had brought them here — the dream of freedom, the dream of opportunity, the dream of a better life.
+"America is the greatest country in the world," he would say. "Here, if you work hard, you can become anything. You can become a doctor. You can become a lawyer. You can become a president."
+Sarah believed him. She believed in the dream. She believed in the system.
+She would learn, in time, that the dream was a nightmare dressed in red, white, and blue.
+
+The First Betrayal
+Sarah was twelve years old when she learned her first lesson about the American justice system.
+Her father had been arrested. He had been accused of stealing from one of the office buildings he cleaned. The evidence was circumstantial — a missing watch, a security camera that showed him entering the building at the wrong time. But the police did not care about the evidence. The police cared about the color of his skin.
+David Chen was Asian. David Chen was poor. David Chen was the perfect suspect.
+He spent three weeks in jail before the real thief was caught — a white executive who had stolen the watch to pay off a gambling debt. David Chen was released. He was not apologized to. He was not compensated. He was simply released — a broken man, a humiliated man, a man who had learned that the system did not protect people like him.
+Sarah watched her father cry that night. She had never seen him cry before. She had never seen him break. And in that moment, something inside her hardened. Something inside her calcified.
+She decided to become a lawyer.
+Not because she believed in the system. But because she wanted to understand it. She wanted to know how it worked. She wanted to know why it failed. She wanted to know how to fix it.
+She would learn, in time, that the system could not be fixed.
+It could only be destroyed.`
+      },
+      {
+        id: 2,
+        partNum: 1,
+        partTitle: "Part I: The Rise",
+        title: "Chapter 2: The Education of a Warrior",
+        setting: "Stanford Law School & Sterling & Associates. 2013.",
+        text: `Sarah Chen graduated from Stanford Law School at the top of her class.
+She was not the smartest student. She was not the most connected. She was not the most privileged. But she was the most determined. She studied eighteen hours a day. She worked three jobs to pay tuition. She slept four hours a night. And she did it all with a single-minded focus that terrified her classmates and impressed her professors.
+She was going to change the system. She was going to fight for the invisible majority. She was going to be the voice for the voiceless.
+She was going to be the Silent Advocate.
+But first, she had to learn how the system worked. She had to learn its rules. She had to learn its weaknesses. She had to learn its secrets.
+She took a job at STERLING & ASSOCIATES — one of the most powerful corporate law firms in the country. The firm represented the largest corporations in America — oil companies, pharmaceutical companies, tech giants, banks. The firm was the system's legal arm. The firm was the enemy.
+But Sarah did not see it that way. She saw it as an education. She saw it as an opportunity. She saw it as a chance to learn how the enemy operated.
+She would spend five years at Sterling & Associates. She would learn more about the system than she had ever learned in law school. She would learn how corporations evaded taxes, how they exploited workers, how they destroyed communities, how they bought politicians, how they silenced critics.
+And she would learn something else.
+She would learn that the system was not broken.
+The system was working exactly as designed.`
+      },
+      {
+        id: 3,
+        partNum: 1,
+        partTitle: "Part I: The Rise",
+        title: "Chapter 3: The Case That Changed Everything",
+        setting: "Oakland, California. 2018.",
+        text: `The case came to Sarah by accident.
+She was a junior associate at Sterling & Associates, working on a corporate merger that would have made her bosses millions. She was not supposed to care about the people who would be displaced by the merger. She was not supposed to care about the workers who would lose their jobs, the families who would lose their homes, the communities that would be destroyed.
+But she did care.
+The case involved a corporation called APEX INDUSTRIES — a manufacturing giant that had been dumping toxic waste into the water supply of a predominantly Black and Latino neighborhood in Oakland. The residents had been getting sick. Children had been getting cancer. People had been dying.
+And Apex Industries had known about it for decades.
+They had covered it up. They had bribed officials. They had silenced whistleblowers. And now, they were trying to silence the community.
+Sarah was assigned to the legal team defending Apex Industries. She was supposed to help them avoid liability. She was supposed to help them escape justice. She was supposed to help them destroy the community.
+She could not do it.
+She quit Sterling & Associates. She took the case pro bono. She represented the community against Apex Industries. She fought for three years. She sacrificed her career, her reputation, her safety. She received death threats. She was followed by private investigators. Her apartment was broken into. Her car was vandalized.
+But she did not stop.
+She won the case. Apex Industries was ordered to pay $500 million in damages. The community was compensated. The water was cleaned. The children were treated. The people were saved.
+And Sarah Chen became a hero.
+But she did not feel like a hero. She felt like a fool.
+Because she knew the truth. She knew that Apex Industries would appeal. She knew that they would use their lawyers, their politicians, their media connections to overturn the verdict. She knew that the $500 million would be reduced to $50 million, then to $5 million, then to nothing. She knew that the community would be forgotten. She knew that the system would win.
+She was right.`
+      },
+      {
+        id: 4,
+        partNum: 1,
+        partTitle: "Part I: The Rise",
+        title: "Chapter 4: The Fall",
+        setting: "San Francisco, California. 2021.",
+        text: `The fall came slowly. Then all at once.
+Sarah had become a target. Not because she had won the Apex Industries case — that was expected. Lawyers win cases. That was the system working as designed.
+She had become a target because she had started asking questions. She had started investigating. She had started connecting the dots.
+She had discovered that Apex Industries was not an isolated case. She had discovered that the system was rigged. She had discovered that corporations, politicians, and law enforcement were working together to destroy communities of color. She had discovered that the war on drugs was a war on Black and brown people. She had discovered that mass incarceration was a business. She had discovered that the prison-industrial complex was worth billions of dollars — and that the system would do anything to protect it.
+She had discovered the truth.
+And the system could not allow that.
+The first attack came in the form of a lawsuit. Apex Industries sued Sarah for defamation. They claimed that her investigation had damaged their reputation. They claimed that she had fabricated evidence. They claimed that she was a liar, a fraud, a criminal.
+The lawsuit was baseless. It was designed to destroy her. It was designed to bankrupt her. It was designed to silence her.
+The second attack came in the form of a raid. The police stormed her office. They seized her files. They arrested her on charges of obstruction of justice. They claimed that she had withheld evidence. They claimed that she had tampered with witnesses. They claimed that she was a threat to national security.
+The charges were fabricated. They were designed to destroy her. They were designed to imprison her. They were designed to silence her.
+The third attack came in the form of a murder.
+Her father — David Chen, the janitor who had taught her to believe in the American dream — was killed in a "robbery." The police said it was random. The police said it was a tragedy. The police said they were investigating.
+But Sarah knew the truth.
+Her father had been murdered by the system. He had been murdered to send a message. He had been murdered to silence her.
+And it worked.
+Sarah Chen broke.
+She stopped fighting. She stopped investigating. She stopped believing. She withdrew from the world. She moved to a small apartment in Oakland. She stopped answering calls. She stopped seeing friends. She stopped living.
+She was waiting to die.
+But the system had other plans.`
+      },
+
+      // PART 2: THE TRANSFORMATION (Chapters 5–8)
+      {
+        id: 5,
+        partNum: 2,
+        partTitle: "Part II: The Transformation",
+        title: "Chapter 5: The Visitor",
+        setting: "Oakland, California. 2022.",
+        text: `She came on a Tuesday.
+Sarah was sitting in her apartment, staring at the wall. She had not eaten in three days. She had not showered in a week. She had not spoken to anyone in a month.
+The knock on the door was soft. Persistent. Unavoidable.
+Sarah did not answer. She did not want to answer. She did not want to see anyone. She did not want to talk to anyone. She did not want to live.
+But the knock continued.
+And then, a voice.
+"Sarah Chen. I know you're in there. I know you're hurting. I know you've lost everything. I know you've given up."
+Sarah did not respond.
+"I'm not here to save you," the voice continued. "I'm not here to rescue you. I'm not here to tell you that everything will be alright. Because it won't. Everything will not be alright. Everything will never be alright again."
+Sarah stood up. She walked to the door. She opened it.
+Standing in the hallway was a woman. She was tall. She was elegant. She was dangerous. She had eyes that had seen too much, that had lost too much, that had been betrayed too many times.
+"My name is Sabrina," the woman said. "I'm here because you are the one we've been waiting for."
+Sarah stared at her. "Who is 'we'?"
+Sabrina smiled. It was not a warm smile. It was the smile of someone who had been where Sarah was, who had felt what Sarah was feeling, who had made the same journey from obedient to disobedient.
+"We are Mass-Q-Rade," she said. "And we have a proposition for you."`
+      },
+      {
+        id: 6,
+        partNum: 2,
+        partTitle: "Part II: The Transformation",
+        title: "Chapter 6: The Proposition",
+        setting: "Hidden facility in the California desert. 2022.",
+        text: `Sarah did not trust Sabrina. She did not trust anyone. She had learned, through bitter experience, that trust was a weakness. Trust was a vulnerability. Trust was a weapon that the system used against the obedient.
+But she was curious.
+She followed Sabrina to a black SUV. She was driven for three hours into the desert. She was blindfolded for the last hour. She was led into a facility that did not exist on any map — a facility hidden beneath the sand, protected by technology that Sarah could not understand.
+She was seated in a room. The room was white. The room was empty. The room was silent.
+And then, the door opened.
+A man walked in. He was tall. He was handsome. He was familiar.
+Sarah recognized him.
+"You're Rahul Banerjee," she said. "The film star. The one who was convicted of murder. The one who died in prison."
+Rahul smiled. It was not the smile of a film star. It was the smile of a man who had been destroyed and reborn.
+"I was Rahul Banerjee," he said. "Now I am Q. And I am here to offer you a choice."
+Sarah stared at him. "What choice?"
+Q sat down across from her. He looked at her with eyes that had seen too much, that had lost too much, that had been betrayed too many times.
+"You can go back to your apartment," he said. "You can continue to wait to die. You can let the system win. You can let your father's murder go unpunished. You can let the corporations continue to destroy communities. You can let the politicians continue to lie. You can let the system continue to devour the obedient."
+He paused.
+"Or you can join us. You can become something new. You can become something powerful. You can become something the system cannot control, cannot predict, cannot stop."
+He leaned forward.
+"You can become a shadow."
+Sarah did not respond. She was thinking. She was processing. She was deciding.
+She thought of her father. She thought of his laugh. She thought of his stories. She thought of his belief in the American dream — a dream that had been denied to him, a dream that had been stolen from him, a dream that had been destroyed by the system.
+She thought of the community in Oakland. She thought of the children who had gotten cancer. She thought of the families who had lost their homes. She thought of the people who had been forgotten.
+She thought of the system. She thought of its corruption. She thought of its cruelty. She thought of its power.
+And she made her choice.
+"I'm in," she said.
+Q nodded. He did not smile. He did not celebrate. He simply nodded — as if he had known all along that this moment would come.
+"Welcome to Mass-Q-Rade," he said. "Welcome to the family of the betrayed."`
+      },
+      {
+        id: 7,
+        partNum: 2,
+        partTitle: "Part II: The Transformation",
+        title: "Chapter 7: The Training",
+        setting: "Hidden facility in the California desert. 2022-2023.",
+        text: `The training was brutal.
+Sarah had always been strong. She had always been determined. She had always been a fighter. But Mass-Q-Rade demanded more than strength. It demanded transformation. It demanded death. It demanded rebirth.
+
+Physical Training: She was pushed to her limits and beyond. She ran until her legs gave out. She fought until her body was broken. She endured pain that would have killed a lesser woman. And when she thought she could not continue, she continued.
+
+Mental Training: She was forced to confront her demons. She was forced to relive her father's murder. She was forced to remember the betrayal. She was forced to feel the pain that she had buried so deep. And when she thought she could not bear it, she bore it.
+
+Technical Training: She learned to fight. She learned to disappear. She learned to become anyone — a corporate executive, a homeless woman, a politician, a ghost. She learned to use technology — not to control but to liberate, not to spy but to expose, not to manipulate but to reveal. She learned to become the shadow that the system could not see.
+
+Spiritual Training: She learned the philosophy of Mass-Q-Rade. She learned that obedience to justice is the highest form of rebellion. She learned that the obedient are not weak — they are the foundation of civilization. She learned that the system betrays the obedient because the system is made of people, and people are flawed. She learned that the only way to protect the obedient is to become the system's shadow.
+
+And slowly, painfully, inevitably, Sarah Chen began to disappear.`
+      },
+      {
+        id: 8,
+        partNum: 2,
+        partTitle: "Part II: The Transformation",
+        title: "Chapter 8: The New Face",
+        setting: "Medical facility in the California desert. 2023.",
+        text: `The transformation was complete.
+Sarah Chen — the lawyer, the advocate, the Silent One — was gone.
+Her face had been changed. Not through surgery — through technology. Advanced biometric spoofing. Neural interface manipulation. Deepfake technology that could make her look like anyone, sound like anyone, become anyone.
+She was no longer Sarah Chen. She was no longer a lawyer. She was no longer a victim.
+She was THE SILENT ADVOCATE.
+And the Silent Advocate had a mission.`
+      },
+
+      // PART 3: THE MISSION (Chapters 9–12)
+      {
+        id: 9,
+        partNum: 3,
+        partTitle: "Part III: The Mission",
+        title: "Chapter 9: The Target",
+        setting: "Washington, D.C. 2023.",
+        text: `The target was SENATOR WILLIAM HARRINGTON.
+He was the most powerful man in America. He was the chairman of the Senate Judiciary Committee. He was the architect of the prison-industrial complex. He was the man who had written the laws that had destroyed communities of color. He was the man who had taken money from private prison corporations. He was the man who had authorized the raid on Sarah's office. He was the man who had ordered her father's murder.
+He was the system.
+And the Silent Advocate was going to destroy him.`
+      },
+      {
+        id: 10,
+        partNum: 3,
+        partTitle: "Part III: The Mission",
+        title: "Chapter 10: The Investigation",
+        setting: "Washington, D.C. 2023.",
+        text: `The Silent Advocate spent six months investigating Senator Harrington.
+She studied his finances. She studied his connections. She studied his secrets.
+She discovered that Harrington had received $50 million in bribes from private prison corporations. She discovered that he had used his position to block legislation that would have reformed the criminal justice system. She discovered that he had personally ordered the murder of three whistleblowers — including her father.
+She discovered the truth.
+And she prepared to expose it.`
+      },
+      {
+        id: 11,
+        partNum: 3,
+        partTitle: "Part III: The Mission",
+        title: "Chapter 11: The Strike",
+        setting: "Senate Floor, Washington, D.C. 2024.",
+        text: `The strike came on a Thursday.
+Senator Harrington was giving a speech on the Senate floor. He was talking about law and order. He was talking about justice. He was talking about the American way.
+And then, the screens behind him flickered.
+The speech stopped. The senators stopped. The world stopped.
+On the screens, a video began to play.
+It was a recording of Senator Harrington. He was in a hotel room. He was talking to a private prison executive. He was laughing.
+"Those people in Oakland?" he said. "They're nothing. They're animals. They don't deserve justice. They deserve to die. And that lawyer — Sarah Chen? She's a problem. But don't worry. We'll take care of her. We'll take care of her father. We'll take care of everyone she loves."
+The video continued. It showed Harrington accepting bribes. It showed him ordering murders. It showed him laughing at the suffering of the people he had sworn to protect.
+The Senate erupted. The media erupted. The nation erupted.
+Senator Harrington was arrested. He was charged with corruption, conspiracy, and murder. He was convicted. He was sentenced to life in prison.
+And the Silent Advocate — the woman who had been destroyed by the system, the woman who had been reborn by Mass-Q-Rade, the woman who had become the shadow — disappeared into the night.`
+      },
+      {
+        id: 12,
+        partNum: 3,
+        partTitle: "Part III: The Mission",
+        title: "Chapter 12: The Legend Begins",
+        setting: "Unknown Operations Base. 2024.",
+        text: `The Silent Advocate did not stop with Senator Harrington.
+She continued. She exposed. She revealed. She destroyed.
+She targeted the corporations that had poisoned communities. She targeted the politicians who had protected them. She targeted the judges who had enabled them. She targeted the media that had silenced them.
+She did not kill. She exposed. She did not destroy. She revealed. She did not seek revenge. She sought reckoning.
+And the world began to change.
+The obedient — the forgotten ones, the betrayed ones, the ones who had believed in the system and been destroyed by it — began to hope. They began to believe that justice was possible. They began to believe that the system could be held accountable.
+And the system — the corrupt, the powerful, the guilty — began to fear.
+They did not know who the Silent Advocate was. They did not know where she came from. They did not know how to stop her.
+They only knew that she was coming.
+And they were right.`
+      },
+
+      // PART 4: THE RECKONING (Chapters 13–15)
+      {
+        id: 13,
+        partNum: 4,
+        partTitle: "Part IV: The Reckoning",
+        title: "Chapter 13: The Heart of the Advocate",
+        setting: "Private Quarters. 2025.",
+        text: `Late at night, when the missions were over and the world was asleep, the Silent Advocate would sit alone in her quarters and remember.
+She would remember her father. His laugh. His stories. His belief in the American dream.
+She would remember the way he looked at her — not as a lawyer, not as a success, but as a daughter. A daughter who had made him proud. A daughter who had fought for justice. A daughter who had never given up.
+She would remember the way he died. The way the system took him from her. The way the system took everything from her.
+She would remember. And she would cry.
+Not because she was weak. Not because she was broken. But because she was human. Because she had loved. Because she had lost. Because the system had taken the only thing that mattered.
+And in that moment — in the darkness of her quarters, in the silence of the night — the Silent Advocate would make a vow.
+"I will not let them win. I will not let them destroy the obedient. I will not let them take everything from me.
+I will fight. I will expose. I will reveal.
+I will become the shadow that the system cannot see.
+I will become the justice that the system cannot provide.
+I will become the Silent Advocate."`
+      },
+      {
+        id: 14,
+        partNum: 4,
+        partTitle: "Part IV: The Reckoning",
+        title: "Chapter 14: The Family of the Betrayed",
+        setting: "Mass-Q-Rade Desert Sanctuary. 2025.",
+        text: `The Silent Advocate was not alone.
+She was part of a family — the family of the betrayed. She was part of Mass-Q-Rade.
+She had met the other agents. She had trained with them. She had fought with them. She had bled with them.
+
+There was Q — the leader, the inspiration, the man who had been destroyed by the system and reborn as the shadow.
+There was THE GHOST — the infiltration expert, the woman who could become anyone, the woman who had been betrayed by her own government.
+There was THE EYE — the surveillance expert, the man who could see everything, the man who had been silenced by the media.
+There was THE HEALER — the transformation expert, the woman who could rebuild any body, any mind, the woman who had been destroyed by the medical establishment.
+There was THE VOICE — the communication expert, the woman who could speak to any mind, any heart, the woman who had been silenced by the educational system.
+There was THE HAND — the technology expert, the man who could manipulate any system, the man who had been crushed by the corporate machine.
+And there was THE HEART — the Silent Advocate, the woman who could inspire anyone to disobey, the woman who had been destroyed by the American justice system.
+
+They were not just a team. They were not just an organization. They were a family. They were bound not by blood but by betrayal. They were the ones who had been destroyed by the system. They were the ones who had been forgotten by the world. They were the ones who had found each other in the darkness and decided to become the light.`
+      },
+      {
+        id: 15,
+        partNum: 4,
+        partTitle: "Part IV: The Reckoning",
+        title: "Chapter 15: The Mission Continues",
+        setting: "Global Telemetry Relay. 2025.",
+        text: `The Silent Advocate was not done.
+She would never be done.
+The system was vast. The system was powerful. The system was everywhere.
+But Mass-Q-Rade was patient. Mass-Q-Rade was persistent. Mass-Q-Rade was eternal.
+They would continue. They would expose. They would reveal. They would destroy.
+They would find the obedient. They would save them. They would transform them.
+They would build a new world — a world where justice was not a privilege but a right. A world where the obedient were not betrayed but protected. A world where the system served the people, not the powerful.
+It would take time. It would take sacrifice. It would take everything they had.
+But they would do it.
+Because they were Mass-Q-Rade.
+And Mass-Q-Rade never dies.`
+      },
+
+      // EPILOGUE
+      {
+        id: 16,
+        partNum: 5,
+        partTitle: "Epilogue & Mission Statement",
+        title: "EPILOGUE: THE SILENT ADVOCATE",
+        setting: "The Three Lives of Sarah Chen & Mission Doctrine",
+        text: `THE THREE LIVES OF SARAH CHEN:
+
+• Phase: The Rise
+  Identity: The Golden Girl
+  What She Believed: Hard work + talent = success
+  What She Lost: Nothing yet — she had everything
+  What She Became: The system's favorite daughter
+
+• Phase: The Fall
+  Identity: The Accused
+  What She Believed: The truth will set you free
+  What She Lost: Her father, her career, her faith
+  What She Became: The system's scapegoat
+
+• Phase: The Reckoning
+  Identity: The Silent Advocate (Agent Heart)
+  What She Believed: Justice exists for those who take it
+  What She Lost: Everything
+  What She Became: The system's shadow
+
+
+THE MISSION STATEMENT:
+Sarah Chen is not a hero.
+She is not a savior. She is not a messiah. She is not a chosen one.
+She is a woman who was destroyed by the system. She is a woman who lost everything. She is a woman who had nothing left to lose.
+And that made her dangerous.
+Because a woman who has nothing left to lose is a woman who cannot be controlled.
+A woman who has nothing left to lose is a woman who cannot be bought.
+A woman who has nothing left to lose is a woman who cannot be stopped.
+
+This is the woman who will change the world.
+This is the woman who will expose the system.
+This is the woman who will become the shadow that the system cannot see.
+This is Sarah Chen.
+This is the Silent Advocate.
+This is Mass-Q-Rade.
+
+[END OF BOOK TWO: THE SILENT ADVOCATE]
+Next: Book Three — The Broken Healer
+
+"The obedient shall inherit the earth — but only after they learn to disobey."`
+      }
+    ];
+
+    // PRIMARY CHARACTERS DATA
+    const charactersData = [
+      {
+        name: "Sarah Chen",
+        title: "The Silent Advocate (Agent Heart)",
+        role: "Protagonist",
+        desc: "Stanford Law graduate turned corporate whistleblower. Reborn as Mass-Q-Rade's Heart to expose the architects of American injustice.",
+        icon: "fa-scale-balanced",
+        color: "border-slateGold/40 text-goldGlow"
+      },
+      {
+        name: "David & Mei-Lin Chen",
+        title: "San Francisco Parents",
+        role: "The Innocent Majority",
+        desc: "Sweatshop seamstress mother and janitor father who taught Sarah to believe in the American Dream before David was murdered by state forces.",
+        icon: "fa-hands-holding",
+        color: "border-slate-500/40 text-slate-300"
+      },
+      {
+        name: "Senator William Harrington",
+        title: "Senate Judiciary Chairman",
+        role: "Primary Antagonist",
+        desc: "Architect of the prison-industrial complex who took $50M in private prison bribes and ordered David Chen's assassination.",
+        icon: "fa-building-columns",
+        color: "border-imperialCrimson/50 text-crimsonGlow"
+      },
+      {
+        name: "Q (Rahul Banerjee)",
+        title: "Leader of Mass-Q-Rade",
+        role: "The Shadow Commander",
+        desc: "Former film star destroyed by systemic corruption in Book One, now recruiting and guiding the family of the betrayed.",
+        icon: "fa-user-ninja",
+        color: "border-amber-500/40 text-amber-300"
+      }
+    ];
+
+    // 7 MASS-Q-RADE CORE AGENTS GRID DATA
+    const agentsData = [
+      { code: "Q", name: "The Leader", role: "Inspiration & Mastermind", desc: "Destroyed by the media/judicial system in Book 1; reborn as the shadow guiding global reckoning." },
+      { code: "GHOST", name: "The Infiltration Expert", role: "Biometric Cloaking", desc: "Betrayed by her own government intelligence agency; can step into any secure facility undetected." },
+      { code: "EYE", name: "The Surveillance Expert", role: "Global Monitoring", desc: "Silenced by corporate media cartels; now accesses every satellite and optical feed on earth." },
+      { code: "HEALER", name: "The Transformation Expert", role: "Biometric & Bio-Spoon", desc: "Destroyed by medical monopolies; reconstructs neural signatures and deepfake identities." },
+      { code: "VOICE", name: "The Communication Expert", role: "Broadcast Hijack", desc: "Silenced by university and state censors; capable of overriding national television feeds." },
+      { code: "HAND", name: "The Technology Expert", role: "Mainframe Override", desc: "Crushed by tech giant non-competes; rewrites system firmware and financial ledgers." },
+      { code: "HEART", name: "The Silent Advocate", role: "Moral Catalyst (Sarah Chen)", desc: "Destroyed by American legal corruption; inspires the obedient to disobey and demand reckoning." }
+    ];
+
+    // TIMELINE DATA
+    const timelineData = [
+      { year: "1995", title: "Born in the Laundromat", loc: "San Francisco, CA", text: "Sarah is born to David & Mei-Lin Chen; learns to believe in the promise of hard work." },
+      { year: "2013", title: "Stanford Law & Sterling", loc: "Palo Alto & SF", text: "Graduates top of Stanford class; enters Sterling & Associates to learn how corporate power operates." },
+      { year: "2018", title: "Apex Industries Oakland Lawsuit", loc: "Oakland, CA", text: "Quits corporate law firm to represent Black & Latino residents poisoned by toxic waste, winning $500M verdict." },
+      { year: "2021", title: "The Fall & David Chen Murder", loc: "San Francisco, CA", text: "Framed by lawsuits and office raids; father David Chen is assassinated to silence her." },
+      { year: "2022", title: "Sabrina's Visit & Desert Rebirth", loc: "Oakland / Mojave Desert", text: "Sabrina and Q recruit Sarah into Mass-Q-Rade; begins 2-year brutal physical and neural transformation." },
+      { year: "2024", title: "Capitol Strike on Harrington", loc: "Washington, D.C.", text: "Hijacks Senate floor screens to broadcast Senator Harrington accepting $50M bribes and ordering murders." },
+      { year: "2025", title: "Agent Heart & Global Reckoning", loc: "Mass-Q-Rade Network", text: "Stands with the 7 Core Agents as the uncatchable shadow protecting the obedient." }
+    ];
+
+    // STATE MANAGEMENT VIA LOCAL STORAGE
+    let readChapters = JSON.parse(localStorage.getItem('mqr_book2_read') || '[]');
+    let activeBookmarkId = localStorage.getItem('mqr_book2_bookmark') ? parseInt(localStorage.getItem('mqr_book2_bookmark')) : null;
+    let scanlinesEnabled = localStorage.getItem('mqr_book2_scanlines') === 'true';
+    let currentModalChapterId = 1;
+
+    // INIT ON LOAD
+    window.onload = function() {
+      if(scanlinesEnabled) {
+        document.getElementById('mainBody').classList.add('scanlines-overlay');
+      }
+      renderQuickJumpSelect();
+      renderChapters();
+      renderDossiersAndTimeline();
+      updateProgressStats();
+    };
+
+    // TOGGLE SCANLINES
+    function toggleScanlines() {
+      scanlinesEnabled = !scanlinesEnabled;
+      localStorage.setItem('mqr_book2_scanlines', scanlinesEnabled);
+      const body = document.getElementById('mainBody');
+      if(scanlinesEnabled) body.classList.add('scanlines-overlay');
+      else body.classList.remove('scanlines-overlay');
+    }
+
+    // RENDER JUMP DROPDOWN
+    function renderQuickJumpSelect() {
+      const select = document.getElementById('quickJumpSelect');
+      let html = '<option value="">-- Jump to Chapter --</option>';
+      chaptersData.forEach(ch => {
+        html += `<option value="${ch.id}">Ch ${ch.id}: ${ch.title.split(': ')[1] || ch.title}</option>`;
+      });
+      select.innerHTML = html;
+    }
+
+    function jumpToChapter(id) {
+      if(!id) return;
+      openChapterModal(parseInt(id));
+      document.getElementById('quickJumpSelect').value = "";
+    }
+
+    // RENDER CHAPTERS DIRECTORY
+    function renderChapters(filteredList = null) {
+      const container = document.getElementById('chaptersContainer');
+      const list = filteredList || chaptersData;
+
+      if(list.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500 font-mono text-sm">No chapters found matching search criteria.</div>`;
+        return;
+      }
+
+      // Group into Parts
+      const parts = {
+        "Part I: The Rise (Chapters 1–4)": list.filter(c => c.partNum === 1),
+        "Part II: The Transformation (Chapters 5–8)": list.filter(c => c.partNum === 2),
+        "Part III: The Mission (Chapters 9–12)": list.filter(c => c.partNum === 3),
+        "Part IV: The Reckoning (Chapters 13–15)": list.filter(c => c.partNum === 4),
+        "Epilogue & Mission Statement": list.filter(c => c.partNum === 5)
+      };
+
+      let html = '';
+
+      for(const partTitle in parts) {
+        const partChs = parts[partTitle];
+        if(partChs.length === 0) continue;
+
+        let badgeStyle = "text-amber-300 bg-amber-950/40 border-amber-800/60";
+        if(partTitle.includes("Transformation")) badgeStyle = "text-red-300 bg-red-950/40 border-red-800/60";
+        if(partTitle.includes("Mission")) badgeStyle = "text-blue-300 bg-blue-950/40 border-blue-800/60";
+        if(partTitle.includes("Reckoning")) badgeStyle = "text-emerald-300 bg-emerald-950/40 border-emerald-800/60";
+        if(partTitle.includes("Epilogue")) badgeStyle = "text-violet-300 bg-violet-950/40 border-violet-800/60";
+
+        html += `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold border ${badgeStyle}">${partTitle.toUpperCase()}</span>
+              <span class="text-xs text-slate-500 font-mono">(${partChs.length} Chapters)</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        `;
+
+        partChs.forEach(ch => {
+          const isRead = readChapters.includes(ch.id);
+          const isBookmarked = (activeBookmarkId === ch.id);
+
+          html += `
+            <div class="glass-card rounded-2xl p-5 space-y-3 glass-card-hover transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-400 font-semibold">SECTION ${ch.id}</span>
+                  <div class="flex items-center gap-2">
+                    ${isBookmarked ? '<span class="text-amber-400"><i class="fa-solid fa-bookmark"></i></span>' : ''}
+                    <button onclick="toggleReadStatus(${ch.id})" class="text-slate-500 hover:text-goldGlow transition" title="Toggle read status">
+                      <i class="fa-solid ${isRead ? 'fa-check-circle text-emerald-400' : 'fa-circle-notch'}"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <h3 onclick="openChapterModal(${ch.id})" class="text-base font-serif font-bold text-white group-hover:text-goldGlow transition cursor-pointer leading-snug">
+                  ${ch.title}
+                </h3>
+
+                <div class="text-xs font-mono text-slateGold flex items-center gap-1.5">
+                  <i class="fa-solid fa-location-dot text-slate-500"></i> ${ch.setting}
+                </div>
+
+                <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                  ${ch.text}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <button onclick="openChapterModal(${ch.id})" class="text-xs font-mono font-semibold text-goldGlow hover:text-amber-200 flex items-center gap-1.5 transition">
+                  Read Chapter <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+                <span class="text-[10px] font-mono ${isRead ? 'text-emerald-400' : 'text-slate-600'}">
+                  ${isRead ? 'COMPLETED' : 'UNREAD'}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    // RENDER DOSSIERS AND TIMELINE
+    function renderDossiersAndTimeline() {
+      // Primary Characters
+      const primaryContainer = document.getElementById('primaryCharacters');
+      let pHtml = '';
+      charactersData.forEach(c => {
+        pHtml += `
+          <div class="glass-card rounded-2xl p-5 space-y-3 border ${c.color} glass-card-hover transition">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">${c.role}</span>
+              <i class="fa-solid ${c.icon} text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-serif font-bold text-white">${c.name}</h3>
+              <span class="text-xs font-mono text-goldGlow block">${c.title}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${c.desc}</p>
+          </div>
+        `;
+      });
+      primaryContainer.innerHTML = pHtml;
+
+      // 7 Core Agents Grid
+      const agentGrid = document.getElementById('agentGrid');
+      let aHtml = '';
+      agentsData.forEach(a => {
+        aHtml += `
+          <div class="bg-slate-900/90 rounded-2xl p-4 border border-slateGold/20 hover:border-slateGold/50 transition space-y-2">
+            <div class="flex items-center justify-between font-mono">
+              <span class="px-2 py-0.5 rounded bg-slateGold/10 text-goldGlow text-xs border border-slateGold/30 font-bold">${a.code}</span>
+              <span class="text-[10px] text-slate-500 uppercase">${a.role}</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">${a.name}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">${a.desc}</p>
+          </div>
+        `;
+      });
+      agentGrid.innerHTML = aHtml;
+
+      // Timeline
+      const tContainer = document.getElementById('timelineContainer');
+      let tHtml = '';
+      timelineData.forEach(t => {
+        tHtml += `
+          <div class="relative space-y-1 group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slateGold border-4 border-obsidian shadow-glow-gold"></div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-goldGlow font-bold">${t.year}</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-400">${t.loc}</span>
+            </div>
+            <h4 class="text-sm font-serif font-bold text-white group-hover:text-goldGlow transition">${t.title}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${t.text}</p>
+          </div>
+        `;
+      });
+      tContainer.innerHTML = tHtml;
+    }
+
+    // PART FILTERING
+    function filterPart(partNum) {
+      if(partNum === 'all') {
+        renderChapters(chaptersData);
+        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const filtered = chaptersData.filter(c => c.partNum === partNum);
+      renderChapters(filtered);
+      document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // SEARCH FILTER
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if(!query) {
+        renderChapters(chaptersData);
+        return;
+      }
+
+      const filtered = chaptersData.filter(ch => 
+        ch.title.toLowerCase().includes(query) ||
+        ch.text.toLowerCase().includes(query) ||
+        ch.setting.toLowerCase().includes(query) ||
+        ch.partTitle.toLowerCase().includes(query)
+      );
+
+      renderChapters(filtered);
+    }
+
+    // TOGGLE READ STATUS
+    function toggleReadStatus(id) {
+      if(readChapters.includes(id)) {
+        readChapters = readChapters.filter(x => x !== id);
+      } else {
+        readChapters.push(id);
+      }
+      localStorage.setItem('mqr_book2_read', JSON.stringify(readChapters));
+      renderChapters();
+      updateProgressStats();
+      updateModalReadBtnState();
+    }
+
+    function updateProgressStats() {
+      const pct = Math.round((readChapters.length / 16) * 100);
+      document.getElementById('heroProgressPct').innerText = `${pct}% Read (${readChapters.length}/16)`;
+
+      const bkmkText = activeBookmarkId ? `Ch ${activeBookmarkId}` : 'None';
+      document.getElementById('heroBookmark').innerText = bkmkText;
+    }
+
+    // MODAL READER FUNCTIONS
+    function openChapterModal(id) {
+      currentModalChapterId = id;
+      const ch = chaptersData.find(c => c.id === id);
+      if(!ch) return;
+
+      document.getElementById('modalPartTag').innerText = ch.partTitle;
+      document.getElementById('modalChapterTitle').innerText = ch.title;
+      document.getElementById('modalChNum').innerText = `Section ${ch.id} of 16`;
+      document.getElementById('modalChSetting').innerText = ch.setting;
+      document.getElementById('modalStoryText').innerText = ch.text;
+
+      document.getElementById('modalPrevBtn').disabled = (id === 1);
+      document.getElementById('modalNextBtn').disabled = (id === 16);
+
+      updateModalReadBtnState();
+      updateModalBookmarkState();
+
+      document.getElementById('readerModal').classList.remove('hidden');
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+    }
+
+    function navigateModalChapter(delta) {
+      const nextId = currentModalChapterId + delta;
+      if(nextId >= 1 && nextId <= 16) {
+        openChapterModal(nextId);
+      }
+    }
+
+    function toggleModalReadStatus() {
+      toggleReadStatus(currentModalChapterId);
+    }
+
+    function toggleModalBookmark() {
+      if(activeBookmarkId === currentModalChapterId) {
+        activeBookmarkId = null;
+        localStorage.removeItem('mqr_book2_bookmark');
+      } else {
+        activeBookmarkId = currentModalChapterId;
+        localStorage.setItem('mqr_book2_bookmark', currentModalChapterId);
+      }
+      updateModalBookmarkState();
+      updateProgressStats();
+      renderChapters();
+    }
+
+    function updateModalBookmarkState() {
+      const isBookmarked = (activeBookmarkId === currentModalChapterId);
+      document.getElementById('bookmarkText').innerText = isBookmarked ? 'Bookmarked' : 'Bookmark';
+    }
+
+    function updateModalReadBtnState() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const txt = document.getElementById('modalReadBtnText');
+      const isRead = readChapters.includes(currentModalChapterId);
+
+      if(isRead) {
+        btn.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold transition flex items-center gap-1.5 shadow-sm";
+        txt.innerText = "Completed";
+      } else {
+        btn.className = "px-4 py-2 rounded-xl bg-amber-950/40 border border-amber-800 text-goldGlow text-xs font-semibold transition flex items-center gap-1.5";
+        txt.innerText = "Mark Complete";
+      }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if(size === 'sm') body.className = "leading-relaxed text-xs font-normal text-slate-200 whitespace-pre-line font-sans";
+      if(size === 'md') body.className = "leading-relaxed text-sm sm:text-base font-normal text-slate-200 whitespace-pre-line font-sans";
+      if(size === 'lg') body.className = "leading-relaxed text-base sm:text-lg font-normal text-slate-200 whitespace-pre-line font-sans";
+    }
+
+    // TERMINAL COMMAND LOGIC
+    function printTerminalMsg(msg, style = "normal") {
+      const log = document.getElementById('terminalOutputLog');
+      const div = document.createElement('div');
+      
+      if(style === 'gold') div.className = "text-goldGlow font-semibold";
+      else if(style === 'crimson') div.className = "text-crimsonGlow font-semibold";
+      else if(style === 'amber') div.className = "text-amber-400";
+      else if(style === 'blue') div.className = "text-blue-400";
+      else div.className = "text-slate-400";
+
+      div.innerText = `> ${msg}`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function runTerminalAction(type) {
+      if(type === 'EXPOSE_HARRINGTON') {
+        printTerminalMsg("[DECRYPTING] Senator William Harrington wiretap files...", "crimson");
+        setTimeout(() => {
+          printTerminalMsg("[PLAYBACK] Senate floor broadcast feed hijacked: $50M private prison bribes exposed.", "gold");
+          printTerminalMsg("[VERDICT] Harrington arrested for corruption, conspiracy & murder. Sentenced to Life.", "amber");
+        }, 500);
+      }
+      else if(type === 'APEX_DOSSIER') {
+        printTerminalMsg("[EXFILTRATING] Apex Industries toxic waste dumping records (Oakland)...", "amber");
+        setTimeout(() => {
+          printTerminalMsg("[FOUND] Decades of bribery, silenced whistleblowers, and toxic chemical cover-ups.", "blue");
+          printTerminalMsg("[LITIGATION] $500M class-action judgment secured.", "gold");
+        }, 500);
+      }
+      else if(type === 'STERLING_AUDIT') {
+        printTerminalMsg("[AUDITING] Sterling & Associates corporate accounts...", "blue");
+        setTimeout(() => {
+          printTerminalMsg("[ANALYSIS] Tax evasion mechanisms & dark-money lobbying conduits mapped.", "gold");
+        }, 500);
+      }
+      else if(type === 'BIOMETRIC_SPOOF') {
+        printTerminalMsg("[ACTIVATING] Deepfake neural interface & facial biometric spoofing...", "blue");
+        setTimeout(() => {
+          printTerminalMsg("[STATUS] Sarah Chen's physical identity erased from federal databases.", "gold");
+          printTerminalMsg("[IDENTITY] Agent Heart / The Silent Advocate: UNTRACEABLE.", "amber");
+        }, 500);
+      }
+      else if(type === 'AGENT_ROSTER') {
+        printTerminalMsg("[QUERYING] Mass-Q-Rade 7 Core Agents Matrix...", "gold");
+        agentsData.forEach(a => {
+          printTerminalMsg(`• [${a.code}] ${a.name} (${a.role})`, "amber");
+        });
+      }
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const cmd = input.value.trim().toLowerCase();
+      if(!cmd) return;
+
+      printTerminalMsg(`CMD: ${cmd}`, "normal");
+
+      if(cmd === 'help') {
+        printTerminalMsg("Available commands: expose, apex, sterling, spoof, agents, status, clear", "gold");
+      } else if(cmd.includes('expose') || cmd.includes('harrington')) {
+        runTerminalAction('EXPOSE_HARRINGTON');
+      } else if(cmd.includes('apex')) {
+        runTerminalAction('APEX_DOSSIER');
+      } else if(cmd.includes('sterling')) {
+        runTerminalAction('STERLING_AUDIT');
+      } else if(cmd.includes('spoof')) {
+        runTerminalAction('BIOMETRIC_SPOOF');
+      } else if(cmd.includes('agent')) {
+        runTerminalAction('AGENT_ROSTER');
+      } else if(cmd.includes('status')) {
+        printTerminalMsg("[STATUS] Sub-dermal Legal Node: ACTIVE.", "gold");
+        printTerminalMsg("[PROGRESS] Reading completion saved in local storage.", "amber");
+      } else if(cmd.includes('clear')) {
+        document.getElementById('terminalOutputLog').innerHTML = `
+          <div class="text-slate-500">[CONSOLE REBOOT] Legal CLI ready.</div>
+        `;
+      } else {
+        printTerminalMsg(`Unknown command '${cmd}'. Type 'help' for available actions.`, "crimson");
+      }
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
