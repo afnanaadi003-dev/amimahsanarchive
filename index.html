@@ -85,6 +85,31 @@
       color: var(--light);
     }
 
+    /* Responsive Background Image */
+    @media (max-width: 480px) {
+      .homepage {
+        background-size: contain;
+        background-position: left center;
+        padding-top: 15rem;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .homepage {
+        background-size: cover;
+        background-position: center top;
+        padding-top: 12rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .homepage {
+        background-size: cover;
+        background-position: center;
+        padding-top: 8rem;
+      }
+    }
+
     .homepage h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
