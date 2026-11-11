@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK THREE — THE BROKEN HEALER</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    /* Book Cover — cinematic animated image box */
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 848 / 1264;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Light sweep across the cover */
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0.06) 53%,
+        transparent 64%
+      );
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    /* Film vignette + projector flicker */
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes coverSheen {
+      0%, 55% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+
+    @keyframes coverFlicker {
+      0%, 100% { opacity: 1; }
+      47% { opacity: 0.84; }
+      48% { opacity: 1; }
+      73% { opacity: 0.9; }
+      74% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+  </style>
+</head>
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      
+      <!-- Brand & Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-heart-pulse text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 3</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Broken Healer</span>
+        </div>
+      </a>
+
+      <!-- Part Filters -->
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Rise (1-5)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: Transformation (6-9)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part III: The Mission (10-13)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part IV: Reckoning (14-20)</button>
+        <button onclick="filterPart(5)" class="px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/60 text-rose-300 transition">Part V: Final (21-25)</button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book Three Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE BROKEN HEALER
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Dr. James Okafor &amp; The Anatomy of British Injustice
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+          Born in a Peckham council flat to a Nigerian bus driver and a nurse, <strong class="text-white">Dr. James Okafor</strong> becomes the doctor the NHS never wanted: one who treats people rather than symptoms. When the institution that raised him turns on him — complaints, a GMC inquiry, and the murder of his mother — the healer is recruited into <strong class="text-cyanGlow">Mass-Q-Rade</strong> and reborn as <strong class="text-goldGlow">The Broken Healer</strong>: the shadow that exposes the system from inside.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">25 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">1985 – 2026</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 25 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 25-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, IV, and V.</p>
+        </div>
+
+        <!-- Search & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE BIO-SPOOF CLI TERMINAL -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> BIO-SPOOF &amp; TELEMETRY CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating The Broken Healer's sub-dermal neural interface and NHS records override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: HIGHLANDS_MEDICAL_REDOUBT
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // HEALER_AGENT_03</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: QUANTUM_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_THORNTON')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-skull text-red-400"></i> EXPOSE THORNTON
+            </button>
+            <button onclick="runTerminalAction('BIOSPOOF')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> BIO-SPOOF
+            </button>
+            <button onclick="runTerminalAction('AUDIT_LOGS')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT LOGS
+            </button>
+            <button onclick="runTerminalAction('EXTRACT_STATUS')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mountain text-violet-400"></i> SANCTUARY PING
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade bio-spoof terminal online. Highlands uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Dr. James Okafor -&gt; The Broken Healer (Agent Three).</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target Dr. Richard Thornton: EXPOSED.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action button above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">HEALER_CONSOLE&gt;</span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, spoof, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Dr. James Okafor / The Broken Healer, Grace Okafor, Dr. Richard Thornton, Sabrina, Q, and Dr. Michael Adeyemi.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE (1985 – 2026) -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (1985 – 2026)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From a Peckham council flat to the NHS, Geneva, and the BMA — the making of the Broken Healer.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE RISE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Boy Who Wanted to Heal</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 25</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Peckham, London (1985)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">3,000 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800">
+            <!-- Full narrative expansion -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK THREE — THE BROKEN HEALER</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 25-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 25-CHAPTER SERIALIZATION DATA
+    const chaptersData = [
+{
+        id: 1, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 1: The Boy Who Wanted to Heal",
+        setting: "Peckham, London. 1985.",
+        wordCount: "4,000 words",
+        summary: "James Okafor is born in a Peckham council flat to a nurse and a Nigerian bus driver, raised on jollof rice, gospel music, and his mother's faith in the British dream. Twelve years later, his father is arrested for a crime he did not commit, and the boy learns what the system does to people like him.",
+        keyScene: "Watching his father cry after two weeks in jail for a crime a white man committed, twelve-year-old James stops believing in the system and decides to become a doctor instead.",
+        text: "The boy who would become the Broken Healer was born in a council flat in Peckham.\n\nHis mother, GRACE OKAFOR, was a nurse who worked twelve-hour shifts at St. Thomas' Hospital. His father, EMMANUEL OKAFOR, was a bus driver who had emigrated from Nigeria in 1978, chasing the promise of a better life in Britain — the promise of opportunity, the promise of equality, the promise of a society that would judge him by his character, not his color.\n\nJames was born into the invisible majority. He was born into the class of people who pay their taxes, follow the laws, and believe in the promise of Britain — the promise that if you work hard, if you play by the rules, if you trust the system, you will be rewarded.\n\nHe would learn, in time, that the promise was a lie.\n\nBut in 1985, he was just a baby. A baby with a future. A baby with a dream.\n\nJames grew up in a two-bedroom flat that housed five people — his parents, his grandmother, his sister, and himself. The flat was small. The flat was cramped. The flat was filled with the smell of jollof rice and the sound of Nigerian gospel music. But the flat was also filled with love.\n\nHis mother would come home at dawn, exhausted from saving lives, and she would sit with James and tell him stories. Stories about Nigeria. Stories about the journey to Britain. Stories about the dream that had brought them here — the dream of freedom, the dream of opportunity, the dream of a better life.\n\n'Britain is the greatest country in the world,' she would say. 'Here, if you work hard, you can become anything. You can become a doctor. You can become a lawyer. You can become a prime minister.'\n\nJames believed her. He believed in the dream. He believed in the system.\n\nHe would learn, in time, that the dream was a nightmare dressed in red, white, and blue.\n\nJames was twelve years old when he learned his first lesson about the British justice system.\n\nHis father had been arrested. He had been accused of assaulting a passenger on his bus. The evidence was circumstantial — a bruise on the passenger's arm, a witness who claimed to have seen Emmanuel push the man. But the police did not care about the evidence. The police cared about the color of his skin.\n\nEmmanuel Okafor was Black. Emmanuel Okafor was poor. Emmanuel Okafor was the perfect suspect.\n\nHe spent two weeks in jail before the real attacker was caught — a white man who had attacked the passenger in a road rage incident. Emmanuel Okafor was released. He was not apologized to. He was not compensated. He was simply released — a broken man, a humiliated man, a man who had learned that the system did not protect people like him.\n\nJames watched his father cry that night. He had never seen him cry before. He had never seen him break. And in that moment, something inside him hardened. Something inside him calcified.\n\nHe decided to become a doctor.\n\nNot because he believed in the system. But because he wanted to heal. He wanted to fix. He wanted to make things right.\n\nHe would learn, in time, that the system could not be fixed.\n\nIt could only be destroyed."
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 2: The Education of a Healer",
+        setting: "King's College London School of Medicine. 2003.",
+        wordCount: "3,500 words",
+        summary: "James graduates top of his class at King's College London — not the smartest or the best connected, but the most determined, studying eighteen hours a day and working three jobs. He takes a post at St. Thomas', his mother's hospital, and begins to learn how the NHS really works.",
+        keyScene: "James walks the corridors of St. Thomas' for the first time as a doctor and realizes the bureaucracy is designed to process patients, not heal them.",
+        text: "James Okafor graduated from King's College London School of Medicine at the top of his class.\n\nHe was not the smartest student. He was not the most connected. He was not the most privileged. But he was the most determined. He studied eighteen hours a day. He worked three jobs to pay tuition. He slept four hours a night. And he did it all with a single-minded focus that terrified his classmates and impressed his professors.\n\nHe was going to change the system. He was going to heal the sick. He was going to save lives.\n\nHe was going to be the Broken Healer.\n\nBut first, he had to learn how the system worked. He had to learn its rules. He had to learn its weaknesses. He had to learn its secrets.\n\nHe took a job at ST. THOMAS' HOSPITAL — the same hospital where his mother had worked for twenty years. The hospital was part of the National Health Service — the crown jewel of the British welfare state, the envy of the world, the system that was supposed to provide healthcare to everyone, regardless of wealth, regardless of race, regardless of background.\n\nBut James would learn that the NHS was not what it seemed.\n\nHe would learn that the NHS was a bureaucracy — a labyrinth of rules, regulations, and protocols that prioritized paperwork over patients. He would learn that the NHS was underfunded, understaffed, and overwhelmed. He would learn that the NHS was riddled with racism — that Black and brown patients received worse care, that Black and brown doctors were passed over for promotions, that Black and brown nurses were ignored and dismissed.\n\nHe would learn that the system was not broken.\n\nThe system was working exactly as designed."
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 3: The Doctor Who Cared Too Much",
+        setting: "St. Thomas' Hospital, London. 2010.",
+        wordCount: "3,000 words",
+        summary: "Dr. Okafor becomes the doctor every patient prays for — eighteen-hour shifts, no meals, no sleep, and room for the homeless, the single mothers, and the forgotten. The patients call him a saint. The institution starts to see him as a problem.",
+        keyScene: "A homeless man with tuberculosis thanks Dr. O. for treating him 'like a person,' while a manager logs the extra minutes as an inefficiency.",
+        text: "Dr. James Okafor was a revelation.\n\nHe was not just a doctor. He was a healer. He did not just treat symptoms. He treated people. He listened to their stories. He held their hands. He cried with them. He laughed with them. He fought for them.\n\nHe worked eighteen-hour shifts. He skipped meals. He skipped sleep. He skipped his own life. He dedicated himself to his patients — the poor, the forgotten, the invisible. He treated the homeless man with tuberculosis. He treated the single mother with cancer. He treated the elderly woman with dementia. He treated everyone, regardless of their ability to pay, regardless of their race, regardless of their background.\n\nAnd the patients loved him.\n\nThey called him 'Dr. O.' They brought him gifts — homemade cakes, handwritten cards, small tokens of gratitude. They told him he was the best doctor they had ever had. They told him he was a saint.\n\nBut the system did not love him.\n\nThe system saw him as a threat."
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 4: The First Warning",
+        setting: "St. Thomas' Hospital, London. 2012.",
+        wordCount: "3,000 words",
+        summary: "Dr. Richard Thornton, head of the emergency department, calls James in to praise his numbers and then condemn his humanity: he is 'not a team player' because he spends too long with patients. James walks out of the hospital and does not look back.",
+        keyScene: "Thornton tells James he is 'too emotional' to be a good fit; James replies that a hospital without human doctors does not deserve to exist, and walks out into the night.",
+        text: "The first warning came from his supervisor.\n\nDR. RICHARD THORNTON was the head of the emergency department. He was white. He was privileged. He was arrogant. He had been at St. Thomas' for thirty years, and he had never treated a patient who could not pay. He had never worked an eighteen-hour shift. He had never skipped a meal. He had never sacrificed anything for anyone.\n\nHe called James into his office.\n\n'Dr. Okafor,' he said. 'I've been reviewing your performance.'\n\nJames waited. He knew what was coming. He had been through this before.\n\n'Your patient satisfaction scores are excellent,' Dr. Thornton continued. 'Your clinical outcomes are impressive. Your dedication is admirable.'\n\nHe paused.\n\n'But you're not a team player.'\n\nJames stared at him. 'I'm sorry?'\n\n'You spend too much time with patients. You listen to their problems. You hold their hands. You cry with them. That's not what doctors do. Doctors treat symptoms. Doctors prescribe medication. Doctors move on to the next patient.'\n\nJames felt his blood boil. 'With respect, Dr. Thornton, that's exactly what doctors should do. We should treat people, not just symptoms. We should listen. We should care. We should heal.'\n\nDr. Thornton smiled. It was not a warm smile. It was the smile of a man who had power and knew it.\n\n'Dr. Okafor,' he said. 'You're a good doctor. But you're not a good fit for this hospital. You care too much. You feel too much. You're too... emotional.'\n\nJames stood up. He was shaking with rage.\n\n'I'm not too emotional,' he said. 'I'm human. And if this hospital doesn't want human doctors, then maybe this hospital doesn't deserve to exist.'\n\nHe walked out of the office. He walked out of the hospital. He walked into the night.\n\nAnd he did not look back."
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 5: The Fall",
+        setting: "London. 2013–2018.",
+        wordCount: "5,000 words",
+        summary: "James begins investigating the disparities he sees: higher death rates for Black and brown patients, promotions that never come, data quietly buried. The system answers with a fabricated complaint, a GMC inquiry, and the murder of his mother, Grace — killed in a 'random' car accident.",
+        keyScene: "A guard tells him his mother is dead; James realizes she was murdered to silence him, and the doctor who believed in the system stops fighting entirely.",
+        text: "The fall came slowly. Then all at once.\n\nJames had become a target. Not because he had challenged Dr. Thornton — that was expected. Doctors challenge their superiors. That was the system working as designed.\n\nHe had become a target because he had started asking questions. He had started investigating. He had started connecting the dots.\n\nHe had discovered that the NHS was not an isolated case. He had discovered that the system was rigged. He had discovered that Black and brown patients were dying at higher rates than white patients. He had discovered that Black and brown doctors were being passed over for promotions. He had discovered that the NHS was covering up its failures — hiding data, silencing whistleblowers, protecting the powerful.\n\nHe had discovered the truth.\n\nAnd the system could not allow that.\n\nThe first attack came in the form of a complaint. A patient — a white woman — claimed that James had been rude to her. She claimed that he had dismissed her concerns. She claimed that he had been 'aggressive.'\n\nThe complaint was baseless. It was designed to destroy him. It was designed to silence him.\n\nThe second attack came in the form of an investigation. The General Medical Council — the body that regulated doctors in the UK — launched an inquiry into James's conduct. They claimed that he had breached professional standards. They claimed that he had put patients at risk. They claimed that he was a danger to the public.\n\nThe investigation was a farce. It was designed to destroy him. It was designed to strip him of his license. It was designed to silence him.\n\nThe third attack came in the form of a murder.\n\nHis mother — Grace Okafor, the nurse who had worked at St. Thomas' for twenty years — was killed in a 'car accident.' The police said it was random. The police said it was a tragedy. The police said they were investigating.\n\nBut James knew the truth.\n\nHis mother had been murdered by the system. She had been murdered to send a message. She had been murdered to silence him.\n\nAnd it worked.\n\nJames Okafor broke.\n\nHe stopped fighting. He stopped investigating. He stopped believing. He withdrew from the world. He moved to a small flat in Brixton. He stopped answering calls. He stopped seeing friends. He stopped living.\n\nHe was waiting to die.\n\nBut the system had other plans."
+      },
+{
+        id: 6, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 6: The Visitor",
+        setting: "Brixton, London. 2019.",
+        wordCount: "3,500 words",
+        summary: "Three days without food, a month without speech, James is waiting to die when a woman named Sabrina knocks on his door. She does not offer rescue or comfort — only the news that he is the one they have been waiting for.",
+        keyScene: "Sabrina stands in the doorway and says the words that pull James back into the world: 'We are Mass-Q-Rade, and we have a proposition for you.'",
+        text: "She came on a Tuesday.\n\nJames was sitting in his flat, staring at the wall. He had not eaten in three days. He had not showered in a week. He had not spoken to anyone in a month.\n\nThe knock on the door was soft. Persistent. Unavoidable.\n\nJames did not answer. He did not want to answer. He did not want to see anyone. He did not want to talk to anyone. He did not want to live.\n\nBut the knock continued.\n\nAnd then, a voice.\n\n'Dr. Okafor. I know you're in there. I know you're hurting. I know you've lost everything. I know you've given up.'\n\nJames did not respond.\n\n'I'm not here to save you,' the voice continued. 'I'm not here to rescue you. I'm not here to tell you that everything will be alright. Because it won't. Everything will not be alright. Everything will never be alright again.'\n\nJames stood up. He walked to the door. He opened it.\n\nStanding in the hallway was a woman. She was tall. She was elegant. She was dangerous. She had eyes that had seen too much, that had lost too much, that had been betrayed too many times.\n\n'My name is Sabrina,' the woman said. 'I'm here because you are the one we've been waiting for.'\n\nJames stared at her. 'Who is \\'we\\'?'\n\nSabrina smiled. It was not a warm smile. It was the smile of someone who had been where James was, who had felt what James was feeling, who had made the same journey from obedient to disobedient.\n\n'We are Mass-Q-Rade,' she said. 'And we have a proposition for you.'"
+      },
+      {
+        id: 7, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 7: The Proposition",
+        setting: "A hidden facility in the Scottish Highlands. 2019.",
+        wordCount: "4,000 words",
+        summary: "Blindfolded and driven six hours into the Highlands, James is brought to a facility that exists on no map and meets a man he recognizes from the news: Rahul Banerjee, the film star who died in prison — now Q, offering him a choice.",
+        keyScene: "Q offers James two futures — go home and wait to die, or become a shadow — and James, thinking of his mother, answers: 'I'm in.'",
+        text: "James did not trust Sabrina. He did not trust anyone. He had learned, through bitter experience, that trust was a weakness. Trust was a vulnerability. Trust was a weapon that the system used against the obedient.\n\nBut he was curious.\n\nHe followed Sabrina to a black SUV. He was driven for six hours into the Scottish Highlands. He was blindfolded for the last hour. He was led into a facility that did not exist on any map — a facility hidden beneath the mountains, protected by technology that James could not understand.\n\nHe was seated in a room. The room was white. The room was empty. The room was silent.\n\nAnd then, the door opened.\n\nA man walked in. He was tall. He was handsome. He was familiar.\n\nJames recognized him.\n\n'You're Rahul Banerjee,' he said. 'The film star. The one who was convicted of murder. The one who died in prison.'\n\nRahul smiled. It was not the smile of a film star. It was the smile of a man who had been destroyed and reborn.\n\n'I was Rahul Banerjee,' he said. 'Now I am Q. And I am here to offer you a choice.'\n\nJames stared at him. 'What choice?'\n\nQ sat down across from him. He looked at James with eyes that had seen too much, that had lost too much, that had been betrayed too many times.\n\n'You can go back to your flat,' he said. 'You can continue to wait to die. You can let the system win. You can let your mother's murder go unpunished. You can let the NHS continue to kill Black and brown patients. You can let the system continue to devour the obedient.'\n\nHe paused.\n\n'Or you can join us. You can become something new. You can become something powerful. You can become something the system cannot control, cannot predict, cannot stop.'\n\nHe leaned forward.\n\n'You can become a shadow.'\n\nJames did not respond. He was thinking. He was processing. He was deciding.\n\nHe thought of his mother. He thought of her laugh. He thought of her stories. He thought of her belief in the British dream — a dream that had been denied to her, a dream that had been stolen from her, a dream that had been destroyed by the system.\n\nHe thought of the patients he had treated. He thought of the Black and brown patients who had died because the system did not care. He thought of the doctors who had been silenced. He thought of the nurses who had been ignored.\n\nHe thought of the system. He thought of its corruption. He thought of its cruelty. He thought of its power.\n\nAnd he made his choice.\n\n'I'm in,' he said.\n\nQ nodded. He did not smile. He did not celebrate. He simply nodded — as if he had known all along that this moment would come.\n\n'Welcome to Mass-Q-Rade,' he said. 'Welcome to the family of the betrayed.'"
+      },
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 8: The Training",
+        setting: "A hidden facility in the Scottish Highlands. 2019–2020.",
+        wordCount: "5,000 words",
+        summary: "Physical, mental, technical, medical, and spiritual conditioning strip James down past his limits and rebuild him. He learns to fight, to disappear, to become anyone — and to heal bodies, faces, and minds with technology.",
+        keyScene: "Forced to relive his mother's murder in a sensory suite, James does not break; something old in him finally stops breathing and something new takes over.",
+        text: "The training was brutal.\n\nJames had always been strong. He had always been determined. He had always been a healer. But Mass-Q-Rade demanded more than strength. It demanded transformation. It demanded death. It demanded rebirth.\n\nPHYSICAL TRAINING: He was pushed to his limits and beyond. He ran until his legs gave out. He fought until his body was broken. He endured pain that would have killed a lesser man. And when he thought he could not continue, he continued.\n\nMENTAL TRAINING: He was forced to confront his demons. He was forced to relive his mother's murder. He was forced to remember the betrayal. He was forced to feel the pain that he had buried so deep. And when he thought he could not bear it, he bore it.\n\nTECHNICAL TRAINING: He learned to fight. He learned to disappear. He learned to become anyone — a corporate executive, a homeless man, a politician, a ghost. He learned to use technology — not to control but to liberate, not to spy but to expose, not to manipulate but to reveal. He learned to become the shadow that the system could not see.\n\nMEDICAL TRAINING: He learned to heal in new ways. He learned to use technology to repair bodies, to reconstruct faces, to rebuild minds. He learned to become the Healer — the one who could transform the broken into the whole.\n\nSPIRITUAL TRAINING: He learned the philosophy of Mass-Q-Rade. He learned that obedience to justice is the highest form of rebellion. He learned that the obedient are not weak — they are the foundation of civilization. He learned that the system betrays the obedient because the system is made of people, and people are flawed. He learned that the only way to protect the obedient is to become the system's shadow.\n\nAnd slowly, painfully, inevitably, James Okafor began to disappear."
+      },
+      {
+        id: 9, partNum: 2, partTitle: "Part II: The Transformation",
+        title: "Chapter 9: The New Face",
+        setting: "A medical facility in the Scottish Highlands. 2020.",
+        wordCount: "3,000 words",
+        summary: "Biometric spoofing, neural interface manipulation, and deepfake technology erase James Okafor — his face, his voice, his records. What walks out of the chamber is no longer a doctor or a victim.",
+        keyScene: "James looks into the mirror at a face that exists in no database and says his own new name: 'The Broken Healer.'",
+        text: "The transformation was complete.\n\nJames Okafor — the doctor, the healer, the Broken One — was gone.\n\nHis face had been changed. Not through surgery — through technology. Advanced biometric spoofing. Neural interface manipulation. Deepfake technology that could make him look like anyone, sound like anyone, become anyone.\n\nHe was no longer James Okafor. He was no longer a doctor. He was no longer a victim.\n\nHe was THE BROKEN HEALER.\n\nAnd the Broken Healer had a mission."
+      },
+      {
+        id: 10, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 10: The Target",
+        setting: "London. 2020.",
+        wordCount: "3,000 words",
+        summary: "The target is Dr. Richard Thornton — now the most powerful man in the NHS, architect of the machine that destroyed James's life, silencer of whistleblowers, and the man who ordered Grace Okafor's murder.",
+        keyScene: "The Broken Healer watches Thornton's motorcade from a rooftop and understands that he is not hunting a man; he is hunting the system wearing a man's face.",
+        text: "The target was DR. RICHARD THORNTON.\n\nHe was the most powerful man in the NHS. He was the head of the emergency department at St. Thomas'. He was the architect of the system that had destroyed James's life. He was the man who had silenced whistleblowers. He was the man who had covered up deaths. He was the man who had ordered Grace Okafor's murder.\n\nHe was the system.\n\nAnd the Broken Healer was going to destroy him."
+      },
+      {
+        id: 11, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 11: The Investigation",
+        setting: "London. 2020–2021.",
+        wordCount: "4,000 words",
+        summary: "Six months of quiet, patient intelligence work: Thornton's finances, his connections, his secrets. James uncovers ten million pounds in bribes from private healthcare corporations, blocked reforms that would have saved lives, and three ordered murders.",
+        keyScene: "Cross-referencing a hospital trust ledger with a private equity wire transfer, James finds the payment that leads straight back to his mother's death.",
+        text: "The Broken Healer spent six months investigating Dr. Thornton.\n\nHe studied his finances. He studied his connections. He studied his secrets.\n\nHe discovered that Thornton had received £10 million in bribes from private healthcare corporations. He discovered that he had used his position to block reforms that would have saved lives. He discovered that he had personally ordered the murder of three whistleblowers — including Grace Okafor.\n\nHe discovered the truth.\n\nAnd he prepared to expose it."
+      },
+      {
+        id: 12, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 12: The Strike",
+        setting: "London. 2021.",
+        wordCount: "5,000 words",
+        summary: "At a medical conference, the screens behind Dr. Thornton flicker and play his own voice — laughing about Black patients, admitting bribery, ordering murders. The conference, the media, and the nation erupt; Thornton is convicted and sentenced to life.",
+        keyScene: "The auditorium falls silent as Thornton's recorded voice fills it: 'They don't deserve healthcare. They deserve to die.'",
+        text: "The strike came on a Thursday.\n\nDr. Thornton was giving a speech at a medical conference. He was talking about excellence. He was talking about innovation. He was talking about the future of the NHS.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The doctors stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of Dr. Thornton. He was in a hotel room. He was talking to a private healthcare executive. He was laughing.\n\n'Those Black patients?' he said. 'They're nothing. They're animals. They don't deserve healthcare. They deserve to die. And that doctor — James Okafor? He's a problem. But don't worry. We'll take care of him. We'll take care of his mother. We'll take care of everyone he loves.'\n\nThe video continued. It showed Thornton accepting bribes. It showed him ordering murders. It showed him laughing at the suffering of the patients he had sworn to protect.\n\nThe conference erupted. The media erupted. The nation erupted.\n\nDr. Richard Thornton was arrested. He was charged with corruption, conspiracy, and murder. He was convicted. He was sentenced to life in prison.\n\nAnd the Broken Healer — the man who had been destroyed by the system, the man who had been reborn by Mass-Q-Rade, the man who had become the shadow — disappeared into the night."
+      },
+      {
+        id: 13, partNum: 3, partTitle: "Part III: The Mission",
+        title: "Chapter 13: The Legend Begins",
+        setting: "Unknown. 2021.",
+        wordCount: "3,500 words",
+        summary: "The Broken Healer does not stop with Thornton. He targets the hospitals that killed patients, the politicians who protected them, the judges who enabled them, and the media that silenced them — exposing rather than killing, demanding reckoning rather than revenge.",
+        keyScene: "A whistleblower whose career was destroyed reads the leaked files and, for the first time in a decade, believes justice is possible.",
+        text: "The Broken Healer did not stop with Dr. Thornton.\n\nHe continued. He exposed. He revealed. He destroyed.\n\nHe targeted the hospitals that had killed patients. He targeted the politicians who had protected them. He targeted the judges who had enabled them. He targeted the media that had silenced them.\n\nHe did not kill. He exposed. He did not destroy. He revealed. He did not seek revenge. He sought reckoning.\n\nAnd the world began to change.\n\nThe obedient — the forgotten ones, the betrayed ones, the ones who had believed in the system and been destroyed by it — began to hope. They began to believe that justice was possible. They began to believe that the system could be held accountable.\n\nAnd the system — the corrupt, the powerful, the guilty — began to fear.\n\nThey did not know who the Broken Healer was. They did not know where he came from. They did not know how to stop him.\n\nThey only knew that he was coming.\n\nAnd they were right."
+      },
+{
+        id: 14, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 14: The Heart of the Healer",
+        setting: "Unknown. 2022.",
+        wordCount: "3,000 words",
+        summary: "Late at night, alone in his quarters, the Broken Healer remembers his mother — her laugh, her stories, the way she looked at him as a son rather than a success. He cries, and then he makes a vow.",
+        keyScene: "In the dark of his quarters he whispers the vow that defines him: 'I will become the justice that the system cannot provide.'",
+        text: "Late at night, when the missions were over and the world was asleep, the Broken Healer would sit alone in his quarters and remember.\n\nHe would remember his mother. Her laugh. Her stories. Her belief in the British dream.\n\nHe would remember the way she looked at him — not as a doctor, not as a success, but as a son. A son who had made her proud. A son who had fought for justice. A son who had never given up.\n\nHe would remember the way she died. The way the system took her from him. The way the system took everything from him.\n\nHe would remember. And he would cry.\n\nNot because he was weak. Not because he was broken. But because he was human. Because he had loved. Because he had lost. Because the system had taken the only thing that mattered.\n\nAnd in that moment — in the darkness of his quarters, in the silence of the night — the Broken Healer would make a vow.\n\nI will not let them win. I will not let them destroy the obedient. I will not let them take everything from me.\n\nI will fight. I will expose. I will reveal.\n\nI will become the shadow that the system cannot see.\n\nI will become the justice that the system cannot provide.\n\nI will become the Broken Healer."
+      },
+      {
+        id: 15, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 15: The Family of the Betrayed",
+        setting: "Unknown. 2022.",
+        wordCount: "3,500 words",
+        summary: "James meets the rest of Mass-Q-Rade — Q, the Silent Advocate, the Ghost, the Eye, the Voice, and the Hand — a family bound not by blood but by betrayal, found in the darkness and turned into light.",
+        keyScene: "Around a table of damaged people, James realizes he is no longer the only one the system failed — and that this is the first family he has had since his mother died.",
+        text: "The Broken Healer was not alone.\n\nHe was part of a family — the family of the betrayed. He was part of Mass-Q-Rade.\n\nHe had met the other agents. He had trained with them. He had fought with them. He had bled with them.\n\nThere was Q — the leader, the inspiration, the man who had been destroyed by the system and reborn as the shadow.\n\nThere was THE SILENT ADVOCATE — the lawyer, the woman who could expose any corruption, the woman who had been destroyed by the American justice system.\n\nThere was THE GHOST — the infiltration expert, the woman who could become anyone, the woman who had been betrayed by her own government.\n\nThere was THE EYE — the surveillance expert, the man who could see everything, the man who had been silenced by the media.\n\nThere was THE VOICE — the communication expert, the woman who could speak to any mind, any heart, the woman who had been silenced by the educational system.\n\nThere was THE HAND — the technology expert, the man who could manipulate any system, the man who had been crushed by the corporate machine.\n\nAnd there was THE BROKEN HEALER — the doctor, the man who could heal any wound, the man who could transform any body, any mind, the man who had been destroyed by the NHS.\n\nThey were not just a team. They were not just an organization. They were a family. They were bound not by blood but by betrayal. They were the ones who had been destroyed by the system. They were the ones who had been forgotten by the world. They were the ones who had found each other in the darkness and decided to become the light."
+      },
+      {
+        id: 16, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 16: The Secret Command Committee",
+        setting: "Unknown. 2022.",
+        wordCount: "3,500 words",
+        summary: "Summoned before the founders of Mass-Q-Rade in a dark, silent room, James is told his mission is not complete: the system is vast, and there are more hospitals, doctors, politicians, and judges to expose. The reward is freedom; the penalty is rebirth.",
+        keyScene: "The voice from the shadows tells him what awaits if he dies: a new body, a new face, a new purpose — 'Mass-Q-Rade never dies.'",
+        text: "The Broken Healer was summoned to a meeting of the Secret Command Committee.\n\nHe had never met them before. He had only heard stories. They were the original founders of Mass-Q-Rade. They were the ones who had been obedient, who had been betrayed, who had been reborn. They were the ones who now guided the mission.\n\nHe was led into a room. The room was dark. The room was silent. The room was filled with shadows.\n\nAnd then, a voice.\n\n'Dr. James Okafor. The Broken Healer. The one who heals.'\n\nJames did not respond. He waited.\n\n'You have done well,' the voice continued. 'You have exposed the corruption of the NHS. You have brought justice to the forgotten. You have become the shadow that the system cannot see.'\n\nThe voice paused.\n\n'But your mission is not complete.'\n\nJames looked up. 'What do you mean?'\n\n'The system is vast. The system is powerful. The system is everywhere. You have exposed one part of it. But there are others. There are hospitals that kill. There are doctors who lie. There are politicians who protect them. There are judges who enable them.'\n\nThe voice paused again.\n\n'You will find them. You will expose them. You will destroy them.'\n\nJames nodded. He understood.\n\n'And when your mission is complete,' the voice continued, 'you will be freed. You will be given a new life. A life where you can have anything you want. A life where you can be anyone you choose. A life where you are finally, truly, completely free.'\n\nJames looked up. 'And if I die before my mission is complete?'\n\nThe voice was silent for a moment.\n\n'Then you will be reborn. You will be given a new body. A new face. A new purpose. You will continue the mission. You will never die. You will never stop. You will never rest.'\n\nJames nodded. He understood.\n\nHe was not just a healer. He was not just a shadow. He was not just an agent.\n\nHe was Mass-Q-Rade.\n\nAnd Mass-Q-Rade never dies."
+      },
+      {
+        id: 17, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 17: The New Mission",
+        setting: "Unknown. 2023.",
+        wordCount: "3,000 words",
+        summary: "The Broken Healer is sent after the World Health Organization — a body meant to protect the health of everyone, compromised by corporations, corrupted by power, and silenced by politics.",
+        keyScene: "Reading the WHO mission brief, James recognizes the same architecture that destroyed his mother, scaled to the entire planet.",
+        text: "The Broken Healer was given a new mission.\n\nHe was to infiltrate the WORLD HEALTH ORGANIZATION — the global body that was supposed to protect the health of all people, regardless of race, regardless of wealth, regardless of background. But the WHO had been compromised. It had been infiltrated by corporations. It had been corrupted by power. It had been silenced by politics.\n\nThe Broken Healer was to expose the corruption. He was to reveal the truth. He was to destroy the system.\n\nHe accepted the mission.\n\nHe began his training. He learned to become a diplomat. He learned to become a bureaucrat. He learned to become a ghost.\n\nAnd he prepared to strike."
+      },
+      {
+        id: 18, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 18: The Infiltration",
+        setting: "Geneva, Switzerland. 2023.",
+        wordCount: "4,000 words",
+        summary: "James enters Geneva as Dr. Michael Adeyemi, a Nigerian-born British doctor recruited to lead a global health equity initiative. Inside the WHO he finds bribed approvals for dangerous drugs, pandemics downplayed under pressure, and millions of deaths covered up.",
+        keyScene: "In a Geneva archive vault, Adeyemi finds the suppressed mortality tables for developing countries and understands the scale of the lie.",
+        text: "The Broken Healer arrived in Geneva as DR. MICHAEL ADEYEMI — a Nigerian-born British doctor who had been recruited by the WHO to lead a new initiative on global health equity.\n\nThe cover was perfect. The credentials were flawless. The background was untraceable.\n\nHe was welcomed into the WHO with open arms. He was given an office. He was given a staff. He was given access to everything.\n\nAnd he began to investigate.\n\nHe discovered that the WHO had been compromised. He discovered that pharmaceutical corporations had bribed officials to approve dangerous drugs. He discovered that governments had pressured the WHO to downplay pandemics. He discovered that the WHO had covered up the deaths of millions of people in developing countries.\n\nHe discovered the truth.\n\nAnd he prepared to expose it."
+      },
+      {
+        id: 19, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 19: The Strike",
+        setting: "Geneva, Switzerland. 2024.",
+        wordCount: "5,000 words",
+        summary: "During the World Health Assembly, the screens behind the Director-General play his own recorded contempt for African lives and his bribes. The Assembly erupts, the world erupts, and he is convicted of crimes against humanity.",
+        keyScene: "Delegates from every nation watch the Director-General laugh about 'those Africans' — and the room that was built for diplomacy turns into an indictment.",
+        text: "The strike came on a Monday.\n\nThe World Health Assembly was in session. Delegates from every country in the world had gathered to discuss global health policy. The Director-General was giving a speech. He was talking about equity. He was talking about justice. He was talking about the future of global health.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The delegates stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of the Director-General. He was in a hotel room. He was talking to a pharmaceutical executive. He was laughing.\n\n'Those Africans?' he said. 'They're nothing. They're animals. They don't deserve medicine. They deserve to die. And that doctor — Michael Adeyemi? He's a problem. But don't worry. We'll take care of him. We'll take care of everyone he loves.'\n\nThe video continued. It showed the Director-General accepting bribes. It showed him ordering cover-ups. It showed him laughing at the suffering of the people he had sworn to protect.\n\nThe Assembly erupted. The media erupted. The world erupted.\n\nThe Director-General was arrested. He was charged with corruption, conspiracy, and crimes against humanity. He was convicted. He was sentenced to life in prison.\n\nAnd the Broken Healer — the man who had been destroyed by the system, the man who had been reborn by Mass-Q-Rade, the man who had become the shadow — disappeared into the night."
+      },
+      {
+        id: 20, partNum: 4, partTitle: "Part IV: The Reckoning",
+        title: "Chapter 20: The Legend Grows",
+        setting: "Unknown. 2024.",
+        wordCount: "3,000 words",
+        summary: "The Broken Healer keeps going — corporations that poison communities, politicians who protect them, judges who enable them, media that silences them. Exposure, not execution. Reckoning, not revenge.",
+        keyScene: "An internal memo circulates through a global health contractor: 'We do not know who he is. We do not know how to stop him. He is coming.'",
+        text: "The Broken Healer did not stop with the WHO.\n\nHe continued. He exposed. He revealed. He destroyed.\n\nHe targeted the corporations that had poisoned communities. He targeted the politicians who had protected them. He targeted the judges who had enabled them. He targeted the media that had silenced them.\n\nHe did not kill. He exposed. He did not destroy. He revealed. He did not seek revenge. He sought reckoning.\n\nAnd the world began to change.\n\nThe obedient — the forgotten ones, the betrayed ones, the ones who had believed in the system and been destroyed by it — began to hope. They began to believe that justice was possible. They began to believe that the system could be held accountable.\n\nAnd the system — the corrupt, the powerful, the guilty — began to fear.\n\nThey did not know who the Broken Healer was. They did not know where he came from. They did not know how to stop him.\n\nThey only knew that he was coming.\n\nAnd they were right."
+      },
+{
+        id: 21, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 21: The Heart of the Healer",
+        setting: "Unknown. 2025.",
+        wordCount: "3,000 words",
+        summary: "Five years into the war, the ritual of remembrance returns: his mother's laugh, her stories, her death. The vow is renewed because the wound has never closed.",
+        keyScene: "Sitting alone in the dark, he repeats the words that keep him alive: 'I will become the shadow that the system cannot see.'",
+        text: "Late at night, when the missions were over and the world was asleep, the Broken Healer would sit alone in his quarters and remember.\n\nHe would remember his mother. Her laugh. Her stories. Her belief in the British dream.\n\nHe would remember the way she looked at him — not as a doctor, not as a success, but as a son. A son who had made her proud. A son who had fought for justice. A son who had never given up.\n\nHe would remember the way she died. The way the system took her from him. The way the system took everything from him.\n\nHe would remember. And he would cry.\n\nNot because he was weak. Not because he was broken. But because he was human. Because he had loved. Because he had lost. Because the system had taken the only thing that mattered.\n\nAnd in that moment — in the darkness of his quarters, in the silence of the night — the Broken Healer would make a vow.\n\nI will not let them win. I will not let them destroy the obedient. I will not let them take everything from me.\n\nI will fight. I will expose. I will reveal.\n\nI will become the shadow that the system cannot see.\n\nI will become the justice that the system cannot provide.\n\nI will become the Broken Healer."
+      },
+      {
+        id: 22, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 22: The Family of the Betrayed",
+        setting: "Unknown. 2025.",
+        wordCount: "3,500 words",
+        summary: "The family of the betrayed has grown: Q, the Silent Advocate, the Ghost, the Eye, the Voice, the Hand, and the Broken Healer — bound by what was taken from them, not by blood.",
+        keyScene: "The network gathers after a long operation, and James understands that the family is the only thing the system never managed to take.",
+        text: "The Broken Healer was not alone.\n\nHe was part of a family — the family of the betrayed. He was part of Mass-Q-Rade.\n\nHe had met the other agents. He had trained with them. He had fought with them. He had bled with them.\n\nThere was Q — the leader, the inspiration, the man who had been destroyed by the system and reborn as the shadow.\n\nThere was THE SILENT ADVOCATE — the lawyer, the woman who could expose any corruption, the woman who had been destroyed by the American justice system.\n\nThere was THE GHOST — the infiltration expert, the woman who could become anyone, the woman who had been betrayed by her own government.\n\nThere was THE EYE — the surveillance expert, the man who could see everything, the man who had been silenced by the media.\n\nThere was THE VOICE — the communication expert, the woman who could speak to any mind, any heart, the woman who had been silenced by the educational system.\n\nThere was THE HAND — the technology expert, the man who could manipulate any system, the man who had been crushed by the corporate machine.\n\nAnd there was THE BROKEN HEALER — the doctor, the man who could heal any wound, the man who could transform any body, any mind, the man who had been destroyed by the NHS.\n\nThey were not just a team. They were not just an organization. They were a family. They were bound not by blood but by betrayal. They were the ones who had been destroyed by the system. They were the ones who had been forgotten by the world. They were the ones who had found each other in the darkness and decided to become the light."
+      },
+      {
+        id: 23, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 23: The Secret Command Committee",
+        setting: "Unknown. 2025.",
+        wordCount: "3,500 words",
+        summary: "A second summons, darker than the first: the WHO exposure is acknowledged, but the mission continues. Freedom is promised on completion; rebirth on death. James accepts that he is Mass-Q-Rade.",
+        keyScene: "The shadows repeat the promise and the threat in the same breath, and James answers with silence — the only answer the Committee respects.",
+        text: "The Broken Healer was summoned to a meeting of the Secret Command Committee.\n\nHe had met them before. He had been given his mission. He had been given his purpose. He had been given his freedom.\n\nBut this time, the meeting was different.\n\nThe room was darker. The silence was deeper. The shadows were thicker.\n\nAnd the voice was different.\n\n'Dr. James Okafor. The Broken Healer. The one who heals.'\n\nJames did not respond. He waited.\n\n'You have done well,' the voice continued. 'You have exposed the corruption of the WHO. You have brought justice to the forgotten. You have become the shadow that the system cannot see.'\n\nThe voice paused.\n\n'But your mission is not complete.'\n\nJames looked up. 'What do you mean?'\n\n'The system is vast. The system is powerful. The system is everywhere. You have exposed one part of it. But there are others. There are hospitals that kill. There are doctors who lie. There are politicians who protect them. There are judges who enable them.'\n\nThe voice paused again.\n\n'You will find them. You will expose them. You will destroy them.'\n\nJames nodded. He understood.\n\n'And when your mission is complete,' the voice continued, 'you will be freed. You will be given a new life. A life where you can have anything you want. A life where you can be anyone you choose. A life where you are finally, truly, completely free.'\n\nJames looked up. 'And if I die before my mission is complete?'\n\nThe voice was silent for a moment.\n\n'Then you will be reborn. You will be given a new body. A new face. A new purpose. You will continue the mission. You will never die. You will never stop. You will never rest.'\n\nJames nodded. He understood.\n\nHe was not just a healer. He was not just a shadow. He was not just an agent.\n\nHe was Mass-Q-Rade.\n\nAnd Mass-Q-Rade never dies."
+      },
+      {
+        id: 24, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 24: The Final Mission",
+        setting: "Unknown. 2026.",
+        wordCount: "3,000 words",
+        summary: "The last target is the British Medical Association — the body that regulated the doctors who destroyed him. James trains to become a leader, a politician, and a ghost, and prepares to strike at the institution itself.",
+        keyScene: "Reading the BMA membership roster, he finds the names of the doctors who signed off on his mother's 'random' death and circles every one.",
+        text: "The Broken Healer was given his final mission.\n\nHe was to infiltrate the BRITISH MEDICAL ASSOCIATION — the body that regulated doctors in the UK. The BMA had been compromised. It had been infiltrated by racists. It had been corrupted by power. It had been silenced by politics.\n\nThe Broken Healer was to expose the corruption. He was to reveal the truth. He was to destroy the system.\n\nHe accepted the mission.\n\nHe began his training. He learned to become a leader. He learned to become a politician. He learned to become a ghost.\n\nAnd he prepared to strike."
+      },
+      {
+        id: 25, partNum: 5, partTitle: "Part V: The Final Reckoning",
+        title: "Chapter 25: The Reckoning",
+        setting: "London. 2026.",
+        wordCount: "5,000 words",
+        summary: "At the BMA's annual conference, the President's own recorded contempt for Black doctors and his bribes play across every screen in the hall. The conference erupts, the President is arrested and convicted, and the Broken Healer walks out into the London night.",
+        keyScene: "The President's voice fills the hall — 'They don't deserve to practice medicine' — and the doctors who spent careers staying silent finally have to look at themselves.",
+        text: "The strike came on a Friday.\n\nThe BMA was holding its annual conference. Doctors from every part of the UK had gathered to discuss the future of medicine. The President was giving a speech. He was talking about excellence. He was talking about innovation. He was talking about the future of the NHS.\n\nAnd then, the screens behind him flickered.\n\nThe speech stopped. The doctors stopped. The world stopped.\n\nOn the screens, a video began to play.\n\nIt was a recording of the President. He was in a hotel room. He was talking to a private healthcare executive. He was laughing.\n\n'Those Black doctors?' he said. 'They're nothing. They're animals. They don't deserve to practice medicine. They deserve to die. And that doctor — James Okafor? He's a problem. But don't worry. We'll take care of him. We'll take care of everyone he loves.'\n\nThe video continued. It showed the President accepting bribes. It showed him ordering cover-ups. It showed him laughing at the suffering of the doctors he had sworn to protect.\n\nThe conference erupted. The media erupted. The nation erupted.\n\nThe President was arrested. He was charged with corruption, conspiracy, and incitement to murder. He was convicted. He was sentenced to life in prison.\n\nAnd the Broken Healer — the man who had been destroyed by the system, the man who had been reborn by Mass-Q-Rade, the man who had become the shadow — stood on the roof of the conference centre and watched the sirens gather below.\n\nHe thought of his mother. Of the woman who had believed in the British dream and been killed by it. Of the patients who had died waiting for a system that was never designed to save them.\n\nHe did not feel triumph. He felt the quiet, terrible calm of a debt finally paid.\n\nSomewhere across the city, a phone rang in a dark room, and a voice said: 'It's done.'\n\n'Then come home,' Q answered. 'There is more work.'\n\nThe Broken Healer stepped back from the edge, dissolved into the London night, and disappeared into the city that had made him.\n\nThe obedient would sleep easier tonight. And the system would not."
+      }
+    ];
+
+    // CHARACTER DOSSIERS DATA
+    const dossiersData = [
+      {
+        name: "Dr. James Okafor (The Broken Healer)",
+        title: "The Doctor Who Cared Too Much",
+        role: "Protagonist",
+        desc: "Born in a Peckham council flat to a nurse and a Nigerian bus driver. A gifted NHS doctor destroyed by a fabricated complaint, a GMC inquiry, and the murder of his mother; reborn in the Highlands as Mass-Q-Rade's healer and unmasker.",
+        icon: "fa-heart-pulse",
+        color: "border-goldAccent/40 text-goldGlow"
+      },
+      {
+        name: "Grace Okafor",
+        title: "The Nurse / The Dreamer",
+        role: "Moral Compass",
+        desc: "James's mother, a St. Thomas' nurse of twenty years who worked twelve-hour shifts and taught her son that hard work could make him anything. Killed in a staged 'car accident' to silence him.",
+        icon: "fa-heart",
+        color: "border-pink-500/40 text-pink-300"
+      },
+      {
+        name: "Emmanuel Okafor",
+        title: "The Bus Driver",
+        role: "The First Betrayal",
+        desc: "Emigrated from Nigeria in 1978 chasing the British promise. Jailed for two weeks on a circumstantial assault charge while the real attacker walked free — and never received an apology.",
+        icon: "fa-bus",
+        color: "border-blue-500/40 text-blue-300"
+      },
+      {
+        name: "Dr. Richard Thornton",
+        title: "The Architect of the System",
+        role: "Primary Antagonist",
+        desc: "Head of St. Thomas' emergency department and the most powerful man in the NHS. Took £10 million in private healthcare bribes, blocked life-saving reforms, ordered three murders, and told James he cared 'too much.'",
+        icon: "fa-skull-crossbones",
+        color: "border-red-500/40 text-red-400"
+      },
+      {
+        name: "Sabrina",
+        title: "The Vanguard Handler",
+        role: "Mass-Q-Rade Operative",
+        desc: "The recruiter who came to a Brixton flat on a Tuesday and offered no comfort, only a proposition. Guides broken souls from the moment the system discards them.",
+        icon: "fa-user-secret",
+        color: "border-cyan-500/40 text-cyanGlow"
+      },
+      {
+        name: "Q (Rahul Banerjee)",
+        title: "The Leader of the Betrayed",
+        role: "Mass-Q-Rade Founder",
+        desc: "The film star who died in a Mumbai prison and returned as Q. Built the sanctuary in the Highlands where James was unmade and remade.",
+        icon: "fa-star",
+        color: "border-amber-500/40 text-amber-300"
+      },
+      {
+        name: "Dr. Michael Adeyemi",
+        title: "The Geneva Cover",
+        role: "Infiltration Identity",
+        desc: "The untraceable Nigerian-born British doctor James becomes to enter the WHO — flawless credentials, spotless background, and a global health equity mandate used as a key to every locked archive.",
+        icon: "fa-passport",
+        color: "border-emerald-500/40 text-emerald-300"
+      }
+    ];
+
+    // TIMELINE DATA
+    const timelineData = [
+      { year: "1985", title: "Born in a Peckham Council Flat", loc: "Peckham, London", text: "James is born to Grace, a St. Thomas' nurse, and Emmanuel, a Nigerian bus driver who came to Britain in 1978 chasing the promise of equality." },
+      { year: "1997", title: "The First Betrayal", loc: "London", text: "Twelve-year-old James watches his father jailed for two weeks on a circumstantial charge while the real, white attacker walks free. He decides to become a doctor." },
+      { year: "2003", title: "Top of the Class", loc: "King's College London", text: "Graduates at the top of his class after eighteen-hour study days and three jobs, then takes a post at his mother's hospital, St. Thomas'." },
+      { year: "2010", title: "The Doctor Who Cared Too Much", loc: "St. Thomas' Hospital", text: "Patients call him 'Dr. O.' and bring him homemade cakes; the institution starts counting the minutes he spends with them." },
+      { year: "2012", title: "Thornton's Warning", loc: "St. Thomas' Hospital", text: "Dr. Richard Thornton tells James he is a good doctor but 'not a team player' — too emotional, too human — and James walks out of the hospital for good." },
+      { year: "2013–2018", title: "The Investigation and the Murder", loc: "London", text: "James uncovers racial disparities in NHS outcomes and is answered with a fabricated complaint, a GMC inquiry, and the engineered car crash that kills his mother." },
+      { year: "2019", title: "The Visitor and the Proposition", loc: "Brixton & Scottish Highlands", text: "Sabrina comes to his flat; six hours later, blindfolded beneath the mountains, James meets Q and chooses to become a shadow: 'I'm in.'" },
+      { year: "2020", title: "The Broken Healer Is Born", loc: "Highlands Medical Redoubt", text: "After brutal physical, mental, technical, and spiritual conditioning, biometric spoofing erases James Okafor and creates an untraceable face." },
+      { year: "2021", title: "Thornton Exposed", loc: "London", text: "A conference feed hijack broadcasts Thornton's own voice — bribes, blocked reforms, three murders — and he is convicted and sentenced to life." },
+      { year: "2023", title: "Geneva Infiltration", loc: "Geneva, Switzerland", text: "Enters the WHO as Dr. Michael Adeyemi and finds bribed drug approvals, downplayed pandemics, and covered-up mortality data." },
+      { year: "2024", title: "The World Health Assembly Strike", loc: "Geneva, Switzerland", text: "The Director-General's recorded contempt for African lives plays to every delegation. He is convicted of crimes against humanity." },
+      { year: "2026", title: "The BMA Reckoning", loc: "London", text: "At the annual conference, the BMA President's own words and bribes are broadcast to the hall. Arrested, convicted, sentenced — and the Broken Healer walks into the London night." }
+    ];
+
+    // STATE STORAGE
+    let readChapters = JSON.parse(localStorage.getItem('mqr_book3_read') || '[]');
+    let activeBookmarkId = localStorage.getItem('mqr_book3_bookmark') ? parseInt(localStorage.getItem('mqr_book3_bookmark')) : null;
+    let scanlinesEnabled = localStorage.getItem('mqr_book3_scanlines') === 'true';
+    let currentModalChapterId = 1;
+
+    window.onload = function() {
+      if(scanlinesEnabled) {
+        document.getElementById('mainBody').classList.add('scanlines-overlay');
+      }
+      renderQuickJumpSelect();
+      renderChapters();
+      renderDossiersAndTimeline();
+      updateProgressStats();
+    };
+
+    function toggleScanlines() {
+      scanlinesEnabled = !scanlinesEnabled;
+      localStorage.setItem('mqr_book3_scanlines', scanlinesEnabled);
+      const body = document.getElementById('mainBody');
+      if(scanlinesEnabled) body.classList.add('scanlines-overlay');
+      else body.classList.remove('scanlines-overlay');
+    }
+
+    function renderQuickJumpSelect() {
+      const select = document.getElementById('quickJumpSelect');
+      let html = '<option value="">-- Jump to Chapter --</option>';
+      chaptersData.forEach(ch => {
+        html += `<option value="${ch.id}">Ch ${ch.id}: ${ch.title.split(': ')[1]}</option>`;
+      });
+      select.innerHTML = html;
+    }
+
+    function jumpToChapter(id) {
+      if(!id) return;
+      openChapterModal(parseInt(id));
+      document.getElementById('quickJumpSelect').value = "";
+    }
+
+    function renderChapters(filteredList = null) {
+      const container = document.getElementById('chaptersContainer');
+      const list = filteredList || chaptersData;
+
+      if(list.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500 font-mono text-sm">No chapters found matching search query.</div>`;
+        return;
+      }
+
+      const partTitles = {
+        1: "Part I: The Rise (Chapters 1–5)",
+        2: "Part II: The Transformation (Chapters 6–9)",
+        3: "Part III: The Mission (Chapters 10–13)",
+        4: "Part IV: The Reckoning (Chapters 14–20)",
+        5: "Part V: The Final Reckoning (Chapters 21–25)"
+      };
+      const parts = {};
+      Object.keys(partTitles).forEach(k => { parts[partTitles[k]] = list.filter(c => c.partNum === Number(k)); });
+
+      let html = '';
+
+      for(const partTitle in parts) {
+        const partChs = parts[partTitle];
+        if(partChs.length === 0) continue;
+
+        let badgeStyle = "text-amber-300 bg-amber-950/40 border-amber-800/60";
+        if(partTitle.includes("Transformation")) badgeStyle = "text-blue-300 bg-blue-950/40 border-blue-800/60";
+        if(partTitle.includes("Mission")) badgeStyle = "text-emerald-300 bg-emerald-950/40 border-emerald-800/60";
+        if(partTitle.includes("Part IV")) badgeStyle = "text-violet-300 bg-violet-950/40 border-violet-800/60";
+        if(partTitle.includes("Part V")) badgeStyle = "text-rose-300 bg-rose-950/40 border-rose-800/60";
+
+        html += `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold border ${badgeStyle}">${partTitle.toUpperCase()}</span>
+              <span class="text-xs text-slate-500 font-mono">(${partChs.length} Chapters)</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        `;
+
+        partChs.forEach(ch => {
+          const isRead = readChapters.includes(ch.id);
+          const isBookmarked = (activeBookmarkId === ch.id);
+
+          html += `
+            <div class="glass-card rounded-2xl p-5 space-y-3 glass-card-hover transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-cyanGlow font-semibold">CHAPTER ${ch.id}</span>
+                  <div class="flex items-center gap-2">
+                    ${isBookmarked ? '<span class="text-goldAccent"><i class="fa-solid fa-bookmark"></i></span>' : ''}
+                    <button onclick="toggleReadStatus(${ch.id})" class="text-slate-500 hover:text-cyanGlow transition" title="Toggle read">
+                      <i class="fa-solid ${isRead ? 'fa-check-circle text-emerald-400' : 'fa-circle-notch'}"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <h3 onclick="openChapterModal(${ch.id})" class="text-base font-serif font-bold text-white group-hover:text-cyanGlow transition cursor-pointer leading-snug">
+                  ${ch.title}
+                </h3>
+
+                <div class="text-xs font-mono text-slate-400 flex items-center justify-between">
+                  <span><i class="fa-solid fa-location-dot text-cyanAccent"></i> ${ch.setting}</span>
+                  <span class="text-goldAccent">${ch.wordCount}</span>
+                </div>
+
+                <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed pt-1">
+                  ${ch.summary}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <button onclick="openChapterModal(${ch.id})" class="text-xs font-mono font-semibold text-cyanGlow hover:text-cyan-300 flex items-center gap-1.5 transition">
+                  Read Full Text <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+                <span class="text-[10px] font-mono ${isRead ? 'text-emerald-400' : 'text-slate-600'}">
+                  ${isRead ? 'COMPLETED' : 'UNREAD'}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderDossiersAndTimeline() {
+      // Dossiers
+      const dossiersGrid = document.getElementById('dossiersGrid');
+      let dHtml = '';
+      dossiersData.forEach(d => {
+        dHtml += `
+          <div class="glass-card rounded-2xl p-5 space-y-3 border ${d.color} glass-card-hover transition">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">${d.role}</span>
+              <i class="fa-solid ${d.icon} text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-serif font-bold text-white">${d.name}</h3>
+              <span class="text-xs font-mono text-cyanGlow block">${d.title}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          </div>
+        `;
+      });
+      dossiersGrid.innerHTML = dHtml;
+
+      // Timeline
+      const tContainer = document.getElementById('timelineContainer');
+      let tHtml = '';
+      timelineData.forEach(t => {
+        tHtml += `
+          <div class="relative space-y-1 group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-cyanAccent border-4 border-obsidian shadow-glow-cyan"></div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-cyanGlow font-bold">${t.year}</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-400">${t.loc}</span>
+            </div>
+            <h4 class="text-sm font-serif font-bold text-white group-hover:text-cyanGlow transition">${t.title}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${t.text}</p>
+          </div>
+        `;
+      });
+      tContainer.innerHTML = tHtml;
+    }
+
+    function filterPart(partNum) {
+      if(partNum === 'all') {
+        renderChapters(chaptersData);
+        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const filtered = chaptersData.filter(c => c.partNum === partNum);
+      renderChapters(filtered);
+      document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if(!query) {
+        renderChapters(chaptersData);
+        return;
+      }
+      const filtered = chaptersData.filter(ch => 
+        ch.title.toLowerCase().includes(query) ||
+        ch.summary.toLowerCase().includes(query) ||
+        ch.keyScene.toLowerCase().includes(query) ||
+        ch.setting.toLowerCase().includes(query) ||
+        ch.text.toLowerCase().includes(query)
+      );
+      renderChapters(filtered);
+    }
+
+    function toggleReadStatus(id) {
+      if(readChapters.includes(id)) {
+        readChapters = readChapters.filter(x => x !== id);
+      } else {
+        readChapters.push(id);
+      }
+      localStorage.setItem('mqr_book3_read', JSON.stringify(readChapters));
+      renderChapters();
+      updateProgressStats();
+      updateModalReadBtnState();
+    }
+
+    function updateProgressStats() {
+      const pct = Math.round((readChapters.length / 25) * 100);
+      document.getElementById('heroProgressPct').innerText = `${pct}% Read (${readChapters.length}/25)`;
+      const bkmkText = activeBookmarkId ? `Ch ${activeBookmarkId}` : 'None';
+      document.getElementById('heroBookmark').innerText = bkmkText;
+    }
+
+    function openChapterModal(id) {
+      currentModalChapterId = id;
+      const ch = chaptersData.find(c => c.id === id);
+      if(!ch) return;
+
+      document.getElementById('modalPartTag').innerText = ch.partTitle;
+      document.getElementById('modalChapterTitle').innerText = ch.title;
+      document.getElementById('modalChNum').innerText = `Chapter ${ch.id} of 25`;
+      document.getElementById('modalChSetting').innerText = ch.setting;
+      document.getElementById('modalChWords').innerText = ch.wordCount;
+      document.getElementById('modalSummaryText').innerText = ch.summary;
+      document.getElementById('modalKeySceneText').innerText = ch.keyScene;
+      document.getElementById('modalStoryText').innerText = ch.text;
+
+      document.getElementById('modalPrevBtn').disabled = (id === 1);
+      document.getElementById('modalNextBtn').disabled = (id === 25);
+
+      updateModalReadBtnState();
+      updateModalBookmarkState();
+
+      document.getElementById('readerModal').classList.remove('hidden');
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+    }
+
+    function navigateModalChapter(delta) {
+      const nextId = currentModalChapterId + delta;
+      if(nextId >= 1 && nextId <= 25) {
+        openChapterModal(nextId);
+      }
+    }
+
+    function toggleModalReadStatus() {
+      toggleReadStatus(currentModalChapterId);
+    }
+
+    function toggleModalBookmark() {
+      if(activeBookmarkId === currentModalChapterId) {
+        activeBookmarkId = null;
+        localStorage.removeItem('mqr_book3_bookmark');
+      } else {
+        activeBookmarkId = currentModalChapterId;
+        localStorage.setItem('mqr_book3_bookmark', currentModalChapterId);
+      }
+      updateModalBookmarkState();
+      updateProgressStats();
+      renderChapters();
+    }
+
+    function updateModalBookmarkState() {
+      const isBookmarked = (activeBookmarkId === currentModalChapterId);
+      document.getElementById('bookmarkText').innerText = isBookmarked ? 'Bookmarked' : 'Bookmark';
+    }
+
+    function updateModalReadBtnState() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const txt = document.getElementById('modalReadBtnText');
+      const isRead = readChapters.includes(currentModalChapterId);
+
+      if(isRead) {
+        btn.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold transition flex items-center gap-1.5 shadow-sm";
+        txt.innerText = "Completed";
+      } else {
+        btn.className = "px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5";
+        txt.innerText = "Mark Complete";
+      }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if(size === 'sm') body.className = "leading-relaxed text-xs font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'md') body.className = "leading-relaxed text-sm sm:text-base font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'lg') body.className = "leading-relaxed text-base sm:text-lg font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+    }
+
+    // TERMINAL LOGIC
+    function printTerminalMsg(msg, style = "normal") {
+      const log = document.getElementById('terminalOutputLog');
+      const div = document.createElement('div');
+      
+      if(style === 'gold') div.className = "text-goldGlow font-semibold";
+      else if(style === 'crimson') div.className = "text-red-400 font-semibold";
+      else if(style === 'cyan') div.className = "text-cyanGlow font-semibold";
+      else if(style === 'amber') div.className = "text-amber-400";
+      else div.className = "text-slate-400";
+
+      div.innerText = `> ${msg}`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function runTerminalAction(type) {
+      if(type === 'EXPOSE_THORNTON') {
+        printTerminalMsg("[INITIATING] Broadcast uplink to Dr. Thornton's NHS conference feed...", "crimson");
+        setTimeout(() => {
+          printTerminalMsg("[BROADCAST] Exposing £10M in private healthcare bribes, blocked reforms, and three ordered murders.", "gold");
+          printTerminalMsg("[STATUS] System justice executed. Dr. Richard Thornton cornered.", "cyan");
+        }, 500);
+      }
+      else if(type === 'BIOSPOOF') {
+        printTerminalMsg("[ACTIVATING] Sub-dermal neural interface & biometric spoofing...", "cyan");
+        setTimeout(() => {
+          printTerminalMsg("[SUCCESS] James Okafor's licence and records erased from GMC servers. The Healer is untraceable.", "gold");
+        }, 500);
+      }
+      else if(type === 'AUDIT_LOGS') {
+        printTerminalMsg("[DOWNLOADING] St. Thomas' triage logs & mortality audit records...", "amber");
+        setTimeout(() => {
+          printTerminalMsg("[ANALYSIS] Racial disparity in outcomes and suppressed whistleblower files verified.", "cyan");
+        }, 500);
+      }
+      else if(type === 'EXTRACT_STATUS') {
+        printTerminalMsg("[PINGING] Highlands medical redoubt sanctuary uplink...", "violet");
+        setTimeout(() => {
+          printTerminalMsg("[STATUS] Secure. Offline quantum encryption stable. All nodes synchronized.", "cyan");
+        }, 500);
+      }
+      else if(type === 'ROSTER') {
+        printTerminalMsg("[QUERYING] Mass-Q-Rade Global Core Network...", "cyan");
+        printTerminalMsg("• [HEALER] Agent Three (Dr. James Okafor) — Highlands Redoubt", "gold");
+        printTerminalMsg("• [Q] Agent Zero (Rahul Banerjee) — Highland Sanctuary", "amber");
+        printTerminalMsg("• [SABRINA] Vanguard Handler & Extraction Lead", "cyan");
+      }
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const cmd = input.value.trim().toLowerCase();
+      if(!cmd) return;
+
+      printTerminalMsg(`CMD: ${cmd}`, "normal");
+
+      if(cmd === 'help') {
+        printTerminalMsg("Available commands: expose, spoof, audit, status, roster, clear", "cyan");
+      } else if(cmd.includes('expose') || cmd.includes('thornton')) {
+        runTerminalAction('EXPOSE_RASHID');
+      } else if(cmd.includes('spoof') || cmd.includes('bio')) {
+        runTerminalAction('BIOSPOOF');
+      } else if(cmd.includes('audit')) {
+        runTerminalAction('AUDIT_LOGS');
+      } else if(cmd.includes('status') || cmd.includes('ping')) {
+        runTerminalAction('EXTRACT_STATUS');
+      } else if(cmd.includes('roster') || cmd.includes('agents')) {
+        runTerminalAction('ROSTER');
+      } else if(cmd.includes('clear')) {
+        document.getElementById('terminalOutputLog').innerHTML = `
+          <div class="text-slate-500">[CONSOLE REBOOT] CLI terminal ready.</div>
+        `;
+      } else {
+        printTerminalMsg(`Unknown command '${cmd}'. Type 'help' for options.`, "crimson");
+      }
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
