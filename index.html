@@ -66,17 +66,16 @@
 
     .menu-container a:hover {
       color: var(--accent);
-    }
-
-    /* Homepage Section */
+    }/* Homepage Section */
     .homepage {
       background-image: url('https://i.ibb.co.com/Zz9HvbPH/photo.jpg');
       background-repeat: no-repeat;
+      background-size: contain;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-    
+
       margin-top: 60px; /* offset for fixed header */
       color: var(--light);
     }
@@ -84,7 +83,7 @@
     /* Responsive Background Image - cover effect */
     @media (max-width: 480px) {
       .homepage {
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         padding-top: 15rem;
         padding-bottom: 15rem;
@@ -93,7 +92,7 @@
 
     @media (min-width: 481px) and (max-width: 768px) {
       .homepage {
-        background-size: cover;
+        background-size: contain;
         background-position: center top;
         padding-top: 12rem;
         padding-bottom: 12rem;
@@ -102,7 +101,7 @@
 
     @media (min-width: 769px) {
       .homepage {
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         padding-top: 8rem;
         padding-bottom: 8rem;
