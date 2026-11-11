@@ -185,11 +185,36 @@
       .homepage h1 {
         font-size: 2rem;
       }
-      .section {
-        padding: 3rem 1rem;
+      .homepage p {
+        font-size: 1rem;
       }
-      .contact-form {
-        margin: 2rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 2rem 1rem;
+      }
+      .contact-container {
+        padding: 1rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .contact-grid > div {
+        max-width: 100%;
+      }
+      .contact-grid .form-container {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+      }
+      .contact-grid .info-card {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+      }
+      .contact-grid .form-container form,
+      .contact-grid .info-card {
+        border-radius: 12px;
       }
     }
 
@@ -197,6 +222,15 @@
       .menu-container a {
         font-size: 0.8rem;
         padding: 0.5rem;
+      }
+      .homepage h1 {
+        font-size: 1.8rem;
+      }
+      .homepage p {
+        font-size: 0.9rem;
+      }
+      .section h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -339,7 +373,7 @@
       <p>Whether you're here for my books, my insights, or simply to connect, I'm glad you're here. Feel free to explore, leave a comment, or get in touch.</p>
     </section>
 
-    <section class="contact-section section" id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%)">
+    <section class="contact-section section" id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);">
       <div class="contact-container" style="max-width: 900px; margin: 0 auto; width: 100%; padding: 2rem;">
         <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%;">
           <div>
