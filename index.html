@@ -175,50 +175,26 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 320px) {
       .menu-container {
-        gap: 1rem;
+        gap: 0.5rem;
       }
       .menu-container a {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        padding: 0.4rem;
       }
       .homepage h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
       .homepage p {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
 
-    @media (max-width: 600px) {
-      .contact-section {
-        padding: 2rem 1rem;
+    @media (min-width: 321px) and (max-width: 480px) {
+      .menu-container {
+        gap: 0.8rem;
       }
-      .contact-container {
-        padding: 1rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .contact-grid > div {
-        max-width: 100%;
-      }
-      .contact-grid .form-container {
-        max-width: 100%;
-        padding: 2rem 1.5rem;
-      }
-      .contact-grid .info-card {
-        max-width: 100%;
-        padding: 2rem 1.5rem;
-      }
-      .contact-grid .form-container form,
-      .contact-grid .info-card {
-        border-radius: 12px;
-      }
-    }
-
-    @media (max-width: 400px) {
       .menu-container a {
         font-size: 0.8rem;
         padding: 0.5rem;
@@ -230,7 +206,148 @@
         font-size: 0.9rem;
       }
       .section h2 {
+        font-size: 1.6rem;
+      }
+      .contact-section {
+        padding: 1.5rem 1rem;
+      }
+      .contact-container {
+        padding: 0.8rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .contact-grid > div {
+        max-width: 100%;
+      }
+      .contact-grid .form-container,
+      .contact-grid .info-card {
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+      }
+      .contact-grid .form-container form,
+      .contact-grid .info-card {
+        padding: 2rem;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .menu-container {
+        gap: 1.5rem;
+      }
+      .menu-container a {
+        font-size: 0.9rem;
+      }
+      .homepage h1 {
+        font-size: 2rem;
+      }
+      .homepage p {
+        font-size: 1rem;
+      }
+      .section h2 {
         font-size: 1.8rem;
+      }
+      .contact-section {
+        padding: 2rem 1.5rem;
+      }
+      .contact-container {
+        padding: 1.5rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .contact-grid > div {
+        max-width: 100%;
+      }
+      .contact-grid .form-container {
+        padding: 2rem 1.5rem;
+        border-radius: 14px;
+      }
+      .contact-grid .info-card {
+        padding: 2rem 1.5rem;
+        border-radius: 14px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .menu-container {
+        gap: 2rem;
+      }
+      .menu-container a {
+        font-size: 0.95rem;
+      }
+      .homepage h1 {
+        font-size: 2.5rem;
+      }
+      .homepage p {
+        font-size: 1.1rem;
+      }
+      .section h2 {
+        font-size: 2rem;
+      }
+      .contact-section {
+        padding: 3rem 2rem;
+      }
+      .contact-container {
+        padding: 2rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+      .contact-grid > div {
+        max-width: 100%;
+      }
+      .contact-grid .form-container {
+        padding: 2.5rem;
+        border-radius: 16px;
+      }
+      .contact-grid .info-card {
+        padding: 2.5rem;
+        border-radius: 16px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .menu-container {
+        gap: 2rem;
+      }
+      .menu-container a {
+        font-size: 1rem;
+      }
+      .homepage h1 {
+        font-size: 3rem;
+      }
+      .homepage p {
+        font-size: 1.2rem;
+      }
+      .section h2 {
+        font-size: 2rem;
+      }
+      .contact-section {
+        padding: 4rem 4rem;
+      }
+      .contact-container {
+        padding: 3rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .contact-grid > div {
+        max-width: 500px;
+      }
+      .contact-grid .form-container {
+        padding: 3rem;
+        border-radius: 20px;
+      }
+      .contact-grid .info-card {
+        padding: 3rem;
+        border-radius: 20px;
       }
     }
   </style>
@@ -373,8 +490,8 @@
       <p>Whether you're here for my books, my insights, or simply to connect, I'm glad you're here. Feel free to explore, leave a comment, or get in touch.</p>
     </section>
 
-    <section class="contact-section section" id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);">
-      <div class="contact-container" style="max-width: 900px; margin: 0 auto; width: 100%; padding: 2rem;">
+    <section class="contact-section section" id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%)">
+      <div class="contact-container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
         <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%;">
           <div>
             <form action="#" method="POST" style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 16px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); backdrop-filter: blur(10px); width: 100%; max-width: 500px;">
