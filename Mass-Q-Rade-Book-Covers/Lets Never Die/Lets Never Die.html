@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LETS NEVER DIE — Reed Books</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0a0910',
+            obsidian: '#050409',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            ember: '#c2703a',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            prose: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #050409; }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b; border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+    /* Live fog + drifting ash + floating music notes */
+    #fog-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .bg-grid-pattern {
+      background-image:
+        linear-gradient(to right, rgba(212, 175, 55, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .glass-card {
+      background: rgba(10, 9, 16, 0.82);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .book-prose p {
+      margin-bottom: 1.15em;
+      text-align: justify;
+      hyphens: auto;
+    }
+    .book-prose p:first-child::first-letter {
+      float: left;
+      font-family: 'Cinzel', serif;
+      font-size: 3.4em;
+      line-height: 0.82;
+      padding: 0.06em 0.12em 0 0;
+      color: #f3e5ab;
+    }
+    .book-prose em { color: #f3e5ab; }
+    .book-prose .fib {
+      display: block;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.5em;
+      color: #f3e5ab;
+      font-size: 0.9em;
+      margin: 1.6em 0;
+      opacity: 0.85;
+    }
+
+    /* Cover — floating, sheen, film flicker */
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+    .cover-frame {
+      position: relative;
+      width: min(300px, 70vw);
+      aspect-ratio: 3 / 4;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(6deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.22),
+        0 0 30px rgba(0, 242, 254, 0.14);
+      will-change: transform;
+      background: #0a0910;
+    }
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.4),
+        0 0 55px rgba(0, 242, 254, 0.28);
+    }
+    .cover-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.28) 45%, rgba(255,255,255,0.05) 53%, transparent 64%);
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0,0,0,0.65) 100%),
+        repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+    @keyframes coverFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes coverSheen {
+      0%, 55% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+    @keyframes coverFlicker {
+      0%,100% { opacity: 1; } 47% { opacity: 0.84; } 48% { opacity: 1; }
+      73% { opacity: 0.9; } 74% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+
+    #readerModal { scrollbar-width: thin; }
+    #modalStoryText { font-size: 1.075rem; line-height: 1.95; }
+    #modalStoryText[data-size="sm"] { font-size: 0.98rem; }
+    #modalStoryText[data-size="lg"] { font-size: 1.2rem; }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian overflow-x-hidden">
+
+  <canvas id="fog-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/85 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-book-open-reader text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">REED BOOKS</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">THEME 05</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">Lets Never Die</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <a href="#hero" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">Book Card</a>
+        <a href="#reader" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">17 Chapters</a>
+        <a href="#ambient" class="px-3 py-1.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-800/60 text-cyan-300 transition">Fog &amp; Music</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="ambientBtn" onclick="toggleAmbient()" class="px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle ambient piano">
+          <i id="ambientIcon" class="fa-solid fa-volume-xmark"></i>
+          <span id="ambientLabel">Ambient</span>
+        </button>
+        <button onclick="openChapterModal(1)" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-play"></i> Read
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- BOOK CARD / HERO -->
+    <section id="hero" class="scroll-mt-24 relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- COVER -->
+        <div class="lg:col-span-5">
+          <div class="cover-stage">
+            <div class="cover-frame">
+              <img src="../lets%20never%20die.png" alt="Lets Never Die book cover — Reed Books" loading="eager" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAILS -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow">
+            <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+            <span>Reed Books &middot; A Novel of Numbers, Ash and Survival</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+              Lets Never Die
+            </h1>
+            <h2 class="text-base sm:text-lg font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+              The Fibonacci of Dreams
+            </h2>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Frankfurt, 1932. <strong class="text-white">Elena Rothschild</strong> counts the keys of her grand piano — five black, eight white, thirteen in all — and believes mathematics is God's own language.
+            Then the swastika begins its terrible subtraction: first her honour, then her home, then everyone she loves.
+            What survives is not a girl but a cold-headed calculator of revenge — and a testimony the civilised world does not want to hear.
+          </p>
+
+          <!-- Book details -->
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-mono pt-1">
+            <div class="flex justify-between gap-2 border-b border-slate-800/80 pb-1.5"><dt class="text-slate-500">Author</dt><dd class="text-slate-200">Amim Ahsan</dd></div>
+            <div class="flex justify-between gap-2 border-b border-slate-800/80 pb-1.5"><dt class="text-slate-500">Publisher</dt><dd class="text-goldGlow">Reed Books</dd></div>
+            <div class="flex justify-between gap-2 border-b border-slate-800/80 pb-1.5"><dt class="text-slate-500">Genre</dt><dd class="text-slate-200">Historical Fiction</dd></div>
+            <div class="flex justify-between gap-2 border-b border-slate-800/80 pb-1.5"><dt class="text-slate-500">Timeline</dt><dd class="text-slate-200">1932 – 1946</dd></div>
+          </dl>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 font-mono">
+            <div class="p-3 rounded-xl bg-obsidian/80 border border-slate-800">
+              <div class="text-[10px] text-slate-400 uppercase">Chapters</div>
+              <div class="text-base font-bold text-goldGlow">17</div>
+            </div>
+            <div class="p-3 rounded-xl bg-obsidian/80 border border-slate-800">
+              <div class="text-[10px] text-slate-400 uppercase">Setting</div>
+              <div class="text-base font-bold text-cyanGlow">Frankfurt</div>
+            </div>
+            <div class="p-3 rounded-xl bg-obsidian/80 border border-slate-800">
+              <div class="text-[10px] text-slate-400 uppercase">Read</div>
+              <div id="heroProgressPct" class="text-base font-bold text-emerald-400">0% Read</div>
+            </div>
+            <div class="p-3 rounded-xl bg-obsidian/80 border border-slate-800">
+              <div class="text-[10px] text-slate-400 uppercase">Bookmark</div>
+              <div id="heroBookmark" class="text-base font-bold text-slate-200">None</div>
+            </div>
+          </div>
+
+          <!-- CTA + publisher under the button -->
+          <div class="pt-1">
+            <button onclick="openChapterModal(1)" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2.5">
+              <i class="fa-solid fa-book-open"></i> Read the Book
+            </button>
+            <div class="mt-2.5 flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] uppercase text-slate-400">
+              <span class="h-px w-6 bg-goldAccent/50"></span>
+              <span>Reed Books</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER DIRECTORY -->
+    <section id="reader" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Seventeen chapters. One broken equation. Choose a chapter to open the reader.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search chapters, places, lines..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="partFilters" class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="setPart('all')" data-part="all" class="part-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Parts</button>
+        <button onclick="setPart(1)" data-part="1" class="part-btn px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">I · Frankfurt</button>
+        <button onclick="setPart(2)" data-part="2" class="part-btn px-3 py-1.5 rounded-lg bg-orange-950/40 hover:bg-orange-900/60 border border-orange-800/60 text-orange-300 transition">II · The Ghetto</button>
+        <button onclick="setPart(3)" data-part="3" class="part-btn px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">III · Auschwitz</button>
+        <button onclick="setPart(4)" data-part="4" class="part-btn px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/60 text-rose-300 transition">IV · Revenge</button>
+        <button onclick="setPart(5)" data-part="5" class="part-btn px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">V · The Free World</button>
+      </div>
+
+      <div id="chaptersContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+      <p id="noResults" class="hidden text-center text-sm text-slate-500 font-mono py-8">No chapter matches that search.</p>
+    </section>
+
+    <!-- AMBIENT / ABOUT -->
+    <section id="ambient" class="scroll-mt-24">
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-cyan-500/20 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <h2 class="text-xl sm:text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-music text-cyanGlow"></i> Fog, Ash &amp; Flying Music
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            The background breathes with the novel: a cold fog over Frankfurt, ash rising from the chimneys, and music notes drifting up from the piano on Berthmanstrasse.
+            Turn on the ambient score for a slow, Fibonacci-tuned piano drift while you read. Use <span class="font-mono text-cyanGlow">A− / A / A+</span> inside the reader to set your text size.
+          </p>
+          <p class="text-[11px] font-mono text-slate-500">Theme 05 &middot; Cinematic gold/cyan &middot; Reed Books edition &middot; 17 chapters</p>
+        </div>
+        <div class="lg:col-span-4 flex flex-col gap-3">
+          <button onclick="toggleAmbient()" id="ambientBtnLarge" class="w-full px-5 py-3 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow text-sm font-semibold hover:bg-cyan-500/20 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-headphones"></i> <span id="ambientLabelLarge">Play Ambient Score</span>
+          </button>
+          <button onclick="openChapterModal(1)" class="w-full px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-700 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Begin at Chapter One
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[92vh]">
+
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-start sm:items-center justify-between gap-3 bg-midnight/90 rounded-t-2xl">
+        <div class="min-w-0">
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I · FRANKFURT</span>
+          <h3 id="modalChapterTitle" class="text-base sm:text-xl font-serif font-bold text-white truncate">Chapter 1: The Fibonacci of Dreams</h3>
+        </div>
+
+        <div class="flex items-center gap-1.5 shrink-0">
+          <div class="hidden sm:flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1" title="Bookmark this chapter">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText" class="hidden sm:inline">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition" aria-label="Close reader">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-5 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] sm:text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">1 of 17</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Frankfurt, 1932</span></div>
+          <div><span class="text-slate-500">LENGTH:</span> <span id="modalChWords" class="text-goldGlow">3,800 words</span></div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY IMAGE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+        </div>
+
+        <div id="modalStoryText" data-size="md" class="book-prose font-prose text-slate-200 whitespace-pre-line pt-2 border-t border-slate-800">
+          <!-- Injected -->
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between gap-2 bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Previous</span>
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-3 sm:px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-3 sm:px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <span class="hidden sm:inline">Next</span> Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian/90 py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="text-center sm:text-left">
+        <span class="font-bold text-slate-300">LETS NEVER DIE</span>
+        <span class="block text-[11px] text-slate-500">By Amim Ahsan &middot; Published by Reed Books</span>
+      </div>
+      <div class="text-center">Theme 05 &middot; Cinematic Edition &middot; 17 Chapters</div>
+      <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+    </div>
+  </footer>
+
+  <!-- CHAPTER DATA -->
+  <script src="chapters.js"></script>
+
+  <!-- APP -->
+  <script>
+    const PART_NAMES = {
+      1: 'PART I · FRANKFURT',
+      2: 'PART II · THE GHETTO',
+      3: 'PART III · AUSCHWITZ',
+      4: 'PART IV · REVENGE',
+      5: 'PART V · THE FREE WORLD'
+    };
+
+    const PART_STYLES = {
+      1: { badge: 'bg-amber-500/10 text-amber-300 border-amber-700/50', bar: 'from-amber-500 to-goldAccent' },
+      2: { badge: 'bg-orange-500/10 text-orange-300 border-orange-700/50', bar: 'from-orange-600 to-amber-500' },
+      3: { badge: 'bg-blue-500/10 text-blue-300 border-blue-700/50', bar: 'from-blue-600 to-cyanAccent' },
+      4: { badge: 'bg-rose-500/10 text-rose-300 border-rose-700/50', bar: 'from-rose-700 to-goldAccent' },
+      5: { badge: 'bg-emerald-500/10 text-emerald-300 border-emerald-700/50', bar: 'from-emerald-600 to-cyanAccent' }
+    };
+
+    const STORAGE = { read: 'lnd-read', bookmark: 'lnd-bookmark' };
+
+    let readSet = new Set(safeParse(localStorage.getItem(STORAGE.read), []));
+    let bookmarkId = Number(safeParse(localStorage.getItem(STORAGE.bookmark), 0)) || 0;
+    let currentId = 1;
+    let activePart = 'all';
+
+    function safeParse(raw, fallback) {
+      try { return JSON.parse(raw); } catch (e) { return fallback; }
+    }
+
+    function esc(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function chapterById(id) {
+      return chaptersData.find(c => c.id === id);
+    }
+
+    /* ---------------- Rendering ---------------- */
+
+    function renderChapters() {
+      const query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      const host = document.getElementById('chaptersContainer');
+      const filtered = chaptersData.filter(ch => {
+        const inPart = activePart === 'all' || ch.part === Number(activePart);
+        const haystack = (ch.title + ' ' + ch.summary + ' ' + ch.setting + ' ' + ch.keyScene).toLowerCase();
+        return inPart && (!query || haystack.includes(query));
+      });
+
+      document.getElementById('noResults').classList.toggle('hidden', filtered.length !== 0);
+
+      host.innerHTML = filtered.map(ch => {
+        const style = PART_STYLES[ch.part];
+        const isRead = readSet.has(ch.id);
+        const isBookmarked = bookmarkId === ch.id;
+        return `
+          <article class="glass-card rounded-2xl overflow-hidden flex flex-col group hover:border-goldAccent/50 transition">
+            <div class="h-1.5 bg-gradient-to-r ${style.bar}"></div>
+            <div class="p-5 flex-1 flex flex-col gap-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-mono px-2 py-1 rounded border ${style.badge} uppercase tracking-widest">${esc(PART_NAMES[ch.part])}</span>
+                <span class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+                  ${isBookmarked ? '<i class="fa-solid fa-bookmark text-goldAccent"></i>' : ''}
+                  ${isRead ? '<span class="text-emerald-400"><i class="fa-solid fa-circle-check"></i> Read</span>' : `<span>${esc(ch.wordCount)}</span>`}
+                </span>
+              </div>
+
+              <button onclick="openChapterModal(${ch.id})" class="text-left">
+                <h3 class="font-serif text-lg font-bold text-white leading-snug group-hover:text-goldGlow transition">
+                  <span class="text-goldAccent/80 font-mono text-xs mr-1.5">${String(ch.id).padStart(2, '0')}</span>${esc(ch.title)}
+                </h3>
+              </button>
+
+              <p class="text-xs text-slate-400 leading-relaxed flex-1">${esc(ch.summary)}</p>
+
+              <div class="flex items-center justify-between border-t border-slate-800 pt-3 gap-2">
+                <span class="text-[10px] font-mono text-slate-500 truncate"><i class="fa-solid fa-location-dot mr-1"></i>${esc(ch.setting)}</span>
+                <button onclick="openChapterModal(${ch.id})" class="shrink-0 text-xs font-semibold text-cyanGlow hover:text-goldGlow transition flex items-center gap-1">
+                  Read <i class="fa-solid fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    function populateJump() {
+      const select = document.getElementById('quickJumpSelect');
+      select.innerHTML = '<option value="">-- Jump to Chapter --</option>' +
+        chaptersData.map(ch => `<option value="${ch.id}">${ch.id}. ${esc(ch.title)}</option>`).join('');
+    }
+
+    function updateProgress() {
+      const pct = Math.round((readSet.size / chaptersData.length) * 100);
+      document.getElementById('heroProgressPct').textContent = pct + '% Read';
+      document.getElementById('heroBookmark').textContent = bookmarkId ? ('Ch. ' + bookmarkId) : 'None';
+    }
+
+    function setPart(part) {
+      activePart = String(part);
+      document.querySelectorAll('.part-btn').forEach(btn => {
+        const on = btn.getAttribute('data-part') === activePart;
+        btn.classList.toggle('ring-1', on);
+        btn.classList.toggle('ring-goldAccent', on);
+        btn.classList.toggle('text-white', on);
+      });
+      renderChapters();
+    }
+
+    function filterChapters() { renderChapters(); }
+
+    function jumpToChapter(id) {
+      if (!id) return;
+      openChapterModal(Number(id));
+    }
+
+    /* ---------------- Reader modal ---------------- */
+
+    function openChapterModal(id) {
+      const ch = chapterById(id);
+      if (!ch) return;
+      currentId = id;
+
+      document.getElementById('modalPartTag').textContent = PART_NAMES[ch.part];
+      document.getElementById('modalChapterTitle').textContent = 'Chapter ' + ch.id + ': ' + ch.title;
+      document.getElementById('modalChNum').textContent = ch.id + ' of ' + chaptersData.length;
+      document.getElementById('modalChSetting').textContent = ch.setting;
+      document.getElementById('modalChWords').textContent = ch.wordCount;
+      document.getElementById('modalSummaryText').textContent = ch.summary;
+      document.getElementById('modalKeySceneText').textContent = ch.keyScene;
+
+      document.getElementById('modalStoryText').innerHTML = ch.text
+        .split(/\n\n+/)
+        .map(par => '<p>' + esc(par).replace(/\n/g, '<br>') + '</p>')
+        .join('');
+
+      const modal = document.getElementById('readerModal');
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      modal.scrollTop = 0;
+      document.getElementById('modalBodyText').scrollTop = 0;
+
+      document.getElementById('modalPrevBtn').disabled = ch.id === 1;
+      document.getElementById('modalNextBtn').disabled = ch.id === chaptersData.length;
+
+      refreshModalState();
+      renderChapters();
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      updateProgress();
+    }
+
+    function navigateModalChapter(direction) {
+      const next = chapterById(currentId + direction);
+      if (next) openChapterModal(next.id);
+    }
+
+    function refreshModalState() {
+      const isRead = readSet.has(currentId);
+      document.getElementById('modalReadBtnText').textContent = isRead ? 'Completed' : 'Mark Complete';
+      document.getElementById('modalMarkReadBtn').classList.toggle('bg-emerald-950/40', isRead);
+      document.getElementById('modalMarkReadBtn').classList.toggle('border-emerald-700', isRead);
+      document.getElementById('modalMarkReadBtn').classList.toggle('text-emerald-300', isRead);
+
+      const isBookmarked = bookmarkId === currentId;
+      document.getElementById('bookmarkText').textContent = isBookmarked ? 'Bookmarked' : 'Bookmark';
+      document.getElementById('modalBookmarkBtn').classList.toggle('bg-amber-500/15', isBookmarked);
+      document.getElementById('modalBookmarkBtn').classList.toggle('border', isBookmarked);
+      document.getElementById('modalBookmarkBtn').classList.toggle('border-goldAccent/40', isBookmarked);
+    }
+
+    function toggleModalReadStatus() {
+      if (readSet.has(currentId)) readSet.delete(currentId);
+      else readSet.add(currentId);
+      localStorage.setItem(STORAGE.read, JSON.stringify([...readSet]));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function toggleModalBookmark() {
+      bookmarkId = bookmarkId === currentId ? 0 : currentId;
+      localStorage.setItem(STORAGE.bookmark, JSON.stringify(bookmarkId));
+      refreshModalState();
+      renderChapters();
+      updateProgress();
+    }
+
+    function setModalFontSize(size) {
+      document.getElementById('modalStoryText').setAttribute('data-size', size);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('readerModal').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeChapterModal();
+      if (e.key === 'ArrowRight') navigateModalChapter(1);
+      if (e.key === 'ArrowLeft') navigateModalChapter(-1);
+    });
+
+    /* ---------------- Ambient score (Web Audio, no assets) ---------------- */
+
+    let audioCtx = null;
+    let ambientTimer = null;
+    let padOsc = null;
+    let ambientOn = false;
+    const SCALE = [220.0, 246.94, 261.63, 329.63, 349.23, 392.0, 440.0];
+
+    function makeTone(freq, duration, peak, type) {
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(peak, now + 0.35);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.1);
+    }
+
+    function ambientStep() {
+      if (!ambientOn || !audioCtx) return;
+      const idx = Math.floor(Math.random() * SCALE.length);
+      makeTone(SCALE[idx], 5.5, 0.035, 'sine');
+      if (Math.random() > 0.55) {
+        makeTone(SCALE[(idx + 2) % SCALE.length] * 2, 4.2, 0.016, 'triangle');
+      }
+    }
+
+    function toggleAmbient() {
+      if (!ambientOn) {
+        try {
+          audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+          audioCtx.resume();
+        } catch (err) {
+          return;
+        }
+        ambientOn = true;
+
+        const now = audioCtx.currentTime;
+        padOsc = audioCtx.createOscillator();
+        const padGain = audioCtx.createGain();
+        padOsc.type = 'sine';
+        padOsc.frequency.value = 110;
+        padGain.gain.setValueAtTime(0.0001, now);
+        padGain.gain.linearRampToValueAtTime(0.02, now + 3);
+        padOsc.connect(padGain).connect(audioCtx.destination);
+        padOsc.start(now);
+
+        ambientStep();
+        ambientTimer = setInterval(ambientStep, 2200);
+      } else {
+        ambientOn = false;
+        clearInterval(ambientTimer);
+        ambientTimer = null;
+        if (padOsc) {
+          try { padOsc.stop(); } catch (e) {}
+          padOsc = null;
+        }
+      }
+
+      const icon = document.getElementById('ambientIcon');
+      icon.className = ambientOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+      document.getElementById('ambientLabel').textContent = ambientOn ? 'Music On' : 'Ambient';
+      document.getElementById('ambientLabelLarge').textContent = ambientOn ? 'Stop Ambient Score' : 'Play Ambient Score';
+      document.getElementById('ambientBtnLarge').classList.toggle('bg-cyan-500/20', ambientOn);
+    }
+
+    /* ---------------- Live background: fog, ash, music notes ---------------- */
+
+    (function liveBackground() {
+      const canvas = document.getElementById('fog-canvas');
+      const ctx = canvas.getContext('2d');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let W = 0, H = 0;
+      let fog = [], ash = [], notes = [];
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function seed() {
+        fog = Array.from({ length: 6 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 160 + Math.random() * 240,
+          dx: (Math.random() - 0.5) * 0.12,
+          dy: (Math.random() - 0.5) * 0.05,
+          a: 0.05 + Math.random() * 0.05
+        }));
+
+        ash = Array.from({ length: 55 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 0.6 + Math.random() * 1.6,
+          vy: -(0.08 + Math.random() * 0.28),
+          vx: (Math.random() - 0.5) * 0.12,
+          a: 0.12 + Math.random() * 0.3
+        }));
+
+        notes = Array.from({ length: 14 }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          size: 12 + Math.random() * 16,
+          vy: -(0.16 + Math.random() * 0.35),
+          sway: Math.random() * Math.PI * 2,
+          a: 0.05 + Math.random() * 0.13,
+          glyph: Math.random() > 0.5 ? '\u266A' : '\u266B'
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        fog.forEach(f => {
+          const grad = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r);
+          grad.addColorStop(0, 'rgba(120, 140, 170, ' + f.a + ')');
+          grad.addColorStop(1, 'rgba(120, 140, 170, 0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          f.x += f.dx;
+          f.y += f.dy;
+          if (f.x < -f.r) f.x = W + f.r;
+          if (f.x > W + f.r) f.x = -f.r;
+          if (f.y < -f.r) f.y = H + f.r;
+          if (f.y > H + f.r) f.y = -f.r;
+        });
+
+        ash.forEach(p => {
+          ctx.fillStyle = 'rgba(212, 175, 130, ' + p.a + ')';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; }
+          if (p.x < -6) p.x = W + 6;
+          if (p.x > W + 6) p.x = -6;
+        });
+
+        notes.forEach(n => {
+          ctx.fillStyle = 'rgba(243, 229, 171, ' + n.a + ')';
+          ctx.font = n.size + 'px "Cormorant Garamond", serif';
+          ctx.fillText(n.glyph, n.x, n.y);
+
+          n.sway += 0.01;
+          n.x += Math.sin(n.sway) * 0.35;
+          n.y += n.vy;
+          if (n.y < -30) { n.y = H + 30; n.x = Math.random() * W; }
+        });
+      }
+
+      function loop() {
+        draw();
+        requestAnimationFrame(loop);
+      }
+
+      resize();
+      seed();
+      window.addEventListener('resize', () => { resize(); seed(); });
+
+      if (reduceMotion) {
+        draw();
+      } else {
+        draw();
+        requestAnimationFrame(loop);
+      }
+    })();
+
+    /* ---------------- Boot ---------------- */
+
+    populateJump();
+    setPart('all');
+    updateProgress();
+  </script>
+</body>
+</html>
