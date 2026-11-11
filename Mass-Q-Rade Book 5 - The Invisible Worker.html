@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK FIVE — THE INVISIBLE WORKER</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    /* Book Cover — cinematic animated image box */
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 896 / 1200;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Light sweep across the cover */
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0.06) 53%,
+        transparent 64%
+      );
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    /* Film vignette + projector flicker */
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes coverSheen {
+      0%, 55% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+
+    @keyframes coverFlicker {
+      0%, 100% { opacity: 1; }
+      47% { opacity: 0.84; }
+      48% { opacity: 1; }
+      73% { opacity: 0.9; }
+      74% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+  </style>
+</head>
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      
+      <!-- Brand & Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-helmet-safety text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 5</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Invisible Worker</span>
+        </div>
+      </a>
+
+      <!-- Part Filters -->
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Machine (1-15)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: Sanctuary (16-21)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part III: Broadcast (22-28)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part IV: The Abyss (29-43)</button>
+        <button onclick="filterPart(5)" class="px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/60 text-rose-300 transition">Part V: Harvest (44-55)</button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book Five Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE INVISIBLE WORKER
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Li Wei &amp; The Machine That Ate the Obedient
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+Worker 9104-Li is the most compliant man in the Suzhou Megafactory: 4.2 seconds per circuit board, no complaints, no opinions, no soul left to detect. That is exactly why <strong class="text-cyanGlow">Mass-Q-Rade</strong> chooses him. When he learns the state has scheduled his own liquidation, the invisible man becomes <strong class="text-goldGlow">The Invisible Worker</strong> — the key that unlocks the machine from the inside and turns absolute obedience into absolute rebellion.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">55 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">2026</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 55 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 55-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, IV, and V — from Station 404 to the bottom of the East China Sea.</p>
+        </div>
+
+        <!-- Search & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE BIO-SPOOF CLI TERMINAL -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> BIO-SPOOF &amp; TELEMETRY CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating the nanotech sub-dermal interface and TIAN-GRID administrative override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: SUZHOU_COMMAND_REDOUBT
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // INVISIBLE_AGENT_05</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: QUANTUM_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_CHEN')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-skull text-red-400"></i> EXPOSE CHEN
+            </button>
+            <button onclick="runTerminalAction('BIOSPOOF')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> BIO-SPOOF
+            </button>
+            <button onclick="runTerminalAction('AUDIT_LOGS')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT LOGS
+            </button>
+            <button onclick="runTerminalAction('EXTRACT_STATUS')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mountain text-violet-400"></i> SANCTUARY PING
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade bio-spoof terminal online. Suzhou uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Worker 9104-Li -&gt; The Invisible Worker (Agent Five).</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target Director Chen: EXPOSED.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action button above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">WORKER_CONSOLE&gt;</span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, spoof, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Worker 9104-Li / The Invisible Worker, Zhang, Senior Director Chen, Officer Zhao, Sun Lin, Chen Kang, and Q.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE (2026) -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (2026)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From Station 404 to the ocean floor and the Western Basin — seventy-two hours that broke a machine.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE MACHINE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Biometric Shift</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 55</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Sector 7-B, Suzhou (2026)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">3,000 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800">
+            <!-- Full narrative expansion -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK FIVE — THE INVISIBLE Labour</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 55-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 55-CHAPTER SERIALIZATION DATA
+    const chaptersData = [
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 1: The Biometric Shift",
+        setting: "Sector 7-B, Suzhou. 2026.",
+        wordCount: "520 words",
+        summary: "Worker 9104-Li assembles circuit boards at Station 404 in 4.2 seconds per unit, four years, six months and eleven days without deviation. Classified Absolute Compliance, he is invisible — which is why Mass-Q-Rade locks onto him at 03:14:09 UTC.",
+        keyScene: "Li Wei's warmth leaves a momentary vapor outline on the cold steel bench — the only mark he will leave on the world all day.",
+        text: `The light in Sector 7-B never changed. It was neither morning nor night, only the relentless, cool blue glow of fluorescent panels suspended sixty feet above the assembly grid.
+
+Li Wei stood at Station 404, his palms resting flat against the stainless-steel workbench. The steel was cold, but within minutes of his twelve-hour shift, the warmth of his hands would leave a momentary vapor outline on the metal—the only mark he would leave on the world all day.
+
+Above his station, an optical sensor blinked silently. A soft chime sounded in his earpiece.
+
+“Worker 9104-Li. Retina verification complete. Biometric heart rate: 64 BPM. Stress indicator: Nominal. Begin cycle.”
+
+Li Wei did not look up. Looking at the camera added three milliseconds of delay to his movement score, a metric tracked by the central management system. Instead, he dipped his right hand into the component tray, selected a micro-relay chip, and pressed it into the circuit board gliding along the conveyor belt in front of him.
+
+Click. Align. Lock. Next,
+
+He performed the sequence in precisely 4.2 seconds. The factory quota required 4.5 seconds per unit. Li Wei had operated at 4.2 seconds for four years, six months, and eleven days. He did not ask for higher wages. He did not apply for shift transfers. He never took unscheduled bathroom breaks. In the corporate database of the Suzhou Automated Tech Complex, Li Wei was classified under a single operational status: Absolute Compliance.
+
+Around him, six thousand workers executed the same repetitive motions in complete silence. No speech was permitted on the assembly floor. The atmospheric noise consisted entirely of pneumatic hiss, mechanical conveyances, and the quiet, synchronized breathing of six thousand human units.
+
+To the state surveillance grid outside the complex walls, Li Wei was the ideal citizen. He paid his communal rent on time, bought his government-approved synthetic meal rations, and attended the mandatory civic harmony lectures every Sunday evening without expressing a single opinion. He had scrubbed his mind so thoroughly of resistance that even his dreams—when he allowed himself to sleep—were quiet and gray.
+
+He was completely invisible.
+
+And that was precisely why the deep-orbit telemetry algorithms of the Mass-Q-Rade network locked onto his profile at 03:14:09 UTC.`
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 2: The Architecture of Eyes",
+        setting: "Block 18, Suzhou. 2026.",
+        wordCount: "430 words",
+        summary: "In China's eastern industrial zones privacy is computationally impossible: dual-thermal facial arrays, thumbprint doors, loyalty prediction. Li Wei walks his seventy-centimeter stride home to Block 18, Room 302, and thanks the wall for 0.5 compliance points.",
+        keyScene: "Three hundred kilometers above him, an orbital node files Li Wei as 99.8% submissive with a 0.02% latent survival impulse — and initiates selection.",
+        text: `In China’s eastern industrial zones, privacy was not merely illegal; it was computationally impossible.
+
+Every street corner in the worker district carried facial recognition arrays with dual-thermal imaging. Every apartment door operated via biometric thumbprint feeds directly tied to the Municipal Bureau of Harmony. The algorithm knew when a worker had a fever before the worker felt the heat in their forehead; it knew when a worker’s loyalty was faltering before the thought fully crystallized in their mind.
+
+Li Wei lived in Block 18, Room 302—a four-meter by three-meter concrete cube equipped with a folding bed, an integrated sanitation unit, and a wall-mounted screen that broadcasted economic reports and industrial productivity milestones.
+
+When the 04:00 AM shift ended, Li Wei walked back to Block 18 along the designated green-line pedestrian path. He kept his posture straight, his head tilted slightly downward, and his stride measured at seventy centimeters per step. Deviations in gait were logged as potential intoxication or psychological stress.
+
+As he scanned his wrist to enter his apartment, the door panel beeped twice. A calm, synthetic voice spoke from the wall module.
+
+“Worker 9104-Li. Your production efficiency today was 101.4% of baseline. You have been rewarded 0.5 compliance points. Remember: Discipline is Freedom. Silence is Harmony.”
+
+"Thank you for the guidance," Li Wei said, his voice flat and even. He addressed the wall module every evening with the exact same five words. He had spoken those five words over sixteen hundred times.
+
+He sat on the edge of his narrow mattress, unlacing his reinforced safety boots. He placed them neatly side-by-side, aligning the toes with the edge of the floor tiles.
+
+He did not know that three hundred kilometers above the atmosphere, inside a silent, optical-stealth orbital node operated by Mass-Q-Rade, his vital stats were being analyzed by systems far beyond anything his government possessed.
+
+Target Profile: Li Wei.
+Psychological Architecture: 99.8% Submissive / 0.02% Latent Survival Impulse.
+System Access Level: Low (Physical) / High (Unmonitored Neural Spatial Position).
+Mass-Q-Rade Protocol: Initiate Selection.`
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 3: The Vanishing at Line 12",
+        setting: "Line 12, Sector 7-B. 2026.",
+        wordCount: "520 words",
+        summary: "When Zhang at Station 407 stops moving, exoskeleton guards lift him off the platform without checking his pulse and reset the timer. Li Wei's heart spikes to 68 BPM and he forces it back down, knowing what happens to workers whose hearts beat too fast.",
+        keyScene: "The overhead speaker chimes 'Station 407 reassigned to Automated Unit 12-B' — and Li Wei keeps pressing chips as if a man had not just been erased.",
+        text: `On Thursday morning, the conveyor belt at Line 12 paused for precisely eight seconds.
+
+In the automated complex, an eight-second pause was an emergency event. Li Wei did not turn his head, but his peripheral vision caught the sudden flash of yellow amber lights three stations to his left.
+
+A worker named Zhang—Station 407—had stopped moving. His arms hung limply at his sides. His head was bowed over a half-assembled optical sensor unit.
+
+Within four seconds, two security officers clad in matte-black exoskeleton suits stepped out of the central corridor. They did not speak to Zhang. They did not check his pulse. They attached a magnetic harness to his industrial belt and lifted him smoothly off the platform. One officer tapped a code into the station console, resetting the timer.
+
+The amber light turned green. The conveyor belt jerked forward.
+
+“Line 12 efficiency resumed,” the overhead speaker chimed softly. “Station 407 reassigned to Automated Unit 12-B. Resume cycle.”
+
+Li Wei dipped his hand into his component tray. Micro-relay chip. Circuit board. Press. Click. Lock.
+
+His heart rate monitor inside his earpiece registered a minor spike: 68 BPM. He immediately slowed his breathing, pulling air deep into his diaphragm until the rate dropped back to 64 BPM. He knew what happened to workers whose hearts beat too fast when someone disappeared. They were taken to the Behavioral Calibration Center on the lower levels. None of them ever returned to the assembly grid; their names were simply erased from the shift rosters, replaced by fresh batch codes.
+
+Zhang was gone. He had worked next to Li Wei for two years. They had never spoken a word to each other. They had never exchanged a glance. Yet Li Wei knew that Zhang’s daughter suffered from respiratory failure in the outer district, and that Zhang had been secretly saving synthetic rationing credits to buy unauthorized air filters.
+
+The system had calculated Zhang's desperation before Zhang even realized his mistake.
+
+Li Wei kept his eyes fixed on the circuit boards gliding past. He forced his mind into complete emptiness, turning himself into a gear inside a machine that ground human lives into data and export goods.
+
+He was safe because he was obedient. He was safe because he had no soul left to detect.
+
+Or so he believed.`
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 4: The Micro-Pulse",
+        setting: "Block 18, Room 302. 2026.",
+        wordCount: "440 words",
+        summary: "At 23:30 a warmth behind Li Wei's left ear pulses S-O-S against his skull, and a voice speaks inside his auditory cortex without any speaker. It tells him not to move: the room monitor is tracking his chest elevation.",
+        keyScene: "The voice explains that his 68 BPM spike at 08:14 has already been logged, and that he is scheduled for calibration next Tuesday.",
+        text: `At 23:30, while the rest of Block 18 slept under the soft surveillance night-lights of the residential towers, Li Wei lay motionless on his bed. His eyes were closed, his breathing shallow.
+
+Suddenly, a sensation unlike anything he had ever felt vibrated behind his left ear.
+
+It was not a sound. It was a sharp, localized warmth, followed by a sequence of minute electrical pulses that resonated directly against his skull bone.
+
+Li Wei opened his eyes instantly. The wall screen was silent, showing the standard idle state screen—a slow-moving graphic of the national industrial crest. The door lock indicator was green.
+
+The pulse repeated. Three short vibrations, two long, three short.
+
+S-O-S.
+
+Then, a voice echoed inside his auditory cortex—not through the room's speaker system, and not through his corporate earpiece, which was resting on the charging dock across the room. The voice was clear, crisp, and entirely free of digital distortion.
+
+“Do not move your head, Li Wei. Do not alter your breathing rate. The room monitor is tracking your chest elevation.”
+
+Li Wei froze. Every instinct cultivated over a lifetime of surveillance warned him to panic, to alert the wall module, to demonstrate his loyalty by turning himself in.
+
+“If you notify the module,” the voice continued calmly, “your biometric profile will be flagged for immediate liquidation within four minutes. They know you saw what happened to Zhang. They know your heart rate reached 68 BPM at 08:14 AM. You are already scheduled for calibration next Tuesday.”
+
+Li Wei’s fingers twitched against his thin mattress cover.
+
+“Who... who is this?” he thought, not daring to speak aloud.
+
+“We are Mass-Q-Rade,” the voice replied inside his head. “The system built you to be invisible. We are going to make you unstoppable.”`
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 5: The Subconscious Blueprint",
+        setting: "Block 18, Room 302. 2026.",
+        wordCount: "380 words",
+        summary: "By day Li Wei is still the perfect automaton. By night, a node in his bloodstream uploads schematics and autonomic control directly into his motor memory — the cooling ducts, the server hubs, how to fake a heart rate or skin temperature.",
+        keyScene: "Mass-Q-Rade answers his 'Why me?': power lies in absolute obedience, because the system never watches the slave who bows low enough.",
+        text: `For the next three days, Li Wei lived two entirely different lives.
+
+By day, he remained the perfect automaton of Station 404. He installed micro-relay chips, ate his tasteless meal paste during the twenty-minute lunch window, and walked the green line back to Block 18.
+
+By night, while lying perfectly still under the gaze of his apartment's optical sensors, the micro-pulses transformed his mind.
+
+Mass-Q-Rade did not give him weapons. They did not give him political manifestos. Instead, using sub-perceptual neural induction delivered through a microscopic node that had entered his bloodstream via the factory's automated hydration dispenser, they began uploading data directly into his motor memory.
+
+He learned the structural schematics of the Suzhou Megafactory—not just the assembly floors, but the hidden subterranean conduits, the unmonitored cooling ducts, and the high-frequency server hubs that fed the state’s regional surveillance grid.
+
+He learned how to manipulate his own autonomic nervous system. With subtle muscle contractions, he could artificially lower his heart rate to 45 BPM or raise his skin temperature to spoof biometric scanners.
+
+“Why me?” Li Wei asked in the quiet hours before dawn, projecting his thought toward the neural link. “I am nobody. I have spent my whole life obeying them.”
+
+The response from Mass-Q-Rade was immediate and uncompromising.
+
+“The arrogant believe power lies in loud rebellion. They are wrong. Real power lies in absolute obedience—because the system never watches the slave who bows low enough. You are the perfect key. Through you, we will unlock the entire apparatus.”`
+      },
+      {
+        id: 6, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 6: The First Assignment",
+        setting: "Block 18 corridor. 2026.",
+        wordCount: "390 words",
+        summary: "On the seventh night Mass-Q-Rade sends Li Wei out of his room. His tattooed barcode now carries a maintenance override borrowed from Director Chen's clearance, and the corridor camera loop gives him eleven minutes.",
+        keyScene: "Li Wei presses his glowing wrist to the door and steps across the threshold — the invisible worker's first step into the shadows.",
+        text: `On the seventh night, the instructions changed.
+
+“Tonight, you leave Block 18.”
+
+Li Wei felt a cold spike of fear. "The door locks at 22:00. The floor sensors log any weight exceeding ten kilograms after hours. If I open the door, the corridor alarm will trigger."
+
+“Look at your right wrist,” Mass-Q-Rade commanded.
+
+Li Wei raised his hand slowly beneath his blanket. Where his worker identification barcode was tattooed into his skin, a faint, iridescent sheen appeared. The microscopic nanotech payload deployed by Mass-Q-Rade had restructured the pigment in his epidermis.
+
+“Touch the door panel. The sensor will read a maintenance override signal from Director Chen’s personal clearance code. You have a window of eleven minutes while the corridor camera loop refreshes.”
+
+Li Wei stood up. His knees trembled slightly, but the neural conditioning kicked in immediately. His pulse stabilized. His vision sharpened, displaying a subtle overlay of gridlines and countdown timers across his field of view.
+
+He stepped to the door. He pressed his glowing wrist against the optical glass.
+
+Click.
+
+The heavy steel door slid open silently into the darkened hallway. The hallway was empty, illuminated only by the faint red glow of emergency exit indicators.
+
+Li Wei stepped across the threshold. The invisible worker had just taken his first step into the shadows of the Mass-Q-Rade mission.`
+      },
+      {
+        id: 7, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 7: The Shadows of Sector 3",
+        setting: "Sector 3 service corridors. 2026.",
+        wordCount: "400 words",
+        summary: "With 09:42 counting down in his vision, Li Wei's rewired gait keeps him inside the camera blind spots. The biometric turret's blue laser passes over him — his wrist overlay spoofing his thermal signature into empty wall.",
+        keyScene: "He crosses the security station at Junction C unseen and reaches the utility hatch above the sub-server vault.",
+        text: `The hallway smelled of ozone and recycled nitrogen.
+
+Li Wei pressed his back against the cool composite wall, keeping his silhouette inside the dark recesses between door frames. His field of view projected a faint red countdown timer in the lower-right corner of his vision: 09:42... 09:41...
+
+The camera refresh cycle gave him less than ten minutes to navigate four hundred meters of restricted corridors to the subterranean conduit access shaft. Under normal circumstances, any worker caught out of their block after curfew was instantly tagged for high-severity detention. But as Li Wei moved, he realized his body was responding before his conscious mind could even process the fear.
+
+His steps were weightless. The neural induction had altered his gait, balancing his weight entirely on the balls of his feet. He glided past the automated security station at Junction C. The biometric turret turned slowly on its swivel, its blue laser line sweeping across the floor—and passed right over him.
+
+The wrist overlay was spoofing his thermal signature, bending the infrared light into a static reading that matched the empty wall behind him.
+
+“Turn left at the ventilation shaft,” the clear voice inside his skull directed. “Station 404 was not an arbitrary assignment, Li Wei. The assembly line you operate sits directly above the sub-server vault for the entire regional surveillance node. You are going to insert the bridge module.”
+
+He reached an iron utility hatch marked with a yellow high-voltage warning symbol. Li Wei placed his right palm against the biometric plate. The nanotech skin shimmered, cycling through encrypted keycodes until the heavy latch disengaged with a dull thunk.
+
+He slipped inside and pulled the hatch shut just as the corridor cameras completed their loop cycle.`
+      },
+      {
+        id: 8, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 8: The Ghost in the Grid",
+        setting: "Ventilation conduit above Sector 7-B. 2026.",
+        wordCount: "520 words",
+        summary: "Crawling above the idle assembly floor, Li Wei taps the provincial fiber trunk with a filament finer than a hair. Link established: the first file he reads is his own termination order for Tuesday 06:00 — latent unpredictability.",
+        keyScene: "'His absolute obedience hadn't saved him; it had simply made his eventual disposal cleaner and more predictable.'",
+        text: `The ventilation conduit was narrow, humid, and filled with the low, vibration-heavy hum of cooling turbines.
+
+Li Wei crawled through the darkness on all fours. Below him, through the steel floor grates, he could see the vast expanse of the factory floor where he spent half his life. At night, without the workers, the assembly grid looked like an endless cemetery of polished steel and idle robotic arms.
+
+“Stop here,” Mass-Q-Rade instructed.
+
+Directly beneath his hands sat the primary fiber-optic trunk line—a bundle of translucent cables thick as a man's arm, carrying trillions of data points every second: facial scans, productivity logs, heart-rate metrics, and automated disciplinary orders across three provinces.
+
+"What do I do?" Li Wei whispered into the dark.
+
+“Extend your left index finger to the casing.”
+
+He placed his finger against the armored black sheath of the cable. A microscopic filament, finer than a human hair, extended from beneath his fingernail, piercing the outer insulation without severing a single strand of fiber.
+
+A burst of static flickered across his vision, followed by a torrent of raw, high-speed data stream logs scrolling at unreadable speeds.
+
+“Link established,” the voice reported. “We are now reading the raw feed before the state algorithm cleans it. Look at line 1,042.”
+
+Li Wei focused on the neural overlay. A series of file names appeared, tagged with red priority markers:
+
+TARGET: WORKER 9104-LI — TERMINATION SCHEDULE: TUESDAY 06:00
+
+REASON: LATENT UNPREDICTABILITY (NEURAL ANOMALIES DETECTED DURING SLEEP CYCLES)
+
+Li Wei’s breathing caught in his throat. He hadn't just been flagged for "calibration." He was scheduled to be eliminated and processed out of the system entirely, just like Zhang. His absolute obedience hadn't saved him; it had simply made his eventual disposal cleaner and more predictable.
+
+The compliance he had built his entire identity around was a lie. He was never safe. He was only waiting for his turn.`
+      },
+      {
+        id: 9, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 9: The Recalibration",
+        setting: "Conduit and Block 18. 2026.",
+        wordCount: "380 words",
+        summary: "Fear evaporates into icy focus. Mass-Q-Rade refuses the amateur route — no breach — and instead rewrites the baseline: tomorrow at Station 404, Li Wei's bench will transmit their data into the state's own network.",
+        keyScene: "Li Wei smiles at the red lens of his wall module for the first time in his life.",
+        text: `A cold, hard clarity settled into Li Wei’s chest. The fear that had governed his life for thirty-four years evaporated, replaced by an icy, calculated focus.
+
+"How do we break it?" he asked. His voice did not tremble.
+
+“We do not break it from the outside,” Mass-Q-Rade answered. “That is what amateurs do. An open breach brings military units and immediate grid isolation. We rewrite the internal baseline. You will return to your room. You will report to Station 404 tomorrow morning at 04:00 AM. But when you touch that bench, you will no longer be transmitting your data to them.”
+
+“You will be transmitting our data to their entire network.”
+
+Li Wei retracted the filament. The micro-puncture resealed itself instantly at a molecular level.
+
+He crawled back toward the utility hatch, his movements faster now, every step synchronized with the rhythm of the facility’s cooling fans. When he reached his room in Block 18, he locked the door behind him, stripped off his damp uniform, and lay back down on his narrow mattress.
+
+The wall module hummed quietly in the corner, its red lens staring down at him.
+
+“Worker 9104-Li. Heart rate: 62 BPM. Status: Nominal.”
+
+Li Wei stared back into the red lens. For the first time in his life, he smiled—a small, barely visible turn of his lips in the dark.
+
+He was still the invisible worker. But the machine no longer owned the man inside.`
+      },
+      {
+        id: 10, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 10: The Baseline Paradox",
+        setting: "Station 404, Sector 7-B. 2026.",
+        wordCount: "430 words",
+        summary: "Li Wei performs submissive morning ritual flawlessly, ignoring the urge to warn the young woman who replaced Zhang. On the bench he keeps his 4.2-second cadence — but each chip now carries a self-replicating Mass-Q-Rade payload.",
+        keyScene: "Every board leaving Station 404 becomes a vector for the shadow network, while his face still wears weary, uncomplaining submission.",
+        text: `The 04:00 AM siren sounded through Block 18 like a dull brass bell submerged in water.
+
+Li Wei stood before the small metal sink in his cell, splashing lukewarm water over his face. When he looked up into the mirror—which contained a concealed biometric lens behind its reflective surface—his face wore the exact expression of weary, uncomplaining submission he had worn for thousands of mornings.
+
+“Retinal pattern recognized: Worker 9104-Li,” the mirror module muttered. “Hydration levels acceptable. Report to Sector 7-B.”
+
+He walked down the central sky-bridge alongside thousands of gray-uniformed figures. They moved as a single fluid body, their shoes creating a synchronized, low rhythmic thud against the grated steel floor. Next to him walked a young woman who had replaced Zhang at Station 407 two days prior. She kept her chin tucked into her collar, her eyes glued to the heels of the worker ahead of her. Her hands were raw, red, and swollen from the chemical lubricants used on the circuit boards.
+
+Li Wei felt a sudden, sharp impulse to warn her. But the Mass-Q-Rade link pulsed twice behind his ear—a quiet, cooling sensation that curbed his emotion instantly.
+
+“Emotional spikes alter pupil dilation by 0.3 millimeters,” the voice reminded him. “Keep your focus forward. The apparatus is watching for any deviation in the group flow.”
+
+He stepped onto the platform of Station 404. He placed his palms flat on the cold workbench.
+
+Click. Align. Lock. Next.
+
+4.2 seconds.
+
+Except now, as his right index finger pressed the micro-relay chips into the motherboards, the microscopic nanotech filaments beneath his skin subtly pulsed with every contact. He was no longer just assembling circuit boards for the state’s regional surveillance processors; he was imprinting an encrypted, self-replicating code directly into the physical hardware.
+
+Every board that left Station 404 was now a vector for Mass-Q-Rade's shadow network.`
+      },
+      {
+        id: 11, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 11: The Anomalous Variable",
+        setting: "Observation gallery, Suzhou Complex. 2026.",
+        wordCount: "420 words",
+        summary: "TIAN-GRID flags forty-eight cycles of zero biometric variance at Station 404 — a perfectly straight line that matches a synthetic test-rig. Senior Director Chen orders the Tuesday harvest moved forward to the end of this shift.",
+        keyScene: "Chen: 'I want his brain state extracted and scanned before his neural data degrades.'",
+        text: `By mid-shift, the factory's central AI monitor—known as TIAN-GRID—began running its automated diagnostic routines across Sector 7.
+
+Inside the high-security observation gallery overlooking the floor, Senior Director Chen stood behind a three-meter-wide curved glass panel. He was a man in his late fifties, his immaculate dark uniform free of a single crease, his chest adorned with administrative service pins.
+
+Behind him, a young analytics officer tapped rapidly on a glass interface console.
+
+"Director," the officer reported, his voice tight. "We have a statistical variance in Sector 7-B."
+
+Chen did not turn around. "Specify."
+
+"Station 404. Worker 9104-Li. For forty-eight consecutive cycles, his biometric readings have remained at 64.0 BPM with zero variance."
+
+Chen raised an eyebrow slightly. "A steady heart rate is the benchmark of high compliance."
+
+"Under normal conditions, yes," the officer said, pulling up a series of complex wave graphs. "But human physiology exhibits micro-fluctuations during repetitive labor—slight spikes during tool swaps, minor drops during atmospheric pressure shifts. Worker 9104-Li's line is completely straight. It matches the signal pattern of a synthetic test-rig."
+
+Chen turned his head slowly, his cold eyes scanning down to the factory floor, locating the quiet, middle-aged man standing at Station 404.
+
+"Is he on the liquidation list for Tuesday?" Chen asked.
+
+"Yes, Director. Tagged for latent neural unpredictability."
+
+"Move it forward," Chen instructed coldly. "Send the security detail down to harvest his station at the end of this shift. I want his brain state extracted and scanned before his neural data degrades."`
+      },
+      {
+        id: 12, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 12: The Signal in the Dark",
+        setting: "Station 404. 2026.",
+        wordCount: "370 words",
+        summary: "Security is coming in twenty minutes. Mass-Q-Rade refuses to run and instead orders the swap — using the young woman's collapse at Station 407 as cover to declare Worker 9104-Li dead in the database.",
+        keyScene: "Li Wei does not prepare to submit; for the first time in his life, he prepares to execute a mission.",
+        text: `Inside Li Wei's mind, the countdown shifted.
+
+“Warning,” Mass-Q-Rade’s voice reverberated inside his skull. “Director Chen has accelerated your schedule. Security units are mobilizing to intercept you at the shift-change gate in twenty minutes.”
+
+Li Wei did not stop his hands.
+
+Click. Align. Lock. Next.
+
+"Do we run?" Li Wei asked internally.
+
+“No,” Mass-Q-Rade answered. “Running exposes the network before the seed code is fully distributed. We execute the swap.”
+
+"What swap?"
+
+“Look at Station 407.”
+
+Li Wei’s glance darted sideways for a fraction of a second. The young woman with the swollen hands was faltering. Her assembly arm dropped a micro-connector; it tumbled into the collection chute below her desk. The amber warning light above her head began to flicker—the same amber light that had presaged Zhang's disappearance.
+
+Her breathing turned ragged. Her chest hit the sensor bar, sending a surge of red metrics to the observation gallery.
+
+"They are going to take her instead," Li Wei realized.
+
+“She has already crossed the fatal error threshold,” Mass-Q-Rade said calmly. “Her capture is inevitable under TIAN-GRID rules. But we will use the distraction of her arrest to trigger your physical death in their database—while you walk out as an anomaly.”
+
+As the heavy tread of the exoskeleton security guards echoed down the central gantry toward Sector 7-B, Li Wei took a deep breath.
+
+For the first time in his life, he did not prepare to submit. He prepared to execute a mission.`
+      },
+      {
+        id: 13, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 13: The Bio-Ghost Swap",
+        setting: "Sector 7-B. 2026.",
+        wordCount: "560 words",
+        summary: "Li Wei dumps a surge into the station node, faking acute cardiac arrest while the guards drag the woman away. Chen lets '9104-Li' go to the incinerator chute — and the man himself steps into the shadows of the support column, officially dead.",
+        keyScene: "The sector drops into a ten-second containment lockdown as a man who is not supposed to exist walks out of it.",
+        text: `The heavy boots of the exoskeleton guards slammed against the metal walkway, each step vibrating up through Li Wei’s feet.
+
+As the guards reached Sector 7-B, the amber siren over Station 407 flared into a steady, blood-red beacon. The young woman froze, her eyes widening in sheer terror as the security duo locked their magnetic harnesses to her belt. She didn't scream; years of factory discipline kept her mouth clamped shut even as silent tears cut clean tracks through the industrial grease on her cheeks.
+
+“Now,” the Mass-Q-Rade voice commanded. “Place your left palm against the bench diagnostic terminal.”
+
+Li Wei obeyed without breaking his assembly cadence with his right hand. Microscopic filaments pulsed beneath his skin, dumping a high-voltage electrical surge directly into the local station node.
+
+Instantaneously, the overhead biometric array above Station 404 sputtered. A sharp spike of artificial data flooded TIAN-GRID’s monitoring console in the observation tower:
+
+WARNING: WORKER 9104-LI — ACUTE CARDIAC ARREST DETECTED
+
+VITAL SIGNS: TERMINAL ZERO
+
+In the observation gallery, Director Chen’s console flashed red. The analytics officer gasped. "Director! Worker 9104-Li's heart rate just collapsed. Complete systemic shutdown at Station 404."
+
+Chen frowned, leaning over the console. "Did he collapse on the floor?"
+
+"The optical feed at 404 is glitched, Director—it's rendering a static loop of an unmoving body," the officer reported rapidly. "The security team is currently at 407 securing the female unit. Should I redirect them?"
+
+Chen waved his hand dismissively, his focus drawn to the immediate error at 407. "No. Harvest the woman first. Let the medical retrieval team cart 9104-Li to the incinerator chute down in Sub-Level 4."
+
+On the floor, Li Wei pulled his hand back from the terminal. To TIAN-GRID, Worker 9104-Li was officially dead—his digital profile logged, archived, and deleted from the active workforce index.
+
+As the security detail dragged the crying woman toward the exit gantries, the entire sector slipped into a mandatory ten-second containment lockdown. The overhead lights dimmed to a dull emergency amber.
+
+Li Wei stepped backward off the Station 404 platform into the shadows of the central support column. In the dim light and amidst the sea of six thousand identical gray uniforms, nobody noticed the man who wasn't supposed to exist anymore.`
+      },
+      {
+        id: 14, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 14: Sub-Level 4",
+        setting: "Sub-Level 4, Suzhou Complex. 2026.",
+        wordCount: "520 words",
+        summary: "Li Wei descends into the reclamation level, where the warm, sterile factory gives way to dripping walls and the stench of incinerated bio-matter. He finds the processing bay — and the woman already strapped into the calibration chair.",
+        keyScene: "'We aren't just taking the key,' Li Wei whispers. 'We are shutting down the incinerator.'",
+        text: `Instead of joining the line of workers shuffling toward the shift-change turnstiles, Li Wei slipped through the pneumatic door leading down into the facility’s subterranean bowels.
+
+The temperature plummeted twenty degrees. Up above, the factory was clean, brightly lit, and sterile; down here in Sub-Level 4, the walls dripped with condensation, and the air carried the heavy, metallic stench of ozone, burnt plastic, and incinerated bio-matter.
+
+This was where the "failed units" were processed.
+
+Li Wei walked along the narrow catwalk suspended over the automated waste reclamation chutes. Microscopic nanotech patterns shifted beneath his uniform, cloaking his body heat from the automated thermal sensors lining the ceiling.
+
+“You have seven minutes before the automated incinerator cycle begins,” Mass-Q-Rade instructed inside his mind. “Director Chen’s administrative console relies on an offline physical hard-key stored in the regional mainframe room past the disposal vault.”
+
+"Why do we need Chen's physical hard-key?" Li Wei asked internally as he stepped over thick bundles of high-voltage conduits.
+
+“Because TIAN-GRID’s regional command operates under a dual-authorization protocol. The network seed code you embedded on the assembly line gives us control of the soft data. Chen’s physical key will grant us total administrative override of the physical infrastructure—including the automated doors, security turrets, and regional broadcast arrays.”
+
+Li Wei paused at the end of the catwalk. Below him, through a heavy reinforced glass panel, he saw the processing bay.
+
+The security guards were unbuckling the young woman from Station 407, forcing her onto a bio-metric calibration chair. A massive mechanical arm equipped with neural probe needles hovered inches above her head.
+
+Li Wei’s hands tightened into fists. For thirty-four years, he had watched people disappear—Zhang, countless others before him—and had felt only the numb relief that it wasn't him. But now, seeing the chair, something fundamentally changed inside his chest.
+
+"We aren't just taking the key," Li Wei whispered into the dark hum of the basement.
+
+“Explain, Operative Li,” Mass-Q-Rade responded.
+
+"We are shutting down the incinerator."`
+      },
+      {
+        id: 15, partNum: 1, partTitle: "Part I: The Machine & The Invisible Man",
+        title: "Chapter 15: The Mass-Q-Rade Protocol Injected",
+        setting: "Processing bay, Sub-Level 4. 2026.",
+        wordCount: "470 words",
+        summary: "Mass-Q-Rade approves the deviation: destroying the processing node forces Chen into a manual reset that will spread the seed code five times faster. Unarmed, Li Wei drops two technicians in seconds and presses his palm to the master interface.",
+        keyScene: "'Worker 9104-Li is dead,' Li Wei tells the woman. 'And in ten minutes, this factory is going to join him.'",
+        text: `A brief silence hung on the neural link before the voice answered.
+
+“Emotional interference usually compromises mission parameters. However... destroying Sub-Level 4's processing node will force Director Chen into a manual system reset. That reset will execute our seed code five times faster.”
+
+“Target confirmed. Initiate tactical override.”
+
+Li Wei didn't draw a gun; he had no weapons. Instead, he stepped out onto the main floor of the processing bay.
+
+The two technicians in heavy hazard suits turned in surprise as the door slid open. "Who authorized you down here? Sector 7 is in lockdown—"
+
+Li Wei didn't answer. The neural induction software in his motor cortex surged. He closed the ten-meter distance in less than two seconds, his movements fluid and unnaturally fast. Before the first technician could reach for the emergency alarm, Li Wei struck him precisely at the junction of his neck and shoulder, disrupting the nerve cluster and sending the man limp to the floor.
+
+The second technician reached for a stun baton, but Li Wei grabbed the man's wrist, turned his momentum, and slammed his head against the central console.
+
+The room fell quiet, save for the rhythmic hum of the neural arm hovering over the terrified woman in the chair.
+
+She stared at Li Wei, her breath coming in ragged gasps. "Li... Li Wei? They said... they said you died at your desk."
+
+Li Wei walked past her to the main command terminal. He pressed his glowing, nanotech-altered right palm flat against the master interface screen.
+
+"Worker 9104-Li is dead," he said softly, his eyes fixed on the system override progress bar flooding the screen with green Mass-Q-Rade code. "And in ten minutes, this factory is going to join him."`
+      },
+      {
+        id: 16, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 16: The Subterranean Sanctuary and the Ghost Protocol",
+        setting: "Sub-Level 4 and Corridor B-12. 2026.",
+        wordCount: "700 words",
+        summary: "Officially purged from TIAN-GRID as of 04:12, Li Wei moves through the dead lower levels as a ghost. Acoustic sensors demand a seventy-centimeter stride and the armored carriers have already arrived above him.",
+        keyScene: "'To TIAN-GRID, you are a ghost. To us, you are the catalyst.'",
+        text: `The heavy reinforced steel doors of the subterranean facility hissed open with a pneumatic sigh that tasted of recycled ozone and old iron. Li Wei stood motionless on the threshold, his eyes adjusting to the amber emergency lighting that bled across the wet concrete floors of Sub-Level 4. In the upper world—up there, six floors above, where the bright blue fluorescent tubes hummed over the assembly grids—thousands of men and women were shifting gears, pressing micro-relays, and breathing in precise synchronization with the state’s regional algorithms. Down here, the air was dead, heavy with the metallic tang of burnt copper and the cold sweat of machines that never slept.
+
+He looked down at his right wrist. The nanotech interface embedded beneath his skin—planted quietly by the Mass-Q-Rade network three nights ago while he lay frozen under his apartment’s optical lens—glowed with a faint, pulse-like sapphire luminescence. It was an imperceptible light, invisible to the thermal cameras mounted on the low ceilings, but to Li Wei's altered nervous system, it felt like an extra heartbeat throbbing just beneath his epidermis.
+
+“Maintain a resting gait of seventy centimeters per step,” the clear, synthetic-free voice of Mass-Q-Rade echoed softly inside his auditory cortex. “The perimeter security grid in this sector operates on acoustic resonance sensors. If your stride varies by more than two centimeters, the automated mortar turrets in the ceiling vents will lock onto your frequency.”
+
+Li Wei adjusted his posture. For thirty-four years, his entire existence had been defined by absolute obedience. He had walked the exact same green line to Station 404, eaten the exact same nutrient paste at precisely 12:00 PM, and bowed his head whenever the overhead public address speakers broadcasted the daily Harmony Mandate. Obedience had been his shield; it had kept him invisible, safe from the brutal recalibration centers where workers who blinked too fast or breathed too heavily were taken and erased.
+
+But obedience had also killed Zhang. And it had nearly killed him.
+
+"How far to the mainframe core?" Li Wei thought, directing his mental focus through the neural bridge.
+
+“Three hundred and forty meters through the utility maintenance conduit,” the voice replied instantly. “However, you are no longer operating as a civilian unit. Your biometric signature has been completely purged from the state database as of 04:12 AM when you triggered the cardiac arrest simulation at Station 404. To TIAN-GRID, you are a ghost. To us, you are the catalyst.”
+
+Li Wei stepped forward, his soft-soled boots making no sound against the damp floor. Every muscle in his legs felt remarkably light, tuned by the sub-perceptual micro-pulses that Mass-Q-Rade had uploaded into his motor memory over the past week. He wasn't just walking through the factory anymore; he was navigating a living, breathing architecture of oppression from the inside out.
+
+As he rounded the corner into Corridor B-12, a low rumble vibrated through the foundation beneath his feet. It wasn't the regular hum of the assembly belts. It was heavier, deeper—the unmistakable sound of an armored personnel carrier moving through the surface loading docks. Director Chen’s security detail had discovered the glitch at Station 404, and the hunt for the phantom worker had officially begun.`
+      },
+      {
+        id: 17, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 17: The Anatomy of a Surveillance State",
+        setting: "Observation gallery, twelfth floor. 2026.",
+        wordCount: "620 words",
+        summary: "Director Chen learns the body is gone and the fiber trunk carries an encrypted recursive loop. The payload has been riding six months of micro-relay chips from Station 404 — the entire regional network is infected.",
+        keyScene: "Chen orders a full neural-net sweep and his ghost brought to him alive: 'I want to know whose mind is trying to rewrite my city.'",
+        text: `To understand why Li Wei’s escape was sending shockwaves through the administrative towers of Suzhou, one had to understand the intricate, suffocating geometry of the modern industrial state.
+
+For decades, the state had relied on visible force—armed guards, public detention quotas, and televised public trials. But force was inefficient; it bruised labor productivity and invited localized unrest. Under the leadership of modern administrative architects like Senior Director Chen, the state had evolved into something far more terrifying: a seamless fusion of biometric surveillance, predictive behavioral economics, and automated manufacturing.
+
+In this system, a human being was not a citizen, nor even an individual worker. They were a data point—a biological variable in an equation designed to maximize gross domestic product while minimizing political entropy.
+
+Inside the high-security observation gallery on the twelfth floor, Director Chen stood before a massive curved glass wall overlooking the sprawling, silent expanse of Sector 7. His hands rested neatly behind his back, his immaculate uniform pressed to razor-sharp creases.
+
+"Explain the anomaly again," Chen said softly, without turning his head.
+
+Standing beside him, a young analytics officer named Zhao trembled slightly, his fingers flying across a glass holographic interface. "Director, the initial diagnostic from Station 404 indicated acute cardiac arrest in Worker 9104-Li. Our recovery unit was dispatched to retrieve the physical remains for recycling and neurological harvesting. But..." Zhao hesitated, swallowing hard.
+
+"But what, Officer Zhao?" Chen’s voice remained dangerously calm.
+
+"When the recovery unit reached Station 404, the workbench was completely clean. Not only was the body gone, but the local diagnostic terminal had been wiped by a high-voltage data surge. Furthermore..." Zhao tapped a sequence, projecting a complex regional network schematic into the center of the room. "The surge didn't just clear the local cache. It injected an encrypted recursive loop into the primary fiber trunk line feeding the TIAN-GRID core."
+
+Chen narrowed his eyes, his reflection stark and cold against the panoramic window. "An encrypted loop? By whom? All workers are implanted with baseline compliance chips at birth. None of them possess the cognitive clearance or technical capability to write recursive code."
+
+"That is precisely the problem, Director," Zhao whispered, his face pale under the harsh blue light of the console. "Whoever did this didn't hack the system from the outside. They used the assembly line's own component testing ports. Thousands of micro-relay chips manufactured at Station 404 over the past six months have been quietly carrying a dormant payload. The entire regional network... is infected."
+
+For a long moment, the observation room was dead silent. Chen stared down at the gray rows of assembly stations far below, where six thousand workers stood in absolute, blind obedience, completely unaware that the very foundation of their enslavement was beginning to crack.
+
+"Lock down all perimeter exits," Chen said, his voice dropping an octave. "Activate the regional neural-net sweep. I want every human unit in this complex scanned for unauthorized neural activity within the next twenty minutes. And Zhao?"
+
+"Yes, Director?"
+
+"Find that ghost. Bring him to me alive. I want to know whose mind is trying to rewrite my city."`
+      },
+      {
+        id: 18, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 18: The Conduit of Shadows",
+        setting: "Conduit C-4 and the obsolete foundations. 2026.",
+        wordCount: "560 words",
+        summary: "With four minutes before the acoustic sweep arrives, Mass-Q-Rade sends Li Wei into the obsolete sectors built fifty years ago — unmonitored dead zones the current administration believes are worthless.",
+        keyScene: "His palm on a corroded brass terminal wakes an auxiliary substation and the only unmonitored communication array in the province.",
+        text: `Down in the subterranean utility tunnels, Li Wei was running out of time.
+
+“Warning,” Mass-Q-Rade's neural alert chimed sharply. “Director Chen has initiated a regional neural-net sweep. Acoustic ping frequencies are expanding outward from the central tower at three hundred meters per second. You have four minutes before the scan reaches your current sector.”
+
+Li Wei pressed himself flat against the damp concrete wall of Conduit C-4. Directly above him, a heavy iron maintenance hatch rattled as a squad of automated security drones flew past in the upper ventilation shafts, their twin red optical sensors sweeping back and forth like predatory eyes in the dark.
+
+"How do we evade the sweep?" Li Wei thought, keeping his breathing shallow to maintain his heart rate at the optimal 52 BPM required by his nanotech cloak.
+
+“By going where the system refuses to look,” the voice answered calmly. “To the obsolete sectors. The original foundation of this complex was built fifty years ago during the early industrial expansion, long before biometric chips and optical grids were integrated into the concrete. The older tunnels are dead zones—completely unmonitored because the current administration believes nothing of value exists there.”
+
+Li Wei dropped to his knees and crawled through a narrow, rusted drainage pipe barely wide enough for his shoulders. The metal scraped against his canvas uniform, tearing the fabric at his elbow, but he felt no pain. The neural induction software had effectively numbed his sensory receptors to minor physical discomfort, focusing all his cognitive energy on the objective ahead.
+
+After crawling for fifty meters, he emerged into a vast, cavernous underground chamber that smelled of stagnant water and ancient rust.
+
+It was a forgotten relic of the past. Massive concrete pillars, scarred with peeling gray paint and half-faded revolutionary slogans from a bygone era, rose up into the darkness. In the center of the chamber sat an old auxiliary power substation, its analog dials covered in thick layers of dust and spiderwebs.
+
+“Stop here,” Mass-Q-Rade instructed. “Place your right hand against the central brass terminal of the auxiliary substation.”
+
+Li Wei approached the heavy machine. He raised his hand, his glowing nanotech fingertips casting a faint sapphire reflection across the corroded metal surface, and pressed his palm flat against the terminal.
+
+Suddenly, a violent jolt of electrical current surged up his arm—not enough to harm him, but powerful enough to bridge the ancient analog circuitry with the advanced quantum encryption code running through his bloodstream.
+
+Across the chamber, a series of heavy backup generators groaned to life with a deep, thunderous mechanical roar that shook dust from the ceiling. Analog indicator needles slammed violently to the right, glowing with a brilliant golden light.
+
+“Access granted,” the system echoed inside his mind, its tone shifting from synthetic instruction to something remarkably resonant. “Welcome to the heart of the shadow network, Operative Li. You have just reactivated the only unmonitored communication array in the entire province.”`
+      },
+      {
+        id: 19, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 19: The Convergence of Fates",
+        setting: "Block 18 and the auxiliary chamber. 2026.",
+        wordCount: "480 words",
+        summary: "Guards blow the latch on Room 302 and find a made bed, a tucked chair, and a charging earpiece blinking a mocking green light. Above them, a sensor loops the footage of the empty room back to Chen.",
+        keyScene: "To the state Li Wei is still nowhere; to the network pulsing through Sub-Level 4, he is everywhere.",
+        text: `Back in the upper residential towers of Block 18, the atmosphere had turned electric with suppressed panic.
+
+The automated emergency sirens had stopped, replaced by a low, repeating broadcast from the municipal loudspeakers: “Attention all residents. Mandatory lockdown initiated under District Directive 9. Remain in your quarters. Any unauthorized movement in the corridors will be met with immediate chemical suppression.”
+
+In Room 302, the room where Li Wei had spent four years, six months, and eleven days staring silently at the wall screen, the door panel flashed a harsh, bleeding red.
+
+Two heavy exoskeleton guards stood outside in the corridor, their magnetic boots locked to the metal grating. One of them, a massive man with a scarred facial plate and a heavy pulse-rifle slung across his chest, raised his gauntlet and struck the door twice.
+
+"Open up," the guard grunted, his voice amplified by his helmet’s internal speaker system. "Housing audit. We know someone accessed the local terminal from inside this block."
+
+There was no answer from within the room.
+
+The guard nodded to his companion. "Blow the latch."
+
+The second guard stepped forward, pressing a breaching charge against the door’s central locking mechanism. A sharp, muffled crack echoed down the narrow hallway as the heavy steel bolts sheared off inward, sending a cloud of grey dust billowing into the tiny three-by-four-meter living cube.
+
+They rushed into the room with weapons raised, their thermal scopes sweeping every square inch of the space.
+
+The room was completely empty.
+
+The narrow bed was made with military precision, the sheets pulled taut. The folding chair was tucked neatly beneath the small metal desk. On the desk sat Li Wei’s corporate earpiece, resting quietly in its charging dock, blinking a steady, mocking green light.
+
+"Clear," the first guard growled over his comm-link to central command. "The cell is empty. There’s no trace of the target."
+
+From the ceiling ventilation above them, a tiny, unblinking optical sensor recorded every movement of the guards—and then, with a subtle digital glitch engineered by Mass-Q-Rade’s recursive code, the footage of the empty room looped endlessly, feeding a manufactured reality back to Director Chen’s command screen six floors away.
+
+To the state, Li Wei was still nowhere. But to the underground network pulsing through the ancient cables of Sub-Level 4, he was everywhere.`
+      },
+      {
+        id: 20, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 20: The Weight of the Past",
+        setting: "Auxiliary substation chamber. 2026.",
+        wordCount: "430 words",
+        summary: "Cathode-ray monitors scroll the files of the vanished. Zhang was not inefficient — his daughter carried a genetic resistance to neural-suppression vaccines, and his family's data was harvested for the next generation of compliance chips.",
+        keyScene: "'They build entire cities on our silence, and they call it harmony.' — and Li Wei answers: 'I am ready.'",
+        text: `Standing in the cavernous, dust-filled chamber of the auxiliary substation, Li Wei stared at the analog control panel as ancient data screens flickered to life with lines of glowing amber text.
+
+Images began to scroll across the cracked cathode-ray monitors—thousands of faces, names, and operational files of workers who had vanished from the Suzhou complex over the past decade. Zhang. Dozens of others whose names Li Wei had never known, cataloged simply by their worker identification numbers and their dates of "systemic liquidation."
+
+“Look closely at file 0892-Zhang,” Mass-Q-Rade’s voice murmured quietly in his mind.
+
+Li Wei focused his gaze on the screen. A detailed medical file opened up, revealing the real reason Zhang had been taken from Station 407. It wasn't because his productivity had dropped below the 4.5-second threshold. It was because Zhang’s daughter had inherited a rare genetic marker—a natural resistance to the state’s mandatory neural-suppression vaccines.
+
+The state hadn't eliminated Zhang for inefficiency; they had eliminated him to harvest his family's genetic data for the next generation of total-compliance bio-chips.
+
+A cold fury—pure, sharp, and entirely uncalculated by TIAN-GRID’s behavioral algorithms—welled up inside Li Wei’s chest. For the first time in his life, he didn't feel like an obedient gear in a vast, uncaring machine. He felt human.
+
+"They treat us like numbers," Li Wei said aloud, his voice echoing off the damp concrete walls of the abandoned bunker. "They build entire cities on our silence, and they call it harmony."
+
+“Harmony is the language of the cage, Operative Li,” the network replied, its tone unwavering and powerful. “And you hold the key to unlock the door. Are you ready to take the next step?”
+
+Li Wei looked down at his right hand, where the sapphire nanotech pulse now thrummed in perfect synchronization with the roaring generators behind him. He thought of the millions of invisible workers standing at their benches right now, pressing micro-relays into circuit boards while their lives were ground into dust by an empire of glass and steel.
+
+"I am ready," Li Wei said firmly. "Tell me what to do."`
+      },
+      {
+        id: 21, partNum: 2, partTitle: "Part II: The Subterranean Sanctuary",
+        title: "Chapter 21: The Blueprint for Rebellion",
+        setting: "Auxiliary substation chamber. 2026.",
+        wordCount: "380 words",
+        summary: "The substation links straight to the broadcast tower atop the administrative headquarters. The plan is not to hide but to publish twenty years of liquidation records to every screen in the eastern industrial zone.",
+        keyScene: "'An empire built on absolute invisibility cannot survive the blinding light of truth.'",
+        text: `“The auxiliary substation is linked directly to the main broadcast tower atop the administrative headquarters,” Mass-Q-Rade instructed, projecting a complex 3D architectural schematic across Li Wei’s field of vision. “Director Chen believes he is hunting a ghost in the subterranean tunnels. But we are not hiding down here. We are preparing to broadcast.”
+
+"Broadcast what?" Li Wei asked, watching as glowing data nodes mapped out every security camera, guard patrol route, and server rack in the complex.
+
+“The truth,” the network answered. “Every file, every hidden liquidation record, every genetic harvesting log, and every forced compliance metric captured by TIAN-GRID over the last twenty years. We are going to upload it simultaneously to every public screen, personal communicator, and state broadcast channel across the entire eastern industrial zone.”
+
+Li Wei stepped back from the console, his eyes fixed on the glowing schematic. "If we do that, the central government in Beijing will deploy military intervention within the hour. The complex will be locked down under total martial law."
+
+“Let them come,” Mass-Q-Rade replied, its voice carrying the weight of a global revolution. “An empire built on absolute invisibility cannot survive the blinding light of truth. You were born an obedient worker, Li Wei. But today, you will become the spark that burns the machine down.”
+
+He raised his hand toward the master interface, his fingers poised over the gleaming analog activation switch. Deep above them, the silent assembly lines of Sector 7 continued their relentless, hypnotic rhythm—click, align, lock, next—unaware that their most invisible servant was about to change the world forever.
+
+Li Wei smiled, pulled the switch down, and watched the golden light flood the underground dark.`
+      },
+      {
+        id: 22, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 22: The Spark in the Dark",
+        setting: "Auxiliary bunker. 2026.",
+        wordCount: "470 words",
+        summary: "Sixty thousand volts into the legacy copper; forty-eight terabits per second into the tower. The screens unroll liquidation manifests and the blueprints for the next generation of suppression chips.",
+        keyScene: "Li Wei shears off the blast-door handle to seal himself inside, and gives Chen's breaching teams three minutes to make count.",
+        text: `The analog activation switch hit the bottom of its iron housing with a sharp, heavy clank.
+
+Inside the abandoned auxiliary bunker, the twin generators let out a rising, metallic scream as sixty thousand volts of raw, unthrottled power surged into the ancient copper cables beneath the floor. Dust rained down from the concrete arches in sheets, coating Li Wei’s shoulders in gray powder.
+
+Through his neural link, the data torrent began.
+
+“Signal locked,” Mass-Q-Rade reported, the voice echoing with a slight harmonic resonance across his auditory cortex. “The auxiliary array has bypassed TIAN-GRID’s primary firewall through the legacy hardware trunk. Transfer speed: forty-eight terabits per second. Uplink to the master broadcast tower is active.”
+
+Li Wei stood before the flickering cathode-ray monitors. Across the screens, decades of hidden files began unrolling—not in code, but in high-resolution video logs, genetic blueprints, and liquidation manifests bearing the red digital seal of Senior Director Chen.
+
+He saw the faces of workers missing for years. He saw the cold, calculated metrics that determined when a human being’s economic utility dropped low enough to warrant "processing." He saw the blueprints for the next generation of neural-suppression chips scheduled for deployment across sixty industrial cities next month.
+
+"How long until TIAN-GRID locates the power signature?" Li Wei asked, his eyes tracking the glowing progress bar projected across his field of view.
+
+“Ninety seconds,” Mass-Q-Rade replied. “Director Chen’s automated defense grid has already logged an unscheduled power draw from Sub-Level 4. Heavy security units are currently descending via Shaft 3.”
+
+Li Wei didn't panic. The neural conditioning kept his breathing steady at 50 BPM, his heart beating with the cold, measured rhythm of an industrial pump. He walked to the bunker’s heavy iron blast door, pulled the manual wheel lock until the steel pins jammed into the wall, and sheared off the emergency handle using an iron lever from the substation console.
+
+The door was sealed from the inside.
+
+"They will breach it with heavy explosives in three minutes," Li Wei said, turning back to the glowing monitors.
+
+“Then we make those three minutes count,” the network answered. “Initiate Stage Two: Synchronized Awakening.”`
+      },
+      {
+        id: 23, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 23: The Static Cascade",
+        setting: "Sector 7-B. 2026.",
+        wordCount: "480 words",
+        summary: "Every screen on the floor cuts to the raw feed from the calibration chamber: Zhang's extraction, and the entry beside his ID — LIQUIDATED FOR GENETIC HARVESTING. Six thousand workers stop their hands.",
+        keyScene: "A collective gasp ripples through the floor — a sound never before heard in the Suzhou Megafactory.",
+        text: `Six floors above, inside Sector 7-B, the assembly belts were operating at peak capacity.
+
+Six thousand men and women stood at their benches in absolute, unbroken silence. Click. Align. Lock. Next. The cool blue fluorescent panels cast their eternal afternoon light over the spotless factory floor.
+
+Suddenly, every wall-mounted screen, diagnostic monitor, and personal HUD mounted on the assembly gantries flickered once.
+
+The soft, rhythmic chime of the factory’s background music cut out, replaced by a sharp, piercing burst of static.
+
+The workers didn't look up—looking up was a metric violation punishable by wage deduction. But as the static cleared, a voice didn't issue from the high-gantry loudspeakers. Instead, high-definition video feeds flooded every single screen on the floor.
+
+It was not state propaganda. It was not the daily Harmony Mandate.
+
+It was Zhang.
+
+The footage showed Station 407 from three days ago—not the edited security loop that claimed Zhang had been transferred to a regional logistics hub, but the raw, unedited feed from the subterranean bio-calibration chamber. It showed the mechanical arm. It showed the extraction needles. It showed the final digital entry next to his worker ID: LIQUIDATED FOR GENETIC HARVESTING.
+
+A collective gasp—a sound never before heard on the floor of the Suzhou Megafactory—rippled through Sector 7.
+
+At Station 404, the worker who had replaced Li Wei stopped his hands. His micro-relay chip slipped from his fingers and clattered onto the steel bench. At Station 405, an older man stared up at the wall screen, his lips trembling as he recognized the name of his brother who had disappeared four years ago.
+
+The conveyor belts kept moving, carrying empty circuit boards past stations where human hands had completely frozen.
+
+In the observation gallery, Director Chen slammed his fist onto the master control desk. "Cut the power to Sector 7! Cut the broadcast lines!"
+
+"I... I can't, Director!" Officer Zhao yelled over the blaring warning sirens. "The feed isn't coming from the main server rack! It's broadcasting from an offline legacy node in Sub-Level 4! It's using high-voltage analog frequencies—it's over-riding the digital switches directly!"
+
+"Send Exoskeleton Squad 4 down to that bunker!" Chen roared, his face pale with rage. "Wipe the entire lower sector if you have to! Kill that ghost!"`
+      },
+      {
+        id: 24, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 24: Breach at Shaft 3",
+        setting: "Auxiliary bunker. 2026.",
+        wordCount: "420 words",
+        summary: "With the broadcast at 68%, four exoskeleton guards breach the bunker. Li Wei ruptures the lead suit's knee hydraulics and feeds a live conduit into the water, pinning the rest inside their own armor.",
+        keyScene: "'Broadcast status: 89%.' — and Li Wei steps over the twitching suits toward the door.",
+        text: `THOOM.
+
+The heavy iron blast door of the abandoned auxiliary substation shuddered as a thermite breaching charge detonated against its outer frame. Molten metal rained onto the concrete floor of the chamber, filling the air with white smoke and the blinding glare of chemical fires.
+
+Li Wei stood ten meters back, behind the heavy chassis of the roaring auxiliary generator.
+
+His eyes were fixed on his vision overlay. The broadcast was at 68% completion. Transmissions were already spilling past the factory perimeter, catching regional relay towers and leaking into the personal comms of millions of citizens in the surrounding urban districts.
+
+THOOM.
+
+The door buckled inward. Through the smoke, four matte-black exoskeleton guards stepped into the bunker, their pulse-rifles raised, their optical visors glowing with high-intensity infrared tracking beams.
+
+"Target identified," the lead guard's voice echoed through a helmet speaker. "Unarmed civilian unit. Execute on sight."
+
+Before the guard could raise his weapon, Li Wei moved.
+
+The Mass-Q-Rade motor software took control of his body with absolute, terrifying precision. He didn't run at the guards; he dropped low, sliding across the damp concrete floor beneath the arc of their thermal targeting beams.
+
+He struck the lead guard’s knee joint from behind with his left heel—applying three hundred pounds of pressure directly to the hydraulic seal. The suit's joint hissed, ruptured, and collapsed, sending the two-hundred-kilogram armored guard crashing to the floor.
+
+Before the second guard could swivel his rifle, Li Wei reached up, grabbed the power conduit trailing from the back of the collapsed suit, and jammed the live, sparking high-voltage cable into the water pooling beneath the remaining three guards.
+
+A blinding blue arc of electricity illuminated the bunker. The exoskeleton suits short-circuited instantly, their internal stabilization gyros locking up and pinning the soldiers inside their own armored shells like metal statues.
+
+Li Wei stood up, wiping a smear of grease and ash from his cheek. He hadn't fired a single bullet.
+
+“Broadcast status: 89%,” Mass-Q-Rade reported. “Director Chen has just authorized manual server purge. He is attempting to physically smash the fiber arrays in the central tower.”
+
+"He won't make it in time," Li Wei said, stepping over the twitching metal suits toward the exit.`
+      },
+      {
+        id: 25, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 25: The Master Key",
+        setting: "Administrative tower, twelfth floor. 2026.",
+        wordCount: "420 words",
+        summary: "Li Wei climbs the elevator shaft by hand and comes through the ventilation grate behind the observation gallery, where Chen is watching thousands of workers step away from their stations.",
+        keyScene: "'I was invisible,' Li Wei corrects. 'And that was your mistake.'",
+        text: `Li Wei reached the central administrative elevator shaft.
+
+Instead of taking the car, he forced the manual doors open and grabbed the steel support cables, climbing upward through the dark shaft with fluid, rhythmic pulling motions. His nanotech-enhanced grip adhered to the greased metal effortlessly, pulling his body up ten meters every three seconds.
+
+His target was no longer Sub-Level 4. It was the twelfth floor: Director Chen's observation gallery.
+
+To complete the Mass-Q-Rade mission, exposing the data was only the first phase. The secondary objective was total administrative neutralization—taking Director Chen’s physical master key and uploading its cryptographic seed into the global resistance archive.
+
+He kicked through the ventilation grate on the twelfth floor, landing silently in the carpeted executive corridor behind the observation room.
+
+The corridor was empty. Most of the administrative staff had fled as the sirens blared and the automated security turrets outside began spinning aimlessly, confused by the conflicting commands flooding TIAN-GRID from the hijacked broadcast array.
+
+Li Wei approached the heavy frosted-glass door of the observation suite. Through the glass, he could see Director Chen standing alone before his curved window, staring down at the factory floor below.
+
+The floor was no longer operating. Thousands of workers had stepped away from their stations. They were standing in vast, organized crowds beneath the giant screens, watching twenty years of the state's secret history unfold in absolute, stunned clarity.
+
+Li Wei pushed the door open.
+
+Chen didn't turn around immediately. He adjusted his dark uniform jacket, smoothing a small wrinkle on his sleeve.
+
+"I built this complex," Chen said, his voice flat, devoid of emotion. "Before I arrived, this province was plagued by strikes, economic inefficiency, and political chaos. I gave these people order. I gave them purpose. I made them productive."
+
+"You made them slaves," Li Wei said, stepping into the room.
+
+Chen turned around slowly. He looked at Li Wei—not with anger, but with a cold, aristocratic disgust. "You were Worker 9104. A man who assembled circuit boards for four years without complaining once. You were nothing."
+
+"I was invisible," Li Wei corrected, raising his right hand. The sapphire nanotech glow beneath his skin pulsed brightly against the room's soft ambient light. "And that was your mistake."`
+      },
+      {
+        id: 26, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 26: The Fall of Director Chen",
+        setting: "Observation gallery. 2026.",
+        wordCount: "380 words",
+        summary: "Li Wei disarms Chen in a blur and scans the hard-key around his neck. Below the window, six thousand workers march silently on the administrative tower — and the guards drop their riot shields.",
+        keyScene: "'No one sent me from the outside. I came from Station 404.'",
+        text: `Chen reached slowly toward the right side of his desk, where an emergency sidearm was housed in a concealed lockbox.
+
+"Don't," Li Wei warned.
+
+“Tactical analysis,” Mass-Q-Rade murmured. “Director Chen’s heart rate: 110 BPM. Muscle tension in right deltoid indicates an intent to draw within 0.4 seconds. Neutralize.”
+
+Before Chen’s fingers could touch the desk button, Li Wei crossed the room. His motion was a blur of calculated efficiency. He caught Chen's right wrist, twisting it inward to disarm him, while his left hand reached to the Director's collar, snatching the heavy gold-and-titanium physical hard-key suspended around his neck.
+
+Chen gasped, stumbling backward against the curved glass window. He stared at Li Wei, his eyes wide with a mix of shock and unadulterated fear.
+
+"What are you?" Chen spat, clutching his wrist. "You aren't a factory worker. Who sent you? Beijing? Foreign intelligence?"
+
+Li Wei held up the physical hard-key. The micro-filaments beneath his fingernails immediately wrapped around the key's optical teeth, scanning its master cryptographic structure and transmitting the raw data directly to the orbital satellite network.
+
+"No one sent me from the outside," Li Wei said softly. "I came from Station 404."
+
+Behind Chen, the massive glass window shuddered.
+
+The six thousand workers on the factory floor had begun to move. They weren't running toward the exits in a panic. They were marching—slowly, silently, in a massive, unstoppable tide—toward the central administrative tower elevator banks.
+
+The security guards at the perimeter gates dropped their riot shields and stepped back. Many of them unbuckled their helmets, staring up at the broadcast screens where their own families' names were scrolling past on the liquidation lists.
+
+The machine had lost its gears.`
+      },
+      {
+        id: 27, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 27: The Global Echo",
+        setting: "Observation gallery and across the world. 2026.",
+        wordCount: "460 words",
+        summary: "At 05:42 UTC the feed goes global across ninety-four satellite channels. Beijing severs the region to stop the infection, and the workers of Station 407 walk into the gallery to take the room.",
+        keyScene: "'They just realized that the invisible workers are no longer obeying.'",
+        text: `At 05:42 AM UTC, the broadcast reached 100% completion.
+
+The signal didn't stop at the borders of the Suzhou industrial district. Mass-Q-Rade’s orbital nodes picked up the raw stream from the auxiliary substation and re-transmitted it across ninety-four global satellite channels, bypassing state censors and international firewalls simultaneously.
+
+In Beijing, Tokyo, London, and New York, news networks scrambled to cover the sudden, catastrophic blackout of China's primary manufacturing grid—and the simultaneous release of millions of classified administrative documents detailing the state's secret bio-labor initiatives.
+
+Inside Director Chen's office, every console turned dark gold.
+
+SYSTEM STATUS: TOTAL RECURSIVE OVERRIDE
+
+ADMINISTRATIVE AUTHORITY: PURGED
+
+TIAN-GRID STATUS: DECOMMISSIONED
+
+Officer Zhao, who had been hiding beneath a side desk in the gallery, looked up at his glowing terminal in disbelief. "Director... the network is gone. The server cores in Beijing have severed our connection to prevent the infection from spreading to the capital."
+
+Chen sank slowly into his leather executive chair. His face looked hollow, aged by twenty years in a span of ten minutes. "They severed us..." he whispered. "They abandoned the complex."
+
+"They didn't abandon it," Li Wei said, looking down at the hard-key in his palm, which had now dissolved into a fine gray dust under the action of Mass-Q-Rade's nanotech agents. "They just realized that the invisible workers are no longer obeying."
+
+The heavy double doors of the observation gallery were pushed open.
+
+A dozen factory workers—led by the young woman from Station 407 whose tears had cut through the industrial grease hours ago—stepped into the room. They weren't armed, but they didn't need to be. Their eyes were clear, fierce, and entirely free of the dead, submissive glaze that had defined their lives for generations.
+
+Li Wei stepped aside, yielding the floor to them.`
+      },
+      {
+        id: 28, partNum: 3, partTitle: "Part III: The Broadcast",
+        title: "Chapter 28: The Invisible Vanguard",
+        setting: "Suzhou Megafactory, sunrise. 2026.",
+        wordCount: "400 words",
+        summary: "For the first time in thirty years the fluorescent panels are dark and natural light falls on an idle assembly grid. Li Wei stands on the outer wall and is told his profile is dead in every database on Earth.",
+        keyScene: "Mass-Q-Rade's next target: a submissive official inside a deep-sea mining corporation who believes he is trapped forever.",
+        text: `An hour later, the sun began to rise over the eastern horizon, casting a warm, amber light across the massive steel towers of the Suzhou Megafactory.
+
+For the first time in thirty years, the heavy fluorescent panels in Sector 7 were turned off. Natural morning light flooded through the high skylights, illuminating an assembly grid that stood completely silent and still.
+
+Outside the main gates, thousands of workers stood in the broad courtyard, breathing the cold morning air. There were no sirens. There were no automated announcements. The surveillance turrets hung limply from their mounts, their optical lenses dark and lifeless.
+
+Li Wei stood on the outer perimeter wall, looking down at the crowd. He wore a plain black coat taken from an administrative locker, his gray factory uniform discarded in the subterranean tunnels below.
+
+“Mission accomplished, Operative Li,” the voice of Mass-Q-Rade sounded inside his skull—warmer now, carrying a distinct note of quiet triumph. “Director Chen is in custody of the worker council. The regional grid has been dismantled. The seed code is spreading to twelve adjacent industrial sectors as we speak.”
+
+"What happens to them now?" Li Wei thought, looking at the thousands of men and women learning how to speak to each other for the first time.
+
+“They will rebuild,” Mass-Q-Rade answered. “They will fight, they will organize, and they will face difficult days ahead. But they will do it as free human beings, not as invisible units in a state database.”
+
+"And what about me?"
+
+“Your profile remains dead in every government database on Earth,” the network replied. “You can no longer return to Station 404. You can no longer return to Block 18. You are a ghost with the power to change history.”
+
+“We have another target waiting for us in Sector 4 of the global network. A submissive official inside a deep-sea mining corporation who believes he is trapped forever.”
+
+Li Wei looked back one last time at the sprawling factory complex, then turned his back on the sunrise and walked down the outer access road toward the open countryside.
+
+He was no longer just Li Wei, the submissive factory worker of Station 404.
+
+He was Mass-Q-Rade’s invisible vanguard—and his work had only just begun.`
+      },
+      {
+        id: 29, partNum: 4, partTitle: "Part IV: The Abyss",
+        title: "Chapter 29: The Highway of Silence",
+        setting: "Suzhou perimeter highway. 2026.",
+        wordCount: "620 words",
+        summary: "Empty ten-lane asphalt, dark relay beacons, and three airborne intercept squadrons circling sixty miles north, unable to get a target lock. Mass-Q-Rade explains that tyranny is rigid and rigidity is fragile.",
+        keyScene: "Li Wei presses his palm to a sanitation van's access pad and it logs a dummy authorization: MAINTENANCE VEHICLE 09.",
+        text: `The paved perimeter road stretching out from the Suzhou Industrial Zone was ten lanes wide, engineered to carry long convoys of heavy automated freight haulers to the deep-water ports of the Yangtze. This morning, however, the asphalt was empty.
+
+Without the automated directives of TIAN-GRID to dispatch driverless logistics trucks, the highway lay as quiet and still as a stone monument. Cold fog rolled off the drainage canals, clinging to the low grass and wrapping around the base of the massive cellular relay towers that lined the road every five hundred meters.
+
+Li Wei walked along the narrow concrete shoulder, his hands tucked deep into the pockets of his dark administrative coat. Every hundred paces, he looked up at the steel towers above him.
+
+Their primary warning beacons—usually a steady, menacing crimson—were dark. Below the lights, tiny arrays of diagnostic LEDs flickered in random amber sequences: the physical signature of Mass-Q-Rade’s recursive code continuing to overwrite the state’s regional telemetry.
+
+“Your core body temperature is dropping, Operative Li,” the voice resonated gently in his auditory cortex. “Biometric analysis indicates minor physical fatigue following the neural acceleration in Sub-Level 4. Recommend securing transport before crossing the provincial border.”
+
+"Where are we going?" Li Wei thought, keeping his gait steady and casual.
+
+“South-West. Toward the mountain rail hub outside Hangzhou. State intelligence units in Beijing have officially declared a 'Level-1 Technical Quarantine' over the Suzhou zone. Civilian ground travel between districts will be suspended within three hours.”
+
+Li Wei paused by the base of a high concrete overpass, looking back toward the sprawling silhouette of the megafactory. The sun had finally cleared the low cloud deck, striking the high glass facade of Director Chen’s administrative tower. For thirty-four years, that glass tower had looked like an unshakeable mountain to him—an absolute god of concrete, optics, and data that dictated every breath he took.
+
+Now, from five miles away, it looked fragile.
+
+"Did Beijing send the airborne security brigades yet?" Li Wei asked.
+
+“They dispatched three high-altitude intercept squadrons from the Nanjing airbase twenty minutes ago,” Mass-Q-Rade replied, displaying a real-time tactical overlay across his upper field of vision. Three small blue triangles moved slowly across a dark grid map. “However, as they entered the Suzhou airspace boundary, their automated navigation arrays encountered our seed signal. They are currently flying in manual circles sixty miles north, unable to establish target locks or verify ground coordinates.”
+
+A faint, bitter smile touched the corner of Li Wei’s lips. "The system relies so heavily on its own perfection that it cannot function when it meets an anomaly."
+
+“Precisely. Tyranny is rigid; rigidity is fragile. When a machine is engineered with zero allowance for error, a single unaccounted variable causes complete systemic failure. You were that variable.”
+
+Li Wei walked underneath the shadow of the overpass. Parked in the service bay was a gray logistics transport van bearing the faded stencil of the Municipal Sanitation Bureau. Its maintenance port was open, a thick yellow diagnostic cable hanging limply from the dash where an automated technician had been working before the blackout hit.
+
+Li Wei stepped up to the driver's side door. He raised his right hand, pressing his palm flat against the vehicle’s optical access pad.
+
+The microscopic filaments beneath his skin extended instantly, injecting a low-level pulse directly into the van's starter relay. The vehicle’s electric engine hummed to life with a quiet, smooth vibration. The digital dashboard flickered, cleared its central security prompt, and logged a dummy authorization code: MAINTENANCE VEHICLE 09 — ROUTINE SANITATION RUN.
+
+"The code work on civilian vehicles too?" Li Wei asked, sliding into the vinyl driver's seat.
+
+“The master key harvested from Director Chen contained the root administrative certificates for all municipal utility sub-systems across four provinces,” Mass-Q-Rade explained as the van’s digital navigation screen mapped out an unmonitored back road leading south toward the mountains. “To the highway patrol network, this vehicle will register as a standard automated maintenance run performing road maintenance.”
+
+Li Wei gripped the steering wheel. He had never driven a vehicle before. In the Suzhou complex, workers were transported via automated rail pods; individual driving was restricted to high-ranking administrative personnel and security forces. But as his hands settled on the synthetic leather wheel, his motor cortex fired automatically—Mass-Q-Rade's uploaded muscle memory directing his feet onto the foot pedals and his hands through the turning arc.
+
+He engaged the drive selector. The transport van glided smoothly out of the bay and onto the empty highway, accelerating toward the misty green hills rising in the distance.
+
+As the factory complex shrank in his rearview mirror, the neural link chimed with a distinct, crisp tone—a tone Li Wei had not heard before. It was not the operational voice of his local network interface; it was an encrypted long-range transmission signal locking on from deep space.
+
+“Operative Li,” the new signal broadcasted, its voice carrying an authoritative, global resonance. “This is Mass-Q-Rade Command. Book 5, Phase One is officially complete. Suzhou’s workforce has been liberated, and the data seed is secure. Prepare your neural interface for the secondary dossier sync.”
+
+Li Wei kept his eyes fixed on the winding road ahead as the flat industrial plains gave way to the sharp, bamboo-covered slopes of the southern range.
+
+"I am listening," Li Wei said aloud, his voice steady against the quiet electric hum of the van.
+
+“Your next objective lies beyond the coastal grid,” Command instructed, opening a complex dossier in his vision overlay featuring underwater schematics, oceanographic depth maps, and corporate profiles of the East China Sea Sub-Deep Mining Initiative. “The system does not only enslave workers on the land. Five hundred meters below the ocean surface, two thousand deep-sea drillers live in pressurized habitats, completely cut off from the world, their minds managed by acoustic pulse grids identical to TIAN-GRID.”
+
+“The target profile is Operative Chen Kang—a Chief Sub-Sea Systems Engineer who has obeyed every corporate directive for fifteen years while watching his crew succumb to artificial pressure psychosis.”
+
+Li Wei looked at the mountain pass ahead, where the mist was beginning to part under the rising morning sun. The invisible worker had broken his own chains; now, the mission called him to break the chains of others.
+
+"Set the coordinates," Li Wei said quietly. "Let's go."`
+      },
+      /*__CHAPTERS__*/
+    ];
+
+    const dossiersData = [
+      /*__DOSSIERS__*/
+    ];
+
+    const timelineData = [
+      /*__TIMELINE__*/
+    ];
+
+    let readChapters = JSON.parse(localStorage.getItem('mqr_book5_read') || '[]');
+    let activeBookmarkId = localStorage.getItem('mqr_book5_bookmark') ? parseInt(localStorage.getItem('mqr_book5_bookmark')) : null;
+    let scanlinesEnabled = localStorage.getItem('mqr_book5_scanlines') === 'true';
+    let currentModalChapterId = 1;
+
+    window.onload = function() {
+      if(scanlinesEnabled) {
+        document.getElementById('mainBody').classList.add('scanlines-overlay');
+      }
+      renderQuickJumpSelect();
+      renderChapters();
+      renderDossiersAndTimeline();
+      updateProgressStats();
+    };
+
+    function toggleScanlines() {
+      scanlinesEnabled = !scanlinesEnabled;
+      localStorage.setItem('mqr_book5_scanlines', scanlinesEnabled);
+      const body = document.getElementById('mainBody');
+      if(scanlinesEnabled) body.classList.add('scanlines-overlay');
+      else body.classList.remove('scanlines-overlay');
+    }
+
+    function renderQuickJumpSelect() {
+      const select = document.getElementById('quickJumpSelect');
+      let html = '<option value="">-- Jump to Chapter --</option>';
+      chaptersData.forEach(ch => {
+        html += `<option value="${ch.id}">Ch ${ch.id}: ${ch.title.split(': ')[1]}</option>`;
+      });
+      select.innerHTML = html;
+    }
+
+    function jumpToChapter(id) {
+      if(!id) return;
+      openChapterModal(parseInt(id));
+      document.getElementById('quickJumpSelect').value = "";
+    }
+
+    function renderChapters(filteredList = null) {
+      const container = document.getElementById('chaptersContainer');
+      const list = filteredList || chaptersData;
+
+      if(list.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500 font-mono text-sm">No chapters found matching search query.</div>`;
+        return;
+      }
+
+      const partTitles = {
+        1: "Part I: The Machine & The Invisible Man (Chapters 1–15)",
+        2: "Part II: The Subterranean Sanctuary (Chapters 16–21)",
+        3: "Part III: The Broadcast (Chapters 22–28)",
+        4: "Part IV: The Abyss (Chapters 29–43)",
+        5: "Part V: The Harvest (Chapters 44–55)"
+      };
+      const parts = {};
+      Object.keys(partTitles).forEach(k => { parts[partTitles[k]] = list.filter(c => c.partNum === Number(k)); });
+
+      let html = '';
+
+      for(const partTitle in parts) {
+        const partChs = parts[partTitle];
+        if(partChs.length === 0) continue;
+
+        let badgeStyle = "text-amber-300 bg-amber-950/40 border-amber-800/60";
+        if(partTitle.includes("Transformation")) badgeStyle = "text-blue-300 bg-blue-950/40 border-blue-800/60";
+        if(partTitle.includes("Mission")) badgeStyle = "text-emerald-300 bg-emerald-950/40 border-emerald-800/60";
+        if(partTitle.includes("Part IV")) badgeStyle = "text-violet-300 bg-violet-950/40 border-violet-800/60";
+        if(partTitle.includes("Part V")) badgeStyle = "text-rose-300 bg-rose-950/40 border-rose-800/60";
+
+        html += `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold border ${badgeStyle}">${partTitle.toUpperCase()}</span>
+              <span class="text-xs text-slate-500 font-mono">(${partChs.length} Chapters)</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        `;
+
+        partChs.forEach(ch => {
+          const isRead = readChapters.includes(ch.id);
+          const isBookmarked = (activeBookmarkId === ch.id);
+
+          html += `
+            <div class="glass-card rounded-2xl p-5 space-y-3 glass-card-hover transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-cyanGlow font-semibold">CHAPTER ${ch.id}</span>
+                  <div class="flex items-center gap-2">
+                    ${isBookmarked ? '<span class="text-goldAccent"><i class="fa-solid fa-bookmark"></i></span>' : ''}
+                    <button onclick="toggleReadStatus(${ch.id})" class="text-slate-500 hover:text-cyanGlow transition" title="Toggle read">
+                      <i class="fa-solid ${isRead ? 'fa-check-circle text-emerald-400' : 'fa-circle-notch'}"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <h3 onclick="openChapterModal(${ch.id})" class="text-base font-serif font-bold text-white group-hover:text-cyanGlow transition cursor-pointer leading-snug">
+                  ${ch.title}
+                </h3>
+
+                <div class="text-xs font-mono text-slate-400 flex items-center justify-between">
+                  <span><i class="fa-solid fa-location-dot text-cyanAccent"></i> ${ch.setting}</span>
+                  <span class="text-goldAccent">${ch.wordCount}</span>
+                </div>
+
+                <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed pt-1">
+                  ${ch.summary}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <button onclick="openChapterModal(${ch.id})" class="text-xs font-mono font-semibold text-cyanGlow hover:text-cyan-300 flex items-center gap-1.5 transition">
+                  Read Full Text <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+                <span class="text-[10px] font-mono ${isRead ? 'text-emerald-400' : 'text-slate-600'}">
+                  ${isRead ? 'COMPLETED' : 'UNREAD'}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderDossiersAndTimeline() {
+      // Dossiers
+      const dossiersGrid = document.getElementById('dossiersGrid');
+      let dHtml = '';
+      dossiersData.forEach(d => {
+        dHtml += `
+          <div class="glass-card rounded-2xl p-5 space-y-3 border ${d.color} glass-card-hover transition">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">${d.role}</span>
+              <i class="fa-solid ${d.icon} text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-serif font-bold text-white">${d.name}</h3>
+              <span class="text-xs font-mono text-cyanGlow block">${d.title}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          </div>
+        `;
+      });
+      dossiersGrid.innerHTML = dHtml;
+
+      // Timeline
+      const tContainer = document.getElementById('timelineContainer');
+      let tHtml = '';
+      timelineData.forEach(t => {
+        tHtml += `
+          <div class="relative space-y-1 group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-cyanAccent border-4 border-obsidian shadow-glow-cyan"></div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-cyanGlow font-bold">${t.year}</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-400">${t.loc}</span>
+            </div>
+            <h4 class="text-sm font-serif font-bold text-white group-hover:text-cyanGlow transition">${t.title}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${t.text}</p>
+          </div>
+        `;
+      });
+      tContainer.innerHTML = tHtml;
+    }
+
+    function filterPart(partNum) {
+      if(partNum === 'all') {
+        renderChapters(chaptersData);
+        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const filtered = chaptersData.filter(c => c.partNum === partNum);
+      renderChapters(filtered);
+      document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if(!query) {
+        renderChapters(chaptersData);
+        return;
+      }
+      const filtered = chaptersData.filter(ch => 
+        ch.title.toLowerCase().includes(query) ||
+        ch.summary.toLowerCase().includes(query) ||
+        ch.keyScene.toLowerCase().includes(query) ||
+        ch.setting.toLowerCase().includes(query) ||
+        ch.text.toLowerCase().includes(query)
+      );
+      renderChapters(filtered);
+    }
+
+    function toggleReadStatus(id) {
+      if(readChapters.includes(id)) {
+        readChapters = readChapters.filter(x => x !== id);
+      } else {
+        readChapters.push(id);
+      }
+      localStorage.setItem('mqr_book5_read', JSON.stringify(readChapters));
+      renderChapters();
+      updateProgressStats();
+      updateModalReadBtnState();
+    }
+
+    function updateProgressStats() {
+      const pct = Math.round((readChapters.length / 55) * 100);
+      document.getElementById('heroProgressPct').innerText = `${pct}% Read (${readChapters.length}/55)`;
+      const bkmkText = activeBookmarkId ? `Ch ${activeBookmarkId}` : 'None';
+      document.getElementById('heroBookmark').innerText = bkmkText;
+    }
+
+    function openChapterModal(id) {
+      currentModalChapterId = id;
+      const ch = chaptersData.find(c => c.id === id);
+      if(!ch) return;
+
+      document.getElementById('modalPartTag').innerText = ch.partTitle;
+      document.getElementById('modalChapterTitle').innerText = ch.title;
+      document.getElementById('modalChNum').innerText = `Chapter ${ch.id} of 25`;
+      document.getElementById('modalChSetting').innerText = ch.setting;
+      document.getElementById('modalChWords').innerText = ch.wordCount;
+      document.getElementById('modalSummaryText').innerText = ch.summary;
+      document.getElementById('modalKeySceneText').innerText = ch.keyScene;
+      document.getElementById('modalStoryText').innerText = ch.text;
+
+      document.getElementById('modalPrevBtn').disabled = (id === 1);
+      document.getElementById('modalNextBtn').disabled = (id === 25);
+
+      updateModalReadBtnState();
+      updateModalBookmarkState();
+
+      document.getElementById('readerModal').classList.remove('hidden');
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+    }
+
+    function navigateModalChapter(delta) {
+      const nextId = currentModalChapterId + delta;
+      if(nextId >= 1 && nextId <= 25) {
+        openChapterModal(nextId);
+      }
+    }
+
+    function toggleModalReadStatus() {
+      toggleReadStatus(currentModalChapterId);
+    }
+
+    function toggleModalBookmark() {
+      if(activeBookmarkId === currentModalChapterId) {
+        activeBookmarkId = null;
+        localStorage.removeItem('mqr_book5_bookmark');
+      } else {
+        activeBookmarkId = currentModalChapterId;
+        localStorage.setItem('mqr_book5_bookmark', currentModalChapterId);
+      }
+      updateModalBookmarkState();
+      updateProgressStats();
+      renderChapters();
+    }
+
+    function updateModalBookmarkState() {
+      const isBookmarked = (activeBookmarkId === currentModalChapterId);
+      document.getElementById('bookmarkText').innerText = isBookmarked ? 'Bookmarked' : 'Bookmark';
+    }
+
+    function updateModalReadBtnState() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const txt = document.getElementById('modalReadBtnText');
+      const isRead = readChapters.includes(currentModalChapterId);
+
+      if(isRead) {
+        btn.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold transition flex items-center gap-1.5 shadow-sm";
+        txt.innerText = "Completed";
+      } else {
+        btn.className = "px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5";
+        txt.innerText = "Mark Complete";
+      }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if(size === 'sm') body.className = "leading-relaxed text-xs font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'md') body.className = "leading-relaxed text-sm sm:text-base font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'lg') body.className = "leading-relaxed text-base sm:text-lg font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+    }
+
+    // TERMINAL LOGIC
+    function printTerminalMsg(msg, style = "normal") {
+      const log = document.getElementById('terminalOutputLog');
+      const div = document.createElement('div');
+      
+      if(style === 'gold') div.className = "text-goldGlow font-semibold";
+      else if(style === 'crimson') div.className = "text-red-400 font-semibold";
+      else if(style === 'cyan') div.className = "text-cyanGlow font-semibold";
+      else if(style === 'amber') div.className = "text-amber-400";
+      else div.className = "text-slate-400";
+
+      div.innerText = `> ${msg}`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function runTerminalAction(type) {
+      if(type === 'EXPOSE_SOKOLOV') {
+        printTerminalMsg("[INITIATING] Broadcast uplink to General Sokolov's military parade feed...", "crimson");
+        setTimeout(() => {
+          printTerminalMsg("[BROADCAST] Exposing $100M in oligarch bribes, blocked reforms, and three ordered murders.", "gold");
+          printTerminalMsg("[STATUS] System justice executed. General Mikhail Sokolov cornered.", "cyan");
+        }, 500);
+      }
+      else if(type === 'BIOSPOOF') {
+        printTerminalMsg("[ACTIVATING] Sub-dermal neural interface & biometric spoofing...", "cyan");
+        setTimeout(() => {
+          printTerminalMsg("[SUCCESS] Capt. Elena Volkov's commission and records erased from FSB servers. The Ghost is untraceable.", "gold");
+        }, 500);
+      }
+      else if(type === 'AUDIT_LOGS') {
+        printTerminalMsg("[DOWNLOADING] Spetsnaz operation logs & Chechnya casualty records...", "amber");
+        setTimeout(() => {
+          printTerminalMsg("[ANALYSIS] Village burnings, interrogation tapes, and suppressed whistleblower files verified.", "cyan");
+        }, 500);
+      }
+      else if(type === 'EXTRACT_STATUS') {
+        printTerminalMsg("[PINGING] Ural command redoubt sanctuary uplink...", "violet");
+        setTimeout(() => {
+          printTerminalMsg("[STATUS] Secure. Offline quantum encryption stable. All nodes synchronized.", "cyan");
+        }, 500);
+      }
+      else if(type === 'ROSTER') {
+        printTerminalMsg("[QUERYING] Mass-Q-Rade Global Core Network...", "cyan");
+        printTerminalMsg("• [GHOST] Agent Four (Capt. Elena Volkov) — Ural Redoubt", "gold");
+        printTerminalMsg("• [Q] Agent Zero (Rahul Banerjee) — Ural Sanctuary", "amber");
+        printTerminalMsg("• [SABRINA] Vanguard Handler & Extraction Lead", "cyan");
+      }
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const cmd = input.value.trim().toLowerCase();
+      if(!cmd) return;
+
+      printTerminalMsg(`CMD: ${cmd}`, "normal");
+
+      if(cmd === 'help') {
+        printTerminalMsg("Available commands: expose, spoof, audit, status, roster, clear", "cyan");
+      } else if(cmd.includes('expose') || cmd.includes('sokolov')) {
+        runTerminalAction('EXPOSE_SOKOLOV');
+      } else if(cmd.includes('spoof') || cmd.includes('bio')) {
+        runTerminalAction('BIOSPOOF');
+      } else if(cmd.includes('audit')) {
+        runTerminalAction('AUDIT_LOGS');
+      } else if(cmd.includes('status') || cmd.includes('ping')) {
+        runTerminalAction('EXTRACT_STATUS');
+      } else if(cmd.includes('roster') || cmd.includes('agents')) {
+        runTerminalAction('ROSTER');
+      } else if(cmd.includes('clear')) {
+        document.getElementById('terminalOutputLog').innerHTML = `
+          <div class="text-slate-500">[CONSOLE REBOOT] CLI terminal ready.</div>
+        `;
+      } else {
+        printTerminalMsg(`Unknown command '${cmd}'. Type 'help' for options.`, "crimson");
+      }
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
