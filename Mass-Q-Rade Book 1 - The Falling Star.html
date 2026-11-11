@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK ONE — THE FALLING STAR</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+  </style>
+</head>
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      
+      <!-- Brand & Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-star text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 1</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Falling Star</span>
+        </div>
+      </a>
+
+      <!-- Part Filters -->
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Rise (1-7)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: The Fall (8-14)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part III: Reckoning (15-21)</button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book One Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE FALLING STAR
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Rahul Banerjee & The Birth of Q
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+          From a small West Bengal town to the glittering cinemas of Mumbai, <strong class="text-white">Rahul Banerjee</strong> rises as the nation's most beloved film star—only to be devoured by a corrupt system that framed him for tragedy. Reborn through the clandestine shadow network <strong class="text-cyanGlow">Mass-Q-Rade</strong>, the obedient actor becomes <strong class="text-goldGlow">Q</strong>: the ultimate instrument of reckoning.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">21 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">1995 – 2025</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 21 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 21-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, and III.</p>
+        </div>
+
+        <!-- Search & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE BIO-SPOOF CLI TERMINAL -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> BIO-SPOOF &amp; TELEMETRY CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating Q's sub-dermal neural interface and system override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: HIMALAYAN_SANCTUARY_SECURE
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // Q_AGENT_01</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: QUANTUM_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_RASHID')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-skull text-red-400"></i> EXPOSE RASHID
+            </button>
+            <button onclick="runTerminalAction('BIOSPOOF')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> BIO-SPOOF
+            </button>
+            <button onclick="runTerminalAction('AUDIT_LOGS')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT LOGS
+            </button>
+            <button onclick="runTerminalAction('EXTRACT_STATUS')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mountain text-violet-400"></i> SANCTUARY PING
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade bio-spoof terminal online. Himalayan uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Rahul Banerjee -&gt; Q (Agent Zero).</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target Minister Rashid: EXPOSED.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action button above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">Q_CONSOLE&gt;</span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, spoof, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Rahul Banerjee / Q, Priya, Aryan, Minister Rashid, Sabrina, and Vikram Sen.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE (1995 – 2025) -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (1995 – 2025)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From West Bengal childhood to Mumbai stardom, prison, and Himalayan rebirth as Q.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE RISE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Boy Who Dreamed in Celluloid</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 21</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">West Bengal, India (1995)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">3,000 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800">
+            <!-- Full narrative expansion -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK ONE — THE FALLING STAR</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 21-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 21-CHAPTER SERIALIZATION DATA
+    const chaptersData = [
+      // PART 1: THE RISE (1-7)
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 1: The Boy Who Dreamed in Celluloid",
+        setting: "A small town in West Bengal, India. 1995.",
+        wordCount: "3,000 words",
+        summary: "Rahul Banerjee is born to a schoolteacher father and a homemaker mother. He is the invisible majority — the people who pay their taxes, follow laws, and believe in order. From the moment he can walk, Rahul performs to understand the world, absorbing pain and transforming it into art.",
+        keyScene: "Young Rahul performs a comedy for his tired father. His father laughs — the first genuine laugh in months. Rahul realizes he has the power to heal through performance and decides to become an actor.",
+        text: "Rahul Banerjee was born into the quiet, dust-kissed rhythm of a small town in West Bengal in 1995. His father was a humble schoolteacher who graded papers by the dim light of an oil lamp; his homemaker mother sewed torn school uniforms with tireless grace. They were neither rich nor poor — they belonged to that immense, silent majority of citizens who paid their taxes on time, bowed to authority, and trusted implicitly in the unwritten social contract of order and decency.\n\nFrom his earliest steps, Rahul perceived reality through a theatrical lens. He watched how neighbors masked their grief behind polite morning greetings; he noted the subtle slump of shoulders when local commodity prices rose. He did not perform for applause or vanity. Performance was his primary cognitive framework — his way of translating the silent suffering of honest people into living, breathing truth.\n\nOne evening, after weeks of relentless financial stress and school board pressures, his father sat slumped at the kitchen table, staring blankly into a cup of cold tea. Without a word, seven-year-old Rahul stepped into the center of the room. He donned an oversized pair of his father's reading glasses, adopted a comical, exaggerated swagger, and pantomimed a clumsy village magistrate trying to inspect a goat. For thirty agonizing seconds, the room held its breath.\n\nThen, a sound broke the silence. It was a sharp, explosive gasp of genuine, unrestrained laughter from his father — the first true laugh the household had heard in six grueling months. In that incandescent second, young Rahul understood something sacred: art was not mere entertainment. Art was a suture. It had the power to stitch a broken spirit back together. He looked his father in the eyes, wiped away the residual tears of joy, and made a silent vow: I will become an actor."
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 2: The City of Dreams",
+        setting: "Mumbai, India. 2012.",
+        wordCount: "4,000 words",
+        summary: "At seventeen, Rahul moves to Mumbai with no connections or money, working as a coffee waiter by day and auditioning by night. Forty-seven rejections teach him harsh lessons about a system that rewards connections and luck over raw human truth.",
+        keyScene: "Rejected for the 47th time, Rahul stares at the Mumbai skyline from a bench, battling despair. Remembering his parents' sacrifices, he resolves to try one final time.",
+        text: "At seventeen, Rahul stepped off the crowded train into the roaring, humid vortex of Mumbai. He carried a battered tin suitcase, a handful of handwritten monologues, and a face blessed with cinematic symmetry. He had no uncle in the studios, no godfather in production offices, and no safety net.\n\nTo survive, he took a job as a waiter in a bustling Colaba café, serving frothy cappuccinos to studio executives while nursing his own cold tea. By night, he navigated the labyrinthine audition halls of Andheri, standing in sweltering queues for hours alongside thousands of other hopeful ghosts.\n\nThe rejections were not merely refusals; they were rituals of erasure. Forty-seven times, casting directors looked right through him. Forty-seven times, he was told his jawline was too sharp, his background too provincial, his pedigree too obscure. The system made it abundantly clear: talent was cheap. Connections were currency. Luck was law.\n\nOn the evening of his forty-seventh rejection, Rahul sat shivering on a concrete bench overlooking the Arabian Sea as a monsoon downpour began to lash the pavement. The city lights blurred into neon smears across the harbor. He opened his notebook, his fingers trembling with exhaustion and self-doubt. He seriously considered packing his tin suitcase and returning to West Bengal in quiet disgrace.\n\nThen, echoing across his memory, came his father’s unexpected laugh from the kitchen table years ago. He remembered his mother’s calloused fingers mending his shirts under the flickering lamp. He remembered why he had come. Closing the notebook with firm resolve, Rahul stood up, wiped the rain from his face, and whispered into the gale: 'Forty-eight tomorrow.'"
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 3: The Forty-Eighth Day",
+        setting: "A coffee shop in Mumbai. 2012.",
+        wordCount: "3,500 words",
+        summary: "While serving coffee, Rahul catches the eye of legendary director Vikram Sen, who recognizes his underlying hunger and truth, offering him a transformative role.",
+        keyScene: "Vikram asks Rahul if he wants to be an actor. Rahul replies 'More than anything.' Vikram invites him to his studio, leaving Rahul walking home crying tears of pure hope.",
+        text: "The forty-eighth day in Mumbai began like any other: the hiss of the espresso machine, the clatter of porcelain cups, and the heavy aroma of roasted beans. Rahul wiped down table four with mechanical precision, his mind rehearsing a soliloquy from a Shakespearean translation.\n\nAt 2:00 PM, a solitary man in a rumpled linen jacket walked in, ordered a black coffee, and chose a shadowy corner booth. It was Vikram Sen — the legendary auteur renowned for discovering raw, uncorrupted talent and turning them into cinematic icons. While other directors chased box-office formulas, Sen hunted for human truth.\n\nFor an hour, Vikram sipped his coffee without opening his script. But his eyes never left Rahul. He watched how the young waiter carried himself not as a servant, but with the quiet, observant dignity of an artist studying his canvas. He saw the faint shadows of struggle beneath Rahul's eyes, and behind them, a terrifying, unquenchable hunger.\n\nAs Rahul came by to clear the empty cup, Vikram didn't look at the bill. He looked straight into Rahul’s soul and asked, in a gravelly, authoritative voice: 'Do you want to be an actor?'\n\nRahul froze. His tray tilted slightly. He swallowed the lump in his throat and answered without a single second of hesitation: 'More than anything.'\n\nVikram nodded slowly, sliding a gold-embossed card across the laminate table. 'Then come to my studio tomorrow morning at nine. I have a role that will break your heart before it makes your name.'\n\nThat night, Rahul walked the four miles back to his cramped sublet because he had spent his last rupee on bus fare. Tears streamed down his cheeks in the dark — not tears of sorrow, but the overwhelming, intoxicating shock of pure hope."
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 4: The First Role",
+        setting: "A film set in Mumbai. 2012.",
+        wordCount: "4,500 words",
+        summary: "Rahul treats his small supporting role in a gritty poverty drama as sacred art, pouring his family's history into his performance and stunning both the director and audiences.",
+        keyScene: "At the film premiere, Rahul watches himself from the back row, seeing his parents' dignity and his own struggles immortalized on screen.",
+        text: "The film was titled *Basti* — a brutal, uncompromising look at a working-class family disintegrating under the crushing weight of urban poverty. Rahul’s assigned role was microscopic: a nameless younger brother who appeared in three scenes, with exactly four lines of dialogue.\n\nAn ordinary novice might have phoned it in. Rahul treated those four lines like sacred scripture. He spent nights pacing his ten-by-ten room, drawing upon his father's quiet humiliation at the office, his mother's calloused hands, and the sting of forty-seven rejections. When he stepped onto the soundstage under the blinding glare of Arri lights, he wasn't acting. He was breathing.\n\nWhen director Vikram Sen called 'Cut' on Rahul's final close-up, the entire crew — union gaffers, sound engineers, and assistant directors — stood in absolute, stunned silence. Rahul had imbued a cardboard supporting character with visceral, pulsating humanity.\n\nWhen *Basti* hit theaters nationwide six months later, critics barely mentioned the lead actors; every headline belonged to the unknown waiter from West Bengal. At the gala premiere in Bandra, Rahul sat alone in the very last row of the balcony. As his face filled the silver screen, he saw his father's stoic dignity in his eyes, his mother's quiet sacrifice in his posture. He gripped the velvet armrest, chest heaving with realization: he had done it. He was officially an actor."
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 5: The Meteoric Rise",
+        setting: "Mumbai, India. 2012-2022.",
+        wordCount: "5,000 words",
+        summary: "Over a decade, Rahul becomes India's most beloved film star, winning every major award and capturing the hearts of millions because he never forgot his roots. He is the system's favorite golden boy.",
+        keyScene: "Accepting the National Film Award for Best Actor, Rahul praises the system and the process from the podium, completely unaware that power structures are preparing to consume him.",
+        text: "Between 2012 and 2022, Rahul Banerjee’s trajectory defied cinematic gravity. He starred in romantic dramas, gritty crime thrillers, and sweeping historical epics. He worked with visionary directors and commanded record-breaking box office numbers. Trophy cabinets groaned under the weight of Filmfare Awards, international festival nods, and critical accolades.\n\nYet, his greatest triumph was not commercial; it was emotional. The public loved him because he was living proof of the democratic dream. He was one of them. He had climbed out of the dust without a Godfather. He spoke with humility in interviews, visited orphanages unannounced, and never forgot the smell of cheap coffee in Colaba.\n\nHe was crowned the Golden Boy of Indian cinema — the system's shining success story, proof that if you played by the rules and worked hard, the institution would elevate you to the stars.\n\nIn March 2022, Rahul stood at the podium of the National Film Awards auditorium in New Delhi, holding the Best Actor trophy aloft. The applause shook the crystal chandeliers. He looked out across a sea of ministers, moguls, and adoring fans, his parents smiling proudly from the front row.\n\n'I am here today,' Rahul said into the microphone, his voice echoing across millions of television sets nationwide, 'because I believe in the system. I played by the rules. I trusted the process. And the process rewarded me.'\n\nThunderous applause drowned out his final words. Rahul smiled warmly, stepping back from the microphone. He had absolute faith in the pillars of society. He had no inkling that the machinery of power was already greasing the gears to devour him."
+      },
+      {
+        id: 6, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 6: The Woman Who Anchored Him",
+        setting: "Mumbai, India. 2015.",
+        wordCount: "3,500 words",
+        summary: "Rahul meets Priya, a grounded schoolteacher immune to celebrity glamour, who loves his flawed soul. They marry and have a son, Aryan, making Rahul feel invincible.",
+        keyScene: "At their intimate wedding, Rahul tells Priya he has everything he ever wanted. Priya smiles and tells him he has hope — a cryptic warning he doesn't yet understand.",
+        text: "Fame in Mumbai was a gilded cage, isolating stars behind velvet ropes and security details. Rahul was constantly surrounded by sycophants, yet he had never felt more profoundly lonely — until he met Priya.\n\nPriya was a high school literature teacher in a quiet suburb of Mumbai. When they were introduced at a charity book launch, she didn't bat an eyelash at his celebrity status. While others fawned over his box-office receipts, Priya challenged his literary interpretations and called out his clichéd acting choices with gentle, disarming wit.\n\nShe loved him not for his poster-boy face or his multi-crore contracts, but for the broken, sensitive boy from West Bengal who still hid behind a movie star's smile. They married in 2015 in a modest ceremony attended only by close family and lifelong friends. Two years later, their son, Aryan, was born.\n\nRahul felt invincible. He had conquered the cinematic world, earned his parents' lifelong security, and found an anchor in Priya’s unshakeable moral compass. He believed nothing could ever pierce their sanctuary.\n\nOn their wedding night, as they sat on the balcony of their sea-facing apartment watching the Mumbai lights twinkle like fallen stars, Rahul took Priya’s hand. 'I have everything I ever wanted,' he murmured. 'A career, a family, you.'\n\nPriya squeezed his fingers, her dark eyes reflecting a deep, fathomless wisdom. 'You have more than that, Rahul,' she said softly. 'You have hope.'\n\nRahul smiled, puzzled by her enigmatic tone. He did not understand what she meant. But he would. Very soon."
+      },
+      {
+        id: 7, partNum: 1, partTitle: "Part I: The Rise",
+        title: "Chapter 7: The Boy Who Believed",
+        setting: "Mumbai, India. 2018.",
+        wordCount: "3,000 words",
+        summary: "Seven-year-old Aryan idolizes his father, believing him to be an invincible superhero who fights bad guys in films. Rahul cherishes this bond, vowing to be the best father above all else.",
+        keyScene: "While playing in the garden, Aryan asks if his father is a real superhero. Rahul hugs him, replying that his only true superhero ambition is to be a good father.",
+        text: "By 2018, seven-year-old Aryan had become Rahul’s entire universe. Every evening after homework, Aryan would demand to watch his father’s action sequences on loop, pausing the screen to inspect every punch and cape swirl.\n\nTo Aryan, his father was not just an actor; he was an immortal guardian who leaped from exploding helicopters, outsmarted criminal syndicates, and always delivered justice before the credits rolled. The boy’s eyes shone with innocent, boundless adoration.\n\nOne Sunday afternoon, as golden sunlight filtered through the banyan trees of their courtyard garden, Rahul and Aryan were tossing a cricket ball back and forth. Aryan caught the ball, tucked it under his arm, and looked up with deadpan seriousness.\n\n'Papa,' Aryan asked, 'are you a real superhero?'\n\nRahul burst into warm laughter, dropping his bat and scooping his son into a tight bear hug. 'No, beta. I’m just an actor wearing makeup and standing in front of green screens.'\n\nAryan shook his head stubbornly, poking Rahul’s chest. 'That’s not what the TV says! You fight the bad guys. You save people. You’re invincible!'\n\nRahul’s laughter softened into a tender, protective stillness. He kissed the top of his son’s unruly hair and whispered fiercely, 'The only hero I ever want to be, Aryan, is your father.'\n\nAryan smiled, resting his head against his father's shoulder, completely convinced of his invincibility. He was so tragically wrong."
+      },
+
+      // PART 2: THE FALL (8-14)
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 8: The Accident",
+        setting: "A film set in Mumbai. 2022.",
+        wordCount: "5,000 words",
+        summary: "On the set of the courtroom drama 'The Verdict', a tragic safety failure occurs when junior actor Kabir Das hands Rahul a prop gun that is mistakenly loaded, discharging and killing Kabir.",
+        keyScene: "Holding dying Kabir in his arms, Rahul hears his last words ('It wasn't your fault'), but internalizes total guilt, realizing the system's safety net has failed.",
+        text: "The production was titled *The Verdict* — a high-stakes courtroom thriller exploring systemic corruption and wrongful prosecution. Rahul played the lead defense attorney fighting a rigged judicial machine.\n\nIt was scene 42: a tense confrontation in a judge’s antechamber. A young supporting actor named Kabir Das, playing a nervous rookie police officer, was scripted to hand Rahul a prop service pistol. Standard industry protocol dictated that prop masters inspect weapons twice, ensuring blank cartridges or dummy rounds were inert.\n\nBut that afternoon, shortcuts were taken. Budgets were trimmed. Safety protocols were treated as bureaucratic red tape. When Kabir nervously thrust the heavy revolver into Rahul's palm, Rahul felt a cold tremor in his stomach.\n\nAs Rahul raised the weapon in character, Kabir delivered his cue. Rahul pulled the trigger.\n\nInstead of a harmless theatrical pop, a deafening explosion shattered the soundstage air. A real live round, lodged deep within the cylinder’s rusted chamber by a criminally negligent prop department, tore through the air and struck Kabir directly in the center of his chest.\n\nSilence descended upon the set — thick, suffocating, and absolute. Then, Kabir staggered backward, his white shirt blossoming with bright crimson, and collapsed onto the hardwood studio floor.\n\nRahul dropped the gun, sprinting across the stage and dropping to his knees, pressing his hands desperately against Kabir's chest to stem the cascading blood. 'Kabir! Stay with me! Medic!'\n\nKabir’s lips parted, his eyes losing focus as he looked up into Rahul’s terrified face. With his dying breath, the young actor whispered, 'It... it wasn't your fault, sir...' before his head fell back, the light extinguishing from his eyes forever.\n\nAs sirens wailed in the distance, Rahul sat frozen on the blood-soaked floor. He didn't care about the police inquiries or studio lawyers. In that agonizing heartbeat, Rahul knew the truth: the system had failed, and he had been made its unwitting executioner."
+      },
+      {
+        id: 9, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 9: The Trial by Media",
+        setting: "Mumbai, India. 2022.",
+        wordCount: "5,500 words",
+        summary: "Despite clear evidence of prop department negligence, rival political parties and sensationalist media outlets weaponize the tragedy, branding Rahul 'The Killer Star' to serve their own agendas.",
+        keyScene: "Rahul watches news anchors viciously vilify him as Priya tries to comfort him with promises that the truth will prevail — a promise she will learn is hollow.",
+        text: "Within hours of Kabir’s tragic death, the objective facts of the police investigation were drowned out by a howling tidal wave of manufactured outrage. The prop department's gross negligence and studio budget cuts were quietly buried under a mountain of sensationalist broadcasts.\n\nIndia's hyper-competitive 24-hour news channels seized upon the tragedy as the ultimate ratings bonanza. Political Party A needed a distraction from a parliamentary corruption scandal; Political Party B sought to punish the liberal cultural elite. Both factions converged on a single objective: Rahul Banerjee had to be guilty.\n\nNight after night, talking heads screamed from television screens. Banners flashed across screens in blood-red capitals: *THE KILLER STAR*, *ARROGANCE ON SET*, *THE ACCUSED*.\n\nRahul sat in the darkened living room of his Mumbai apartment, staring numbly at the glowing television. The mob was executing him in the court of public opinion before a single magistrate had reviewed the case file.\n\nHe clicked off the remote, the screen winking out into black reflection. He turned to Priya, his voice hollow. 'They're lying. Every single one of them. They know it was an equipment failure.'\n\nPriya rushed to his side, wrapping her arms around his trembling shoulders. She kissed his brow and whispered with fierce, desperate conviction: 'I know the truth, Rahul. The world knows the truth. The courts will see through this. The truth will prevail.'\n\nShe held him tight. But as she spoke, a cold dread coiled in her stomach. She was a schoolteacher who believed in books and moral logic; she did not yet understand that in the theater of systemic power, truth was merely a prop to be discarded."
+      },
+      {
+        id: 10, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 10: The Judgment",
+        setting: "A courtroom in Mumbai. 2022.",
+        wordCount: "6,000 words",
+        summary: "After a grueling six-month trial orchestrated by corrupt prosecutors and abandoned by fair-weather friends, Rahul is convicted of criminal negligence and sentenced to three years in prison.",
+        keyScene: "As the guilty verdict is read, Priya screams and Aryan cries while Rahul stands motionless, accepting the system's judgment blindly, believing obedience will eventually grant redemption.",
+        text: "The trial lasted six agonizing months. It was not a search for justice; it was a ritual sacrifice. Rahul watched from the defense table as his entire life was flayed and salted by prosecutors who cared nothing for facts and defense attorneys intimidated by political whispers.\n\nHis so-called friends — producers who had begged for his autograph, co-stars who had sworn eternal brotherhood, directors who had wept tears of gratitude on his shoulder — vanished like smoke. When their paths crossed in public, they averted their eyes, terrified that Rahul’s radioactive disgrace might singe their careers.\n\nYet, through every grueling hearing, Priya sat in the front row, a beacon of unshakeable faith. And at home, seven-year-old Aryan looked up from his breakfast cereal with wide, uncomprehending eyes, asking why bad men on TV were calling his papa a monster.\n\nOn a humid November afternoon, the judge banged his gavel and read the final sentence: Guilty of criminal negligence resulting in involuntary manslaughter. Three years rigorous imprisonment.\n\nWhen the words dropped into the courtroom silence, Priya shrieked in visceral agony, and Aryan’s muffled crying echoed from the back gallery. Rahul stood stock-still at the defense table. He didn't shout, appeal, or rage.\n\nEven then — even after his friends fled, his reputation was incinerated, and his family shattered — Rahul harbored a pathetic, lingering faith in the institution. He believed that if he bowed his head, paid his debt, and played by the rules, the system would eventually recognize his repentance and restore his honor.\n\nHe was so catastrophically wrong."
+      },
+      {
+        id: 11, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 11: The Hollow Years",
+        setting: "A prison in Mumbai. 2022-2024.",
+        wordCount: "5,000 words",
+        summary: "Prison does not inflict cinematic violence on Rahul; instead, it slowly erodes his soul through soul-crushing monotony. Priya's weekly visits and Aryan's letters are his only lifelines.",
+        keyScene: "During a prison visit on his birthday, Priya brings a small homemade cake and tells him to make a wish. Rahul wishes for freedom and blows out the candle, believing love will save him.",
+        text: "Cinematic depictions of prison often promised razor wire, shank fights, and brutal guards. But real state custody was far more insidious: it was grinding, grey, and utterly devoid of cinematic drama. It was the slow, mechanical erosion of the human spirit.\n\nRahul spent twenty-two hours a day in a cell smaller than his home walk-in wardrobe. His meals were tasteless slurry; his companions were silence and the endless, recursive loop of the prop gun discharging in his mind. He stopped speaking. He stopped eating with appetite. He became a ghost inhabiting a breathing cage.\n\nHis only anchor across the abyss was Priya. Every single week, without fail, she endured humiliating security checks and public stares to sit across from him in the Plexiglas visitation booth. She brought him worn paperbacks, drawings from Aryan, and steady, unyielding words of hope. She promised him they would rebuild their lives once the nightmare ended.\n\nOn Rahul’s birthday in his second year inside, Priya managed to smuggle in a tiny, hand-baked cupcake with a single flickering candle.\n\nShe slid it across the stainless-steel ledge of the visitation booth. 'Make a wish, Rahul,' she whispered through the intercom speaker.\n\nRahul closed his eyes. He wished for freedom. He wished for justice. He wished to hold his wife and son under the open sky. He opened his eyes, blew out the flame with a weak puff, and smiled across the glass. 'I have everything I need,' he lied.\n\nHe thought love would shield him from the darkness. He was wrong."
+      },
+      {
+        id: 12, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 12: The Release",
+        setting: "Mumbai, India. 2024.",
+        wordCount: "4,500 words",
+        summary: "Released after two years for good behavior, Rahul finds his cinematic legacy wiped clean. He takes low-paying character roles to support Priya and Aryan, striving for quiet domestic peace.",
+        keyScene: "Sharing a simple evening meal of dal and rice with Priya and Aryan, Rahul feels a profound sense of gratitude, believing their quiet life is enough. He is wrong.",
+        text: "Rahul was released in early 2024, shaving ten months off his sentence for exemplary conduct. But when he walked out of the prison gates into the blinding Mumbai sunshine, he discovered there was no homecoming waiting for him.\n\nHis films had been purged from streaming libraries; his awards rescinded; his name scrubbed from film history textbooks. He was not merely a fallen star; he was an un-person.\n\nYet, as he opened the front door of their modest rented flat and felt Priya throw her arms around his neck while Aryan buried his face in his waist, Rahul felt a surge of defiant joy. He had his family. That was all that mattered.\n\nDenied leading roles, Rahul swallowed his pride and took low-paying character parts in arthouse indie films under an assumed name. The paychecks were meager, but they kept rent paid. Priya continued teaching; Aryan excelled in school science fairs. They weren't rich or famous, but they were together.\n\nOne Friday night, the three of them sat on the floor around a low wooden table, sharing a steaming bowl of dal, rice, and simple vegetables. Rahul looked at Priya’s tired, beautiful smile, then at Aryan’s bright, laughing eyes.\n\nHe set down his spoon, his heart swelling with immense gratitude. 'You know what?' Rahul said softly. 'I have everything I ever needed right here.'\n\nHe meant every word with all his soul. And yet, the universe was preparing to prove him tragically, irrevocably wrong."
+      },
+      {
+        id: 13, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 13: The Second Strike",
+        setting: "Mumbai, India. 2024.",
+        wordCount: "5,000 words",
+        summary: "Minister Rashid, desperate to bury his own corruption scandals and eliminate potential threats, orchestrates a fabricated second arrest linking Rahul to organized crime and smuggling.",
+        keyScene: "Police swarm Rahul's home with trumped-up charges. Rahul promises a weeping Priya and Aryan that he will be back — a promise he will not be able to keep.",
+        text: "It happened on a humid Friday evening. Rahul was returning from a grueling twelve-hour dubbing session for an underground indie film, his bones aching with fatigue, longing only to slip off his shoes and help Aryan with his mathematics homework.\n\nInstead, as he turned the corner onto his residential street, his breath caught in his throat. Three police vans blocked the driveway. Blue lights strobed against the stucco walls. Neighbors peeked nervously through curtained windows.\n\nMinister Rashid — the powerful, untouchable political kingmaker who had orchestrated Rahul’s original scapegoating — was facing a mounting wave of investigative journalist exposés regarding massive kickbacks and offshore shell companies. Needing a catastrophic distraction, Rashid decided that Rahul Banerjee needed to be permanently neutralized.\n\nA fresh dossier of entirely fabricated evidence was conjured overnight: forged bank receipts and perjured witness statements falsely linking Rahul to international art smuggling and underworld syndicate financing.\n\nAs Rahul stepped through his apartment doorway, two officers grabbed his arms, snapping cold steel cuffs around his wrists. \nPriya screamed, dropping a stack of notebooks. Aryan began wailing, clinging desperately to his father's trousers.\n\nRahul looked down into his son’s tear-drenched eyes, fighting the terror clawing at his throat. He forced a brave, breaking smile and said, 'Don't worry, beta. I'll be back. I promise.'\n\nHe was lying. He would never come back."
+      },
+      {
+        id: 14, partNum: 2, partTitle: "Part II: The Fall",
+        title: "Chapter 14: The Murder of the Innocent",
+        setting: "A road in Mumbai. 2024.",
+        wordCount: "6,000 words",
+        summary: "Priya and Aryan follow the police transport in their car to advocate for Rahul. Their brakes are sabotaged by Rashid's operatives, causing a fatal crash that kills them instantly.",
+        keyScene: "In his holding cell, a guard casually informs Rahul that his wife and son are dead. Rahul does not cry or scream; something inside him snaps, and the Obedient One dies forever.",
+        text: "Convinced that the truth would protect them if she presented herself at headquarters, Priya bundled Aryan into their small hatchback and sped down the highway behind the police convoy carrying Rahul.\n\nShe believed in the system’s conscience. She believed paperwork and righteousness could halt malice.\n\nShe was agonizingly wrong. Two miles outside the municipal toll booth, a massive commercial tanker truck drifted across the dividing lane with terrifying speed. Its brakes had been disabled; its driver paid off by Rashid's enforcers weeks prior.\n\nThe impact was catastrophic. The hatchback was crushed like paper against a concrete abutment. Priya and Aryan did not suffer; death was instantaneous, robbing them even of the realization of betrayal.\n\nAt the central precinct, Rahul sat in a windowless interrogation box, waiting for his wife to arrive with legal representation. Instead, the heavy iron door swung open. A cynical precinct guard tossed a folded newspaper onto the metal table without looking up.\n\n'Your wife and kid's car got totaled on the eastern expressway an hour ago,' the guard grunted callously. 'Both DOA at Sion hospital. Sign the coroner release waiver on page four.'\n\nThe guard turned and walked out, locking the heavy deadbolt behind him.\n\nRahul didn't scream. He didn't shatter the table or weep tears of rage. He sat completely motionless in the fluorescent hum, staring at the grainy newspaper photograph of mangled metal.\n\nIn that sterile, silent cell, something vital and human inside Rahul Banerjee fractured into fine, diamond-hard shards and withered away. The obedient actor, the believer in rules, the seeker of justice within corrupt courts — died completely. And out of those smoking ashes, something terrifyingly cold and absolute took its first breath."
+      },
+
+      // PART 3: THE RECKONING (15-21)
+      {
+        id: 15, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 15: The Breaking Point",
+        setting: "A prison in Mumbai. 2024.",
+        wordCount: "5,500 words",
+        summary: "Confined to solitary confinement, Rahul stops speaking and eating, undergoing a profound psychological metamorphosis as he realizes the system is not broken, but working exactly as designed to crush the obedient.",
+        keyScene: "Staring at his cell wall, Rahul realizes that order in the hands of the powerful means permanent subjugation. Having lost everything, he becomes a man with nothing left to lose.",
+        text: "They threw Rahul back into maximum security, expecting a broken madman weeping on a concrete floor. Instead, they found a statue.\n\nFor weeks, Rahul refused food, water, and speech. Prison doctors whispered among themselves, convinced his mind had shattered under grief. But Rahul's mind was not broken; it was undergoing a violent, alchemical transmutation.\n\nHe stared at the damp green paint of his cell wall day after day, replaying every chapter of his life: his father’s false arrest, his mother's endless labor, the studio betrayal, Kabir’s death, the media circus, and finally, the slaughter of Priya and Aryan.\n\nAnd in the silence, an epiphany crystallized with blinding clarity:\n\n*The system is not broken.* \n\nFor years, he had made excuses for its failures, calling them glitches, oversights, or bad apples. Now he saw the grotesque architecture for what it truly was. The system was functioning with terrifying, flawless efficiency. It was never designed to protect the weak, deliver justice, or shelter the honest. It was designed to maintain the permanent, unbreakable subjugation of the obedient.\n\nThey had taken his career, his dignity, his freedom, and finally, his blood. In return, they had left him completely, perfectly unburdened.\n\nA man with everything to lose is a slave to order. A man with nothing left to lose is the most dangerous entity in the universe. Rahul Banerjee was dead. The weapon was forged."
+      },
+      {
+        id: 16, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 16: The Visitor",
+        setting: "A prison in Mumbai. 2024.",
+        wordCount: "6,500 words",
+        summary: "Sabrina visits Rahul in prison, introducing him to Mass-Q-Rade — an unacknowledged shadow organization of the betrayed — and offering him a choice: rot in a cell or be reborn as an instrument of reckoning.",
+        keyScene: "Sabrina places a photograph of Minister Rashid on the table. Rahul accepts her offer to break out and become a shadow, officially joining Mass-Q-Rade.",
+        text: "The visitor arrived on a Tuesday afternoon during institutional lock-down hours. She wore a tailored charcoal suit and carried a sleek titanium briefcase. Her name badge read 'Legal Counsel,' but her eyes betrayed a chilling, professional deadliness.\n\nHer name was Sabrina.\n\nShe sat across from Rahul in the visitor booth, studying his hollow, carved-granite expression without flinching. 'You aren't the first, Rahul, and you won't be the last,' she said softly. 'You believe the system destroyed you. You believe your story is over.'\n\nRahul remained silent, his eyes locked on hers.\n\nSabrina slid a single glossy photograph across the stainless-steel counter. It depicted Minister Rashid stepping out of a bulletproof Mercedes, smiling lazily into flashbulbs.\n\n'This man killed your family,' Sabrina said. 'And he sleeps soundly in Malabar Hill tonight, protected by the very laws you respected. We are Mass-Q-Rade. We operate in the dark where your courts are blind. We are going to break you out of this tomb. We are going to give you a new face, a new voice, and a purpose that will make tyrants tremble. We are going to turn you into a shadow.'\n\nRahul looked down at Rashid’s face, then up at Sabrina. For the first time in months, his lips parted. His voice was a rasping blade of rusted iron.\n\n'How?' he asked.\n\nSabrina smiled — not with warmth, but with the grim satisfaction of a master craftswoman accepting her masterpiece. 'Welcome to Mass-Q-Rade,' she said. 'Your trial is officially over.'"
+      },
+      {
+        id: 17, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 17: The Extraction",
+        setting: "A prison in Mumbai. 2024.",
+        wordCount: "4,000 words",
+        summary: "The extraction at 3:47 AM is a masterpiece of digital infiltration and bribery. Rahul walks out of prison into the night without a single alarm sounding, officially declared dead by the state.",
+        keyScene: "Walking through the front prison gates into the night air, Rahul takes his first breath of freedom, transitioning from prisoner to avenging shadow.",
+        text: "The operation commenced at precisely 3:47 AM on a moonless Tuesday. It didn't involve gunfire or explosions. It was a symphony of silence.\n\nMass-Q-Rade operatives had compromised the prison's central security grid three weeks prior. Surveillance loops froze on pre-recorded footage of empty corridors; electronic locks unlatched with soft, pneumatic sighs; guard rotation schedules were subtly altered by micro-adjustments in automated rosters.\n\nRahul walked out of his maximum-security cell block, passing the sleeping guard who had mocked him months earlier. He didn't look back. He crossed the cavernous central courtyard, stepped through the massive iron front gates, and inhaled the cool night air of Mumbai for the first time in two years.\n\nAccording to official state records, prisoner 884-Delta suffered a fatal cardiac arrest in his cell that night. His body was cremated at dawn under an alias. The world believed Rahul Banerjee was erased.\n\nThey were profoundly mistaken. He had only just begun to exist."
+      },
+      {
+        id: 18, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 18: The Sanctuary",
+        setting: "A hidden facility in the Himalayas. 2024.",
+        wordCount: "4,500 words",
+        summary: "Rahul awakens in an unmapped Himalayan sanctuary headquarters, spending his first week in silent isolation where he processes his trauma and resolves to become a weapon rather than a victim.",
+        keyScene: "Looking out over snow-capped Himalayan peaks, Rahul realizes he is no longer a survivor or a hero — he is a pure, unfeeling weapon serving Mass-Q-Rade as Q.",
+        text: "He woke up in a room carved directly into the ancient granite bedrock of the Himalayas, five thousand meters above sea level. There were no windows facing civilization, only massive reinforced glass panes overlooking a sea of jagged, snow-draped peaks piercing a midnight-blue sky.\n\nFor seven days, no one spoke to him. Trays of nourishing food appeared silently through a sliding wall hatch; warm water flowed from a slate shower. Rahul sat in meditative solitude, turning his grief over and over in his hands like broken glass until the sharp edges finally dulled into cold, polished steel.\n\nOn the eighth morning, as sunlight set the glaciers ablaze with gold, Rahul stood at the observatory glass. He reflected on Priya, on Aryan, on his father, and on the bloated, parasitic institutions that had ground them into dust.\n\nIn that quiet sanctuary, a fundamental paradigm shift occurred. He was no longer a grieving husband, a persecuted father, or a fallen star. Victims suffered; survivors endured; heroes sought redemption. \n\nHe was none of those things. He was a weapon. And weapons felt neither sorrow nor anger. Weapons merely executed their design.\n\n'I am Q,' he whispered to the mountain winds. And Q had a mission."
+      },
+      {
+        id: 19, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 19: The Training",
+        setting: "A hidden facility in the Himalayas. 2024-2025.",
+        wordCount: "6,000 words",
+        summary: "Rahul undergoes brutal physical conditioning, psychological deconstruction, advanced cyber-tactical training, and philosophical indoctrination, transforming into the ultimate stealth operative.",
+        keyScene: "During a brutal sparring session against three elite instructors, Rahul stops thinking and taps into pure instinct, effortlessly defeating them and realizing his absolute freedom.",
+        text: "The training regime designed by Mass-Q-Rade instructors pushed human physiology and neural endurance past the breaking point.\n\nPhysical conditioning involved high-altitude combat drills in sub-zero blizzards, teaching his muscles to function on meager oxygen. Psychological hardening forced him to re-experience his darkest memories in sensory simulators until emotional triggers were completely cauterized.\n\nTechnical modules taught him the dark arts of corporate espionage, biometric spoofing, frequency jamming, and cryptographic infiltration. He learned how to manipulate financial ledgers, disable municipal surveillance grids, and mimic any human voice or micro-expression.\n\nSpiritual instruction grounded his lethal capabilities in Mass-Q-Rade doctrine: *Obedience to justice is the highest form of rebellion. The system preys upon the obedient because humanity is flawed; therefore, the shadow must protect the flock.*..\n\nOne afternoon in the subterranean combat dojo, Rahul faced three senior instructors simultaneously. They battered him mercilessly; blood poured from his lip, and his ribs screamed with bruised agony.\n\nSuddenly, Rahul stopped fighting. He stopped trying to win or survive. He surrendered his ego entirely to the methodology.\n\nIn that void, Q was born. His movements became blindingly fast, hyper-efficient, and mathematically precise. With three fluid strikes, all three instructors hit the canvas.\n\nQ stood alone in the center of the ring, wiping blood from his chin. He didn't feel pride or triumph. He felt absolute, unalloyed freedom."
+      },
+      {
+        id: 20, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 20: The New Face",
+        setting: "A medical facility in the Himalayas. 2025.",
+        wordCount: "3,500 words",
+        summary: "Advanced biometric spoofing and sub-dermal nanotechnology permanently alter Rahul's facial structure, voice print, and neural signature, obliterating Rahul Banerjee and finalizing Q's birth.",
+        keyScene: "Looking into the surgical mirror at a completely unfamiliar face that exists on no database, Q accepts his new identity from Sabrina and begins his crusade.",
+        text: "The final phase of transformation took place in a sterile, state-of-the-art medical suite deep within the Himalayan redoubt. There were no scalpels or bloody incisions. Instead, micro-laser lithography and sub-dermal nanotech reprogrammed his cellular collagen structures, adjusted his vocal cord resonance, and embedded an encrypted cryptographic mesh beneath his skin.\n\nWhen Rahul stepped out of the bio-chamber and stared into the high-resolution mirror, the reflection looking back belonged to a stranger. It was a face with sharp, patrician cheekbones, quiet, inscrutable eyes, and an expression of absolute calm. It was a face that existed on no government passport, no tax registry, and no police database.\n\nHe touched his new jawline, testing his voice. A rich, resonant timbre emerged — nothing like Rahul Banerjee’s familiar silver-screen cadence.\n\nA shadow detached itself from the doorway behind him. Sabrina stepped forward, smiling faintly.\n\n'Who am I?' Q asked quietly, not taking his eyes off the glass.\n\n'You are Q,' Sabrina answered. 'You are the shadow. You are the instrument of justice. You are Mass-Q-Rade.'\n\nQ nodded once. The actor was dead. The instrument was armed."
+      },
+      {
+        id: 21, partNum: 3, partTitle: "Part III: The Reckoning",
+        title: "Chapter 21: The First Strike",
+        setting: "Minister Rashid's mansion in Mumbai. 2025.",
+        wordCount: "4,500 words",
+        summary: "Q infiltrates Minister Rashid's heavily guarded Mumbai mansion, bypassing all security to hijack the national television broadcast network during prime time, exposing Rashid's corruption and crimes.",
+        keyScene: "At 8:00 PM, every television screen in India broadcasts Rashid's secret audio confessions, financial embezzlement records, and complicity in Priya and Aryan's murders before Q vanishes into the night.",
+        text: "The target was Minister Rashid's sprawling fortress estate in Malabar Hill, guarded by private paramilitaries, biometric turnstiles, and perimeter sensors.\n\nTo Q, the security was an open book. Bypassing laser tripwires and subverting closed-circuit feeds with spoofed telemetry packets, Q glided through the mansion's corridors like smoke at midnight.\n\nHe didn't come to assassinate Rashid in the dark. Assassination was too merciful; it martyrdom-ed criminals and left their institutional networks intact. Q came to execute something far more devastating: a total, inescapable public unmasking.\n\nReaching the mansion's master communications server room, Q plugged his sub-dermal interface directly into the primary national broadcast trunk line, overriding satellite uplink protocols across South Asia.\n\nAt exactly 8:00 PM on a Friday night, right in the middle of prime-time news broadcasts across every channel in India, screens abruptly cut to black.\n\nIn place of commercial anchors appeared a pristine, unshakeable data stream: wiretapped phone conversations of Minister Rashid confessing to offshore bribes, signed execution orders for political rivals, and unedited surveillance footage proving his direct culpability in the sabotage of Priya and Aryan's car.\n\nFor thirty minutes, the entire nation watched in horrified, spellbound silence as the untouchable architect of corruption was flayed alive in his own digital domain. Police sirens began screaming outside Malabar Hill as prosecutors rushed to sign emergency arrest warrants.\n\nHigh above the city lights, standing on a windy skyscraper parapet overlooking the Arabian Sea, Q adjusted his collar, turned his back on the chaotic metropolis, and dissolved into the electric night. The falling star had hit the earth — and the impact was shaking the world."
+      }
+    ];
+
+    // CHARACTER DOSSIERS DATA
+    const dossiersData = [
+      {
+        name: "Rahul Banerjee (Q)",
+        title: "The Golden Boy / Agent Zero",
+        role: "Protagonist",
+        desc: "From small-town West Bengal dreamer to India's most beloved film star. Framed, imprisoned, and stripped of his family by corrupt politician Minister Rashid, he is reborn in the Himalayas as Q — the ultimate shadow instrument of Mass-Q-Rade.",
+        icon: "fa-star",
+        color: "border-goldAccent/40 text-goldGlow"
+      },
+      {
+        name: "Priya Banerjee",
+        title: "The Schoolteacher Anchor",
+        role: "Moral Compass",
+        desc: "A quiet, unshakeable literature teacher who loved Rahul for his soul, not his fame. Stood by him through prison and trial before being tragically assassinated by Rashid's enforcers.",
+        icon: "fa-heart",
+        color: "border-pink-500/40 text-pink-300"
+      },
+      {
+        name: "Aryan Banerjee",
+        title: "The Boy Who Believed",
+        role: "The Innocent",
+        desc: "Rahul and Priya's seven-year-old son who idolized his father as an invincible superhero. Perished alongside his mother in the engineered car crash.",
+        icon: "fa-child",
+        color: "border-blue-500/40 text-blue-300"
+      },
+      {
+        name: "Minister Rashid",
+        title: "The Corrupt Architect",
+        role: "Primary Antagonist",
+        desc: "A ruthless, untouchable political kingmaker who used Rahul as a scapegoat to hide his own embezzlement, and ordered the murder of Priya and Aryan.",
+        icon: "fa-skull-crossbones",
+        color: "border-red-500/40 text-red-400"
+      },
+      {
+        name: "Sabrina",
+        title: "The Vanguard Handler",
+        role: "Mass-Q-Rade Operative",
+        desc: "A calculating, highly skilled extraction specialist who recruits broken souls from prisons and guides their rebirth into the shadow network.",
+        icon: "fa-user-secret",
+        color: "border-cyan-500/40 text-cyanGlow"
+      },
+      {
+        name: "Vikram Sen",
+        title: "The Legendary Auteur",
+        role: "The Discoverer",
+        desc: "Iconic film director known for finding uncorrupted talent. Discovered Rahul working as a coffee waiter in Colaba and cast him in *Basti*.",
+        icon: "fa-film",
+        color: "border-amber-500/40 text-amber-300"
+      }
+    ];
+
+    // TIMELINE DATA
+    const timelineData = [
+      { year: "1995", title: "Born in West Bengal", loc: "West Bengal, India", text: "Rahul is born to a schoolteacher father and homemaker mother; discovers the healing power of performance by making his tired father laugh." },
+      { year: "2012", title: "Arrival in Mumbai & 47 Rejections", loc: "Mumbai, India", text: "Moves to Mumbai with no money or connections; endures 47 humiliating rejections before meeting director Vikram Sen in a Colaba coffee shop." },
+      { year: "2012-2022", title: "The Meteoric Rise", loc: "Mumbai Film Studios", text: "Wins critical acclaim in *Basti* and ascends to become India's most beloved film star, winning National Film Awards while trusting the system." },
+      { year: "2015-2018", title: "Marriage to Priya & Birth of Aryan", loc: "Mumbai, India", text: "Marries schoolteacher Priya and welcomes son Aryan, believing his family and fame make him completely invincible." },
+      { year: "2022", title: "The Prop Gun Tragedy & Trial", loc: "Mumbai Film Studios & Court", text: "Co-star Kabir Das dies in a prop gun accident; corrupt media and rival politicians orchestrate Rahul's conviction and 3-year prison sentence." },
+      { year: "2024", title: "Early Release & The Second Strike", loc: "Mumbai, India", text: "Released after two years; Minister Rashid frames him in a second conspiracy, leading to the engineered car crash that kills Priya and Aryan." },
+      { year: "2025", title: "Rebirth as Q in the Himalayas", loc: "Himalayan Sanctuary & Mumbai", text: "Recruited by Sabrina into Mass-Q-Rade; undergoes brutal retraining, emerges as Q, and broadcasts Rashid's corruption nationwide." }
+    ];
+
+    // STATE STORAGE
+    let readChapters = JSON.parse(localStorage.getItem('mqr_book1_read') || '[]');
+    let activeBookmarkId = localStorage.getItem('mqr_book1_bookmark') ? parseInt(localStorage.getItem('mqr_book1_bookmark')) : null;
+    let scanlinesEnabled = localStorage.getItem('mqr_book1_scanlines') === 'true';
+    let currentModalChapterId = 1;
+
+    window.onload = function() {
+      if(scanlinesEnabled) {
+        document.getElementById('mainBody').classList.add('scanlines-overlay');
+      }
+      renderQuickJumpSelect();
+      renderChapters();
+      renderDossiersAndTimeline();
+      updateProgressStats();
+    };
+
+    function toggleScanlines() {
+      scanlinesEnabled = !scanlinesEnabled;
+      localStorage.setItem('mqr_book1_scanlines', scanlinesEnabled);
+      const body = document.getElementById('mainBody');
+      if(scanlinesEnabled) body.classList.add('scanlines-overlay');
+      else body.classList.remove('scanlines-overlay');
+    }
+
+    function renderQuickJumpSelect() {
+      const select = document.getElementById('quickJumpSelect');
+      let html = '<option value="">-- Jump to Chapter --</option>';
+      chaptersData.forEach(ch => {
+        html += `<option value="${ch.id}">Ch ${ch.id}: ${ch.title.split(': ')[1]}</option>`;
+      });
+      select.innerHTML = html;
+    }
+
+    function jumpToChapter(id) {
+      if(!id) return;
+      openChapterModal(parseInt(id));
+      document.getElementById('quickJumpSelect').value = "";
+    }
+
+    function renderChapters(filteredList = null) {
+      const container = document.getElementById('chaptersContainer');
+      const list = filteredList || chaptersData;
+
+      if(list.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500 font-mono text-sm">No chapters found matching search query.</div>`;
+        return;
+      }
+
+      const parts = {
+        "Part I: The Rise (Chapters 1–7)": list.filter(c => c.partNum === 1),
+        "Part II: The Fall (Chapters 8–14)": list.filter(c => c.partNum === 2),
+        "Part III: The Reckoning (Chapters 15–21)": list.filter(c => c.partNum === 3)
+      };
+
+      let html = '';
+
+      for(const partTitle in parts) {
+        const partChs = parts[partTitle];
+        if(partChs.length === 0) continue;
+
+        let badgeStyle = "text-amber-300 bg-amber-950/40 border-amber-800/60";
+        if(partTitle.includes("Fall")) badgeStyle = "text-blue-300 bg-blue-950/40 border-blue-800/60";
+        if(partTitle.includes("Reckoning")) badgeStyle = "text-violet-300 bg-violet-950/40 border-violet-800/60";
+
+        html += `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold border ${badgeStyle}">${partTitle.toUpperCase()}</span>
+              <span class="text-xs text-slate-500 font-mono">(${partChs.length} Chapters)</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        `;
+
+        partChs.forEach(ch => {
+          const isRead = readChapters.includes(ch.id);
+          const isBookmarked = (activeBookmarkId === ch.id);
+
+          html += `
+            <div class="glass-card rounded-2xl p-5 space-y-3 glass-card-hover transition-all duration-300 flex flex-col justify-between relative group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-cyanGlow font-semibold">CHAPTER ${ch.id}</span>
+                  <div class="flex items-center gap-2">
+                    ${isBookmarked ? '<span class="text-goldAccent"><i class="fa-solid fa-bookmark"></i></span>' : ''}
+                    <button onclick="toggleReadStatus(${ch.id})" class="text-slate-500 hover:text-cyanGlow transition" title="Toggle read">
+                      <i class="fa-solid ${isRead ? 'fa-check-circle text-emerald-400' : 'fa-circle-notch'}"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <h3 onclick="openChapterModal(${ch.id})" class="text-base font-serif font-bold text-white group-hover:text-cyanGlow transition cursor-pointer leading-snug">
+                  ${ch.title}
+                </h3>
+
+                <div class="text-xs font-mono text-slate-400 flex items-center justify-between">
+                  <span><i class="fa-solid fa-location-dot text-cyanAccent"></i> ${ch.setting}</span>
+                  <span class="text-goldAccent">${ch.wordCount}</span>
+                </div>
+
+                <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed pt-1">
+                  ${ch.summary}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <button onclick="openChapterModal(${ch.id})" class="text-xs font-mono font-semibold text-cyanGlow hover:text-cyan-300 flex items-center gap-1.5 transition">
+                  Read Full Text <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+                <span class="text-[10px] font-mono ${isRead ? 'text-emerald-400' : 'text-slate-600'}">
+                  ${isRead ? 'COMPLETED' : 'UNREAD'}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderDossiersAndTimeline() {
+      // Dossiers
+      const dossiersGrid = document.getElementById('dossiersGrid');
+      let dHtml = '';
+      dossiersData.forEach(d => {
+        dHtml += `
+          <div class="glass-card rounded-2xl p-5 space-y-3 border ${d.color} glass-card-hover transition">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">${d.role}</span>
+              <i class="fa-solid ${d.icon} text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-serif font-bold text-white">${d.name}</h3>
+              <span class="text-xs font-mono text-cyanGlow block">${d.title}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          </div>
+        `;
+      });
+      dossiersGrid.innerHTML = dHtml;
+
+      // Timeline
+      const tContainer = document.getElementById('timelineContainer');
+      let tHtml = '';
+      timelineData.forEach(t => {
+        tHtml += `
+          <div class="relative space-y-1 group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-cyanAccent border-4 border-obsidian shadow-glow-cyan"></div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-cyanGlow font-bold">${t.year}</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-slate-400">${t.loc}</span>
+            </div>
+            <h4 class="text-sm font-serif font-bold text-white group-hover:text-cyanGlow transition">${t.title}</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${t.text}</p>
+          </div>
+        `;
+      });
+      tContainer.innerHTML = tHtml;
+    }
+
+    function filterPart(partNum) {
+      if(partNum === 'all') {
+        renderChapters(chaptersData);
+        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const filtered = chaptersData.filter(c => c.partNum === partNum);
+      renderChapters(filtered);
+      document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if(!query) {
+        renderChapters(chaptersData);
+        return;
+      }
+      const filtered = chaptersData.filter(ch => 
+        ch.title.toLowerCase().includes(query) ||
+        ch.summary.toLowerCase().includes(query) ||
+        ch.keyScene.toLowerCase().includes(query) ||
+        ch.setting.toLowerCase().includes(query) ||
+        ch.text.toLowerCase().includes(query)
+      );
+      renderChapters(filtered);
+    }
+
+    function toggleReadStatus(id) {
+      if(readChapters.includes(id)) {
+        readChapters = readChapters.filter(x => x !== id);
+      } else {
+        readChapters.push(id);
+      }
+      localStorage.setItem('mqr_book1_read', JSON.stringify(readChapters));
+      renderChapters();
+      updateProgressStats();
+      updateModalReadBtnState();
+    }
+
+    function updateProgressStats() {
+      const pct = Math.round((readChapters.length / 21) * 100);
+      document.getElementById('heroProgressPct').innerText = `${pct}% Read (${readChapters.length}/21)`;
+      const bkmkText = activeBookmarkId ? `Ch ${activeBookmarkId}` : 'None';
+      document.getElementById('heroBookmark').innerText = bkmkText;
+    }
+
+    function openChapterModal(id) {
+      currentModalChapterId = id;
+      const ch = chaptersData.find(c => c.id === id);
+      if(!ch) return;
+
+      document.getElementById('modalPartTag').innerText = ch.partTitle;
+      document.getElementById('modalChapterTitle').innerText = ch.title;
+      document.getElementById('modalChNum').innerText = `Chapter ${ch.id} of 21`;
+      document.getElementById('modalChSetting').innerText = ch.setting;
+      document.getElementById('modalChWords').innerText = ch.wordCount;
+      document.getElementById('modalSummaryText').innerText = ch.summary;
+      document.getElementById('modalKeySceneText').innerText = ch.keyScene;
+      document.getElementById('modalStoryText').innerText = ch.text;
+
+      document.getElementById('modalPrevBtn').disabled = (id === 1);
+      document.getElementById('modalNextBtn').disabled = (id === 21);
+
+      updateModalReadBtnState();
+      updateModalBookmarkState();
+
+      document.getElementById('readerModal').classList.remove('hidden');
+    }
+
+    function closeChapterModal() {
+      document.getElementById('readerModal').classList.add('hidden');
+    }
+
+    function navigateModalChapter(delta) {
+      const nextId = currentModalChapterId + delta;
+      if(nextId >= 1 && nextId <= 21) {
+        openChapterModal(nextId);
+      }
+    }
+
+    function toggleModalReadStatus() {
+      toggleReadStatus(currentModalChapterId);
+    }
+
+    function toggleModalBookmark() {
+      if(activeBookmarkId === currentModalChapterId) {
+        activeBookmarkId = null;
+        localStorage.removeItem('mqr_book1_bookmark');
+      } else {
+        activeBookmarkId = currentModalChapterId;
+        localStorage.setItem('mqr_book1_bookmark', currentModalChapterId);
+      }
+      updateModalBookmarkState();
+      updateProgressStats();
+      renderChapters();
+    }
+
+    function updateModalBookmarkState() {
+      const isBookmarked = (activeBookmarkId === currentModalChapterId);
+      document.getElementById('bookmarkText').innerText = isBookmarked ? 'Bookmarked' : 'Bookmark';
+    }
+
+    function updateModalReadBtnState() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const txt = document.getElementById('modalReadBtnText');
+      const isRead = readChapters.includes(currentModalChapterId);
+
+      if(isRead) {
+        btn.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold transition flex items-center gap-1.5 shadow-sm";
+        txt.innerText = "Completed";
+      } else {
+        btn.className = "px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5";
+        txt.innerText = "Mark Complete";
+      }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if(size === 'sm') body.className = "leading-relaxed text-xs font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'md') body.className = "leading-relaxed text-sm sm:text-base font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+      if(size === 'lg') body.className = "leading-relaxed text-base sm:text-lg font-normal text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800";
+    }
+
+    // TERMINAL LOGIC
+    function printTerminalMsg(msg, style = "normal") {
+      const log = document.getElementById('terminalOutputLog');
+      const div = document.createElement('div');
+      
+      if(style === 'gold') div.className = "text-goldGlow font-semibold";
+      else if(style === 'crimson') div.className = "text-red-400 font-semibold";
+      else if(style === 'cyan') div.className = "text-cyanGlow font-semibold";
+      else if(style === 'amber') div.className = "text-amber-400";
+      else div.className = "text-slate-400";
+
+      div.innerText = `> ${msg}`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function runTerminalAction(type) {
+      if(type === 'EXPOSE_RASHID') {
+        printTerminalMsg("[INITIATING] Broadcast uplink to Minister Rashid's servers...", "crimson");
+        setTimeout(() => {
+          printTerminalMsg("[BROADCAST] Exposing bribes, fabricated evidence, and Priya/Aryan murder logs across India.", "gold");
+          printTerminalMsg("[STATUS] System justice executed. Minister Rashid cornered.", "cyan");
+        }, 500);
+      }
+      else if(type === 'BIOSPOOF') {
+        printTerminalMsg("[ACTIVATING] Sub-dermal neural interface & biometric spoofing...", "cyan");
+        setTimeout(() => {
+          printTerminalMsg("[SUCCESS] Rahul Banerjee's identity erased from state servers. Q is untraceable.", "gold");
+        }, 500);
+      }
+      else if(type === 'AUDIT_LOGS') {
+        printTerminalMsg("[DOWNLOADING] Court transcripts & prop gun negligence audit records...", "amber");
+        setTimeout(() => {
+          printTerminalMsg("[ANALYSIS] Political scapegoating and media trial evidence verified.", "cyan");
+        }, 500);
+      }
+      else if(type === 'EXTRACT_STATUS') {
+        printTerminalMsg("[PINGING] Himalayan redoubt sanctuary uplink...", "violet");
+        setTimeout(() => {
+          printTerminalMsg("[STATUS] Secure. Offline quantum encryption stable. All nodes synchronized.", "cyan");
+        }, 500);
+      }
+      else if(type === 'ROSTER') {
+        printTerminalMsg("[QUERYING] Mass-Q-Rade Global Core Network...", "cyan");
+        printTerminalMsg("• [Q] Agent Zero (Rahul Banerjee) — Himalayan Sanctuary", "gold");
+        printTerminalMsg("• [SABRINA] Vanguard Handler & Extraction Lead", "amber");
+      }
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const cmd = input.value.trim().toLowerCase();
+      if(!cmd) return;
+
+      printTerminalMsg(`CMD: ${cmd}`, "normal");
+
+      if(cmd === 'help') {
+        printTerminalMsg("Available commands: expose, spoof, audit, status, roster, clear", "cyan");
+      } else if(cmd.includes('expose') || cmd.includes('rashid')) {
+        runTerminalAction('EXPOSE_RASHID');
+      } else if(cmd.includes('spoof') || cmd.includes('bio')) {
+        runTerminalAction('BIOSPOOF');
+      } else if(cmd.includes('audit')) {
+        runTerminalAction('AUDIT_LOGS');
+      } else if(cmd.includes('status') || cmd.includes('ping')) {
+        runTerminalAction('EXTRACT_STATUS');
+      } else if(cmd.includes('roster') || cmd.includes('agents')) {
+        runTerminalAction('ROSTER');
+      } else if(cmd.includes('clear')) {
+        document.getElementById('terminalOutputLog').innerHTML = `
+          <div class="text-slate-500">[CONSOLE REBOOT] CLI terminal ready.</div>
+        `;
+      } else {
+        printTerminalMsg(`Unknown command '${cmd}'. Type 'help' for options.`, "crimson");
+      }
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
