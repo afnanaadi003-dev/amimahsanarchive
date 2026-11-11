@@ -1,558 +1,885 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amim Ahsan - Writer's Platform</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amim Ahsan | Author, Scriptwriter & Storyteller</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    :root {
-      --primary: #2d3a4b;
-      --secondary: #8b9eab;
-      --accent: #e85d04;
-      --light: #f5f0e7;
-      --dark: #1a2634;
-      --text: #333;
-    }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0a0c10',
+                        obsidianCard: 'rgba(15, 23, 42, 0.65)',
+                        amberGold: '#f59e0b',
+                        brightGold: '#fbbf24',
+                        deepBlue: '#1e3a8a',
+                        royalBlue: '#3b82f6',
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        bengali: ['Noto Serif Bengali', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--light);
-    }
+    <style>
+        body {
+            background-color: #0a0c10;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
 
-    ul {
-      list-style: none;
-    }
-  img {
-      max-width: 100%;
-      height: auto;
-    }
-  
+        .glass-card {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    /* Header/Menu */
-    header {
-      background: var(--primary);
-      color: var(--light);
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12);
+        }
 
-    .menu-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .menu-container a {
-      color: var(--light);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+        }
 
-    .menu-container a:hover {
-      color: var(--accent);
-    }/* Homepage Section */
- /* Homepage Section - Full Cover Image (16:9 Responsive) */
-.homepage {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-image: url('https://i.ibb.co.com/Zz9HvbPH/photo.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  margin-top: 60px; /* Offset for fixed header */
-}
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0c10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
 
-/* Clear out all previous @media queries for .homepage padding/sizing */
-
-    /* Responsive Background Image - cover effect */
-    @media (max-width: 480px) {
-      .homepage {
-        background-size: contain;
-        background-position: center;
-        padding-top: 15rem;
-        padding-bottom: 15rem;
-      }
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      .homepage {
-        background-size: contain;
-        background-position: center top;
-        padding-top: 12rem;
-        padding-bottom: 12rem;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .homepage {
-        background-size: contain;
-        background-position: center;
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-      }
-    }
-
-    .homepage h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .homepage p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin-bottom: 2rem;
-    }
-
-    /* Bio Section */
-    .bio {
-      background: var(--dark);
-      color: var(--light);
-      padding: 3rem 2rem;
-      max-width: 800px;
-      margin: 4rem auto;
-      border-radius: 8px;
-    }
-
-    .bio h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .bio p {
-      margin-bottom: 1.5rem;
-    }
-
-    .bio img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      margin-bottom: 1.5rem;
-      border: 4px solid var(--accent);
-    }
-
-    /* Books Section */
-    .books {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 4rem auto;
-    }
-
-    .books h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-    }
-
-    .book-card {
-      background: var(--primary);
-      color: var(--light);
-      padding: 1rem;
-      border-radius: 4px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .book-card:hover {
-      transform: translateY(-2px);
-    }
-
-    .book-count {
-      background: var(--accent);
-      color: var(--light);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      margin-left: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: var(--light);
-      text-align: center;
-      padding: 3rem 2rem;
-      margin-top: 6rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 320px) {
-      .menu-container {
-        gap: 0.5rem;
-      }
-      .menu-container a {
-        font-size: 0.75rem;
-        padding: 0.4rem;
-      }
-      .homepage h1 {
-        font-size: 1.6rem;
-      }
-      .homepage p {
-        font-size: 0.8rem;
-      }
-    }
-
-    @media (min-width: 321px) and (max-width: 480px) {
-      .menu-container {
-        gap: 0.8rem;
-      }
-      .menu-container a {
-        font-size: 0.8rem;
-        padding: 0.5rem;
-      }
-      .homepage h1 {
-        font-size: 1.8rem;
-      }
-      .homepage p {
-        font-size: 0.9rem;
-      }
-      .section h2 {
-        font-size: 1.6rem;
-      }
-      .contact-section {
-        padding: 1.5rem 1rem;
-      }
-      .contact-container {
-        padding: 0.8rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .contact-grid > div {
-        max-width: 100%;
-      }
-      .contact-grid .form-container,
-      .contact-grid .info-card {
-        padding: 1.5rem 1rem;
-        border-radius: 10px;
-      }
-      .contact-grid .form-container form,
-      .contact-grid .info-card {
-        padding: 2rem;
-      }
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      .menu-container {
-        gap: 1.5rem;
-      }
-      .menu-container a {
-        font-size: 0.9rem;
-      }
-      .homepage h1 {
-        font-size: 2rem;
-      }
-      .homepage p {
-        font-size: 1rem;
-      }
-      .section h2 {
-        font-size: 1.8rem;
-      }
-      .contact-section {
-        padding: 2rem 1.5rem;
-      }
-      .contact-container {
-        padding: 1.5rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .contact-grid > div {
-        max-width: 100%;
-      }
-      .contact-grid .form-container {
-        padding: 2rem 1.5rem;
-        border-radius: 14px;
-      }
-      .contact-grid .info-card {
-        padding: 2rem 1.5rem;
-        border-radius: 14px;
-      }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .menu-container {
-        gap: 2rem;
-      }
-      .menu-container a {
-        font-size: 0.95rem;
-      }
-      .homepage h1 {
-        font-size: 2.5rem;
-      }
-      .homepage p {
-        font-size: 1.1rem;
-      }
-      .section h2 {
-        font-size: 2rem;
-      }
-      .contact-section {
-        padding: 3rem 2rem;
-      }
-      .contact-container {
-        padding: 2rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-      }
-      .contact-grid > div {
-        max-width: 100%;
-      }
-      .contact-grid .form-container {
-        padding: 2.5rem;
-        border-radius: 16px;
-      }
-      .contact-grid .info-card {
-        padding: 2.5rem;
-        border-radius: 16px;
-      }
-    }
-
-    @media (min-width: 1025px) {
-      .menu-container {
-        gap: 2rem;
-      }
-      .menu-container a {
-        font-size: 1rem;
-      }
-      .homepage h1 {
-        font-size: 3rem;
-      }
-      .homepage p {
-        font-size: 1.2rem;
-      }
-      .section h2 {
-        font-size: 2rem;
-      }
-      .contact-section {
-        padding: 4rem 4rem;
-      }
-      .contact-container {
-        padding: 3rem 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-      .contact-grid > div {
-        max-width: 500px;
-      }
-      .contact-grid .form-container {
-        padding: 3rem;
-        border-radius: 20px;
-      }
-      .contact-grid .info-card {
-        padding: 3rem;
-        border-radius: 20px;
-      }
-    }
-  </style>
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body>
+<body class="relative min-h-screen text-slate-200 antialiased selection:bg-amberGold selection:text-slate-950">
 
-  <header>
-    <nav class="menu-container">
-      <a href="#home">Home</a>
-      <a href="#books">Books</a>
-      <a href="#bio">Bio</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <!-- Three.js Ambient Particle Background -->
+    <canvas id="bg-canvas"></canvas>
 
-  <main>
-    <section class="homepage" id="home"></section>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-amber-500/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-amberGold/40 flex items-center justify-center bg-obsidian shadow-lg group-hover:border-amberGold transition-colors">
+                    <span class="font-cinzel text-amberGold font-bold text-lg">AA</span>
+                </div>
+                <div>
+                    <span class="font-cinzel text-xl font-bold tracking-wider text-slate-100 group-hover:text-amberGold transition-colors">AMIM AHSAN</span>
+                    <span class="block text-[10px] tracking-widest text-slate-400 font-sans uppercase">Author & Storyteller</span>
+                </div>
+            </a>
 
-    <section class="bio" id="bio">
-      <img src="https://via.placeholder.com/150" alt="Amim Ahsan">
-      <h2>Amim Ahsan</h2>
-      <p>I'm a writer who believes in the power of stories to connect people across time and space. With a diverse range of interests and experiences, I craft narratives that resonate with readers of all ages.</p>
-      <p>From fantasy epics to contemporary tales, my writing explores the human experience in all its complexity.</p>
-    </section>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all">HOME</a>
+                <a href="#bio" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all font-sans uppercase">ABOUT AUTHOR</a>
+                <a href="#books" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all">BOOKS & WORKS</a>
+                <a href="#philosophy" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all">PHILOSOPHY</a>
+                <a href="#contact" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all">CONTACT</a>
+            </nav>
 
-    <section class="books" id="books">
-      <h2>My Books <span class="book-count">100</span></h2>
-      <div class="books-grid">
-        <!-- 100 book cards generated dynamically -->
-        <div class="book-card">Book 1</div>
-        <div class="book-card">Book 2</div>
-        <div class="book-card">Book 3</div>
-        <div class="book-card">Book 4</div>
-        <div class="book-card">Book 5</div>
-        <div class="book-card">Book 6</div>
-        <div class="book-card">Book 7</div>
-        <div class="book-card">Book 8</div>
-        <div class="book-card">Book 9</div>
-        <div class="book-card">Book 10</div>
-        <div class="book-card">Book 11</div>
-        <div class="book-card">Book 12</div>
-        <div class="book-card">Book 13</div>
-        <div class="book-card">Book 14</div>
-        <div class="book-card">Book 15</div>
-        <div class="book-card">Book 16</div>
-        <div class="book-card">Book 17</div>
-        <div class="book-card">Book 18</div>
-        <div class="book-card">Book 19</div>
-        <div class="book-card">Book 20</div>
-        <div class="book-card">Book 21</div>
-        <div class="book-card">Book 22</div>
-        <div class="book-card">Book 23</div>
-        <div class="book-card">Book 24</div>
-        <div class="book-card">Book 25</div>
-        <div class="book-card">Book 26</div>
-        <div class="book-card">Book 27</div>
-        <div class="book-card">Book 28</div>
-        <div class="book-card">Book 29</div>
-        <div class="book-card">Book 30</div>
-        <div class="book-card">Book 31</div>
-        <div class="book-card">Book 32</div>
-        <div class="book-card">Book 33</div>
-        <div class="book-card">Book 34</div>
-        <div class="book-card">Book 35</div>
-        <div class="book-card">Book 36</div>
-        <div class="book-card">Book 37</div>
-        <div class="book-card">Book 38</div>
-        <div class="book-card">Book 39</div>
-        <div class="book-card">Book 40</div>
-        <div class="book-card">Book 41</div>
-        <div class="book-card">Book 42</div>
-        <div class="book-card">Book 43</div>
-        <div class="book-card">Book 44</div>
-        <div class="book-card">Book 45</div>
-        <div class="book-card">Book 46</div>
-        <div class="book-card">Book 47</div>
-        <div class="book-card">Book 48</div>
-        <div class="book-card">Book 49</div>
-        <div class="book-card">Book 50</div>
-        <div class="book-card">Book 51</div>
-        <div class="book-card">Book 52</div>
-        <div class="book-card">Book 53</div>
-        <div class="book-card">Book 54</div>
-        <div class="book-card">Book 55</div>
-        <div class="book-card">Book 56</div>
-        <div class="book-card">Book 57</div>
-        <div class="book-card">Book 58</div>
-        <div class="book-card">Book 59</div>
-        <div class="book-card">Book 60</div>
-        <div class="book-card">Book 61</div>
-        <div class="book-card">Book 62</div>
-        <div class="book-card">Book 63</div>
-        <div class="book-card">Book 64</div>
-        <div class="book-card">Book 65</div>
-        <div class="book-card">Book 66</div>
-        <div class="book-card">Book 67</div>
-        <div class="book-card">Book 68</div>
-        <div class="book-card">Book 69</div>
-        <div class="book-card">Book 70</div>
-        <div class="book-card">Book 71</div>
-        <div class="book-card">Book 72</div>
-        <div class="book-card">Book 73</div>
-        <div class="book-card">Book 74</div>
-        <div class="book-card">Book 75</div>
-        <div class="book-card">Book 76</div>
-        <div class="book-card">Book 77</div>
-        <div class="book-card">Book 78</div>
-        <div class="book-card">Book 79</div>
-        <div class="book-card">Book 80</div>
-        <div class="book-card">Book 81</div>
-        <div class="book-card">Book 82</div>
-        <div class="book-card">Book 83</div>
-        <div class="book-card">Book 84</div>
-        <div class="book-card">Book 85</div>
-        <div class="book-card">Book 86</div>
-        <div class="book-card">Book 87</div>
-        <div class="book-card">Book 88</div>
-        <div class="book-card">Book 89</div>
-        <div class="book-card">Book 90</div>
-        <div class="book-card">Book 91</div>
-        <div class="book-card">Book 92</div>
-        <div class="book-card">Book 93</div>
-        <div class="book-card">Book 94</div>
-        <div class="book-card">Book 95</div>
-        <div class="book-card">Book 96</div>
-        <div class="book-card">Book 97</div>
-        <div class="book-card">Book 98</div>
-        <div class="book-card">Book 99</div>
-        <div class="book-card">Book 100</div>
-      </div>
-    </section>
-
-    <section class="books" id="about">
-      <h2>About Me</h2>
-      <p>I'm Amim Ahsan, a dedicated writer with a passion for storytelling. My journey in writing began at a young age, and I've been honing my craft ever since. With each book I create, I aim to bring something unique and meaningful to my readers.</p>
-      <p>Whether you're here for my books, my insights, or simply to connect, I'm glad you're here. Feel free to explore, leave a comment, or get in touch.</p>
-    </section>
-
-    <section class="contact-section section" id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%)">
-      <div class="contact-container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%;">
-          <div style="text-align: center; width: 100%;">
-            <div style="background: var(--dark); padding: 3rem; border-radius: 16px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); backdrop-filter: blur(10px); width: 100%; max-width: 450px;">
-              <p style="color: var(--secondary); font-size: 0.9rem; margin-bottom: 1.5rem; text-align: center;">Alternatively, reach me at</p>
-              <p style="color: var(--light); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600;"><a href="mailto:amimul211@gmail.com" style="color: var(--accent); text-decoration: underline;">amimul211@gmail.com</a></p>
-              <p style="color: var(--secondary); font-size: 0.8rem; text-align: center;">Response within 48 hours</p>
+            <!-- Quick CTA Button -->
+            <div class="hidden md:block">
+                <a href="#books" class="px-5 py-2.5 rounded-full border border-amberGold/40 bg-amberGold/10 text-amberGold font-medium text-xs tracking-wider hover:bg-amberGold hover:text-slate-950 transition-all duration-300 shadow-md">
+                    EXPLORE BOOKS
+                </a>
             </div>
-          </div>
-          <div>
-            <form action="#" method="POST" style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 16px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); backdrop-filter: blur(10px); width: 100%; max-width: 500px;">
-              <h2 style="text-align: center; color: var(--light); margin-bottom: 2rem; font-size: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--secondary);">Contact Me</h2>
-              <div style="display: grid; gap: 1.5rem; margin-bottom: 1.5rem;">
-                <div>
-                  <label for="name" style="color: var(--light); font-weight: 500; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required style="width: 100%; padding: 0.8rem 1rem; background: var(--dark); border: none; border-radius: 8px; color: var(--light); font-size: 1rem; transition: background 0.3s;" onfocus="this.style.background='var(--accent)'" onblur="this.style.background='var(--dark)'">
-                </div>
-                <div>
-                  <label for="email" style="color: var(--light); font-weight: 500; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Email</label>
-                  <input type="email" id="email" name="email" placeholder="your@email.com" required style="width: 100%; padding: 0.8rem 1rem; background: var(--dark); border: none; border-radius: 8px; color: var(--light); font-size: 1rem; transition: background 0.3s;" onfocus="this.style.background='var(--accent)'" onblur="this.style.background='var(--dark)'">
-                </div>
-              </div>
-              <div style="margin-bottom: 2rem;">
-                <label for="message" style="color: var(--light); font-weight: 500; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your message" required style="width: 100%; padding: 1rem; background: var(--dark); border: none; border-radius: 8px; color: var(--light); font-size: 1rem; resize: vertical; transition: background 0.3s;" onfocus="this.style.background='var(--accent)'" onblur="this.style.background='var(--dark)'"></textarea>
-              </div>
-              <button type="submit" style="width: 100%; padding: 1rem 2rem; background: var(--accent); color: var(--dark); border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">Send Message</button>
-            </form>
-          </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-amberGold focus:outline-none p-2" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2024 Amim Ahsan. All rights reserved.</p>
-  </footer>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-6 py-6 space-y-4">
+            <a href="#home" class="mobile-link block text-lg font-cinzel text-slate-200 hover:text-amberGold">HOME</a>
+            <a href="#bio" class="mobile-link block text-lg font-cinzel text-slate-200 hover:text-amberGold">ABOUT AUTHOR</a>
+            <a href="#books" class="mobile-link block text-lg font-cinzel text-slate-200 hover:text-amberGold">BOOKS & WORKS</a>
+            <a href="#philosophy" class="mobile-link block text-lg font-cinzel text-slate-200 hover:text-amberGold">PHILOSOPHY</a>
+            <a href="#contact" class="mobile-link block text-lg font-cinzel text-slate-200 hover:text-amberGold">CONTACT</a>
+        </div>
+    </header>
 
+    <!-- Main Content Container -->
+    <main class="w-full">
+
+        <!-- Hero / Homepage Section -->
+        <section id="home" class="relative w-full min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Full Screen Responsive Image Background Container -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <img 
+                    src="https://ibb.co.com/Zz9HvbPH" 
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1600&auto=format&fit=crop';" 
+                    alt="Amim Ahsan Homepage Featured Cover" 
+                    class="w-full h-full object-cover object-center opacity-40 scale-100 transition-transform duration-1000"
+                />
+                <!-- Dark Gradient Overlays for High Contrast Readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-obsidian/50"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-obsidian/95 via-obsidian/40 to-obsidian/95"></div>
+            </div>
+
+            <!-- Hero Banner Interactive Glass Content -->
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-12">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amberGold/30 bg-amberGold/10 backdrop-blur-md mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amberGold animate-ping"></span>
+                    <span class="text-xs uppercase tracking-widest text-amberGold font-semibold">Official English Literary Portfolio</span>
+                </div>
+                
+                <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-slate-100 mb-6 leading-tight">
+                    AMIM AHSAN
+                </h1>
+                
+                <p class="font-cinzel text-xl sm:text-2xl text-amber-200/90 mb-4 font-normal tracking-wide uppercase">
+                    Author • Scriptwriter • Digital Philosopher
+                </p>
+
+                <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-300 font-light mb-10 leading-relaxed">
+                    Crafting psychological fiction, speculative realism, eco-dystopian futures, and philosophical reflections under the pen name <span class="text-amberGold font-medium">Amimul Ahsan</span>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#books" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amberGold text-slate-950 font-semibold tracking-wider hover:bg-brightGold transition-all duration-300 shadow-lg shadow-amberGold/20 flex items-center justify-center gap-3">
+                        <span>EXPLORE BOOKS</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#philosophy" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-slate-200 hover:text-amberGold border border-slate-700/80 hover:border-amberGold/50 font-semibold tracking-wider transition-all duration-300 flex items-center justify-center gap-3">
+                        <span>READ PHILOSOPHY</span>
+                        <i class="fa-solid fa-brain text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+                <span class="text-[10px] tracking-widest uppercase text-slate-400">Scroll</span>
+                <div class="w-5 h-8 border-2 border-slate-500 rounded-full flex justify-center p-1">
+                    <div class="w-1 h-2 bg-amberGold rounded-full animate-bounce"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section id="bio" class="py-24 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Profile Image & Quote Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-panel p-4 rounded-3xl relative overflow-hidden group">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden relative border border-slate-700/60">
+                            <!-- Visual Graphic Overlay -->
+                            <img 
+                                src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" 
+                                alt="Amim Ahsan Creative Environment" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 contrast-105"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-6 left-6 right-6 p-4 glass-card rounded-xl border border-amberGold/20">
+                                <p class="text-xs italic text-amber-200 font-serif">
+                                    "Stories are mirrors where the human psyche and cosmic uncertainties meet."
+                                </p>
+                                <span class="block text-[10px] uppercase tracking-widest text-slate-400 mt-2 font-cinzel">— Amim Ahsan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Bio Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amberGold font-semibold">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                        <span>Biography & Literary Craft</span>
+                    </div>
+
+                    <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-slate-100 leading-tight">
+                        Crafting Realities Beyond <span class="gold-gradient-text">Conventional Bounds</span>
+                    </h2>
+
+                    <div class="space-y-4 text-slate-300 leading-relaxed font-light text-base sm:text-lg">
+                        <p>
+                            <strong>Amim Ahsan</strong> (publishing under the pen name <em class="text-amber-200">Amimul Ahsan</em>) is a contemporary author, scriptwriter, and story craftsman known for weaving intricate narratives that bridge psychological fiction, speculative realism, and eco-dystopian philosophy.
+                        </p>
+                        <p>
+                            From the gripping mystery dynamics in series like <em>Mass-Q-Rade</em> and the suspenseful storytelling of the <em>Joborde Series</em>, to lighthearted satire in <em>Messrs Jhamela Kini</em> and poetic existentialism in <em>Let's Never Die</em>, his works traverse multiple literary genres with crisp nuance.
+                        </p>
+                        <p>
+                            In addition to long-form fiction, Amim engages in philosophical commentary through his intellectual digital platform <span class="text-amberGold font-medium">The Bengali Philosopher</span>, curating thought pieces, video essays, and literary dissertations aimed at exploring human consciousness, environmental ethics, and modern existential paradoxes.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="glass-card p-4 rounded-xl border-l-2 border-l-amberGold">
+                            <span class="block font-cinzel text-2xl font-bold text-amberGold">15+</span>
+                            <span class="text-xs text-slate-400">Published Works & Books</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border-l-2 border-l-royalBlue">
+                            <span class="block font-cinzel text-2xl font-bold text-royalBlue">Multi</span>
+                            <span class="text-xs text-slate-400">Genre Novels & Scripts</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border-l-2 border-l-amberGold">
+                            <span class="block font-cinzel text-2xl font-bold text-amberGold">2</span>
+                            <span class="text-xs text-slate-400">Pen Names (Amim/Amimul)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Books Gallery Section -->
+        <section id="books" class="py-24 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">Selected Bibliography</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-slate-100">
+                    Books & <span class="gold-gradient-text">Literary Works</span>
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-4">
+                    Explore published books, ongoing series, standalone novels, and analytical literary essays—all presented in English.
+                </p>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all bg-amberGold text-slate-950 border border-amberGold">ALL WORKS</button>
+                    <button data-filter="series" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">NOVEL SERIES</button>
+                    <button data-filter="novels" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">STANDALONE NOVELS</button>
+                    <button data-filter="essays" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">PHILOSOPHICAL THESES</button>
+                </div>
+            </div>
+
+            <!-- Books Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="books-grid">
+                
+                <!-- Book Card 1: Mass-Q-Rade -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">Mass-Q-Rade</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Volumes 5 - 15</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series Collection</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                A high-stakes mystery narrative probing social facades, cyber anonymity, and hidden identities in a hyper-connected world.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amimul Ahsan</span>
+                            <button onclick="openModal('massqrade')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card 2: Joborde Series -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-slate-900 to-slate-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">SPECULATIVE NOVEL</span>
+                            <h3 class="font-cinzel text-3xl font-bold text-amber-200">Joborde</h3>
+                            <p class="text-xs text-slate-400 mt-2">The Joborde Series</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Speculative Drama</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                A compelling story exploring the delicate tension between existential choices and societal pressures in modern life.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <button onclick="openModal('joborde')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card 3: Messrs Jhamela Kini -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="novels">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-indigo-950 via-slate-900 to-emerald-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">SATIRICAL NOVEL</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">Messrs Jhamela Kini</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Trouble Traders Co.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Satire & Humor</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                A witty satire unveiling urban absurdities and human quirks disguised behind everyday commercial negotiations.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amimul Ahsan</span>
+                            <button onclick="openModal('jhamela')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card 4: Let's Never Die -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="novels">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-950 via-slate-900 to-blue-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PHILOSOPHICAL FICTION</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">Let's Never Die</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">A Quest for Eternity</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Existential Romance</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                A poignant story on memory, human mortality, and how storytelling creates a quiet form of immortality.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <button onclick="openModal('neverdie')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card 5: Spring's Breath -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="novels">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-rose-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">POETIC FICTION</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">Spring's Breath</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Basanter Nihshwas</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Literary Drama</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                A lyrical novel examining youth, seasonal transformations, and silent emotional awakenings across urban landscapes.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amimul Ahsan</span>
+                            <button onclick="openModal('springsbreath')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card 6: Eco-Dystopian Essays -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="essays">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-teal-950 via-slate-900 to-slate-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PHILOSOPHICAL THESIS</span>
+                            <h3 class="font-cinzel text-xl font-bold text-slate-100">Forest To Ocean</h3>
+                            <p class="text-xs text-slate-400 mt-2">Eco-Discourse & Future Essays</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Eco-Philosophy</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                Analytical treatises examining climate ethics, ecological balance, and digital era sustainability.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <button onclick="openModal('forestocean')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Philosophical Writings Feature Section -->
+        <section id="philosophy" class="py-24 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl relative overflow-hidden border border-amberGold/30">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amberGold font-semibold">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>The Bengali Philosopher Project</span>
+                        </div>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100">
+                            Exploring Philosophy & <span class="gold-gradient-text">Human Consciousness</span>
+                        </h2>
+                        <p class="text-slate-300 text-base font-light leading-relaxed">
+                            Through digital videos, written essays, and theoretical dissertations, Amim Ahsan analyzes the intersection of modern technology, existential dread, environmental ethics, and classical philosophical paradigms.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-amberGold text-slate-950 font-semibold text-xs tracking-wider hover:bg-brightGold transition-all">
+                                REQUEST ESSAYS
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl glass-card text-slate-200 border border-slate-700 text-xs font-semibold tracking-wider hover:border-amberGold/50 transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-facebook-f text-amberGold"></i>
+                                <span>VISIT PLATFORM</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex justify-center">
+                        <div class="w-48 h-48 rounded-full border-2 border-dashed border-amberGold/40 flex items-center justify-center p-4 relative group">
+                            <div class="w-full h-full rounded-full bg-slate-900 flex flex-col items-center justify-center text-center p-4 border border-slate-700 group-hover:border-amberGold transition-colors">
+                                <i class="fa-solid fa-quote-left text-2xl text-amberGold mb-2"></i>
+                                <span class="text-xs font-serif italic text-slate-300">"Truth resides beyond surface illusions."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info & Links -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block">Reach Out</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100">
+                        Let's Connect & <span class="gold-gradient-text">Collaborate</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light">
+                        For publishing inquiries, scriptwriting collaborations, book rights, or literary discussions, feel free to drop a direct message.
+                    </p>
+
+                    <!-- Direct Connect Cards -->
+                    <div class="space-y-4 pt-2">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-amberGold/50 group transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold group-hover:bg-amberGold group-hover:text-slate-950 transition-colors">
+                                <i class="fa-brands fa-facebook-f text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase tracking-wider">Official Page</span>
+                                <span class="text-sm font-medium text-slate-200">The Bengali Philosopher / Amim Ahsan</span>
+                            </div>
+                        </a>
+
+                        <a href="#books" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-amberGold/50 group transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold group-hover:bg-amberGold group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-book-open text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase tracking-wider">Library & Archive</span>
+                                <span class="text-sm font-medium text-slate-200">Amim Ahsan Digital Library</span>
+                            </div>
+                        </a>
+
+                        <a href="#philosophy" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-amberGold/50 group transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold group-hover:bg-amberGold group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-earth-americas text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase tracking-wider">Eco & Literary Platform</span>
+                                <span class="text-sm font-medium text-slate-200">Forest To Ocean Project</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Glassmorphism Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="glass-panel p-8 rounded-3xl space-y-6 border border-amberGold/20">
+                        <h3 class="font-cinzel text-xl font-bold text-slate-100">Send an English Inquiry</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs font-medium text-slate-300 uppercase tracking-wider mb-2">Your Full Name</label>
+                                <input type="text" id="name" required placeholder="John Doe / Publisher" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amberGold transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-medium text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" id="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amberGold transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-xs font-medium text-slate-300 uppercase tracking-wider mb-2">Subject</label>
+                            <input type="text" id="subject" required placeholder="Book Rights / Scriptwriting / Review" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amberGold transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-medium text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Write your inquiry in English..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amberGold transition-colors text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-amberGold text-slate-950 font-bold tracking-wider hover:bg-brightGold transition-all shadow-lg shadow-amberGold/20 flex items-center justify-center gap-2">
+                            <span>SEND MESSAGE</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Dialog for Book Details -->
+    <div id="book-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-obsidian/80 backdrop-blur-md">
+        <div class="glass-panel max-w-2xl w-full p-6 sm:p-8 rounded-3xl relative border border-amberGold/30 space-y-6">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-900/80 flex items-center justify-center text-slate-400 hover:text-amberGold border border-slate-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Toast Message -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-amberGold px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-amberGold text-xl"></i>
+        <span id="toast-text" class="text-sm font-medium text-slate-200">Thank you! Your inquiry has been sent successfully.</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-8 relative z-10 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-slate-400">
+                &copy; <span id="year"></span> Amim Ahsan (Amimul Ahsan). All rights reserved.
+            </div>
+            <div class="flex items-center gap-6 text-slate-400 text-sm">
+                <a href="#home" class="hover:text-amberGold transition-colors">Home</a>
+                <a href="#bio" class="hover:text-amberGold transition-colors">About</a>
+                <a href="#books" class="hover:text-amberGold transition-colors">Books</a>
+                <a href="#philosophy" class="hover:text-amberGold transition-colors">Philosophy</a>
+                <a href="#contact" class="hover:text-amberGold transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Embedded Scripts -->
+    <script>
+        // Set Year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Books Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const bookCards = document.querySelectorAll('.book-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-amberGold', 'text-slate-950');
+                    b.classList.add('glass-card', 'text-slate-300');
+                });
+                btn.classList.remove('glass-card', 'text-slate-300');
+                btn.classList.add('bg-amberGold', 'text-slate-950');
+
+                const filter = btn.getAttribute('data-filter');
+
+                bookCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Details Data (English Translated)
+        const bookData = {
+            massqrade: {
+                title: "Mass-Q-Rade (Volumes 5 - 15)",
+                author: "Amimul Ahsan",
+                genre: "Psychological Thriller / Cyber Suspense",
+                synopsis: "Mass-Q-Rade investigates the unseen masks worn by modern individuals. Navigating psychological intrigue, digital surveillance, and hidden identities, the narrative dissects the fine line between the true self and artificial persona.",
+                link: "#"
+            },
+            joborde: {
+                title: "Joborde (The Joborde Series)",
+                author: "Amim Ahsan",
+                genre: "Speculative Drama & Suspense",
+                synopsis: "The Joborde series portrays the delicate tension between human vulnerability and overwhelming cosmic mystery. A masterpiece of suspense that challenges conventional narrative structures.",
+                link: "#"
+            },
+            jhamela: {
+                title: "Messrs Jhamela Kini (Trouble Traders Co.)",
+                author: "Amimul Ahsan",
+                genre: "Satire & Contemporary Fiction",
+                synopsis: "A biting satirical novel uncovering urban absurdities, social dilemmas, and humorous human encounters disguised behind an unusual commercial enterprise.",
+                link: "#"
+            },
+            neverdie: {
+                title: "Let's Never Die",
+                author: "Amim Ahsan",
+                genre: "Philosophical Fiction",
+                synopsis: "A deeply introspective novel surrounding the universal quest for legacy, human mortality, and how stories grant humankind a slice of eternity.",
+                link: "#"
+            },
+            springsbreath: {
+                title: "Spring's Breath (Basanter Nihshwas)",
+                author: "Amimul Ahsan",
+                genre: "Poetic Drama",
+                synopsis: "A lyrical narrative capturing youth, seasonal transitions, and quiet emotional awakenings against the backdrop of an evolving city.",
+                link: "#"
+            },
+            forestocean: {
+                title: "Forest To Ocean",
+                author: "Amim Ahsan",
+                genre: "Eco-Philosophy & Analytical Essays",
+                synopsis: "A critical anthology exploring ecological transitions, natural human connection, and futuristic environmental perspectives.",
+                link: "#"
+            }
+        };
+
+        const modal = document.getElementById('book-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(key) {
+            const data = bookData[key];
+            if (!data) return;
+
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-amberGold font-semibold">${data.genre}</span>
+                    <h3 class="font-cinzel text-2xl font-bold text-slate-100">${data.title}</h3>
+                    <p class="text-xs text-slate-400">Written by <span class="text-amber-200">${data.author}</span></p>
+                    <div class="h-px w-full bg-slate-800"></div>
+                    <p class="text-slate-300 text-sm leading-relaxed">${data.synopsis}</p>
+                    <div class="pt-4 flex items-center gap-4">
+                        <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl border border-slate-700 text-xs font-semibold text-slate-300 hover:text-white">Close</button>
+                        <a href="${data.link}" onclick="showToast('Redirecting to digital reader preview...')" class="px-5 py-2.5 rounded-xl bg-amberGold text-slate-950 font-semibold text-xs hover:bg-brightGold transition-all">Read Preview / Details</a>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Contact Form Submission Mock
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Thank you! Your message has been dispatched to Amim Ahsan.');
+            contactForm.reset();
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // --- Three.js Interactive Particle & Node Background Animation ---
+        let scene, camera, renderer, particles, glassMeshGroup;
+        let mouseX = 0, mouseY = 0;
+        let targetX = 0, targetY = 0;
+
+        function initThreeJS() {
+            const canvas = document.getElementById('bg-canvas');
+            scene = new THREE.Scene();
+            
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 400;
+
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            // Particles Geometry
+            const particleCount = window.innerWidth < 768 ? 140 : 300;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            const colorAmber = new THREE.Color(0xf59e0b);
+            const colorBlue = new THREE.Color(0x3b82f6);
+
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 800;
+                positions[i + 1] = (Math.random() - 0.5) * 800;
+                positions[i + 2] = (Math.random() - 0.5) * 800;
+
+                const mixedColor = Math.random() > 0.5 ? colorAmber : colorBlue;
+                colors[i] = mixedColor.r;
+                colors[i + 1] = mixedColor.g;
+                colors[i + 2] = mixedColor.b;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 3,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.65
+            });
+
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            // Floating Geometric Ambient Orbs
+            glassMeshGroup = new THREE.Group();
+            const orbGeom = new THREE.IcosahedronGeometry(18, 1);
+            const orbMat = new THREE.MeshBasicMaterial({
+                color: 0xf59e0b,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.15
+            });
+
+            for (let j = 0; j < 5; j++) {
+                const mesh = new THREE.Mesh(orbGeom, orbMat);
+                mesh.position.set(
+                    (Math.random() - 0.5) * 500,
+                    (Math.random() - 0.5) * 500,
+                    (Math.random() - 0.5) * 300
+                );
+                mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+                glassMeshGroup.add(mesh);
+            }
+            scene.add(glassMeshGroup);
+
+            // Mouse Movement Listener
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX - window.innerWidth / 2) * 0.1;
+                mouseY = (e.clientY - window.innerHeight / 2) * 0.1;
+            });
+
+            // Touch Support
+            document.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    mouseX = (e.touches[0].clientX - window.innerWidth / 2) * 0.1;
+                    mouseY = (e.touches[0].clientY - window.innerHeight / 2) * 0.1;
+                }
+            });
+
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animateThreeJS() {
+            requestAnimationFrame(animateThreeJS);
+
+            targetX += (mouseX - targetX) * 0.05;
+            targetY += (mouseY - targetY) * 0.05;
+
+            camera.position.x = targetX * 0.5;
+            camera.position.y = -targetY * 0.5;
+            camera.lookAt(scene.position);
+
+            if (particles) {
+                particles.rotation.y += 0.0008;
+                particles.rotation.x += 0.0004;
+            }
+
+            if (glassMeshGroup) {
+                glassMeshGroup.children.forEach((mesh, index) => {
+                    mesh.rotation.x += 0.003 * (index + 1);
+                    mesh.rotation.y += 0.002 * (index + 1);
+                });
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        window.onload = function () {
+            initThreeJS();
+            animateThreeJS();
+        };
+    </script>
 </body>
 </html>
