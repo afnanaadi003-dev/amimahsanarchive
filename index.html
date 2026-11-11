@@ -542,17 +542,37 @@
         <section id="watch" class="py-20 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
 
-                <!-- YouTube mark -->
-                <div class="lg:col-span-5 relative flex flex-col items-center justify-center gap-5 p-10 sm:p-12 bg-gradient-to-br from-red-950/60 via-slate-950 to-obsidian">
+                <!-- Our featuring video -->
+                <div class="lg:col-span-5 relative flex flex-col justify-center gap-4 p-6 sm:p-8 bg-gradient-to-br from-red-950/60 via-slate-950 to-obsidian">
                     <div class="absolute inset-0 opacity-40 pointer-events-none" style="background:radial-gradient(ellipse at 50% 40%, rgba(255,0,0,0.18), transparent 65%);"></div>
-                    <a href="https://www.youtube.com/@HowISurvivedShow" target="_blank" rel="noopener" class="relative group" aria-label="Open the How I Survived YouTube channel">
-                        <div class="w-24 h-24 rounded-3xl bg-[#ff0000] flex items-center justify-center shadow-[0_0_60px_rgba(255,0,0,0.35)] group-hover:scale-105 group-hover:shadow-[0_0_80px_rgba(255,0,0,0.5)] transition-all duration-300">
-                            <i class="fa-brands fa-youtube text-white text-5xl"></i>
+
+                    <!-- Channel label, kept above the video -->
+                    <div class="relative flex items-start justify-between gap-3">
+                        <div>
+                            <span class="block text-[10px] uppercase tracking-[0.28em] text-amberGold font-semibold mb-1.5">Our Featuring Video</span>
+                            <span class="block text-[11px] tracking-[0.3em] uppercase text-slate-400 font-semibold">The Show</span>
+                            <a href="https://www.youtube.com/@HowISurvivedShow" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-1 text-sm text-slate-300 hover:text-amberGold transition-colors tracking-wide">
+                                <i class="fa-brands fa-youtube text-[#ff0000]"></i><span class="text-[11px] text-slate-500">@</span>HowISurvivedShow
+                            </a>
                         </div>
-                    </a>
-                    <span class="relative text-[11px] tracking-[0.3em] uppercase text-slate-400 font-semibold">The Show</span>
-                    <a href="https://www.youtube.com/@HowISurvivedShow" target="_blank" rel="noopener" class="relative text-sm text-slate-300 hover:text-amberGold transition-colors tracking-wide">
-                        <i class="fa-solid fa-at text-[10px] mr-0.5"></i>HowISurvivedShow
+                        <a href="https://www.youtube.com/@HowISurvivedShow" target="_blank" rel="noopener" aria-label="Open the How I Survived YouTube channel" class="w-9 h-9 shrink-0 rounded-lg bg-[#ff0000] hover:bg-[#d90000] flex items-center justify-center shadow-[0_0_25px_rgba(255,0,0,0.35)] transition-colors">
+                            <i class="fa-brands fa-youtube text-white"></i>
+                        </a>
+                    </div>
+
+                    <!-- Featured video -->
+                    <div class="relative rounded-xl overflow-hidden border border-white/10 bg-black aspect-video shadow-2xl shadow-black/60">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/qSw6igkbd3E?rel=0"
+                            title="Our featuring video — How I Survived"
+                            class="absolute inset-0 w-full h-full"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <a href="https://www.youtube.com/watch?v=qSw6igkbd3E" target="_blank" rel="noopener" class="relative text-[11px] text-slate-400 hover:text-amberGold transition-colors tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i> Watch this video on YouTube
                     </a>
                 </div>
 
