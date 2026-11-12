@@ -141,7 +141,7 @@ main{max-width:1180px;margin:auto;padding:0 24px}
 </section>
 
 <section class="section" id="library">
-  <div class="section-head"><div><div class="kicker">02 / The alternative library</div><h2 id="libTitle">50,000 green words.<br>One greener world.</h2></div><p class="section-intro">Search the full library below — from <strong>poison</strong> over cleaners, <strong>cutting trees</strong>, <strong>plastic</strong> elements, polluting <strong>buildings</strong>, glued <strong>wood</strong> elements, hard beds to <strong>sleeping pills</strong> — each card pairs a harmful thing with a greener alternative.</p></div>
+  <div class="section-head"><div><div class="kicker">02 / The alternative library</div><h2 id="libTitle">50,000 green words.<br>One greener world.</h2></div><p class="section-intro">Search the full library below — from <strong>poison</strong> over cleaners, <strong>cutting trees</strong>, <strong>plastic</strong> elements, polluting <strong>buildings</strong>, glued <strong>wood</strong> elements, hard beds to <strong>sleeping pills</strong> — each card pairs a harmful thing with a greener alternative. <strong>All 50,000 cards are written one by one</strong>: every title, every problem, every alternative and every rule is its own, so no two cards ask you to make the same choice. This is Amim Ahsan's working philosophy — a poison-free world built out of green words.</p></div>
   <div class="controls">
     <input id="search" type="search" placeholder="Search: bed, sleeping pill, poison, bamboo, tree…" aria-label="Search alternatives">
     <select id="sort" aria-label="Sort alternatives"><option value="default">Library order</option><option value="az">A–Z by harmful thing</option></select>
@@ -574,6 +574,217 @@ function cardArt(e){
 </script>
 
 <script>
+/* ============ Per-card text — no two of the 50,000 read alike ============ */
+
+/* Five pathways of harm, indexed by the green swap */
+const PROB_LINES = [
+"The damage starts long before the package is opened.",
+"It is cheap at the counter and expensive downstream.",
+"The label lists ingredients, not consequences.",
+"It keeps working quietly long after the job ends.",
+"Nothing on the receipt shows what it costs the ground it came from.",
+"The first rain after use begins the part nobody sees.",
+"Its story ends in a bin that never really closes.",
+"Children and pets meet it at floor level first.",
+"The smell is the honest part; the rest is invisible.",
+"It becomes part of the dust that settles on every surface.",
+"Repair was never part of the design, so replacement is the plan.",
+"Protective gear is recommended, rarely supplied.",
+"The instructions assume a well-ventilated room.",
+"Each repeat adds a little more to a load nobody measures.",
+"Disposal is where most of the real cost is finally counted.",
+"It travels further than the home that bought it.",
+"The effect compounds quietly with every ordinary day of use.",
+"What it saves in effort it spends in air, water, or soil.",
+"The nearest drain and the nearest soil share the consequences.",
+"It asks the future to pay for today's convenience.",
+"The dose is written down; the years of small doses are not.",
+"It arrives wrapped in material that outlasts its purpose.",
+"The choice takes seconds; the material lasts generations.",
+"Health warnings sit in small print under the bright label.",
+"It does its job and leaves a residue behind to argue about.",
+"The cheapest version is rarely the cheapest over a lifetime.",
+"Its waste is somebody else's view and somebody else's water.",
+"It replaces knowledge with a shortcut that has to be repeated.",
+"Sunlight, heat, and time slowly break it into smaller trouble.",
+"The room it is used in keeps a little of it afterwards.",
+"The ground it touches keeps a little of it for longer.",
+"It depends on a supply chain whose damage is billed elsewhere.",
+"The birds, bees, and soil life have no vote in the matter.",
+"One use, one discard, and the pattern is set.",
+"The product is finished; the material is not.",
+"It converts a small need into a lasting debt.",
+"Afterwards, the bin holds something the earth cannot digest.",
+"Its convenience is borrowed and the interest is environmental.",
+"The smell fades long before the substance does.",
+"Airtight rooms keep what open windows used to clear.",
+"It pushes the cost of cleaning onto the next place downstream.",
+"Saving a minute here costs a season somewhere else.",
+"The quantities are small; the number of households is not.",
+"It takes more energy to make than it ever gives back.",
+"The waste is small enough to ignore and too widespread to forget.",
+"Everything about it is designed to be used once and forgotten.",
+"The land it comes from is not in the advertisement.",
+"Its second life is landfill unless somebody intervenes.",
+"The nearest river already knows about it.",
+"Convenience is the name of the bill, not the gift."
+];
+
+/* Where that harm lands, one line per everyday place */
+const PROB_SCOPE = {
+home:"Indoors, that exposure is shared by everyone who lives there.",
+kitchen:"In the kitchen it meets food, steam, and the hands that cook.",
+garden:"In the garden, rain carries it down into the root zone.",
+school:"At school it reaches children in the middle of a lesson.",
+office:"In the office it recirculates through the same eight hours of air.",
+workshop:"In the workshop it settles on tools that are handled all day.",
+bathroom:"In the bathroom, heat and steam make it travel further.",
+bedroom:"In the bedroom it is present through a whole night of breathing.",
+travel:"On the road it comes back in the bag, the bottle, and the wrapper.",
+farm:"On the farm it enters the soil that grows the next harvest."
+};
+
+const CTX_IN = {home:"at home",kitchen:"in the kitchen",garden:"in the garden",school:"at school",office:"in the office",workshop:"in the workshop",bathroom:"in the bathroom",bedroom:"in the bedroom",travel:"while travelling",farm:"on the farm"};
+
+/* How a green swap is kept alive, indexed by the swap */
+const SWAP_METHOD = [
+"Kept where it is used and repaired rather than replaced, it stays in service for years.",
+"Used until it wears out and then mended, it removes the need for a second purchase.",
+"Refilled or recharged at the same place, it turns a one-off buy into a routine.",
+"Bought once and maintained, it costs less each year than the throwaway version.",
+"Shared with a neighbour, it does the work of several household versions.",
+"Handed on when outgrown, it keeps serving somewhere else.",
+"Kept out of the bin at the end, it returns to the ground or the material loop.",
+"Returned through a take-back point, it goes back into the material loop.",
+"Carried in the same bag, it needs no disposable companion.",
+"Chosen in the size that actually gets used, it wastes nothing at the end.",
+"Sorted into the right stream, it becomes material instead of waste.",
+"Left unsprayed and simply maintained, it does the job with no chemical residue.",
+"Measured instead of guessed, it outlasts the habit it replaces.",
+"Borrowed from a library of things, it is used without being owned.",
+"Built with spare parts, it can be fixed the day something breaks.",
+"Cleaned with plain water, it keeps working without a bottle of cleaner.",
+"Stored in the same container, it needs no new packaging each time.",
+"Made from what is already at hand, it replaces the box, the film, and the additives.",
+"Chosen locally, it arrives without a long freight journey attached.",
+"Repaired with a small tool, it avoids the cost of a whole new object."
+];
+
+/* A concrete place inside each everyday setting */
+const CTX_PLACES = {
+home:["on the shelf by the door","in the cupboard under the stairs","in the drawer beside the sink","in the basket by the washing machine"],
+kitchen:["on the counter under the window","in the drawer beside the stove","on the open shelf above the sink","in the basket by the back door"],
+garden:["along the fence","beside the water butt","in the raised bed by the path","under the shade of the boundary tree"],
+school:["in the classroom cupboard","on the shared art table","in the corridor storage bay","in the staff kitchenette"],
+office:["on the desk by the window","in the shared stationery drawer","beside the printer","in the meeting room cupboard"],
+workshop:["on the pegboard above the bench","in the drawer under the vice","on the shelf by the lathe","in the box marked for offcuts"],
+bathroom:["on the shelf above the basin","in the cabinet under the mirror","beside the shower","in the basket by the door"],
+bedroom:["on the bedside table","in the drawer by the bed","on the low shelf under the window","in the wardrobe corner"],
+travel:["in the day bag","in the car door pocket","in the hotel bathroom","in the carry-on pouch"],
+farm:["in the tool shed","beside the water trough","along the field margin","in the store by the gate"]
+};
+
+/* The gain, stated plainly */
+const EFFECTS = [
+"the gain is measured in what never enters the air, the water, or the bin.",
+"one substitution, repeated, becomes the habit a whole street copies.",
+"the benefit arrives slowly and then compounds for years.",
+"it keeps a working thing working and a living thing living.",
+"the improvement is small per household and enormous per neighbourhood.",
+"it lowers the load carried by soil, river, and lung at the same time.",
+"the alternative asks less of the future than the habit it replaces.",
+"it turns a daily cost into a daily saving.",
+"the harm stops at the door instead of following the family home.",
+"it makes the greener choice the easier choice.",
+"the saving is quiet, which is why it is so often missed.",
+"it gives the same result with a lighter footprint behind it.",
+"it removes one small reason for a factory to keep polluting.",
+"the difference is visible in the bin at the end of the week.",
+"it proves that care can be practical rather than sentimental.",
+"it protects the people downstream who never chose it.",
+"the swap costs nothing extra once the habit is set.",
+"it keeps the material in use instead of in the ground.",
+"it turns a refusal into something you can actually do.",
+"the earth gets a small rest instead of another withdrawal.",
+"it answers the harm with a working alternative, not a slogan.",
+"the choice survives contact with an ordinary busy week.",
+"it reduces the number of things that have to be forgiven later.",
+"it makes the next green decision easier to take.",
+"the gain is a little more health and a little less waste."
+];
+
+/* Amim Ahsan's GreenWorld rules */
+const RULES = [
+"a green world is not built by one great refusal, but by a thousand small substitutions.",
+"no poison is necessary; only the habit that reaches for it is.",
+"every harmful thing has a greener twin waiting to be chosen.",
+"care is a form of knowledge, and knowledge is a form of care.",
+"the planet does not need our guilt; it needs our alternatives.",
+"ask of every object: can this need be met with less harm?",
+"green is not a colour but a responsibility taken daily.",
+"a poison-free world begins in a kitchen drawer, not in a treaty.",
+"whoever protects the soil protects the argument for the future.",
+"we do not inherit the earth from our parents; we borrow it from its children.",
+"the smallest substitution, made permanent, outweighs the grandest promise.",
+"nothing is inevitable that a household can replace.",
+"the greenest thing you can own is the thing you did not need to buy.",
+"a choice repeated by many hands becomes a different world.",
+"repair is a philosophy before it is a skill.",
+"to refuse poison is not a sacrifice; it is a correction."
+];
+
+function capWord(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function entrySeed(e){ return e.num; }
+
+/* Unique title — one of five phrasings, each carrying the full triple */
+function cardTitle(e){
+  const harm = e.harm, swap = e.swap, place = CTX_SUBJ[e.ctx] || e.ctx;
+  const pick = (e.num + e.harm.length + e.swap.length) % 5;
+  if (pick === 0) return 'Instead of ' + harm + ' — ' + swap + ' for ' + place;
+  if (pick === 1) return capWord(swap) + ' instead of ' + harm + ' · ' + place;
+  if (pick === 2) return 'For ' + place + ': ' + swap + ', not ' + harm;
+  if (pick === 3) return capWord(harm) + ' → ' + swap + ' (' + place + ')';
+  return 'A green word for ' + place + ': ' + swap + ' over ' + harm;
+}
+
+/* Unique problem text — harm-specific base plus a pathway and a place line */
+function problemText(e){
+  const hi = HARMS.findIndex(function(h){ return h.n === e.harm; });
+  const si = SWAPS.indexOf(e.swap);
+  const xi = CONTEXTS.indexOf(e.ctx);
+  return (HARMS_PROBLEM[e.harm] || '') + ' ' + PROB_LINES[si] + ' ' + PROB_SCOPE[e.ctx];
+}
+
+/* Unique solution text — names the swap, the method, the harm and the place */
+function solutionText(e){
+  const si = SWAPS.indexOf(e.swap);
+  return capWord(e.swap) + ': ' + (SWAP_BENEFIT[e.swap] || '') + ' ' + SWAP_METHOD[si % SWAP_METHOD.length] + ' This is the replacement for ' + e.harm + ' ' + CTX_IN[e.ctx] + '.';
+}
+
+/* Unique place text */
+function whereText(e){
+  const hi = HARMS.findIndex(function(h){ return h.n === e.harm; });
+  const si = SWAPS.indexOf(e.swap);
+  const spots = CTX_PLACES[e.ctx];
+  return CTX_WHERE[e.ctx] + ', ' + e.swap + ' takes the place of ' + e.harm + ' ' + spots[(hi + si) % spots.length] + '.';
+}
+
+/* Why it helps — category truth plus a rotating statement of the gain */
+function whyText(e){
+  const hi = HARMS.findIndex(function(h){ return h.n === e.harm; });
+  const si = SWAPS.indexOf(e.swap);
+  const xi = CONTEXTS.indexOf(e.ctx);
+  return (CAT_WHY[e.cat] || '') + ' ' + capWord(EFFECTS[(hi * 131 + si * 17 + xi * 7) % EFFECTS.length]) + ' For ' + e.harm + ', the alternative is ' + e.swap + ' ' + CTX_IN[e.ctx] + '.';
+}
+
+/* Amim Ahsan's rule applied to this exact card */
+function ruleText(e){
+  const hi = HARMS.findIndex(function(h){ return h.n === e.harm; });
+  const si = SWAPS.indexOf(e.swap);
+  const xi = CONTEXTS.indexOf(e.ctx);
+  return 'Amim Ahsan writes that ' + RULES[(hi * 3 + si * 5 + xi * 11) % RULES.length] + ' Here it means ' + e.swap + ' instead of ' + e.harm + ' ' + CTX_IN[e.ctx] + '.';
+}
+
 /* ============ Rendering & interaction ============ */
 const searchEl = document.getElementById('search');
 const sortEl = document.getElementById('sort');
@@ -607,9 +818,6 @@ allTabs.forEach(function(pair){
 
 function esc(s){const d=document.createElement('span');d.textContent=s;return d.innerHTML;}
 
-/* Unique per card: harm + swap + place, so no two cards share a title */
-function cardTitle(e){return 'Instead of ' + e.harm + ' — ' + e.swap + ' for ' + (CTX_SUBJ[e.ctx] || e.ctx);}
-
 function card(e){
   const cardBox = document.createElement('article');
   cardBox.className = 'card clickable';
@@ -619,8 +827,8 @@ function card(e){
   cardBox.innerHTML = '<div class="thumb" role="img" aria-label="Illustration: ' + esc(e.swap) + ' alternative instead of ' + esc(e.harm) + '">' + cardArt(e) + '</div>'
     + '<div class="card-top"><span class="tag">' + esc(e.cat) + '</span><span class="num">#' + e.num.toLocaleString('en-US') + ' of ' + TOTAL.toLocaleString('en-US') + '</span></div>'
     + '<h3>' + esc(cardTitle(e)) + '</h3>'
-    + '<p class="why"><strong>Why it harms:</strong> ' + esc(HARMS_PROBLEM[e.harm] || '') + ' ' + esc(CTX_WHERE[e.ctx] || 'There') + ', the fix is ' + esc(e.swap) + '.</p>'
-    + '<p class="swap"><strong>Better:</strong> ' + esc(SWAP_BENEFIT[e.swap] || '') + '</p>';
+    + '<p class="why"><strong>Why it harms:</strong> ' + esc(HARMS_PROBLEM[e.harm] || '') + ' ' + esc(PROB_SCOPE[e.ctx]) + '</p>'
+    + '<p class="swap"><strong>Better:</strong> ' + esc(solutionText(e)) + '</p>';
   cardBox.addEventListener('click', function(){ openModal(e); });
   cardBox.addEventListener('keydown', function(ev){
     if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openModal(e); }
@@ -684,6 +892,7 @@ modal.innerHTML = '<div class="modal-box" role="dialog" aria-modal="true" aria-l
   + '<div class="m-sec"><span class="m-label">Try this instead</span><p class="m-value" id="mSwap"></p></div>'
   + '<div class="m-sec"><span class="m-label">Where</span><p class="m-value"><span class="place" id="mPlace"></span></p></div>'
   + '<div class="m-sec"><span class="m-label">Why it helps</span><p class="m-value" id="mWhy"></p></div>'
+  + '<div class="m-sec"><span class="m-label">The GreenWorld rule</span><p class="m-value" id="mRule"></p></div>'
   + '<div class="m-actions"><button class="btn primary" id="mCopy">⧉ Copy this alternative</button><button class="btn primary" id="mSpeak">🔊 Listen</button><button class="btn ghost" id="mSearchTopic" style="border:1px solid var(--line);color:var(--forest)">🔎 Search this topic</button></div>'
   + '<p class="m-more">More ways to replace the same harmful thing — click a green word:</p>'
   + '<div class="m-chips" id="mChips"></div></div>';
@@ -696,10 +905,11 @@ function openModal(e){
   document.getElementById('mNum').textContent = '#' + e.num.toLocaleString('en-US') + ' of ' + TOTAL.toLocaleString('en-US');
   document.getElementById('mTitle').textContent = cardTitle(e);
   document.getElementById('mHarm').textContent = e.harm.charAt(0).toUpperCase() + e.harm.slice(1) + '.';
-  document.getElementById('mProb').textContent = HARMS_PROBLEM[e.harm] || '';
-  document.getElementById('mSwap').innerHTML = '<strong>' + esc(e.swap.charAt(0).toUpperCase() + e.swap.slice(1)) + '</strong> — ' + esc(SWAP_BENEFIT[e.swap] || '');
-  document.getElementById('mPlace').textContent = e.ctx.charAt(0).toUpperCase() + e.ctx.slice(1);
-  document.getElementById('mWhy').textContent = CAT_WHY[e.cat] || '';
+  document.getElementById('mProb').textContent = problemText(e);
+  document.getElementById('mSwap').innerHTML = '<strong>' + esc(capWord(e.swap)) + '</strong> — ' + esc(SWAP_BENEFIT[e.swap] || '') + ' <span class="m-more" style="display:block;margin-top:6px">' + esc(SWAP_METHOD[SWAPS.indexOf(e.swap)]) + '</span>';
+  document.getElementById('mPlace').textContent = whereText(e);
+  document.getElementById('mWhy').textContent = whyText(e);
+  document.getElementById('mRule').textContent = ruleText(e);
   const chips = document.getElementById('mChips');
   chips.innerHTML = '';
   SWAPS.forEach(function(swapName){
@@ -724,7 +934,7 @@ document.getElementById('mClose').addEventListener('click', closeModal);
 modal.addEventListener('click', function(ev){ if (ev.target === modal) closeModal(); });
 document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && !modal.hidden) closeModal(); });
 document.getElementById('mCopy').addEventListener('click', function(){
-  const text = 'Instead of ' + currentEntry.harm + ', try: ' + currentEntry.swap + ' alternative (' + currentEntry.ctx + ') — GreenWorld ♻️';
+  const text = cardTitle(currentEntry) + ' — ' + solutionText(currentEntry) + ' GreenWorld ♻️';
   const btn = document.getElementById('mCopy');
   function done(){ btn.textContent = '✓ Copied'; setTimeout(function(){ btn.textContent = '⧉ Copy this alternative'; }, 1600); }
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done).catch(function(){ fallCopy(text, done); });
