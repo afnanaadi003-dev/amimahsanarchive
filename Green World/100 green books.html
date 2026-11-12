@@ -154,6 +154,8 @@ footer{padding:25px 0;background:#eae8df;color:var(--muted);font-size:11px}
 
 <script>
 const raw = [
+["Mass-Q-Rade: The Falling Star","Amim Ahsan","Mystery & Series","2026","The first Mass-Q-Rade book — the doorway into the fiction series the Amim Ahsan Archive is built around. Published on this site.",0,"","../Mass-Q-Rade-Book-Covers/book-1.png","../Mass-Q-Rade%20Book%201%20-%20The%20Falling%20Star.html"],
+["Dreams from My Father","Barack Obama","Memoir","1995","A personal journey through identity, family, race and the search for belonging.",468548,"/works/OL3246382W"],
 ["To Kill a Mockingbird","Harper Lee","Classic Fiction","1960","A landmark novel about justice, empathy and childhood in the American South.",14351077,"/works/OL3140822W"],
 ["1984","George Orwell","Dystopian","1949","A chilling vision of surveillance, propaganda and authoritarian power.",10541663,"/works/OL24143668W"],
 ["Pride and Prejudice","Jane Austen","Classic Fiction","1813","A witty romance exploring manners, class, first impressions and personal growth.",14348537,"/works/OL66554W"],
@@ -261,22 +263,24 @@ const raw = [
 ["My Life","Bill Clinton","Memoir","2004","Bill Clinton\'s own account of a small-town childhood, a political life and the presidency.",227454,"/works/OL19486W"],
 ["Putting People First: How We Can All Change America","Bill Clinton and Al Gore","Politics","1992","The 1992 campaign book setting out the policies Clinton and Gore took to voters.",6554961,"/works/OL19475W"]
 ];
-const books=raw.map((b,i)=>({id:i+1,title:b[0],author:b[1],category:b[2],year:b[3],description:b[4],cover:b[5],work:b[6]}));
+const books=raw.map((b,i)=>({id:i+1,title:b[0],author:b[1],category:b[2],year:b[3],description:b[4],cover:b[5],work:b[6],img:b[7],href:b[8]}));
 const colors=[["#315442","#d5f36a"],["#b65e45","#ffe2ae"],["#273e66","#e2c27c"],["#6d4a72","#f0d8a8"],["#315d69","#e7d8b4"],["#a66b2d","#fff0c5"],["#3c4c43","#c7dbbd"],["#8a3f51","#f5d5c9"]];
 let category="All books",query="",sort="default",page=1;
 const size=20;
 const $=id=>document.getElementById(id);
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function cover(b,big){let c=colors[(b.id*7+b.title.length)%colors.length];let fb=`<div class="cover fb" style="background:${c[0]}"><small>GREENWORLD LIBRARY · ${String(b.id).padStart(3,"0")}</small><b>${esc(b.title)}</b><small style="color:${c[1]}">${esc(b.author)}</small></div>`;
-if(!b.cover)return fb;
-let size=big?"-L":"-M";return `<div class="cover"><img src="https://covers.openlibrary.org/b/id/${b.cover}${size}.jpg" alt="Cover of ${esc(b.title)} by ${esc(b.author)}" loading="${big?"eager":"lazy"}" onerror="this.parentNode.outerHTML=this.dataset.fb" data-fb="${esc(fb)}"><span class="badge">Open Library</span></div>`}
+if(!b.cover&&!b.img)return fb;
+let size=big?"-L":"-M";let src=b.img?b.img:`https://covers.openlibrary.org/b/id/${b.cover}${size}.jpg`;return `<div class="cover"><img src="${src}" alt="Cover of ${esc(b.title)} by ${esc(b.author)}" loading="${big?"eager":"lazy"}" onerror="this.parentNode.outerHTML=this.dataset.fb" data-fb="${esc(fb)}"><span class="badge">${b.img?"Amim Ahsan Archive":"Open Library"}</span></div>`}
 function filtered(){let a=books.filter(b=>(category==="All books"||b.category===category)&&`${b.title} ${b.author} ${b.category} ${b.description}`.toLowerCase().includes(query.toLowerCase()));if(sort==="title")a.sort((x,y)=>x.title.localeCompare(y.title));if(sort==="author")a.sort((x,y)=>x.author.localeCompare(y.author));if(sort==="year")a.sort((x,y)=>parseInt(x.year)||0-parseInt(y.year)||0);return a}
 function drawChips(){let cats=["All books",...new Set(books.map(b=>b.category))];$("chips").innerHTML=cats.map(c=>`<button class="chip ${category===c?"active":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{category=b.dataset.cat;page=1;drawChips();draw()})}
 function draw(){let a=filtered(),total=Math.max(1,Math.ceil(a.length/size));page=Math.min(page,total);let shown=a.slice((page-1)*size,page*size);$("count").textContent=`Showing ${a.length?((page-1)*size+1):0}–${Math.min(page*size,a.length)} of ${a.length} books`;$("grid").innerHTML=shown.length?shown.map(b=>`<article class="card" tabindex="0" data-id="${b.id}">${cover(b)}<div class="meta"><div class="cat">${esc(b.category)}</div><h3>${esc(b.title)}</h3><div class="author">${esc(b.author)}</div><div class="year">${esc(b.year)}</div></div></article>`).join(""):`<p>No matching books. Try another search.</p>`;document.querySelectorAll("[data-id]").forEach(el=>{el.onclick=()=>showBook(+el.dataset.id);el.onkeydown=e=>{if(e.key==="Enter")showBook(+el.dataset.id)}});$("pages").innerHTML=total>1?Array.from({length:total},(_,i)=>`<button class="${page===i+1?"active":""}" data-page="${i+1}">${i+1}</button>`).join(""):"";document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>{page=+b.dataset.page;draw();$("catalog").scrollIntoView({behavior:"smooth"})})}
 function showBook(id){let b=books.find(x=>x.id===id);if(!b)return;
 let ol=b.work?"https://openlibrary.org"+b.work:"https://openlibrary.org/search?q="+encodeURIComponent(b.title+" "+b.author);
 let gb="https://www.google.com/search?tbm=bks&q="+encodeURIComponent(b.title+" "+b.author);
-$("details").innerHTML=`${cover(b,1)}<div class="cat" style="margin-top:20px">${esc(b.category)} · ${esc(b.year)}</div><h2>${esc(b.title)}</h2><b>By ${esc(b.author)}</b><p>${esc(b.description)}</p><p>Open Library keeps the catalogue record, edition details and lending copies for this book. Borrow from a library or buy from a bookseller to read it.</p><div class="modallinks"><a class="btn" href="${ol}" target="_blank" rel="noopener">Open Library record ↗</a><a class="btn light" href="${gb}" target="_blank" rel="noopener">Find it on Google Books ↗</a></div>`;
+let note=b.href?"This is one of Amim Ahsan's own books. The full text is published free on this site — open it below.":"Open Library keeps the catalogue record, edition details and lending copies for this book. Borrow from a library or buy from a bookseller to read it.";
+let links=(b.href?`<a class="btn" href="${b.href}">Read this book on this site ↗</a>`:"")+(b.cover?`<a class="btn${b.href?" light":""}" href="${ol}" target="_blank" rel="noopener">Open Library record ↗</a><a class="btn light" href="${gb}" target="_blank" rel="noopener">Find it on Google Books ↗</a>`:"");
+$("details").innerHTML=`${cover(b,1)}<div class="cat" style="margin-top:20px">${esc(b.category)} · ${esc(b.year)}</div><h2>${esc(b.title)}</h2><b>By ${esc(b.author)}</b><p>${esc(b.description)}</p><p>${note}</p><div class="modallinks">${links}</div>`;
 $("modalbg").classList.add("open")}
 function closeModal(){$("modalbg").classList.remove("open")}
 function heroArt(){let picks=[72,35,105,91,41].map(i=>books[i]).filter(Boolean);$("heroArt").innerHTML=picks.map((b,k)=>`<div class="herojack j${k+1}">${cover(b)}</div>`).join("")}
