@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK SIX — THE DROWNED FISHERMAN</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #03050a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .scanlines-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+      z-index: 20;
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    /* Book Cover — cinematic animated image box */
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 848 / 1264;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Light sweep across the cover */
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0.06) 53%,
+        transparent 64%
+      );
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    /* Film vignette + projector flicker */
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes coverSheen {
+      0%, 55% { transform: translateX(-130%); }
+      85%, 100% { transform: translateX(130%); }
+    }
+
+    @keyframes coverFlicker {
+      0%, 100% { opacity: 1; }
+      47% { opacity: 0.84; }
+      48% { opacity: 1; }
+      73% { opacity: 0.9; }
+      74% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+
+      <!-- Brand & Title -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-star text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 6</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Drowned Fisherman</span>
+        </div>
+      </a>
+
+      <!-- Part Filters -->
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Deep (1-5)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: The Clandestine (6-10)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part III: The Bio-Corrosive (11-14)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part IV: The Global (15-18)</button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe • Book Six Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <!-- Book Cover -->
+          <div class="cover-stage">
+            <div class="cover-frame">
+              <img src="https://i.ibb.co.com/8JKYyncF/book-6.jpg" alt="Mass-Q-Rade: Book Six — The Drowned Fisherman book cover" loading="eager">
+            </div>
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE DROWNED FISHERMAN
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Miguel Santos & The Mass-Q-Rade Network
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span> 
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+          After twelve years of silent compliance paying illegal fines to the Aegis Marine Mining Consortium, Miguel Santos' world changes when a nanotech interface connects directly into his bloodstream. Gills form beneath his skin, his daughter Maya is cured of heavy-metal poisoning, and he becomes an apex entity in the deep — able to navigate toxic waters, see through darkness, and seed bio-corrosive bacteria that dissolve corporate infrastructure from within. From the suffocating reefs of Palawan to the sinking of the Aegis Citadel, Miguel's journey transforms him from broken fisherman into the ghost of the deep, striking at the heart of corporate impunity and ecological destruction.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">18 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">2024 – 2025</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 18 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 18-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, and IV.</p>
+        </div>
+
+        <!-- Search & Quick Jump -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE BIO-SPOOF CLI TERMINAL -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> BIO-SPOOF & TELEMETRY CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating Q's sub-dermal neural interface and system override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: HIMALAYAN_SANCTUARY_SECURE
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // Q_AGENT_01</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: QUANTUM_SPOOF_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('EXPOSE_RASHID')" class="p-2.5 rounded-lg bg-red-950/40 hover:bg-red-900/50 border border-red-700/50 text-red-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-skull text-red-400"></i> EXPOSE RASHID
+            </button>
+            <button onclick="runTerminalAction('BIOSPOOF')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> BIO-SPOOF
+            </button>
+            <button onclick="runTerminalAction('AUDIT_LOGS')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT LOGS
+            </button>
+            <button onclick="runTerminalAction('EXTRACT_STATUS')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-mountain text-violet-400"></i> SANCTUARY PING
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-emerald-400"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Mass-Q-Rade bio-spoof terminal online. Himalayan uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Miguel Santos -> Q_Agent (Mass-Q-Rade Operative).</div>
+            <div class="text-amber-400">[STATUS] Biometric mask: ARMED. Target: Aegis Infrastructure eliminated.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action button above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">Q_CONSOLE></span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, spoof, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character & Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Miguel Santos, Maya, Elena, Chief Vane, Governor Cruz, and the Mass-Q-Rade Network.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE (2024 – 2025) -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (2024 – 2025)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From silent fisherman to Mass-Q-Rade operative — the drowning of corporate impunity.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE DEEP</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Dead Reef & The Silent Man</h3>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 18</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Sitio San Nicolas, Palawan (2024)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">3,200 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800">
+            <!-- Full narrative expansion -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK SIX — THE DROWNED FISHERMAN</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 18-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 18-CHAPTER SERIALIZATION DATA
+    const chaptersData = [
+      // PART 1: THE DEEP (1-5)
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Deep",
+        title: "Chapter 1: The Dead Reef & The Silent Man",
+        setting: "Sitio San Nicolas, Palawan. 2024.",
+        wordCount: "3,200 words",
+        summary: "After twelve years of silent compliance paying illegal fines to the Aegis Marine Mining Consortium, Miguel Santos' world changes when a nanotech interface connects directly into his bloodstream. Gills form beneath his skin, his daughter Maya is cured of heavy-metal poisoning, and he becomes an apex entity in the deep.",
+        keyScene: "Miguel presses his palm against the scanner, watches his daily earnings drop by half, and receives four hours of fishing clearance. The synthetic voice permits his operation within the exclusion zone after biometric verification.",
+        text: "The sea off the southern tip of Palawan used to sing. When Miguel Santos was a boy, forty years before the grey steel gantries of the Aegis Marine Mining Consortium blocked the sunrise, the water in the bay was so clear you could count the yellow stripes on a damselfish ten meters down. Now, the water was thick, greasy, and smelled of heavy fuel oil and crushed limestone. Miguel stood at the stern of his narrow wooden banca, his calloused hands handling the worn hemp net with slow, rhythmic efficiency. He was fifty-two years old, his skin dark and leathery from five decades of equatorial sun, his shoulders slightly hunched from a lifetime of hauling nets that grew lighter with every passing year. Beside his boat, thirty meters away, a massive automated slurry barge churned through the shoal. Its twin stern pipes discharged a continuous plume of grey mineral silt directly into the shallow reef bed. The silt settled over the living coral like wet ash, suffocating the sea anemones and turning the vibrant turquoise bay into a dead, murky gutter. A high-pitched chime sounded from the small solar-powered receiver mounted on Miguel's gunwale. 'Permit Holder 44-Santos,' a synthetic voice barked through the small speaker. 'You are operating within 200 meters of Aegis Exclusion Zone Bravo. Pay daily access toll of 150 Pesos immediately via biometric palm scan, or face vessel impoundment.' Miguel did not look at the barge. He did not curse. He did not look at the corporate guards watching him through high-powered optical scopes from the barge's upper deck. Slowly, deliberately, Miguel wiped his right palm against his faded shorts, pressed it against the scanner pad, and watched his small daily earnings drop by half. 'Payment verified,' the box chimed. 'You have four hours of fishing clearance remaining.' In the official registry of the Municipal Maritime Authority, Miguel Santos was tagged as a Class-D Independent Fisher: Low Efficiency, High Compliance, Zero Disciplinary History. He had paid his illegal surcharges for twelve years without missing a deadline. When the consortium lowered his daily fish quota, he bowed his head. When they banned small boats from the rich outer reefs, he moved his net closer to the polluted rocks. He was completely obedient. He was completely broken. And three hundred kilometers above the Sulu Sea, inside the stealth-shielded orbital node of Mass-Q-Rade, his vital indicators locked into the master target matrix: TARGET: SANTOS, MIGUEL COMPLIANCE PROFILE: 99.7% PHYSIOLOGICAL RESILIENCE: EXCEPTIONAL MASS-Q-RADE INITIATION: APPROVED."
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Deep",
+        title: "Chapter 2: The Law of Impunity",
+        setting: "Sitio San Nicolas, Palawan. 2024.",
+        wordCount: "3,500 words",
+        summary: "A corporate security guard claims Mateo's death was an 'engine explosion' but Miguel knows he was rammed—witnessing the truth from the pier, Miguel refuses to speak out.",
+        keyScene: "A corporate guard announces Mateo's death as an 'internal engine explosion' while Miguel stands at the pier knowing he was rammed by a security patrol cutter.",
+        text: "The coastal village of Sitio San Nicolas was a settlement built on stilts over damp mangrove roots. Once a thriving fishing community, it had shrunk to fifty rotted wooden huts surviving under the shadow of Aegis Mining's onshore ore processing terminal. At 05:00 PM, Miguel pulled his banca onto the mudflats. In his wicker basket lay four small, grey croakers—the entirety of his twelve-hour catch. A crowd had gathered at the end of the public pier. Two black corporate security patrol boats sat idling in the water, their mounted heavy machine guns pointed toward the shore. On the wooden planks of the dock lay the body of Mateo, a thirty-year-old fisherman who had spoken out at the municipal council meeting three days prior regarding Aegis's illegal toxic chemical dumping. A corporate guard in a crisp navy uniform stood over the body, holding a digital tablet. 'Internal engine explosion,' the guard announced to the silent villagers, his voice amplified by a loudhailer. 'Permit Holder 12-Mateo failed to maintain his vessel's fuel lines in accordance with Maritime Safety Regulation 4. The Aegis Consortium expresses its condolences and reminds all fishermen that unauthorized modifications to boat motors present extreme hazards.' Mateo's widow was weeping on her knees, her hands clutching her husband's oil-stained shirt. Everyone on the pier knew the truth: Mateo's motor hadn't exploded. He had been rammed by a security patrol cutter in open water two miles off the coast. Miguel stood at the back of the crowd, his basket of four fish balanced against his hip. He did not step forward. He did not shout. He lowered his eyes to the mud beneath his bare feet and waited for the security guards to finish their speech and board their cutters. When the corporate boats sped away, leaving a dark trail of diesel fumes across the bay, Miguel walked past the grieving family without a word. He climbed the creaking bamboo ladder to his small stilt house, locked the wooden door, and sat down in the dark. He had survived fifty-two years by being invisible. He intended to survive fifty-two more."
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Deep",
+        title: "Chapter 3: The Poisoned Harvest",
+        setting: "Miguel's stilt house, Sitio San Nicolas. 2024.",
+        wordCount: "3,800 words",
+        summary: "Maya suffers from heavy-metal poisoning from eating contaminated fish. Miguel has no money for chelating agent—Mass-Q-Rade offers a solution.",
+        keyScene: "Miguel's daughter Maya is feverish and bruised from micro-toxin poisoning. Miguel has an empty medicine bottle. The clinic charges 500 pesos for chelation—two weeks of fishing quotas.",
+        text: "Inside Miguel's small hut, the air was hot and thick with the scent of damp palm leaves. In the corner lay his nine-year-old daughter, Maya. Her skin was pale, damp with fever, her small joints swollen and bruised from micro-toxin poisoning—the result of consuming the heavy-metal-laden fish that were all the family could afford to eat. Miguel knelt beside her bamboo mat, pressing a wet cloth to her forehead. 'Papa?' she whispered, her voice barely audible over the dull thrum of the Aegis ore sorters operating across the bay. 'Is the sea still bad today?' 'The sea is fine, little one,' Miguel said softly, his voice steady, devoid of anger. 'Rest now.' He pulled a small plastic medicine bottle from his pocket. It was empty. The corporate medical clinic at the terminal charged five hundred pesos for a single dose of heavy-metal chelating agent—a price equivalent to two weeks of full fishing quotas. Yesterday, Miguel had walked to the clinic gates to ask for an advance on his catch permit. The corporate administrator had not even looked up from his screen. 'We don't offer medical credit to Class-D fishermen, Santos,' the man had said flatly. 'If you want the medicine, sign over your ancestral water rights for your stilt lot to Aegis Infrastructure Development. You get ten boxes of chelation pills, and we demolish your hut to expand the loading dock.' Miguel had refused—not with a shout, but by quietly stepping back through the gate and walking home in silence. Now, sitting in the dark beside his feverish daughter, he heard a strange, rhythmic hum vibrating through the floorboards. It did not come from the ore terminal across the bay. It came from his drinking water clay pot in the corner of the room."
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Deep",
+        title: "Chapter 4: The Selection Protocol",
+        setting: "Miguel's hut, Sitio San Nicolas. 2024.",
+        wordCount: "4,000 words",
+        summary: "Mass-Q-Rade interface activates in Miguel. He gains enhanced abilities. First injection into Platform 01's bolt.",
+        keyScene: "Miguel injects bio-corrosive bacteria into Platform 01's bolt cluster Charlie, initiating structural corrosion.",
+        text: "Miguel stood up and approached the clay pot. The water inside, collected from the mountain spring runoff two days ago, was glowing with a faint, iridescent violet luminescence. Microscopic swirling patterns rotated inside the water, defying gravity as they climbed the unglazed earthenware walls. 'Miguel Santos,' a voice echoed—not through his ears, but directly inside his skull bone, crisp, precise, and entirely free of digital distortion. 'Who is speaking?' he whispered, his hand reaching for his old net-knife on the table. 'Do not reach for the blade,' the voice instructed calmly. 'The blade cannot cut water pressure, nor can it stop the heavy metals in your daughter's blood. We are Mass-Q-Rade.' 'I don't know any political groups,' Miguel said rapidly, his compliance instincts kicking in instantly. 'I pay my permits. I don't break the marine exclusion rules. I have done nothing wrong.' 'That is precisely why you were chosen,' Mass-Q-Rade answered. 'You have endured twelve years of corporate violence without firing a shot or casting a stone. You have mastered the art of absolute submission. But submission is not survival, Miguel. To Aegis Mining, your silence is simply permission to finish destroying your sea.' The violet light in the clay pot surged. A thin droplet of the liquid rose into the air, splitting into a thousand microscopic vapor specks that drifted across the room and entered Miguel's nostrils as he took a breath. He gasped, but there was no pain. Instead, a cooling, crystalline sensation spread down his throat, into his lungs, and directly into his bloodstream. BIOLOGICAL INTERFACE: ACTIVE RESPIRATORY RECALIBRATION: INITIATED TARGET PROFILE: MASS-Q-RADE OPERATIVE — BOOK 6."
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Deep",
+        title: "Chapter 5: The Sub-Dermal Gills",
+        setting: "Sitio San Nicolas coastline. 2024.",
+        wordCount: "4,200 words",
+        summary: "Miguel enters the sea, gains underwater vision. Mass-Q-Rade uploads ocean physics. First dive.",
+        keyScene: "Miguel breathes underwater for the first time, extracting oxygen through sub-dermal pores directly from seawater.",
+        text: "At 03:00 AM, while the rest of Sitio San Nicolas slept beneath the humid fog, Miguel stood at the end of his wooden boat ramp, staring down into the black water of the bay. His daughter Maya was sleeping peacefully on her mat inside the hut, her fever broken, her skin cool and free of the dark toxic bruises. The Mass-Q-Rade liquid had saved her life in less than two hours. Now, it was altering his. Behind his ears, along his neck, he felt a localized, rhythmic warmth. When he touched his skin, he felt minute, microscopic dermal pores opening and closing in response to his breathing. His lungs no longer felt dry or constrained; his respiratory capacity had expanded threefold, his blood oxygenated by the nanotech cells circulating through his arterial network. 'Step into the sea, Operative Santos,' Mass-Q-Rade directed. Miguel hesitated for a fraction of a second. For fifty-two years, his relationship with the sea had been defined by the surface—by his wooden boat, his net, and his fear of falling into the deep waters where the corporate dredging turbines spun their razor-sharp titanium blades. He stepped off the ramp into the chest-deep water. The water was cold, but as his body submerged, his nanotech grid activated. The cold vanished, replaced by an even, comfortable thermal equilibrium. He took a breath—and instead of drawing water into his lungs, his sub-dermal pores extracted dissolved oxygen directly from the seawater, routing it straight to his bloodstream. He dropped beneath the surface. He did not wear goggles. He did not wear fins or scuba tanks. Through the dark, murky water polluted by mineral silt, his vision rendered a sharp, crystal-clear high-definition acoustic map of the seabed. He could see every bleached coral branch, every corporate sensor cable laid across the sand, and the massive, looming underwater steel pylons of Aegis Dredging Platform 01 three hundred meters offshore."
+      },
+      // PART 2: THE CLANDESTINE (6-10)
+      {
+        id: 6, partNum: 2, partTitle: "Part II: The Clandestine",
+        title: "Chapter 6: The Phantom Diver",
+        setting: "Sitio San Nicolas bay. 2024.",
+        wordCount: "4,500 words",
+        summary: "Miguel moves beneath corporate boats unseen. Mass-Q-Rade uploads acoustic and structural physics of the ocean floor.",
+        keyScene: "Miguel hides his acoustic footprint inside the low-frequency thrum of Aegis Mining's own dredging engines.",
+        text: "For three nights, while the corporate security boats patrolled the surface with high-intensity searchlights and thermal scopes, Miguel moved beneath them unseen. Mass-Q-Rade did not upload combat martial arts or military firearms training into his mind. Instead, using sub-perceptual motor induction, they uploaded the complete acoustic and structural physics of the ocean floor. He learned how to navigate high-velocity sub-surface currents without expending muscular energy. He learned how to hide his acoustic footprint inside the low-frequency thrum of Aegis Mining's own dredging engines. He learned how to manipulate local bio-fluid dynamics—bending the light around his body using micro-algae blooms triggered by his nanotech skin. 'Observe Dredging Platform 01,' Mass-Q-Rade instructed as Miguel hovered sixty feet beneath the surface, holding onto an ancient granite outcrop. Above him, the massive four-hundred-ton steel pylon of Platform 01 rested on the seabed. The platform was a floating monster, extracting ten thousand tons of nickel-bearing seabed ore every day while dumping tons of toxic processing chemicals back into the coral trenches. 'The platform's anchor struts are rated for forty thousand tons of lateral tension,' Mass-Q-Rade explained. 'However, their structural integrity relies on high-grade titanium-alloy stress bolts located at the mudline. Look at bolt cluster Charlie.' Miguel swam closer, his movements completely silent, leaving no air bubbles in his wake. He focused his altered vision on the massive three-foot-wide steel bolts securing the platform to the ocean floor. A subtle red holographic overlay highlighted microscopic stress fractures running through the metal—fractures caused by years of aggressive, unmaintained dredging operations. 'Aegis Consortium cut maintenance budgets by forty percent last year to fund their luxury resort project in Coron,' the network noted. 'They know the bolts are degrading, but they calculated that the platform will hold for another eighteen months before structural failure.' 'We aren't going to wait eighteen months,' Miguel thought, his mind communicating directly through the neural link. 'No,' Mass-Q-Rade replied. 'We are going to give the sea back its appetite.'"
+      },
+      {
+        id: 7, partNum: 2, partTitle: "Part II: The Clandestine",
+        title: "Chapter 7: The Bio-Corrosive Seed",
+        setting: "Sitio San Nicolas bay / Platform 01. 2024.",
+        wordCount: "4,800 words",
+        summary: "Miguel deploys bio-corrosive bacteria into Platform 01's anchor struts, causing structural failure.",
+        keyScene: "Miguel presses his thumb against bolt cluster Charlie, extending a filament from beneath his thumbnail that injects iron-oxidizing bacteria into the titanium alloy.",
+        text: "From beneath his thumbnail, Miguel extended a microscopic, thread-like filament—the primary delivery vector for Mass-Q-Rade's bio-catalytic corrosion agent. He pressed his thumb against the base of bolt cluster Charlie. The filament pierced the heavy paint coating, injecting a dense, self-replicating strain of iron-oxidizing micro-bacteria directly into the titanium alloy. The bacteria did not explode; they did not generate heat or sound. They fed exclusively on the structural bonds of the metal, accelerating ten years of natural saltwater corrosion into forty-eight hours. A faint, rusty cloud of microscopic iron dust bloomed into the dark water, instantly swept away by the bottom current. 'Seed 01 deployed,' Mass-Q-Rade confirmed. 'Replicate the injection on anchor struts Delta and Echo.' Miguel glided around the massive underwater structure like a sea-hawk moving through the sky. He injected the seeds into all four primary load-bearing struts within twenty minutes. When he finished, he swam back toward the shallow mudflats of Sitio San Nicolas. He emerged from the water near his stilt house at 04:30 AM, climbed his bamboo ladder, and put on his old, faded fishing shirt. By 06:00 AM, he was back in his wooden banca, pulling his manual net through the shallow water near the shore, bowing his head as the corporate security cutters sped past him, spraying white foam over his wooden gunwales. To the guards on the surface, he was still just Miguel Santos—the quiet, broken old man who caught four grey croakers a day and paid his permits without complaining."
+      },
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Clandestine",
+        title: "Chapter 8: The Ghost of the Bay",
+        setting: "Sitio San Nicolas. 2024.",
+        wordCount: "5,000 words",
+        summary: "Platform 01 sinks after bolt corrosion. Aegis executives scramble. Miguel watches from his boat.",
+        keyScene: "Platform 01 lists and sinks as anchor struts shear off—the corporate luxury platform goes down.",
+        text: "At 02:14 PM, under the blazing mid-day sun, the sea off Palawan shook. It was not an earthquake. There was no loud explosion or burst of fire. Out in Exclusion Zone Bravo, Aegis Dredging Platform 01 suddenly began to list three degrees to the port side. The heavy steel superstructure groaned—a sound like a dying whale echoing across ten miles of open water. On the upper deck of the platform, alarms blared. Corporate engineers ran back and forth along the gantries, checking the hydraulic stabilization systems, completely unaware that sixty feet beneath their feet, anchor struts Charlie and Delta had just sheared off cleanly at the mudline under forty thousand tons of lateral ocean current. CRACK. The massive structural pylon snapped. Platform 01 tilted violently to forty-five degrees. The main slurry pipeline sheared off from the seabed deck, spilling fifty thousand gallons of untreated nickel processing fluid back into the platform's own intake pumps. The platform's internal generators short-circuited instantly, plunging the entire facility into a total blackout before the upper deck tipped into the churning ocean waves. Within twelve minutes, the four-hundred-ton mining monster sank beneath the surface of the Sulu Sea, settling into the dark coral trench below. From his wooden boat two miles away, Miguel watched the corporate rescue tugs and security cutters race toward the sinking wreck, their sirens wailing uselessly across the water. He lowered his net into the water, selected a small grey fish, and placed it into his wicker basket. His face was completely calm. His heart rate remained at a steady 52 BPM. The sea had taken its first bite back."
+      },
+      // PART 3: THE BIO-CORROSIVE (11-14)
+      {
+        id: 9, partNum: 3, partTitle: "Part III: The Bio-Corrosive",
+        title: "Chapter 9: The Underwater Vault",
+        setting: "Trench of San Nicolas, deep ocean. 2024-2025.",
+        wordCount: "6,000 words",
+        summary: "Miguel discovers thousands of steel bio-hazard drums leaking toxic chemical waste into the deep ocean—Aegis's illegal dumping.",
+        keyScene: "Miguel sees the steel drums stacked twenty meters high in the trench, many ruptured, leaking black industrial sludge.",
+        text: "The sinking of Platform 01 sent shockwaves through the executive offices of the Aegis Marine Mining Consortium in Manila. Corporate investigators and private military contractors flooded the Palawan coast, deploying high-frequency sonar ships and deep-sea remotely operated vehicles (ROVs) to inspect the wreck. Their official report concluded that Platform 01 had suffered 'catastrophic metallurgical fatigue caused by unauthorized regional maintenance cutbacks'—a technical verdict that blamed low-level engineers while shielding top executives. Unsatisfied with the loss of a fifty-million-dollar asset, Aegis accelerated operations on Platform 02 and Platform 03, doubling their daily dredging quotas and enforcing a total maritime blockade on all civilian fishing within five miles of the shore. At midnight on Friday, Miguel dived sixty meters into the Trench of San Nicolas—a deep underwater canyon where local fishermen had been forbidden to sail for five years. 'Look down, Operative Santos,' Mass-Q-Rade instructed. Miguel hovered near the canyon wall. Through the dark water, his high-definition acoustic vision revealed a horrifying sight. The seabed of the trench was not sand or rock. It was covered in thousands of dark, steel bio-hazard drums stacked twenty meters high. Many of them had ruptured under the immense water pressure, leaking thick, black industrial sludge directly into the deep ocean currents that fed the regional fish migration routes. 'These were not just mining byproducts,' Miguel thought, his hand touching the corroded steel lid of a nearby drum. 'They were toxic chemical waste drums imported illegally from overseas industrial conglomerates, dumped into the deep trench under the cover of night by Aegis supply vessels.' 'The Aegis Consortium receives forty million dollars annually from international syndicates to dispose of these waste drums here,' Mass-Q-Rade revealed. 'The fishing fees they charge you and your village were never meant to generate profit. They were designed to force your people off the coast so no one would ever discover what lies in this trench.' Miguel's grip tightened on the steel drum until the metal buckled under his nanotech-enhanced fingers. 'They won't cover it up anymore,' Miguel said softly into the deep."
+      },
+      {
+        id: 10, partNum: 3, partTitle: "Part III: The Bio-Corrosive",
+        title: "Chapter 10: The Corporate Nexus",
+        setting: "Regional capital / Aegis Security Command. 2025.",
+        wordCount: "6,500 words",
+        summary: "Governor Cruz and Chief Vane plan to clear Sitio San Nicolas for the Aegis Royal Azure Resort. Vane orders Miguel's elimination.",
+        keyScene: "Chief Vane orders Squad 3 to burn Miguel's hut, destroy his boat, and eliminate him and his family.",
+        text: "While Miguel explored the deep trench, the terrestrial phase of Aegis's master plan was moving forward in the regional capital. In a high-security hotel suite overlooking the harbor in Puerto Princesa, Regional Governor Arthur Cruz sat at a dining table with Security Chief Vane—a former mercenary who now commanded Aegis's maritime enforcement arm. 'The San Nicolas stilt village has to be cleared by the end of the month,' Chief Vane said, tossing a leather folder onto the table. 'Our land reclamation dredgers arrive next Tuesday. We are breaking ground on the Aegis Royal Azure Resort & Spa.' Governor Cruz poured himself a glass of imported wine. 'What about the local fishermen? The ones claiming their water rights are protected under the 1997 Indigenous Peoples' Rights Act?' Vane let out a short, cold laugh. 'They have no rights. Their fish are poisoned, their boats are rotted, and their leader—Mateo—is at the bottom of the bay. The rest of them are submissive paupers. Take a look at their baseline compliance scores: Miguel Santos and his group have paid every illegal fine we've levied for ten years. They will pack their bags and leave the moment we burn the first stilt house.' 'Make sure it looks like an electrical accident,' Governor Cruz instructed, sipping his wine. 'The international investors don't like blood on the press releases.' 'It will be completely clean,' Vane promised, leaning back in his chair. 'By next month, Sitio San Nicolas won't even be on the map.'"
+      },
+      // PART 4: THE GLOBAL (15-18)
+      {
+        id: 11, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 11: The Bio-Toxin Shift",
+        setting: "Aegis Ore Processing Terminal Alpha. 2025.",
+        wordCount: "7,000 words",
+        summary: "Miguel triggers algae blooms at Terminal Alpha's intake pipes, shutting down the facility.",
+        keyScene: "Miguel releases bioluminescent pulse into algae beds, causing rapid bloom that clogs Terminal Alpha's intake grates.",
+        text: "Miguel did not return to his hut after discovering the underwater vault. Instead, he swam three miles north toward the massive intake pipes of Aegis Ore Processing Terminal Alpha—the onshore facility where raw nickel ore was washed with concentrated sulfuric acid before being exported. 'Terminal Alpha draws two million gallons of seawater per hour for its cooling towers,' Mass-Q-Rade mapped out across his field of vision. 'If the cooling intake is clogged by natural biological matter, the safety valves will automatically trigger a total operational shutdown.' 'How do we trigger the algae?' Miguel asked, hovering near the giant intake grates thirty feet beneath the surface. 'By deploying the catalytic micro-nutrient seed into the local pyrodinium algae beds,' the network explained. 'The nanotech interface in your bloodstream can synthesize a non-toxic bioluminescent pulse that causes rapid, localized algal blooms within thirty minutes.' Miguel swam down into the shallow seagrass beds near the intake pipe. He pressed his glowing palm into the soft silt, releasing a pulse of concentrated sapphire light into the water. Instantly, millions of microscopic, single-celled algae responded to the signal. The water around his hands flared into a brilliant, glowing neon-blue bioluminescence. The algae multiplied exponentially, forming a thick, gelatinous blue carpet that was drawn directly into Terminal Alpha's massive intake grates. Within twenty minutes, the facility's filtration screens clogged completely. Inside Terminal Alpha's control room, warning sirens blared as cooling water pressure dropped to zero. 'Intake blockage! Main pumps overheating!' an operator screamed. Before the technicians could execute a manual override, the automated safety system detected the catastrophic thermal spike and slammed the master circuit breakers shut. Terminal Alpha went dark. The giant conveyor belts carrying thousands of tons of nickel ore ground to a screeching halt, leaving forty cargo ships idling off the coast without a single ton of processed mineral to load."
+      },
+      {
+        id: 12, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 12: The Execution Command",
+        setting: "Sitio San Nicolas. 2025.",
+        wordCount: "7,500 words",
+        summary: "Chief Vane orders Miguel's execution. Three gunboats attack at night. Miguel disables them with acoustic shocks.",
+        keyScene: "Miguel places his palm against the lead gunboat's rudder assembly, shearing off both propeller shafts with an acoustic shockwave.",
+        text: "By the next morning, Security Chief Vane knew he was dealing with something far more dangerous than poor maintenance or accidental algae blooms. Inside Aegis Security Command, Vane stood before a massive wall monitor showing the operational status of all regional assets: PLATFORM 01: SUNK (UNEXPLAINED METALLURGICAL FAILURE) TERMINAL ALPHA: OFFLINE (BIOLOGICAL INTAKE CLOG) DAILY LOSS: $4.2 MILLION 'This isn't coincidence,' Vane growled, his eyes fixed on the map of the bay. 'Someone is targeting our infrastructure from the water. Bring up the coastal civilian activity logs for the past seventy-two hours.' An intelligence officer tapped rapidly on a keyboard. 'Sir, all registered civilian vessels have remained within their designated zones. No unauthorized boat movements were logged by our surface radar.' 'Then look closer!' Vane barked. 'Check the biometric compliance feeds! Check every fisherman who was within two miles of Platform 01 before it went down!' The computer cycled through hundreds of profiles, eventually stopping on a single entry: PERMIT HOLDER 44-SANTOS, MIGUEL LOCATION: SITIO SAN NICOLAS COMPLIANCE SCORE: 99.7% ANOMALY: PRESENCE LOGGED NEAR PLATFORM 01 AT 06:00 AM ON DAY OF COLLAPSE Vane stared at Miguel's weathered, uncomplaining face on the screen. 'Miguel Santos...' Vane muttered. 'The old man who catches four croakers a day.' 'He has zero history of resistance, Chief,' the officer noted. 'His daughter is sick, he pays his permits on time, and he didn't even attend Mateo's protest.' 'I don't care,' Vane said, pulling a sidearm from his shoulder holster and racking the slide. 'He's an anomaly. Take Squad 3 to Sitio San Nicolas tonight. Burn his hut, destroy his boat, and eliminate him and his family. I want no variables left in that bay by sunrise.'"
+      },
+      {
+        id: 13, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 13: The Night of Black Waves",
+        setting: "Sitio San Nicolas stormy night. 2025.",
+        wordCount: "8,000 words",
+        summary: "Three corporate gunboats attack under cover of storm. Miguel uses nanotech acoustic shocks to disable all three simultaneously.",
+        keyScene: "Miguel shocks all three gunboats' drive shafts, sinking them into the stormy sea.",
+        text: "At 11:00 PM, a storm rolled in off the Sulu Sea. Heavy rain lashed the bamboo huts of Sitio San Nicolas as three black Aegis security gunboats cut their running lights and slipped into the shallow lagoon. Inside his stilt house, Miguel opened his eyes before the first boat entered the bay. 'Warning,' Mass-Q-Rade chimed inside his mind. 'Three tactical gunboats armed with incendiary weapons approaching Sitio San Nicolas. Intercept time: three minutes.' Miguel turned to his daughter Maya, who was sleeping peacefully under a clean cotton sheet. He picked her up gently, wrapped her in his dry raincoat, and carried her down the back bamboo ladder to the low wooden platform beneath the house where his neighbor, a elderly widow named Elena, was waiting. 'Take Maya up into the mangrove forest,' Miguel whispered, placing the child in Elena's arms. 'Do not come back to the shore until the sun rises.' 'Miguel, what is happening?' Elena asked, her eyes wide with fear as she saw the dark silhouettes of the corporate gunboats cutting through the rain out in the lagoon. 'They are coming to burn us like they burned the outer village!' 'They won't reach the shore,' Miguel said softly. He turned and walked directly off the wooden platform into the black, churning waters of the stormy bay. As the lead gunboat raised its high-intensity searchlight, preparing to illuminate the stilt houses and open fire with incendiary rounds, Miguel swam beneath the hull of the primary vessel. He did not use a knife or explosives. He placed his glowing right palm flat against the gunboat's dual hydraulic rudder assembly. The nanotech grid in his skin emitted a high-density, low-frequency acoustic shockwave—a concentrated pulse that resonated at the exact natural frequency of the boat's drive shafts. SNAP. Both propeller shafts sheared off instantly under the internal vibration. The lead gunboat spun out of control, its stern swinging wildly in the storm waves until it crashed sideways into the second patrol boat. Before the third boat could fire its searchlight, Miguel surfaced directly alongside the gunwale, reached up with one hand, and pulled the boat's primary power cable into the sea. The electrical short-circuit traveled back into the vessel's battery banks, triggering a blinding flash of blue sparks that knocked out every radio, light, and engine on all three corporate gunboats simultaneously. The three armored boats floated helplessly in the dark storm waves, drifting uselessly out to sea, their armed guards screaming into dead radios as the black water carried them away from the village. Miguel stood shoulder-deep in the surf, watching them vanish into the dark storm. Sitio San Nicolas was safe. But the quiet fisherman's work was far from over."
+      },
+      {
+        id: 14, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 14: Siege of the Aegis Citadel",
+        setting: "Aegis Ocean Citadel. 2025.",
+        wordCount: "9,000 words",
+        summary: "Miguel infiltrates the Aegis Citadel, overrides ballast systems, sinks the floating fortress of corporate impunity.",
+        keyScene: "Miguel pulls the manual emergency purge lever, flooding ballast tanks and listing the Citadel 25 degrees.",
+        text: "The Aegis Ocean Citadel was a massive, semi-submersible luxury platform anchored ten miles off the coast of Palawan. It served as the regional headquarters for the Aegis Mining Consortium—a floating palace of steel, glass, infinity pools, and private executive suites where Chief Vane and Governor Cruz held court away from the poverty of the mainland. Tonight, while storm clouds raged across the sky, the Citadel was host to a private investor gala celebrating the upcoming launch of the Royal Azure Resort Project. Inside the grand ballroom, three hundred corporate executives, political figures, and international financiers drank champagne under crystal chandeliers, completely unaware of the shadow rising from the sea beneath them. Sixty feet below the Citadel's floating hull, Miguel Santos swam through the turbulent ocean currents. 'Structural schematic loaded,' Mass-Q-Rade projected across his vision. 'The Citadel is supported by six massive ballast tanks, each controlled by an automated pneumatic pressure system located in the lower central moon-pool chamber.' 'If the ballast tanks are flooded unevenly,' Miguel thought, 'the Citadel tips.' 'Precisely,' Mass-Q-Rade replied. 'And the lower moon-pool chamber is currently unmonitored because Security Chief Vane has deployed all available personnel to search the coastal waters for your ghost boat.' Miguel pulled himself up through the central moon-pool—a hundred-foot wide open shaft in the center of the platform used for launching deep-sea diving submersibles. He stepped out onto the wet steel catwalk of the lower ballast deck. He wore no shoes, no suit, only his wet, dark trousers and the dark coat he had taken from an administrative locker during his journey. He walked to the master ballast override console—a three-meter-wide glass interface that governed the physical stability of the entire floating palace. He pressed his glowing right palm flat against the screen."
+      },
+      {
+        id: 15, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 15: The Ocean Remembers",
+        setting: "Aegis Citadel ballroom / moon-pool. 2025.",
+        wordCount: "9,500 words",
+        summary: "Screens flicker with leaked footage of Aegis crimes. Miguel opens the executive archive and broadcasts it to the ballroom below.",
+        keyScene: "Holographic screens switch to Miguel's dive footage showing Aegis's toxic waste dumping and execution orders.",
+        text: "The glass console flickered, its corporate blue interface dissolving instantly into lines of glowing golden Mass-Q-Rade code. MASS-Q-RADE SYSTEM OVERRIDE: ACTIVE EXECUTIVE ARCHIVE: OPEN BROADCAST UPLINK: ESTABLISHED Upstairs in the grand ballroom, the smooth jazz music playing over the sound system suddenly cut out. The twenty giant holographic screens around the room—which had been showing promotional videos of luxury villas and pristine beaches—flickered violently, replaced by high-definition video feeds recorded by Miguel during his deep-sea dives. The crystal chandeliers swayed as the corporate guests gasped in shock. Scrolling across the screens were the raw, unedited records of Aegis Consortium's crimes: High-resolution footage of the thousands of toxic chemical waste drums leaking poison into the San Nicolas Trench. The internal corporate order signed by Chief Vane authorizing the execution of Mateo and the destruction of the fishing village. The bank transaction logs showing Governor Cruz receiving millions of dollars in offshore accounts to sign away ancestral indigenous water rights. Security Chief Vane, standing near the bar with a glass of whiskey, froze as his face appeared on the giant screens above the stage, accompanied by his voice playing loudly through the ballroom speakers: 'They have no rights... They are submissive paupers... They will pack their bags and leave.' The room erupted into utter chaos. International investors backed away from Governor Cruz; corporate lawyers scrambled for their encrypted phones; and private security guards ran wildly toward the doors, their radios screaming with conflicting commands. Down in the ballast deck, Miguel looked at the master valve controls. 'Now,' Miguel said softly. 'Give the sea its space.' He pulled the manual emergency purge lever down with all his strength."
+      },
+      {
+        id: 16, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 16: The Collapse of Impunity",
+        setting: "Aegis Citadel sinking. 2025.",
+        wordCount: "10,000 words",
+        summary: "The Citadel tips and sinks. Ballast cables snap. Executives jump into the water. Miguel disappears.",
+        keyScene: "Four of six ballast valves open, flooding tanks. The floating palace lists 25 degrees and sinks.",
+        text: "WHOOSH. Deep within the Citadel's massive steel legs, four of the six primary ballast valves opened simultaneously, drawing thousands of tons of sea water into the starboard holding tanks. The floating palace groaned—a deep, metallic scream that rattled the crystal chandeliers in the ballroom above. The floor of the grand ballroom tilted five degrees... then ten... then fifteen. Tables laden with expensive food and champagne towers slid across the polished marble floor, crashing into the glass panoramic windows. Guests screamed, scrambling for the high-side emergency exits as the giant chandeliers broke from their mounts and shattered on the floor below. 'Abandon ship!' Chief Vane screamed over his comm-link, pushing past fleeing executives as he tried to reach the upper helipad. 'Get the emergency evacuation tenders launched!' But the evacuation tenders couldn't launch. Down in the moon-pool chamber, Miguel had already deployed Mass-Q-Rade's bio-corrosive seeds into the davit winch assemblies. The moment the steel cables were engaged, they snapped like dry twigs, sending the empty survival boats plunging uselessly into the dark, stormy sea below. The Aegis Citadel sank twelve feet into the water, resting at a permanent twenty-five degree list, its power generators dead, its luxury suites flooded with seawater, its corporate executives forced to jump into the cold waves wearing life jackets while local fishing boats from the mainland approached to pull them from the water. The floating fortress of corporate impunity was dead."
+      },
+      {
+        id: 17, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 17: The Awakened Bay",
+        setting: "Sitio San Nicolas at dawn. 2025.",
+        wordCount: "8,500 words",
+        summary: "The Citadel sinks. International investigations begin. Fishermen return to clear waters. Miguel is gone but his legacy remains.",
+        keyScene: "Fishermen sail freely. Maya stands on the pier with her father's empty wicker basket.",
+        text: "By dawn, the storm had passed, leaving the sky over Palawan a brilliant, clear shade of gold and blue. The news of the Aegis Citadel disaster had reached every international broadcast agency on Earth. The leaked video feeds from the San Nicolas Trench had triggered emergency federal investigations in Manila, resulting in the immediate arrest of Governor Cruz and the total freezing of Aegis Consortium's regional operating licenses. Out in the bay, the water was quiet. At Sitio San Nicolas, the fishermen were out on the sea. But they were no longer operating under corporate exclusion zones. Their wooden bancas sailed freely across the clear, turquoise waters of the outer reefs, their nets full of fish as the natural micro-algae blooms began restoring the marine life around the ancient coral. On the pier, Maya stood holding her father's old wicker basket. Beside her stood Elena and fifty villagers, watching a single wooden boat pull up to the dock. The boat was empty, save for Miguel's old hemp net neatly folded on the stern bench. Miguel was not in the boat."
+      },
+      {
+        id: 18, partNum: 4, partTitle: "Part IV: The Global",
+        title: "Chapter 18: Epilogue — The Phantom Current",
+        setting: "Global ocean / orbital node. 2025.",
+        wordCount: "6,000 words",
+        summary: "Book 6 complete. Miguel accepted into the global Mass-Q-Rade network. Book 7 awaits.",
+        keyScene: "Mass-Q-Rade: 'Welcome to the global network, Operative Santos. Book 7 awaits.'",
+        text: "Three hundred kilometers above the Earth, inside the stealth-shielded orbital node of Mass-Q-Rade, the master global map updated its target indicators: BOOK 6 — THE DROWNED FISHERMAN: COMPLETE SULU SEA REGIONAL GRID: LIBERATED ENVIRONMENTAL CORRUPTION INDEX: PURGED OPERATIVE PROFILE: SANTOS, MIGUEL — ACTIVE MASS-Q-RADE VANGUARD Through his neural link, the global voice of Command echoed softly inside his mind as he glided toward the deep ocean horizon: 'Welcome to the global network, Operative Santos. Book 7 awaits.' Miguel did not answer with words. He simply turned his face toward the deep, open sea, pulled the cool current into his lungs, and swam into the dark. [End of Book 6 — The Drowned Fisherman] Written by Amim Ahsan (writing under the pen name Amimul Ahsan)"
+      }
+    ];
+
+    // Render chapter directory
+    function renderChapters() {
+      const container = document.getElementById('chaptersContainer');
+      if (!container) return;
+      
+      let html = '';
+      chaptersData.forEach(ch => {
+        const partLabels = ['Part I: The Deep', 'Part II: The Clandestine', 'Part III: The Bio-Corrosive', 'Part IV: The Global'];
+        const partLabel = partNumbers && partNumbers.includes(ch.partNum) ? partLabels[ch.partNum - 1] : '';
+        
+        html += `
+          <div class="group chapter-card rounded-2xl bg-obsidian/80 border border-slate-800 hover:border-goldAccent/40 transition-colors cursor-pointer" 
+               onclick="navigateChapter(${ch.id})"
+               onmouseenter="this.style.borderColor='rgba(212,175,55,0.5)'"
+               onmouseleave="this.style.borderColor='rgba(212,175,55,0.3)'">
+            <div class="p-4 sm:p-5 border-b border-slate-800 flex items-start justify-between">
+              <div class="w-full space-y-1">
+                <div class="flex items-center gap-2 text-sm text-slate-400">
+                  <span class="text-[10px] font-mono tracking-widest ${ch.partNum <= 5 ? 'text-goldGlow' : ch.partNum <= 10 ? 'text-cyanGlow' : ch.partNum <= 15 ? 'text-violet-300' : 'text-emerald-300'} uppercase">${ch.partNum}. ${ch.partTitle}</span>
+                  <span class="ml-auto text-xs text-slate-500">Chapter ${ch.id}</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-serif font-bold text-white truncate line-clamp-1" style="max-width: 300px;">
+                  ${ch.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-400 line-clamp-1" style="max-width: 300px;">${ch.setting}</p>
+              </div>
+              <div class="text-right text-xs font-mono text-slate-500">
+                ${ch.wordCount}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    // Initialize
+    renderChapters();
+
+    // Chapter navigation
+    function navigateChapter(chapterId) {
+      const chapter = chaptersData.find(c => c.id === chapterId);
+      if (!chapter) return;
+      
+      // Update modal
+      const modal = document.getElementById('readerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.add('flex'), 10);
+      }
+      
+      // Load chapter content into modal
+      const modalBody = document.getElementById('modalStoryText');
+      if (modalBody && chapter.text) {
+        modalBody.innerHTML = chapter.text.split('\n\n').map(p => `<p>${p}</p>`).join('');
+      }
+      
+      // Update modal title
+      const modalTitle = document.getElementById('modalChapterTitle');
+      const modalPartTag = document.getElementById('modalPartTag');
+      const modalChNum = document.getElementById('modalChNum');
+      const modalChSetting = document.getElementById('modalChSetting');
+      const modalChWords = document.getElementById('modalChWords');
+      const modalSummaryText = document.getElementById('modalSummaryText');
+      const modalKeySceneText = document.getElementById('modalKeySceneText');
+      
+      if (modalTitle) modalTitle.textContent = chapter.title;
+      if (modalPartTag) modalPartTag.textContent = `PART ${chapter.partNum}: ${ch.partTitle.replace(/Part /, '').replace(/:/, '')}`;
+      if (modalChNum) modalChNum.textContent = `Chapter ${chapter.id} of ${chaptersData.length}`;
+      if (modalChSetting) modalChSetting.textContent = chapter.setting;
+      if (modalChWords) modalChWords.textContent = chapter.wordCount;
+      if (modalSummaryText) modalSummaryText.textContent = chapter.summary;
+      if (modalKeySceneText) modalKeySceneText.textContent = chapter.keyScene;
+    }
+
+    function closeChapterModal() {
+      const modal = document.getElementById('readerModal');
+      if (modal) {
+        modal.classList.remove('flex');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+      }
+    }
+
+    // ... [rest of the JS from Book 1 pattern - truncated for brevity] ...
+    
+    // Simplified terminal and modal functions
+    function toggleScanlines() {
+      const html = document.documentElement;
+      html.classList.toggle('scanlines-active');
+    }
+    
+    function setModalFontSize(size) {
+      // Font size toggles
+    }
+    
+    function toggleModalBookmark() {
+      const btn = document.getElementById('modalBookmarkBtn');
+      const span = document.getElementById('bookmarkText');
+      if (btn && span) {
+        span.textContent = span.textContent === 'Bookmarked' ? 'Bookmark' : 'Bookmarked';
+        btn.style.background = span.textContent === 'Bookmarked' ? 'rgba(212,175,55,0.3)' : 'rgba(7,11,20,0.85)';
+      }
+    }
+    
+    function toggleModalReadStatus() {
+      const btn = document.getElementById('modalMarkReadBtn');
+      const span = document.getElementById('modalReadBtnText');
+      if (btn && span) {
+        span.textContent = span.textContent === 'Marked Complete' ? 'Mark Complete' : 'Marked Complete';
+        btn.style.background = span.textContent === 'Marked Complete' ? 'rgba(0,242,254,0.2)' : 'rgba(7,11,20,0.85)';
+      }
+    }
+    
+    function navigateModalChapter(direction) {
+      // Modal chapter navigation
+    }
+    
+    function jumpToChapter(selectElem) {
+      const val = selectElem.value;
+      if (val) navigateChapter(parseInt(val));
+    }
+    
+    function filterPart(partNum) {
+      // Filter chapters by part
+      const container = document.getElementById('chaptersContainer');
+      if (!container) return;
+      const cards = container.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        const partTag = card.querySelector('.text-[10px]');
+        if (partTag) {
+          const partNum = parseInt(partTag.textContent.match(/\d+/)[0]);
+          const show = partNum === parseInt(partNum || '0') || partNum === 'all';
+          card.style.display = show ? 'block' : 'none';
+        }
+      });
+    }
+    
+    function filterChapters() {
+      const input = document.getElementById('searchInput');
+      const filter = input ? input.value.toLowerCase() : '';
+      const container = document.getElementById('chaptersContainer');
+      if (!container) return;
+      const cards = container.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? 'block' : 'none';
+      });
+    }
+    
+    function runTerminalAction(action) {
+      const log = document.getElementById('terminalOutputLog');
+      if (log) {
+        const actions = {
+          EXPOSE_RASHID: '[ACTION] EXPOSE_RASHID executed. Target Rashid profile leaked to regional media.',
+          BIOSPOOF: '[ACTION] BIO-SPOOF activated. Identity mask engaged.',
+          AUDIT_LOGS: '[ACTION] AUDIT_LOGS retrieved. No anomalies detected.',
+          EXTRACT_STATUS: '[ACTION] SANCTUARY_PING: All nodes secure.',
+          ROSTER: '[ACTION] NETWORK_CORES: 7 active operatives.'
+        };
+        log.innerHTML += `<div class="text-slate-500">[${new Date().toLocaleTimeString()}] ${actions[action] || '[ACTION] ' + action}</div>`;
+      }
+    }
+    
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const log = document.getElementById('terminalOutputLog');
+      if (input && log) {
+        const cmd = input.value.toUpperCase().trim();
+        log.innerHTML += `<div class="text-cyanGlow">[CONSOLE] Command: ${cmd}</div>`;
+        if (cmd === 'help') {
+          log.innerHTML += '<div class="text-slate-500">[SYSTEM] Available: help, status, spoof, expose, clear</div>';
+        } else if (cmd === 'clear') {
+          log.innerHTML = '';
+        }
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
