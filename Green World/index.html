@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GreenWorld: a philosophy of mission and vision for a greener planet, with a library of 50,000 green alternatives — to poison, plastic, cutting trees, buildings, wood furniture, beds, sleeping pills and more.">
+<title>GreenWorld — 50,000 Green Alternatives</title>
+<style>
+:root{--forest:#123d2b;--leaf:#28734a;--lime:#c6ed87;--cream:#f6f5ed;--ink:#1e2b22;--muted:#657368;--card:#fff;--line:#dce5d9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:5;background:rgba(18,61,43,.97);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px max(5vw,20px);gap:20px}
+.brand{font-weight:900;letter-spacing:.08em;font-size:1.15rem;text-decoration:none}
+.brand span{color:var(--lime)}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.92rem;color:#e9f4e9}
+nav a:hover{color:var(--lime)}
+.hero{background:radial-gradient(circle at 85% 25%,#4f9b5d 0,transparent 28%),linear-gradient(120deg,#102f23,#1f6542);color:#fff;padding:84px max(7vw,24px) 74px;position:relative;overflow:hidden}
+.hero:after{content:"✳";position:absolute;right:6%;bottom:-110px;font-size:24rem;line-height:1;color:#ffffff0a;pointer-events:none}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--lime);font-weight:800}
+.hero h1{font-size:clamp(2.7rem,7vw,6rem);line-height:.99;max-width:900px;letter-spacing:-.055em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:700px;color:#e1eee3;font-size:1.1rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit}
+.btn.primary{background:var(--lime);color:var(--forest)}
+.btn.ghost{border:1px solid #ffffff66;color:#fff;background:transparent}
+.bigcount{margin-top:30px;display:inline-flex;align-items:baseline;gap:14px;background:#ffffff14;border:1px solid #ffffff2b;border-radius:18px;padding:14px 22px}
+.bigcount b{font-size:clamp(1.9rem,4.5vw,3rem);color:var(--lime);line-height:1;letter-spacing:-.03em}
+.bigcount span{font-size:.86rem;color:#d9e8dc;max-width:260px;line-height:1.4}
+main{max-width:1180px;margin:auto;padding:0 24px}
+.section{padding:70px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}
+.section h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.04em;margin:8px 0 12px}
+.section-intro{max-width:650px;color:var(--muted)}
+.kicker{color:var(--leaf);text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:900}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pillar,.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.symbol{font-size:1.8rem}
+.pillar h3,.card h3{margin:12px 0 7px}
+.pillar p,.card p{color:var(--muted);margin:0}
+.manifesto{background:#e6eedf;border-radius:28px;padding:clamp(26px,5vw,56px);display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.manifesto p{color:var(--muted)}
+.manifesto strong{color:var(--leaf)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:18px;border-radius:16px;background:#ffffffa8}
+.stat strong{display:block;font-size:1.35rem;color:var(--leaf)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 22px}
+.controls input,.controls select{border:1px solid #cbd9ca;border-radius:14px;padding:13px 15px;background:white;font:inherit;color:var(--ink)}
+.controls input{flex:1;min-width:230px}
+.category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.thumb{padding:0;margin:-6px -6px 0 -6px}
+.thumb svg{display:block;width:100%;height:auto;border-radius:16px;background:#fff}
+.tab{border:1px solid var(--line);border-radius:999px;background:white;padding:9px 14px;cursor:pointer;font-weight:700;color:var(--ink);font:inherit;font-size:.9rem}
+.tab.active{background:var(--forest);color:white;border-color:var(--forest)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{display:flex;flex-direction:column;gap:9px}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{align-self:flex-start;background:#e8f3e3;color:#245b38;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:800;white-space:nowrap}
+.num{font-size:.72rem;color:#9db0a2;font-weight:700;white-space:nowrap}
+.card h3{font-size:1.02rem;line-height:1.35;margin:2px 0 0}
+.swap{font-size:.93rem;color:var(--ink);padding:11px 12px;border-radius:12px;background:#f5f8f1;margin-top:auto !important}
+.swap strong{color:var(--leaf)}
+.why{font-size:.9rem;color:var(--muted);margin:0;line-height:1.5}
+.why strong{color:#a1532e}
+.countline{font-weight:800;color:var(--leaf);margin:14px 0 18px;font-size:.95rem}
+.loadwrap{text-align:center;margin:26px 0 0}
+.loadwrap .btn{background:var(--forest);color:#fff}
+.libnote{margin-top:34px;border-left:4px solid #d7a33d;background:#fff8e7;padding:16px 18px;border-radius:0 14px 14px 0;color:#5f4a1c}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{border-top:3px solid var(--leaf);padding:16px 8px}
+.step b{font-size:2rem;color:#9abb91}
+.step h3{margin:2px 0}
+.step p{color:var(--muted);font-size:.95rem;margin:0}
+.cta{background:var(--forest);color:white;border-radius:28px;padding:clamp(28px,5vw,55px);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.cta h2{max-width:620px;margin:0}
+.cta p{color:#d9e8dc;max-width:560px;margin:0}
+.footer{background:#0b281c;color:#d7e4d9;margin-top:76px;padding:36px max(5vw,24px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer small{color:#a8c0ad}
+.toplink{color:var(--lime);text-decoration:none}
+#pledgeMessage{font-weight:800;margin-top:16px}
+.card.clickable{cursor:pointer;transition:transform .12s,box-shadow .12s,border-color .12s}
+.card.clickable:hover,.card.clickable:focus-visible{transform:translateY(-2px);box-shadow:0 8px 22px #00000014;border-color:#b9d4b6;outline:none}
+.card:focus-visible{border-color:var(--leaf);box-shadow:0 0 0 3px #28734a33}
+.modal{position:fixed;inset:0;background:#0b281cd6;display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal[hidden]{display:none}
+.modal-box{background:var(--cream);border-radius:24px;max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:22px 22px 26px;position:relative}
+.modal-box h2{font-size:clamp(1.35rem,3.4vw,1.7rem);line-height:1.25;letter-spacing:-.02em;margin:10px 0 14px}
+.modal-art{margin:-4px 0 14px}
+.modal-art svg{display:block;width:100%;height:auto;border-radius:16px}
+.m-sec{margin:0 0 14px}
+.m-label{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);font-weight:900;margin:0 0 4px}
+.m-value{font-size:1.08rem;line-height:1.6;color:var(--ink);margin:0;font-family:inherit}
+.m-value .place{display:inline-block;background:#e8f3e3;color:#245b38;border-radius:999px;padding:2px 12px;font-size:.85rem;font-weight:800;margin-left:8px;vertical-align:middle}
+.num{font-size:.72rem;color:#9db0a2;font-weight:700;white-space:nowrap}
+.modal-close{position:absolute;top:12px;right:12px;border:1px solid var(--line);background:#fff;border-radius:999px;width:34px;height:34px;font-size:1rem;cursor:pointer;font-weight:800;color:var(--ink)}
+.m-actions{display:flex;gap:10px;margin:12px 0 18px;flex-wrap:wrap}
+.m-more{font-weight:800;font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.m-chips{display:flex;flex-wrap:wrap;gap:8px;max-height:170px;overflow:auto;padding:2px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:.78rem;font-weight:700;cursor:pointer;color:var(--ink);font-family:inherit}
+.chip:hover{border-color:var(--leaf)}
+.chip.active{background:var(--forest);color:#fff;border-color:var(--forest)}
+@media(max-width:850px){.pillars,.grid{grid-template-columns:repeat(2,1fr)}.manifesto{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}nav{gap:10px}.nav{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.pillars,.grid,.steps{grid-template-columns:1fr}.hero{padding-top:60px}.section-head{display:block}.nav{position:relative}.cta{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home">GREEN<span>WORLD</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#philosophy">Philosophy</a><a href="#mission">Mission & Vision</a><a href="#library">50,000 Alternatives</a><a href="#action">Take action</a><a href="../index.html#books">Amim Ahsan Archive</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">A living philosophy for a living planet</div>
+  <h1>Every poison has a<br><em>green alternative.</em></h1>
+  <p>GreenWorld is a practical movement to rethink the things we make, use, build, consume, and depend on. Instead of accepting poison, plastic, cutting trees, harmful buildings, glued wood elements, uncomfortable beds and sleeping pills as inevitable, we search out better alternatives — rooted in care for people, nature, and future generations.</p>
+  <div class="bigcount"><b id="totalBadge">50,000</b><span>green alternatives generated in this library — every one a real word of change.</span></div>
+  <div class="actions"><a class="btn primary" href="#library">Browse the library ↓</a><a class="btn ghost" href="#mission">Read our mission</a></div>
+</section>
+
+<main>
+<section class="section" id="philosophy">
+  <div class="section-head"><div><div class="kicker">01 / The philosophy</div><h2>Green is not a colour.<br>It is a responsibility.</h2></div><p class="section-intro">GreenWorld asks one simple question: can we meet a human need while causing less harm? Our answer is to research, test, improve, and share practical choices — not to promise that one material or technology can solve everything.</p></div>
+  <div class="pillars">
+    <article class="pillar"><div class="symbol">🌱</div><h3>Regenerate</h3><p>Protect living ecosystems, restore damaged land, save every tree we can, conserve water, and grow biodiversity instead of taking from nature faster than it can recover.</p></article>
+    <article class="pillar"><div class="symbol">♻️</div><h3>Rethink</h3><p>Reduce unnecessary consumption first. Repair, reuse, share, refill, and recycle so that plastic, poison and waste never become the default.</p></article>
+    <article class="pillar"><div class="symbol">🤝</div><h3>Include</h3><p>Greener choices should be safe, affordable, accessible, and fair to workers — from natural beds to calm, medicine-free sleep built on healthy habits.</p></article>
+  </div>
+</section>
+
+<section class="section" id="mission">
+  <div class="manifesto">
+    <div><div class="kicker">Our mission & vision</div><h2>Make the healthy choice easier to find.</h2>
+      <p><strong>Mission:</strong> build an open, ever-growing library of alternatives to every poison, every avoidable plastic, every felled tree, every polluting building material, every glued wood element, every chemical bed, and every sleeping pill — until the green option is the obvious option.</p>
+      <p><strong>Vision:</strong> a world where homes, cities, furniture, bedrooms, and daily habits are designed around human wellbeing and the long-term health of the planet — a GreenWorld with no poison left to replace.</p>
+      <p><strong>Promise:</strong> no miracle claims, no shame, and no greenwashing. We explain trade-offs and encourage people to verify local standards, safety, durability, and lifecycle impacts.</p></div>
+    <div class="stats"><div class="stat"><strong>Prevent</strong><span>Waste before it starts</span></div><div class="stat"><strong>Replace</strong><span>Harmful options thoughtfully</span></div><div class="stat"><strong>Restore</strong><span>Nature and community</span></div><div class="stat"><strong>Measure</strong><span>Real impact, not slogans</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="library">
+  <div class="section-head"><div><div class="kicker">02 / The alternative library</div><h2 id="libTitle">50,000 green words.<br>One greener world.</h2></div><p class="section-intro">Search the full library below — from <strong>poison</strong> over cleaners, <strong>cutting trees</strong>, <strong>plastic</strong> elements, polluting <strong>buildings</strong>, glued <strong>wood</strong> elements, hard beds to <strong>sleeping pills</strong> — each card pairs a harmful thing with a greener alternative.</p></div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search: bed, sleeping pill, poison, bamboo, tree…" aria-label="Search alternatives">
+    <select id="sort" aria-label="Sort alternatives"><option value="default">Library order</option><option value="az">A–Z by harmful thing</option></select>
+  </div>
+  <div class="category-tabs" id="tabs" aria-label="Category filters"></div>
+  <div class="countline" id="countline" role="status" aria-live="polite"></div>
+  <div class="grid" id="cards"></div>
+  <div class="loadwrap"><button class="btn" id="loadMore">Load 48 more</button></div>
+  <div class="libnote"><strong>How to use this library:</strong> the 50,000 combinations are generated in your browser from <strong>100 harmful things × 50 greener material & habit swaps × 10 everyday places</strong>. They are starting ideas to investigate, not universal prescriptions. Use the search box for your exact topic — try “bed”, “sleeping pill”, “poison”, “tree”, “building”, “wood”, or “plastic”.</div>
+  <div class="libnote" style="margin-top:14px"><strong>Important health note:</strong> GreenWorld does not recommend stopping prescribed medicines or replacing sleeping pills with home remedies without advice from a qualified clinician. For persistent insomnia, discuss evidence-based options such as cognitive behavioural therapy for insomnia (CBT-I). Natural does not automatically mean safe.</div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><div class="kicker">03 / A realistic pathway</div><h2>Progress, not perfection.</h2></div><p class="section-intro">A green future is built through better systems and repeatable decisions. Begin with the changes that prevent the most harm and are feasible in your community.</p></div>
+  <div class="steps"><div class="step"><b>01</b><h3>Refuse</h3><p>Question unnecessary purchases, packaging, and short-lived products.</p></div><div class="step"><b>02</b><h3>Reduce</h3><p>Use fewer resources through efficient design and thoughtful routines.</p></div><div class="step"><b>03</b><h3>Reuse & repair</h3><p>Extend product life and share items that are used only occasionally.</p></div><div class="step"><b>04</b><h3>Restore</h3><p>Support clean water, healthy soil, native habitats, and community action.</p></div></div>
+</section>
+
+<section class="section" id="action">
+  <div class="cta"><div><div class="kicker" style="color:var(--lime)">Join the movement</div><h2>Turn a green word into a practical change.</h2><p>Pick one alternative from the library and live it this week: refuse a throwaway item, protect a tree, switch a cleaner, soften a bedroom, rest a sleeping pill habit with a healthier routine (with your clinician's guidance).</p></div><button class="btn primary" id="pledge">＋ Make my pledge</button></div>
+  <p id="pledgeMessage" role="status" aria-live="polite"></p>
+</section>
+</main>
+
+<footer class="footer"><div><div class="brand">GREEN<span>WORLD</span></div><small>A philosophy of care, evidence, and practical alternatives.</small></div><div><a class="toplink" href="#home">Back to top ↑</a> · <a class="toplink" href="../index.html#philosophy">Green World Philosophy on the archive</a><br><small>Educational project · Verify claims and local standards before acting.</small></div></footer>
+
+<script>
+/* ============ GreenWorld 50,000-word alternative generator ============ */
+/* 100 harmful things × 50 greener swaps × 10 everyday places = 50,000  */
+
+const HARMS = [
+/* — Poison & harmful chemicals (12) — */
+{n:"bleach-based household cleaners",c:"Poison"},
+{n:"ammonia-based glass cleaners",c:"Poison"},
+{n:"toxic chemical pesticide sprays",c:"Poison"},
+{n:"chemical weed killer",c:"Poison"},
+{n:"toxic rat poison baits",c:"Poison"},
+{n:"acidic drain cleaners",c:"Poison"},
+{n:"aerosol air fresheners",c:"Poison"},
+{n:"naphthalene moth balls",c:"Poison"},
+{n:"chemical mosquito coils",c:"Poison"},
+{n:"lead-based paints and primers",c:"Poison"},
+{n:"formaldehyde-based synthetic glue",c:"Poison"},
+{n:"oil-based paint and chemical thinners",c:"Poison"},
+/* — Plastic (14) — */
+{n:"single-use plastic bags",c:"Plastic"},
+{n:"plastic drinking straws",c:"Plastic"},
+{n:"disposable plastic bottles",c:"Plastic"},
+{n:"plastic cling wrap",c:"Plastic"},
+{n:"disposable plastic cutlery",c:"Plastic"},
+{n:"disposable plastic cups",c:"Plastic"},
+{n:"foam polystyrene take-away boxes",c:"Plastic"},
+{n:"disposable plastic toothbrushes",c:"Plastic"},
+{n:"plastic storage containers",c:"Plastic"},
+{n:"plastic scrub sponges",c:"Plastic"},
+{n:"plastic plant and garden pots",c:"Plastic"},
+{n:"plastic shower curtains",c:"Plastic"},
+{n:"single-serve plastic sachets",c:"Plastic"},
+{n:"plastic toys",c:"Plastic"},
+/* — Cutting trees (12) — */
+{n:"cutting trees for paper",c:"Trees"},
+{n:"clear-cut deforestation logging",c:"Trees"},
+{n:"virgin-wood office paper",c:"Trees"},
+{n:"tree-cutting for packaging boxes",c:"Trees"},
+{n:"cutting trees for charcoal fuel",c:"Trees"},
+{n:"wood-burning cooking stoves",c:"Trees"},
+{n:"slash-and-burn land clearing",c:"Trees"},
+{n:"old-growth tree felling",c:"Trees"},
+{n:"illegal timber trade",c:"Trees"},
+{n:"virgin-wood tissue paper",c:"Trees"},
+{n:"mangrove cutting for aquaculture ponds",c:"Trees"},
+{n:"tree-cutting for city road expansion",c:"Trees"},
+/* — Wood elements, furniture & beds (12) — */
+{n:"virgin-wood tables and chairs",c:"Wood"},
+{n:"solid hardwood bed frames",c:"Wood"},
+{n:"plywood and particle-board cabinets",c:"Wood"},
+{n:"tropical hardwood decking",c:"Wood"},
+{n:"old-growth timber flooring",c:"Wood"},
+{n:"wooden window and door frames",c:"Wood"},
+{n:"wooden railway sleepers",c:"Wood"},
+{n:"hardwood kitchen boards and tools",c:"Wood"},
+{n:"disposable pallets and crates",c:"Wood"},
+{n:"fresh-wood garden benches",c:"Wood"},
+{n:"chemically treated poles and posts",c:"Wood"},
+{n:"tarred wooden boat hulls",c:"Wood"},
+/* — Buildings & construction (10) — */
+{n:"cement-based concrete",c:"Buildings"},
+{n:"coal-fired kiln bricks",c:"Buildings"},
+{n:"high-emission steel structures",c:"Buildings"},
+{n:"bitumen-asphalt paving",c:"Buildings"},
+{n:"glass curtain-wall towers",c:"Buildings"},
+{n:"oil-based foam insulation panels",c:"Buildings"},
+{n:"high-VOC indoor paints",c:"Buildings"},
+{n:"mined gypsum plasterboard",c:"Buildings"},
+{n:"sand-mined concrete aggregates",c:"Buildings"},
+{n:"car-dependent urban sprawl",c:"Buildings"},
+/* — Sleep & wellbeing (7) — */
+{n:"sleeping pills as a nightly habit",c:"Sleep"},
+{n:"foam synthetic pillows",c:"Sleep"},
+{n:"bright bedside night-lights",c:"Sleep"},
+{n:"late-afternoon caffeine",c:"Sleep"},
+{n:"pre-bed screen time",c:"Sleep"},
+{n:"alcohol as a sleep aid",c:"Sleep"},
+{n:"electric heated blankets",c:"Sleep"},
+/* — Energy (7) — */
+{n:"coal-fired grid electricity",c:"Energy"},
+{n:"petrol-guzzling cars",c:"Energy"},
+{n:"diesel generators",c:"Energy"},
+{n:"incandescent bulbs",c:"Energy"},
+{n:"over-cooling air conditioners",c:"Energy"},
+{n:"gas water heaters",c:"Energy"},
+{n:"disposable dry-cell batteries",c:"Energy"},
+/* — Water (6) — */
+{n:"half-hour hot showers",c:"Water"},
+{n:"hose-pipe lawn watering",c:"Water"},
+{n:"bottled drinking water",c:"Water"},
+{n:"leaking taps and pipes",c:"Water"},
+{n:"chemical laundry detergents",c:"Water"},
+{n:"chemical toilet cleaners",c:"Water"},
+/* — Food (8) — */
+{n:"synthetic nitrogen fertilizers",c:"Food"},
+{n:"food waste and spoilage",c:"Food"},
+{n:"factory-farmed industrial meat",c:"Food"},
+{n:"over-packaged convenience food",c:"Food"},
+{n:"synthetic food preservatives",c:"Food"},
+{n:"imported out-of-season produce",c:"Food"},
+{n:"coffee grounds binned as waste",c:"Food"},
+{n:"kitchen peels sent to landfill",c:"Food"},
+/* — Clothes (6) — */
+{n:"polyester fast fashion",c:"Clothes"},
+{n:"single-wear disposable trends",c:"Clothes"},
+{n:"chemical fabric dyes",c:"Clothes"},
+{n:"non-biodegradable shoe soles",c:"Clothes"},
+{n:"chemical fabric softeners",c:"Clothes"},
+{n:"plastic raincoats and ponchos",c:"Clothes"},
+/* — Waste (6) — */
+{n:"open burning of garbage",c:"Waste"},
+{n:"unsorted landfill waste",c:"Waste"},
+{n:"discarded e-waste gadgets",c:"Waste"},
+{n:"cigarette-butt litter",c:"Waste"},
+{n:"disposable nappies",c:"Waste"},
+{n:"disposable party supplies",c:"Waste"}
+];
+
+const SWAPS = [
+"reusable cotton cloth","bamboo craft","woven jute fibre","flexible hemp fibre","pure linen",
+"coconut coir","terracotta clay","natural stone","rammed earth","recycled cardboard",
+"recycled paper","refashioned upcycled","mycelium-grown","seaweed-based","beeswax-coated",
+"natural latex","organic cotton","bamboo charcoal","neem and botanical plant","vinegar and baking soda",
+"steam-based","microfibre cloth-based","electric-powered","solar-powered","hand-powered manual",
+"wind-powered","LED-based","water-saving","low-VOC safe","recycled-content certified",
+"lifetime durable","modular repairable","compostable plant-based","refillable","second-hand",
+"borrowed from a library of things","shared community","locally sourced","artisan handmade","digital paperless",
+"consciously refused","grow-it-yourself","community garden","second-life upcycled","take-back recyclable",
+"glass container","stainless steel","aluminium","ceramic","refill-and-reuse system"
+];
+
+const CONTEXTS = ["home","kitchen","garden","school","office","workshop","bathroom","bedroom","travel","farm"];
+
+/* Why each alternative helps — keeps the detail dialog informative and readable */
+const CAT_WHY = {
+ Trees:"Every tree kept standing stores carbon, holds soil, shelters wildlife, cleans the air, and cools the land around it.",
+ Poison:"Botanical and gentle options break down safely instead of leaving toxins in your air, soil, and drinking water.",
+ Plastic:"Durable natural and refillable options cut the plastic waste that outlives all of us in landfills, rivers, and oceans.",
+ Wood:"Reusing timber and choosing fast-growing fibres keeps forests standing and avoids glue and chemical off-gassing indoors.",
+ Buildings:"Low-impact materials and thoughtful design cut construction pollution, waste, and energy use for decades of use.",
+ Sleep:"Natural materials and calm evening routines support sleep gently. If you use prescribed sleep medicine, change nothing without your clinician's advice.",
+ Energy:"Cutting wasted energy and switching to renewable power lowers bills and the carbon we put in the air.",
+ Water:"Every drop saved protects rivers, groundwater, and the energy needed to pump, heat, and treat water.",
+ Food:"Seasonal, lower-waste food keeps soil healthy, cuts transport pollution, and keeps scraps out of landfill methane.",
+ Clothes:"Longer-wearing natural fabrics mean less dye pollution, fewer microplastics in waterways, and less landfill.",
+ Waste:"Sorting, composting, and recycling turn thrown-away things into resources instead of smoke, toxins, and leachate."};
+
+/* Unique problem text for each of the 100 harmful things */
+const HARMS_PROBLEM = {
+"bleach-based household cleaners":"Bleach fumes sting lungs and turn to toxic gas if mixed with other cleaners.",
+"ammonia-based glass cleaners":"Ammonia fumes burn eyes and airways and are harmful around pets and children.",
+"toxic chemical pesticide sprays":"These sprays poison bees, birds, and pets, and leave residue where food grows.",
+"chemical weed killer":"Weed killer washes off soil into streams and lingers where children and pets play.",
+"toxic rat poison baits":"Rat poison kills the owls, cats, and foxes that eat the poisoned rodents too.",
+"acidic drain cleaners":"Acid cleaners burn skin through thin gloves and eat away old pipes.",
+"aerosol air fresheners":"Aerosols mask smells with volatile chemicals that you then breathe in for hours.",
+"naphthalene moth balls":"Moth balls let off fumes that are harmful indoors, especially around small children.",
+"chemical mosquito coils":"One burning coil fills a room with smoke like many cigarettes.",
+"lead-based paints and primers":"Lead paint dust damages nervous systems, with growing children most at risk.",
+"formaldehyde-based synthetic glue":"Formaldehyde glue slowly off-gasses into airtight rooms as a known irritant.",
+"oil-based paint and chemical thinners":"Oil paints and thinners release solvent fumes and end up as toxic household waste.",
+"single-use plastic bags":"A bag used for minutes can persist for centuries, tangling waterways and wildlife.",
+"plastic drinking straws":"Straws are too small to recycle and end up inside sea animals.",
+"disposable plastic bottles":"Most bottles leach microplastic into drinks and hardly ever get recycled.",
+"plastic cling wrap":"Cling wrap is born single-use and hard to recycle, yet wraps the food you eat.",
+"disposable plastic cutlery":"Cutlery is thrown away after one meal yet lasts for hundreds of years.",
+"disposable plastic cups":"Party cups pile up as landfill after only a few minutes of use.",
+"foam polystyrene take-away boxes":"Foam boxes crumble into beads that birds and fish mistake for food.",
+"disposable plastic toothbrushes":"A lifetime of brushes ends as a small mountain of landfill plastic.",
+"plastic storage containers":"Worn containers shed microplastic into the food and drink you store.",
+"plastic scrub sponges":"Plastic sponges shed microfibres that rinse straight into rivers.",
+"plastic plant and garden pots":"Pots crack in the sun and pile up in garden waste that rarely recycles.",
+"plastic shower curtains":"Cheap curtains off-gas a strong chemical smell into the bathroom air.",
+"single-serve plastic sachets":"Sachets are the least-recycled plastic on Earth, littering billions each year.",
+"plastic toys":"Broken toys rarely recycle and stay in the ground for centuries.",
+"cutting trees for paper":"Paper demand uproots forests that need a human lifetime to grow back.",
+"clear-cut deforestation logging":"Clear-cutting erases whole ecosystems at once, from canopy to soil life.",
+"virgin-wood office paper":"Every fresh page begins as a tree that could have kept standing.",
+"tree-cutting for packaging boxes":"Forests are felled for boxes that sit in homes for only days.",
+"cutting trees for charcoal fuel":"Charcoal demand slowly strips dryland forests across whole regions.",
+"wood-burning cooking stoves":"Open wood fires fill lungs with smoke and send trees into the air.",
+"slash-and-burn land clearing":"Burned land loses its fertile topsoil within a few harvests.",
+"old-growth tree felling":"Old trees hold centuries of carbon and cannot be replaced in one lifetime.",
+"illegal timber trade":"Illegal logging strips the forests people rely on for water, shade, and their future.",
+"virgin-wood tissue paper":"Softest-tissue demand turns tall trees into a product used in seconds.",
+"mangrove cutting for aquaculture ponds":"Cut mangroves remove the shield that protects coasts from storms and floods.",
+"tree-cutting for city road expansion":"Cutting city trees removes the free shade and rain that cool streets.",
+"virgin-wood tables and chairs":"New furniture from fresh timber keeps the chainsaws running through living forests.",
+"solid hardwood bed frames":"A hardwood bed consumes wood that took a century to grow.",
+"plywood and particle-board cabinets":"Glued boards hold sawdust and formaldehyde inside the rooms you breathe in.",
+"tropical hardwood decking":"Tropical decking pressures rainforests for a garden used only a few years.",
+"old-growth timber flooring":"Ancient timber flooring began growing long before anyone alive was born.",
+"wooden window and door frames":"Frames from fresh stock weather out far faster than the forest regrew.",
+"wooden railway sleepers":"Sleepers soak in creosote that leaches into the ground when they are replaced.",
+"hardwood kitchen boards and tools":"Kitchenware from rare hardwoods wears out faster than the trees regrew.",
+"disposable pallets and crates":"Pallets often make a single trip, then rot or burn by the roadside.",
+"fresh-wood garden benches":"Garden benches left to the weather crack away their years of growth in seasons.",
+"chemically treated poles and posts":"Treated posts leach wood-preserving chemicals into farm and garden soil.",
+"tarred wooden boat hulls":"Old hulls flake tar and paint into harbours, storm by storm.",
+"cement-based concrete":"Making cement releases close to eight percent of global CO2.",
+"coal-fired kiln bricks":"Brick kilns burn coal into smoke that darkens whole valley skies.",
+"high-emission steel structures":"A steel frame carries the furnace's fossil carbon inside every beam.",
+"bitumen-asphalt paving":"Asphalt seals the ground so rain cannot soak in, feeding city floods.",
+"glass curtain-wall towers":"Glass towers trap heat and burn electricity for cooling all summer.",
+"oil-based foam insulation panels":"Foam panels come from oil, rarely recycle, and can produce toxic smoke in fires.",
+"high-VOC indoor paints":"Fresh-paint fumes are volatile chemicals you breathe indoors for weeks.",
+"mined gypsum plasterboard":"Plasterboard is torn out and landfilled at almost every refurbishment.",
+"sand-mined concrete aggregates":"Sand mining drains riverbeds faster than any other material demand.",
+"car-dependent urban sprawl":"Sprawl burns fuel on every trip while eating up nearby farmland.",
+"sleeping pills as a nightly habit":"Nightly pills can build dependence and groggy mornings — always involve your clinician first.",
+"foam synthetic pillows":"Foam pillows flatten fast and shed plastic microfibre into your air.",
+"bright bedside night-lights":"Bright light at the bed delays the melatonin that helps you drift off.",
+"late-afternoon caffeine":"Late caffeine keeps half of itself circulating in you at bedtime.",
+"pre-bed screen time":"Screens before bed tell the brain it is still daytime and hold sleep back.",
+"alcohol as a sleep aid":"Alcohol knocks you out early but breaks the second half of the night.",
+"electric heated blankets":"Electric blankets run energy all night and can overheat deep sleep.",
+"coal-fired grid electricity":"Coal power carries the heaviest carbon and ash load of any electricity.",
+"petrol-guzzling cars":"A hungry engine burns money and emits smoke on every trip.",
+"diesel generators":"Diesel generators idle out black fumes into neighbourhoods for hours.",
+"incandescent bulbs":"Old bulbs spend ninety percent of their power on heat instead of light.",
+"over-cooling air conditioners":"Over-cooled rooms spike peak power and waste cold you never asked for.",
+"gas water heaters":"Gas heating burns fuel all night for a few minutes of hot water.",
+"disposable dry-cell batteries":"Binned batteries leak acid and heavy metals into soil and water.",
+"half-hour hot showers":"Long hot showers wash away clean water plus the energy that heated it.",
+"hose-pipe lawn watering":"Hose spray dries in the sun, wasting half the water before roots drink.",
+"bottled drinking water":"Bottled water hauls heavy plastic around, sometimes filled with plain tap.",
+"leaking taps and pipes":"One dripping tap can waste thousands of litres of clean water a year.",
+"chemical laundry detergents":"Detergent washes off into rivers, where foam and phosphates choke aquatic life.",
+"chemical toilet cleaners":"Strong toilet acids corrode pipes and poison the plants that treat water downstream.",
+"synthetic nitrogen fertilizers":"Gas-made fertiliser runoff burns soil life and blooms algae in rivers.",
+"food waste and spoilage":"Every wasted meal also wastes the water, soil, fuel, and work that made it.",
+"factory-farmed industrial meat":"Industrial meat carries heavy water, feed, and emission costs per kilo.",
+"over-packaged convenience food":"Convenience food buries a few bites inside layers of packaging film.",
+"synthetic food preservatives":"Long-life preservatives replace the freshness that simple natural keeping offers.",
+"imported out-of-season produce":"Out-of-season imports arrive wearing the jet fuel that carried them.",
+"coffee grounds binned as waste":"Coffee grounds binned are a rich free fertiliser thrown into the garbage.",
+"kitchen peels sent to landfill":"Peels rot in landfill as methane instead of composting into garden soil.",
+"polyester fast fashion":"Polyester sheds microplastic with every wash and outlives every trend.",
+"single-wear disposable trends":"Outfits worn once cost the fabric, water, dye, and shipping of many.",
+"chemical fabric dyes":"Dye baths drain concentrated colour and toxins into rivers near factories.",
+"non-biodegradable shoe soles":"Thrown-away soles linger in gutters and soil for hundreds of years.",
+"chemical fabric softeners":"Softeners coat fabric and skin with perfumes that barely biodegrade.",
+"plastic raincoats and ponchos":"Ponchos crack after one season then never break down at all.",
+"open burning of garbage":"Open fires release dioxins and smoke straight into lungs and skies.",
+"unsorted landfill waste":"Unsorted bins bury metals, glass, and good plastics that could serve again.",
+"discarded e-waste gadgets":"Binned gadgets leak lead and mercury into the ground near homes.",
+"cigarette-butt litter":"Each filter carries plastic fibres and nicotine into every drain it reaches.",
+"disposable nappies":"A single baby's nappies pile up tons of mixed plastic no plant can sort.",
+"disposable party supplies":"Partyware used for hours can outlast the party by centuries."};
+
+/* Unique benefit text for each of the 50 green swaps */
+const SWAP_BENEFIT = {
+"reusable cotton cloth":"washed and used again and again, it replaces whole piles of throwaways.",
+"bamboo craft":"grows back fast enough to keep forests standing.",
+"woven jute fibre":"carries heavy loads in farm-grown fibre that returns to the soil.",
+"flexible hemp fibre":"grows quickly with little water and no plastic.",
+"pure linen":"breathes, lasts for years, and goes back to the earth at the end.",
+"coconut coir":"turns discarded husks into strong biodegradable material.",
+"terracotta clay":"shapes ordinary earth into vessels that neither stain nor smell.",
+"natural stone":"holds strength that outlives generations without off-gassing anything.",
+"rammed earth":"builds thick walls from the ground itself, without kilns or cladding.",
+"recycled cardboard":"gives old paper a second day instead of felling a new tree.",
+"recycled paper":"keeps the forest standing by letting pages come back again.",
+"refashioned upcycled":"turns what is worn into something better without new material.",
+"mycelium-grown":"grows in days and returns to the soil in weeks.",
+"seaweed-based":"grows in the sea with no soil, no fresh water, and no plastic.",
+"beeswax-coated":"wraps food naturally, again and again.",
+"natural latex":"springs back for years and comes tapped from trees.",
+"organic cotton":"grows without the pesticide load of ordinary cotton fields.",
+"bamboo charcoal":"absorbs smells and damp without a single chemical spray.",
+"neem and botanical plant":"shields garden and skin with plants that break down harmlessly.",
+"vinegar and baking soda":"dissolves grime with safe kitchen basics instead of fumes.",
+"steam-based":"lifts dirt with nothing more than heat and water.",
+"microfibre cloth-based":"cleans deep with water alone, no spray necessary.",
+"electric-powered":"runs clean and quiet where the work happens.",
+"solar-powered":"draws its power from the sun already hitting your roof.",
+"hand-powered manual":"spends your muscle instead of fuel, and needs no engine.",
+"wind-powered":"harnesses the wind that arrives free every day.",
+"LED-based":"uses a tenth of the power and lasts for decades.",
+"water-saving":"cuts the flow you never needed while doing the same job.",
+"low-VOC safe":"keeps sharp fumes out of the air you breathe indoors.",
+"recycled-content certified":"proves its material came back instead of being mined again.",
+"lifetime durable":"is built to be repaired, not to be thrown away.",
+"modular repairable":"lets you fix the broken part instead of the whole thing.",
+"compostable plant-based":"returns to the soil instead of sitting in landfill.",
+"refillable":"uses one package for years of the same content.",
+"second-hand":"keeps a working thing working instead of making a double.",
+"borrowed from a library of things":"gives you the tool without a lifetime of storing it.",
+"shared community":"lets one well-made item serve many neighbours.",
+"locally sourced":"skips the freight miles and supports nearby hands.",
+"artisan handmade":"carries real craft instead of mass-made shortcuts.",
+"digital paperless":"does the paperwork without cutting down one tree.",
+"consciously refused":"needs nothing at all — the greenest thing you cannot buy.",
+"grow-it-yourself":"grows fresh with no packaging and no fuel miles.",
+"community garden":"feeds a whole street from one sunny patch.",
+"second-life upcycled":"finds a new useful job for what already exists.",
+"take-back recyclable":"returns to a real recycling loop instead of a bin.",
+"glass container":"keeps food pure, adds no taste, and recycles forever.",
+"stainless steel":"outlives plastic many times over and recycles easily.",
+"aluminium":"recycles with a small fraction of first-run energy.",
+"ceramic":"fires earth into damage-proof everyday beauty.",
+"refill-and-reuse system":"turns throwaway into a refill routine that ends disposables."};
+
+const CTX_SUBJ = {home:"the home",kitchen:"the kitchen",garden:"the garden",school:"school",office:"the office",workshop:"the workshop",bathroom:"the bathroom",bedroom:"the bedroom",travel:"travel",farm:"the farm"};
+const CTX_WHERE = {home:"At home",kitchen:"In the kitchen",garden:"In the garden",school:"At school",office:"In the office",workshop:"In the workshop",bathroom:"In the bathroom",bedroom:"In the bedroom",travel:"While travelling",farm:"On the farm"};
+
+const CAT_ORDER = ["Trees","Poison","Plastic","Wood","Buildings","Sleep","Energy","Water","Food","Clothes","Waste"];
+
+/* Build the full 50,000-entry library */
+const LIBRARY = [];
+(function build(){
+  let num = 0;
+  for (let h = 0; h < HARMS.length; h++) {
+    const harm = HARMS[h];
+    for (let s = 0; s < SWAPS.length; s++) {
+      for (let x = 0; x < CONTEXTS.length; x++) {
+        num++;
+        const e = {num:num, harm:harm.n, cat:harm.c, swap:SWAPS[s], ctx:CONTEXTS[x]};
+        e.text = (harm.n + " " + SWAPS[s] + " " + CONTEXTS[x] + " " + harm.c + " " + (HARMS_PROBLEM[harm.n] || "") + " " + (SWAP_BENEFIT[SWAPS[s]] || "")).toLowerCase();
+        LIBRARY.push(e);
+      }
+    }
+  }
+})();
+
+const TOTAL = LIBRARY.length; /* expected: 50,000 */
+
+/* ============ Unique generated SVG art for every card ============ */
+function hashStr(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function rng(seed){let a=seed>>>0;return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const CATART={
+ Trees:{sky:['#f2f8dd','#a8e3ac'],hill:['#57a05a','#2f6b3c'],fg:'#2f6b3c',sun:'#fff3b0'},
+ Poison:{sky:['#f1ebf6','#c9b6e8'],hill:['#9a79c9','#6b4fa0'],fg:'#4b2e7a',sun:'#f9ecae'},
+ Plastic:{sky:['#e6f4f8','#a7d8ea'],hill:['#5aa7c4','#33718f'],fg:'#2a5e77',sun:'#c8f0fa'},
+ Wood:{sky:['#f6f0dc','#e8d29b'],hill:['#c39558','#8a5f2c'],fg:'#6b4520',sun:'#ffe9a8'},
+ Buildings:{sky:['#eaeff7','#aebfdc'],hill:['#8298bd','#50628a'],fg:'#39446b',sun:'#f6e9c8'},
+ Sleep:{sky:['#232a4d','#131731'],hill:['#465079','#2a2f4f'],fg:'#d3d9f2',sun:'#f4f1d8'},
+ Energy:{sky:['#fef4da','#ffd98a'],hill:['#eaa95e','#bf7538'],fg:'#9c5a1e',sun:'#fff1b8'},
+ Water:{sky:['#e9f7fb','#9fd4e8'],hill:['#5fb3cf','#2f7e99'],fg:'#256b83',sun:'#d9f2fa'},
+ Food:{sky:['#f5f8de','#d9ec9e'],hill:['#a9cc72','#749c41'],fg:'#5c8029',sun:'#fff3b0'},
+ Clothes:{sky:['#f6ebf1','#e4bed2'],hill:['#c48cab','#91597b'],fg:'#7a4463',sun:'#fbe3ef'},
+ Waste:{sky:['#f0ebe2','#d6c8b1'],hill:['#ab916c','#7d6544'],fg:'#6b5535',sun:'#f6ecd2'}};
+function cardArt(e){
+ const R=rng(hashStr(e.cat+'|'+e.harm+'|'+e.swap+'|'+e.ctx)),P=CATART[e.cat],uid='g'+e.num,W=400,H=170,B=H-6;
+ let s='<svg viewBox="0 0 400 170" role="img" preserveAspectRatio="xMidYMid slice" aria-label="Illustration: '+e.swap+' alternative instead of '+e.harm+'">';
+ s+='<defs><linearGradient id="'+uid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+P.sky[0]+'"/><stop offset="1" stop-color="'+P.sky[1]+'"/></linearGradient></defs>';
+ s+='<rect width="400" height="170" fill="url(#'+uid+')"/>';
+ /* sun / moon */
+ var sx=(28+R()*344).toFixed(0),sy=(20+R()*40).toFixed(0),sr=(9+R()*9).toFixed(0);
+ s+='<circle cx="'+sx+'" cy="'+sy+'" r="'+sr+'" fill="'+P.sun+'" opacity=".95"/>';
+ if(e.cat==='Sleep'){ /* stars + crescent */
+  var st='';for(var i=0;i<6+Math.floor(R()*5);i++){st+='<circle cx="'+(15+R()*370).toFixed(0)+'" cy="'+(8+R()*55).toFixed(0)+'" r="'+(0.8+R()*1.2).toFixed(1)+'" fill="#fff" opacity="'+(0.5+R()*0.5).toFixed(2)+'"/>';}
+  s+=st+'<circle cx="'+sx+'" cy="'+sy+'" r="'+sr+'" fill="#131731" clip-path="none" transform="translate('+ (sr*0.55).toFixed(0) +',-'+(sr*0.25).toFixed(0)+')" opacity=".9"/>';
+ }
+ /* clouds */
+ if(e.cat!=='Sleep'){var cl='';for(var c2=0;c2<2+Math.floor(R()*3);c2++){var cx2=(30+R()*340).toFixed(0),cy2=(14+R()*50).toFixed(0),cw=(18+R()*26).toFixed(0);cl+='<ellipse cx="'+cx2+'" cy="'+cy2+'" rx="'+cw+'" ry="'+(cw*0.32).toFixed(0)+'" fill="#ffffff" opacity=".75"/><ellipse cx="'+(+cx2+ +cw*0.9)+'" cy="'+cy2+'" rx="'+(cw*0.6).toFixed(0)+'" ry="'+(cw*0.26).toFixed(0)+'" fill="#ffffff" opacity=".75"/>';}s+=cl;}
+ /* hills */
+ var hy1=104+R()*16,hy2=118+R()*14;
+ s+='<path d="M0,170 L0,'+hy2.toFixed(0)+' Q110,'+(hy2-30-R()*18).toFixed(0)+' 220,'+(hy2-10).toFixed(0)+' Q320,'+(hy2-24-R()*14).toFixed(0)+' 400,'+(hy2-8).toFixed(0)+' L400,170 Z" fill="'+P.hill[0]+'"/>';
+ s+='<path d="M0,170 L0,'+B+' Q130,'+(B-22-R()*12).toFixed(0)+' 400,'+(B-6-R()*8).toFixed(0)+' L400,170 Z" fill="'+P.hill[1]+'"/>';
+ /* foreground per category */
+ var f='';
+ if(e.cat==='Trees'||e.cat==='Food'){var n=2+Math.floor(R()*3);
+  for(var i=0;i<n;i++){var x=26+i*(348/n)+R()*44-22,ht=(e.cat==='Trees'?46+R()*46:26+R()*26),cr=(e.cat==='Trees'?13+R()*10:8+R()*5);
+   f+='<rect x="'+x.toFixed(0)+'" y="'+(B-ht).toFixed(0)+'" width="6" height="'+ht.toFixed(0)+'" rx="3" fill="'+P.fg+'"/>';
+   f+='<ellipse cx="'+x.toFixed(0)+'" cy="'+(B-ht-6).toFixed(0)+'" rx="'+cr.toFixed(0)+'" ry="'+(cr*0.85).toFixed(0)+'" fill="'+P.fg+'"/>';}
+ }
+ else if(e.cat==='Wood'){var items=2+Math.floor(R()*2);
+  for(var w1=0;w1<items;w1++){var wx=(30+w1*110+R()*60),ww=26+R()*16;
+   f+='<rect x="'+wx.toFixed(0)+'" y="'+(B-ww*0.5).toFixed(0)+'" width="'+ww.toFixed(0)+'" height="9" rx="4" fill="'+P.fg+'"/>';
+   f+='<rect x="'+(wx+ww*0.18).toFixed(0)+'" y="'+(B-2).toFixed(0)+'" width="6" height="24" rx="3" fill="'+P.fg+'"/>';
+   f+='<rect x="'+(wx+ww*0.72).toFixed(0)+'" y="'+(B-2).toFixed(0)+'" width="6" height="24" rx="3" fill="'+P.fg+'"/>';}
+ }
+ else if(e.cat==='Buildings'){var bn=4+Math.floor(R()*3);for(var b1=0;b1<bn;b1++){var bx=b1*(400/bn)+R()*16-8,bw=24+R()*22,bh=42+R()*64;
+   f+='<rect x="'+bx.toFixed(0)+'" y="'+(B-bh).toFixed(0)+'" width="'+bw.toFixed(0)+'" height="'+bh.toFixed(0)+'" fill="'+P.fg+'"/>';
+   var rows=3+Math.floor(R()*3);for(var r1=1;r1<=rows;r1++){f+='<rect x="'+(bx+bw*0.2).toFixed(0)+'" y="'+(B-bh+r1*(bh/(rows+1))).toFixed(0)+'" width="'+(bw*0.6).toFixed(0)+'" height="3" rx="1.5" fill="'+P.sky[1]+'" opacity=".85"/>';}}
+ }
+ else if(e.cat==='Energy'){for(var e1=0;e1<2+Math.floor(R()*2);e1++){var ex=50+e1*(180+R()*60),ph=34+R()*42;
+   f+='<rect x="'+(ex-2).toFixed(0)+'" y="'+(B-ph).toFixed(0)+'" width="4" height="'+ph.toFixed(0)+'" rx="2" fill="'+P.fg+'"/>';
+   for(var bl=0;bl<3;bl++){f+='<line x1="'+ex.toFixed(0)+'" y1="'+(B-ph).toFixed(0)+'" x2="'+ex.toFixed(0)+'" y2="'+(B-ph-12).toFixed(0)+'" stroke="'+P.fg+'" stroke-width="3" stroke-linecap="round" transform="rotate('+(120*bl)+' '+ex.toFixed(0)+' '+(B-ph).toFixed(0)+')"/>';}}
+ }
+ else if(e.cat==='Water'){for(var w2=0;w2<3;w2++){var wy=B-8-w2*22;f+='<path d="M0,'+wy.toFixed(0)+' Q40,'+(wy-8).toFixed(0)+' 80,'+wy.toFixed(0)+' T160,'+wy.toFixed(0)+' T240,'+wy.toFixed(0)+' T320,'+wy.toFixed(0)+' T400,'+wy.toFixed(0)+'" stroke="'+P.fg+'" fill="none" stroke-width="4" opacity="'+(0.85-w2*0.25).toFixed(2)+'"/>';}
+  f+='<path d="M'+(40+R()*120).toFixed(0)+' '+(B-88)+' q-9 13 0 20 q10-8 0-20" fill="'+P.fg+'"/>';
+ }
+ else if(e.cat==='Clothes'){f+='<path d="M20 '+(B-78)+' Q200 '+(B-64+R()*10).toFixed(0)+' 380 '+(B-78)+'" stroke="'+P.fg+'" stroke-width="3" fill="none"/>';
+  for(var sh=0;sh<2+Math.floor(R()*2);sh++){var sx2=50+sh*(130+R()*40),sy2=B-70,sww=30+R()*14;
+   f+='<rect x="'+sx2.toFixed(0)+'" y="'+sy2.toFixed(0)+'" width="'+sww.toFixed(0)+'" height="'+(38+R()*16).toFixed(0)+'" rx="8" fill="'+P.fg+'"/><rect x="'+(sx2-8).toFixed(0)+'" y="'+sy2.toFixed(0)+'" width="10" height="18" rx="5" fill="'+P.fg+'"/><rect x="'+(+sx2+sww-2).toFixed(0)+'" y="'+sy2.toFixed(0)+'" width="10" height="18" rx="5" fill="'+P.fg+'"/>';
+   f+='<circle cx="'+(+sx2+sww*0.5).toFixed(0)+'" cy="'+(sy2-6).toFixed(0)+'" r="3" fill="'+P.sky[1]+'"/>';
+  }}
+ else if(e.cat==='Waste'){for(var bi=0;bi<2+Math.floor(R()*2);bi++){var wx2=36+bi*(120+R()*60),bw2=34+R()*12;
+   f+='<path d="M'+wx2.toFixed(0)+' '+(B-34)+' L'+(+wx2+bw2).toFixed(0)+' '+(B-34)+' L'+(+wx2+bw2-4).toFixed(0)+' '+(B-4)+' L'+(+wx2+4).toFixed(0)+' '+(B-4)+' Z" fill="'+P.fg+'"/>';
+   f+='<rect x="'+(wx2-4).toFixed(0)+'" y="'+(B-38).toFixed(0)+'" width="'+(bw2+8).toFixed(0)+'" height="5" rx="2.5" fill="'+P.fg+'"/>';
+   f+='<path d="M'+(+wx2+bw2*0.5).toFixed(0)+' '+(B-52)+' q-2 -10 6 -14 M'+(+wx2+bw2*0.5).toFixed(0)+' '+(B-52)+' q8-4 14-9" stroke="'+P.fg+'" stroke-width="3" fill="none" stroke-linecap="round"/>';}
+ }
+ else { /* Poison, Plastic: bottle silhouette + botanical leaves */
+  var bx2=52+R()*70;
+  f+='<rect x="'+bx2.toFixed(0)+'" y="'+(B-58).toFixed(0)+'" width="26" height="54" rx="10" fill="'+P.fg+'" opacity=".55"/><rect x="'+(+bx2+8).toFixed(0)+'" y="'+(B-72).toFixed(0)+'" width="10" height="16" rx="4" fill="'+P.fg+'" opacity=".55"/>';
+  var lv='';for(var l1=0;l1<3+Math.floor(R()*3);l1++){var lx2=90+R()*220,ly2=B-14-R()*44,la=(R()*60-30).toFixed(0),ls=6+R()*6;
+   lv+='<ellipse cx="'+lx2.toFixed(0)+'" cy="'+ly2.toFixed(0)+'" rx="'+ls.toFixed(0)+'" ry="'+(ls*0.45).toFixed(0)+'" fill="'+(e.cat==='Poison'?P.fg:'#2f6b3c')+'" transform="rotate('+la+' '+lx2.toFixed(0)+' '+ly2.toFixed(0)+')"/>';}
+  f+=lv;
+ }
+ s+=f+'</svg>';
+ return s;
+}
+</script>
+
+<script>
+/* ============ Rendering & interaction ============ */
+const searchEl = document.getElementById('search');
+const sortEl = document.getElementById('sort');
+const cardsWrap = document.getElementById('cards');
+const tabsWrap = document.getElementById('tabs');
+const countline = document.getElementById('countline');
+const loadBtn = document.getElementById('loadMore');
+const PAGE = 48;
+let activeFilter = 'All';
+let filtered = LIBRARY;
+let shown = 0;
+let waitingForMore = false;
+
+document.getElementById('totalBadge').textContent = TOTAL.toLocaleString('en-US');
+document.getElementById('libTitle').innerHTML = TOTAL.toLocaleString('en-US') + ' green words.<br>One greener world.';
+
+/* category tabs */
+const allTabs = [['All','All topics']].concat(CAT_ORDER.map(function(c){return [c, c + (c==='Poison' ? ' & chemicals' : c==='Trees' ? ' & land' : c==='Wood' ? ' & beds & furniture' : c==='Buildings' ? ' & cities' : c==='Sleep' ? ' & wellbeing' : '')] }));
+allTabs.forEach(function(pair){
+  const b = document.createElement('button');
+  b.className = 'tab' + (pair[0] === 'All' ? ' active' : '');
+  b.textContent = pair[1];
+  b.dataset.filter = pair[0];
+  b.addEventListener('click', function(){
+    tabsWrap.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active', t === b);});
+    activeFilter = pair[0];
+    refilter();
+  });
+  tabsWrap.appendChild(b);
+});
+
+function esc(s){const d=document.createElement('span');d.textContent=s;return d.innerHTML;}
+
+/* Unique per card: harm + swap + place, so no two cards share a title */
+function cardTitle(e){return 'Instead of ' + e.harm + ' — ' + e.swap + ' for ' + (CTX_SUBJ[e.ctx] || e.ctx);}
+
+function card(e){
+  const cardBox = document.createElement('article');
+  cardBox.className = 'card clickable';
+  cardBox.tabIndex = 0;
+  cardBox.setAttribute('role','button');
+  cardBox.setAttribute('aria-label','Open details: instead of ' + e.harm + ', try ' + e.swap + ' for ' + e.ctx);
+  cardBox.innerHTML = '<div class="thumb" role="img" aria-label="Illustration: ' + esc(e.swap) + ' alternative instead of ' + esc(e.harm) + '">' + cardArt(e) + '</div>'
+    + '<div class="card-top"><span class="tag">' + esc(e.cat) + '</span><span class="num">#' + e.num.toLocaleString('en-US') + ' of ' + TOTAL.toLocaleString('en-US') + '</span></div>'
+    + '<h3>' + esc(cardTitle(e)) + '</h3>'
+    + '<p class="why"><strong>Why it harms:</strong> ' + esc(HARMS_PROBLEM[e.harm] || '') + ' ' + esc(CTX_WHERE[e.ctx] || 'There') + ', the fix is ' + esc(e.swap) + '.</p>'
+    + '<p class="swap"><strong>Better:</strong> ' + esc(SWAP_BENEFIT[e.swap] || '') + '</p>';
+  cardBox.addEventListener('click', function(){ openModal(e); });
+  cardBox.addEventListener('keydown', function(ev){
+    if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openModal(e); }
+  });
+  return cardBox;
+}
+
+function refilter(){
+  const q = searchEl.value.trim().toLowerCase();
+  let list = LIBRARY;
+  if (activeFilter !== 'All') list = list.filter(function(e){return e.cat === activeFilter;});
+  if (q) list = list.filter(function(e){return e.text.indexOf(q) !== -1;});
+  if (sortEl.value === 'az') {
+    list = list.slice().sort(function(a,b){return a.harm.localeCompare(b.harm) || a.num - b.num;});
+    if (q) list = list.slice().sort(function(a,b){return a.harm.localeCompare(b.harm);});
+  }
+  filtered = list;
+  cardsWrap.innerHTML = '';
+  shown = 0;
+  appendPage();
+}
+
+function appendPage(){
+  const slice = filtered.slice(shown, shown + PAGE);
+  const frag = document.createDocumentFragment();
+  slice.forEach(function(e){frag.appendChild(card(e));});
+  cardsWrap.appendChild(frag);
+  shown += slice.length;
+  countline.textContent = 'Showing ' + shown.toLocaleString('en-US') + ' of ' + filtered.length.toLocaleString('en-US') + ' green alternatives' + (activeFilter === 'All' ? '' : ' in ' + activeFilter);
+  loadBtn.parentElement.style.display = shown < filtered.length ? 'block' : 'none';
+  if (waitingForMore && shown < filtered.length) { waitingForMore = false; appendPage(); }
+}
+
+let debounce;
+searchEl.addEventListener('input', function(){clearTimeout(debounce); debounce = setTimeout(refilter, 120);});
+sortEl.addEventListener('change', refilter);
+loadBtn.addEventListener('click', function(){
+  waitingForMore = true;
+  appendPage();
+});
+refilter();
+
+/* pledge */
+document.getElementById('pledge').addEventListener('click', function(){
+  document.getElementById('pledgeMessage').textContent = 'Your pledge: I will pick one alternative from the 50,000 and make it my new habit this week. Start small, keep going, share what works.';
+  document.getElementById('pledge').textContent = '✓ Pledge made';
+});
+
+/* ============ Detail modal ============ */
+const modal = document.createElement('div');
+modal.className = 'modal';
+modal.id = 'modal';
+modal.hidden = true;
+modal.innerHTML = '<div class="modal-box" role="dialog" aria-modal="true" aria-label="Alternative details">'
+  + '<button class="modal-close" id="mClose" aria-label="Close details">✕</button>'
+  + '<div class="modal-art" id="mArt"></div>'
+  + '<div class="card-top"><span class="tag" id="mTag"></span><span class="num" id="mNum"></span></div>'
+  + '<h2 id="mTitle"></h2>'
+  + '<div class="m-sec"><span class="m-label">Instead of</span><p class="m-value" id="mHarm"></p></div>'
+  + '<div class="m-sec"><span class="m-label">The problem</span><p class="m-value" id="mProb"></p></div>'
+  + '<div class="m-sec"><span class="m-label">Try this instead</span><p class="m-value" id="mSwap"></p></div>'
+  + '<div class="m-sec"><span class="m-label">Where</span><p class="m-value"><span class="place" id="mPlace"></span></p></div>'
+  + '<div class="m-sec"><span class="m-label">Why it helps</span><p class="m-value" id="mWhy"></p></div>'
+  + '<div class="m-actions"><button class="btn primary" id="mCopy">⧉ Copy this alternative</button><button class="btn primary" id="mSpeak">🔊 Listen</button><button class="btn ghost" id="mSearchTopic" style="border:1px solid var(--line);color:var(--forest)">🔎 Search this topic</button></div>'
+  + '<p class="m-more">More ways to replace the same harmful thing — click a green word:</p>'
+  + '<div class="m-chips" id="mChips"></div></div>';
+document.body.appendChild(modal);
+let currentEntry = null;
+function openModal(e){
+  currentEntry = e;
+  document.getElementById('mArt').innerHTML = cardArt(e);
+  document.getElementById('mTag').textContent = e.cat;
+  document.getElementById('mNum').textContent = '#' + e.num.toLocaleString('en-US') + ' of ' + TOTAL.toLocaleString('en-US');
+  document.getElementById('mTitle').textContent = cardTitle(e);
+  document.getElementById('mHarm').textContent = e.harm.charAt(0).toUpperCase() + e.harm.slice(1) + '.';
+  document.getElementById('mProb').textContent = HARMS_PROBLEM[e.harm] || '';
+  document.getElementById('mSwap').innerHTML = '<strong>' + esc(e.swap.charAt(0).toUpperCase() + e.swap.slice(1)) + '</strong> — ' + esc(SWAP_BENEFIT[e.swap] || '');
+  document.getElementById('mPlace').textContent = e.ctx.charAt(0).toUpperCase() + e.ctx.slice(1);
+  document.getElementById('mWhy').textContent = CAT_WHY[e.cat] || '';
+  const chips = document.getElementById('mChips');
+  chips.innerHTML = '';
+  SWAPS.forEach(function(swapName){
+    const b = document.createElement('button');
+    b.className = 'chip' + (swapName === e.swap ? ' active' : '');
+    b.textContent = swapName;
+    b.addEventListener('click', function(){
+      const target = LIBRARY.find(function(x){return x.harm === e.harm && x.swap === swapName && x.ctx === e.ctx;});
+      if (target) openModal(target);
+    });
+    chips.appendChild(b);
+  });
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  document.getElementById('mClose').focus();
+}
+function closeModal(){
+  modal.hidden = true;
+  document.body.style.overflow = '';
+}
+document.getElementById('mClose').addEventListener('click', closeModal);
+modal.addEventListener('click', function(ev){ if (ev.target === modal) closeModal(); });
+document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && !modal.hidden) closeModal(); });
+document.getElementById('mCopy').addEventListener('click', function(){
+  const text = 'Instead of ' + currentEntry.harm + ', try: ' + currentEntry.swap + ' alternative (' + currentEntry.ctx + ') — GreenWorld ♻️';
+  const btn = document.getElementById('mCopy');
+  function done(){ btn.textContent = '✓ Copied'; setTimeout(function(){ btn.textContent = '⧉ Copy this alternative'; }, 1600); }
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done).catch(function(){ fallCopy(text, done); });
+  else fallCopy(text, done);
+});
+function fallCopy(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } catch (err) {}
+  document.body.removeChild(ta);
+}
+const speakBtn = document.getElementById('mSpeak');
+const speakPhrase = 'Hi Green World! Instead of what is bad, here is a green word: Instead of ';
+speakBtn.addEventListener('click', function(){
+  if (!('speechSynthesis' in window)) { speakBtn.textContent = '🔇 Not supported'; return; }
+  const synth = window.speechSynthesis;
+  if (synth.speaking || synth.pending) { synth.cancel(); speakBtn.textContent = '🔊 Listen'; return; }
+  const u = new SpeechSynthesisUtterance(speakPhrase + currentEntry.harm + ', try the ' + currentEntry.swap + ' alternative, for ' + currentEntry.ctx + '. ' + (CAT_WHY[currentEntry.cat] || ''));
+  u.rate = 0.95; u.onend = function(){ speakBtn.textContent = '🔊 Listen'; };
+  speakBtn.textContent = '⏹ Stop';
+  synth.speak(u);
+});
+document.getElementById('mSearchTopic').addEventListener('click', function(){
+  closeModal();
+  searchEl.value = currentEntry.harm;
+  refilter();
+  document.getElementById('library').scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
