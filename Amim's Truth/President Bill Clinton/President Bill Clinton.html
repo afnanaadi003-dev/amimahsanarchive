@@ -76,8 +76,17 @@
 <body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
 
     <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="bg-amber-600 text-slate-950 text-xs font-semibold py-1 px-4 text-center tracking-wide">
-        <i class="fa-solid fa-building-columns mr-2"></i> OFFICIAL DIGITAL PRESIDENTIAL ARCHIVE & GLOBAL HUMANITARIAN PORTAL
+    <div class="bg-amber-600 text-slate-950 text-xs font-semibold py-1 px-4 tracking-wide">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <a href="../Amim%27s%20Truth.html" class="hover:underline flex items-center gap-1.5 font-bold shrink-0">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Amim's Truth</span>
+            </a>
+            <span class="text-center truncate">
+                <i class="fa-solid fa-building-columns mr-2"></i> <span class="hidden sm:inline">OFFICIAL DIGITAL PRESIDENTIAL ARCHIVE & GLOBAL HUMANITARIAN PORTAL</span><span class="sm:hidden">PRESIDENTIAL ARCHIVE</span>
+            </span>
+            <span class="w-24 shrink-0"></span>
+        </div>
     </div>
 
     <!-- STICKY GLASSMORPHISM NAVBAR -->
@@ -110,6 +119,10 @@
 
                 <!-- Action Button & Search Trigger -->
                 <div class="hidden sm:flex items-center space-x-3">
+                    <a href="../Amim%27s%20Truth.html" class="text-slate-300 hover:text-amber-400 font-semibold text-sm flex items-center space-x-1.5 px-2 py-1 rounded-lg hover:bg-slate-800 transition-colors" title="Back to Amim's Truth">
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                        <span>Amim's Truth</span>
+                    </a>
                     <button onclick="toggleSearchModal()" class="p-2 text-slate-400 hover:text-amber-400 rounded-full hover:bg-slate-800 transition-colors" title="Search Archive">
                         <i class="fa-solid fa-magnifying-glass text-lg"></i>
                     </button>
@@ -133,6 +146,7 @@
 
         <!-- Mobile Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="../Amim%27s%20Truth.html" class="block text-amber-400 font-semibold hover:underline py-2 border-b border-slate-800/50">&larr; Back to Amim's Truth</a>
             <a href="#bio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Biography & Timeline</a>
             <a href="#works-slider" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">10 Monumental Humanitarian Works</a>
             <a href="#green-philosophy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Dream, Green & Core Philosophy</a>

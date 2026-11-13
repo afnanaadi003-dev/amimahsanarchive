@@ -458,6 +458,20 @@
      * 11 Disciplines × 3 Essays = 33 Complete, High-Clarity Philosophical Essays
      * ========================================================================
      */
+    // Static presidential archive pages surfaced in the sidebar navigation
+    const PRESIDENTIAL_ARCHIVES = [
+      {
+        name: 'President Bill Clinton Archive',
+        meta: '42nd President · 1993–2001',
+        href: 'President%20Bill%20Clinton/President%20Bill%20Clinton.html'
+      },
+      {
+        name: 'President Barack Obama Archive',
+        meta: '44th President · 2009–2017',
+        href: 'President%20Barack%20Obama/President%20Barack%20Obama.html'
+      }
+    ];
+
     const JOURNAL_DATA = [
       {
         id: 'culture',
@@ -1312,7 +1326,7 @@
               <span class="text-sm font-bold text-ink">Presidential Archive</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-xs font-bold text-ink-muted">1</span>
+              <span class="text-xs font-bold text-ink-muted">${PRESIDENTIAL_ARCHIVES.length}</span>
               <svg class="w-4 h-4 text-ink-muted chevron-icon ${archiveOpen ? 'rotated' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
@@ -1322,14 +1336,17 @@
           <div class="submenu-wrapper ${archiveOpen ? 'open' : ''}">
             <div class="submenu-inner">
               <ul class="pl-4 pr-1 py-1 space-y-1 ml-4 border-l border-theme my-1">
-                <li>
-                  <a
-                    href="President%20Bill%20Clinton/President%20Bill%20Clinton.html"
-                    class="subitem-btn w-full block text-left px-3 py-2 rounded-r-lg text-[13px] leading-snug transition"
-                  >
-                    President Bill Clinton Archive
-                  </a>
-                </li>
+                ${PRESIDENTIAL_ARCHIVES.map(item => `
+                  <li>
+                    <a
+                      href="${item.href}"
+                      class="subitem-btn w-full block text-left px-3 py-2 rounded-r-lg text-[13px] leading-snug transition"
+                    >
+                      <span class="block">${item.name}</span>
+                      <span class="block text-[11px] text-ink-muted">${item.meta}</span>
+                    </a>
+                  </li>
+                `).join('')}
               </ul>
             </div>
           </div>

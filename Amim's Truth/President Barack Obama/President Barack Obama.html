@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barack Obama Presidential Archive & Legacy Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-merriweather { font-family: 'Merriweather', serif; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(217, 119, 6, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-amber-600 text-slate-950 text-xs font-semibold py-1 px-4 tracking-wide">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <a href="../Amim%27s%20Truth.html" class="hover:underline flex items-center gap-1.5 font-bold shrink-0">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Amim's Truth</span>
+            </a>
+            <span class="text-center truncate">
+                <i class="fa-solid fa-building-columns mr-2"></i> <span class="hidden sm:inline">OFFICIAL DIGITAL PRESIDENTIAL ARCHIVE & LEGACY PORTAL</span><span class="sm:hidden">PRESIDENTIAL ARCHIVE</span>
+            </span>
+            <span class="w-24 shrink-0"></span>
+        </div>
+    </div>
+
+    <!-- STICKY GLASSMORPHISM NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-slate-950 font-bold shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-landmark text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-slate-100 block group-hover:text-amber-400 transition-colors">OBA ARCHIVE</span>
+                        <span class="text-xs text-amber-500 font-mono block tracking-widest uppercase">44th U.S. President</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#bio" class="hover:text-amber-400 transition-colors py-1">Biography</a>
+                    <a href="#works" class="hover:text-amber-400 transition-colors py-1">10 Great Works</a>
+                    <a href="#philosophy" class="hover:text-amber-400 transition-colors py-1">Philosophy</a>
+                    <a href="#legacy" class="hover:text-amber-400 transition-colors py-1">Legacy</a>
+                    <a href="#awards" class="hover:text-amber-400 transition-colors py-1">Awards</a>
+                    <a href="#family" class="hover:text-amber-400 transition-colors py-1">Family</a>
+                    <a href="#books" class="hover:text-amber-400 transition-colors py-1">Books</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="../Amim%27s%20Truth.html" class="bg-gradient-to-r from-amber-600 to-amber-500 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm hover:from-amber-500 hover:to-amber-400 transition-all shadow-md flex items-center space-x-2">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Back to Amim's Truth</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="p-2 text-slate-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="../Amim%27s%20Truth.html" class="block text-amber-400 font-semibold hover:underline py-2 border-b border-slate-800/50">&larr; Back to Amim's Truth</a>
+            <a href="#bio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Biography &amp; Timeline</a>
+            <a href="#works" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">10 Notable Works</a>
+            <a href="#philosophy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Core Philosophy</a>
+            <a href="#legacy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Legacy &amp; Inspired Leaders</a>
+            <a href="#awards" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Awards &amp; Honors</a>
+            <a href="#family" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Family</a>
+            <a href="#books" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">Books &amp; Memoirs</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="relative hero-bg py-24 lg:py-32 overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-full text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-award"></i>
+                        <span>44th President of the United States (2009–2017)</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Legacy of <span class="gold-gradient-text">Hope, Reform</span> &amp; Democratic Renewal
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl leading-relaxed font-merriweather">
+                        Exploring the public life of Barack Hussein Obama II: from community organizing on Chicago's South Side and constitutional scholarship, to signing the Affordable Care Act, the Paris Agreement, and becoming the first African American President of the United States.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#works" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all flex items-center space-x-2">
+                            <span>Explore 10 Works</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#books" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition-all flex items-center space-x-2">
+                            <i class="fa-solid fa-book-open text-amber-400"></i>
+                            <span>Books &amp; Memoirs</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/80 backdrop-blur-md border border-amber-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 px-3 py-1 rounded-md font-bold text-xs uppercase tracking-wider shadow">
+                            Verified Archive
+                        </div>
+                        <h3 class="text-xl font-bold font-cinzel text-amber-400 mb-6 flex items-center border-b border-slate-700 pb-3">
+                            <i class="fa-solid fa-chart-line mr-3"></i> Impact Metrics Snapshot
+                        </h3>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-white mb-1">8 Years</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Presidency (2009–2017)</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-amber-400 mb-1">20M+</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Americans Newly Insured</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-blue-400 mb-1">195</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Nations in Paris Accord</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-emerald-400 mb-1">4</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Major Authored Books</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-amber-500/10 rounded-xl border border-amber-500/20 text-xs text-slate-300 leading-relaxed">
+                            <i class="fa-solid fa-circle-info text-amber-400 mr-1.5"></i>
+                            <strong>Nobel Peace Prize (2009):</strong> Awarded for extraordinary efforts to strengthen international diplomacy and cooperation between peoples, cited for outreach to the Muslim world and work on nuclear non-proliferation.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BIOGRAPHY -->
+    <section id="bio" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">Presidential Profile &amp; Biographical Trajectory</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-base sm:text-lg">Understanding the political philosophy of community organizing, pragmatic reform, and inclusive democracy.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-calendar-days text-3xl text-amber-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Tenure</h3>
+                    <p class="text-sm text-slate-400 mt-1">Jan 20, 2009 – Jan 20, 2017 (Two Full Terms)</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-flag-usa text-3xl text-blue-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Political Party</h3>
+                    <p class="text-sm text-slate-400 mt-1">Democratic Party</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-ranking-star text-3xl text-emerald-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">First Inauguration</h3>
+                    <p class="text-sm text-slate-400 mt-1">47 Years Old; First African American President</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-globe text-3xl text-purple-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Core Ideology</h3>
+                    <p class="text-sm text-slate-400 mt-1">Pragmatic Progressivism &amp; Democratic Inclusion</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 font-merriweather leading-relaxed">
+                    <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">Biography &amp; Political Trajectory</h3>
+                    <p class="text-sm">
+                        Barack Hussein Obama II was born on August 4, 1961, in Honolulu, Hawaii, to a Kenyan father and an American mother from Kansas. Raised partly in Indonesia and Hawaii and educated at Columbia University and Harvard Law School, he became the first African American president of the <em>Harvard Law Review</em>.
+                    </p>
+                    <p class="text-sm">
+                        Rather than pursuing a corporate career, Obama returned to Chicago as a community organizer and later taught constitutional law at the University of Chicago. He served in the Illinois State Senate from 1997 to 2004 before winning a U.S. Senate seat in a landslide, delivering the celebrated 2004 Democratic National Convention keynote address.
+                    </p>
+                    <p class="text-sm">
+                        Elected the 44th President in 2008 amid the gravest financial crisis since the Great Depression, Obama stabilized the auto industry and financial system, signed the Affordable Care Act, and pursued diplomacy that produced the Paris Agreement and the Iran nuclear deal.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 font-merriweather leading-relaxed">
+                    <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">Governing Philosophy</h3>
+                    <p class="text-sm">
+                        <strong>"Yes We Can":</strong> Obama's public philosophy centered on the conviction that democratic change is built from the ground up through organizing, persuasion, and coalitions—not merely through legislation from above.
+                    </p>
+                    <ul class="text-sm space-y-3 font-sans list-disc list-inside text-slate-400">
+                        <li><strong class="text-slate-200">Pragmatic Reform:</strong> Pursuing achievable, evidence-based progress over ideological purity, from health care to financial regulation.</li>
+                        <li><strong class="text-slate-200">Diplomacy First:</strong> Restoring multilateral engagement, nuclear non-proliferation, and climate cooperation as instruments of national security.</li>
+                        <li><strong class="text-slate-200">Equal Dignity:</strong> Advancing civil rights, marriage equality, and opportunity for communities historically left behind.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: 10 NOTABLE WORKS -->
+    <section id="works" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Domestic &amp; Global Impact</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">10 Notable Works for Mankind</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #1</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Affordable Care Act</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Signed in 2010, the ACA expanded health coverage to more than 20 million Americans, barred insurers from denying coverage for pre-existing conditions, and allowed young adults to remain on family plans.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>March 23, 2010</span><span>Health Equity</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-earth-americas"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #2</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Paris Climate Agreement</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Rallied 195 nations in 2015 around the first universal, legally binding global climate accord, committing countries to limit warming and report transparently on emissions.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>December 12, 2015</span><span>Climate Diplomacy</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-dove"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #3</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Iran Nuclear Deal</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">The 2015 Joint Comprehensive Plan of Action with world powers placed strict limits and inspections on Iran's nuclear program in exchange for phased sanctions relief.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>July 14, 2015</span><span>Non-Proliferation</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-industry"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #4</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Auto Industry Rescue</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Directed emergency loans to General Motors and Chrysler in 2009, saving more than a million jobs and helping the industry return to profitability within years.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2009</span><span>Economic Recovery</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #5</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Dodd-Frank Wall Street Reform</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Enacted sweeping financial regulation in 2010 to curb predatory lending, strengthen capital requirements, and create the Consumer Financial Protection Bureau.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>July 21, 2010</span><span>Consumer Protection</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-rainbow"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #6</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Marriage Equality</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Repealed "Don't Ask, Don't Tell" in 2011 and, after the Supreme Court's 2015 Obergefell ruling, made marriage equality the law of the land nationwide.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2011 &amp; 2015</span><span>Civil Rights</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #7</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Education &amp; Pell Expansion</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Ended federal student loan subsidies to banks, doubling Pell Grant funding and expanding access to community college and early childhood education.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2010</span><span>Opportunity</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #8</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Cuba &amp; Myanmar Opening</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Restored diplomatic relations with Cuba in 2014 and normalized ties with Myanmar, ending decades of isolation through engagement rather than confrontation.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2014–2016</span><span>Diplomacy</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #9</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Feed the Future</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Launched a global food security initiative that partnered with developing nations to raise agricultural productivity and reduce hunger and poverty.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2010</span><span>Food Security</span></div>
+                </div>
+
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-rocket"></i></div>
+                        <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #10</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Science &amp; Clean Energy</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-merriweather">Invested in the Recovery Act's clean energy programs, doubling renewable energy generation and funding research that lowered solar costs dramatically.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono"><span>2009</span><span>Innovation</span></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PHILOSOPHY -->
+    <section id="philosophy" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-emerald-400 font-mono text-xs uppercase tracking-widest font-semibold">Vision for the 21st Century</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">
+                        The Audacity of Hope: Democracy as a Shared Practice
+                    </h2>
+                    <p class="text-slate-300 font-merriweather leading-relaxed">
+                        Obama's philosophy treats hope not as passive optimism but as a discipline of action. He argues that democracy is not a spectator sport: it depends on citizens organizing, listening across difference, and holding institutions accountable. That conviction shaped both his community organizing and his presidency.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-lg"><i class="fa-solid fa-people-group text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Organizing From the Ground Up</h4>
+                                <p class="text-xs text-slate-400 mt-1">Change begins with communities building power through relationships, not with leaders acting alone.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-lg"><i class="fa-solid fa-handshake text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Empathy as Statecraft</h4>
+                                <p class="text-xs text-slate-400 mt-1">Understanding an adversary's fears and interests is a precondition for durable agreements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-2xl border border-emerald-500/30 relative">
+                        <i class="fa-solid fa-quote-left text-5xl text-emerald-500/20 absolute top-6 right-6"></i>
+                        <h3 class="text-xl font-bold font-cinzel text-emerald-400 mb-4">Core Philosophy Statement</h3>
+                        <blockquote class="text-slate-300 italic font-merriweather text-lg leading-relaxed mb-6">
+                            "The arc of the moral universe is long, but it bends toward justice."
+                        </blockquote>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-800">
+                            <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 font-bold">BO</div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Barack H. Obama II</div>
+                                <div class="text-xs text-slate-400">Frequently invoked in his speeches, quoting Dr. Martin Luther King Jr.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: LEGACY -->
+    <section id="legacy" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Global Influence &amp; Torchbearers</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Legacy &amp; Inspired Global Leaders</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm sm:text-base">Leaders whose work extends the causes Obama championed: diplomacy, equal dignity, and democratic renewal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">South Africa</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Nelson Mandela</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Obama has called Mandela his personal hero and a model for reconciliation after injustice.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-user-graduate"></i></div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Education Advocate</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Malala Yousafzai</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">The youngest Nobel laureate, whose campaign for girls' education echoes Obama's opportunity agenda.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-leaf"></i></div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Climate Diplomacy</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Paris Agreement Signatories</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">195 nations that committed to the framework Obama helped negotiate in 2015.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-seedling"></i></div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Next-Gen Leaders</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Obama Foundation Fellows</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Emerging civic leaders trained to carry organizing and public service into their own communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: AWARDS -->
+    <section id="awards" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-500 font-mono text-xs uppercase tracking-widest font-semibold">Distinguished Honors</span>
+                    <h2 class="text-3xl font-extrabold text-white font-cinzel">Major Awards &amp; Recognition</h2>
+                    <p class="text-slate-400 text-sm font-merriweather">
+                        Obama's public service has been recognized with the world's highest civilian and international honors.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl"><i class="fa-solid fa-medal"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Nobel Peace Prize (2009)</h4>
+                                <p class="text-xs text-slate-400">Awarded for efforts to strengthen international diplomacy and cooperation between peoples.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl"><i class="fa-solid fa-award"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Grammy Awards</h4>
+                                <p class="text-xs text-slate-400">Best Spoken Word Album for the audiobooks of "The Audacity of Hope" and "A Promised Land".</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl"><i class="fa-solid fa-pen-nib"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Presidential Medal of Freedom (2017)</h4>
+                                <p class="text-xs text-slate-400">Awarded by President Joe Biden for his leadership and public service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 font-merriweather leading-relaxed">
+                        <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">The Nobel Case Study</h3>
+                        <p class="text-sm">
+                            <strong>WHAT:</strong> The Norwegian Nobel Committee awarded the 2009 Peace Prize to Barack Obama "for his extraordinary efforts to strengthen international diplomacy and cooperation between peoples."
+                        </p>
+                        <p class="text-sm">
+                            <strong>WHY:</strong> The committee highlighted his vision of a world without nuclear weapons, his outreach to the Muslim world, and his emphasis on multilateral institutions and climate cooperation.
+                        </p>
+                        <p class="text-sm">
+                            <strong>CONTEXT:</strong> The award came less than a year into his presidency, making it one of the most debated Nobel Peace Prizes in modern history—praised as an affirmation of diplomacy and criticized as premature.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAMILY -->
+    <section id="family" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Personal Life</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Family &amp; Roots</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                    <div class="w-16 h-16 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/30 flex items-center justify-center text-2xl mx-auto mb-4"><i class="fa-solid fa-user"></i></div>
+                    <h3 class="text-lg font-bold text-white">Michelle Obama</h3>
+                    <p class="text-xs text-amber-400 font-mono mt-1">First Lady (2009–2017)</p>
+                    <p class="text-sm text-slate-400 mt-3 font-merriweather">Lawyer, author, and advocate behind the "Let's Move!" health initiative and the "Reach Higher" education campaign.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/30 flex items-center justify-center text-2xl mx-auto mb-4"><i class="fa-solid fa-children"></i></div>
+                    <h3 class="text-lg font-bold text-white">Malia &amp; Sasha Obama</h3>
+                    <p class="text-xs text-amber-400 font-mono mt-1">Daughters</p>
+                    <p class="text-sm text-slate-400 mt-3 font-merriweather">Raised largely out of the public eye, both pursued higher education and careers in media and the arts.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mx-auto mb-4"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3 class="text-lg font-bold text-white">Honolulu &amp; Chicago</h3>
+                    <p class="text-xs text-amber-400 font-mono mt-1">Roots</p>
+                    <p class="text-sm text-slate-400 mt-3 font-merriweather">Born in Hawaii and shaped by community organizing on Chicago's South Side, where his political career began.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: BOOKS -->
+    <section id="books" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Literature Library</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Books &amp; Memoirs</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 card-hover">
+                    <div class="h-28 rounded-xl bg-gradient-to-br from-amber-700 to-slate-950 flex items-center justify-center mb-4"><i class="fa-solid fa-book text-3xl text-amber-400"></i></div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">Dreams from My Father</h3>
+                    <p class="text-xs text-slate-500 font-mono mt-1">1995</p>
+                    <p class="text-xs text-slate-400 mt-2 font-merriweather">A searching memoir of race, identity, and family, tracing his journey from Hawaii to Chicago to Kenya.</p>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 card-hover">
+                    <div class="h-28 rounded-xl bg-gradient-to-br from-blue-800 to-slate-950 flex items-center justify-center mb-4"><i class="fa-solid fa-book text-3xl text-blue-400"></i></div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">The Audacity of Hope</h3>
+                    <p class="text-xs text-slate-500 font-mono mt-1">2006</p>
+                    <p class="text-xs text-slate-400 mt-2 font-merriweather">His political vision for bridging partisan divides and restoring faith in democratic government.</p>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 card-hover">
+                    <div class="h-28 rounded-xl bg-gradient-to-br from-emerald-800 to-slate-950 flex items-center justify-center mb-4"><i class="fa-solid fa-book text-3xl text-emerald-400"></i></div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">Of Thee I Sing</h3>
+                    <p class="text-xs text-slate-500 font-mono mt-1">2010</p>
+                    <p class="text-xs text-slate-400 mt-2 font-merriweather">A children's letter to his daughters celebrating thirteen American heroes and their virtues.</p>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 card-hover">
+                    <div class="h-28 rounded-xl bg-gradient-to-br from-purple-800 to-slate-950 flex items-center justify-center mb-4"><i class="fa-solid fa-book text-3xl text-purple-400"></i></div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">A Promised Land</h3>
+                    <p class="text-xs text-slate-500 font-mono mt-1">2020</p>
+                    <p class="text-xs text-slate-400 mt-2 font-merriweather">The first volume of his presidential memoirs, covering his rise through the first years of his presidency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-slate-950 font-bold">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div>
+                        <div class="font-cinzel text-lg font-bold text-slate-100">OBA ARCHIVE</div>
+                        <div class="text-xs text-amber-500 font-mono uppercase tracking-widest">44th U.S. President</div>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 text-center max-w-md font-merriweather">
+                    Dedicated to preserving the history, reforms, and democratic legacy of Barack Hussein Obama II, 44th President of the United States.
+                </p>
+                <a href="../Amim%27s%20Truth.html" class="text-xs font-semibold text-amber-400 hover:underline flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Amim's Truth
+                </a>
+            </div>
+            <div class="mt-8 pt-6 border-t border-slate-800/70 text-center text-xs text-slate-600 font-mono">
+                &copy; Barack Obama Presidential Digital Archive &amp; Legacy Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
