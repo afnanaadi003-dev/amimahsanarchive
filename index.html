@@ -1049,12 +1049,12 @@
                 synopsis: "Mass-Q-Rade investigates the unseen masks worn by modern individuals. Navigating psychological intrigue, digital surveillance, and hidden identities, the narrative dissects the fine line between the true self and artificial persona.",
                 link: "#",
                 volumes: [
-                    { no: 1, title: "The Falling Star", country: "India", protagonist: "Rahul Banerjee (Film Star)", themes: "Political corruption, media manipulation", link: "Mass-Q-Rade%20Book%201%20-%20The%20Falling%20Star.html" },
-                    { no: 2, title: "The Silent Advocate", country: "United States", protagonist: "Sarah Chen (Lawyer)", themes: "Corporate greed, racial injustice", link: "Mass-Q-Rade%20Book%202%20-%20The%20Silent%20Advocate.html" },
-                    { no: 3, title: "The Broken Healer", country: "United Kingdom", protagonist: "Dr. James Okafor (Doctor)", themes: "NHS bureaucracy, systemic racism", link: "Mass-Q-Rade%20Book%203%20-%20The%20Broken%20Healer.html" },
+                    { no: 1, title: "The Falling Star", country: "India", protagonist: "Rahul Banerjee (Film Star)", themes: "Political corruption, media manipulation", cover: "Mass-Q-Rade-Book-Covers/book-1.png", link: "Mass-Q-Rade%20Book%201%20-%20The%20Falling%20Star.html" },
+                    { no: 2, title: "The Silent Advocate", country: "United States", protagonist: "Sarah Chen (Lawyer)", themes: "Corporate greed, racial injustice", cover: "Mass-Q-Rade-Book-Covers/book-2.webp", link: "Mass-Q-Rade%20Book%202%20-%20The%20Silent%20Advocate.html" },
+                    { no: 3, title: "The Broken Healer", country: "United Kingdom", protagonist: "Dr. James Okafor (Doctor)", themes: "NHS bureaucracy, systemic racism", cover: "Mass-Q-Rade-Book-Covers/book-3.png", link: "Mass-Q-Rade%20Book%203%20-%20The%20Broken%20Healer.html" },
                     { no: 4, title: "The Forgotten Soldier", country: "Russia", protagonist: "Captain Elena Volkov (Military)", themes: "Government betrayal, war crimes", link: "Mass-Q-Rade%20Book%204%20-%20The%20Forgotten%20Soldier.html" },
-                    { no: 5, title: "The Invisible Labour", country: "China", protagonist: "Li Wei (Factory Worker)", themes: "Labor exploitation, surveillance state", link: "Mass-Q-Rade%20Book%205%20-%20The%20Invisible%20Worker.html" },
-                    { no: 6, title: "The Drowned Fisherman", country: "Philippines", protagonist: "Miguel Santos (Fisherman)", themes: "Environmental destruction, corporate impunity" },
+                    { no: 5, title: "The Invisible Labour", country: "China", protagonist: "Li Wei (Factory Worker)", themes: "Labor exploitation, surveillance state", cover: "Mass-Q-Rade-Book-Covers/book-5.png", link: "Mass-Q-Rade%20Book%205%20-%20The%20Invisible%20Worker.html" },
+                    { no: 6, title: "The Drowned Fisherman", country: "Philippines", protagonist: "Miguel Santos (Fisherman)", themes: "Environmental destruction, corporate impunity", cover: "Mass-Q-Rade-Book-Covers/book-6 - Copy.png", link: "Mass-Q-Rade%20Book%206%20-%20The%20Drowned%20Fisherman.html" },
                     { no: 7, title: "The Erased Teacher", country: "Nigeria", protagonist: "Amara Okonkwo (Teacher)", themes: "Educational neglect, gender discrimination" },
                     { no: 8, title: "The Ghost Journalist", country: "Brazil", protagonist: "Carlos Mendes (Journalist)", themes: "Media censorship, political violence" },
                     { no: 9, title: "The Stateless Refugee", country: "Syria", protagonist: "Fatima Al-Hassan (Refugee)", themes: "War, displacement, international indifference" },
@@ -1134,12 +1134,15 @@
                     <ol class="space-y-2">
                         ${data.volumes.map(v => `
                             <li class="glass-card rounded-xl p-3 flex gap-3 items-start">
-                                <span class="w-6 h-6 shrink-0 rounded-full bg-amberGold/15 border border-amberGold/30 text-amberGold text-[11px] font-bold flex items-center justify-center">${v.no}</span>
+                                ${v.cover
+                                    ? `<a href="${v.link || '#'}" class="w-12 shrink-0 rounded-md overflow-hidden bg-slate-900 border border-slate-800 block"><img src="${v.cover}" alt="${v.title} book cover" loading="lazy" onerror="this.closest('a').remove()" class="w-full h-auto block"></a>`
+                                    : ''}
                                 <div class="min-w-0">
-                                    <h4 class="text-sm font-semibold text-slate-100">
-                                        ${v.link
+                                    <h4 class="text-sm font-semibold text-slate-100 flex items-baseline gap-2">
+                                        <span class="text-[11px] font-mono font-bold text-amberGold/70 shrink-0">${String(v.no).padStart(2, '0')}</span>
+                                        <span>${v.link
                                             ? `<a href="${v.link}" class="hover:text-amberGold hover:underline transition-colors">${v.title} <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i></a>`
-                                            : v.title}
+                                            : v.title}</span>
                                     </h4>
                                     <p class="text-[11px] text-slate-400 mt-0.5">${v.country} <span class="text-slate-600">&middot;</span> ${v.protagonist}</p>
                                     <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">${v.themes}</p>
