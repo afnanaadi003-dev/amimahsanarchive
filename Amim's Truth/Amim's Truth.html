@@ -1107,7 +1107,7 @@
       fontSize: parseInt(localStorage.getItem('amims_font_size') || '18', 10),
       relaxedSpacing: localStorage.getItem('amims_spacing') === 'relaxed',
       activeTopicId: 'culture-1',
-      openCategories: new Set(['culture']),
+      openCategories: new Set(['presidential-archive', 'culture']),
       bookmarks: new Set(JSON.parse(localStorage.getItem('amims_truth_bookmarks') || '[]')),
       searchQuery: '',
       filterMode: 'all',
@@ -1296,7 +1296,47 @@
         `;
       }
 
-      nav.innerHTML = html;
+      const archiveOpen = state.openCategories.has('presidential-archive');
+      const archiveHtml = `
+        <div class="rounded-xl overflow-hidden mb-1">
+          <button
+            type="button"
+            onclick="toggleCategory('presidential-archive')"
+            aria-expanded="${archiveOpen}"
+            class="cat-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition"
+          >
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style="background-color: var(--accent-soft); color: var(--accent);">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M3 10l9-6 9 6H3z"/></svg>
+              </span>
+              <span class="text-sm font-bold text-ink">Presidential Archive</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-ink-muted">1</span>
+              <svg class="w-4 h-4 text-ink-muted chevron-icon ${archiveOpen ? 'rotated' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+
+          <div class="submenu-wrapper ${archiveOpen ? 'open' : ''}">
+            <div class="submenu-inner">
+              <ul class="pl-4 pr-1 py-1 space-y-1 ml-4 border-l border-theme my-1">
+                <li>
+                  <a
+                    href="President%20Bill%20Clinton/President%20Bill%20Clinton.html"
+                    class="subitem-btn w-full block text-left px-3 py-2 rounded-r-lg text-[13px] leading-snug transition"
+                  >
+                    President Bill Clinton Archive
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      nav.innerHTML = archiveHtml + html;
       document.getElementById('saved-count-badge').textContent = state.bookmarks.size;
     }
 

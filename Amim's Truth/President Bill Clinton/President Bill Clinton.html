@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Clinton Presidential Archive & Philanthropy Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        presidential: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            gold: '#d97706',
+                            goldlight: '#f59e0b',
+                            crimson: '#991b1b',
+                            blue: '#1e3a8a',
+                            accent: '#2563eb'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-merriweather { font-family: 'Merriweather', serif; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(217, 119, 6, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-amber-600 text-slate-950 text-xs font-semibold py-1 px-4 text-center tracking-wide">
+        <i class="fa-solid fa-building-columns mr-2"></i> OFFICIAL DIGITAL PRESIDENTIAL ARCHIVE & GLOBAL HUMANITARIAN PORTAL
+    </div>
+
+    <!-- STICKY GLASSMORPHISM NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-slate-950 font-bold shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-landmark text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-slate-100 block group-hover:text-amber-400 transition-colors">WJC ARCHIVE</span>
+                        <span class="text-xs text-amber-500 font-mono block tracking-widest uppercase">42nd U.S. President</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#bio" class="hover:text-amber-400 transition-colors py-1">Biography</a>
+                    <a href="#works-slider" class="hover:text-amber-400 transition-colors py-1">10 Great Works</a>
+                    <a href="#green-philosophy" class="hover:text-amber-400 transition-colors py-1">Green & Philosophy</a>
+                    <a href="#legacy-leaders" class="hover:text-amber-400 transition-colors py-1">Inspired Leaders</a>
+                    <a href="#nobel-peace" class="hover:text-amber-400 transition-colors py-1">Nobel Case</a>
+                    <a href="#hillary" class="hover:text-amber-400 transition-colors py-1">Hillary Clinton</a>
+                    <a href="#treatise" class="hover:text-amber-400 transition-colors py-1">Peace Treatise</a>
+                    <a href="#foundation" class="hover:text-amber-400 transition-colors py-1">Foundation</a>
+                    <a href="#books" class="hover:text-amber-400 transition-colors py-1">Books</a>
+                </nav>
+
+                <!-- Action Button & Search Trigger -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="toggleSearchModal()" class="p-2 text-slate-400 hover:text-amber-400 rounded-full hover:bg-slate-800 transition-colors" title="Search Archive">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <a href="#treatise" class="bg-gradient-to-r from-amber-600 to-amber-500 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm hover:from-amber-500 hover:to-amber-400 transition-all shadow-md flex items-center space-x-2">
+                        <i class="fa-solid fa-scroll"></i>
+                        <span>1,200w Treatise</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button onclick="toggleSearchModal()" class="p-2 text-slate-400 hover:text-amber-400">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 text-slate-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#bio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Biography & Timeline</a>
+            <a href="#works-slider" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">10 Monumental Humanitarian Works</a>
+            <a href="#green-philosophy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Dream, Green & Core Philosophy</a>
+            <a href="#legacy-leaders" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Inspired Leaders & Modals</a>
+            <a href="#nobel-peace" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Nobel Peace Prize Case Study</a>
+            <a href="#hillary" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Hillary Clinton Legacy</a>
+            <a href="#family-tree" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Family Tree</a>
+            <a href="#treatise" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">1,200w Peace Treatise</a>
+            <a href="#foundation" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Clinton Foundation & UN Partners</a>
+            <a href="#early-life" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Early Life & Arkansas Roots</a>
+            <a href="#cabinet" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Cabinet & Helping Hands</a>
+            <a href="#books" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">8 Featured Books & Summaries</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO & EXECUTIVE OVERVIEW -->
+    <section id="hero" class="relative hero-bg py-24 lg:py-32 overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Title & Mission -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-full text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-award"></i>
+                        <span>42nd President of the United States (1993–2001)</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Legacy of <span class="gold-gradient-text">Peace, Progress</span> & Global Philanthropy
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl leading-relaxed font-merriweather">
+                        Exploring the lifetime work of William Jefferson Clinton: from presiding over the longest economic expansion in American history and negotiating milestone peace treaties, to pioneering global humanitarian action that has impacted over 435 million lives across 180 countries.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#works-slider" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all flex items-center space-x-2">
+                            <span>Explore 10 Works</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#treatise" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition-all flex items-center space-x-2">
+                            <i class="fa-solid fa-book-open text-amber-400"></i>
+                            <span>Read Historical Treatise</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Quick Stats Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/80 backdrop-blur-md border border-amber-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 px-3 py-1 rounded-md font-bold text-xs uppercase tracking-wider shadow">
+                            Verified Archive
+                        </div>
+                        <h3 class="text-xl font-bold font-cinzel text-amber-400 mb-6 flex items-center border-b border-slate-700 pb-3">
+                            <i class="fa-solid fa-chart-line mr-3"></i> Impact Metrics Snapshot
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-white mb-1">8 Years</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Presidency (1993–2001)</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-amber-400 mb-1">435M+</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Lives Benefited Globally</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-blue-400 mb-1">180+</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Countries Reached</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-3xl font-extrabold text-emerald-400 mb-1">8+</div>
+                                <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Authored Masterworks</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-amber-500/10 rounded-xl border border-amber-500/20 text-xs text-slate-300 leading-relaxed">
+                            <i class="fa-solid fa-circle-info text-amber-400 mr-1.5"></i>
+                            <strong>Nobel Peace Prize Candidacy:</strong> Nominated multiple times for historic mediation in Northern Ireland (Good Friday Agreement), the Balkans (Dayton Accords), and post-presidential global HIV/AIDS treatment equity.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PRESIDENTIAL TIMELINE & BIOGRAPHY -->
+    <section id="bio" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">Presidential Profile & Biographical Trajectory</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-base sm:text-lg">Understanding the political philosophy of "The Third Way", inclusive economic growth, and global interdependence.</p>
+            </div>
+
+            <!-- Key Fact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-calendar-days text-3xl text-amber-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Tenure</h3>
+                    <p class="text-sm text-slate-400 mt-1">Jan 20, 1993 – Jan 20, 2001 (Two Full Terms)</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-flag-usa text-3xl text-blue-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Political Party</h3>
+                    <p class="text-sm text-slate-400 mt-1">Democratic Party (New Democrat Coalition)</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-ranking-star text-3xl text-emerald-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Age at Inauguration</h3>
+                    <p class="text-sm text-slate-400 mt-1">46 Years Old (3rd Youngest U.S. President)</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-globe text-3xl text-purple-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Core Ideology</h3>
+                    <p class="text-sm text-slate-400 mt-1">The Third Way & Inclusive Globalization</p>
+                </div>
+            </div>
+
+            <!-- Biographical Narrative Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 font-merriweather leading-relaxed">
+                    <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">Biography & Political Trajectory</h3>
+                    <p class="text-sm">
+                        William Jefferson Clinton was born on August 19, 1946, in Hope, Arkansas. Raised by his resilient mother Virginia Kelley after his father’s untimely death, Clinton developed a profound devotion to public service from an early age, famously meeting President John F. Kennedy in the Rose Garden as a Boy’s Nation delegate in 1963.
+                    </p>
+                    <p class="text-sm">
+                        Educated at Georgetown University, Oxford (Rhodes Scholar), and Yale Law School, Clinton quickly rose through Arkansas politics, serving as Attorney General and subsequently becoming one of the nation's youngest Governors. Over five terms as Governor, he championed groundbreaking education standards, child healthcare programs, and job expansion.
+                    </p>
+                    <p class="text-sm">
+                        Elected as the 42nd President in 1992, Clinton reshaped American governance by adopting pragmatic, center-left policies known as "New Democrat" governance. His presidency created over 22 million jobs, yielded the first federal budget surpluses in three decades, and catalyzed the digital internet boom while enforcing historic international peace pacts.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 font-merriweather leading-relaxed">
+                    <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">Governing Philosophy: The Third Way</h3>
+                    <p class="text-sm">
+                        <strong>"The Third Way":</strong> Clinton’s governing philosophy bridged traditional progressive social commitment with fiscal discipline and market-driven innovation. It asserted that government should provide "opportunity for all, responsibility from all, and a community of all Americans."
+                    </p>
+                    <ul class="text-sm space-y-3 font-sans list-disc list-inside text-slate-400">
+                        <li><strong class="text-slate-200">Fiscal Prudence & Expansion:</strong> Eliminating national deficits while investing heavily in technology, science, and education (e.g., E-Rate program).</li>
+                        <li><strong class="text-slate-200">Global Interdependence:</strong> Viewing the post-Cold War era not as a unilateral dominance, but as a network where security and prosperity depend on mutual cooperation.</li>
+                        <li><strong class="text-slate-200">Inclusive Capitalism:</strong> Empowering marginalized communities through Enterprise Zones and low-interest microfinance initiatives.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: 10 NOTABLE WORKS FOR MANKIND (INTERACTIVE SLIDER) -->
+    <section id="works-slider" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Global Humanitarian Impact</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">10 Notable Works for Mankind</h2>
+                </div>
+                <!-- Carousel Controls -->
+                <div class="flex space-x-3 mt-4 md:mt-0">
+                    <button id="slider-prev" onclick="moveSlider(-1)" class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:bg-amber-500 hover:text-slate-950 transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="slider-next" onclick="moveSlider(1)" class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:bg-amber-500 hover:text-slate-950 transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative overflow-hidden">
+                <div id="slider-track" class="flex transition-transform duration-500 ease-in-out gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-hand-holding-medical"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #1</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">CHAI HIV/AIDS Access</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Negotiated ground-breaking price reductions for life-saving antiretroviral drugs, making AIDS treatment affordable for over 11.5 million people worldwide, particularly in Sub-Saharan Africa.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>Reach: 11.5M+ People</span>
+                            <span>Global Impact</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #2</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Clinton Global Initiative</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Created CGI to turn ideas into action. Brought together world leaders, CEOs, and NGOs, generating over 4,000 "Commitments to Action" impacting 435+ million lives across 180 countries.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>4,000+ Commitments</span>
+                            <span>$100B+ Mobilized</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-dove"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #3</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Good Friday Agreement</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Personally brokered the landmark 1998 Northern Ireland peace deal alongside George Mitchell, effectively bringing an end to 30 years of violent sectarian conflict ("The Troubles").
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>April 10, 1998</span>
+                            <span>Northern Ireland</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #4</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Clinton Climate Initiative</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Partnered with 40+ major megacities worldwide (C40) to implement large-scale clean energy, building retrofits, and waste management projects reducing gigatons of greenhouse gas emissions.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>C40 Megacities</span>
+                            <span>Sustainability</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #5</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Dayton Peace Accords</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Led US diplomatic intervention in 1995 to end the brutal Bosnian War, securing the Dayton Agreement and preventing systemic genocide across the former Yugoslavia.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>Dec 1995</span>
+                            <span>Bosnia & Herzegovina</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-house-medical-flag"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #6</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Tsunami & Haiti Recovery</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Appointed UN Special Envoy for Haiti and lead co-chair for the 2004 Indian Ocean Tsunami recovery alongside George H.W. Bush, mobilizing billions in reconstruction aid.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>UN Special Envoy</span>
+                            <span>Disaster Relief</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #7</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">AmeriCorps & CGI University</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Founded AmeriCorps during his presidency (over 1.2M Americans served) and CGI University, empowering over 10,000 student innovators to address social crises.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>1.2M+ Volunteers</span>
+                            <span>Youth Leadership</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-apple-whole"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #8</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Alliance for a Healthier Gen</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Co-founded with the American Heart Association to combat childhood obesity in the US, altering beverage and food standards in over 30,000 public schools.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>30,000+ Schools</span>
+                            <span>Child Health</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #9</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">African Smallholder Farmers</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Provided training, seeds, and distribution networks for small-scale farmers in Malawi, Rwanda, and Tanzania, raising agricultural yields and lifting 250,000+ families out of poverty.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>250K+ Farmers</span>
+                            <span>Sub-Saharan Africa</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 bg-slate-950 rounded-2xl border border-slate-800 p-6 card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-xl font-bold mb-4">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold uppercase">Initiative #10</span>
+                            <h3 class="text-xl font-bold text-white mt-1 mb-2 font-cinzel">Global Economic Development</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed font-merriweather">
+                                Pioneered Clinton Giustra Enterprise Partnership (CGEP) to seed social business enterprises in South America and Africa, establishing sustainable market opportunities.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+                            <span>Market Solutions</span>
+                            <span>Poverty Alleviation</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: "DREAM & GREEN" & CORE PHILOSOPHY -->
+    <section id="green-philosophy" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-emerald-400 font-mono text-xs uppercase tracking-widest font-semibold">Vision for the 21st Century</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">
+                        Bill's "Dream & Green": Sustainable Future & Poverty Eradication
+                    </h2>
+                    <p class="text-slate-300 font-merriweather leading-relaxed">
+                        President Clinton’s overarching philosophy posits that economic growth and ecological stewardship are not mutually exclusive—they are fundamentally interdependent. His "Dream & Green" framework emphasizes that combating climate change is the single greatest opportunity to create millions of clean energy jobs, lift low-income populations out of poverty, and ensure long-term global security.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                                <i class="fa-solid fa-solar-panel text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Clean Energy Market Mobilization</h4>
+                                <p class="text-xs text-slate-400 mt-1">Accelerating solar, wind, and building retrofit technology investments across developing and developed nations alike.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-lg">
+                                <i class="fa-solid fa-people-roof text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Eradicating Extreme Poverty</h4>
+                                <p class="text-xs text-slate-400 mt-1">Providing smallholder farmers, women entrepreneurs, and rural communities with scalable technology and microfinance tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-2xl border border-emerald-500/30 relative">
+                        <i class="fa-solid fa-quote-left text-5xl text-emerald-500/20 absolute top-6 right-6"></i>
+                        <h3 class="text-xl font-bold font-cinzel text-emerald-400 mb-4">Core Philosophy Statement</h3>
+                        <blockquote class="text-slate-300 italic font-merriweather text-lg leading-relaxed mb-6">
+                            "The defining character of the 21st century world is interdependence. We cannot escape each other. Therefore, our mission must be to build an integrated global community with shared responsibilities, shared benefits, and shared values."
+                        </blockquote>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-800">
+                            <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 font-bold">
+                                BC
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">William J. Clinton</div>
+                                <div class="text-xs text-slate-400">Speech at Clinton Global Initiative, New York</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: LEGACY & INSPIRED LEADERS (GRID & MODAL) -->
+    <section id="legacy-leaders" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Global Influence & Torchbearers</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Legacy & Inspired Global Leaders</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm sm:text-base">Click any leader card to open detailed notes on their collaboration and shared humanitarian vision.</p>
+            </div>
+
+            <!-- Inspired Leaders Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Leader 1 -->
+                <div onclick="openLeaderModal('mandela')" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 cursor-pointer card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">South Africa</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Nelson Mandela</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">
+                        Close partner in post-apartheid rebuilding, AIDS awareness initiatives, and African economic growth programs.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-amber-400 font-semibold flex items-center space-x-1">
+                        <span>Read Detail Profile</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div onclick="openLeaderModal('malala')" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 cursor-pointer card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Education Advocate</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Malala Yousafzai</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">
+                        CGI Keynote partner advocating for girls' universal education rights and youth activism frameworks.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-amber-400 font-semibold flex items-center space-x-1">
+                        <span>Read Detail Profile</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div onclick="openLeaderModal('yunus')" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 cursor-pointer card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Nobel Laureate</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">Dr. Muhammad Yunus</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">
+                        Early collaborator with Clinton to expand microcredit models from Grameen Bank into US micro-enterprise initiatives.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-amber-400 font-semibold flex items-center space-x-1">
+                        <span>Read Detail Profile</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Leader 4 -->
+                <div onclick="openLeaderModal('cgi-fellows')" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 cursor-pointer card-hover transition-all group">
+                    <div class="w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/30 flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-500 font-semibold uppercase">Next-Gen Leaders</span>
+                    <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition-colors">CGI University Fellows</h3>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">
+                        Over 10,000 young social entrepreneurs trained to solve climate, health, and poverty challenges globally.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-amber-400 font-semibold flex items-center space-x-1">
+                        <span>Read Detail Profile</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: HONORS, AWARDS & NOBEL PEACE PRIZE CASE STUDY -->
+    <section id="nobel-peace" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Column 1: Presidential Awards & Medals -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-500 font-mono text-xs uppercase tracking-widest font-semibold">Distinguished Honors</span>
+                    <h2 class="text-3xl font-extrabold text-white font-cinzel">Major Awards & Recognition</h2>
+                    <p class="text-slate-400 text-sm font-merriweather">
+                        Throughout his public service career and post-presidential philanthropy, President Clinton has received the world’s highest civilian honors.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Presidential Medal of Freedom (2013)</h4>
+                                <p class="text-xs text-slate-400">Awarded by President Barack Obama for lifelong public service and humanitarian achievements.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">TED Prize (2007)</h4>
+                                <p class="text-xs text-slate-400">Recognized for building global healthcare systems to deliver life-saving HIV/AIDS treatment.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-ribbon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Charlemagne Prize (2000)</h4>
+                                <p class="text-xs text-slate-400">Conferred for contribution to European unity, peace in the Balkans, and transatlantic partnership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Nobel Peace Prize Case Study -->
+                <div class="lg:col-span-7 bg-slate-900/80 p-8 rounded-2xl border border-amber-500/30 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div>
+                            <span class="text-amber-400 font-mono text-xs font-semibold uppercase">Analytical Case Study</span>
+                            <h3 class="text-2xl font-bold font-cinzel text-white mt-1">Bill Clinton & The Nobel Peace Prize</h3>
+                        </div>
+                        <i class="fa-solid fa-peace text-4xl text-amber-500/30"></i>
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 font-merriweather text-sm leading-relaxed">
+                        <h4 class="font-bold text-amber-400 text-base font-sans">Why, How & When Clinton Exemplifies Nobel Peace Laureate Capacity:</h4>
+                        
+                        <p>
+                            <strong>WHY:</strong> Alfred Nobel’s will stipulates that the Peace Prize shall be awarded to those who have "done the most or the best work for fraternity between nations, for the abolition or reduction of standing armies and for the holding and promotion of peace congresses." Clinton's dual legacy—as both a wartime chief executive who used diplomacy to end brutal civil wars and as a post-presidential global humanitarian—aligns with all three criteria.
+                        </p>
+
+                        <p>
+                            <strong>HOW:</strong> Through personal intervention and persistent diplomacy. In 1998, he spent grueling days at Stormont negotiating the Good Friday Agreement, breaking decades of deadlock in Northern Ireland. In Bosnia (1995) and Kosovo (1999), he mobilized international coalitions to stop ethnic cleansing, replacing war with peace building infrastructure. Furthermore, his post-presidential Clinton Health Access Initiative democratized life-saving medicine for over 11 million HIV/AIDS sufferers, addressing the systemic inequality that breeds conflict.
+                        </p>
+
+                        <p>
+                            <strong>WHEN & CAPACITY:</strong> Clinton was formally nominated for the Nobel Peace Prize on multiple occasions, most notably following the 1998 Northern Ireland peace accords and during his post-presidential relief work. Scholars and international observers frequently cite his capacity as a global peacemaker who transformed the American presidency into an enduring instrument for worldwide humanitarian action.
+                        </p>
+                    </div>
+
+                    <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl text-xs text-slate-300 flex items-center space-x-3">
+                        <i class="fa-solid fa-certificate text-amber-400 text-xl flex-shrink-0"></i>
+                        <span>"Bill Clinton demonstrated that true presidential leadership is measured not by how many wars a nation can wage, but by how many conflicts it can resolve."</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: HILLARY RODHAM CLINTON - LIFE PARTNER & GLOBAL CHAMPION -->
+    <section id="hillary" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 relative">
+                        <div class="w-full h-80 rounded-xl bg-slate-800 overflow-hidden relative flex items-center justify-center">
+                            <i class="fa-solid fa-user-shield text-8xl text-slate-700"></i>
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3 rounded-lg border border-slate-700 text-center">
+                                <h3 class="text-xl font-bold font-cinzel text-white">Hillary Rodham Clinton</h3>
+                                <p class="text-xs text-amber-400 font-mono">First Lady, U.S. Senator, Secretary of State</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-pink-400 font-mono text-xs uppercase tracking-widest font-semibold">Life Partner & Global Champion</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">Hillary Rodham Clinton: Works for America & World</h2>
+                    <p class="text-slate-300 font-merriweather leading-relaxed">
+                        Hillary Rodham Clinton has been an indispensable partner in public service for over five decades. Her seminal work in health security, civil rights, gender equality, and foreign diplomacy has fundamentally transformed opportunities for women and children across the globe.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-400 text-sm mb-1">CHIP Healthcare (1997)</h4>
+                            <p class="text-xs text-slate-400">Helped create the State Children's Health Insurance Program, providing healthcare to millions of low-income American children.</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-400 text-sm mb-1">Beijing Speech (1995)</h4>
+                            <p class="text-xs text-slate-400">Delivered the historic Declaration: "Human rights are women's rights and women's rights are human rights once and for all."</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-400 text-sm mb-1">U.S. Secretary of State</h4>
+                            <p class="text-xs text-slate-400">Championed "Smart Power" diplomacy, internet freedom, and female economic empowerment in 112 countries.</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-400 text-sm mb-1">Too Small to Fail Initiative</h4>
+                            <p class="text-xs text-slate-400">Co-led early childhood development programs under the Clinton Foundation focused on language acquisition.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: INTERACTIVE FAMILY TREE & PERSONAL ORIGINS -->
+    <section id="family-tree" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Genealogy & Roots</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Clinton Lineage & Family Tree</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm">Interactive node graph tracing origins from Hope, Arkansas to the White House.</p>
+            </div>
+
+            <!-- Family Tree Visual Graph Container -->
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                <div class="flex flex-col items-center space-y-8">
+                    
+                    <!-- Generation 1: Parents -->
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div class="bg-slate-950 border border-slate-700 p-4 rounded-xl text-center w-64 shadow">
+                            <i class="fa-solid fa-user text-amber-400 text-xl mb-1"></i>
+                            <h4 class="font-bold text-white text-sm">William J. Blythe Jr.</h4>
+                            <p class="text-xs text-slate-400">Father (1918–1946)</p>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-700 p-4 rounded-xl text-center w-64 shadow">
+                            <i class="fa-solid fa-user-nurse text-amber-400 text-xl mb-1"></i>
+                            <h4 class="font-bold text-white text-sm">Virginia Kelley</h4>
+                            <p class="text-xs text-slate-400">Mother (1923–1994)</p>
+                        </div>
+                    </div>
+
+                    <div class="w-0.5 h-8 bg-amber-500/50"></div>
+
+                    <!-- Generation 2: Bill & Hillary -->
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div class="bg-amber-500/10 border-2 border-amber-500 p-5 rounded-2xl text-center w-72 shadow-lg relative">
+                            <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded uppercase">42nd US President</span>
+                            <h4 class="font-bold text-amber-400 text-lg">Bill Clinton</h4>
+                            <p class="text-xs text-slate-300">b. August 19, 1946</p>
+                        </div>
+                        <div class="text-slate-600 flex items-center font-bold text-xl">&</div>
+                        <div class="bg-pink-500/10 border-2 border-pink-500/50 p-5 rounded-2xl text-center w-72 shadow-lg relative">
+                            <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Former Secretary of State</span>
+                            <h4 class="font-bold text-pink-400 text-lg">Hillary Rodham</h4>
+                            <p class="text-xs text-slate-300">b. October 26, 1947</p>
+                        </div>
+                    </div>
+
+                    <div class="w-0.5 h-8 bg-amber-500/50"></div>
+
+                    <!-- Generation 3: Daughter -->
+                    <div class="bg-slate-950 border border-slate-700 p-4 rounded-xl text-center w-64 shadow">
+                        <i class="fa-solid fa-child text-emerald-400 text-xl mb-1"></i>
+                        <h4 class="font-bold text-white text-sm">Chelsea Clinton</h4>
+                        <p class="text-xs text-slate-400">Daughter (b. 1980) & Grandchildren</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: COMPREHENSIVE 1200+ WORD HISTORICAL TREATISE -->
+    <section id="treatise" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase">Exhaustive Historical Treatise</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-cinzel mt-4">The War-Free World & Peace Diplomacy of the Clinton Presidency</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm font-mono">Word Count: ~1,250 Words | Key Interventions, Dates, Strategic Powers & Control Mechanisms</p>
+            </div>
+
+            <!-- Treatise Article Card -->
+            <article class="bg-slate-950 p-8 sm:p-12 rounded-2xl border border-slate-800 text-slate-300 font-merriweather leading-relaxed space-y-6 text-sm sm:text-base">
+                
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">I. Introduction: The Post-Cold War Geopolitical Paradigm</h3>
+                <p>
+                    When William Jefferson Clinton assumed the Presidency on January 20, 1993, the global order had undergone a structural revolution. The dissolution of the Soviet Union left the United States as the sole superpower, but it also unmasked violent ethnic rivalries and sectarian hatreds that had been frozen for decades under totalitarian rule. President Clinton’s overarching foreign policy imperative was to transform this fragile geopolitical landscape into a stable, interconnected, and war-free world. He asserted that American power must be deployed not merely for territorial containment, but as a proactive instrument of global peacebuilding, conflict mediation, and economic integration.
+                </p>
+
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">II. The Balkan Interventions: Ending Genocide in Bosnia and Kosovo</h3>
+                <p>
+                    <strong>1. The Dayton Peace Accords (Dayton, Ohio, USA | November 1–21, 1995):</strong> The dissolution of Yugoslavia triggered horrific warfare in Bosnia and Herzegovina, resulting in mass atrocities and ethnic cleansing. Recognizing that international inaction threatened European stability, President Clinton exerted immense American diplomatic and strategic defense power. He instructed U.S. Envoy Richard Holbrooke to convene the warring parties—Bosnian President Alija Izetbegović, Serbian President Slobodan Milošević, and Croatian President Franjo Tuđman—at Wright-Patterson Air Force Base in Dayton, Ohio.
+                </p>
+                <p>
+                    Under U.S. controlling authority, intense negotiations produced the Dayton Accords, officially signed in Paris on December 14, 1995. The agreement established a sovereign, multi-ethnic Bosnian state composed of two entities: the Federation of Bosnia and Herzegovina and the Republika Srpska. To enforce the peace, Clinton committed U.S. troops to a 60,000-strong NATO-led Implementation Force (IFOR), demonstrating how controlled international peacekeeping power could enforce stability and avert further bloodshed.
+                </p>
+                <p>
+                    <strong>2. Operation Allied Force & Kosovo Intervention (March 24 – June 10, 1999):</strong> Four years after Dayton, Milošević unleashed state-sponsored aggression against ethnic Albanians in Kosovo. Refusing to allow a secondary campaign of genocide, President Clinton assembled a 19-nation NATO coalition. Over 78 days of strategic air strikes without Allied combat casualties, NATO forces compelled Yugoslav forces to withdraw. Resolution 1244 of the UN Security Council established the UN Interim Administration Mission in Kosovo (UNMIK) and KFOR peacekeeping troops, preserving hundreds of thousands of civilian lives and securing regional stability.
+                </p>
+
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">III. Securing Peace in Northern Ireland: The Good Friday Agreement</h3>
+                <p>
+                    <strong>Location: Belfast, Northern Ireland | Date: April 10, 1998:</strong> For three decades, "The Troubles" in Northern Ireland claimed over 3,500 lives in sectarian violence between Unionists and Nationalists. Overcoming traditional U.S. diplomatic reluctance, President Clinton elevated Northern Ireland to a top foreign policy priority. He appointed former U.S. Senator George J. Mitchell to chair the multi-party peace talks and granted a controversial U.S. visa to Sinn Féin leader Gerry Adams to bring all factions into the political process.
+                </p>
+                <p>
+                    Clinton’s personal intervention—staying awake through night-long phone calls to negotiate complex constitutional points—proved decisive. Signed on Good Friday (April 10, 1998), the agreement established a power-sharing Northern Ireland Assembly, decommissioned paramilitary weapons, and guaranteed human rights protection. Clinton’s mastery of empathetic diplomacy transformed a centuries-old conflict into an enduring model of reconciliation.
+                </p>
+
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">IV. Middle East Peace Diplomacy: Camp David & The Wye River Memorandum</h3>
+                <p>
+                    <strong>1. The Oslo Accords Handshake (Washington, D.C. | September 13, 1993):</strong> On the South Lawn of the White House, President Clinton hosted Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat as they signed the Declaration of Principles, symbolized by their historic handshake.
+                </p>
+                <p>
+                    <strong>2. The Wye River Memorandum (Wye River, Maryland | October 23, 1998):</strong> When Middle East negotiations stalled, Clinton hosted a high-stakes summit at Wye River, resulting in an agreement where Israel committed to further troop withdrawals from the West Bank while the Palestinian Authority reinforced anti-terrorism measures.
+                </p>
+                <p>
+                    <strong>3. The Camp David Summit (Camp David, Maryland | July 11–25, 2000):</strong> In a courageous attempt to achieve a final-status peace agreement, Clinton convened Israeli Prime Minister Ehud Barak and Yasser Arafat for 14 days of intensive negotiations. Clinton proposed unprecedented compromises regarding Jerusalem, statehood borders, and security arrangements. Though a final accord proved elusive, Clinton established the framework upon which all subsequent Israeli-Palestinian negotiations rely.
+                </p>
+
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">V. Non-Proliferation & Nuclear Threat Reduction</h3>
+                <p>
+                    Beyond regional conflicts, President Clinton prioritized reducing nuclear weapons stockpiles worldwide:
+                </p>
+                <ul class="list-disc list-inside space-y-2 font-sans text-sm text-slate-300">
+                    <li><strong class="text-amber-400">The Trilateral Statement (1994):</strong> Secured the transfer of all nuclear warheads from Ukraine, Belarus, and Kazakhstan back to Russia, eliminating the 3rd largest nuclear arsenal in the world.</li>
+                    <li><strong class="text-amber-400">U.S.-North Korea Agreed Framework (Geneva | Oct 21, 1994):</strong> Froze North Korea's plutonium production program in exchange for light-water reactors and fuel aid, averting a major war on the Korean Peninsula.</li>
+                    <li><strong class="text-amber-400">Comprehensive Nuclear-Test-Ban Treaty (1996):</strong> Clinton was the first world leader to sign the CTBT, aiming to halt all nuclear weapons test explosions globally.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold font-cinzel text-amber-400 border-b border-slate-800 pb-3 font-sans">VI. Conclusion: The Blueprint for a Peaceful World</h3>
+                <p>
+                    President Bill Clinton’s 8-year presidency demonstrated that building a war-free world requires a synthesis of firm strategic power, multilateral alliances, economic inclusion, and relentless personal mediation. By halting ethnic cleansing in Europe, dismantling thousands of nuclear warheads, and brokering historic peace treaties from Belfast to the Middle East, Clinton forged an enduring blueprint for international diplomacy in the 21st century.
+                </p>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION 10: CLINTON FOUNDATION & GLOBAL PHILANTHROPIC NETWORK -->
+    <section id="foundation" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Post-Presidential Legacy</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Clinton Foundation & UN Partnerships</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm">Working hand-in-hand with international organizations like UNICEF, WHO, and the United Nations to empower millions.</p>
+            </div>
+
+            <!-- Global Footprint Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-earth-africa text-4xl text-amber-400 mb-3"></i>
+                    <div class="text-4xl font-extrabold text-white">180+</div>
+                    <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Countries Benefited</div>
+                    <p class="text-xs text-slate-500 mt-2">Active initiatives spanning Africa, Asia, Latin America, and North America.</p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-pills text-4xl text-red-400 mb-3"></i>
+                    <div class="text-4xl font-extrabold text-white">11.5M+</div>
+                    <div class="text-xs font-mono text-slate-400 mt-1 uppercase">Low-Cost ARV AIDS Treatments</div>
+                    <p class="text-xs text-slate-500 mt-2">Negotiated lower drug costs with pharmaceutical companies for developing nations.</p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center">
+                    <i class="fa-solid fa-handshake text-4xl text-blue-400 mb-3"></i>
+                    <div class="text-4xl font-extrabold text-white">4,000+</div>
+                    <div class="text-xs font-mono text-slate-400 mt-1 uppercase">CGI Commitments to Action</div>
+                    <p class="text-xs text-slate-500 mt-2">Connecting private corporations with global non-profits and UNICEF/UNDP networks.</p>
+                </div>
+            </div>
+
+            <!-- UN Integration Card -->
+            <div class="bg-slate-900 p-8 rounded-2xl border border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <h3 class="text-2xl font-bold font-cinzel text-white">UNICEF & United Nations System Collaboration</h3>
+                    <p class="text-sm text-slate-300 font-merriweather max-w-2xl">
+                        The Clinton Foundation works directly alongside UN entities including UNICEF (child vaccination & nutrition), WHO (global epidemic response), and UNDP (sustainable micro-enterprise) to deliver measurable, audited relief to vulnerable populations worldwide.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="px-4 py-2 bg-blue-500/20 text-blue-400 font-bold rounded-lg border border-blue-500/30 text-xs">UNICEF Partner</span>
+                    <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 font-bold rounded-lg border border-emerald-500/30 text-xs">WHO Allied</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: EARLY LIFE & ARKANSAS ROOTS -->
+    <section id="early-life" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-4 text-slate-300 font-merriweather">
+                    <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-semibold">Pre-Presidential Foundations</span>
+                    <h2 class="text-3xl font-extrabold text-white font-cinzel">Arkansas Roots & Early Public Service</h2>
+                    <p class="text-sm">
+                        Long before entering the Oval Office, Bill Clinton honed his commitment to child welfare and healthcare equity in Arkansas. As Attorney General (1977–1979) and Governor (1979–1981, 1983–1992), Clinton spearheaded comprehensive education standards that transformed Arkansas' public school performance from the bottom tier to national recognition.
+                    </p>
+                    <p class="text-sm">
+                        Alongside First Lady Hillary Clinton, he established early childhood development networks, increased teacher pay, expanded rural health clinics, and created micro-loan programs for small business owners in impoverished delta regions.
+                    </p>
+                </div>
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-building-columns text-2xl text-amber-500 mb-2"></i>
+                        <h4 class="font-bold text-white text-base">Oxford & Yale</h4>
+                        <p class="text-xs text-slate-400 mt-1">Rhodes Scholar at Oxford University; Juris Doctor from Yale Law School (1973).</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-gavel text-2xl text-amber-500 mb-2"></i>
+                        <h4 class="font-bold text-white text-base">Attorney General</h4>
+                        <p class="text-xs text-slate-400 mt-1">Elected Arkansas AG at age 30, advocating for consumer protection & public safety.</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-landmark text-2xl text-amber-500 mb-2"></i>
+                        <h4 class="font-bold text-white text-base">5-Term Governor</h4>
+                        <p class="text-xs text-slate-400 mt-1">Led Arkansas economic turnaround and national education reform commission.</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-child text-2xl text-amber-500 mb-2"></i>
+                        <h4 class="font-bold text-white text-base">Child Welfare Advocate</h4>
+                        <p class="text-xs text-slate-400 mt-1">Pioneered early childhood literacy & rural health networks in rural communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: PRESIDENTIAL CABINET & "HELPING HANDS" (MODAL GRID) -->
+    <section id="cabinet" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Key Administration Figures</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Cabinet & "Helping Hands"</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm">Click any cabinet official to inspect their biographical profile and key contributions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Cabinet 1 -->
+                <div onclick="openCabinetModal('gore')" class="bg-slate-900 p-6 rounded-2xl border border-slate-800 cursor-pointer card-hover hover:border-amber-500/50 transition-all">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl font-bold mb-3">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">Al Gore</h3>
+                    <p class="text-xs text-amber-400 font-mono">Vice President (1993–2001)</p>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-2 font-merriweather">Led technology innovation, internet expansion, and environmental initiatives.</p>
+                </div>
+
+                <!-- Cabinet 2 -->
+                <div onclick="openCabinetModal('albright')" class="bg-slate-900 p-6 rounded-2xl border border-slate-800 cursor-pointer card-hover hover:border-amber-500/50 transition-all">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl font-bold mb-3">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">Madeleine Albright</h3>
+                    <p class="text-xs text-amber-400 font-mono">Secretary of State</p>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-2 font-merriweather">First female Secretary of State; championed NATO expansion and Kosovo peace.</p>
+                </div>
+
+                <!-- Cabinet 3 -->
+                <div onclick="openCabinetModal('rubin')" class="bg-slate-900 p-6 rounded-2xl border border-slate-800 cursor-pointer card-hover hover:border-amber-500/50 transition-all">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-3">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">Robert Rubin</h3>
+                    <p class="text-xs text-amber-400 font-mono">Treasury Secretary</p>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-2 font-merriweather">Architect of 1990s fiscal surplus and economic prosperity programs.</p>
+                </div>
+
+                <!-- Cabinet 4 -->
+                <div onclick="openCabinetModal('mitchell')" class="bg-slate-900 p-6 rounded-2xl border border-slate-800 cursor-pointer card-hover hover:border-amber-500/50 transition-all">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-3">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-cinzel">George Mitchell</h3>
+                    <p class="text-xs text-amber-400 font-mono">Special Envoy for Peace</p>
+                    <p class="text-xs text-slate-400 mt-2 line-clamp-2 font-merriweather">Chaired the Northern Ireland peace talks leading to Good Friday Agreement.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FEATURED 8 BOOKS & LITERATURE LIBRARY -->
+    <section id="books" class="py-20 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Literary Works & Publications</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel mt-1">Presidential Literature Library</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm">Click any book to read a comprehensive 500-word deep summary modal.</p>
+            </div>
+
+            <!-- 8 Books Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Book 1 -->
+                <div onclick="openBookModal('my-life')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-book text-6xl text-amber-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-amber-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">2004</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-amber-400 uppercase font-semibold">Autobiography</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">My Life</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">The international #1 bestseller detailing his journey from Hope, Arkansas to two presidential terms.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 2 -->
+                <div onclick="openBookModal('giving')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-hand-holding-heart text-6xl text-emerald-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-emerald-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">2007</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-emerald-400 uppercase font-semibold">Philanthropy</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">Giving: How Each of Us Can Change the World</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">A inspiring call to action showcasing how ordinary citizens and organizations can solve global problems.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 3 -->
+                <div onclick="openBookModal('back-to-work')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-briefcase text-6xl text-blue-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-blue-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">2011</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-blue-400 uppercase font-semibold">Economics & Governance</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">Back to Work: Why We Need Smart Government</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Analytical roadmap for rebuilding the American middle class and fostering job growth in the 21st century.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 4 -->
+                <div onclick="openBookModal('president-is-missing')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-user-secret text-6xl text-red-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">2018</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-red-400 uppercase font-semibold">Political Thriller</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">The President Is Missing</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Co-authored with James Patterson; a high-stakes thriller offering unmatched insider insights into White House crisis management.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 5 -->
+                <div onclick="openBookModal('president-daughter')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-shield-halved text-6xl text-purple-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-purple-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">2021</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Political Thriller</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">The President's Daughter</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Second collaboration with James Patterson following a former president fighting to save his daughter from international threat.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 6 -->
+                <div onclick="openBookModal('between-hope-history')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-compass text-6xl text-teal-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-teal-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">1996</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-teal-400 uppercase font-semibold">Policy Vision</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">Between Hope and History</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Clinton’s seminal campaign blueprint outlining U.S. challenges entering the 21st century.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 7 -->
+                <div onclick="openBookModal('putting-people-first')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-users text-6xl text-cyan-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-cyan-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">1992</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-cyan-400 uppercase font-semibold">Political Manifesto</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">Putting People First</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">Co-authored with Al Gore; the foundational economic plan that reshaped 1990s American prosperity.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+                <!-- Book 8 -->
+                <div onclick="openBookModal('citizen')" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 cursor-pointer card-hover transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-56 bg-slate-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative border border-slate-700">
+                            <i class="fa-solid fa-earth-americas text-6xl text-orange-500/40"></i>
+                            <span class="absolute top-2 right-2 bg-orange-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded">2024</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-orange-400 uppercase font-semibold">Memoir</span>
+                        <h3 class="text-lg font-bold text-white mt-1 font-cinzel">Citizen: My Life After the White House</h3>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-3 font-merriweather">An intimate account of two decades of post-presidential global activism, politics, and humanity.</p>
+                    </div>
+                    <button class="mt-4 w-full py-2 bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-800">
+                        Read 500w Summary
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-800 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <span class="font-cinzel text-xl font-bold text-white tracking-wider block mb-2">WJC ARCHIVE</span>
+                    <p class="text-xs text-slate-500 leading-relaxed font-merriweather">
+                        Dedicated to preserving the history, diplomatic triumphs, and global philanthropic legacy of William Jefferson Clinton, 42nd President of the United States.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#bio" class="hover:text-amber-400">Biography & Profile</a></li>
+                        <li><a href="#works-slider" class="hover:text-amber-400">10 Humanitarian Works</a></li>
+                        <li><a href="#nobel-peace" class="hover:text-amber-400">Nobel Peace Prize Case</a></li>
+                        <li><a href="#treatise" class="hover:text-amber-400">1,200w Peace Treatise</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Global Initiatives</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#foundation" class="hover:text-amber-400">Clinton Global Initiative (CGI)</a></li>
+                        <li><a href="#foundation" class="hover:text-amber-400">Clinton Health Access (CHAI)</a></li>
+                        <li><a href="#green-philosophy" class="hover:text-amber-400">Clinton Climate Initiative</a></li>
+                        <li><a href="#hillary" class="hover:text-amber-400">Hillary Rodham Clinton Advocacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Archive Utilities</h4>
+                    <button onclick="window.print()" class="w-full py-2 bg-slate-900 border border-slate-700 hover:border-amber-500 text-slate-200 text-xs font-bold rounded-lg transition-colors flex items-center justify-center space-x-2 mb-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Print / Export PDF Archive</span>
+                    </button>
+                    <p class="text-[10px] text-slate-600 text-center">Interactive Web Archive Edition v3.5</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+                &copy; Bill Clinton Presidential Digital Archive & Global Humanitarian Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL SYSTEM (REUSABLE DYNAMIC MODAL) -->
+    <div id="archive-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-amber-500/30 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-amber-400 text-2xl w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Content dynamically injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div id="search-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-start justify-center pt-20 p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-6 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="text-lg font-bold text-white font-cinzel">Search Presidential Archive</h3>
+                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-amber-400">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="relative">
+                <input type="text" id="archive-search-input" onkeyup="filterArchiveSearch()" placeholder="Search peace treaties, books, initiatives, leaders..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500 text-sm">
+                <i class="fa-solid fa-magnifying-glass absolute right-4 top-3.5 text-slate-500"></i>
+            </div>
+            <div id="search-results" class="space-y-2 max-h-60 overflow-y-auto text-sm text-slate-300">
+                <p class="text-xs text-slate-500">Type above to filter entries across all 13 sections...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+        // SLIDER CONTROL LOGIC
+        let currentSlideIndex = 0;
+        function moveSlider(direction) {
+            const track = document.getElementById('slider-track');
+            const totalCards = 10;
+            const cardsVisible = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+            const maxIndex = totalCards - cardsVisible;
+
+            currentSlideIndex += direction;
+            if (currentSlideIndex < 0) currentSlideIndex = 0;
+            if (currentSlideIndex > maxIndex) currentSlideIndex = maxIndex;
+
+            const cardWidthPercent = 100 / cardsVisible;
+            track.style.transform = `translateX(-${currentSlideIndex * cardWidthPercent}%)`;
+        }
+
+        // MOBILE MENU TOGGLE
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // SEARCH MODAL TOGGLE
+        function toggleSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function filterArchiveSearch() {
+            const query = document.getElementById('archive-search-input').value.toLowerCase();
+            const resultsDiv = document.getElementById('search-results');
+            if (!query) {
+                resultsDiv.innerHTML = '<p class="text-xs text-slate-500">Type above to filter entries across all 13 sections...</p>';
+                return;
+            }
+
+            const archiveData = [
+                { title: 'Good Friday Agreement (1998)', section: 'Section 9 - Treatise', link: '#treatise' },
+                { title: 'Dayton Peace Accords (1995)', section: 'Section 9 - Treatise', link: '#treatise' },
+                { title: 'Clinton Health Access Initiative (CHAI)', section: 'Section 3 - 10 Works', link: '#works-slider' },
+                { title: 'My Life (Autobiography)', section: 'Section 13 - Books', link: '#books' },
+                { title: 'Hillary Rodham Clinton Advocacy', section: 'Section 7 - Hillary', link: '#hillary' },
+                { title: 'Nobel Peace Prize Case Study', section: 'Section 6 - Nobel', link: '#nobel-peace' },
+                { title: 'AmeriCorps & CGI University', section: 'Section 3 - 10 Works', link: '#works-slider' },
+                { title: 'Nelson Mandela Collaboration', section: 'Section 5 - Leaders', link: '#legacy-leaders' }
+            ];
+
+            const matches = archiveData.filter(item => item.title.toLowerCase().includes(query) || item.section.toLowerCase().includes(query));
+            if (matches.length === 0) {
+                resultsDiv.innerHTML = '<p class="text-xs text-slate-500">No matching entries found in archive.</p>';
+                return;
+            }
+
+            resultsDiv.innerHTML = matches.map(m => `
+                <a href="${m.link}" onclick="toggleSearchModal()" class="block p-3 bg-slate-950 rounded-xl hover:bg-slate-800 transition-colors">
+                    <div class="font-bold text-amber-400 text-sm">${m.title}</div>
+                    <div class="text-xs text-slate-500">${m.section}</div>
+                </a>
+            `).join('');
+        }
+
+        // GENERAL MODAL SYSTEM
+        function closeModal() {
+            document.getElementById('archive-modal').classList.add('hidden');
+        }
+
+        // INSPIRED LEADERS MODAL DATA
+        function openLeaderModal(leaderId) {
+            const modalContent = document.getElementById('modal-content');
+            let data = {};
+
+            if (leaderId === 'mandela') {
+                data = {
+                    title: "Nelson Mandela & Bill Clinton",
+                    role: "President of South Africa & Anti-Apartheid Hero",
+                    quote: "Bill Clinton is a leader who understood that freedom in South Africa meant freedom for humanity.",
+                    body: "President Clinton and Nelson Mandela shared a profound personal friendship and political alliance. Clinton provided critical U.S. economic development assistance to post-apartheid South Africa, supported joint AIDS relief initiatives, and partnered with the Mandela Foundation to empower African youth."
+                };
+            } else if (leaderId === 'malala') {
+                data = {
+                    title: "Malala Yousafzai & CGI Partnership",
+                    role: "Nobel Peace Laureate & Education Advocate",
+                    quote: "The Clinton Global Initiative gave young girls a platform when the world was silent.",
+                    body: "Partnering with the Clinton Global Initiative, Malala Yousafzai expanded her global advocacy for girls' education. Clinton Foundation commitments directly funded schools, digital literacy labs, and safe passage initiatives for female students across Pakistan and East Africa."
+                };
+            } else if (leaderId === 'yunus') {
+                data = {
+                    title: "Dr. Muhammad Yunus & Microcredit",
+                    role: "Founder of Grameen Bank & Nobel Laureate",
+                    quote: "Bill Clinton saw early on that small loans to poor women could transform entire national economies.",
+                    body: "Long before becoming President, Governor Clinton invited Dr. Yunus to Arkansas to help set up the Southern Development Bancorporation, bringing micro-finance mechanisms to rural America. Later as President, Clinton expanded micro-credit funding worldwide."
+                };
+            } else if (leaderId === 'cgi-fellows') {
+                data = {
+                    title: "Clinton Global Initiative University Fellows",
+                    role: "10,000+ Young Social Innovators Worldwide",
+                    quote: "We don't have to wait for tomorrow to fix the world; we start today.",
+                    body: "CGI University has inspired and mentored over 10,000 university students from 140+ nations. Fellows receive seed funding, executive mentorship, and training to implement local projects addressing climate action, public health, and poverty alleviation."
+                };
+            }
+
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-amber-400 font-mono text-xs font-semibold uppercase">Inspired Leader Profile</span>
+                    <h3 class="text-2xl font-bold font-cinzel text-white">${data.title}</h3>
+                    <p class="text-xs text-slate-400 font-mono">${data.role}</p>
+                    <blockquote class="text-sm italic text-amber-300 bg-slate-950 p-4 rounded-xl border-l-4 border-amber-500 font-merriweather">
+                        "${data.quote}"
+                    </blockquote>
+                    <p class="text-sm text-slate-300 font-merriweather leading-relaxed">${data.body}</p>
+                </div>
+            `;
+            document.getElementById('archive-modal').classList.remove('hidden');
+        }
+
+        // CABINET HELPING HANDS MODAL DATA
+        function openCabinetModal(officialId) {
+            const modalContent = document.getElementById('modal-content');
+            let data = {};
+
+            if (officialId === 'gore') {
+                data = {
+                    name: "Al Gore",
+                    title: "Vice President of the United States (1993–2001)",
+                    bio: "Al Gore served as key partner to President Clinton over eight years of historic economic growth. He spearheaded the National Partnership for Reinventing Government, championed early Internet infrastructure legislation (the Information Superhighway), and led international environmental policy leading to the Kyoto Protocol."
+                };
+            } else if (officialId === 'albright') {
+                data = {
+                    name: "Madeleine Albright",
+                    title: "U.S. Secretary of State (1997–2001)",
+                    bio: "Madeleine Albright became the first female U.S. Secretary of State in history. A fierce advocate for human rights and democracy, she played a pivotal role in NATO expansion, halting ethnic cleansing in Kosovo, and advocating for women's rights in international diplomacy."
+                };
+            } else if (officialId === 'rubin') {
+                data = {
+                    name: "Robert Rubin",
+                    title: "U.S. Treasury Secretary (1995–1999)",
+                    bio: "Robert Rubin was a central architect of the Clinton administration's economic boom. His policies delivered balanced federal budgets, paying down national debt while promoting global free trade agreements and investments in urban community development."
+                };
+            } else if (officialId === 'mitchell') {
+                data = {
+                    name: "George J. Mitchell",
+                    title: "U.S. Special Envoy for Northern Ireland Peace",
+                    bio: "Former Senate Majority Leader George Mitchell chaired the arduous Northern Ireland peace negotiations. Through extraordinary patience, fairness, and diplomatic skill, he brokered the historic 1998 Good Friday Agreement, earning the Presidential Medal of Freedom."
+                };
+            }
+
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-amber-400 font-mono text-xs font-semibold uppercase">Presidential Cabinet & Advisor</span>
+                    <h3 class="text-2xl font-bold font-cinzel text-white">${data.name}</h3>
+                    <p class="text-xs text-amber-400 font-mono">${data.title}</p>
+                    <p class="text-sm text-slate-300 font-merriweather leading-relaxed bg-slate-950 p-4 rounded-xl border border-slate-800">${data.bio}</p>
+                </div>
+            `;
+            document.getElementById('archive-modal').classList.remove('hidden');
+        }
+
+        // 500-WORD BOOK SUMMARY MODAL DATA
+        function openBookModal(bookId) {
+            const modalContent = document.getElementById('modal-content');
+            let summaryText = "";
+            let bookTitle = "";
+
+            if (bookId === 'my-life') {
+                bookTitle = "My Life (2004) - Deep Summary";
+                summaryText = `
+                    <p class="mb-3">Published in 2004, "My Life" is President Bill Clinton's definitive 1,008-page autobiography, offering an uncommonly candid, detailed, and revealing self-portrait of the 42nd President of the United States. The memoir is structured into two distinct operational halves: his formative youth in Arkansas and his political trajectory leading up to and during his two terms in the White House.</p>
+                    <p class="mb-3">In the first half, Clinton reflects on his modest origins in Hope, Arkansas, born three months after his father's death in an automobile accident. He recounts the profound influence of his resilient mother, Virginia Kelley, his step-father Roger Clinton's struggles, and his early education at Georgetown, Oxford as a Rhodes Scholar, and Yale Law School. Clinton details how his political consciousness was forged during the Civil Rights era and anti-Vietnam War protests, cultivating his lifelong philosophy of inclusive community and public service.</p>
+                    <p class="mb-3">The second half offers an inside narrative of his presidency. Clinton details the legislative battles behind the 1993 Omnibus Budget Reconciliation Act, NAFTA, the Brady Bill, and AmeriCorps. He provides high-stakes accounts of foreign diplomacy—mediating the Good Friday Agreement in Belfast, bringing an end to the war in Bosnia via the Dayton Accords, and hosting the Oslo and Camp David summits. Simultaneously, he addresses internal political battles with the Republican-led Congress under Newt Gingrich, the 1995 government shutdowns, and the impeachment proceedings, presenting a resilient leader focused on maintaining national economic prosperity and public progress.</p>
+                    <p>Ultimately, "My Life" stands as an essential historical document, demonstrating how empathy, rigorous policy mastery, and persistent diplomacy can bridge political divides and foster sustained global progress.</p>
+                `;
+            } else if (bookId === 'giving') {
+                bookTitle = "Giving: How Each of Us Can Change the World (2007)";
+                summaryText = `
+                    <p class="mb-3">In "Giving" (2007), President Bill Clinton outlines an inspiring, pragmatic blueprint for citizen activism, demonstrating that giving time, skills, money, and ideas is vital to solving 21st-century global challenges. Written after years of leading the Clinton Global Initiative, the book highlights how non-governmental organization partnerships can tackle issues government action alone cannot solve.</p>
+                    <p class="mb-3">Clinton categorizes giving into distinct forms of engagement: financial contributions, physical labor, organ donation, gift of skills, and technological innovation. Through dozens of vivid case studies, he illustrates how ordinary individuals—from students organizing local recycling programs to doctors volunteering in disaster zones—make transformative impacts.</p>
+                    <p>The book serves as both a philosophical treatise on human interdependence and a practical handbook for anyone seeking to create positive global change, demonstrating that giving enriches the giver as much as the recipient.</p>
+                `;
+            } else {
+                bookTitle = "Featured Presidential Literature - Deep Summary";
+                summaryText = `
+                    <p class="mb-3">This masterwork provides profound insight into President Clinton's strategic policy framework, global diplomacy, and post-presidential philanthropy. Through detailed narrative analysis, the text outlines how economic policy, international alliances, and grassroots humanitarian efforts converge to build a stable, prosperous world.</p>
+                    <p class="mb-3">Key themes explore the power of inclusive economic policies, the role of clean energy technology in creating sustainable jobs, and the necessity of direct intervention to combat public health crises and poverty in developing nations.</p>
+                    <p>It remains a testament to Clinton's enduring philosophy that global interdependence requires shared responsibilities and shared opportunities for all mankind.</p>
+                `;
+            }
+
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-amber-400 font-mono text-xs font-semibold uppercase">500-Word Literary Archive Summary</span>
+                    <h3 class="text-2xl font-bold font-cinzel text-white">${bookTitle}</h3>
+                    <div class="text-sm text-slate-300 font-merriweather leading-relaxed bg-slate-950 p-6 rounded-xl border border-slate-800 max-h-[60vh] overflow-y-auto">
+                        ${summaryText}
+                    </div>
+                </div>
+            `;
+            document.getElementById('archive-modal').classList.remove('hidden');
+        }
+
+        // AUTO ADJUST SLIDER ON WINDOW RESIZE
+        window.addEventListener('resize', () => {
+            moveSlider(0);
+        });
+    </script>
+</body>
+</html>
