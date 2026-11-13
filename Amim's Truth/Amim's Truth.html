@@ -306,7 +306,7 @@
           <input
             type="text"
             id="topic-search"
-            placeholder="Search 27 essays..."
+            placeholder="Search 30 essays..."
             class="w-full pl-9 pr-8 py-2 rounded-xl text-sm font-medium surface-card text-ink placeholder:opacity-70 focus:outline-none"
           />
           <button id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-ink-muted hover:text-ink px-1">
@@ -333,7 +333,7 @@
       <!-- Sidebar Footer -->
       <div class="p-3.5 border-t border-theme text-xs text-ink-muted flex items-center justify-between">
         <span class="font-medium">Clear Reading Edition</span>
-        <span class="font-bold text-accent">9 Disciplines</span>
+        <span class="font-bold text-accent">10 Disciplines</span>
       </div>
     </aside>
 
@@ -443,7 +443,7 @@
     /**
      * ========================================================================
      * EDITORIAL DATABASE: "AMIM'S TRUTH" — WRITTEN BY AMIM AHSAN
-     * 9 Disciplines × 3 Essays = 27 Complete, High-Clarity Philosophical Essays
+     * 10 Disciplines × 3 Essays = 30 Complete, High-Clarity Philosophical Essays
      * ========================================================================
      */
     const JOURNAL_DATA = [
@@ -937,6 +937,61 @@
               'Streaming, cloud storage, and constant connectivity carry a hidden carbon cost. Data centers consume vast amounts of energy, and device production extracts rare earth minerals under destructive conditions.',
               'Choosing to unplug, delete, and simplify is not just about mental clarity—it is an act of environmental resistance. The most sustainable device is the one you do not turn on.',
               'Digital minimalism invites us to ask: Do I need this notification, this scroll, this update? Each small refusal adds up to a lighter footprint on the Earth.']
+      {
+        id: 'history',
+        name: "History",
+        icon: `<svg class="w-4 h-4" fill='none' stroke='currentColor' stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 0l-4 4 4 4M4 4h16v16H4V4z"/></svg>`,
+        topics: [
+          {
+            id: "hist-1",
+            title: "The Weight of Inherited History",
+            subtitle: "How collective memory shapes identity and moral responsibility.",
+            readTime: "6 min read",
+            date: "November 2026",
+            image: "https://images.unsplash.com/photo-1581091030275-6e0b8cfd4b73?auto=format&fit=crop&w=1400&q=80",
+            imageCaption: "Ancient stone tablets half-buried in soil—history layered beneath our feet.",
+            quote: "We are not the authors of our origins, but we are responsible for what we do with them.",
+            takeaway: "Understanding where we come from helps us choose where we are going.",
+            paragraphs: [
+              "Every culture preserves its story through myths, monuments, and oral tradition. History is not just a record of dates and events; it is the living memory that informs who we become.",
+              "When we inherit histories we did not choose—colonial conquests, migrations, systemic injustices—we carry burdens not of our making. Yet ignoring them does not erase them; it only ensures they will repeat.",
+              "True maturity comes when we hold both compassion for our ancestors and accountability for our present. We can honor the past without being enslaved by it."
+            ]
+          },
+          {
+            id: "hist-2",
+            title: "Lessons from Civilizations Rise and Fall",
+            subtitle: "What the collapse of empires teaches about sustainability and hubris.",
+            readTime: "7 min read",
+            date: "October 2026",
+            image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
+            imageCaption: "Crumbled columns in a overgrown field—the inevitability of decay.",
+            quote: "Every great civilization finds its end not in external conquest but in internal forgetfulness.",
+            takeaway: "Hubris toward nature, power, or knowledge often precedes the downfall of even the mightiest societies.",
+            paragraphs: [
+              "History is filled with societies that believed they were exempt from the laws of nature or the consequences of excess. The Romans, the Mayans, the Soviets—each met a fate they did not anticipate.",
+              "When a civilization depletes its resources or silences dissent, it weakens the very foundations that sustained it. Sustainability is not merely technological; it is cultural and moral.",
+              "The question is not whether decline will come, but whether we can learn its lessons before it is too late. The past is a warning bell, not a prophecy we must accept."
+            ]
+          },
+          {
+            id: "hist-3",
+            title: "Personal History and Narrative Identity",
+            subtitle: "How the stories we tell ourselves shape who we become.",
+            readTime: "5 min read",
+            date: "September 2026",
+            image: "https://images.unsplash.com/photo-1552550717-db22cd9f6e1f?auto=format&fit=crop&w=1400&q=80",
+            imageCaption: "An old photograph fading at the edges—memories that soften with time.",
+            quote: "We all narrate our lives, selecting certain moments and silencing others to make ourselves coherent.",
+            takeaway: "The stories we choose to emphasize determine the person we believe ourselves to be—and can become.",
+            paragraphs: [
+              "We edit our personal histories the way nations edit their national myths: keeping what flatters, omitting what wounds. This is not always deception; it is often survival.",
+              "Yet the stories we tell ourselves limit what we imagine possible. A narrative of failure can become a self-fulfilling prophecy. A narrative of resilience can open doors we never knew existed.",
+              "Conscious storytelling—examining which parts of our past we amplify and which we bury—is an act of self-creation. We are never finished becoming."
+            ]
+          }
+        ]
+      }
           }
         ]
       }
@@ -1168,7 +1223,7 @@
           <div class="text-center py-10 px-4">
             <p class="text-sm font-medium text-ink-muted">No essays match your search.</p>
             <button onclick="resetFilters()" class="mt-3 text-xs font-bold text-accent underline">
-              Show all 27 essays
+              Show all 30 essays
             </button>
           </div>
         `;
