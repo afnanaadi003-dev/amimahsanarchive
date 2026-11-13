@@ -477,6 +477,15 @@
       }
     ];
 
+    // Static Economy pages surfaced at the top of the Economy dropdown
+    const ECONOMY_PAGES = [
+      {
+        name: 'Crypto Guardian',
+        meta: 'Crypto World · Markets & Analysis',
+        href: 'Crypto%20Guardian/Crypto%20Guardian.html'
+      }
+    ];
+
     const JOURNAL_DATA = [
       {
         id: 'culture',
@@ -1279,6 +1288,18 @@
             <div class="submenu-wrapper ${isOpen ? 'open' : ''}">
               <div class="submenu-inner">
                 <ul class="pl-4 pr-1 py-1 space-y-1 ml-4 border-l border-theme my-1">
+                  ${(cat.id === 'economy' ? ECONOMY_PAGES : [])
+                    .map(item => `
+                    <li>
+                      <a
+                        href="${item.href}"
+                        class="subitem-btn w-full block text-left px-3 py-2 rounded-r-lg text-[13px] leading-snug transition"
+                      >
+                        <span class="block">${item.name}</span>
+                        <span class="block text-[11px] text-ink-muted">${item.meta}</span>
+                      </a>
+                    </li>
+                  `).join('')}
                   ${matchingTopics
                     .map(t => {
                       const active = t.id === state.activeTopicId;
