@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amim's Truth — Essays on Philosophy, Society &amp; Human Freedom</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 5 Curated Reading Google Fonts: Merriweather (Default), Lora, Libre Baskerville, Source Serif 4, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS DESIGN TOKENS FOR 5 HIGH-CONTRAST READING THEMES
+       ========================================================================== */
+    :root,
+    [data-theme="papyrus"] {
+      --bg-page: #F6F1E3;
+      --bg-surface: #FBF8F0;
+      --bg-sidebar: #EFE8D6;
+      --bg-hover: #E5DCC6;
+      --bg-active: #DDD1B6;
+      --bg-quote: #EFE8D5;
+      --text-primary: #1C1915;
+      --text-secondary: #3D352C;
+      --text-muted: #5A4F42;
+      --accent: #8C5828;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(140, 88, 40, 0.13);
+      --border-color: #D6C9AF;
+      --shadow-card: 0 4px 20px rgba(28, 25, 21, 0.06);
+    }
+
+    [data-theme="eyegreen"] {
+      --bg-page: #E7EFE6;
+      --bg-surface: #F1F6F0;
+      --bg-sidebar: #DCE7DB;
+      --bg-hover: #CFE0CE;
+      --bg-active: #C1D6C0;
+      --bg-quote: #DCE7DB;
+      --text-primary: #142419;
+      --text-secondary: #243C2B;
+      --text-muted: #3A5643;
+      --accent: #235C3A;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(35, 92, 58, 0.13);
+      --border-color: #BBD0B9;
+      --shadow-card: 0 4px 20px rgba(20, 36, 25, 0.06);
+    }
+
+    [data-theme="sepia"] {
+      --bg-page: #F3EAD8;
+      --bg-surface: #FAF4E8;
+      --bg-sidebar: #EAE0CC;
+      --bg-hover: #DFD2B8;
+      --bg-active: #D4C3A3;
+      --bg-quote: #EAE0CC;
+      --text-primary: #2B2118;
+      --text-secondary: #463729;
+      --text-muted: #634F3D;
+      --accent: #7A4B22;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(122, 75, 34, 0.13);
+      --border-color: #D2C1A3;
+      --shadow-card: 0 4px 20px rgba(43, 33, 24, 0.06);
+    }
+
+    [data-theme="daylight"] {
+      --bg-page: #F7F7F5;
+      --bg-surface: #FFFFFF;
+      --bg-sidebar: #EFEFEF;
+      --bg-hover: #E3E5E8;
+      --bg-active: #D7DCE2;
+      --bg-quote: #F0F2F5;
+      --text-primary: #111315;
+      --text-secondary: #2C3137;
+      --text-muted: #4B525C;
+      --accent: #1D4ED8;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(29, 78, 216, 0.11);
+      --border-color: #D5D9E0;
+      --shadow-card: 0 4px 20px rgba(17, 19, 21, 0.05);
+    }
+
+    [data-theme="softnight"] {
+      --bg-page: #1A1D1E;
+      --bg-surface: #232729;
+      --bg-sidebar: #151819;
+      --bg-hover: #2B3033;
+      --bg-active: #343A3E;
+      --bg-quote: #282D30;
+      --text-primary: #ECE9E1;
+      --text-secondary: #D2CEC4;
+      --text-muted: #ADA89D;
+      --accent: #E0A952;
+      --accent-contrast: #151819;
+      --accent-soft: rgba(224, 169, 82, 0.16);
+      --border-color: #3A4044;
+      --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY VARIABLES (5 CURATED FONTS)
+       ========================================================================== */
+    :root {
+      --font-reader: 'Merriweather', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --reader-size: 18px;
+      --reader-leading: 1.85;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .reader-typography {
+      font-family: var(--font-reader);
+      font-size: var(--reader-size);
+      line-height: var(--reader-leading);
+    }
+
+    .headline-typography {
+      font-family: var(--font-reader);
+    }
+
+    /* Theme Surface Helper Classes */
+    .surface-page { background-color: var(--bg-page); }
+    .surface-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+    }
+    .surface-sidebar {
+      background-color: var(--bg-sidebar);
+      border-color: var(--border-color);
+    }
+    .surface-topbar {
+      background-color: var(--bg-surface);
+      border-color: var(--border-color);
+    }
+    .surface-quote {
+      background-color: var(--bg-quote);
+      border-left: 4px solid var(--accent);
+    }
+    .text-ink { color: var(--text-primary); }
+    .text-ink-secondary { color: var(--text-secondary); }
+    .text-ink-muted { color: var(--text-muted); }
+    .text-accent { color: var(--accent); }
+    .border-theme { border-color: var(--border-color); }
+
+    .btn-theme {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      transition: background-color 0.18s ease, border-color 0.18s ease;
+    }
+    .btn-theme:hover {
+      background-color: var(--bg-hover);
+      border-color: var(--accent);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      border: 1px solid var(--accent);
+    }
+
+    /* Smooth Accordion Submenu */
+    .submenu-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+    .submenu-wrapper.open {
+      grid-template-rows: 1fr;
+    }
+    .submenu-inner {
+      overflow: hidden;
+    }
+
+    .chevron-icon {
+      transition: transform 0.25s ease;
+    }
+    .chevron-icon.rotated {
+      transform: rotate(180deg);
+    }
+
+    /* Sidebar Item States */
+    .cat-btn:hover {
+      background-color: var(--bg-hover);
+    }
+    .subitem-btn {
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+    }
+    .subitem-btn:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    .subitem-btn.active {
+      background-color: var(--bg-active);
+      color: var(--text-primary);
+      border-left-color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-page);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    /* Subtle Article Entry */
+    @keyframes gentleFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade {
+      animation: gentleFade 0.32s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Toast Notification Banner (No alert() used) -->
+  <div id="toast-banner" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="surface-card px-4 py-3 rounded-xl flex items-center gap-2.5 text-sm font-medium text-ink shadow-lg">
+      <span class="w-2.5 h-2.5 rounded-full" style="background-color: var(--accent);"></span>
+      <span id="toast-message">Settings updated</span>
+    </div>
+  </div>
+
+  <!-- Mobile Top Header -->
+  <header class="lg:hidden sticky top-0 z-30 surface-topbar border-b px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-base" style="background-color: var(--accent); color: var(--accent-contrast);">
+        AT
+      </div>
+      <div>
+        <h1 class="headline-typography text-base font-bold text-ink leading-tight">Amim's Truth</h1>
+        <p class="text-[11px] text-ink-muted">By Amim Ahsan</p>
+      </div>
+    </div>
+    <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="btn-theme px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <span>Topics</span>
+    </button>
+  </header>
+
+  <!-- Mobile Backdrop -->
+  <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+  <!-- Main Application Shell -->
+  <div class="flex min-h-screen">
+
+    <!-- ======================================================================
+         LEFT SIDEBAR: SOLID HIGH-CONTRAST MENU WITH DROPDOWN SUBMENUS
+         ====================================================================== -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 h-screen w-80 max-w-[86vw] surface-sidebar border-r flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+      
+      <!-- Brand Header -->
+      <div class="p-5 border-b border-theme flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="selectFirstTopic()">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm" style="background-color: var(--accent); color: var(--accent-contrast);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+          </div>
+          <div>
+            <span class="headline-typography text-lg font-bold text-ink block leading-tight">Amim's Truth</span>
+            <span class="text-xs font-medium text-ink-muted block mt-0.5">Written by Amim Ahsan</span>
+          </div>
+        </div>
+
+        <button id="close-sidebar-btn" aria-label="Close Sidebar" class="lg:hidden btn-theme p-2 rounded-lg text-xs font-bold">
+          ✕
+        </button>
+      </div>
+
+      <!-- Search & Saved Filter -->
+      <div class="p-4 border-b border-theme space-y-2.5">
+        <div class="relative">
+          <svg class="w-4 h-4 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path stroke-linecap="round" d="M21 21l-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            id="topic-search"
+            placeholder="Search 27 essays..."
+            class="w-full pl-9 pr-8 py-2 rounded-xl text-sm font-medium surface-card text-ink placeholder:opacity-70 focus:outline-none"
+          />
+          <button id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-ink-muted hover:text-ink px-1">
+            ✕
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="filter-all-btn" onclick="setFilterMode('all')" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-accent transition">
+            All Essays (24)
+          </button>
+          <button id="filter-saved-btn" onclick="setFilterMode('saved')" class="flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-theme transition flex items-center justify-center gap-1.5">
+            <span>Saved</span>
+            <span id="saved-count-badge" class="px-1.5 py-0.2 rounded-full text-[11px] font-bold" style="background-color: var(--accent-soft); color: var(--accent);">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Accordion Dropdown Navigation -->
+      <nav id="sidebar-nav" aria-label="Essay Categories" class="flex-1 overflow-y-auto p-3 space-y-1">
+        <!-- Populated dynamically via JS -->
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="p-3.5 border-t border-theme text-xs text-ink-muted flex items-center justify-between">
+        <span class="font-medium">Clear Reading Edition</span>
+        <span class="font-bold text-accent">9 Disciplines</span>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         RIGHT SIDE: TOP READING CONTROLS + EDITORIAL CONTENT PANE
+         ====================================================================== -->
+    <main class="flex-1 min-w-0 flex flex-col">
+
+      <!-- Top Comfort & Customization Bar (5 Color Themes + 5 Fonts + Font Size + Focus Mode) -->
+      <div class="sticky top-0 z-20 surface-topbar border-b px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          
+          <!-- Left: 5 Color Theme Swatches -->
+          <div class="flex items-center gap-1.5 flex-wrap" role="group" aria-label="Reading Color Themes">
+            <span class="text-xs font-bold uppercase tracking-wider text-ink-muted mr-1 hidden sm:inline">Theme:</span>
+            
+            <button onclick="setTheme('papyrus')" data-theme-btn="papyrus" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition" title="Papyrus Ivory (Default)">
+              <span class="w-3.5 h-3.5 rounded-full border border-black/30 shrink-0" style="background-color: #F6F1E3;"></span>
+              <span>Papyrus</span>
+            </button>
+
+            <button onclick="setTheme('eyegreen')" data-theme-btn="eyegreen" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition" title="Eye-Care Sage Green">
+              <span class="w-3.5 h-3.5 rounded-full border border-black/30 shrink-0" style="background-color: #E7EFE6;"></span>
+              <span>Eye Green</span>
+            </button>
+
+            <button onclick="setTheme('sepia')" data-theme-btn="sepia" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition" title="Warm Cream Sepia">
+              <span class="w-3.5 h-3.5 rounded-full border border-black/30 shrink-0" style="background-color: #F3EAD8;"></span>
+              <span>Sepia</span>
+            </button>
+
+            <button onclick="setTheme('daylight')" data-theme-btn="daylight" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition" title="Crisp Daylight Linen">
+              <span class="w-3.5 h-3.5 rounded-full border border-black/30 shrink-0" style="background-color: #FFFFFF;"></span>
+              <span>Daylight</span>
+            </button>
+
+            <button onclick="setTheme('softnight')" data-theme-btn="softnight" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition" title="Soft Slate Night">
+              <span class="w-3.5 h-3.5 rounded-full border border-white/40 shrink-0" style="background-color: #1A1D1E;"></span>
+              <span>Night</span>
+            </button>
+          </div>
+
+          <!-- Right: 5 Font Selector + Font Size + Spacing + Focus -->
+          <div class="flex items-center gap-2 flex-wrap">
+            
+            <!-- 5 Font Options Dropdown -->
+            <div class="flex items-center gap-1.5">
+              <label for="font-selector" class="text-xs font-bold uppercase tracking-wider text-ink-muted hidden md:inline">Font:</label>
+              <select id="font-selector" onchange="setFont(this.value)" class="btn-theme px-2.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer focus:outline-none">
+                <option value="merriweather">1. Merriweather (Default)</option>
+                <option value="lora">2. Lora Serif</option>
+                <option value="baskerville">3. Libre Baskerville</option>
+                <option value="sourceserif">4. Source Serif 4</option>
+                <option value="jakarta">5. Plus Jakarta Sans</option>
+              </select>
+            </div>
+
+            <!-- Font Size Controls (A- / A+) -->
+            <div class="flex items-center rounded-lg overflow-hidden border border-theme">
+              <button onclick="changeFontSize(-1)" class="btn-theme border-0 px-2.5 py-1.5 text-xs font-bold" title="Decrease Text Size">A-</button>
+              <span id="font-size-indicator" class="px-2 py-1.5 text-[11px] font-bold text-ink-muted surface-card border-0 border-x border-theme">18px</span>
+              <button onclick="changeFontSize(1)" class="btn-theme border-0 px-2.5 py-1.5 text-xs font-bold" title="Increase Text Size">A+</button>
+            </div>
+
+            <!-- Line Spacing Toggle -->
+            <button id="spacing-btn" onclick="toggleLineSpacing()" class="btn-theme px-2.5 py-1.5 rounded-lg text-xs font-semibold hidden sm:inline-flex items-center gap-1" title="Toggle Extra Relaxed Line Spacing">
+              <span>Spacing: Normal</span>
+            </button>
+
+            <!-- Bookmark Button -->
+            <button id="bookmark-btn" onclick="toggleCurrentBookmark()" class="btn-theme px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+              <span id="bookmark-star" class="text-accent font-bold">☆</span>
+              <span id="bookmark-label">Save</span>
+            </button>
+
+            <!-- Focus Mode Toggle -->
+            <button id="focus-btn" onclick="toggleFocusMode()" class="btn-theme px-3 py-1.5 rounded-lg text-xs font-semibold">
+              Focus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumb Bar -->
+      <div class="max-w-4xl w-full mx-auto px-5 sm:px-8 lg:px-12 pt-6 pb-1 flex items-center justify-between text-xs font-semibold text-ink-muted">
+        <div class="flex items-center gap-2 truncate">
+          <span class="text-accent">Amim's Truth</span>
+          <span>›</span>
+          <span id="breadcrumb-category">Culture</span>
+          <span class="hidden sm:inline">›</span>
+          <span id="breadcrumb-title" class="hidden sm:inline truncate max-w-xs md:max-w-md">The Architecture of Collective Memory</span>
+        </div>
+        <button onclick="copyCitation()" class="text-accent hover:underline shrink-0 ml-3">
+          Copy Citation
+        </button>
+      </div>
+
+      <!-- Main Editorial Reader Surface -->
+      <article id="article-container" class="max-w-4xl w-full mx-auto px-5 sm:px-8 lg:px-12 py-6 sm:py-10">
+        <!-- Populated dynamically by renderArticle() -->
+      </article>
+
+    </main>
+  </div>
+
+  <script>
+    /**
+     * ========================================================================
+     * EDITORIAL DATABASE: "AMIM'S TRUTH" — WRITTEN BY AMIM AHSAN
+     * 9 Disciplines × 3 Essays = 27 Complete, High-Clarity Philosophical Essays
+     * ========================================================================
+     */
+    const JOURNAL_DATA = [
+      {
+        id: 'culture',
+        name: 'Culture',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>`,
+        topics: [
+          {
+            id: 'culture-1',
+            title: 'The Architecture of Collective Memory',
+            subtitle: 'How shared stories, physical landmarks, and living elders anchor human civilization against forgetfulness.',
+            readTime: '6 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Weathered stone arches standing across centuries—architecture built to carry human memory forward.',
+            quote: 'A civilization does not vanish when its monuments crumble; it vanishes when its grandchildren can no longer translate the silence of its elders.',
+            takeaway: 'True heritage lives not in museum glass or digital clouds alone, but in the ethical habits we practice daily.',
+            paragraphs: [
+              'Every human culture is an unbroken conversation between the dead, the living, and the unborn. For thousands of years, that dialogue traveled through kitchen-table parables, woven textiles, seasonal songs, and weathered stone—mediums that demanded patience, physical gathering, and active listening.',
+              'In our rush toward instant digital archiving, we often confuse storage with remembrance. We photograph every meal and record every ceremony, yet rarely pause long enough to absorb the moral meaning behind the tradition. When heritage becomes mere spectacle, nuance is flattened into entertainment.',
+              'Collective memory requires stewards rather than spectators. To honor ancestral wisdom is not to fossilize the past in rigid imitation, but to carry its enduring compassion and resilience into an uncertain modern horizon.',
+              'When a society remembers why its ancestors endured hardship, it gains the humility to build institutions worthy of its descendants.'
+            ]
+          },
+          {
+            id: 'culture-2',
+            title: 'Rituals Without Temples',
+            subtitle: 'Why modern secular life still craves shared gestures to mark grief, gratitude, and transition.',
+            readTime: '5 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Quiet daylight entering a calm stone room—space intentionally cleared for reflection.',
+            quote: 'Where everyday speech collapses under the weight of sorrow or joy, ritual steps forward to carry the human heart.',
+            takeaway: 'Intentional daily rituals protect our attention from fragmentation and restore rhythm to rushed lives.',
+            paragraphs: [
+              'Modern rationalism often dismisses ritual as an obsolete relic of pre-scientific ages. Yet wherever traditional ceremonies fade, human beings immediately invent new ones—from silent candlelit vigils in city squares to morning coffee routines guarded with quiet devotion.',
+              'Ritual is embodied philosophy. It teaches the nervous system what abstract arguments cannot: that birth, union, failure, and mortality belong to a shared human story larger than the isolated ego.',
+              'Even outside formal temples, creating deliberate thresholds in our day—a shared evening meal without screens, an hour of uninterrupted reading, a handwritten letter of gratitude—anchors the soul against the chaos of constant urgency.'
+            ]
+          },
+          {
+            id: 'culture-3',
+            title: 'Digital Folklore & The New Tribe',
+            subtitle: 'Examining how internet memes, viral myths, and online communities reshape cultural belonging.',
+            readTime: '6 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Layered pages and manuscripts—symbols of how storytelling evolves across every medium.',
+            quote: 'Every era invents its own campfire; today, millions gather around glowing screens trading modern parables.',
+            takeaway: 'Digital tribes offer rapid connection, yet lasting culture still demands face-to-face accountability.',
+            paragraphs: [
+              'Folklore was never confined to ancient villages. Whenever human beings gather, they invent shared symbols, inside jokes, cautionary tales, and moral heroes to signal who belongs to the tribe.',
+              'Today, online networks generate folklore at light speed. A single phrase or image can unite millions across continents within hours, creating instant solidarity for voices once isolated by geography.',
+              'Yet digital tribes carry a hidden fragility: algorithms reward outrage over wisdom. Building healthy modern culture requires bringing our online empathy back into physical neighborhoods where neighbors must live together beyond the screen.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'religion',
+        name: 'Religion',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18l4 4m-4-4L8 7m4 14l4-4m-4 4l-4-4M3 12h18"/></svg>`,
+        topics: [
+          {
+            id: 'religion-1',
+            title: 'The Silence Beyond Dogma',
+            subtitle: 'Distinguishing the boundless awe of the sacred from the rigid walls of institutional certainty.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Still mountain waters reflecting twilight—clarity discovered only when surface noise settles.',
+            quote: 'When faith mistakes its map for the territory, wonder hardens into bureaucracy.',
+            takeaway: 'Authentic spirituality deepens humility and compassion rather than breeding arrogance toward outsiders.',
+            paragraphs: [
+              'At the origin of every great spiritual tradition stands an encounter with profound mystery—a quiet awe before the vastness of existence, conscience, and mortality. Over centuries, however, institutions arise to organize that awe into fixed doctrines, hierarchies, and boundaries.',
+              'While structure can preserve ethical teachings, unexamined dogma often replaces living inquiry with mechanical obedience. When people value winning theological arguments above practicing kindness, the spirit of truth has already departed.',
+              'The silence beyond dogma invites both believer and skeptic to stand humbly before the cosmos. Truth does not fear honest questions; it welcomes them as instruments that burn away illusion.'
+            ]
+          },
+          {
+            id: 'religion-2',
+            title: 'Sacred Fear and the Invention of Certitude',
+            subtitle: 'How human anxiety before the unknown tempts societies to trade curiosity for absolute claims.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Warm candlelight in a quiet hall—humanity seeking light amid existential uncertainty.',
+            quote: 'Certainty is often the armor worn by a mind terrified of saying, "I do not yet know."',
+            takeaway: 'Courageous faith embraces mystery without weaponizing fear against the human conscience.',
+            paragraphs: [
+              'Human beings are the only creatures aware of their own fragility and eventual death. Faced with cosmic uncertainty, the temptation to cling to absolute, unquestionable formulas is deeply understandable.',
+              'Yet whenever fear becomes the foundation of belief, compassion suffers. Fear-driven religion divides humanity into the saved and the condemned, turning neighbors into adversaries.',
+              'True wisdom matures when we release the demand to control the universe through dogma and instead anchor our lives in justice, mercy, and intellectual honesty.'
+            ]
+          },
+          {
+            id: 'religion-3',
+            title: 'Mysticism as Rebellion',
+            subtitle: 'Why poets, contemplatives, and truth-seekers have always challenged empty outward conformity.',
+            readTime: '6 min read',
+            date: 'August 2026',
+            image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Distant starlight across deep space—the timeless horizon of contemplative wonder.',
+            quote: 'The mystic insists that the divine cannot be locked inside a building or monopolized by a priesthood.',
+            takeaway: 'Direct inner conscience remains the highest court of moral responsibility.',
+            paragraphs: [
+              'Across history, mystics and contemplative poets have been viewed with suspicion by authoritarian institutions. Their offense was simple: they claimed that direct communion with truth and love belongs to every sincere human heart.',
+              'By placing inner transformation above outward display, mysticism acts as a quiet rebellion against hypocrisy. It reminds us that reciting formulas without ethical integrity is an empty performance.',
+              'Where love of neighbor is absent, no creed can rescue the soul.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'economy',
+        name: 'Economy',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+        topics: [
+          {
+            id: 'economy-1',
+            title: 'The Myth of Infinite Growth',
+            subtitle: 'Confronting the mathematical and ecological limits of perpetual expansion on a finite Earth.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Morning light across green agricultural fields—living ecosystems that sustain all real wealth.',
+            quote: 'In biology, endless growth without equilibrium has a precise clinical name: malignancy.',
+            takeaway: 'Economic maturity means measuring human flourishing and ecological balance, not mere speed.',
+            paragraphs: [
+              'Modern economic policy rests upon an unspoken article of faith: that national output must expand endlessly, year after year, forever. Yet every physical resource on our planet—topsoil, freshwater, forests, minerals, and human calm—is strictly finite.',
+              'When an accounting system celebrates the clearing of ancient forests or the monetization of human loneliness as "economic growth," its compass is broken. Price tags measure market transactions, not ecological health or civic happiness.',
+              'A wise economy emulates nature’s circular balance—producing enough for every household to live in dignity while leaving rivers cleaner and soil richer for the next generation.'
+            ]
+          },
+          {
+            id: 'economy-2',
+            title: 'Attention as the Last Currency',
+            subtitle: 'How modern digital markets harvest human focus—and how to reclaim ownership of your mind.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Towering glass structures—monuments to modern commerce competing for human focus.',
+            quote: 'Where your attention goes, your life goes; whoever captures your focus owns your hours.',
+            takeaway: 'Guarding uninterrupted time to read and think is an essential act of economic self-defense.',
+            paragraphs: [
+              'In earlier centuries, wealth was measured in land, grain, and industrial machinery. In the twenty-first century, the fiercest corporate competition targets a scarcer resource: the waking minutes of the human mind.',
+              'Free digital platforms are rarely free; they are paid for with fragmented concentration, manufactured anxiety, and impulse consumption.',
+              'Reclaiming your attention begins with deliberate boundaries—choosing deep books over endless feeds and valuing quiet presence above digital noise.'
+            ]
+          },
+          {
+            id: 'economy-3',
+            title: 'Dignity Beyond Productivity',
+            subtitle: 'Why a human being’s worth cannot be reduced to market output, hourly wages, or job titles.',
+            readTime: '6 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Precision technology—tools meant to serve human dignity rather than replace it.',
+            quote: 'The economy was made for humanity, never humanity for the economy.',
+            takeaway: 'Caregiving, mentorship, and civic kindness form the invisible foundation of every prosperous society.',
+            paragraphs: [
+              'From childhood, modern culture trains us to introduce ourselves by our occupation, subtly implying that our value rises and falls with our economic output.',
+              'Yet the most vital work in any civilization—raising children, comforting the elderly, listening to a grieving friend, tending a garden—often carries no salary at all.',
+              'As automation reshapes labor, we must reaffirm a foundational moral truth: every person possesses inherent dignity simply by being human.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'literature',
+        name: 'Literature',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
+        topics: [
+          {
+            id: 'literature-1',
+            title: 'Why Fiction Tells the Truer History',
+            subtitle: 'How novels preserve the inner emotional reality that dates, treaties, and statistics leave behind.',
+            readTime: '6 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Quiet library shelves bathed in natural daylight—vessels of human empathy across time.',
+            quote: 'History records what people did; literature reveals what it felt like to be alive while doing it.',
+            takeaway: 'Reading great stories expands our moral imagination and weakens prejudice.',
+            paragraphs: [
+              'Official chronicles record the treaties of kings, the tonnage of harvests, and the borders redrawn after wars. Yet statistics alone rarely capture the quiet heartbreak of an exile, the moral hesitation of a judge, or the stubborn hope of a parent.',
+              'Literature steps into that silence. Through vivid characters, a novel allows us to inhabit another consciousness from the inside—dissolving the illusion that strangers are fundamentally different from ourselves.',
+              'In a polarized world, sustained literary reading remains one of the finest exercises in civic empathy ever invented.'
+            ]
+          },
+          {
+            id: 'literature-2',
+            title: 'The Unwritten Sentence',
+            subtitle: 'On personal journaling, intellectual honesty, and the courage to confront our private thoughts.',
+            readTime: '5 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'A pen resting over clean paper—the quiet discipline of clarifying thought.',
+            quote: 'We do not write merely to record who we were; we write to discover who we dare to become.',
+            takeaway: 'Writing down tangled emotions transforms confusion into clarity and self-understanding.',
+            paragraphs: [
+              'Every person carries an unwritten book inside—a collection of unspoken gratitude, unresolved doubts, and truths withheld to keep social peace.',
+              'When thoughts remain vague inside the mind, anxiety magnifies them. Putting words calmly onto a page forces clarity, separating genuine moral insight from passing fear.',
+              'To write honestly without an audience is to practice radical self-respect.'
+            ]
+          },
+          {
+            id: 'literature-3',
+            title: 'Paperless Words & Eternal Ink',
+            subtitle: 'Preserving living forests while crafting calm, eye-friendly digital sanctuaries for long-form reading.',
+            readTime: '6 min read',
+            date: 'August 2026',
+            image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Sunbeams filtering through ancient green woodland—preserving living trees through mindful digital publishing.',
+            quote: 'Let the forests stand as cathedrals of living green, while thoughtful essays travel across gentle light.',
+            takeaway: 'Thoughtful typography and eye-soothing paper tones make screen reading as restful as an open book.',
+            paragraphs: [
+              'For centuries, publishing books demanded harvesting millions of trees. Today, digital platforms allow ideas to reach readers across every village and city without felling a single grove.',
+              'However, early screens often fatigued the eyes with harsh glare and cluttered distractions. By designing digital pages with warm papyrus tones, sage green calm, and generous typography, we unite ecological stewardship with the timeless comfort of a classic book.',
+              'True literature resides in the clarity of thought—not in the paper sacrificed to carry it.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'sociology',
+        name: 'Sociology',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+        topics: [
+          {
+            id: 'sociology-1',
+            title: 'The Loneliness of Crowded Cities',
+            subtitle: 'Why millions living shoulder-to-shoulder suffer from isolation—and how civic spaces can heal us.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'City avenues at twilight—proximity without community when public gathering spaces vanish.',
+            quote: 'Proximity is not community; a million strangers passing in silence is still solitude.',
+            takeaway: 'Healthy societies invest in accessible parks, libraries, and tea houses where neighbors meet as equals.',
+            paragraphs: [
+              'Never in human history have so many people lived within walking distance of one another, yet chronic loneliness has quietly become a defining public health crisis.',
+              'When urban neighborhoods replace shaded courtyards, public libraries, and local markets with private vehicles and subscription walls, daily casual friendship disappears. We lose the familiar faces that once reminded us we belong to a shared civic family.',
+              'Rebuilding community begins locally—by greeting neighbors by name, supporting shared public spaces, and treating hospitality as a civic duty.'
+            ]
+          },
+          {
+            id: 'sociology-2',
+            title: 'Conformity in the Age of Self-Expression',
+            subtitle: 'How social media rewards imitation even while celebrating individuality.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Crowds moving in rhythm—how subtle social cues shape individual choices.',
+            quote: 'When everyone rebels in the exact same uniform, conformity has merely changed its costume.',
+            takeaway: 'Genuine individuality grows from independent reflection rather than chasing viral approval.',
+            paragraphs: [
+              'Contemporary culture constantly urges us to "be unique," yet digital platforms measure worth through instant likes, shares, and trending templates.',
+              'Eager to avoid social rejection, people subtly edit their opinions, aesthetics, and ambitions to match whatever earns applause within their circle.',
+              'True authenticity requires risking temporary misunderstanding—choosing convictions that survive even when nobody is applauding.'
+            ]
+          },
+          {
+            id: 'sociology-3',
+            title: 'The Invisible Class System',
+            subtitle: 'Examining how accent, credentials, and inherited networks quietly shape opportunity.',
+            readTime: '6 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Architectural stairs and levels—unspoken social boundaries reflected in everyday life.',
+            quote: 'Privilege is easiest to ignore for those who enjoy its tailwinds every morning.',
+            takeaway: 'Fairness requires judging character and effort rather than inherited status markers.',
+            paragraphs: [
+              'Even in societies that proclaim formal equality, subtle social sorting persists through school pedigrees, linguistic accents, and family connections.',
+              'When success is attributed solely to individual merit, those born with advantages risk mistaking good fortune for moral superiority.',
+              'A humane society widens the doors of education and dignity so that every child’s horizon is shaped by curiosity rather than birth.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'women',
+        name: 'Women',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14a6 6 0 100-12 6 6 0 000 12zm0 0v8m-3-3h6"/></svg>`,
+        topics: [
+          {
+            id: 'women-1',
+            title: 'The Unapologetic Voice',
+            subtitle: 'Reclaiming a woman’s right to speak, dissent, lead, and exist without shrinking for others’ comfort.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Calm, poised presence in natural light—dignity and self-possession without apology.',
+            quote: 'No civilization can claim moral enlightenment while treating half its humanity as ornament or afterthought.',
+            takeaway: 'A society thrives when women’s intellect, leadership, and bodily autonomy are respected unconditionally.',
+            paragraphs: [
+              'For centuries, social customs trained women to soften their insights, apologize before speaking, and measure their worth by how little space they occupied.',
+              'True equality begins with a clear moral principle: every woman is a sovereign human being—an end in herself, never a footnote to someone else’s lineage or reputation.',
+              'When women speak with full clarity in classrooms, parliaments, households, and literature, humanity recovers half of its collective wisdom.'
+            ]
+          },
+          {
+            id: 'women-2',
+            title: 'Reclaiming the Domestic Myth',
+            subtitle: 'Honoring the immense skill of caregiving while dismantling the lie that women belong only in the home.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Golden light across open horizons—freedom to choose both hearth and public vocation.',
+            quote: 'Caregiving is noble human labor—which is precisely why it belongs equally to men and women.',
+            takeaway: 'Freedom means choice: neither confining women to the home nor devaluing the vital work of care.',
+            paragraphs: [
+              'Societies have long praised motherhood in poetry while undervaluing domestic labor in economics and law, using "tradition" to bar women from public leadership.',
+              'Genuine liberation refuses a false choice. A woman should be equally free to lead an institution, pursue scholarship, or dedicate seasons to raising a family—supported by fair laws and equal partnership at home.',
+              'Shared responsibility enriches both partners and models justice for the next generation.'
+            ]
+          },
+          {
+            id: 'women-3',
+            title: 'Sovereignty of the Self',
+            subtitle: 'Why legal equality, financial independence, and personal safety form the bedrock of freedom.',
+            readTime: '6 min read',
+            date: 'August 2026',
+            image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Morning mist lifting over clear valleys—stepping forward into self-determined freedom.',
+            quote: 'A cage lined with praise and velvet remains a cage.',
+            takeaway: 'Education and economic autonomy transform abstract rights into lived daily freedom.',
+            paragraphs: [
+              'Rights written on parchment mean little if economic dependence or social intimidation prevents a person from exercising them.',
+              'Access to education, fair wages, property rights, and safe public streets empowers women to make choices out of aspiration rather than survival.',
+              'When women stand sovereign, families become healthier, communities grow more peaceful, and justice becomes tangible.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'love-sex',
+        name: 'Love & Sex',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>`,
+        topics: [
+          {
+            id: 'love-1',
+            title: 'Intimacy Beyond Ownership',
+            subtitle: 'Why authentic love requires releasing control and honoring the beloved’s ongoing freedom.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Warm evening light by still waters—companionship rooted in trust rather than possession.',
+            quote: 'Jealousy is not proof of love; it is the anxiety of an ego trying to turn a human soul into property.',
+            takeaway: 'Lasting love flourishes between two free individuals who choose each other anew every day.',
+            paragraphs: [
+              'Popular songs often confuse obsession with devotion, portraying surveillance, jealousy, and emotional dependency as proof of passion.',
+              'Mature love begins where possession ends. To truly love another person is to celebrate their growth, friendships, and inner freedom without fear.',
+              'Intimacy thrives not inside locked doors, but in the quiet security of mutual trust and respect.'
+            ]
+          },
+          {
+            id: 'love-2',
+            title: 'The Philosophy of Desire',
+            subtitle: 'Understanding human longing with dignity—beyond both puritanical shame and shallow commodification.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Gentle ocean waves meeting warm shore—the natural rhythm of human connection.',
+            quote: 'Desire is the body’s honest admission that we are incomplete alone and brave enough to risk closeness.',
+            takeaway: 'Consent, honesty, and mutual tenderness elevate physical attraction into meaningful human bond.',
+            paragraphs: [
+              'Human sexuality has long been caught between two extremes: rigid shame that treats the body as sinful, and commercial culture that reduces intimacy to effortless consumption.',
+              'Between these distortions lies thoughtful eros—an encounter grounded in clear consent, unguarded honesty, and deep care for the partner’s wellbeing.',
+              'To be truly known requires lowering our armor, and nothing in human life demands greater courage.'
+            ]
+          },
+          {
+            id: 'love-3',
+            title: 'Tenderness in a Cynical Age',
+            subtitle: 'Why gentleness, patience, and emotional presence are radical virtues in a hurried world.',
+            readTime: '5 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Soft golden light in evening calm—small gestures of care that sustain lifelong affection.',
+            quote: 'Cynicism is easy; staying tender after heartbreak is the highest form of strength.',
+            takeaway: 'Daily attentiveness—listening without interrupting—keeps affection alive long after initial romance.',
+            paragraphs: [
+              'Modern dating culture often treats human beings like replaceable profiles, encouraging detachment to avoid the risk of disappointment.',
+              'Yet protecting ourselves from vulnerability also locks out joy. Long-term affection is built through thousands of unglamorous moments—making tea during illness, apologizing promptly, and listening with full patience.',
+              'Tenderness is never weakness; it is strength under gentle control.'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'freedom',
+        name: 'Freedom',
+        icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>`,
+        topics: [
+          {
+            id: 'freedom-1',
+            title: 'Solitude as the First Republic',
+            subtitle: 'Why inner self-governance and independent thought must precede every political liberty.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'A high mountain ridge above morning clouds—clarity earned through quiet reflection.',
+            quote: 'A citizen who cannot govern their own attention will always be ruled by whoever controls the megaphone.',
+            takeaway: 'Reading deeply and thinking independently protect inner sovereignty in an age of persuasion.',
+            paragraphs: [
+              'Constitutions and ballots are essential, yet external liberty cannot survive if citizens surrender their inner judgment to slogans and crowd emotions.',
+              'Solitude is the first republic of the mind. When we step back from constant noise to examine our assumptions honestly, we become harder to manipulate and wiser in our civic choices.',
+              'Freedom begins the moment you verify truth with your own conscience rather than borrowing opinions from the crowd.'
+            ]
+          },
+          {
+            id: 'freedom-2',
+            title: 'The Courage to Be Unpopular',
+            subtitle: 'Choosing moral integrity when honesty costs applause from family, peers, or authority.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Solitary alpine peaks under clear sky—standing firm when conviction asks us to walk alone.',
+            quote: 'The crowd can offer you warmth and applause—everything except your own soul.',
+            takeaway: 'Every historic advance in human justice began with someone willing to question polite consensus.',
+            paragraphs: [
+              'Every thoughtful life eventually meets a quiet test: remain silent to keep social approval, or speak kindly and truthfully despite disapproval.',
+              'Standing firm is not born of stubborn pride; it arises from knowing that betraying one’s conscience hurts far deeper than temporary criticism.',
+              'Moral courage is contagious—one honest voice often gives dozens of silent neighbors permission to stand straight.'
+            ]
+          },
+          {
+            id: 'freedom-3',
+            title: 'Breaking the Invisible Cage',
+            subtitle: 'Unlearning inherited fears, status anxiety, and borrowed definitions of a successful life.',
+            readTime: '6 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Open horizon across the globe—stepping beyond inherited limits into conscious choice.',
+            quote: 'Most people spend decades climbing ladders leaned against walls they never chose.',
+            takeaway: 'True liberation starts by asking: "Is this goal genuinely mine, or inherited from fear?"',
+            paragraphs: [
+              'The strongest walls are rarely made of iron; they are made of unexamined habits, fear of neighbors’ gossip, and endless comparisons.',
+              'When we pause to ask what truly brings peace, usefulness, and joy, many exhausting status races lose their power over us.',
+              'Freedom is the quiet dignity of living by principles you have tested and chosen yourself.'
+            ]
+          }
+        ]
+      }
+      {
+        id: 'environment',
+        name: 'Environment',
+        icon: `'<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 0l-4 4 4 4M4 4h16v16H4V4z"/></svg>'`,
+        topics: [
+          {
+            id: 'env-1',
+            title: 'The Climate Crisis and Human Responsibility',
+            subtitle: 'Examining the moral urgency of climate action and intergenerational justice.',
+            readTime: '7 min read',
+            date: 'November 2026',
+            image: 'https://images.unsplash.com/photo-1504718785765-e67e9c66ba37?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Melting glaciers against a pale sky—the visual reality of global warming.',
+            quote: 'The Earth does not belong to us; we belong to the Earth. Our choices today shape the world our children inherit.',
+            takeaway: 'Environmental stewardship is not optional; it is a moral imperative for human survival.',
+            paragraphs: [
+              'The climate crisis is not a distant threat but a present reality. Rising temperatures, extreme weather events, and ecosystem collapse affect communities worldwide, disproportionately impacting those who contributed least to the problem.',
+              'When we reduce nature to a resource to be extracted, we lose the understanding that humans are part of a larger web of life. Indifference to ecological destruction is ultimately indifference to our own future.',
+              'Climate justice demands that we hold powerful actors accountable while also examining our own consumption patterns. True change requires both systemic reform and personal transformation grounded in responsibility.']
+          },
+          {
+            id: 'env-2',
+            title: 'Rewilding Our Lives',
+            subtitle: 'How restoring natural spaces heals both land and lonely souls.',
+            readTime: '6 min read',
+            date: 'October 2026',
+            image: 'https://images.unsplash.com/photo-1469474960228-6625d07680c8?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'Forest trail surrounded by tall trees—a path back into the wild.',
+            quote: 'When we make room for wilderness, we make room for ourselves to remember who we are.',
+            takeaway: 'Rewilding is not just about ecosystems; it is about restoring the conditions for human flourishing.',
+            paragraphs: [
+              'Modern life has confined us to sterile environments—cities of concrete, offices of glass, homes of climate control. We have traded wildness for convenience, and in doing so, we have impoverished our spirits.',
+              'Rewilding does not mean returning to caves. It means creating pockets of wildness in our daily lives: a garden, a walk without a destination, listening to birdsong, feeling the ground under bare feet.',
+              'When we restore natural spaces, we restore our connection to the rhythms of life. The land remembers how to heal; we only need to get out of the way.']
+          },
+          {
+            id: 'env-3',
+            title: 'Digital Minimalism and the Planet',
+            subtitle: 'How reducing digital consumption lightens our ecological footprint.',
+            readTime: '5 min read',
+            date: 'September 2026',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+            imageCaption: 'A person unplugging a laptop—a small act with large consequences.',
+            quote: 'Every kilowatt-hour saved is a vote for the kind of world we want to inhabit.',
+            takeaway: 'Digital minimalism is an ecological practice as much as a productivity hack.',
+            paragraphs: [
+              'Streaming, cloud storage, and constant connectivity carry a hidden carbon cost. Data centers consume vast amounts of energy, and device production extracts rare earth minerals under destructive conditions.',
+              'Choosing to unplug, delete, and simplify is not just about mental clarity—it is an act of environmental resistance. The most sustainable device is the one you do not turn on.',
+              'Digital minimalism invites us to ask: Do I need this notification, this scroll, this update? Each small refusal adds up to a lighter footprint on the Earth.']
+          }
+        ]
+      }
+    ];
+
+    /**
+     * ========================================================================
+     * 5 CURATED FONT CONFIGURATIONS (MERRIWEATHER DEFAULT)
+     * ========================================================================
+     */
+    const FONT_OPTIONS = {
+      merriweather: {
+        label: 'Merriweather',
+        family: "'Merriweather', Georgia, serif"
+      },
+      lora: {
+        label: 'Lora Serif',
+        family: "'Lora', Georgia, serif"
+      },
+      baskerville: {
+        label: 'Libre Baskerville',
+        family: "'Libre Baskerville', Georgia, serif"
+      },
+      sourceserif: {
+        label: 'Source Serif 4',
+        family: "'Source Serif 4', Georgia, serif"
+      },
+      jakarta: {
+        label: 'Plus Jakarta Sans',
+        family: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+      }
+    };
+
+    const THEME_NAMES = {
+      papyrus: 'Papyrus Ivory',
+      eyegreen: 'Eye-Care Sage Green',
+      sepia: 'Warm Cream Sepia',
+      daylight: 'Crisp Daylight Linen',
+      softnight: 'Soft Slate Night'
+    };
+
+    // Application State (Persisted in localStorage)
+    let state = {
+      theme: localStorage.getItem('amims_theme') || 'papyrus',
+      font: localStorage.getItem('amims_font') || 'merriweather',
+      fontSize: parseInt(localStorage.getItem('amims_font_size') || '18', 10),
+      relaxedSpacing: localStorage.getItem('amims_spacing') === 'relaxed',
+      activeTopicId: 'culture-1',
+      openCategories: new Set(['culture']),
+      bookmarks: new Set(JSON.parse(localStorage.getItem('amims_truth_bookmarks') || '[]')),
+      searchQuery: '',
+      filterMode: 'all',
+      focusMode: false
+    };
+
+    const ALL_TOPICS = JOURNAL_DATA.flatMap(cat =>
+      cat.topics.map(topic => ({ ...topic, categoryId: cat.id, categoryName: cat.name }))
+    );
+
+    // Toast Feedback Banner
+    let toastTimer;
+    function showToast(msg) {
+      const banner = document.getElementById('toast-banner');
+      document.getElementById('toast-message').textContent = msg;
+      banner.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        banner.classList.add('translate-y-24', 'opacity-0');
+      }, 2400);
+    }
+
+    // Apply Theme (5 Options)
+    function setTheme(themeKey, notify = true) {
+      if (!THEME_NAMES[themeKey]) themeKey = 'papyrus';
+      state.theme = themeKey;
+      document.documentElement.setAttribute('data-theme', themeKey);
+      localStorage.setItem('amims_theme', themeKey);
+
+      // Update active pill highlight
+      document.querySelectorAll('.theme-pill').forEach(btn => {
+        const key = btn.getAttribute('data-theme-btn');
+        if (key === themeKey) {
+          btn.style.backgroundColor = 'var(--accent)';
+          btn.style.color = 'var(--accent-contrast)';
+          btn.style.borderColor = 'var(--accent)';
+        } else {
+          btn.style.backgroundColor = 'var(--bg-page)';
+          btn.style.color = 'var(--text-primary)';
+          btn.style.borderColor = 'var(--border-color)';
+        }
+      });
+
+      if (notify) showToast(`Theme: ${THEME_NAMES[themeKey]}`);
+    }
+
+    // Apply Font (5 Options)
+    function setFont(fontKey, notify = true) {
+      const config = FONT_OPTIONS[fontKey] || FONT_OPTIONS.merriweather;
+      state.font = fontKey;
+      document.documentElement.style.setProperty('--font-reader', config.family);
+      document.getElementById('font-selector').value = fontKey;
+      localStorage.setItem('amims_font', fontKey);
+      if (notify) showToast(`Font: ${config.label}`);
+    }
+
+    // Adjust Reader Font Size (15px to 24px)
+    function changeFontSize(delta) {
+      const next = Math.min(24, Math.max(15, state.fontSize + delta));
+      state.fontSize = next;
+      document.documentElement.style.setProperty('--reader-size', next + 'px');
+      document.getElementById('font-size-indicator').textContent = next + 'px';
+      localStorage.setItem('amims_font_size', String(next));
+    }
+
+    // Toggle Line Spacing
+    function toggleLineSpacing(notify = true) {
+      state.relaxedSpacing = !state.relaxedSpacing;
+      applyLineSpacing();
+      localStorage.setItem('amims_spacing', state.relaxedSpacing ? 'relaxed' : 'normal');
+      if (notify) showToast(state.relaxedSpacing ? 'Extra relaxed line spacing' : 'Standard editorial spacing');
+    }
+
+    function applyLineSpacing() {
+      const leading = state.relaxedSpacing ? '2.1' : '1.85';
+      document.documentElement.style.setProperty('--reader-leading', leading);
+      const btn = document.getElementById('spacing-btn');
+      if (btn) {
+        btn.innerHTML = `<span>Spacing: ${state.relaxedSpacing ? 'Relaxed' : 'Normal'}</span>`;
+      }
+    }
+
+    // High-Contrast SVG Editorial Fallback if Image Fails Offline
+    function handleImageError(imgEl, title, category) {
+      imgEl.onerror = null;
+      const svgFallback = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+          <rect width="1200" height="600" fill="#EFE8D6"/>
+          <rect x="28" y="28" width="1144" height="544" rx="16" fill="none" stroke="#8C5828" stroke-width="2" stroke-opacity="0.45"/>
+          <circle cx="600" cy="240" r="85" fill="none" stroke="#8C5828" stroke-width="2"/>
+          <path d="M565 240 L635 240 M600 205 L600 275" stroke="#8C5828" stroke-width="2"/>
+          <text x="600" y="370" fill="#8C5828" font-family="Georgia, serif" font-size="20" font-weight="bold" letter-spacing="5" text-anchor="middle">${category.toUpperCase()}</text>
+          <text x="600" y="420" fill="#1C1915" font-family="Georgia, serif" font-size="32" font-weight="bold" text-anchor="middle">${title.replace(/&/g, '&amp;')}</text>
+          <text x="600" y="510" fill="#5A4F42" font-family="sans-serif" font-size="15" letter-spacing="3" text-anchor="middle">AMIM'S TRUTH • BY AMIM AHSAN</text>
+        </svg>
+      `;
+      imgEl.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgFallback);
+    }
+
+    // Render Sidebar Dropdown Categories & Submenus
+    function renderSidebar() {
+      const nav = document.getElementById('sidebar-nav');
+      const query = state.searchQuery.trim().toLowerCase();
+      let html = '';
+      let count = 0;
+
+      JOURNAL_DATA.forEach(cat => {
+        const matchingTopics = cat.topics.filter(t => {
+          const matchSaved = state.filterMode === 'all' || state.bookmarks.has(t.id);
+          const matchSearch =
+            !query ||
+            cat.name.toLowerCase().includes(query) ||
+            t.title.toLowerCase().includes(query) ||
+            t.subtitle.toLowerCase().includes(query);
+          return matchSaved && matchSearch;
+        });
+
+        if (matchingTopics.length === 0) return;
+        count += matchingTopics.length;
+
+        const isOpen = state.openCategories.has(cat.id) || query.length > 0 || state.filterMode === 'saved';
+        const isCatActive = matchingTopics.some(t => t.id === state.activeTopicId);
+
+        html += `
+          <div class="rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="toggleCategory('${cat.id}')"
+              aria-expanded="${isOpen}"
+              class="cat-btn w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style="${
+                  isCatActive
+                    ? 'background-color: var(--accent); color: var(--accent-contrast);'
+                    : 'background-color: var(--accent-soft); color: var(--accent);'
+                }">
+                  ${cat.icon}
+                </span>
+                <span class="text-sm font-bold text-ink">${cat.name}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-ink-muted">${matchingTopics.length}</span>
+                <svg class="w-4 h-4 text-ink-muted chevron-icon ${isOpen ? 'rotated' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+
+            <div class="submenu-wrapper ${isOpen ? 'open' : ''}">
+              <div class="submenu-inner">
+                <ul class="pl-4 pr-1 py-1 space-y-1 ml-4 border-l border-theme my-1">
+                  ${matchingTopics
+                    .map(t => {
+                      const active = t.id === state.activeTopicId;
+                      const saved = state.bookmarks.has(t.id);
+                      return `
+                        <li>
+                          <button
+                            type="button"
+                            onclick="selectTopic('${t.id}')"
+                            class="subitem-btn ${active ? 'active' : ''} w-full text-left px-3 py-2 rounded-r-lg text-[13px] leading-snug transition flex items-start justify-between gap-2"
+                          >
+                            <span>${t.title}</span>
+                            ${saved ? `<span class="text-accent font-bold shrink-0" title="Saved">★</span>` : ''}
+                          </button>
+                        </li>
+                      `;
+                    })
+                    .join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      if (count === 0) {
+        html = `
+          <div class="text-center py-10 px-4">
+            <p class="text-sm font-medium text-ink-muted">No essays match your search.</p>
+            <button onclick="resetFilters()" class="mt-3 text-xs font-bold text-accent underline">
+              Show all 27 essays
+            </button>
+          </div>
+        `;
+      }
+
+      nav.innerHTML = html;
+      document.getElementById('saved-count-badge').textContent = state.bookmarks.size;
+    }
+
+    // Render Right-Side Editorial Essay
+    function renderArticle() {
+      const idx = ALL_TOPICS.findIndex(t => t.id === state.activeTopicId);
+      const topic = ALL_TOPICS[idx] || ALL_TOPICS[0];
+      const prev = idx > 0 ? ALL_TOPICS[idx - 1] : null;
+      const next = idx < ALL_TOPICS.length - 1 ? ALL_TOPICS[idx + 1] : null;
+
+      document.getElementById('breadcrumb-category').textContent = topic.categoryName;
+      document.getElementById('breadcrumb-title').textContent = topic.title;
+
+      const isSaved = state.bookmarks.has(topic.id);
+      document.getElementById('bookmark-star').textContent = isSaved ? '★' : '☆';
+      document.getElementById('bookmark-label').textContent = isSaved ? 'Saved' : 'Save';
+
+      const container = document.getElementById('article-container');
+      container.innerHTML = `
+        <div class="animate-fade">
+          <!-- Category & Reading Metadata -->
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style="background-color: var(--accent-soft); color: var(--accent);">
+              ${topic.categoryName}
+            </span>
+            <span class="text-xs font-semibold text-ink-muted">${topic.readTime}</span>
+            <span class="text-ink-muted">•</span>
+            <span class="text-xs font-semibold text-ink-muted">${topic.date}</span>
+          </div>
+
+          <!-- High-Contrast Headline -->
+          <h1 class="headline-typography text-3xl sm:text-4xl lg:text-[42px] font-bold text-ink leading-tight tracking-tight mb-4">
+            ${topic.title}
+          </h1>
+
+          <!-- Clear Subtitle -->
+          <p class="text-base sm:text-lg text-ink-secondary leading-relaxed mb-6 font-medium">
+            ${topic.subtitle}
+          </p>
+
+          <!-- Author Card -->
+          <div class="surface-card rounded-2xl p-4 sm:px-5 flex flex-wrap items-center justify-between gap-3 mb-8">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0" style="background-color: var(--accent); color: var(--accent-contrast);">
+                AA
+              </div>
+              <div>
+                <div class="text-sm font-bold text-ink">Written by Amim Ahsan</div>
+                <div class="text-xs text-ink-muted">Amim's Truth — Essays on Philosophy, Society &amp; Human Freedom</div>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-accent">Essay ${idx + 1} of ${ALL_TOPICS.length}</span>
+          </div>
+
+          <!-- Editorial Topic Image -->
+          <figure class="surface-card rounded-2xl overflow-hidden mb-9">
+            <div class="aspect-[16/9] w-full overflow-hidden">
+              <img
+                src="${topic.image}"
+                alt="${topic.title}"
+                onerror="handleImageError(this, '${topic.title.replace(/'/g, "\\'")}', '${topic.categoryName}')"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption class="px-5 py-3 text-xs font-medium text-ink-muted border-t border-theme">
+              ${topic.imageCaption}
+            </figcaption>
+          </figure>
+
+          <!-- Main Essay Body with Customizable Font & Size -->
+          <div class="reader-typography text-ink space-y-6">
+            <p>${topic.paragraphs[0]}</p>
+
+            <!-- High-Contrast Pull Quote -->
+            <blockquote class="surface-quote my-8 p-6 sm:p-7 rounded-r-2xl">
+              <p class="italic font-bold text-ink text-lg sm:text-xl leading-relaxed">
+                “${topic.quote}”
+              </p>
+              <footer class="mt-2.5 text-xs font-bold uppercase tracking-wider text-accent" style="font-family: var(--font-ui);">
+                — Amim Ahsan
+              </footer>
+            </blockquote>
+
+            ${topic.paragraphs.slice(1).map(p => `<p>${p}</p>`).join('')}
+          </div>
+
+          <!-- Key Reflection Box -->
+          <div class="surface-card rounded-2xl p-5 sm:p-6 mt-10">
+            <div class="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">Core Reflection</div>
+            <p class="text-sm sm:text-base font-semibold text-ink leading-relaxed">
+              ${topic.takeaway}
+            </p>
+          </div>
+
+          <!-- More Essays in Current Category -->
+          <div class="mt-12 pt-8 border-t border-theme">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-accent mb-4">
+              More Essays in ${topic.categoryName}
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${JOURNAL_DATA.find(c => c.id === topic.categoryId)
+                .topics.filter(t => t.id !== topic.id)
+                .map(
+                  rel => `
+                  <button onclick="selectTopic('${rel.id}')" class="surface-card text-left p-5 rounded-2xl hover:border-current transition group">
+                    <span class="text-xs font-semibold text-ink-muted block mb-1">${rel.readTime}</span>
+                    <span class="headline-typography text-base sm:text-lg font-bold text-ink group-hover:underline block">
+                      ${rel.title}
+                    </span>
+                    <span class="text-xs text-ink-secondary line-clamp-2 mt-1.5 block">${rel.subtitle}</span>
+                  </button>
+                `
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <!-- Sequential Previous / Next Essay Controls -->
+          <div class="mt-8 pt-6 border-t border-theme grid grid-cols-1 sm:grid-cols-2 gap-4">
+            ${
+              prev
+                ? `
+                <button onclick="selectTopic('${prev.id}')" class="surface-card p-4 rounded-2xl text-left flex items-center gap-3 hover:border-current transition">
+                  <span class="text-lg font-bold text-accent">←</span>
+                  <div class="min-w-0">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Previous • ${prev.categoryName}</span>
+                    <span class="text-sm font-bold text-ink truncate block">${prev.title}</span>
+                  </div>
+                </button>
+              `
+                : `<div></div>`
+            }
+
+            ${
+              next
+                ? `
+                <button onclick="selectTopic('${next.id}')" class="surface-card p-4 rounded-2xl text-right flex items-center justify-end gap-3 hover:border-current transition">
+                  <div class="min-w-0">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Next • ${next.categoryName}</span>
+                    <span class="text-sm font-bold text-ink truncate block">${next.title}</span>
+                  </div>
+                  <span class="text-lg font-bold text-accent">→</span>
+                </button>
+              `
+                : `<div></div>`
+            }
+          </div>
+        </div>
+      `;
+    }
+
+    // Navigation & Interaction Handlers
+    function toggleCategory(catId) {
+      if (state.openCategories.has(catId)) {
+        state.openCategories.delete(catId);
+      } else {
+        state.openCategories.add(catId);
+      }
+      renderSidebar();
+    }
+
+    function selectTopic(topicId) {
+      const found = ALL_TOPICS.find(t => t.id === topicId);
+      if (!found) return;
+      state.activeTopicId = topicId;
+      state.openCategories.add(found.categoryId);
+      renderSidebar();
+      renderArticle();
+      closeMobileSidebar();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function selectFirstTopic() {
+      selectTopic('culture-1');
+    }
+
+    function toggleCurrentBookmark() {
+      const id = state.activeTopicId;
+      if (state.bookmarks.has(id)) {
+        state.bookmarks.delete(id);
+        showToast('Removed from Saved Essays');
+      } else {
+        state.bookmarks.add(id);
+        showToast('Added to Saved Essays');
+      }
+      localStorage.setItem('amims_truth_bookmarks', JSON.stringify([...state.bookmarks]));
+      renderSidebar();
+      renderArticle();
+    }
+
+    function setFilterMode(mode) {
+      state.filterMode = mode;
+      const allBtn = document.getElementById('filter-all-btn');
+      const savedBtn = document.getElementById('filter-saved-btn');
+      if (mode === 'all') {
+        allBtn.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-accent transition';
+        savedBtn.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-theme transition flex items-center justify-center gap-1.5';
+      } else {
+        savedBtn.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-accent transition flex items-center justify-center gap-1.5';
+        allBtn.className = 'flex-1 py-1.5 px-2.5 rounded-lg text-xs font-semibold btn-theme transition';
+      }
+      renderSidebar();
+    }
+
+    function resetFilters() {
+      state.searchQuery = '';
+      document.getElementById('topic-search').value = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      setFilterMode('all');
+    }
+
+    function toggleFocusMode() {
+      state.focusMode = !state.focusMode;
+      const sidebar = document.getElementById('sidebar');
+      const btn = document.getElementById('focus-btn');
+      if (state.focusMode) {
+        sidebar.classList.add('lg:hidden');
+        btn.textContent = 'Show Menu';
+        showToast('Focus Mode enabled');
+      } else {
+        sidebar.classList.remove('lg:hidden');
+        btn.textContent = 'Focus';
+        showToast('Sidebar restored');
+      }
+    }
+
+    function copyCitation() {
+      const topic = ALL_TOPICS.find(t => t.id === state.activeTopicId);
+      const text = `"${topic.title}" — Written by Amim Ahsan | Amim's Truth (${topic.categoryName})`;
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast('Citation copied to clipboard');
+      } catch (e) {
+        showToast('Unable to copy citation');
+      }
+      document.body.removeChild(el);
+    }
+
+    // Mobile Drawer Controls
+    const sidebarEl = document.getElementById('sidebar');
+    const backdropEl = document.getElementById('sidebar-backdrop');
+
+    function openMobileSidebar() {
+      sidebarEl.classList.remove('-translate-x-full');
+      backdropEl.classList.remove('hidden');
+    }
+
+    function closeMobileSidebar() {
+      sidebarEl.classList.add('-translate-x-full');
+      backdropEl.classList.add('hidden');
+    }
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', openMobileSidebar);
+    document.getElementById('close-sidebar-btn').addEventListener('click', closeMobileSidebar);
+    backdropEl.addEventListener('click', closeMobileSidebar);
+
+    // Search Input Controls
+    const searchInput = document.getElementById('topic-search');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+
+    searchInput.addEventListener('input', e => {
+      state.searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle('hidden', state.searchQuery.length === 0);
+      renderSidebar();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      state.searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderSidebar();
+    });
+
+    // Initialize Saved Preferences & Render
+    setTheme(state.theme, false);
+    setFont(state.font, false);
+    document.documentElement.style.setProperty('--reader-size', state.fontSize + 'px');
+    document.getElementById('font-size-indicator').textContent = state.fontSize + 'px';
+    applyLineSpacing();
+    renderSidebar();
+    renderArticle();
+  </script>
+</body>
+</html>
