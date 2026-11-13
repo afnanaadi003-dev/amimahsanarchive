@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palm Leaf Whistle — A Story by Amim Ahsan</title>
+  <meta name="description" content="Palm Leaf Whistle — a rainy-day village story in five chapters by Amim Ahsan.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #03050a; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #03050a; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+    .gold-rule { background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.6), rgba(212,175,55,0)); }
+    .hero-glow { background: radial-gradient(60% 80% at 50% 0%, rgba(212,175,55,0.16), rgba(3,5,10,0) 70%); }
+
+    /* Book cover */
+    .cover-stage { display: flex; justify-content: center; perspective: 1200px; padding: 4px 0 2px; animation: coverFloat 7s ease-in-out infinite; }
+    .cover-frame {
+      position: relative;
+      width: min(250px, 62vw);
+      aspect-ratio: 852 / 1280;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.12), 0 18px 45px -12px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.22);
+      will-change: transform;
+    }
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 26px 60px -10px rgba(0, 0, 0, 0.95), 0 0 60px rgba(212, 175, 55, 0.4);
+    }
+    .cover-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .cover-frame::after {
+      content: "";
+      position: absolute; inset: -20%; z-index: 2; pointer-events: none;
+      background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0.05) 53%, transparent 64%);
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+    @keyframes coverFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes coverSheen { 0%, 55% { transform: translateX(-130%); } 85%, 100% { transform: translateX(130%); } }
+
+    /* Rain — fine diagonal streaks over the hero, kept inside the site's palette */
+    .rain-layer {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 92%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 92%);
+    }
+    .rain-layer::before,
+    .rain-layer::after {
+      content: ""; position: absolute; left: -20%; right: -20%; top: -50%; bottom: -50%;
+      background-image:
+        repeating-linear-gradient(102deg, rgba(212,175,55,0.13) 0 1px, transparent 1px 90px),
+        repeating-linear-gradient(102deg, rgba(148,163,184,0.10) 0 1px, transparent 1px 46px);
+      animation: rainFall 2.6s linear infinite;
+    }
+    .rain-layer::after { animation-duration: 4.1s; opacity: 0.55; }
+    @keyframes rainFall { from { transform: translate3d(0, -60px, 0); } to { transform: translate3d(-60px, 260px, 0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::after, .rain-layer::before, .rain-layer::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-200 font-sans antialiased selection:bg-goldAccent selection:text-obsidian">
+
+  <div class="fixed top-0 left-0 right-0 z-50 h-0.5 bg-slate-900">
+    <div id="progressBar" class="h-full w-0 bg-goldAccent transition-[width] duration-150"></div>
+  </div>
+
+  <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-obsidian/85 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <span class="w-9 h-9 rounded-full border border-goldAccent/40 flex items-center justify-center font-cinzel text-goldAccent text-sm">AA</span>
+        <span class="font-cinzel tracking-wider text-slate-100 group-hover:text-goldAccent transition-colors text-sm sm:text-base">AMIM AHSAN</span>
+      </a>
+      <a href="index.html#books" class="text-xs font-semibold tracking-wider text-slate-300 hover:text-goldAccent transition-colors flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left text-[10px]"></i> BOOKS
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative hero-glow border-b border-slate-800/70 overflow-hidden">
+      <div class="rain-layer" aria-hidden="true"></div>
+      <div class="max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24 text-center relative z-10">
+        <div class="cover-stage mb-9">
+          <div class="cover-frame">
+            <img src="Mass-Q-Rade-Book-Covers/palm%20leaf%20whistle/palm%20leaf%20whistle.png" alt="Palm Leaf Whistle — a boy playing a whistle on a village road at sunset, book cover" loading="eager">
+          </div>
+        </div>
+        <span class="inline-block font-mono text-[11px] tracking-[0.35em] text-goldAccent/90 uppercase mb-6">A Rainy-Day Story</span>
+        <h1 class="font-cinzel text-4xl sm:text-6xl font-black text-slate-100 leading-tight">Palm Leaf Whistle</h1>
+        <div class="gold-rule h-px w-40 mx-auto my-7"></div>
+        <p class="max-w-2xl mx-auto text-slate-300 font-light leading-relaxed">
+          One monsoon morning, a village boy cuts a whistle from a young palm leaf. By evening, half the road has heard it.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[11px] font-mono tracking-widest uppercase text-slate-400">
+          <span>5 Chapters</span><span class="text-goldAccent/50">/</span>
+          <span>2,356 Words</span><span class="text-goldAccent/50">/</span>
+          <span>11 Min Read</span>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a href="#chapter-1" class="px-6 py-3 rounded-xl bg-goldAccent text-obsidian text-xs font-extrabold tracking-wider hover:bg-goldGlow transition-colors">START READING</a>
+          <a href="#contents" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-200 text-xs font-extrabold tracking-wider hover:border-goldAccent/60 hover:text-goldAccent transition-colors">CONTENTS</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contents" class="max-w-5xl mx-auto px-5 sm:px-8 py-14 scroll-mt-20">
+      <h2 class="font-mono text-[11px] tracking-[0.3em] uppercase text-goldAccent mb-6">Contents</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="#chapter-1" class="group flex items-start gap-4 rounded-2xl border border-goldAccent/15 bg-midnight/70 p-5 hover:border-goldAccent/45 hover:bg-midnight transition-colors">
+          <span class="font-mono text-xs text-goldAccent/80 mt-1">01</span>
+          <span class="flex-1">
+            <span class="block font-cinzel text-lg text-slate-100 group-hover:text-goldGlow transition-colors">The Rain Comes Early</span>
+            <span class="mt-1 block text-xs leading-relaxed text-slate-400 font-light">Water in the yard, a closed school, and a roof that plays its own music.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right text-xs text-goldAccent/50 mt-2 group-hover:text-goldAccent transition-colors"></i>
+        </a>
+        <a href="#chapter-2" class="group flex items-start gap-4 rounded-2xl border border-goldAccent/15 bg-midnight/70 p-5 hover:border-goldAccent/45 hover:bg-midnight transition-colors">
+          <span class="font-mono text-xs text-goldAccent/80 mt-1">02</span>
+          <span class="flex-1">
+            <span class="block font-cinzel text-lg text-slate-100 group-hover:text-goldGlow transition-colors">A Whistle from the Palm</span>
+            <span class="mt-1 block text-xs leading-relaxed text-slate-400 font-light">A young frond, a fold, a split reed — and a sound that was not there before.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right text-xs text-goldAccent/50 mt-2 group-hover:text-goldAccent transition-colors"></i>
+        </a>
+        <a href="#chapter-3" class="group flex items-start gap-4 rounded-2xl border border-goldAccent/15 bg-midnight/70 p-5 hover:border-goldAccent/45 hover:bg-midnight transition-colors">
+          <span class="font-mono text-xs text-goldAccent/80 mt-1">03</span>
+          <span class="flex-1">
+            <span class="block font-cinzel text-lg text-slate-100 group-hover:text-goldGlow transition-colors">The Road to the Bazaar</span>
+            <span class="mt-1 block text-xs leading-relaxed text-slate-400 font-light">Mud, banana leaves, puddles wide as rooms — and a pocket that keeps humming.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right text-xs text-goldAccent/50 mt-2 group-hover:text-goldAccent transition-colors"></i>
+        </a>
+        <a href="#chapter-4" class="group flex items-start gap-4 rounded-2xl border border-goldAccent/15 bg-midnight/70 p-5 hover:border-goldAccent/45 hover:bg-midnight transition-colors">
+          <span class="font-mono text-xs text-goldAccent/80 mt-1">04</span>
+          <span class="flex-1">
+            <span class="block font-cinzel text-lg text-slate-100 group-hover:text-goldGlow transition-colors">Music for Nothing</span>
+            <span class="mt-1 block text-xs leading-relaxed text-slate-400 font-light">A tarpaulin market, a crowd that stops, and a coin he does not take.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right text-xs text-goldAccent/50 mt-2 group-hover:text-goldAccent transition-colors"></i>
+        </a>
+        <a href="#chapter-5" class="group flex items-start gap-4 rounded-2xl border border-goldAccent/15 bg-midnight/70 p-5 hover:border-goldAccent/45 hover:bg-midnight transition-colors">
+          <span class="font-mono text-xs text-goldAccent/80 mt-1">05</span>
+          <span class="flex-1">
+            <span class="block font-cinzel text-lg text-slate-100 group-hover:text-goldGlow transition-colors">The Happiest Moment</span>
+            <span class="mt-1 block text-xs leading-relaxed text-slate-400 font-light">Evening on the veranda, two listeners, and rain that keeps time.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right text-xs text-goldAccent/50 mt-2 group-hover:text-goldAccent transition-colors"></i>
+        </a>
+      </div>
+    </section>
+
+    <article class="max-w-3xl mx-auto px-5 sm:px-8 pb-24 space-y-16">
+      <section id="chapter-1" class="scroll-mt-24 border-t border-slate-800/80 pt-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-mono text-xs tracking-[0.25em] text-goldAccent">CHAPTER 01</span>
+          <span class="h-px flex-1 bg-gradient-to-r from-goldAccent/40 to-transparent"></span>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-slate-100 mb-8">The Rain Comes Early</h2>
+
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The rain arrived before the light did. It began as a soft drumming on the tin roof, so gentle that it might have been someone sweeping the yard, and then it remembered what it was and came down properly, all at once, in a single grey sheet.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The boy woke because the room had changed colour. The window that usually held a square of pale morning sky now held water — pouring, bending, running down the glass in fast silver lines. He lay still under the thin sheet and listened. Every sound in the house had been given a second sound underneath it: his mother's footsteps, the tin trunk, the brass pot set down on the floor. All of it wrapped in that steady roar.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He got up and went to the door and opened it just enough to look out.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The yard was already gone. What had been dust and cracked mud the evening before was now a shallow brown lake, and the rain was stippling it white. The guava tree stood in the middle of it with its leaves turned over and shining. Along the lane, the water was moving, carrying a mango leaf, a piece of straw, a bright green bottle cap — a small procession, all travelling in the same direction, going somewhere important.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The smell came at him then, the way it does on the first real morning of the monsoon: wet earth, and the grass coming back, and under that a sweetness from the palm sap somewhere close by. He stood in the doorway in his bare feet and breathed it in until his chest hurt.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Shut the door," his mother said from behind him, not unkindly. "You'll bring the whole river in."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"School is closed," he said, closing the door.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"And how do you know that?"</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"You already said it. Yesterday you said, if it rains like this, there will be no school."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">She looked at him for a moment, then sighed, which was her way of agreeing. "Then sit. Eat. There's rice and there's salt fish, and after that you find something quiet to do, because I am not chasing you through that river."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He ate, but he ate badly, his mind still out in the yard. Quiet was not what he wanted from a day like this. A day like this was a whole empty day handed to him, wrapped in rain, and he could not think what to do with it except hold it up and look at it from every side.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">Outside, the rain kept on. It was not angry weather, not the kind that breaks branches. It had settled in to stay, like a relative with nowhere else to be.</p>
+      </section>
+
+      <section id="chapter-2" class="scroll-mt-24 border-t border-slate-800/80 pt-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-mono text-xs tracking-[0.25em] text-goldAccent">CHAPTER 02</span>
+          <span class="h-px flex-1 bg-gradient-to-r from-goldAccent/40 to-transparent"></span>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-slate-100 mb-8">A Whistle from the Palm</h2>
+
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">By mid-morning the rain had thinned to a soft drizzle, and his mother stood at the edge of the veranda, looking up at the palms.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Bring me the small knife," she said. "The curved one."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He brought it. She turned the house with him at her heel and chose a young frond on the low palm by the kitchen corner, one of the tight, unfurled ones that had come out green and smooth and had not yet learned to be hard. She pulled it down by its tip, cut it at the stem with a clean sound, and wrapped it in her sari so the rain would not wet it.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">Back on the veranda, she sat him down beside her. "Watch," she said. "And then you will do it."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">She took the leaf and ran her thumb down its spine, folding it — once, twice — until it was a narrow green strip as long as a hand. Near one end she pinched the strip together and pressed the fold hard so it held. Then she bit the tip, twice, quick bites, and opened a tiny slit along the folded edge.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Now the air goes here," she said, "and the leaf has to argue with it. That is where the sound comes from. Not from your mouth. From the argument."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">She held it to her lips and blew.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">It was thin and high and a little crooked, like a bird learning to be a bird. It was the most useful sound he had ever heard a leaf make.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He tried. His first attempt produced nothing but his own breath coming back in his face. His second produced a dry squeak. His third produced a sound, a proper one, thin and stubborn, and he laughed so suddenly that he lost it.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Gentle," his mother said. "Not a storm. A breeze. You are not blowing out a lamp, you are asking the leaf a question."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He asked the leaf a question. The leaf answered. He tried again and it answered differently, longer, with a little waver at the end. He learned that if he covered one hole with his thumb the note went low, almost warm, and if he covered the second one too, the whistle went so low that it seemed to come from somewhere behind his own chest.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Amma, listen. Listen to this one."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">She listened to all of them, three times, standing there in her wet sari with the rain dripping off the edge of the roof behind her. Then she went in to put the rice on, and he stayed on the veranda with the leaf, and the morning stopped being empty.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">By noon his lips were sore and green and he had worn the whistle out. He cut another one himself, badly, and a third one well. The second one he kept, because it had the best low note.</p>
+      </section>
+
+      <section id="chapter-3" class="scroll-mt-24 border-t border-slate-800/80 pt-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-mono text-xs tracking-[0.25em] text-goldAccent">CHAPTER 03</span>
+          <span class="h-px flex-1 bg-gradient-to-r from-goldAccent/40 to-transparent"></span>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-slate-100 mb-8">The Road to the Bazaar</h2>
+
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">After lunch the rain gave up entirely, though the sky stayed close and grey and the light was the colour of an old coin. Water was still coming off the roofs. The lane was a long brown ribbon with bright edges.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">His mother had run out of kerosene and said she would go to the bazaar when the road dried. He said the road would not dry before evening. She said then she would go in the evening. He said he could go now.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">She looked at the sky, then at his feet, then at the whistle sticking out of his pocket. "Straight there," she said. "Straight back. If the rain starts again, you wait under the shop, you do not run in the open." She put the bottle money into his shirt pocket and pressed the pin through. "And do not play that thing at every dog on the road."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The road was the best he had seen it in a year. Every puddle was a room with a sky in it, and if you stepped in the middle, the room broke into rings. The banana plants leaned over the path, heavy and split, dripping in a slow rhythm that had nothing to do with the rain. The canal beside the road had come up and was running fast and brown, and the young men who should have been in the fields stood on the bank with their trousers rolled to the knee, watching it like it was the only programme on.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He played the whistle once, near the bridge, and the sound went out over the water and came back changed, thinner and older. He tried it again and got the same answer. The canal, he decided, was a good listener.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">Halfway along, he met three boys from his school coming the other way, barefoot, trousers dark to the thigh.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"What is that?" the tallest one said.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"A whistle."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Where did you buy it?"</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"I didn't buy it. The palm made it. My mother showed me."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">They crowded round. He played the low note and they made the sound boys make when something is better than expected, and the tallest one held out his hand to look, and promptly broke the fold trying to blow it too hard.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Come to the bazaar," the boy said, handing back the ruined leaf. "There'll be a crowd. Play there."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">So he went, with four boys around him instead of none, and the road to the bazaar became the shortest road he had ever walked.</p>
+      </section>
+
+      <section id="chapter-4" class="scroll-mt-24 border-t border-slate-800/80 pt-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-mono text-xs tracking-[0.25em] text-goldAccent">CHAPTER 04</span>
+          <span class="h-px flex-1 bg-gradient-to-r from-goldAccent/40 to-transparent"></span>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-slate-100 mb-8">Music for Nothing</h2>
+
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The bazaar after a full morning of rain is a different place. The tarpaulins had been tied out over the stalls again and the water was still coming off them in a line at every edge, so that the whole market was a long room with curtains of rain and no walls. Under the cloth it was warm and crowded and loud, and it smelled of wet jute, frying oil, betel leaf and cold fish.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He bought the kerosene first, because that was the reason he had come, and put the bottle carefully into the cloth bag under his arm. Then, because he had done the first thing, he was allowed the second.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He stood at the corner by the tea stall, where the cloth was low and the sound would stay in, and he played.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">It was not a song. He did not know any song. It was the low note and the high one, the waver, the little run he had found by accident that afternoon and could now do every time. But he gave it a shape — up, up, hold, come down — and the shape was almost a tune, the way a line of birds on a wire is almost writing.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The tea stall owner stopped wiping his glasses. Two women with fish baskets paused to listen, and one of them shifted her basket to the other hip so she could stay. One of the boys from the road said, in the loud whisper of someone who has not yet learned to whisper, "He made it from a leaf."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">When he stopped, an old man in a checked lungi who had been sitting on a sack of rice said, "Again, son."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">So he played again. And then a third time, because a small girl had been carried over on her father's shoulder and was watching with her mouth open, and it seemed unfair to leave her without one more.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The mango seller laughed and held out a coin. "Take it. My ears have paid for worse."</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He stepped back and shook his head. He could not have said why. It was not politeness — he had wanted a coin like that all afternoon, for the fried thing in the next stall. It was that the moment he took it, the afternoon would turn into a bargain, and he would have sold something that had been free.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Then teach me," the mango seller said, and pushed a whole palm frond across the counter.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">So he did. He taught four people that afternoon, more than he had been taught, and all of them broke their leaf at least once and all of them got one note out before the light began to go. The mango seller got the low one and was so pleased that he refused to sell the boy anything for the rest of his life.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He walked home with a bottle of kerosene, a ruined whistle, a good whistle, and the beginnings of a crowd behind him, all carrying leaves.</p>
+      </section>
+
+      <section id="chapter-5" class="scroll-mt-24 border-t border-slate-800/80 pt-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-mono text-xs tracking-[0.25em] text-goldAccent">CHAPTER 05</span>
+          <span class="h-px flex-1 bg-gradient-to-r from-goldAccent/40 to-transparent"></span>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-slate-100 mb-8">The Happiest Moment</h2>
+
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">The rain came back just before dark, as he knew it would. It started on the far side of the village first, a grey moving wall you could hear coming across the fields, and then it was on the roof and the veranda and the banana leaves, and the whole evening narrowed to the lamplight and the width of the steps.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">His mother was on the veranda with the kerosene lamp, and his grandmother was in the doorway with her shawl over her head, and the rice was done, and the day was over in the way that a good day is over — slowly, with everyone still in the same place.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He sat down between them and took out the good whistle.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">"Not that thing again," his mother said, but she said it the way she had said it in the morning, without meaning it, and his grandmother pulled her shawl closer and said nothing at all, which from her was a request.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">So he played.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He played the shape he had made in the market — up, up, hold, come down, and the waver at the end. The rain kept time behind him without being asked. The lamp made a small yellow room out of the dark. Down in the yard, the puddles were catching the light and letting it go, and everything that had been bright and crowded and loud that afternoon fell quiet.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">He looked up once. His mother's hands were still in her lap. His grandmother had closed her eyes, not to sleep, but the way people close their eyes when they would like a sound to stay.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">That was the moment. Not the market, not the crowd, not the old man asking for one more, not even the sound of it going out over the canal and coming back older. It was the three of them on the veranda in the lamplight, in the rain, with a leaf in his mouth and nowhere in the world to be.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">When he finished, nobody said anything for a while. Then his grandmother said, "Your father used to make those," and his mother looked at the lamp, and the rain went on being rain.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">Later, his mother wrapped the whistle in a piece of cloth so it would not dry out stiff in the night and put it on the shelf beside the rice tin. He lay in the dark and listened to the water coming off the roof, and every drop sounded like the waver at the end of the tune.</p>
+        <p class="text-slate-300/90 font-light text-[15px] sm:text-base leading-[1.9] mb-4">In the morning the palm would still be there, and the bazaar would still be there, and there would be other days — some dry, some ruined, some given away whole. But there would be only one day like that one, and he had spent it well, on a leaf, for nothing.</p>
+
+        <div class="mt-14 pt-8 border-t border-slate-800/70 text-center">
+          <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-goldAccent/80">End of Palm Leaf Whistle</p>
+          <p class="mt-3 font-cinzel text-sm text-slate-400">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-800/70 py-10">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <span>&copy; <span id="year"></span> Amim Ahsan. All rights reserved.</span>
+      <div class="flex items-center gap-5">
+        <a href="index.html" class="hover:text-goldAccent transition-colors">Home</a>
+        <a href="index.html#books" class="hover:text-goldAccent transition-colors">Books</a>
+        <a href="#contents" class="hover:text-goldAccent transition-colors">Contents</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const bar = document.getElementById('progressBar');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0) + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>
