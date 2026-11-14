@@ -207,6 +207,7 @@
                     <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all duration-200 absolute left-0 top-full pt-4">
                         <div class="glass-panel rounded-xl border border-slate-800 shadow-2xl p-2 w-64">
                             <a href="#books" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">All Books</a>
+                            <a href="#three-friends" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">3 Friends</a>
                             <a href="The%20Last%20Word.html" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">The Last Word</a>
                         </div>
                     </div>
@@ -717,6 +718,33 @@
                     </div>
                 </div>
 
+                <!-- Book Card 9: 3 Friends -->
+                <div id="three-friends" class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group scroll-mt-28" data-category="novels">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">A NOVEL</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">3 Friends</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Three Lives &middot; One Road</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/3%20Friends.svg" alt="3 Friends book cover — three friends sitting together above the sea at dusk" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Literary Fiction</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                Three friends, one shared road, and the long years that test what friendship can carry.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <button onclick="openModal('threefriends')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1136,6 +1164,13 @@
                 genre: "Literary Fiction",
                 synopsis: "One monsoon morning, a village boy cuts a whistle from a young palm leaf. By evening, half the road has heard it. Five chapters of rain, a tarpaulin market, a coin he refuses, and the happiest moment of an ordinary day — readable in full.",
                 link: "Palm%20Leaf%20Whistle.html"
+            },
+            threefriends: {
+                title: "3 Friends",
+                author: "Amim Ahsan",
+                genre: "Literary Fiction",
+                synopsis: "Three friends, one shared road, and the long years that test what friendship can carry. Publishing details to follow.",
+                link: "#"
             },
             thelastword: {
                 title: "The Last Word",
