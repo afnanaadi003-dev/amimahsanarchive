@@ -1,24 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="3 Friends book cover — three friends sitting together at dusk">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="3 Friends book cover — three friends before Curzon Hall at twilight">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#241033"/>
-      <stop offset="38%" stop-color="#6B2B4B"/>
-      <stop offset="68%" stop-color="#C4603C"/>
-      <stop offset="88%" stop-color="#E8A24E"/>
-      <stop offset="100%" stop-color="#F3C87B"/>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101C17"/>
+      <stop offset="42%" stop-color="#162B22"/>
+      <stop offset="74%" stop-color="#265842"/>
+      <stop offset="100%" stop-color="#0E1A15"/>
     </linearGradient>
-    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#E8A24E" stop-opacity="0.75"/>
-      <stop offset="55%" stop-color="#71403F"/>
-      <stop offset="100%" stop-color="#2A1720"/>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#E9C46A"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
     </linearGradient>
-    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FFE4B0"/>
-      <stop offset="50%" stop-color="#F5C46A"/>
-      <stop offset="100%" stop-color="#FFE4B0"/>
-    </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="14" result="b"/>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
@@ -26,64 +20,66 @@
     </filter>
   </defs>
 
-  <rect width="600" height="900" fill="url(#sky)"/>
+  <rect width="600" height="900" fill="url(#dusk)"/>
 
-  <!-- sun -->
-  <circle cx="300" cy="612" r="86" fill="#FFD98A" opacity="0.9" filter="url(#glow)"/>
-  <circle cx="300" cy="612" r="54" fill="#FFF0C4" opacity="0.95"/>
+  <!-- moon -->
+  <circle cx="470" cy="150" r="42" fill="#FDE68A" opacity="0.9" filter="url(#halo)"/>
+  <circle cx="486" cy="138" r="38" fill="#162B22"/>
 
-  <!-- soft clouds -->
-  <g fill="#F7C98C" opacity="0.28">
-    <ellipse cx="120" cy="300" rx="120" ry="16"/>
-    <ellipse cx="470" cy="230" rx="140" ry="14"/>
-    <ellipse cx="330" cy="380" rx="160" ry="12"/>
+  <!-- stars -->
+  <g fill="#FDE68A" opacity="0.55">
+    <circle cx="90" cy="110" r="2"/>
+    <circle cx="160" cy="70" r="1.6"/>
+    <circle cx="250" cy="140" r="1.4"/>
+    <circle cx="330" cy="88" r="2.2"/>
+    <circle cx="540" cy="240" r="1.6"/>
+    <circle cx="60" cy="230" r="1.8"/>
+    <circle cx="400" cy="190" r="1.4"/>
   </g>
 
-  <!-- sea / horizon -->
-  <rect x="0" y="660" width="600" height="240" fill="url(#water)"/>
-  <g stroke="#FFD98A" stroke-opacity="0.45" stroke-width="4" stroke-linecap="round">
-    <line x1="208" y1="700" x2="392" y2="700"/>
-    <line x1="240" y1="730" x2="360" y2="730"/>
-    <line x1="180" y1="762" x2="420" y2="762"/>
-    <line x1="255" y1="800" x2="345" y2="800"/>
+  <!-- Curzon Hall arches -->
+  <g fill="none" stroke="#EFD9A0" stroke-width="3" opacity="0.32">
+    <path d="M60 560 L60 430 Q105 372 150 430 L150 560"/>
+    <path d="M165 560 L165 405 Q210 344 255 405 L255 560"/>
+    <path d="M270 560 L270 430 Q315 372 360 430 L360 560"/>
+    <path d="M375 560 L375 400 Q420 338 465 400 L465 560"/>
+    <path d="M480 560 L480 430 Q525 372 570 430 L570 560"/>
   </g>
 
-  <!-- low land line -->
-  <path d="M0 660 L120 646 L240 658 L360 644 L480 656 L600 642 L600 668 L0 668 Z" fill="#2A1720"/>
+  <!-- trinity rings -->
+  <g fill="none" stroke="url(#gold)" stroke-width="5" opacity="0.9">
+    <circle cx="280" cy="360" r="52"/>
+    <circle cx="336" cy="360" r="52"/>
+    <circle cx="308" cy="312" r="52"/>
+  </g>
 
-  <!-- three friends sitting, viewed from behind -->
-  <g fill="#1B0F16">
-    <!-- left friend -->
-    <g transform="translate(150 545)">
-      <circle cx="0" cy="0" r="30"/>
-      <path d="M-34 96 C-34 40 -20 24 0 24 C20 24 34 40 34 96 Z"/>
-      <path d="M-18 96 L-46 128 L-40 134 L-8 104 Z"/>
+  <!-- ground -->
+  <path d="M0 640 L600 618 L600 900 L0 900 Z" fill="#0B1510"/>
+
+  <!-- three friends, back view -->
+  <g fill="#0B1510" stroke="#FDE68A" stroke-opacity="0.28" stroke-width="1.5">
+    <g transform="translate(168 520)">
+      <circle cx="0" cy="0" r="28"/>
+      <path d="M-32 92 C-32 36 -18 20 0 20 C18 20 32 36 32 92 Z"/>
     </g>
-    <!-- middle friend -->
-    <g transform="translate(300 520)">
-      <circle cx="0" cy="0" r="33"/>
-      <path d="M-38 112 C-38 46 -22 27 0 27 C22 27 38 46 38 112 Z"/>
-      <path d="M18 112 L48 150 L40 156 L10 122 Z"/>
+    <g transform="translate(300 494)">
+      <circle cx="0" cy="0" r="31"/>
+      <path d="M-36 108 C-36 42 -20 24 0 24 C20 24 36 42 36 108 Z"/>
     </g>
-    <!-- right friend -->
-    <g transform="translate(452 552)">
-      <circle cx="0" cy="0" r="29"/>
-      <path d="M-33 92 C-33 38 -19 23 0 23 C19 23 33 38 33 92 Z"/>
-      <path d="M16 92 L44 124 L38 130 L8 100 Z"/>
+    <g transform="translate(436 526)">
+      <circle cx="0" cy="0" r="27"/>
+      <path d="M-31 88 C-31 34 -17 18 0 18 C17 18 31 34 31 88 Z"/>
     </g>
   </g>
 
-  <!-- title block -->
+  <!-- titles -->
   <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
-    <text x="300" y="150" font-size="26" letter-spacing="12" fill="#F3C87B" opacity="0.85">A NOVEL</text>
-    <text x="300" y="255" font-size="104" font-weight="700" fill="url(#title)" letter-spacing="6">3</text>
-    <text x="300" y="345" font-size="72" font-weight="700" fill="#FFF4DC" letter-spacing="10">FRIENDS</text>
-    <line x1="180" y1="392" x2="420" y2="392" stroke="#F3C87B" stroke-opacity="0.65" stroke-width="2"/>
+    <text x="300" y="800" font-size="24" letter-spacing="10" fill="#EFD9A0" opacity="0.85">A NOVEL BY AMIM AHSAN</text>
   </g>
 
-  <!-- author -->
   <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
-    <text x="300" y="840" font-size="30" letter-spacing="9" fill="#FFF4DC">AMIM AHSAN</text>
-    <text x="300" y="872" font-size="17" letter-spacing="6" fill="#F3C87B" opacity="0.8">THE BENGALI PHILOSOPHER</text>
+    <text x="300" y="666" font-size="76" font-weight="700" fill="#FFF8E7" letter-spacing="10">3</text>
+    <text x="300" y="738" font-size="58" font-weight="700" fill="url(#gold)" letter-spacing="14">FRIENDS</text>
+    <text x="300" y="772" font-size="19" letter-spacing="5" fill="#EFD9A0" opacity="0.85">THE TWILIGHT TRINITY OF F.R. HALL</text>
   </g>
 </svg>

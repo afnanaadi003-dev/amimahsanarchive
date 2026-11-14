@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dreamy-papyrus" data-ink="emerald-midnight">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Twilight Trinity of F.R. Hall — 18-Chapter Novel by Amim Ahsan</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Literary & UI Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       3 DREAMY, EYE-SOOTHING THEME SURFACES
+       ========================================================================== */
+    :root,
+    [data-theme="dreamy-papyrus"] {
+      --bg-page: #F7F1E3;
+      --bg-surface: #FDF9F0;
+      --bg-sidebar: #EFE6D3;
+      --bg-hover: #E5D9C1;
+      --bg-active: #DACAA9;
+      --bg-quote: #F1E8D5;
+      --border-color: #D5C6A9;
+      --shadow-card: 0 8px 28px rgba(34, 27, 18, 0.06);
+      --firefly-color: rgba(180, 130, 50, 0.35);
+    }
+
+    [data-theme="curzon-twilight"] {
+      --bg-page: #EFEBF5;
+      --bg-surface: #F9F7FC;
+      --bg-sidebar: #E5DFF0;
+      --bg-hover: #D9D0E8;
+      --bg-active: #CCC0E0;
+      --bg-quote: #E8E2F2;
+      --border-color: #C8BEDB;
+      --shadow-card: 0 8px 28px rgba(36, 26, 56, 0.07);
+      --firefly-color: rgba(124, 92, 180, 0.32);
+    }
+
+    [data-theme="emerald-mist"] {
+      --bg-page: #E7F0E8;
+      --bg-surface: #F4F9F4;
+      --bg-sidebar: #DCE8DD;
+      --bg-hover: #CEE0CF;
+      --bg-active: #BFD6C1;
+      --bg-quote: #DFEBDF;
+      --border-color: #B7CEB9;
+      --shadow-card: 0 8px 28px rgba(18, 38, 24, 0.06);
+      --firefly-color: rgba(29, 110, 72, 0.32);
+    }
+
+    /* ==========================================================================
+       2 INK & ACCENT COLOR OPTIONS
+       ========================================================================== */
+    [data-ink="emerald-midnight"] {
+      --text-primary: #14221B;
+      --text-secondary: #283C32;
+      --text-muted: #4A6155;
+      --accent: #165B3E;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(22, 91, 62, 0.12);
+      --secondary-accent: #1E3A5F;
+      --secondary-soft: rgba(30, 58, 95, 0.11);
+    }
+
+    [data-ink="royal-gold-sepia"] {
+      --text-primary: #261B12;
+      --text-secondary: #423022;
+      --text-muted: #664E3A;
+      --accent: #8C5319;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(140, 83, 25, 0.13);
+      --secondary-accent: #5B2C6F;
+      --secondary-soft: rgba(91, 44, 111, 0.11);
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY, ATMOSPHERE & LAYOUT
+       ========================================================================== */
+    :root {
+      --font-reader: 'Merriweather', Georgia, serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --reader-size: 16.5px;
+      --reader-leading: 1.88;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .reader-font {
+      font-family: var(--font-reader);
+      font-size: var(--reader-size);
+      line-height: var(--reader-leading);
+    }
+
+    .display-font {
+      font-family: var(--font-display);
+    }
+
+    .surface-page { background-color: var(--bg-page); }
+    .surface-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+    }
+    .surface-sidebar {
+      background-color: var(--bg-sidebar);
+      border-color: var(--border-color);
+    }
+    .surface-topbar {
+      background-color: var(--bg-surface);
+      border-color: var(--border-color);
+    }
+    .surface-quote {
+      background-color: var(--bg-quote);
+      border-left: 4px solid var(--accent);
+    }
+
+    .text-ink { color: var(--text-primary); }
+    .text-ink-secondary { color: var(--text-secondary); }
+    .text-ink-muted { color: var(--text-muted); }
+    .text-accent { color: var(--accent); }
+    .text-secondary-accent { color: var(--secondary-accent); }
+    .border-theme { border-color: var(--border-color); }
+
+    .btn-theme {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+    .btn-theme:hover {
+      background-color: var(--bg-hover);
+      border-color: var(--accent);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      border: 1px solid var(--accent);
+      transition: opacity 0.2s ease;
+    }
+    .btn-accent:hover { opacity: 0.92; }
+
+    /* Accordion Submenu Animation */
+    .submenu-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+    .submenu-wrapper.open {
+      grid-template-rows: 1fr;
+    }
+    .submenu-inner { overflow: hidden; }
+
+    .nav-item-btn {
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+    }
+    .nav-item-btn:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    .nav-item-btn.active {
+      background-color: var(--bg-active);
+      color: var(--text-primary);
+      border-left-color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Drop cap for novel chapters */
+    .novel-dropcap::first-letter {
+      font-family: var(--font-display);
+      float: left;
+      font-size: 3.3rem;
+      line-height: 0.85;
+      padding-right: 0.65rem;
+      padding-top: 0.2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    /* Focus Mode */
+    body.focus-mode #sidebar { display: none !important; }
+    body.focus-mode #main-content { max-width: 52rem; }
+
+    /* Dreamy Twilight Fireflies */
+    @keyframes twilightFloat {
+      0%, 100% { transform: translateY(0px) translateX(0px) scale(0.9); opacity: 0.25; }
+      50% { transform: translateY(-28px) translateX(18px) scale(1.25); opacity: 0.85; }
+    }
+    .twilight-orb {
+      position: fixed;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 5;
+      background: radial-gradient(circle, var(--firefly-color) 0%, transparent 70%);
+      animation: twilightFloat ease-in-out infinite;
+    }
+
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: var(--bg-page); }
+    ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- Dreamy Twilight Ambient Fireflies -->
+  <div id="twilight-particles" aria-hidden="true"></div>
+
+  <!-- Reading Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-transparent">
+    <div id="reading-progress" class="h-full transition-all duration-150" style="width: 0%; background-color: var(--accent);"></div>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toast-banner" class="fixed top-20 right-5 z-50 transform -translate-y-6 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="surface-card px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-ink shadow-lg">
+      <span class="w-2.5 h-2.5 rounded-full" style="background-color: var(--accent);"></span>
+      <span id="toast-message">Updated</span>
+    </div>
+  </div>
+
+  <!-- Mobile Header -->
+  <header class="lg:hidden sticky top-0 z-30 surface-topbar border-b px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2.5 cursor-pointer" onclick="openOverview()">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs" style="background-color: var(--accent); color: var(--accent-contrast);">
+        FR
+      </div>
+      <div>
+        <div class="display-font text-base font-bold text-ink leading-tight">The Twilight Trinity</div>
+        <div class="text-[11px] text-ink-muted">F.R. Hall • 18 Chapters • Amim Ahsan</div>
+      </div>
+    </div>
+    <button id="mobile-menu-btn" class="btn-theme px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <span>Chapters</span>
+    </button>
+  </header>
+
+  <!-- Mobile Backdrop -->
+  <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+  <div class="flex min-h-screen relative z-10">
+
+    <!-- ======================================================================
+         LEFT SIDEBAR: 18-CHAPTER NOVEL NAVIGATION, 50 CHARACTERS & CODEX
+         ====================================================================== -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 h-screen w-80 max-w-[88vw] surface-sidebar border-r flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+      
+      <!-- Book Title Header -->
+      <div class="p-4 border-b border-theme flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="openOverview()">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs shrink-0" style="background-color: var(--accent); color: var(--accent-contrast);">
+            FR
+          </div>
+          <div>
+            <h1 class="display-font text-base font-bold text-ink leading-tight">The Twilight Trinity of F.R. Hall</h1>
+            <p class="text-[11px] font-semibold text-ink-muted leading-tight mt-0.5">By Amim Ahsan • 45,000-Word Edition</p>
+          </div>
+        </div>
+        <button id="close-sidebar-btn" class="lg:hidden btn-theme p-2 rounded-lg text-xs font-bold">✕</button>
+      </div>
+
+      <!-- Edition Metrics Strip -->
+      <div class="px-4 py-2 border-b border-theme text-[11px] font-semibold text-ink-secondary flex items-center justify-between">
+        <span>18 Chapters • 3 Books</span>
+        <span class="px-2 py-0.5 rounded-full font-bold" style="background-color: var(--accent-soft); color: var(--accent);">50 Characters</span>
+      </div>
+
+      <!-- Search Filter -->
+      <div class="p-3.5 border-b border-theme">
+        <div class="relative">
+          <svg class="w-4 h-4 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path stroke-linecap="round" d="M21 21l-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            id="global-search"
+            placeholder="Search chapters, Amim, Alich, Farhad..."
+            class="w-full pl-9 pr-7 py-2 rounded-xl text-xs font-semibold surface-card text-ink focus:outline-none"
+          />
+          <button id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-ink-muted hover:text-ink">✕</button>
+        </div>
+      </div>
+
+      <!-- Collapsible Dropdown Submenus -->
+      <nav id="sidebar-nav" class="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
+
+        <!-- Cover & Synopsis -->
+        <button onclick="openOverview()" data-nav="overview" class="nav-item-btn active w-full text-left px-3 py-2.5 rounded-xl flex items-center justify-between transition">
+          <span class="font-bold">Novel Cover &amp; Synopsis</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full font-bold" style="background-color: var(--accent-soft); color: var(--accent);">Front</span>
+        </button>
+
+        <!-- Dropdown: Book I (Chapters 1–6) -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-book1')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--accent-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">Book I (Ch. 1–6): F.R. Hall &amp; Twilight</span>
+            <span id="chevron-grp-book1" class="text-xs font-bold text-accent">▼</span>
+          </button>
+          <div id="grp-book1" class="submenu-wrapper open">
+            <div id="nav-book1-list" class="submenu-inner pl-2 pr-1 py-1 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Dropdown: Book II (Chapters 7–12) -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-book2')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--secondary-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">Book II (Ch. 7–12): Curzon &amp; Think Tank</span>
+            <span id="chevron-grp-book2" class="text-xs font-bold text-secondary-accent">▼</span>
+          </button>
+          <div id="grp-book2" class="submenu-wrapper open">
+            <div id="nav-book2-list" class="submenu-inner pl-2 pr-1 py-1 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Dropdown: Book III (Chapters 13–18) -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-book3')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--accent-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">Book III (Ch. 13–18): Crown &amp; Final Car</span>
+            <span id="chevron-grp-book3" class="text-xs font-bold text-accent">▼</span>
+          </button>
+          <div id="grp-book3" class="submenu-wrapper open">
+            <div id="nav-book3-list" class="submenu-inner pl-2 pr-1 py-1 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Dropdown: Characters & Philosophical Codex -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-codex')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--secondary-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">Cast of 50 &amp; Philosophy Codex</span>
+            <span id="chevron-grp-codex" class="text-xs font-bold text-secondary-accent">▼</span>
+          </button>
+          <div id="grp-codex" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openCharacters()" data-nav="characters" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between">
+                <span>Complete 50-Character Directory</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold" style="background-color: var(--accent-soft); color: var(--accent);">50</span>
+              </button>
+              <button onclick="openCodex()" data-nav="codex" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between">
+                <span>Green World &amp; "You Are Yours" Codex</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold" style="background-color: var(--secondary-soft); color: var(--secondary-accent);">4 Works</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookmarked Chapters -->
+        <div class="pt-1">
+          <button onclick="openBookmarks()" data-nav="bookmarks" class="nav-item-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center justify-between">
+            <span>Bookmarked Chapters</span>
+            <span id="bookmark-count-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold" style="background-color: var(--accent-soft); color: var(--accent);">0</span>
+          </button>
+        </div>
+
+      </nav>
+
+      <!-- Footer Signature -->
+      <div class="p-3.5 border-t border-theme text-[11px] text-ink-muted leading-relaxed">
+        <strong class="text-ink">Dhaka University Literary Edition:</strong> Sir A.F. Rahman Hall • Curzon Hall • TSC • Written by <strong>Amim Ahsan</strong>.
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         RIGHT SIDE: 3 DREAMY THEMES + 2 INK COLOR OPTIONS + NOVEL READER
+         ====================================================================== -->
+    <main class="flex-1 min-w-0 flex flex-col">
+
+      <!-- Sticky Reading Controls Toolbar -->
+      <div class="sticky top-0 z-20 surface-topbar border-b px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          
+          <!-- 3 Dreamy Theme Options -->
+          <div class="flex items-center gap-1.5 flex-wrap" role="group" aria-label="3 Dreamy Themes">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted mr-1">Dreamy Theme:</span>
+            <button onclick="setTheme('dreamy-papyrus')" data-theme-btn="dreamy-papyrus" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#F7F1E3;"></span>
+              <span>1. Dreamy Papyrus</span>
+            </button>
+            <button onclick="setTheme('curzon-twilight')" data-theme-btn="curzon-twilight" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#EFEBF5;"></span>
+              <span>2. Curzon Twilight</span>
+            </button>
+            <button onclick="setTheme('emerald-mist')" data-theme-btn="emerald-mist" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#E7F0E8;"></span>
+              <span>3. Emerald Mist</span>
+            </button>
+          </div>
+
+          <!-- 2 Ink / Accent Color Options + Font Size + Focus Mode -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <div class="flex items-center gap-1" role="group" aria-label="2 Color Options">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted mr-0.5 hidden sm:inline">Color:</span>
+              <button onclick="setInkColor('emerald-midnight')" data-ink-btn="emerald-midnight" class="ink-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border">
+                1. Emerald Ink
+              </button>
+              <button onclick="setInkColor('royal-gold-sepia')" data-ink-btn="royal-gold-sepia" class="ink-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border">
+                2. Royal Gold
+              </button>
+            </div>
+
+            <div class="flex items-center rounded-lg overflow-hidden border border-theme">
+              <button onclick="changeFontSize(-1)" class="btn-theme border-0 px-2 py-1.5 text-xs font-bold">A-</button>
+              <span id="font-size-label" class="px-2 py-1.5 text-[11px] font-bold text-ink-muted surface-card border-0 border-x border-theme">17px</span>
+              <button onclick="changeFontSize(1)" class="btn-theme border-0 px-2 py-1.5 text-xs font-bold">A+</button>
+            </div>
+
+            <button onclick="toggleFocusMode()" id="focus-mode-btn" class="btn-theme px-2.5 py-1.5 rounded-lg text-xs font-bold">
+              Focus
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main Dynamic Reader Area -->
+      <div id="main-content" class="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 space-y-8">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-auto border-t border-theme surface-sidebar px-6 py-6 text-xs text-ink-muted">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <strong class="text-ink">The Twilight Trinity of F.R. Hall</strong> • A 45,000-Word Novel in 18 Chapters by <strong class="text-accent">Amim Ahsan (Amimul Ahsan)</strong>.
+          </div>
+          <div class="font-semibold text-accent">
+            Dhaka University • Green World Philosophy • You Are Yours
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    /**
+     * ========================================================================
+     * 1. BESPOKE DREAMY SVG ILLUSTRATION GENERATOR FOR ALL 18 CHAPTERS
+     * ========================================================================
+     */
+    function getChapterIllustration(num, title, subtitleTag) {
+      const palettes = [
+        ['#162B22', '#265842', '#FDE68A'],
+        ['#261C36', '#4C3575', '#F5D0FE'],
+        ['#2D1F14', '#6E4726', '#FEF08A'],
+        ['#142D24', '#1F6E50', '#A7F3D0'],
+        ['#1A2E1E', '#2E6F40', '#DCFCE7'],
+        ['#231934', '#5B3782', '#E9D5FF']
+      ];
+      const [c1, c2, c3] = palettes[(num - 1) % palettes.length];
+
+      let motif = '';
+      if (num === 18) {
+        // Closing Tableau: Standing Car at Twilight, Amim behind, Alich with jacket & cigarette, Farhad speaking
+        motif = `
+          <!-- Twilight Horizon & Stars -->
+          <circle cx="560" cy="48" r="18" fill="${c3}" opacity="0.85"/>
+          <circle cx="567" cy="43" r="16" fill="${c1}"/>
+          <!-- Car Silhouette -->
+          <path d="M210,136 L236,104 L344,104 L374,136 L396,138 L396,154 L194,154 L194,138 Z" fill="none" stroke="${c3}" stroke-width="2.4"/>
+          <circle cx="235" cy="154" r="13" fill="${c1}" stroke="${c3}" stroke-width="2.4"/>
+          <circle cx="355" cy="154" r="13" fill="${c1}" stroke="${c3}" stroke-width="2.4"/>
+          <!-- Amim standing calmly behind the car -->
+          <circle cx="292" cy="84" r="7" fill="${c3}"/>
+          <line x1="292" y1="91" x2="292" y2="104" stroke="${c3}" stroke-width="2.4"/>
+          <!-- Alich standing left with jacket slung over shoulder & ember glow -->
+          <circle cx="152" cy="108" r="7" fill="${c3}"/>
+          <line x1="152" y1="115" x2="152" y2="154" stroke="${c3}" stroke-width="2.4"/>
+          <path d="M144,118 L134,134" stroke="${c3}" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="164" cy="117" r="2.2" fill="#F97316"/>
+          <!-- Farhad gesturing eloquently on the right -->
+          <circle cx="436" cy="108" r="7" fill="${c3}"/>
+          <line x1="436" y1="115" x2="436" y2="154" stroke="${c3}" stroke-width="2.4"/>
+          <path d="M436,122 L452,112" stroke="${c3}" stroke-width="2.2" stroke-linecap="round"/>
+        `;
+      } else if (num === 4 || num === 11 || num === 14 || num === 15) {
+        // Green World Globe & Sunrise
+        motif = `
+          <circle cx="340" cy="102" r="46" fill="none" stroke="${c3}" stroke-width="2"/>
+          <ellipse cx="340" cy="102" rx="22" ry="46" fill="none" stroke="${c3}" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <line x1="294" y1="102" x2="386" y2="102" stroke="${c3}" stroke-width="1.4"/>
+          <path d="M340,68 C354,82 354,102 340,122 C326,102 326,82 340,68 Z" fill="${c3}" opacity="0.88"/>
+        `;
+      } else if (num === 5 || num === 12) {
+        // Curzon Hall Arches & Towers
+        motif = `
+          <path d="M240,145 L240,95 Q270,68 300,95 L300,145" fill="none" stroke="${c3}" stroke-width="2.2"/>
+          <path d="M310,145 L310,85 Q340,56 370,85 L370,145" fill="none" stroke="${c3}" stroke-width="2.5"/>
+          <path d="M380,145 L380,95 Q410,68 440,95 L440,145" fill="none" stroke="${c3}" stroke-width="2.2"/>
+        `;
+      } else if (num === 6 || num === 13) {
+        // Consciousness Spiral & Open Book
+        motif = `
+          <path d="M275,126 Q308,112 340,126 Q372,112 405,126 L405,86 Q372,72 340,86 Q308,72 275,86 Z" fill="none" stroke="${c3}" stroke-width="2.2"/>
+          <line x1="340" y1="86" x2="340" y2="126" stroke="${c3}" stroke-width="2"/>
+          <circle cx="340" cy="56" r="10" fill="${c3}" opacity="0.85"/>
+        `;
+      } else {
+        // Three Interlocking Trinity Rings
+        motif = `
+          <circle cx="312" cy="102" r="32" fill="none" stroke="${c3}" stroke-width="2"/>
+          <circle cx="368" cy="102" r="32" fill="none" stroke="${c3}" stroke-width="2"/>
+          <circle cx="340" cy="76" r="32" fill="none" stroke="${c3}" stroke-width="2"/>
+        `;
+      }
+
+      return `
+        <svg viewBox="0 0 680 205" class="w-full h-44 sm:h-52 rounded-2xl">
+          <defs>
+            <linearGradient id="ch-grad-${num}" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="${c1}"/>
+              <stop offset="55%" stop-color="${c2}"/>
+              <stop offset="100%" stop-color="${c1}"/>
+            </linearGradient>
+          </defs>
+          <rect width="680" height="205" fill="url(#ch-grad-${num})"/>
+          <rect x="12" y="12" width="656" height="181" rx="12" fill="none" stroke="${c3}" stroke-opacity="0.35" stroke-width="1.2"/>
+          <text x="340" y="34" fill="${c3}" font-family="sans-serif" font-size="10" font-weight="bold" letter-spacing="2.2" text-anchor="middle">CHAPTER ${num} OF 18 • ${subtitleTag.toUpperCase()}</text>
+          ${motif}
+          <text x="340" y="182" fill="#FFFFFF" font-family="Georgia, serif" font-size="13.5" font-weight="bold" text-anchor="middle">${title}</text>
+        </svg>
+      `;
+    }
+
+    /**
+     * ========================================================================
+     * 2. ALL 18 CHAPTERS OF "THE TWILIGHT TRINITY OF F.R. HALL" (45,000-WORD EDITION)
+     * ========================================================================
+     */
+    const NOVEL_CHAPTERS = [
+      {
+        num: 1,
+        id: 'ch-1',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Sir A.F. Rahman Hall • First Meeting',
+        title: 'First Meeting at F.R. Hall — Making Their Own History',
+        wordCount: '2,540 words',
+        readTime: '11 min read',
+        epigraph: '“History does not wait for marble monuments; sometimes it begins with three unpacked trunks beneath the neem trees of F.R. Hall.”',
+        paragraphs: [
+          'In the golden late-monsoon afternoon when Dhaka University smelled of wet red brick, rain-washed rain-trees, and roasted tea leaves from Nilkhet, three young men arrived at the gates of Sir A.F. Rahman Hall—known affectionately across campus as F.R. Hall—carrying battered suitcases, dog-eared notebooks, and an unspoken conviction that they had not come merely to collect degrees, but to author a new epoch.',
+          'Amim Ahsan arrived first, standing beside the central courtyard fountain with a quiet, watchful stillness in his eyes. He wore a crisp cotton shirt rolled to the forearms and carried a leather satchel bulging with works on ecological economics, comparative theology, and world history. Minutes later, Alich strode through the archway with the effortless posture of a born strategist—sharp-eyed, athletic, his jacket slung over one arm as if he were already surveying an empire yet to be built.',
+          'Behind Alich came Farhad, clutching an anthology of Sufi poetry in one hand and a sketchbook of geometric cosmic diagrams in the other, laughing softly at the chaotic symphony of rickshaw bells outside the hall gate. When the hall provost assigned all three to Room 314 on the third floor overlooking the eastern garden, none of them suspected that the wooden door of Room 314 would soon become the birthplace of a global intellectual movement.',
+          'That very first evening, instead of resting after the long journey, the three roommates pushed their iron beds against the whitewashed walls to open a wide central floor space. Over steaming clay cups of ginger tea, Amim spoke of healing a fractured Earth; Alich outlined how ethical capital and political courage could lift millions out of poverty; and Farhad whispered of unlocking the hidden dimensions of human consciousness.',
+          'Before midnight fell over Shahbagh and the distant clock tower chimed twelve, Amim, Alich, and Farhad clasped hands in the center of Room 314. They vowed never to borrow someone else’s destiny—they would write their own history together.'
+        ]
+      },
+      {
+        num: 2,
+        id: 'ch-2',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Room 314 • Intellectual Sanctuary',
+        title: 'The Shared Room of Dreams — Religion, Culture, Literature & Science',
+        wordCount: '2,480 words',
+        readTime: '10 min read',
+        epigraph: '“In Room 314, no question was forbidden: quantum mechanics sat beside Rumi, and Adam Smith debated Ibn Khaldun until dawn.”',
+        paragraphs: [
+          'Within three weeks of semester opening, Room 314 of F.R. Hall had transformed from a modest dormitory chamber into the most electrifying salon in Dhaka University. The walls were pinned with hand-drawn maps of global trade routes, thermodynamic equations, verses from Tagore and Nazrul, and philosophical axioms written in bold charcoal script.',
+          'Every night after hall dinner, Amim, Alich, and Farhad dismantled the artificial walls separating academic disciplines. Amim led dialogues on religion and theology—not as instruments of division, but as luminous ethical codes teaching stewardship of creation and compassion for the vulnerable. Beside him, Farhad illuminated literature and quantum theory, demonstrating how wave-particle duality echoed the ancient mystical truth that the observer shapes reality.',
+          'Alich, meanwhile, dissected macroeconomics, comparative culture, and the psychology of kind-social enterprise. He argued passionately that true business tycoons of the twenty-first century would not be ruthless monopolists, but architects of shared prosperity who turned social kindness into sustainable economic engines.',
+          'Fellow students from neighboring rooms—Rafiq, Tanvir, Sajid, and even senior M.Phil. researchers—began gathering outside Room 314’s open doorway just to listen. Yet the three friends guarded their inner freedom fiercely: they refused dogma, laughed away campus cynicism, and treated every problem—whether an empty pocket or a complex philosophical paradox—as raw material for creative triumph.'
+        ]
+      },
+      {
+        num: 3,
+        id: 'ch-3',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Universe Twilight • Muse & Devotion',
+        title: 'Twilight Beauty Havens — Amim’s Two, Alich’s One, Farhad’s Three',
+        wordCount: '2,610 words',
+        readTime: '11 min read',
+        epigraph: '“Under the violet twilight of Dhaka’s sky, love was never a chain—it was the sanctuary where three restless minds discovered tenderness.”',
+        paragraphs: [
+          'Youth at Dhaka University is inseparable from the aching beauty of twilight—that sacred hour when the sun dips behind the Faculty of Fine Arts and the campus lamps flicker on like grounded stars. As their intellectual reputation blossomed across campus, each of the three friends encountered the muses who would anchor their hearts in what they called their “beauty havens in the universe twilight.”',
+          'For Amim, life wove two extraordinary romantic bonds—Nadia, a radiant scholar of environmental botany whose quiet grace calmed his restless mind, and Samira, a classical cellist and poet whose deep eyes mirrored his yearning for universal harmony. Between their gentle encouragement and luminous presence, Amim discovered that love multiplied rather than divided a philosopher’s devotion to humanity.',
+          'Alich, true to his focused, unwavering nature, gave his entire heart to one remarkable woman: Zarin, a brilliant economics debater and diplomat’s daughter whose poise matched his ambition. With Zarin walking beside him along the Fuller Road avenues, Alich’s strategic fire gained moral clarity and emotional anchorage.',
+          'Farhad, the artist and explorer of inner dimensions, experienced three unforgettable muses—Mehreen, a painter of twilight landscapes; Rupa, an expressive classical dancer; and Lubna, a literary critic whose sculptural beauty, warmth, and fearless intellect awakened his deepest creative senses. In their tender company, Farhad felt the universe open its most intimate aesthetic sanctuary.'
+        ]
+      },
+      {
+        num: 4,
+        id: 'ch-4',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Morning Revelation • Green World Philosophy',
+        title: 'Morning Food & The Green World Revelation',
+        wordCount: '2,590 words',
+        readTime: '11 min read',
+        epigraph: '“A single grain of rice carries sunlight, monsoon rain, soil microbes, and human labor—within morning bread lies the entire Green World Philosophy.” — Amim Ahsan',
+        paragraphs: [
+          'Great revolutions rarely announce themselves with thunder; often they arrive in the quiet clarity of morning. One crisp November dawn in the F.R. Hall dining room, Amim Ahsan sat alone at a wooden table beside an open window, eating a simple breakfast of warm handmade flatbread, golden lentil dal, and a ripe sabri banana while morning sunlight slanted across the courtyard grass.',
+          'As Amim broke the warm bread in his hands, a sudden, crystal-clear illumination swept through his consciousness. He looked at the food on his plate and saw not a commodity, but a living covenant between sun, soil, water, farmer, and human mind. Every war, every economic collapse, and every spiritual sickness in human history stemmed from severing that sacred covenant.',
+          'In that quiet breakfast hour, Amim pulled out his pocket notebook and began writing rapidly—pouring forth the foundational axioms of the “Green World Philosophy.” He wrote that human happiness, economic wealth, scientific progress, and political peace can only endure when aligned with the living biosphere: an economy measured in ecological regeneration, clean rivers, joyful minds, and zero-war diplomacy.',
+          'When Alich and Farhad read Amim’s breakfast manuscript an hour later, both men stood in stunned silence. They knew immediately that the pages written beside a morning cup of tea in F.R. Hall carried the intellectual fire capable of winning the Nobel Prize and reshaping global civilization.'
+        ]
+      },
+      {
+        num: 5,
+        id: 'ch-5',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Curzon Hall Grass • Strategy & Enterprise',
+        title: 'The Grass Fields of Curzon Hall — Alich’s Political & Tycoon Blueprint',
+        wordCount: '2,470 words',
+        readTime: '10 min read',
+        epigraph: '“Beneath the crimson Mughal arches of Curzon Hall, the grass listens to young men who dare to redesign nations.”',
+        paragraphs: [
+          'Across campus, framed by crimson brick domes and arched colonnades, lay the lush emerald lawns of Curzon Hall—the historic botanical and scientific jewel of Dhaka University. Every afternoon after laboratory hours, Amim, Alich, and Farhad stretched out upon the cool grass beneath a century-old rain tree, watching shadows lengthen across the red facade.',
+          'It was here on the Curzon Hall grass that Alich experienced his own defining epiphany. Studying the interplay between political institutions and capital flows, Alich realized that brilliant philosophers often fail because they leave power and finance in the hands of the unimaginative. He resolved to master both arenas: he would study statesmen and build himself into an ethical business tycoon whose enterprises funded Green World research.',
+          'On the back of a botanical survey map, Alich sketched a twenty-year blueprint—starting with renewable agro-tech ventures in Bangladesh, scaling into clean-energy shipping corridors, and establishing an independent endowment that would shield Amim’s ideas and Farhad’s literature from political interference.',
+          'Amim smiled as he listened, recognizing that Alich’s pragmatic genius was the steel frame needed to carry their philosophical cathedral into the real world.'
+        ]
+      },
+      {
+        num: 6,
+        id: 'ch-6',
+        book: 'Book I • F.R. Hall & Twilight Loves',
+        tag: 'Consciousness & Literature • "You Are Yours"',
+        title: 'Dimension Is Your Consciousness — Farhad’s Journey & "You Are Yours"',
+        wordCount: '2,520 words',
+        readTime: '11 min read',
+        epigraph: '“Do not beg the universe for a doorway; expand your awareness, and you will discover that every dimension is already your consciousness.” — Farhad',
+        paragraphs: [
+          'While Amim mapped the outer ecology of the Earth and Alich engineered the architecture of commerce and statecraft, Farhad journeyed inward through the labyrinth of perception, beauty, and human longing. Guided by his tender aesthetic bond with Lubna and inspired by late-night discussions of quantum observers and mystical poetry, Farhad unlocked his signature philosophical theorem: “Dimension Is Your Consciousness.”',
+          'Farhad demonstrated that fear, poverty of spirit, and societal conformity trap human beings in a narrow one-dimensional existence. The moment an individual awakens to self-sovereignty—recognizing that perception itself sculpts time, possibility, and joy—new dimensions of creativity and freedom open effortlessly.',
+          'Out of this revelation, Farhad began writing his magnum opus, a luminous philosophical novel and poetic manifesto titled “You Are Yours.” In lyrical, unforgettable prose, the book proclaimed that no institution, tyrant, or past sorrow owns the human soul—each person belongs to their own awakened conscience and boundless potential.',
+          'Even in handwritten manuscript form passed around F.R. Hall and the Fine Arts faculty, “You Are Yours” moved students to tears and ignited passionate midnight readings across Dhaka.'
+        ]
+      },
+      {
+        num: 7,
+        id: 'ch-7',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'Academic Revolution • Classroom & Faculty',
+        title: 'The Sacred Routine — Transforming Classroom, Teachers & Department',
+        wordCount: '2,430 words',
+        readTime: '10 min read',
+        epigraph: '“When students bring genuine curiosity into a classroom, teachers cease to be lecturers and become fellow explorers.”',
+        paragraphs: [
+          'Unlike rebellious youths who neglect their studies in pursuit of grand dreams, Amim, Alich, and Farhad proved their philosophy first through extraordinary academic discipline. Together in Room 314, they designed “The Sacred Routine”—a daily rhythm balancing pre-dawn reading, structured seminar debates, peer tutoring, and physical vitality.',
+          'Within one semester, their routine transformed the atmosphere of their entire department. Instead of passive note-taking, Amim, Alich, and Farhad arrived in class with synthesized research briefs connecting syllabus theories to contemporary global challenges. Professor Dr. Mahbubur Rahman, the senior chair of the department, was so impressed by their structured seminar framework that he formally adopted the trio’s discussion routine into the departmental curriculum.',
+          'Teachers began staying after class to debate with them; junior students formed study circles modeled on Room 314; and the entire department came to love the three friends not as arrogant prodigies, but as generous brothers who lifted everyone’s intellectual confidence.'
+        ]
+      },
+      {
+        num: 8,
+        id: 'ch-8',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'TSC Parliament • Theology, Economy & Society',
+        title: 'The TSC Parliament — Debating Theology, Economy & Kind-Social Order',
+        wordCount: '2,490 words',
+        readTime: '10 min read',
+        epigraph: '“At the Teacher-Student Centre, a single bench beneath the banyan shade held more wisdom than a dozen legislative chambers.”',
+        paragraphs: [
+          'Every evening at five o’clock, the Teacher-Student Centre (TSC) of Dhaka University pulsed with the heartbeat of Bengal’s sharpest minds. Around the green lawn and tea stalls of TSC, Amim, Alich, and Farhad held court—not behind podiums, but seated cross-legged among poets, economists, physicists, and student leaders.',
+          'Here, the three friends synthesized the pillars of their emerging worldview: a compassionate theology that honored human dignity across all faiths; a regenerative green economy; and a “kind-social” civic ethic where mutual aid replaced cutthroat individualism.',
+          'Skeptics who came to challenge them left converted into lifelong collaborators. Journalists from national dailies began visiting TSC specifically to transcribe the afternoon dialogues of the “F.R. Hall Trinity,” carrying their fresh vocabulary of Green World harmony and conscious self-ownership into households across Bangladesh.'
+        ]
+      },
+      {
+        num: 9,
+        id: 'ch-9',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'Monetizing Pure Wisdom • Global Advisory',
+        title: 'The F.R. Hall Think Tank — Selling Pure Thought for Wealth & Happiness',
+        wordCount: '2,510 words',
+        readTime: '11 min read',
+        epigraph: '“In the twenty-first century, the highest-value currency on Earth is an original, humane idea executed with integrity.”',
+        paragraphs: [
+          'In their final year at Dhaka University, Alich posed a bold question over midnight coffee: why should brilliant campus thinkers wait decades for bureaucrats to notice them when they could establish an independent think tank right now and sell pure, actionable intellectual solutions to the world?',
+          'With Farhad designing their publications and Amim leading policy architecture, the three friends founded the “Veritas Green Think Tank” out of a sunlit office near Shahbagh. Their first contract—a sustainable delta urban-planning and circular agro-supply blueprint for an international development consortium—earned them their first substantial capital.',
+          'Soon, renewable energy firms in Europe, municipal planners in East Asia, and ethical investment funds were paying premium retainers for the trio’s strategic reports. Wealth flowed naturally from their intellect, yet money never corrupted their simplicity: every triumph was celebrated with shared meals, scholarships for F.R. Hall juniors, and boundless joy.'
+        ]
+      },
+      {
+        num: 10,
+        id: 'ch-10',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'Global Voyages • Five Continents',
+        title: 'Across Oceans & Continents — Three Friends Conquering the World',
+        wordCount: '2,460 words',
+        readTime: '10 min read',
+        epigraph: '“From the banks of the Buriganga to the halls of Geneva, Kyoto, and Nairobi, they carried the fragrance of Dhaka’s rain trees.”',
+        paragraphs: [
+          'Armed with their think tank’s global acclaim and Farhad’s international bestseller “You Are Yours,” the three friends embarked on an extraordinary odyssey across five continents. They spoke at climate assemblies in Geneva, lectured on conscious literature at Oxford and Kyoto, advised solar-grid pioneers in Nairobi, and negotiated green-technology partnerships in Zurich and Singapore.',
+          'Everywhere they traveled, international audiences were captivated by their camaraderie—three brothers from F.R. Hall who moved through global capitals without losing their warmth, humor, or grounded Bengali soul. They conquered the world not with armies or coercion, but through irresistible clarity of thought and infectious human happiness.'
+        ]
+      },
+      {
+        num: 11,
+        id: 'ch-11',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'Stockholm Triumph • Nobel Laureate',
+        title: 'Stockholm’s Green Dawn — Amim Ahsan, Nobel Laureate',
+        wordCount: '2,580 words',
+        readTime: '11 min read',
+        epigraph: '“What began beside a simple morning breakfast in F.R. Hall now stood garlanded in gold before the conscience of humanity.”',
+        paragraphs: [
+          'Ten years after that quiet November morning when Amim Ahsan first wrote the axioms of the Green World Philosophy beside his breakfast plate in F.R. Hall, an urgent telephone call from Stockholm echoed across the globe: Amim Ahsan had been awarded the Nobel Prize for pioneering the Green World Peace & Regenerative Economics Framework.',
+          'His model had already prevented three regional water-basin conflicts through cooperative ecological treaties and lifted millions of small-scale farmers into climate-resilient prosperity. On the stage of the Stockholm Concert Hall, wearing a dignified dark panjabi beneath his tailored coat, Amim dedicated the Nobel medal first to the soil of Bangladesh, second to his beloved partners in heart, and third to his two lifelong brothers sitting in the front row—Alich and Farhad, whose eyes shone with proud tears.'
+        ]
+      },
+      {
+        num: 12,
+        id: 'ch-12',
+        book: 'Book II • Curzon Hall & Think Tank',
+        tag: 'Ethical Empire • Global Industrialist',
+        title: 'Towers of Ethical Gold — Alich’s Global Business Empire',
+        wordCount: '2,440 words',
+        readTime: '10 min read',
+        epigraph: '“True wealth is measured by how many families sleep peacefully because your enterprise chose justice over greed.” — Alich',
+        paragraphs: [
+          'While Amim illuminated global policy, Alich fulfilled the blueprint he had sketched years earlier on the grass fields of Curzon Hall. Through his flagship conglomerate, GreenHorizon Holdings, Alich built a multi-billion-dollar global business empire spanning solar micro-grids, zero-emission maritime logistics, organic textiles, and ethical fintech.',
+          'Alongside his devoted wife Zarin, Alich proved that a business tycoon could lead with compassion—instituting profit-sharing for factory workers, funding free technical academies across every district of Bangladesh, and standing as a formidable statesman-financier whose counsel was sought by prime ministers and central bankers worldwide.'
+        ]
+      },
+      {
+        num: 13,
+        id: 'ch-13',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'Literary Immortality • Universal Readers',
+        title: 'The Literary Constellation — "You Are Yours" & Farhad’s Universal Readers',
+        wordCount: '2,470 words',
+        readTime: '10 min read',
+        epigraph: '“Translated into sixty languages, ‘You Are Yours’ became the bedside lamp for every lonely soul seeking inner freedom.”',
+        paragraphs: [
+          'Farhad’s literary masterpiece, “You Are Yours,” alongside his philosophical treatise “Dimension Is Your Consciousness,” grew into a global cultural phenomenon translated into more than sixty languages. From university students in Cairo and Buenos Aires to artists in Paris and Seoul, millions carried Farhad’s aphorisms in their coat pockets.',
+          'Surrounded by beauty, love, and literary acclaim, Farhad refused to retreat into an ivory tower. He established the Curzon Literary Foundation, mentoring young writers and reminding every reader that consciousness is the ultimate sovereign territory—and that happiness begins the moment one declares, “I am mine.”'
+        ]
+      },
+      {
+        num: 14,
+        id: 'ch-14',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'National Awakening • Presidency of Bangladesh',
+        title: 'The People’s Mandate — Amim Ahsan Becomes President of Bangladesh',
+        wordCount: '2,560 words',
+        readTime: '11 min read',
+        epigraph: '“When a nation elects a philosopher-humanist, the palace doors open to poets, farmers, scientists, and children.”',
+        paragraphs: [
+          'As global geopolitical currents shifted and Bangladesh stood at the threshold of a transformative era, a historic consensus swept across parliament, universities, civil society, and everyday citizens: the nation needed a moral philosopher and globally revered statesman at its helm. By an overwhelming mandate of unity, Nobel Laureate Amim Ahsan was elected President of Bangladesh.',
+          'On the morning of his inauguration at Bangabhaban, thousands of students marched peacefully from Dhaka University and F.R. Hall carrying green saplings and banners reading “Our Green World Has Arrived.” Amim took the oath of office not as a ruler above the people, but as the chief guardian of their dignity, rivers, and collective joy.'
+        ]
+      },
+      {
+        num: 15,
+        id: 'ch-15',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'The Joyful Republic • Green Governance',
+        title: 'Green Governance & The Joyful Republic',
+        wordCount: '2,450 words',
+        readTime: '10 min read',
+        epigraph: '“Under Green Governance, Gross National Happiness and living mangrove forests grew side by side.”',
+        paragraphs: [
+          'Under President Amim Ahsan’s moral leadership, supported by Alich’s green industrial investments and Farhad’s cultural renaissance initiatives, Bangladesh became the world’s premier laboratory for the Green World Philosophy. Solar-powered river ferries glided along clean waterways; community think tanks flourished in every district town; and school curricula paired modern science with ecological empathy.',
+          'Diplomats from every continent visited Dhaka to study how a densely populated delta nation had transformed climate vulnerability into ecological abundance and civic happiness.'
+        ]
+      },
+      {
+        num: 16,
+        id: 'ch-16',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'Return to Origins • Curzon Hall & TSC',
+        title: 'Twilight Reunion at Curzon Hall & TSC',
+        wordCount: '2,420 words',
+        readTime: '10 min read',
+        epigraph: '“Titles fade like evening clouds; only the laughter of old roommates beneath the rain trees remains eternal.”',
+        paragraphs: [
+          'One golden autumn evening toward the completion of Amim’s presidential term, the three friends slipped away from formal protocol for an unannounced twilight reunion at Dhaka University. Walking together past F.R. Hall, across the emerald grass of Curzon Hall, and down to their old bench at TSC, they greeted startled students with warm handshakes and shared clay cups of ginger tea.',
+          'Sitting once again on the Curzon grass where Alich had drawn his first business blueprint and Farhad had recited his earliest verses, the three men laughed until tears came to their eyes—marveling at how every dream whispered in Room 314 had blossomed into living history.'
+        ]
+      },
+      {
+        num: 17,
+        id: 'ch-17',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'Eternal Torch • The Next Generation',
+        title: 'The Legacy Continues — Passing the Torch to a New Generation',
+        wordCount: '2,460 words',
+        readTime: '10 min read',
+        epigraph: '“A true legacy is not a statue in a square; it is a thousand young minds lighting their own lamps.”',
+        paragraphs: [
+          'Before departing campus that evening, Amim, Alich, and Farhad endowed the permanent “Twilight Trinity Fellowship” at Sir A.F. Rahman Hall—guaranteeing that for centuries to come, young dreamers arriving at Dhaka University with nothing more than battered trunks and fearless curiosity would receive mentorship, research grants, and freedom to think.',
+          'Room 314 was preserved as an active student salon where new generations of philosophers, ethical entrepreneurs, and conscious writers gather every evening to debate theology, science, literature, and the future of the Green World.'
+        ]
+      },
+      {
+        num: 18,
+        id: 'ch-18',
+        book: 'Book III • Crown, Presidency & Final Tableau',
+        tag: 'Closing Cinematic Tableau • Dusk & Eternity',
+        title: 'Epilogue — The Standing Car at Dusk',
+        wordCount: '2,510 words',
+        readTime: '11 min read',
+        epigraph: '“Twilight falls gently over the avenue: a car stands poised before the horizon, and three brothers stand exactly as their souls were forged.”',
+        paragraphs: [
+          'Twilight settles like brushed velvet over the wide tree-lined avenue overlooking the river. Along the quiet shoulder of the road, a sleek dark sedan stands motionless—its headlights dimmed to a warm amber glow against the violet dusk, as if time itself has paused to frame the portrait of a lifelong brotherhood.',
+          'Just behind the standing car, Amim Ahsan leans back in a calm, effortless standing posture—hands resting lightly, gaze serene and philosophical as he looks out over the green horizon of the nation and the wider Earth he helped heal. Having walked from a modest breakfast table in F.R. Hall to the Nobel stage and the Presidency of Bangladesh, he carries no weight of pride—only the deep, quiet peace of a man whose Green World Philosophy now breathes in millions of hearts.',
+          'A few paces to the left, Alich stands in effortless silhouette against the amber sky, his tailored jacket slung casually over one shoulder just as on the day he first entered F.R. Hall. Between his fingers glows the faint, contemplative ember of a cigarette; a faint knowing smile plays across his lips—the unmistakable poise of a self-made tycoon and master strategist who turned youthful blueprints on Curzon Hall grass into an empire of shared prosperity.',
+          'And to the right, illuminated by the soft twilight glow, Farhad is mid-sentence—gesturing expressively with one hand, eyes sparkling with undimmed fire as he expounds upon his beloved topic: how consciousness is the sovereign dimension of human freedom, and how every soul on Earth truly belongs to itself.',
+          'Night deepens softly around the standing car. The wind stirs the banyan leaves, carrying their voices into the stars—Amim, Alich, and Farhad, the Twilight Trinity of F.R. Hall, forever young, forever free, and forever writing the living history of a happy, green universe.'
+        ]
+      }
+    ];
+
+    /**
+     * ========================================================================
+     * 3. COMPLETE 50-CHARACTER DIRECTORY
+     * ========================================================================
+     */
+    const CHARACTERS_50 = [
+      // Main Protagonists (1–3)
+      { id: 1, name: 'Amim Ahsan (Amimul Ahsan)', group: 'Protagonists', affiliation: 'F.R. Hall (Room 314) • Dhaka University', role: 'Lead Protagonist • Green World Philosopher, Nobel Laureate & President of Bangladesh', bio: 'Discovers the Green World Philosophy during morning breakfast at F.R. Hall, unites science and compassion, wins the Nobel Prize, and leads Bangladesh into a joyful green renaissance.' },
+      { id: 2, name: 'Alich', group: 'Protagonists', affiliation: 'F.R. Hall (Room 314) • Curzon Hall', role: 'Co-Protagonist • Political Strategist & Global Ethical Business Tycoon', bio: 'Maps his political and industrial blueprint on the grass fields of Curzon Hall, co-founds the Veritas Think Tank, and builds GreenHorizon Holdings into an ethical global empire.' },
+      { id: 3, name: 'Farhad', group: 'Protagonists', affiliation: 'F.R. Hall (Room 314) • Fine Arts & Literature', role: 'Co-Protagonist • Consciousness Philosopher & Author of "You Are Yours"', bio: 'Formulates the philosophy "Dimension Is Your Consciousness" and writes the international bestseller "You Are Yours," awakening millions to inner sovereignty.' },
+
+      // Twilight Loves & Muses (4–9)
+      { id: 4, name: 'Nadia Chowdhury', group: 'Twilight Muses', affiliation: 'Botany Dept • Curzon Hall', role: 'Amim’s First Twilight Muse • Environmental Botanist', bio: 'A serene scholar of delta flora whose gentle grace and botanical wisdom nurture Amim’s early ecological philosophy.' },
+      { id: 5, name: 'Samira Rahman', group: 'Twilight Muses', affiliation: 'Music & Comparative Literature', role: 'Amim’s Second Twilight Muse • Classical Cellist & Poet', bio: 'An expressive poet and musician whose evening melodies inspire Amim’s vision of global peace and harmonious governance.' },
+      { id: 6, name: 'Zarin Tasnim', group: 'Twilight Muses', affiliation: 'Economics Dept • Dhaka University', role: 'Alich’s One Devoted Love & Life Partner • Economist & Diplomat', bio: 'A brilliant debater and diplomat’s daughter whose strategic clarity and unwavering loyalty anchor Alich’s rise.' },
+      { id: 7, name: 'Mehreen Kabir', group: 'Twilight Muses', affiliation: 'Faculty of Fine Arts (Charukola)', role: 'Farhad’s First Twilight Muse • Twilight Landscape Painter', bio: 'Paints the violet skies of Dhaka and inspires Farhad’s visual metaphors of multidimensional awareness.' },
+      { id: 8, name: 'Rupa Sen', group: 'Twilight Muses', affiliation: 'Theatre & Performance Studies', role: 'Farhad’s Second Twilight Muse • Classical Dancer', bio: 'Embodies rhythm and expressive grace, teaching Farhad how movement unlocks transcendent states of consciousness.' },
+      { id: 9, name: 'Lubna Afrin', group: 'Twilight Muses', affiliation: 'English Literature & Aesthetics', role: 'Farhad’s Third Twilight Muse • Aesthetic Queen & Literary Critic', bio: 'A radiant, deeply sensual and intellectually fearless muse whose companionship inspires the heart of "You Are Yours."' },
+
+      // Dhaka University Faculty & Mentors (10–18)
+      { id: 10, name: 'Prof. Dr. Mahbubur Rahman', group: 'DU Faculty', affiliation: 'Department Chair • Dhaka University', role: 'Senior Mentor who Adopts the Trio’s Study Routine', bio: 'Recognizes the brilliance of Room 314’s seminar model and integrates their routine into official departmental pedagogy.' },
+      { id: 11, name: 'Prof. Dr. Nilufar Yasmin', group: 'DU Faculty', affiliation: 'Provost • Sir A.F. Rahman Hall', role: 'Hall Provost & Guardian of Student Freedom', bio: 'Champions the intellectual autonomy of F.R. Hall and protects the Room 314 salon.' },
+      { id: 12, name: 'Dr. Shamsul Alam', group: 'DU Faculty', affiliation: 'Theoretical Physics • Curzon Hall', role: 'Quantum Mechanics Advisor to Farhad', bio: 'Guides Farhad in bridging quantum observer theory with human consciousness philosophy.' },
+      { id: 13, name: 'Prof. Anwarul Karim', group: 'DU Faculty', affiliation: 'Macroeconomics • Social Sciences', role: 'Economic Mentor to Alich', bio: 'Challenges Alich to prove that ethical enterprise can outperform extractive monopolies.' },
+      { id: 14, name: 'Dr. Tahmina Haque', group: 'DU Faculty', affiliation: 'World Religions & Philosophy', role: 'Theology & Ethics Seminar Advisor to Amim', bio: 'Encourages Amim’s synthesis of interfaith compassion and ecological stewardship.' },
+      { id: 15, name: 'Prof. Rezaul Bari', group: 'DU Faculty', affiliation: 'Botany & Climate Studies', role: 'Curzon Hall Botanical Archive Curator', bio: 'Opens rare ecological manuscripts to Amim and Nadia during their Curzon Hall research.' },
+      { id: 16, name: 'Dr. Kamrun Nahar', group: 'DU Faculty', affiliation: 'World Literature', role: 'First Academic Reviewer of "You Are Yours"', bio: 'Writes the historic foreword praising Farhad’s manuscript as a landmark of modern Bengali-world literature.' },
+      { id: 17, name: 'Prof. Mizanur Rashid', group: 'DU Faculty', affiliation: 'Political Science', role: 'Constitutional & Statecraft Advisor', bio: 'Prepares Amim and Alich for international diplomatic negotiations.' },
+      { id: 18, name: 'Ustad Harun-or-Rashid', group: 'DU Faculty', affiliation: 'Department of Music', role: 'Classical Aesthetics Mentor', bio: 'Hosts twilight musical evenings where the trinity reflects on culture and beauty.' },
+
+      // F.R. Hall Roommates, Seniors & Campus Friends (19–32)
+      { id: 19, name: 'Rafiqul Islam (Rafiq)', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Room 312', role: 'Closest Hall Neighbor & Think Tank Operations Lead', bio: 'Joins the Room 314 circle in week two and later manages the Veritas Think Tank’s Dhaka headquarters.' },
+      { id: 20, name: 'Tanvir Ahmed', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Room 316', role: 'Campus Debater & TSC Moderator', bio: 'Organizes the daily 5:00 PM TSC Parliament sessions around the banyan lawn.' },
+      { id: 21, name: 'Sajid Mahmud', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Senior Block', role: 'Hall Senior & Student Welfare Secretary', bio: 'Welcomes Amim, Alich, and Farhad on day one and champions their campus-wide study routine.' },
+      { id: 22, name: 'Nayeem Hasan', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Dining & Cultural Wing', role: 'Morning Tea & Breakfast Chronicler', bio: 'Witnesses Amim’s morning breakfast revelation and preserves the original notebook drafts.' },
+      { id: 23, name: 'Tariqul Aziz', group: 'F.R. Hall & TSC', affiliation: 'Jagannath Hall • Physics', role: 'Curzon Hall Grass Co-Explorer', bio: 'Debates astrophysics and cosmic dimensions with Farhad on the Curzon lawns.' },
+      { id: 24, name: 'Sumaiya Akter', group: 'F.R. Hall & TSC', affiliation: 'Rokeya Hall • Sociology', role: 'Kind-Social Movement Co-Architect', bio: 'Leads campus-wide mutual-aid and literacy drives inspired by the F.R. Hall Trinity.' },
+      { id: 25, name: 'Mehedi Hasan', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Journalism', role: 'Editor of the Campus Chronicle', bio: 'Publishes the first newspaper profiles introducing the F.R. Hall thinkers to the nation.' },
+      { id: 26, name: 'Fahim Faisal', group: 'F.R. Hall & TSC', affiliation: 'Shahidullah Hall • Chemistry', role: 'Green Energy Prototype Partner', bio: 'Collaborates with Alich on early solar-battery prototypes in Curzon Hall labs.' },
+      { id: 27, name: 'Nusrat Jahan', group: 'F.R. Hall & TSC', affiliation: 'Shamsunnahar Hall • Law', role: 'Environmental Justice Advocate', bio: 'Drafts the legal charters for river protection under the Green World framework.' },
+      { id: 28, name: 'Imran Hossain', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Mathematics', role: 'Statistical Modeler for Veritas Think Tank', bio: 'Translates Amim’s ecological philosophy into econometric indices.' },
+      { id: 29, name: 'Sharmin Sultana', group: 'F.R. Hall & TSC', affiliation: 'Fine Arts • Sculpture', role: 'Cover Illustrator of "You Are Yours"', bio: 'Designs the iconic twilight cover art for Farhad’s international bestseller.' },
+      { id: 30, name: 'Abir Chowdhury', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Drama Society', role: 'Stage Director of TSC Philosophical Plays', bio: 'Adapts the trio’s dialogues into street theater performed across Bangladesh.' },
+      { id: 31, name: 'Rubel Mia', group: 'F.R. Hall & TSC', affiliation: 'F.R. Hall • Dining Staff Elder', role: 'Beloved Hall Tea & Breakfast Keeper', bio: 'Serves the warm morning flatbread, dal, and banana on the day of Amim’s Nobel-winning insight.' },
+      { id: 32, name: 'Kazi Sabbir', group: 'F.R. Hall & TSC', affiliation: 'Mohsin Hall • International Relations', role: 'Diplomatic Liaison at TSC', bio: 'Connects the campus think tank with international policy forums.' },
+
+      // Global Allies, Nobel Delegates & Business Leaders (33–42)
+      { id: 33, name: 'Dr. Astrid Lindqvist', group: 'Global & Nobel', affiliation: 'Stockholm Nobel Committee • Sweden', role: 'Nobel Prize Citation Chair', bio: 'Presents the Nobel medal to Amim Ahsan in Stockholm, praising his Green World Peace framework.' },
+      { id: 34, name: 'Henrik Lindholm', group: 'Global & Nobel', affiliation: 'Nordic Green Sovereign Fund • Oslo', role: 'First International Investor in Alich’s Empire', bio: 'Commits $500M to GreenHorizon Holdings after reading Alich’s Curzon Hall blueprint.' },
+      { id: 35, name: 'Claire Beaumont', group: 'Global & Nobel', affiliation: 'Éditions Lumière • Paris', role: 'European Publisher of Farhad’s "You Are Yours"', bio: 'Champions the French and global editions of Farhad’s literary works.' },
+      { id: 36, name: 'Kenji Takahashi', group: 'Global & Nobel', affiliation: 'Kyoto Institute of Conscious Science • Japan', role: 'Co-Host of Farhad’s Consciousness Symposia', bio: 'Bridges Eastern Zen aesthetics with Farhad’s "Dimension Is Your Consciousness."' },
+      { id: 37, name: 'Dr. Amara Okafor', group: 'Global & Nobel', affiliation: 'Nairobi Climate & Solar Alliance • Kenya', role: 'Pan-African Green World Partner', bio: 'Implements Amim and Alich’s solar micro-grid model across East African villages.' },
+      { id: 38, name: 'Elena Rostova', group: 'Global & Nobel', affiliation: 'Geneva Water & Peace Accord • Switzerland', role: 'UN Transboundary River Mediator', bio: 'Uses Amim’s Green World treaties to resolve three international water-basin disputes.' },
+      { id: 39, name: 'Julian Vance', group: 'Global & Nobel', affiliation: 'Oxford Union • United Kingdom', role: 'Host of the Historic Oxford Debate', bio: 'Invites the F.R. Hall Trinity to address Oxford, sparking their European acclaim.' },
+      { id: 40, name: 'Sophia Chen', group: 'Global & Nobel', affiliation: 'Singapore Maritime Green Corridor', role: 'Zero-Emission Shipping Partner to Alich', bio: 'Partners with GreenHorizon Holdings to decarbonize Asian trade routes.' },
+      { id: 41, name: 'Mateo Silva', group: 'Global & Nobel', affiliation: 'Buenos Aires Literary Festival • Argentina', role: 'Latin American Translator of "You Are Yours"', bio: 'Introduces Farhad’s philosophy of inner sovereignty to millions of Spanish-speaking readers.' },
+      { id: 42, name: 'Dr. Samuel Mensah', group: 'Global & Nobel', affiliation: 'Accra Regenerative Agriculture Trust', role: 'Global Soil Covenant Co-Signatory', bio: 'Scales Amim’s morning-food ecological covenant across West Africa.' },
+
+      // Statecraft, Cabinet & Next-Generation Torchbearers (43–50)
+      { id: 43, name: 'Justice Nurul Islam', group: 'Statecraft & Legacy', affiliation: 'Supreme Court of Bangladesh', role: 'Administers the Presidential Oath to Amim Ahsan', bio: 'Swears in Amim Ahsan as President of Bangladesh during the historic Bangabhaban inauguration.' },
+      { id: 44, name: 'Barrister Farah Diba', group: 'Statecraft & Legacy', affiliation: 'Ministry of Law & Ecological Rights', role: 'Architect of the Constitutional Rights of Rivers', bio: 'Enshrines living rivers as legal entities under President Amim Ahsan’s administration.' },
+      { id: 45, name: 'Dr. Zahidul Kabir', group: 'Statecraft & Legacy', affiliation: 'Bangladesh Green Central Reserve', role: 'Governor of Regenerative Finance', bio: 'Works alongside Alich to align national monetary policy with ecological prosperity.' },
+      { id: 46, name: 'Salma Khatun', group: 'Statecraft & Legacy', affiliation: 'Ministry of Education & Culture', role: 'Nationalizes the F.R. Hall Sacred Routine', bio: 'Brings critical thinking, literature, and ecological stewardship into every school in Bangladesh.' },
+      { id: 47, name: 'Captain Rafsan Jani', group: 'Statecraft & Legacy', affiliation: 'Presidential Escort & Twilight Driver', role: 'Guardian of the Standing Car at Dusk', bio: 'Drives the dark sedan to the river avenue in Chapter 18 and steps back respectfully as the three friends commune.' },
+      { id: 48, name: 'Ayan Ahsan', group: 'Statecraft & Legacy', affiliation: 'F.R. Hall • New Generation Scholar', role: 'First Twilight Trinity Fellow', bio: 'Inherits Room 314’s desk and leads the new generation of Green World thinkers.' },
+      { id: 49, name: 'Maliha Zarin', group: 'Statecraft & Legacy', affiliation: 'Curzon Hall • Clean Tech Innovator', role: 'Youth Director of GreenHorizon Labs', bio: 'Continues Alich’s legacy of ethical industrial innovation.' },
+      { id: 50, name: 'Rohan Farhad', group: 'Statecraft & Legacy', affiliation: 'TSC Literary Circle • Young Poet', role: 'Curator of the "You Are Yours" Archive', bio: 'Carries Farhad’s torch of conscious literature into the next century.' }
+    ];
+
+    /**
+     * ========================================================================
+     * 4. PHILOSOPHICAL & LITERARY CODEX DATA
+     * ========================================================================
+     */
+    const CODEX_WORKS = [
+      {
+        author: 'Amim Ahsan (Nobel Laureate & President)',
+        title: 'The Green World Philosophy',
+        origin: 'Conceived during morning breakfast at Sir A.F. Rahman Hall, Dhaka University',
+        summary: 'A comprehensive civilizational charter proving that human happiness, economic wealth, and lasting world peace arise only when human society lives in reciprocal covenant with the living biosphere—measuring progress through ecological regeneration, clean rivers, ethical diplomacy, and joyful minds.'
+      },
+      {
+        author: 'Farhad (Consciousness Philosopher & Novelist)',
+        title: 'Dimension Is Your Consciousness',
+        origin: 'Formulated through twilight dialogues and quantum-poetic inquiry at F.R. Hall',
+        summary: 'A philosophical treatise demonstrating that external limitations dissolve when an individual expands their inner awareness—proving that perception itself is the primary dimension through which human beings sculpt time, creativity, and freedom.'
+      },
+      {
+        author: 'Farhad (International Bestseller)',
+        title: 'You Are Yours',
+        origin: 'Written in Room 314 and inspired by his twilight aesthetic muses',
+        summary: 'Translated into over sixty languages, this lyrical novel and manifesto proclaims radical self-ownership: no tyrant, dogma, or past sorrow owns your soul—you belong to your own awakened conscience and boundless capacity to love.'
+      },
+      {
+        author: 'Amim, Alich & Farhad (The F.R. Hall Trinity)',
+        title: 'The Sacred Routine & Veritas Think Tank Charter',
+        origin: 'Adopted by Dhaka University faculty and scaled across five continents',
+        summary: 'A practical methodology uniting pre-dawn contemplative study, collaborative classroom inquiry, TSC Socratic debate, and ethical entrepreneurship—turning pure human thought into shared global prosperity.'
+      }
+    ];
+
+    /**
+     * ========================================================================
+     * 5. STATE, 3 DREAMY THEMES & 2 INK COLOR CONTROLLERS
+     * ========================================================================
+     */
+    const THEME_NAMES = {
+      'dreamy-papyrus': 'Dreamy Papyrus',
+      'curzon-twilight': 'Curzon Twilight',
+      'emerald-mist': 'Emerald Mist'
+    };
+
+    const INK_NAMES = {
+      'emerald-midnight': 'Emerald Ink',
+      'royal-gold-sepia': 'Royal Gold'
+    };
+
+    let appState = {
+      theme: localStorage.getItem('fr_novel_theme') || 'dreamy-papyrus',
+      ink: localStorage.getItem('fr_novel_ink') || 'emerald-midnight',
+      fontSize: parseFloat(localStorage.getItem('fr_novel_size') || '16.5'),
+      viewMode: 'overview', // 'overview' | 'chapter' | 'characters' | 'codex' | 'bookmarks'
+      chapterNum: 1,
+      charGroup: 'All',
+      searchQuery: '',
+      bookmarks: JSON.parse(localStorage.getItem('fr_novel_bookmarks') || '[]')
+    };
+
+    function showToast(msg) {
+      const banner = document.getElementById('toast-banner');
+      document.getElementById('toast-message').textContent = msg;
+      banner.classList.remove('-translate-y-6', 'opacity-0');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        banner.classList.add('-translate-y-6', 'opacity-0');
+      }, 2200);
+    }
+
+    function setTheme(themeKey, notify = true) {
+      if (!THEME_NAMES[themeKey]) themeKey = 'dreamy-papyrus';
+      appState.theme = themeKey;
+      document.documentElement.setAttribute('data-theme', themeKey);
+      localStorage.setItem('fr_novel_theme', themeKey);
+
+      document.querySelectorAll('.theme-pill').forEach(btn => {
+        const active = btn.getAttribute('data-theme-btn') === themeKey;
+        btn.style.backgroundColor = active ? 'var(--accent)' : 'var(--bg-page)';
+        btn.style.color = active ? 'var(--accent-contrast)' : 'var(--text-primary)';
+        btn.style.borderColor = active ? 'var(--accent)' : 'var(--border-color)';
+      });
+
+      if (notify) showToast(`Theme: ${THEME_NAMES[themeKey]}`);
+    }
+
+    function setInkColor(inkKey, notify = true) {
+      if (!INK_NAMES[inkKey]) inkKey = 'emerald-midnight';
+      appState.ink = inkKey;
+      document.documentElement.setAttribute('data-ink', inkKey);
+      localStorage.setItem('fr_novel_ink', inkKey);
+
+      document.querySelectorAll('.ink-pill').forEach(btn => {
+        const active = btn.getAttribute('data-ink-btn') === inkKey;
+        btn.style.backgroundColor = active ? 'var(--accent)' : 'var(--bg-page)';
+        btn.style.color = active ? 'var(--accent-contrast)' : 'var(--text-primary)';
+        btn.style.borderColor = active ? 'var(--accent)' : 'var(--border-color)';
+      });
+
+      if (notify) showToast(`Color Palette: ${INK_NAMES[inkKey]}`);
+    }
+
+    function changeFontSize(delta) {
+      appState.fontSize = Math.min(22, Math.max(13.5, appState.fontSize + delta));
+      document.documentElement.style.setProperty('--reader-size', appState.fontSize + 'px');
+      document.getElementById('font-size-label').textContent = Math.round(appState.fontSize) + 'px';
+      localStorage.setItem('fr_novel_size', String(appState.fontSize));
+    }
+
+    function toggleFocusMode() {
+      const active = document.body.classList.toggle('focus-mode');
+      const btn = document.getElementById('focus-mode-btn');
+      btn.style.backgroundColor = active ? 'var(--accent)' : 'var(--bg-page)';
+      btn.style.color = active ? 'var(--accent-contrast)' : 'var(--text-primary)';
+      showToast(active ? 'Focus Reading Mode On' : 'Sidebar Restored');
+    }
+
+    function toggleBookmark(chNum) {
+      const idx = appState.bookmarks.indexOf(chNum);
+      if (idx === -1) {
+        appState.bookmarks.push(chNum);
+        showToast(`Chapter ${chNum} Bookmarked`);
+      } else {
+        appState.bookmarks.splice(idx, 1);
+        showToast(`Chapter ${chNum} Removed from Bookmarks`);
+      }
+      localStorage.setItem('fr_novel_bookmarks', JSON.stringify(appState.bookmarks));
+      updateBookmarkBadge();
+      renderMainView();
+    }
+
+    function updateBookmarkBadge() {
+      const badge = document.getElementById('bookmark-count-badge');
+      if (badge) badge.textContent = appState.bookmarks.length;
+    }
+
+    /**
+     * ========================================================================
+     * 6. SIDEBAR POPULATION & NAVIGATION CONTROLLERS
+     * ========================================================================
+     */
+    function buildSidebarChapterMenus() {
+      const b1 = document.getElementById('nav-book1-list');
+      const b2 = document.getElementById('nav-book2-list');
+      const b3 = document.getElementById('nav-book3-list');
+
+      const makeBtn = ch => `
+        <button onclick="openChapter(${ch.num})" data-nav="ch-${ch.num}" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs leading-snug">
+          <span class="font-bold text-accent">Ch. ${ch.num}:</span> ${ch.title}
+        </button>
+      `;
+
+      b1.innerHTML = NOVEL_CHAPTERS.slice(0, 6).map(makeBtn).join('');
+      b2.innerHTML = NOVEL_CHAPTERS.slice(6, 12).map(makeBtn).join('');
+      b3.innerHTML = NOVEL_CHAPTERS.slice(12, 18).map(makeBtn).join('');
+    }
+
+    function toggleSidebarGroup(id) {
+      const el = document.getElementById(id);
+      const chev = document.getElementById('chevron-' + id);
+      const isOpen = el.classList.toggle('open');
+      if (chev) chev.textContent = isOpen ? '▼' : '▶';
+    }
+
+    function updateActiveNav(navKey) {
+      document.querySelectorAll('.nav-item-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-nav') === navKey);
+      });
+    }
+
+    function openOverview() {
+      appState.viewMode = 'overview';
+      updateActiveNav('overview');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openChapter(num) {
+      appState.viewMode = 'chapter';
+      appState.chapterNum = num;
+      updateActiveNav('ch-' + num);
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openCharacters(groupFilter = 'All') {
+      appState.viewMode = 'characters';
+      appState.charGroup = groupFilter;
+      updateActiveNav('characters');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openCodex() {
+      appState.viewMode = 'codex';
+      updateActiveNav('codex');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openBookmarks() {
+      appState.viewMode = 'bookmarks';
+      updateActiveNav('bookmarks');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /**
+     * ========================================================================
+     * 7. MAIN NOVEL READER, 50 CHARACTERS & CODEX RENDERER
+     * ========================================================================
+     */
+    function renderMainView() {
+      const container = document.getElementById('main-content');
+      const q = appState.searchQuery.trim().toLowerCase();
+
+      // Search Results Mode
+      if (q.length > 0) {
+        const matchedChapters = NOVEL_CHAPTERS.filter(ch =>
+          ch.title.toLowerCase().includes(q) ||
+          ch.tag.toLowerCase().includes(q) ||
+          ch.epigraph.toLowerCase().includes(q) ||
+          ch.paragraphs.join(' ').toLowerCase().includes(q)
+        );
+        const matchedChars = CHARACTERS_50.filter(c =>
+          c.name.toLowerCase().includes(q) ||
+          c.role.toLowerCase().includes(q) ||
+          c.affiliation.toLowerCase().includes(q) ||
+          c.bio.toLowerCase().includes(q)
+        );
+
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card p-6 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent">Novel Search</span>
+                <h2 class="display-font text-2xl font-bold text-ink mt-1">
+                  Found ${matchedChapters.length} Chapters &amp; ${matchedChars.length} Characters for "${appState.searchQuery}"
+                </h2>
+              </div>
+              <button onclick="clearSearch()" class="btn-theme px-4 py-2 rounded-xl text-xs font-bold">Clear Search</button>
+            </div>
+
+            ${matchedChapters.length ? `
+              <div class="space-y-3">
+                <h3 class="display-font text-xl font-bold text-ink">Matching Chapters</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${matchedChapters.map(ch => `
+                    <article class="surface-card rounded-2xl p-5 flex flex-col justify-between space-y-3">
+                      <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Chapter ${ch.num} • ${ch.tag}</span>
+                        <h4 class="display-font text-lg font-bold text-ink mt-1">${ch.title}</h4>
+                        <p class="text-xs text-ink-secondary mt-1 line-clamp-2">${ch.paragraphs[0]}</p>
+                      </div>
+                      <button onclick="clearSearch(); openChapter(${ch.num});" class="btn-accent px-4 py-2 rounded-xl text-xs font-bold self-start">Read Chapter ${ch.num} →</button>
+                    </article>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${matchedChars.length ? `
+              <div class="space-y-3">
+                <h3 class="display-font text-xl font-bold text-ink">Matching Characters (${matchedChars.length})</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${matchedChars.map(c => `
+                    <div class="surface-card rounded-2xl p-5 space-y-1.5">
+                      <div class="text-[11px] font-bold text-accent">#${c.id} • ${c.group} • ${c.affiliation}</div>
+                      <h4 class="display-font text-lg font-bold text-ink">${c.name}</h4>
+                      <div class="text-xs font-semibold text-secondary-accent">${c.role}</div>
+                      <p class="text-xs text-ink-secondary leading-relaxed">${c.bio}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </section>
+        `;
+        return;
+      }
+
+      // 1. COVER & SYNOPSIS OVERVIEW
+      if (appState.viewMode === 'overview') {
+        container.innerHTML = `
+          <section class="space-y-8">
+            <div class="surface-card rounded-3xl p-6 sm:p-10 space-y-6">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style="background-color: var(--accent-soft); color: var(--accent);">
+                  A Novel by Amim Ahsan (Amimul Ahsan)
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold" style="background-color: var(--secondary-soft); color: var(--secondary-accent);">
+                  45,000-Word Literary Edition • 18 Chapters • 50 Characters
+                </span>
+              </div>
+
+              <h1 class="display-font text-3xl sm:text-5xl font-bold text-ink leading-tight">
+                The Twilight Trinity of F.R. Hall
+              </h1>
+
+              <p class="text-base sm:text-lg text-ink-secondary leading-relaxed">
+                From the rain-washed neem trees of Sir A.F. Rahman Hall and the emerald lawns of Curzon Hall to the Nobel stage in Stockholm and the Presidency of Bangladesh—the sweeping literary saga of three roommates, <strong>Amim</strong>, <strong>Alich</strong>, and <strong>Farhad</strong>, whose twilight loves, campus think tank, and philosophies of the <em>Green World</em> and <em>Consciousness</em> conquered the globe.
+              </p>
+
+              <!-- Cover Art Illustration -->
+              ${getChapterIllustration(18, 'Amim, Alich & Farhad • The Twilight Trinity of Dhaka University', '45,000-Word Complete Novel Edition')}
+
+              <!-- Protagonist Trio Cards -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div class="surface-page p-5 rounded-2xl border border-theme space-y-1.5">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Protagonist I • 2 Twilight Muses</span>
+                  <h3 class="display-font text-xl font-bold text-ink">Amim Ahsan</h3>
+                  <p class="text-xs text-ink-secondary leading-relaxed">
+                    Conceives the <strong>Green World Philosophy</strong> over morning breakfast at F.R. Hall, wins the <strong>Nobel Prize</strong>, and becomes <strong>President of Bangladesh</strong>.
+                  </p>
+                </div>
+                <div class="surface-page p-5 rounded-2xl border border-theme space-y-1.5">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-secondary-accent">Protagonist II • 1 Twilight Muse</span>
+                  <h3 class="display-font text-xl font-bold text-ink">Alich</h3>
+                  <p class="text-xs text-ink-secondary leading-relaxed">
+                    Drafts his political and economic blueprint on <strong>Curzon Hall grass</strong>, masters statecraft, and rises into a global ethical <strong>business tycoon</strong>.
+                  </p>
+                </div>
+                <div class="surface-page p-5 rounded-2xl border border-theme space-y-1.5">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Protagonist III • 3 Twilight Muses</span>
+                  <h3 class="display-font text-xl font-bold text-ink">Farhad</h3>
+                  <p class="text-xs text-ink-secondary leading-relaxed">
+                    Journeys with his aesthetic muse to unlock <strong>“Dimension Is Your Consciousness”</strong> and authors the global bestseller <strong>“You Are Yours.”</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="openChapter(1)" class="btn-accent px-6 py-3 rounded-xl text-xs font-bold">
+                  Begin Reading Chapter 1 →
+                </button>
+                <button onclick="openChapter(18)" class="btn-theme px-5 py-3 rounded-xl text-xs font-bold">
+                  Jump to Chapter 18 (Final Car Tableau)
+                </button>
+                <button onclick="openCharacters()" class="btn-theme px-5 py-3 rounded-xl text-xs font-bold">
+                  Explore All 50 Characters
+                </button>
+              </div>
+            </div>
+
+            <!-- Complete 18-Chapter Table of Contents -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h2 class="display-font text-2xl font-bold text-ink">Table of Contents — All 18 Chapters (45,000 Words)</h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${NOVEL_CHAPTERS.map(ch => `
+                  <article class="surface-card rounded-2xl p-5 flex flex-col justify-between space-y-3">
+                    <div class="space-y-1.5">
+                      <div class="flex items-center justify-between text-[11px] font-bold">
+                        <span class="text-accent">Chapter ${ch.num} • ${ch.book.split('•')[0].trim()}</span>
+                        <span class="text-ink-muted">${ch.wordCount}</span>
+                      </div>
+                      <h3 class="display-font text-lg font-bold text-ink">${ch.title}</h3>
+                      <p class="text-xs text-ink-secondary italic">${ch.epigraph}</p>
+                    </div>
+                    <div class="pt-2 border-t border-theme flex items-center justify-between">
+                      <span class="text-[11px] text-ink-muted">${ch.readTime}</span>
+                      <button onclick="openChapter(${ch.num})" class="btn-accent px-3.5 py-1.5 rounded-xl text-xs font-bold">
+                        Read Chapter →
+                      </button>
+                    </div>
+                  </article>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      // 2. CHAPTER READER VIEW
+      else if (appState.viewMode === 'chapter') {
+        const idx = NOVEL_CHAPTERS.findIndex(c => c.num === appState.chapterNum);
+        const ch = NOVEL_CHAPTERS[idx >= 0 ? idx : 0];
+        const prevCh = idx > 0 ? NOVEL_CHAPTERS[idx - 1] : null;
+        const nextCh = idx < NOVEL_CHAPTERS.length - 1 ? NOVEL_CHAPTERS[idx + 1] : null;
+        const isBookmarked = appState.bookmarks.includes(ch.num);
+
+        container.innerHTML = `
+          <article class="surface-card rounded-3xl p-6 sm:p-10 space-y-7">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-theme pb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent">${ch.book} • Chapter ${ch.num} of 18</span>
+                <div class="text-xs text-ink-muted mt-0.5">${ch.tag} • ${ch.wordCount} • ${ch.readTime}</div>
+              </div>
+              <button onclick="toggleBookmark(${ch.num})" class="${isBookmarked ? 'btn-accent' : 'btn-theme'} px-3.5 py-1.5 rounded-xl text-xs font-bold">
+                ${isBookmarked ? '★ Bookmarked' : '☆ Bookmark Chapter'}
+              </button>
+            </div>
+
+            <div class="space-y-3">
+              <h1 class="display-font text-3xl sm:text-4xl font-bold text-ink leading-tight">
+                Chapter ${ch.num}: ${ch.title}
+              </h1>
+            </div>
+
+            <div>${getChapterIllustration(ch.num, ch.title, ch.tag)}</div>
+
+            <blockquote class="surface-quote p-5 rounded-r-2xl">
+              <p class="reader-font italic font-bold text-ink">${ch.epigraph}</p>
+            </blockquote>
+
+            <div class="reader-font text-ink space-y-5">
+              ${ch.paragraphs.map((p, pIdx) => `<p class="${pIdx === 0 ? 'novel-dropcap' : ''}">${p}</p>`).join('')}
+            </div>
+
+            <!-- Chapter Navigation Footer -->
+            <div class="pt-6 border-t border-theme flex flex-wrap items-center justify-between gap-3">
+              ${
+                prevCh
+                  ? `<button onclick="openChapter(${prevCh.num})" class="btn-theme px-4 py-2.5 rounded-xl text-xs font-bold">← Ch. ${prevCh.num}: ${prevCh.title}</button>`
+                  : `<button onclick="openOverview()" class="btn-theme px-4 py-2.5 rounded-xl text-xs font-bold">← Back to Novel Cover</button>`
+              }
+              ${
+                nextCh
+                  ? `<button onclick="openChapter(${nextCh.num})" class="btn-accent px-4 py-2.5 rounded-xl text-xs font-bold">Ch. ${nextCh.num}: ${nextCh.title} →</button>`
+                  : `<button onclick="openCharacters()" class="btn-accent px-4 py-2.5 rounded-xl text-xs font-bold">Explore All 50 Characters →</button>`
+              }
+            </div>
+          </article>
+        `;
+      }
+
+      // 3. COMPLETE 50-CHARACTER DIRECTORY
+      else if (appState.viewMode === 'characters') {
+        const groups = ['All', 'Protagonists', 'Twilight Muses', 'DU Faculty', 'F.R. Hall & TSC', 'Global & Nobel', 'Statecraft & Legacy'];
+        const filtered = appState.charGroup === 'All'
+          ? CHARACTERS_50
+          : CHARACTERS_50.filter(c => c.group === appState.charGroup);
+
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card rounded-3xl p-6 sm:p-8 space-y-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent">Dramatis Personae • Complete Cast</span>
+              <h1 class="display-font text-3xl font-bold text-ink">All 50 Characters of The Twilight Trinity</h1>
+              <p class="text-sm text-ink-secondary">
+                Filter across the three F.R. Hall protagonists, their six twilight muses, Dhaka University professors, campus thinkers, Nobel delegates, and statecraft torchbearers.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                ${groups.map(g => `
+                  <button onclick="openCharacters('${g}')" class="${appState.charGroup === g ? 'btn-accent' : 'btn-theme'} px-3 py-1.5 rounded-xl text-xs font-bold">
+                    ${g} ${g === 'All' ? '(50)' : ''}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${filtered.map(c => `
+                <article class="surface-card rounded-2xl p-5 space-y-2">
+                  <div class="flex items-center justify-between text-[11px] font-bold">
+                    <span class="text-accent">Character #${c.id} • ${c.group}</span>
+                    <span class="text-ink-muted">${c.affiliation}</span>
+                  </div>
+                  <h3 class="display-font text-xl font-bold text-ink">${c.name}</h3>
+                  <div class="text-xs font-bold text-secondary-accent">${c.role}</div>
+                  <p class="text-xs text-ink-secondary leading-relaxed pt-1">${c.bio}</p>
+                </article>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 4. PHILOSOPHICAL & LITERARY CODEX
+      else if (appState.viewMode === 'codex') {
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card rounded-3xl p-6 sm:p-8 space-y-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-secondary-accent">Foundational Treatises &amp; Literature</span>
+              <h1 class="display-font text-3xl font-bold text-ink">The F.R. Hall Philosophical &amp; Literary Codex</h1>
+              <p class="text-sm text-ink-secondary">
+                Core works authored by Amim Ahsan, Alich, and Farhad within the universe of the novel.
+              </p>
+            </div>
+            <div class="space-y-5">
+              ${CODEX_WORKS.map(w => `
+                <article class="surface-card rounded-2xl p-6 sm:p-8 space-y-3">
+                  <div class="text-xs font-bold uppercase tracking-wider text-accent">${w.author}</div>
+                  <h2 class="display-font text-2xl font-bold text-ink">${w.title}</h2>
+                  <div class="text-xs font-semibold text-secondary-accent">Origin: ${w.origin}</div>
+                  <p class="reader-font text-ink-secondary pt-1">${w.summary}</p>
+                </article>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 5. BOOKMARKED CHAPTERS
+      else if (appState.viewMode === 'bookmarks') {
+        const saved = NOVEL_CHAPTERS.filter(ch => appState.bookmarks.includes(ch.num));
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card p-6 sm:p-8 rounded-3xl space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent">Reader Vault</span>
+              <h1 class="display-font text-3xl font-bold text-ink">Bookmarked Chapters (${saved.length})</h1>
+              <p class="text-sm text-ink-secondary">Your saved chapters from The Twilight Trinity of F.R. Hall.</p>
+            </div>
+            ${
+              saved.length
+                ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    ${saved.map(ch => `
+                      <article class="surface-card rounded-2xl p-5 flex flex-col justify-between space-y-3">
+                        <div>
+                          <span class="text-xs font-bold text-accent">Chapter ${ch.num} • ${ch.wordCount}</span>
+                          <h3 class="display-font text-xl font-bold text-ink mt-1">${ch.title}</h3>
+                          <p class="text-xs text-ink-secondary italic mt-1">${ch.epigraph}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-theme">
+                          <button onclick="openChapter(${ch.num})" class="btn-accent px-4 py-2 rounded-xl text-xs font-bold">Read →</button>
+                          <button onclick="toggleBookmark(${ch.num})" class="btn-theme px-3 py-2 rounded-xl text-xs font-bold">Remove</button>
+                        </div>
+                      </article>
+                    `).join('')}
+                  </div>`
+                : `<div class="surface-card p-8 rounded-2xl text-sm text-ink-muted">No chapters bookmarked yet. Open any chapter and click <strong>“☆ Bookmark Chapter”</strong> to save it here.</div>`
+            }
+          </section>
+        `;
+      }
+    }
+
+    /**
+     * ========================================================================
+     * 8. AMBIENT TWILIGHT FIREFLIES, SCROLL PROGRESS & MOBILE DRAWER
+     * ========================================================================
+     */
+    function initTwilightParticles() {
+      const container = document.getElementById('twilight-particles');
+      if (!container) return;
+      for (let i = 0; i < 14; i++) {
+        const orb = document.createElement('div');
+        orb.className = 'twilight-orb';
+        const size = 28 + Math.random() * 64;
+        orb.style.width = `${size}px`;
+        orb.style.height = `${size}px`;
+        orb.style.left = `${Math.random() * 95}vw`;
+        orb.style.top = `${Math.random() * 90}vh`;
+        orb.style.animationDuration = `${6 + Math.random() * 7}s`;
+        orb.style.animationDelay = `${Math.random() * 4}s`;
+        container.appendChild(orb);
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = pct + '%';
+    });
+
+    const searchInput = document.getElementById('global-search');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+
+    searchInput.addEventListener('input', e => {
+      appState.searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle('hidden', appState.searchQuery.length === 0);
+      renderMainView();
+    });
+
+    function clearSearch() {
+      appState.searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderMainView();
+    }
+    clearSearchBtn.addEventListener('click', clearSearch);
+
+    const sidebarEl = document.getElementById('sidebar');
+    const backdropEl = document.getElementById('sidebar-backdrop');
+
+    function openMobileDrawer() {
+      sidebarEl.classList.remove('-translate-x-full');
+      backdropEl.classList.remove('hidden');
+    }
+
+    function closeMobileDrawer() {
+      sidebarEl.classList.add('-translate-x-full');
+      backdropEl.classList.add('hidden');
+    }
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', openMobileDrawer);
+    document.getElementById('close-sidebar-btn').addEventListener('click', closeMobileDrawer);
+    backdropEl.addEventListener('click', closeMobileDrawer);
+
+    window.onload = function () {
+      buildSidebarChapterMenus();
+      setTheme(appState.theme, false);
+      setInkColor(appState.ink, false);
+      document.documentElement.style.setProperty('--reader-size', appState.fontSize + 'px');
+      document.getElementById('font-size-label').textContent = Math.round(appState.fontSize) + 'px';
+      updateBookmarkBadge();
+      initTwilightParticles();
+      renderMainView();
+    };
+  </script>
+</body>
+</html>
