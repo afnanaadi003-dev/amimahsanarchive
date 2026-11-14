@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="haven">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madonna Archive — Dreamy, Deep &amp; Green World Chronicle | By Amim Ahsan</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 5 Curated Reading Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       5 EYE-SOOTHING, HIGH-CONTRAST READING COLOR THEMES (SOLID SURFACES)
+       ========================================================================== */
+    :root,
+    [data-theme="papyrus"] {
+      --bg-page: #F6F1E3;
+      --bg-surface: #FCF9F2;
+      --bg-sidebar: #EDE5D2;
+      --bg-hover: #E3D8C0;
+      --bg-active: #D8C9AB;
+      --bg-quote: #EFE7D3;
+      --text-primary: #1C1915;
+      --text-secondary: #3A3229;
+      --text-muted: #594D3F;
+      --accent: #7A2048;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(122, 32, 72, 0.12);
+      --green-accent: #1D5B47;
+      --green-soft: rgba(29, 91, 71, 0.12);
+      --gold-accent: #8A5422;
+      --gold-soft: rgba(138, 84, 34, 0.13);
+      --border-color: #D4C6AA;
+      --shadow-card: 0 4px 18px rgba(28, 25, 21, 0.06);
+    }
+
+    [data-theme="eyegreen"] {
+      --bg-page: #E7EFE6;
+      --bg-surface: #F3F8F2;
+      --bg-sidebar: #DCE7DB;
+      --bg-hover: #CEE0CD;
+      --bg-active: #BFD6BE;
+      --bg-quote: #DCE7DB;
+      --text-primary: #132318;
+      --text-secondary: #223B2A;
+      --text-muted: #3A5643;
+      --accent: #1B4D2F;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(27, 77, 47, 0.14);
+      --green-accent: #1B4D2F;
+      --green-soft: rgba(27, 77, 47, 0.14);
+      --gold-accent: #7A2048;
+      --gold-soft: rgba(122, 32, 72, 0.12);
+      --border-color: #B7CEB5;
+      --shadow-card: 0 4px 18px rgba(19, 35, 24, 0.06);
+    }
+
+    [data-theme="sepia"] {
+      --bg-page: #F3EAD8;
+      --bg-surface: #FAF4E8;
+      --bg-sidebar: #E9DEC8;
+      --bg-hover: #DED0B5;
+      --bg-active: #D2C09E;
+      --bg-quote: #E9DEC8;
+      --text-primary: #2A2017;
+      --text-secondary: #453628;
+      --text-muted: #624E3B;
+      --accent: #7A2E46;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(122, 46, 70, 0.13);
+      --green-accent: #2B623D;
+      --green-soft: rgba(43, 98, 61, 0.13);
+      --gold-accent: #7A4920;
+      --gold-soft: rgba(122, 73, 32, 0.13);
+      --border-color: #D0BE9F;
+      --shadow-card: 0 4px 18px rgba(42, 32, 23, 0.06);
+    }
+
+    [data-theme="daylight"] {
+      --bg-page: #F7F7F5;
+      --bg-surface: #FFFFFF;
+      --bg-sidebar: #EFEFEF;
+      --bg-hover: #E3E6EA;
+      --bg-active: #D6DBE2;
+      --bg-quote: #F0F2F5;
+      --text-primary: #111315;
+      --text-secondary: #2B3036;
+      --text-muted: #4A515B;
+      --accent: #881337;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(136, 19, 55, 0.11);
+      --green-accent: #166534;
+      --green-soft: rgba(22, 101, 52, 0.11);
+      --gold-accent: #854D0E;
+      --gold-soft: rgba(133, 77, 14, 0.11);
+      --border-color: #D4D8DF;
+      --shadow-card: 0 4px 18px rgba(17, 19, 21, 0.05);
+    }
+
+    [data-theme="softnight"] {
+      --bg-page: #1A1D1E;
+      --bg-surface: #232729;
+      --bg-sidebar: #141718;
+      --bg-hover: #2B3033;
+      --bg-active: #353B3F;
+      --bg-quote: #292E31;
+      --text-primary: #EDEAE2;
+      --text-secondary: #D4CFC5;
+      --text-muted: #AEA99E;
+      --accent: #F472B6;
+      --accent-contrast: #141718;
+      --accent-soft: rgba(244, 114, 182, 0.16);
+      --green-accent: #52B788;
+      --green-soft: rgba(82, 183, 136, 0.16);
+      --gold-accent: #E2AB53;
+      --gold-soft: rgba(226, 171, 83, 0.16);
+      --border-color: #3A4044;
+      --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Haven Sunlight — tiny sunlight from haven, paper made of honey and joy */
+    [data-theme="haven"] {
+      --bg-page: #FBF3DE;
+      --bg-surface: #FFFBF0;
+      --bg-sidebar: #F5E8CC;
+      --bg-hover: #EFDFBD;
+      --bg-active: #E7D3A9;
+      --bg-quote: #F7EBCF;
+      --text-primary: #2B2111;
+      --text-secondary: #46361F;
+      --text-muted: #6B5636;
+      --accent: #8A5A2B;
+      --accent-contrast: #FFFFFF;
+      --accent-soft: rgba(138, 90, 43, 0.13);
+      --green-accent: #3E7C5A;
+      --green-soft: rgba(62, 124, 90, 0.13);
+      --gold-accent: #B07A2E;
+      --gold-soft: rgba(176, 122, 46, 0.14);
+      --border-color: #E2CFA6;
+      --shadow-card: 0 6px 22px rgba(90, 64, 28, 0.09);
+    }
+
+    [data-theme="haven"] body {
+      background-image:
+        radial-gradient(58rem 34rem at 12% -8%, rgba(255, 214, 130, 0.50), transparent 62%),
+        radial-gradient(46rem 30rem at 88% 4%, rgba(255, 236, 190, 0.65), transparent 60%),
+        radial-gradient(40rem 26rem at 50% 108%, rgba(214, 236, 196, 0.35), transparent 65%);
+      background-attachment: fixed;
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & FOCUS MODE
+       ========================================================================== */
+    :root {
+      --font-reader: 'Merriweather', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --reader-size: 16px;
+      --reader-leading: 1.82;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .reader-font {
+      font-family: var(--font-reader);
+      font-size: var(--reader-size);
+      line-height: var(--reader-leading);
+    }
+
+    .heading-font { font-family: var(--font-reader); }
+
+    .surface-page { background-color: var(--bg-page); }
+    .surface-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+    }
+    .surface-sidebar {
+      background-color: var(--bg-sidebar);
+      border-color: var(--border-color);
+    }
+    .surface-topbar {
+      background-color: var(--bg-surface);
+      border-color: var(--border-color);
+    }
+    .surface-quote {
+      background-color: var(--bg-quote);
+      border-left: 4px solid var(--accent);
+    }
+    .text-ink { color: var(--text-primary); }
+    .text-ink-secondary { color: var(--text-secondary); }
+    .text-ink-muted { color: var(--text-muted); }
+    .text-accent { color: var(--accent); }
+    .text-green-theme { color: var(--green-accent); }
+    .text-gold { color: var(--gold-accent); }
+    .border-theme { border-color: var(--border-color); }
+
+    .btn-theme {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      transition: all 0.18s ease;
+    }
+    .btn-theme:hover {
+      background-color: var(--bg-hover);
+      border-color: var(--accent);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      border: 1px solid var(--accent);
+    }
+
+    /* Accordion Submenu Animation */
+    .submenu-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+    .submenu-wrapper.open {
+      grid-template-rows: 1fr;
+    }
+    .submenu-inner { overflow: hidden; }
+
+    .nav-item-btn {
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+    }
+    .nav-item-btn:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    .nav-item-btn.active {
+      background-color: var(--bg-active);
+      color: var(--text-primary);
+      border-left-color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Focus Mode */
+    body.focus-mode #sidebar { display: none !important; }
+    body.focus-mode #main-content { max-width: 54rem; }
+
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: var(--bg-page); }
+    ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* ==========================================================================
+       HAVEN SUNLIGHT — flying walnuts, floating sunlight, juicy water-food
+       ========================================================================== */
+    #haven-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 5;
+      display: none;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    [data-theme="haven"] #haven-layer { display: block; }
+
+    .haven-mote {
+      position: absolute;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(255, 216, 128, 0.95), rgba(255, 216, 128, 0) 70%);
+      animation: haven-twinkle var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
+    }
+    @keyframes haven-twinkle {
+      0%, 100% { opacity: 0.22; transform: scale(0.8); }
+      50% { opacity: 0.9; transform: scale(1.15); }
+    }
+
+    .haven-walnut {
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      line-height: 0;
+      cursor: pointer;
+      pointer-events: auto;
+      animation: haven-drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+      filter: drop-shadow(0 6px 10px rgba(122, 78, 30, 0.28));
+      transition: filter 0.2s ease;
+    }
+    .haven-walnut:hover { filter: drop-shadow(0 8px 16px rgba(196, 132, 44, 0.5)); }
+    @keyframes haven-drift {
+      0% { transform: translate3d(0, 0, 0) rotate(-7deg); }
+      50% { transform: translate3d(var(--dx, 22px), var(--dy, -26px), 0) rotate(8deg); }
+      100% { transform: translate3d(0, 0, 0) rotate(-7deg); }
+    }
+
+    .haven-food {
+      position: fixed;
+      z-index: 6;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: haven-food-life 1.7s cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
+    }
+    .haven-food-emoji {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      filter: drop-shadow(0 8px 12px rgba(120, 80, 20, 0.3));
+    }
+    .haven-food-word {
+      position: absolute;
+      left: 50%;
+      top: -1.5rem;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      padding: 0.28rem 0.55rem;
+      border-radius: 9999px;
+      background: rgba(255, 251, 240, 0.88);
+      color: var(--gold-accent);
+      font: 700 10.5px/1 var(--font-ui);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    @keyframes haven-food-life {
+      0% { opacity: 0; transform: translate(-50%, -35%) scale(0.2) rotate(-16deg); }
+      16% { opacity: 1; transform: translate(-50%, -75%) scale(1.18) rotate(6deg); }
+      45% { opacity: 1; transform: translate(-50%, -80%) scale(1) rotate(-4deg); }
+      100% { opacity: 0; transform: translate(-50%, 28%) scale(0.55) rotate(14deg); }
+    }
+
+    .haven-ripple {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border-radius: 9999px;
+      border: 2px solid rgba(196, 132, 44, 0.65);
+      animation: haven-ripple 0.8s ease-out forwards;
+    }
+    @keyframes haven-ripple {
+      0% { transform: scale(0.3); opacity: 0.9; }
+      100% { transform: scale(3.4); opacity: 0; }
+    }
+
+    .haven-drop {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #7EC8E3;
+      animation: haven-drop 0.75s ease-out forwards;
+    }
+    @keyframes haven-drop {
+      0% { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, -26px))) scale(0.2); }
+    }
+
+    /* Juicy trail pressing downward, the way curry sinks under water */
+    .haven-trail {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 14px;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(255, 214, 120, 0.9), rgba(126, 200, 227, 0.65));
+      animation: haven-trail 0.9s ease-in forwards;
+    }
+    @keyframes haven-trail {
+      0% { opacity: 0; transform: translate(-50%, 8px) scaleY(0.5); }
+      25% { opacity: 0.9; }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--tx, 0px)), 44px) scaleY(1.4); }
+    }
+
+    .haven-ripple.second { animation-delay: 0.18s; }
+    .haven-ripple.third { animation-delay: 0.34s; }
+
+    .haven-blessing {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      display: none;
+      pointer-events: none;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255, 249, 231, 0.84);
+      border: 1px solid rgba(196, 151, 72, 0.45);
+      box-shadow: 0 10px 30px rgba(150, 105, 35, 0.16);
+      backdrop-filter: blur(8px);
+      color: #6B4A16;
+      font: 700 10.5px/1 var(--font-ui);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    [data-theme="haven"] .haven-blessing { display: inline-flex; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .haven-walnut, .haven-mote { animation: none; }
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- Haven Sunlight Layer: tiny sunlight, flying walnuts, water-food that melts away -->
+  <div id="haven-layer" aria-hidden="true"></div>
+  <div class="haven-blessing">
+    <span aria-hidden="true">☀</span>
+    <span>tiny sunlight from haven &middot; nothing but happiness, forever</span>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-banner" class="fixed top-20 right-5 z-50 transform -translate-y-6 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="surface-card px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-bold text-ink shadow-lg">
+      <span class="w-2.5 h-2.5 rounded-full" style="background-color: var(--accent);"></span>
+      <span id="toast-message">Updated</span>
+    </div>
+  </div>
+
+  <!-- Film Detail Modal -->
+  <div id="film-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/65">
+    <div class="surface-card max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
+      <div class="px-6 py-4 border-b border-theme flex items-center justify-between">
+        <span id="modal-film-year" class="text-xs font-bold uppercase tracking-wider text-accent">Film Dossier</span>
+        <button onclick="closeFilmModal()" class="btn-theme px-3 py-1 rounded-lg text-xs font-bold">✕ Close</button>
+      </div>
+      <div id="film-modal-body" class="p-6 overflow-y-auto space-y-5">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Top Header -->
+  <header class="lg:hidden sticky top-0 z-30 surface-topbar border-b px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs" style="background-color: var(--accent); color: var(--accent-contrast);">
+        MA
+      </div>
+      <div>
+        <div class="heading-font text-base font-bold text-ink leading-tight">Madonna Archive</div>
+        <div class="text-[11px] text-ink-muted">Dreamy, Deep &amp; Green World Chronicle</div>
+      </div>
+    </div>
+    <button id="mobile-menu-btn" class="btn-theme px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <span>Archive Menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Backdrop -->
+  <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+  <div class="flex min-h-screen">
+
+    <!-- ======================================================================
+         LEFT SIDEBAR: MADONNA ARCHIVE & COLLAPSIBLE DROPDOWN SUBMENUS
+         ====================================================================== -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 h-screen w-80 max-w-[88vw] surface-sidebar border-r flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+      
+      <!-- Brand Header -->
+      <div class="p-4 border-b border-theme flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="openOverview()">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xs shrink-0" style="background-color: var(--accent); color: var(--accent-contrast);">
+            MA
+          </div>
+          <div>
+            <h1 class="heading-font text-lg font-bold text-ink leading-tight">Madonna Archive</h1>
+            <p class="text-[11px] font-semibold text-ink-muted leading-tight">Dreamy, Deep &amp; Green World Chronicle</p>
+          </div>
+        </div>
+        <button id="close-sidebar-btn" class="lg:hidden btn-theme p-2 rounded-lg text-xs font-bold">✕</button>
+      </div>
+
+      <!-- Author Attribution Pill -->
+      <div class="px-4 py-2.5 border-b border-theme text-[11px] text-ink-secondary flex items-center justify-between">
+        <span>By <strong>Amim Ahsan</strong> (Amimul Ahsan)</span>
+        <span class="px-2 py-0.5 rounded-full font-bold" style="background-color: var(--accent-soft); color: var(--accent);">Queen of Pop</span>
+      </div>
+
+      <!-- Search Filter -->
+      <div class="p-3.5 border-b border-theme">
+        <div class="relative">
+          <svg class="w-4 h-4 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path stroke-linecap="round" d="M21 21l-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            id="global-search"
+            placeholder="Search chapters, Evita, Mishal, Nobel..."
+            class="w-full pl-9 pr-7 py-2 rounded-xl text-xs font-semibold surface-card text-ink focus:outline-none"
+          />
+          <button id="clear-search-btn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-ink-muted hover:text-ink">✕</button>
+        </div>
+      </div>
+
+      <!-- Collapsible Navigation Submenus -->
+      <nav id="sidebar-nav" class="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
+
+        <!-- Archive Cover / Prologue -->
+        <button onclick="openOverview()" data-nav="overview" class="nav-item-btn active w-full text-left px-3 py-2.5 rounded-xl flex items-center justify-between transition">
+          <span class="font-bold">Archive Cover &amp; Tribute</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full font-bold" style="background-color: var(--green-soft); color: var(--green-accent);">Home</span>
+        </button>
+
+        <!-- Dropdown I: Queen of Pop & Beauty Era -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-sec1')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--accent-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">I. Queen of Pop &amp; Beauty Era</span>
+            <span id="chevron-grp-sec1" class="text-xs font-bold text-accent">▼</span>
+          </button>
+          <div id="grp-sec1" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openChapter('ch-80s-90s')" data-nav="ch-80s-90s" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Dreamy &amp; Deep Visual Aesthetics (80s &amp; 90s Madness)
+              </button>
+              <button onclick="openChapter('ch-beauty-shades')" data-nav="ch-beauty-shades" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Shades of Beauty: Blonde Ambition to Like a Prayer (1989–2026)
+              </button>
+              <button onclick="openChapter('ch-sovereign-woman')" data-nav="ch-sovereign-woman" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Empowered Femininity, Sensuality &amp; Proud Independence
+              </button>
+              <button onclick="openChapter('ch-birth-tree')" data-nav="ch-birth-tree" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Birth Mystery, Bay City Roots &amp; Global Cultural Tree (100+)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown II: Complete Filmography & Acting Legacy -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-sec2')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--gold-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">II. Complete Filmography &amp; Legacy</span>
+            <span id="chevron-grp-sec2" class="text-xs font-bold text-gold">▼</span>
+          </button>
+          <div id="grp-sec2" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openFilmVault()" data-nav="film-vault" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between">
+                <span>Interactive Film Vault (All 26 Films)</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold" style="background-color: var(--accent-soft); color: var(--accent);">Posters</span>
+              </button>
+              <button onclick="openChapter('ch-acting-legacy')" data-nav="ch-acting-legacy" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Prime Acting Career &amp; Directing Legacy (Evita, W.E.)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown III: Philosophy, Literature & Nobel Case -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-sec3')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--green-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">III. Philosophy, Literature &amp; Nobel</span>
+            <span id="chevron-grp-sec3" class="text-xs font-bold text-green-theme">▼</span>
+          </button>
+          <div id="grp-sec3" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openChapter('ch-happiness-philosophy')" data-nav="ch-happiness-philosophy" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Container of Happiness &amp; Peace-Giving Philosophy
+              </button>
+              <button onclick="openChapter('ch-literature-books')" data-nav="ch-literature-books" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Madonna's Literature, Children's Books &amp; Noble Thoughts
+              </button>
+              <button onclick="openChapter('ch-nobel-case')" data-nav="ch-nobel-case" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                The Case for the Nobel Prize &amp; Global Teaching Legacy
+              </button>
+              <button onclick="openChapter('ch-philanthropy')" data-nav="ch-philanthropy" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Raising Malawi &amp; Global Philanthropy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown IV: Fortune, Assets & Verified Valuation -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-sec4')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--gold-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">IV. Fortune, Assets &amp; Valuation</span>
+            <span id="chevron-grp-sec4" class="text-xs font-bold text-gold">▼</span>
+          </button>
+          <div id="grp-sec4" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openChapter('ch-fortune-valuation')" data-nav="ch-fortune-valuation" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Verified $850M–$1B+ Forbes Valuation vs. $10B Cultural Impact
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown V: Parallel Dream World, Amim Ahsan & Mishal -->
+        <div class="rounded-xl overflow-hidden">
+          <button onclick="toggleSidebarGroup('grp-sec5')" class="w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition" style="background-color: var(--green-soft);">
+            <span class="font-bold text-ink text-xs uppercase tracking-wider">V. Parallel Dream World &amp; Mishal</span>
+            <span id="chevron-grp-sec5" class="text-xs font-bold text-green-theme">▼</span>
+          </button>
+          <div id="grp-sec5" class="submenu-wrapper open">
+            <div class="submenu-inner pl-2 pr-1 py-1 space-y-1">
+              <button onclick="openChapter('ch-parallel-universe')" data-nav="ch-parallel-universe" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Parallel Universe Chronicle: Madonna &amp; Amim Ahsan
+              </button>
+              <button onclick="openChapter('ch-date-mishal')" data-nav="ch-date-mishal" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                The Date, Sacred Bond &amp; Future Green World with Mishal
+              </button>
+              <button onclick="openChapter('ch-legacy-freedom')" data-nav="ch-legacy-freedom" class="nav-item-btn w-full text-left px-3 py-2 rounded-lg text-xs">
+                Legacy of Freedom: How Art &amp; Green Philosophy Free the World
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved Vault / Bookmarks -->
+        <div class="pt-1">
+          <button onclick="openBookmarks()" data-nav="bookmarks" class="nav-item-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center justify-between">
+            <span>Saved Vault &amp; Bookmarks</span>
+            <span id="bookmark-count-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold" style="background-color: var(--accent-soft); color: var(--accent);">0</span>
+          </button>
+        </div>
+
+      </nav>
+
+      <!-- Editorial & Literary Disclaimer Note -->
+      <div class="p-3.5 border-t border-theme">
+        <div class="surface-card p-3 rounded-2xl text-[11px] text-ink-muted leading-relaxed">
+          <strong class="text-ink">Archive Synthesis:</strong> Pairs verified cultural history &amp; filmography with the speculative Green World philosophy of <strong>Amim Ahsan</strong>.
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         RIGHT SIDE: TOP READING CONTROLS + EDITORIAL READER
+         ====================================================================== -->
+    <main class="flex-1 min-w-0 flex flex-col">
+
+      <!-- Sticky High-Contrast Reading Toolbar -->
+      <div class="sticky top-0 z-20 surface-topbar border-b px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          
+          <!-- 5 Eye-Soothing Themes -->
+          <div class="flex items-center gap-1.5 flex-wrap" role="group" aria-label="Color Themes">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted mr-1 hidden sm:inline">Theme:</span>
+            <button onclick="setTheme('papyrus')" data-theme-btn="papyrus" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#F6F1E3;"></span>
+              <span>Papyrus</span>
+            </button>
+            <button onclick="setTheme('eyegreen')" data-theme-btn="eyegreen" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#E7EFE6;"></span>
+              <span>Eye Green</span>
+            </button>
+            <button onclick="setTheme('sepia')" data-theme-btn="sepia" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#F3EAD8;"></span>
+              <span>Sepia</span>
+            </button>
+            <button onclick="setTheme('daylight')" data-theme-btn="daylight" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/30" style="background:#FFFFFF;"></span>
+              <span>Daylight</span>
+            </button>
+            <button onclick="setTheme('softnight')" data-theme-btn="softnight" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-white/40" style="background:#1A1D1E;"></span>
+              <span>Night</span>
+            </button>
+            <button onclick="setTheme('haven')" data-theme-btn="haven" class="theme-pill px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border">
+              <span class="w-3 h-3 rounded-full border border-black/20" style="background: linear-gradient(135deg,#FFE1A0 0%,#D9A468 55%,#8B5A2B 100%);"></span>
+              <span>Haven</span>
+            </button>
+          </div>
+
+          <!-- 5 Fonts + Font Sizing + Focus Mode -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <select id="font-selector" onchange="setFont(this.value)" aria-label="Font Family" class="btn-theme px-2.5 py-1.5 rounded-lg text-xs font-bold cursor-pointer">
+              <option value="merriweather">1. Merriweather (Default)</option>
+              <option value="lora">2. Lora Serif</option>
+              <option value="baskerville">3. Libre Baskerville</option>
+              <option value="sourceserif">4. Source Serif 4</option>
+              <option value="jakarta">5. Plus Jakarta Sans</option>
+            </select>
+
+            <div class="flex items-center rounded-lg overflow-hidden border border-theme">
+              <button onclick="changeFontSize(-1)" class="btn-theme border-0 px-2.5 py-1.5 text-xs font-bold">A-</button>
+              <span id="font-size-label" class="px-2 py-1.5 text-[11px] font-bold text-ink-muted surface-card border-0 border-x border-theme">16px</span>
+              <button onclick="changeFontSize(1)" class="btn-theme border-0 px-2.5 py-1.5 text-xs font-bold">A+</button>
+            </div>
+
+            <button onclick="toggleFocusMode()" id="focus-mode-btn" class="btn-theme px-2.5 py-1.5 rounded-lg text-xs font-bold">
+              Focus Mode
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main Dynamic Literary & Film Reader -->
+      <div id="main-content" class="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 space-y-8">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-auto border-t border-theme surface-sidebar px-6 py-6 text-xs text-ink-muted">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <strong class="text-ink">Madonna Archive</strong> — <em>Dreamy, Deep &amp; Green World Chronicle</em> by <strong class="text-accent">Amim Ahsan (Amimul Ahsan)</strong>.
+          </div>
+          <div class="font-semibold text-green-theme">
+            Queen of Pop • Cinema Retrospective • Green World Philosophy
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    /**
+     * ========================================================================
+     * 1. COMPLETE 26-FILM RETROSPECTIVE & DOCUMENTARY VAULT WITH SVG POSTERS
+     * ========================================================================
+     */
+    const FILMS_DATABASE = [
+      {
+        id: 'film-1',
+        year: 1979,
+        title: 'A Certain Sacrifice',
+        role: 'Bruna (Lead)',
+        director: 'Stephen Jon Lewicki',
+        category: 'Acting',
+        palette: ['#3B1D2A', '#9D174D', '#FBCFE8'],
+        motif: 'camera',
+        synopsis: 'Filmed in New York City before Madonna’s rise to global stardom, capturing raw underground Manhattan energy and early dramatic fearlessness.'
+      },
+      {
+        id: 'film-2',
+        year: 1985,
+        title: 'Vision Quest',
+        role: 'Club Singer ("Crazy for You")',
+        director: 'Harold Becker',
+        category: 'Music & Cameo',
+        palette: ['#1E293B', '#0284C7', '#BAE6FD'],
+        motif: 'vinyl',
+        synopsis: 'Features Madonna performing “Crazy for You” and “Gambler,” marking her transition from dance-floor phenomenon to romantic cinema voice.'
+      },
+      {
+        id: 'film-3',
+        year: 1985,
+        title: 'Desperately Seeking Susan',
+        role: 'Susan Thomas (Co-Lead)',
+        director: 'Susan Seidelman',
+        category: 'Acting',
+        palette: ['#4C1D95', '#DB2777', '#FDE047'],
+        motif: 'sunglasses',
+        synopsis: 'Iconic bohemian-chic breakthrough in East Village New York. Madonna’s magnetic screen presence and lace-and-leather style ignited worldwide youth fashion.'
+      },
+      {
+        id: 'film-4',
+        year: 1986,
+        title: 'Shanghai Surprise',
+        role: 'Gloria Tatlock (Lead)',
+        director: 'Jim Goddard',
+        category: 'Acting',
+        palette: ['#78350F', '#D97706', '#FEF3C7'],
+        motif: 'lantern',
+        synopsis: 'Set in 1937 Shanghai, starring Madonna as a determined missionary nurse navigating adventure and intrigue in pre-war East Asia.'
+      },
+      {
+        id: 'film-5',
+        year: 1987,
+        title: "Who's That Girl",
+        role: 'Nikki Finn (Lead)',
+        director: 'James Foley',
+        category: 'Acting',
+        palette: ['#831843', '#E11D48', '#FFE4E6'],
+        motif: 'star',
+        synopsis: 'A screwball comedy homage showcasing Madonna’s comedic timing, platinum curls, and chart-topping title soundtrack.'
+      },
+      {
+        id: 'film-6',
+        year: 1989,
+        title: 'Bloodhounds of Broadway',
+        role: 'Hortense Hathaway',
+        director: 'Howard Brookner',
+        category: 'Acting',
+        palette: ['#312E81', '#4F46E5', '#E0E7FF'],
+        motif: 'spotlight',
+        synopsis: 'Based on Damon Runyon’s New York tales set on New Year’s Eve 1928, featuring Madonna in a glittering Jazz Age ensemble.'
+      },
+      {
+        id: 'film-7',
+        year: 1990,
+        title: 'Dick Tracy',
+        role: 'Breathless Mahoney',
+        director: 'Warren Beatty',
+        category: 'Acting',
+        palette: ['#7F1D1D', '#EAB308', '#FEF08A'],
+        motif: 'diamond',
+        synopsis: 'Stylized comic-strip noir in primary colors; Madonna dazzled as nightclub chanteuse Breathless Mahoney and performed Stephen Sondheim’s “Sooner or Later.”'
+      },
+      {
+        id: 'film-8',
+        year: 1991,
+        title: 'Madonna: Truth or Dare',
+        role: 'Herself / Executive Producer',
+        director: 'Alek Keshishian',
+        category: 'Documentary',
+        palette: ['#0F172A', '#475569', '#F8FAFC'],
+        motif: 'monochrome',
+        synopsis: 'The landmark black-and-white and color documentary chronicling the Blonde Ambition World Tour—redefining celebrity intimacy and documentary filmmaking forever.'
+      },
+      {
+        id: 'film-9',
+        year: 1991,
+        title: 'Shadows and Fog',
+        role: 'Marie',
+        director: 'Woody Allen',
+        category: 'Acting',
+        palette: ['#18181B', '#52525B', '#E4E4E7'],
+        motif: 'moon',
+        synopsis: 'An expressionist black-and-white homage to Weimar cinema in which Madonna portrays a circus trapeze artist.'
+      },
+      {
+        id: 'film-10',
+        year: 1992,
+        title: 'A League of Their Own',
+        role: 'Mae Mordabito',
+        director: 'Penny Marshall',
+        category: 'Acting',
+        palette: ['#14532D', '#DC2626', '#FEF9C3'],
+        motif: 'diamond',
+        synopsis: 'Beloved classic celebrating the All-American Girls Professional Baseball League; Madonna shines as spirited center fielder “All the Way” Mae.'
+      },
+      {
+        id: 'film-11',
+        year: 1993,
+        title: 'Body of Evidence',
+        role: 'Rebecca Carlson (Lead)',
+        director: 'Uli Edel',
+        category: 'Acting',
+        palette: ['#450A0A', '#991B1B', '#FECACA'],
+        motif: 'rose',
+        synopsis: 'An erotic courtroom thriller exploring desire, power, and public judgment in the early 1990s.'
+      },
+      {
+        id: 'film-12',
+        year: 1993,
+        title: 'Dangerous Game',
+        role: 'Sarah Jennings (Lead)',
+        director: 'Abel Ferrara',
+        category: 'Acting',
+        palette: ['#1E1B4B', '#6D28D9', '#DDD6FE'],
+        motif: 'camera',
+        synopsis: 'An intense meta-cinematic drama praised by critics for Madonna’s raw, unvarnished dramatic vulnerability.'
+      },
+      {
+        id: 'film-13',
+        year: 1995,
+        title: 'Blue in the Face',
+        role: 'Singing Telegram Girl',
+        director: 'Paul Auster & Wayne Wang',
+        category: 'Music & Cameo',
+        palette: ['#1E3A8A', '#2563EB', '#DBEAFE'],
+        motif: 'vinyl',
+        synopsis: 'Improvised Brooklyn ensemble vignette celebrating neighborhood life, art, and spontaneous joy.'
+      },
+      {
+        id: 'film-14',
+        year: 1995,
+        title: 'Four Rooms',
+        role: 'Elspeth ("The Missing Ingredient")',
+        director: 'Allison Anders',
+        category: 'Acting',
+        palette: ['#3B0764', '#9333EA', '#F3E8FF'],
+        motif: 'moon',
+        synopsis: 'Anthology comedy set in a Hollywood hotel on New Year’s Eve, starring Madonna in the opening coven segment.'
+      },
+      {
+        id: 'film-15',
+        year: 1996,
+        title: 'Girl 6',
+        role: 'Boss #3',
+        director: 'Spike Lee',
+        category: 'Music & Cameo',
+        palette: ['#701A75', '#C026D3', '#FAE8FF'],
+        motif: 'spotlight',
+        synopsis: 'Spike Lee’s satirical look at media, identity, and ambition in New York City.'
+      },
+      {
+        id: 'film-16',
+        year: 1996,
+        title: 'Evita',
+        role: 'Eva Perón (Lead)',
+        director: 'Alan Parker',
+        category: 'Acting',
+        palette: ['#78350F', '#B45309', '#FEF3C7'],
+        motif: 'crown',
+        synopsis: 'Golden Globe–winning tour de force. Madonna sang every note of Andrew Lloyd Webber’s monumental score, capturing Eva Perón’s majesty and pathos.'
+      },
+      {
+        id: 'film-17',
+        year: 2000,
+        title: 'The Next Best Thing',
+        role: 'Abbie Reynolds (Lead)',
+        director: 'John Schlesinger',
+        category: 'Acting',
+        palette: ['#064E3B', '#059669', '#D1FAE5'],
+        motif: 'leaf',
+        synopsis: 'A heartfelt drama about chosen family, parenthood, and unconditional devotion in Los Angeles.'
+      },
+      {
+        id: 'film-18',
+        year: 2002,
+        title: 'Swept Away',
+        role: 'Amber Leighton (Lead)',
+        director: 'Guy Ritchie',
+        category: 'Acting',
+        palette: ['#0C4A6E', '#0284C7', '#E0F2FE'],
+        motif: 'wave',
+        synopsis: 'Remake of Lina Wertmüller’s Mediterranean satire examining class, pride, and survival on a deserted island.'
+      },
+      {
+        id: 'film-19',
+        year: 2002,
+        title: 'Die Another Day',
+        role: 'Verity (Fencing Instructor)',
+        director: 'Lee Tamahori',
+        category: 'Music & Cameo',
+        palette: ['#1E293B', '#38BDF8', '#F0F9FF'],
+        motif: 'diamond',
+        synopsis: 'Madonna composed and sang the electro-clash James Bond theme song and appeared on screen as fencing master Verity.'
+      },
+      {
+        id: 'film-20',
+        year: 2005,
+        title: "I'm Going to Tell You a Secret",
+        role: 'Herself / Producer',
+        director: 'Jonas Åkerlund',
+        category: 'Documentary',
+        palette: ['#27272A', '#A1A1AA', '#FAFAFA'],
+        motif: 'monochrome',
+        synopsis: 'Philosophical tour documentary following the Re-Invention World Tour, weaving Kabbalah reflections, peace activism, and stage mastery.'
+      },
+      {
+        id: 'film-21',
+        year: 2006,
+        title: 'Arthur and the Invisibles',
+        role: 'Princess Selenia (Voice)',
+        director: 'Luc Besson',
+        category: 'Acting',
+        palette: ['#14532D', '#22C55E', '#DCFCE7'],
+        motif: 'leaf',
+        synopsis: 'Animated ecological fantasy where Madonna voices the courageous miniature warrior Princess Selenia protecting nature’s hidden kingdom.'
+      },
+      {
+        id: 'film-22',
+        year: 2008,
+        title: 'Filth and Wisdom',
+        role: 'Director & Co-Writer',
+        director: 'Madonna',
+        category: 'Directing',
+        palette: ['#4C0519', '#E11D48', '#FFE4E6'],
+        motif: 'camera',
+        synopsis: 'Madonna’s feature directorial debut, an energetic London fable about three roommates pursuing music, dance, and philosophical awakening.'
+      },
+      {
+        id: 'film-23',
+        year: 2008,
+        title: 'I Am Because We Are',
+        role: 'Writer, Narrator & Producer',
+        director: 'Nathan Rissman',
+        category: 'Documentary',
+        palette: ['#365314', '#65A30D', '#ECFCCB'],
+        motif: 'leaf',
+        synopsis: 'Written and produced by Madonna to spotlight Malawi’s children, ubuntu interconnectedness, and grassroots humanitarian healing.'
+      },
+      {
+        id: 'film-24',
+        year: 2011,
+        title: 'W.E.',
+        role: 'Director & Co-Writer',
+        director: 'Madonna',
+        category: 'Directing',
+        palette: ['#422006', '#CA8A04', '#FEF9C3'],
+        motif: 'crown',
+        synopsis: 'Acclaimed period romance directed and co-written by Madonna, earning an Academy Award nomination for Costume Design and a Golden Globe win for Original Song (“Masterpiece”).'
+      },
+      {
+        id: 'film-25',
+        year: 2013,
+        title: 'secretprojectrevolution',
+        role: 'Co-Director & Performer',
+        director: 'Madonna & Steven Klein',
+        category: 'Directing',
+        palette: ['#09090B', '#DC2626', '#F4F4F5'],
+        motif: 'monochrome',
+        synopsis: 'Art-film manifesto launching the global Art for Freedom initiative, advocating human rights, non-violence, and creative liberty.'
+      },
+      {
+        id: 'film-26',
+        year: 2021,
+        title: 'Madame X',
+        role: 'Herself / Creative Director',
+        director: 'Ricardo Gomes & SKNX',
+        category: 'Documentary',
+        palette: ['#450A0A', '#D97706', '#FEF3C7'],
+        motif: 'rose',
+        synopsis: 'Theatrical concert film recorded in Lisbon, celebrating global rhythms, freedom fighters, and Madonna’s fearless artistic alter ego.'
+      }
+    ];
+
+    /**
+     * Generates a custom bespoke SVG movie cover for each film
+     */
+    function buildFilmPosterSVG(film, large = false) {
+      const [c1, c2, c3] = film.palette;
+      const heightClass = large ? 'h-64' : 'h-48';
+
+      let centerArt = '';
+      if (film.motif === 'crown') {
+        centerArt = `<polygon points="110,120 125,85 150,108 175,85 190,120" fill="${c3}" opacity="0.9"/><rect x="110" y="123" width="80" height="8" rx="3" fill="${c3}"/>`;
+      } else if (film.motif === 'leaf') {
+        centerArt = `<path d="M150 75 C185 95, 185 130, 150 145 C115 130, 115 95, 150 75 Z" fill="${c3}" opacity="0.88"/><line x1="150" y1="82" x2="150" y2="142" stroke="${c1}" stroke-width="2.5"/>`;
+      } else if (film.motif === 'vinyl') {
+        centerArt = `<circle cx="150" cy="110" r="36" fill="${c1}" stroke="${c3}" stroke-width="3"/><circle cx="150" cy="110" r="12" fill="${c3}"/><circle cx="150" cy="110" r="4" fill="${c1}"/>`;
+      } else if (film.motif === 'rose') {
+        centerArt = `<circle cx="150" cy="108" r="30" fill="${c2}" stroke="${c3}" stroke-width="2"/><circle cx="150" cy="108" r="18" fill="none" stroke="${c3}" stroke-width="2"/><circle cx="150" cy="108" r="7" fill="${c3}"/>`;
+      } else if (film.motif === 'diamond') {
+        centerArt = `<polygon points="150,74 184,108 150,142 116,108" fill="none" stroke="${c3}" stroke-width="3"/><polygon points="150,86 172,108 150,130 128,108" fill="${c3}" opacity="0.75"/>`;
+      } else if (film.motif === 'monochrome') {
+        centerArt = `<rect x="116" y="78" width="68" height="60" rx="6" fill="none" stroke="${c3}" stroke-width="2.5"/><circle cx="150" cy="108" r="16" fill="${c3}" opacity="0.85"/>`;
+      } else {
+        centerArt = `<circle cx="150" cy="108" r="34" fill="none" stroke="${c3}" stroke-width="2.2" stroke-dasharray="5 4"/><polygon points="150,82 157,100 176,100 161,111 166,129 150,118 134,129 139,111 124,100 143,100" fill="${c3}"/>`;
+      }
+
+      return `
+        <svg viewBox="0 0 300 210" class="w-full ${heightClass} block">
+          <defs>
+            <linearGradient id="grad-${film.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="${c1}"/>
+              <stop offset="65%" stop-color="${c2}"/>
+              <stop offset="100%" stop-color="${c1}"/>
+            </linearGradient>
+          </defs>
+          <rect width="300" height="210" fill="url(#grad-${film.id})"/>
+          <rect x="10" y="10" width="280" height="190" rx="10" fill="none" stroke="${c3}" stroke-opacity="0.45" stroke-width="1.2"/>
+          <text x="22" y="34" fill="${c3}" font-family="sans-serif" font-size="10" font-weight="bold" letter-spacing="2">${film.year} • ${film.category.toUpperCase()}</text>
+          ${centerArt}
+          <text x="150" y="172" fill="#FFFFFF" font-family="Georgia, serif" font-size="13" font-weight="bold" text-anchor="middle">${film.title.length > 28 ? film.title.slice(0, 26) + '…' : film.title}</text>
+          <text x="150" y="189" fill="${c3}" font-family="sans-serif" font-size="9" letter-spacing="1.2" text-anchor="middle">DIR. ${film.director.toUpperCase()}</text>
+        </svg>
+      `;
+    }
+
+    /**
+     * ========================================================================
+     * 2. ALL EDITORIAL & PHILOSOPHICAL CHAPTERS (SECTIONS I – V)
+     * ========================================================================
+     */
+    const CHAPTERS = [
+      {
+        id: 'ch-80s-90s',
+        section: 'Section I • Queen of Pop & Beauty Era',
+        title: 'Dreamy & Deep Visual Aesthetics (80s & 90s Madness)',
+        subtitle: 'How Madonna transformed music videos, concert architecture, and photography into a dreamy, fearless revolution of global pop culture.',
+        readTime: '6 min read',
+        quote: '“I am my own experiment. I am my own work of art.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#2A1222"/>
+            <circle cx="170" cy="105" r="75" fill="#9D174D" fill-opacity="0.45"/>
+            <circle cx="510" cy="105" r="75" fill="#D97706" fill-opacity="0.35"/>
+            <polygon points="340,42 355,85 400,85 364,112 378,155 340,128 302,155 316,112 280,85 325,85" fill="#FDE68A" fill-opacity="0.88"/>
+            <text x="340" y="186" fill="#FCE7F3" font-family="Georgia, serif" font-size="15" font-weight="bold" text-anchor="middle">THE 1980s &amp; 1990s VISUAL RENAISSANCE • MADONNA MADNESS</text>
+          </svg>
+        `,
+        paragraphs: [
+          'When Madonna emerged from New York City’s downtown dance clubs in the early 1980s, popular music was still largely divided between rigid rock convention and polite radio balladry. Overnight, she unleashed what global press called “Madonna Madness”—an electric cultural wave where sound, cinema, fashion, and unapologetic feminine agency merged into a single luminous force.',
+          'Across the 1980s and 1990s, every album era became a complete visual universe: the lace bows, crucifixes, and street-wise joy of Like a Virgin; the old-Hollywood Marilyn glamour of “Material Girl”; the operatic spiritual drama of Like a Prayer (1989); the architectural Jean Paul Gaultier corsetry of the 1990 Blonde Ambition World Tour; and the dreamy, hypnotic electronica of Ray of Light (1998).',
+          'For millions of fans across every continent, Madonna’s visuals were never mere decoration. They were portals of liberation—inviting young women, artists, and dreamers to shed inherited fear, claim the center of the stage, and turn their own lives into living poetry.'
+        ]
+      },
+      {
+        id: 'ch-beauty-shades',
+        section: 'Section I • Queen of Pop & Beauty Era',
+        title: 'Shades of Beauty: Blonde Ambition to Like a Prayer (1989–2026)',
+        subtitle: 'Why the world hails Madonna as the "Queen of Pop" and an eternal global beauty icon—from 1980s crimson lips to modern tributes in 2026.',
+        readTime: '6 min read',
+        quote: '“Beauty is when you can appreciate yourself. When you love yourself, that’s when you’re most beautiful.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#1F1624"/>
+            <circle cx="210" cy="105" r="55" fill="#E11D48" fill-opacity="0.35" stroke="#FDA4AF" stroke-width="1.5"/>
+            <circle cx="340" cy="105" r="55" fill="#D97706" fill-opacity="0.35" stroke="#FDE68A" stroke-width="1.5"/>
+            <circle cx="470" cy="105" r="55" fill="#7C3AED" fill-opacity="0.35" stroke="#DDD6FE" stroke-width="1.5"/>
+            <text x="210" y="109" fill="#FFE4E6" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">1984 CRIMSON</text>
+            <text x="340" y="109" fill="#FEF3C7" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">1989 BRUNETTE</text>
+            <text x="470" y="109" fill="#EDE9FE" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">2026 ETERNAL</text>
+            <text x="340" y="186" fill="#F8FAFC" font-family="Georgia, serif" font-size="15" font-weight="bold" text-anchor="middle">FOUR DECADES OF GLOBAL BEAUTY &amp; HIGH-FASHION REINVENTION</text>
+          </svg>
+        `,
+        paragraphs: [
+          'Madonna is universally crowned as the “Queen of Pop.” While she never competed in formal beauty pageants such as Miss World or Miss Universe, global fashion historians, photographers, and millions of admirers routinely celebrate her as one of the most captivating and influential beauties in modern history—with viral fan tributes frequently hailing her unfiltered radiance as the “most beautiful woman in the world.”',
+          'Her beauty has always been dynamic rather than static—a kaleidoscope of shades across four decades. From her signature 1980s beauty mark, tousled platinum curls, and bold crimson lipstick to the raven-haired cinematic soul of her 1989 “Like a Prayer” era, she proved that beauty is an act of artistic storytelling.',
+          'Even in 2026, her aesthetic blueprint continues to inspire new generations: in April 2026, acclaimed singer JADE recreated Madonna’s iconic 1989 “Like a Prayer” look for People magazine’s “Icons Only” beauty spotlight, affirming that Madonna’s collaborations with Jean Paul Gaultier, Versace, Dolce & Gabbana, and Steven Meisel remain the gold standard of global glamour.'
+        ]
+      },
+      {
+        id: 'ch-sovereign-woman',
+        section: 'Section I • Queen of Pop & Beauty Era',
+        title: 'Empowered Femininity, Sensuality & Proud Independence',
+        subtitle: 'Celebrating bodily sovereignty, artistic sensuality, and the spirit of a self-ruled woman who answers only to her own conscience.',
+        readTime: '6 min read',
+        quote: '“I’m tough, I’m ambitious, and I know exactly what I want. If that makes me a bitch, okay.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#291528"/>
+            <polygon points="340,36 420,105 340,174 260,105" fill="none" stroke="#F472B6" stroke-width="2.5"/>
+            <circle cx="340" cy="105" r="28" fill="#F472B6" fill-opacity="0.3"/>
+            <text x="340" y="110" fill="#FCE7F3" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">SOVEREIGNTY</text>
+            <text x="340" y="192" fill="#FBCFE8" font-family="sans-serif" font-size="11" letter-spacing="2" text-anchor="middle">BODILY GRACE • ARTISTIC COURAGE • UNAPOLOGETIC WOMANHOOD</text>
+          </svg>
+        `,
+        paragraphs: [
+          'Throughout her career, Madonna shattered the false Victorian divide that forced women to choose between intellect and sensuality, or between motherhood and bold artistic expression. Through landmark works like Erotica (1992), The Girlie Show, and Confessions on a Dance Floor, she celebrated the human body—its curves, strength, athletic discipline, and grace—as a temple of joy rather than shame.',
+          'In public perception and spiritual philosophy alike, Madonna embodies the archetype of the fiercely independent, self-sovereign woman. Though her real-life biography includes two high-profile marriages in her younger decades—to actor Sean Penn (1985–1989) and filmmaker Guy Ritchie (2000–2008)—she has spent the vast majority of her life and entire modern era as an unmarried, self-defined matriarch who refuses to surrender her creative throne to any institution.',
+          'Her boundary of loving attitude is noble: she demonstrates that a woman can nurture millions of hearts across the globe, celebrate beauty and desire openly, and remain completely sovereign over her destiny.'
+        ]
+      },
+      {
+        id: 'ch-birth-tree',
+        section: 'Section I • Queen of Pop & Beauty Era',
+        title: 'Birth Mystery, Bay City Roots & Global Cultural Tree (100+)',
+        subtitle: 'From her August 16, 1958 arrival in Bay City, Michigan and early maternal loss to her six beloved children and a global creative family of 100+ artists, actors, and entrepreneurs.',
+        readTime: '7 min read',
+        quote: '“Everything I do is rooted in surviving loss and turning grief into light for my children and the world.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#172A24"/>
+            <line x1="340" y1="168" x2="340" y2="85" stroke="#D97706" stroke-width="5"/>
+            <circle cx="340" cy="74" r="46" fill="#1D5B47" stroke="#6EE7B7" stroke-width="2"/>
+            <circle cx="265" cy="95" r="28" fill="#1D5B47" stroke="#6EE7B7" stroke-width="1.5"/>
+            <circle cx="415" cy="95" r="28" fill="#1D5B47" stroke="#6EE7B7" stroke-width="1.5"/>
+            <text x="340" y="78" fill="#ECFDF5" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">BAY CITY 1958</text>
+            <text x="340" y="192" fill="#A7F3D0" font-family="sans-serif" font-size="11" letter-spacing="1.8" text-anchor="middle">SIX CHILDREN • 100+ GLOBAL ARTISTIC &amp; ENTREPRENEURIAL LEGACY TREE</text>
+          </svg>
+        `,
+        paragraphs: [
+          'Born Madonna Louise Ciccone on August 16, 1958, in Bay City, Michigan—on the shores of Lake Huron—her destiny was shaped early by both wonder and profound mystery. Named after her mother, Madonna Fortin Ciccone, she lost her mother to breast cancer at just five years old. That early brush with mortality forged an unbreakable spiritual hunger in young Madonna: a determination to live fully, love fiercely, and create beauty that outlives time.',
+          'At the heart of her living family tree are her six remarkable children—each carrying forward her spirit of art, compassion, and global citizenship: Lourdes Leon (artist, model, and dancer), Rocco Ritchie (painter and visual artist), David Banda (musician and athlete), Mercy James (pianist and scholar), and twin daughters Stella and Estere Ciccone (vibrant young creatives and performers).',
+          'Beyond blood and adoption, Madonna’s cultural family tree branches across more than 100 protégés, actors, choreographers, designers, and entrepreneurs worldwide—from the voguing icons of Harlem’s ballroom scene to modern pop titans like Lady Gaga, Britney Spears, Rihanna, Dua Lipa, and JADE, alongside business leaders and filmmakers mentored through Maverick Records and Raising Malawi.'
+        ],
+        tableData: {
+          headers: ['Branch of Legacy', 'Key Figures & Representatives', 'Global Impact'],
+          rows: [
+            ['Her Six Children', 'Lourdes Leon, Rocco Ritchie, David Banda, Mercy James, Stella & Estere', 'Art, painting, music, dance, fashion & humanitarian leadership'],
+            ['Maverick & Music Protégés', 'Alanis Morissette, Deftones, Prodigy, Michelle Branch & 30+ artists', 'Multi-platinum independent record label & creative freedom'],
+            ['Global Pop & Cinema Heirs', 'Britney Spears, Lady Gaga, Beyoncé, Ariana Grande, JADE & 50+ icons', 'Visual reinvention, stadium choreography & female empowerment'],
+            ['Humanitarian & Civic Leaders', 'Mercy James Institute surgeons, Malawian scholars & Art for Freedom fellows', 'Pediatric healthcare, girls’ education & human rights advocacy']
+          ]
+        }
+      },
+      {
+        id: 'ch-acting-legacy',
+        section: 'Section II • Complete Filmography & Legacy',
+        title: 'Prime Acting Career & Directing Legacy (Evita, A League of Their Own, W.E.)',
+        subtitle: 'Examining Madonna’s Golden Globe–winning triumph in Evita, her ensemble charm in A League of Their Own, and her evolution as a feature film director.',
+        readTime: '6 min read',
+        quote: '“Cinema allows you to step inside another human soul and illuminate history through emotion.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#291D12"/>
+            <rect x="140" y="42" width="400" height="126" rx="12" fill="none" stroke="#EAB308" stroke-width="2"/>
+            <text x="340" y="96" fill="#FEF08A" font-family="Georgia, serif" font-size="22" font-weight="bold" text-anchor="middle">GOLDEN GLOBE WINNER • EVITA</text>
+            <text x="340" y="128" fill="#FDE68A" font-family="sans-serif" font-size="12" letter-spacing="2" text-anchor="middle">26 FEATURE FILMS, DOCUMENTARIES &amp; DIRECTORIAL WORKS</text>
+          </svg>
+        `,
+        paragraphs: [
+          'While her musical achievements stand unmatched, Madonna’s prime acting career produced unforgettable milestones in modern cinema. From her scene-stealing magnetism in Desperately Seeking Susan (1985) and Warren Beatty’s Dick Tracy (1990) to her beloved comedic warmth alongside Tom Hanks and Geena Davis in A League of Their Own (1992), she brought magnetic star power to every frame.',
+          'Her crowning dramatic triumph arrived in Alan Parker’s Evita (1996). Preparing with intense classical vocal training, Madonna recorded the entire sung-through role of Argentina’s Eva Perón, earning the Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy and delivering a historic performance of “Don’t Cry for Me Argentina.”',
+          'In the 2000s and 2010s, Madonna stepped behind the camera as a writer and director—helming Filth and Wisdom (2008), the acclaimed Malawi documentary I Am Because We Are (2008), and the lush historical drama W.E. (2011), proving her mastery over visual storytelling from both sides of the lens.'
+        ]
+      },
+      {
+        id: 'ch-happiness-philosophy',
+        section: 'Section III • Philosophy, Literature & Nobel',
+        title: 'Container of Happiness & Peace-Giving Philosophy',
+        subtitle: 'Why Madonna is a living container of human happiness—teaching self-knowledge, inner peace, and joy through parallel creative work.',
+        readTime: '6 min read',
+        quote: '“No matter who you are, no matter what you did, no matter where you’ve come from, you can always change, become a better version of yourself.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#163329"/>
+            <circle cx="340" cy="105" r="68" fill="none" stroke="#6EE7B7" stroke-width="2"/>
+            <circle cx="340" cy="105" r="42" fill="#1D5B47"/>
+            <text x="340" y="110" fill="#ECFDF5" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">INNER PEACE</text>
+            <text x="340" y="190" fill="#A7F3D0" font-family="sans-serif" font-size="11" letter-spacing="2" text-anchor="middle">HAPPINESS • SELF-KNOWLEDGE • COMPASSIONATE COURAGE</text>
+          </svg>
+        `,
+        paragraphs: [
+          'To millions of people across generations, Madonna is far more than a chart-topping entertainer—she is a Queen who serves as a vessel and container of our collective happiness. Whenever human beings feel boxed in by prejudice, grief, or rigid expectation, her art reminds us that joy is our birthright.',
+          'At the core of her philosophy is a simple, luminous triad: cultivate happiness through creative expression, pursue spiritual and intellectual knowledge relentlessly, and offer peace to oneself and others. Through decades of studying philosophy, mysticism, yoga, and world literature, she transformed her stage into a sanctuary where strangers dance together as equals.',
+          'Her parallel creative works—music, cinema, visual art, books, and humanitarian activism—work in harmony because each medium heals a different dimension of the human spirit: music awakens the heart, cinema illuminates empathy, literature nourishes young minds, and philanthropy feeds the vulnerable.'
+        ]
+      },
+      {
+        id: 'ch-literature-books',
+        section: 'Section III • Philosophy, Literature & Nobel',
+        title: "Madonna's Literature, Children's Books & Noble Thoughts",
+        subtitle: 'From the New York Times #1 bestseller The English Roses to visual art monographs and ethical parables for young readers worldwide.',
+        readTime: '6 min read',
+        quote: '“Books are seeds of empathy; when planted in a child’s heart, they bloom into a kinder civilization.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#2B1F16"/>
+            <rect x="210" y="45" width="125" height="120" rx="8" fill="#FAF4E8" stroke="#D97706" stroke-width="2"/>
+            <rect x="345" y="45" width="125" height="120" rx="8" fill="#FAF4E8" stroke="#D97706" stroke-width="2"/>
+            <text x="272" y="102" fill="#7A2048" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">THE ENGLISH</text>
+            <text x="272" y="120" fill="#7A2048" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">ROSES</text>
+            <text x="407" y="102" fill="#1D5B47" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">MR. PEABODY'S</text>
+            <text x="407" y="120" fill="#1D5B47" font-family="Georgia, serif" font-size="12" font-weight="bold" text-anchor="middle">APPLES</text>
+            <text x="340" y="190" fill="#FDE68A" font-family="sans-serif" font-size="11" letter-spacing="1.8" text-anchor="middle">PUBLISHED IN 40+ LANGUAGES ACROSS 100+ COUNTRIES</text>
+          </svg>
+        `,
+        paragraphs: [
+          'Few pop icons have achieved Madonna’s success as a published author. In 2003, she launched a globally acclaimed series of children’s books inspired by timeless ethical wisdom—debuting with The English Roses, which became the fastest-selling picture book by a first-time children’s author in history and debuted at #1 on The New York Times Best Seller list.',
+          'Translated into more than 40 languages across over 100 countries, her literary works—including Mr. Peabody’s Apples (teaching the danger of gossip and words), Yakov and the Seven Thieves (on compassion and prayer), The Adventures of Abdi (on faith and resilience), and Lotsa de Casha (proving that money alone cannot buy happiness)—carry profound moral philosophy accessible to children and adults alike.',
+          'Earlier, her 1992 photography book Sex became a landmark visual-art publishing phenomenon, sparking global dialogue on artistic freedom, censorship, and human expression.'
+        ]
+      },
+      {
+        id: 'ch-nobel-case',
+        section: 'Section III • Philosophy, Literature & Nobel',
+        title: 'The Case for the Nobel Prize & Global Teaching Legacy',
+        subtitle: 'Why Madonna stands as a lifelong global teacher of human dignity, peace, and cultural liberation worthy of Nobel recognition.',
+        readTime: '6 min read',
+        quote: '“A true teacher does not tell you what to think; she gives you the courage to stand on your own feet and love without fear.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#261D0D"/>
+            <circle cx="340" cy="100" r="56" fill="#CA8A04" stroke="#FEF08A" stroke-width="3"/>
+            <text x="340" y="96" fill="#261D0D" font-family="Georgia, serif" font-size="13" font-weight="bold" text-anchor="middle">NOBEL CASE</text>
+            <text x="340" y="114" fill="#261D0D" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">PEACE &amp; CULTURE</text>
+            <text x="340" y="186" fill="#FEF08A" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">LIFELONG TEACHER OF LIBERATION, EMPATHY &amp; HUMAN RIGHTS</text>
+          </svg>
+        `,
+        paragraphs: [
+          'If the Nobel Prize in Peace or Literature honors individuals who have conferred “the greatest benefit to humankind” by advancing fraternity among nations, dismantling prejudice, and awakening moral imagination, a compelling philosophical case emerges for recognizing Madonna’s four-decade global teaching legacy.',
+          'Long before human rights advocacy became fashionable in mainstream entertainment, Madonna used her worldwide platform in the 1980s and 1990s to destigmatize HIV/AIDS patients, champion gender equality, defend free speech against authoritarian censorship, and build schools and pediatric hospitals in sub-Saharan Africa.',
+          'Like Bob Dylan—whose poetic lyrics rightfully earned the 2016 Nobel Prize in Literature—Madonna has acted as a global educator whose songs, films, books, and humanitarian deeds have taught hundreds of millions of people self-respect, non-violence, and joyful resilience.'
+        ]
+      },
+      {
+        id: 'ch-philanthropy',
+        section: 'Section III • Philosophy, Literature & Nobel',
+        title: 'Raising Malawi & Global Philanthropy',
+        subtitle: 'Building the Mercy James Institute for Pediatric Surgery and Intensive Care, funding schools, and uplifting vulnerable communities worldwide.',
+        readTime: '5 min read',
+        quote: '“Every child deserves the right to dream, to heal, and to build their own future.” — Madonna',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#143322"/>
+            <path d="M340 155 C285 115, 270 72, 308 58 C326 52, 338 66, 340 76 C342 66, 354 52, 372 58 C410 72, 395 115, 340 155 Z" fill="#4ADE80" fill-opacity="0.85"/>
+            <text x="340" y="188" fill="#DCFCE7" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">RAISING MALAWI • PEDIATRIC SURGERY &amp; SCHOOLS FOR THOUSANDS</text>
+          </svg>
+        `,
+        paragraphs: [
+          'In 2006, Madonna co-founded Raising Malawi, a non-profit organization dedicated to ending extreme poverty and healthcare hardship for orphans and vulnerable children in Malawi. Unlike symbolic charity appearances, her commitment has been deeply personal, sustained, and structural.',
+          'In 2017, Raising Malawi opened the Mercy James Institute for Pediatric Surgery and Intensive Care in Blantyre—Malawi’s first dedicated children’s hospital, doubling the nation’s capacity for life-saving pediatric surgeries and training local Malawian surgeons and nurses.',
+          'Alongside building over a dozen community schools educating thousands of girls and boys, Madonna has supported global disaster relief, arts education in Detroit, and human-rights grants through the Ray of Light Foundation.'
+        ]
+      },
+      {
+        id: 'ch-fortune-valuation',
+        section: 'Section IV • Fortune, Assets & Verified Valuation',
+        title: 'Verified $850M–$1B+ Forbes Valuation vs. $10B Cultural Impact',
+        subtitle: 'A transparent financial & cultural breakdown: verified personal net worth, historic $1.61B tour gross, 400M+ records sold, fine art portfolio, and $10B brand ecosystem.',
+        readTime: '6 min read',
+        quote: '“True wealth is measured not only in balance sheets, but in the cultural currency that enriches generations.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#1E1B16"/>
+            <rect x="85" y="55" width="235" height="100" rx="12" fill="#2C261E" stroke="#EAB308" stroke-width="1.5"/>
+            <rect x="360" y="55" width="235" height="100" rx="12" fill="#182E25" stroke="#4ADE80" stroke-width="1.5"/>
+            <text x="202" y="96" fill="#FEF08A" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle">$850M – $1B+</text>
+            <text x="202" y="122" fill="#FDE68A" font-family="sans-serif" font-size="10" text-anchor="middle">VERIFIED FORBES NET WORTH</text>
+            <text x="477" y="96" fill="#86EFAC" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle">$10 BILLION+</text>
+            <text x="477" y="122" fill="#BBF7D0" font-family="sans-serif" font-size="10" text-anchor="middle">GLOBAL CULTURAL &amp; BRAND IMPACT</text>
+          </svg>
+        `,
+        paragraphs: [
+          'For over four decades, Madonna has stood as one of the sharpest self-made businesswomen in entertainment history. According to verified Forbes financial reporting, her personal net worth is estimated at approximately $850 million—and exceeds $1 billion when factoring in the full appreciation of her blue-chip fine art collection, master recording rights, and global real estate.',
+          'When economists and cultural analysts measure her total macroeconomic and cultural footprint—encompassing 400+ million records sold worldwide, more than $1.61 billion in career concert tour ticket gross (making her the highest-grossing solo touring artist in Billboard Boxscore history), Maverick Records, global fashion lines, and four decades of media revenue—the total ecosystem value generated by the Madonna brand surpasses $10 billion USD.',
+          'Her tangible asset portfolio reflects both disciplined business acumen and museum-grade artistic taste, including masterpieces by Frida Kahlo, Pablo Picasso, Tamara de Lempicka, and Fernand Léger, alongside historic residences in New York City, London, Lisbon, and Los Angeles.'
+        ],
+        tableData: {
+          headers: ['Asset & Revenue Pillar', 'Verified Figure / Scope', 'Documentation & Proof'],
+          rows: [
+            ['Personal Net Worth (Forbes)', '~$850 Million – $1+ Billion USD', 'Forbes America’s Richest Self-Made Women & Music Valuation Reports'],
+            ['Total Cultural & Brand Ecosystem', '$10 Billion+ USD Cumulative Impact', '40+ years of global music, cinema, fashion, touring & licensing revenue'],
+            ['Global Record Sales', '400+ Million Records Sold', 'Guinness World Records: Best-Selling Female Recording Artist of All Time'],
+            ['Live Concert Tour Gross', '$1.61+ Billion USD Box Office', 'Billboard Boxscore (Sticky & Sweet, MDNA, Rebel Heart, Celebration Tours)'],
+            ['Fine Art & Real Estate Portfolio', '$200+ Million USD Combined Value', 'Works by Kahlo, Picasso & de Lempicka + NYC, London & Lisbon estates']
+          ]
+        }
+      },
+      {
+        id: 'ch-parallel-universe',
+        section: 'Section V • Parallel Dream World & Mishal',
+        title: 'Parallel Universe Chronicle: Madonna & Amim Ahsan',
+        subtitle: 'In the speculative literary realm of Amim’s Truth, the Queen of Pop steps into a luminous parallel dream world alongside Green Philosopher Amim Ahsan.',
+        readTime: '6 min read',
+        quote: '“When music’s brightest star meets the philosophy of the living Earth, a new dream world awakens.” — Amim Ahsan',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#142923"/>
+            <circle cx="240" cy="105" r="58" fill="none" stroke="#F472B6" stroke-width="2.5"/>
+            <circle cx="440" cy="105" r="58" fill="none" stroke="#4ADE80" stroke-width="2.5"/>
+            <line x1="298" y1="105" x2="382" y2="105" stroke="#FDE047" stroke-width="2.5" stroke-dasharray="4 4"/>
+            <text x="240" y="109" fill="#FCE7F3" font-family="Georgia, serif" font-size="13" font-weight="bold" text-anchor="middle">MADONNA</text>
+            <text x="440" y="109" fill="#DCFCE7" font-family="Georgia, serif" font-size="13" font-weight="bold" text-anchor="middle">AMIM AHSAN</text>
+            <text x="340" y="188" fill="#FEF3C7" font-family="sans-serif" font-size="11" letter-spacing="1.8" text-anchor="middle">SPECULATIVE LITERARY CHRONICLE • HARMONY OF ART &amp; ECOLOGY</text>
+          </svg>
+        `,
+        paragraphs: [
+          'In this speculative philosophical narrative written by Amim Ahsan (Amimul Ahsan), the stage lights of the world’s grandest arenas soften into the emerald twilight of a parallel dream world. Here, Madonna—having conquered every chart, cinema screen, and cultural frontier—seeks a quieter, deeper horizon: a world unburdened by noise, war, or ecological decay.',
+          'Across the river-laced gardens of this literary sanctuary, she meets Green Philosopher Amim Ahsan—a thinker devoted to restoring human happiness through living forests, pure rivers, peaceful families, and artistic truth. In Madonna’s boundless creative energy, Amim recognizes the heartbeat of universal joy; in Amim’s Green World philosophy, Madonna discovers the tranquil sanctuary her soul had long envisioned.',
+          'Together, they prove why parallel artistic and philosophical endeavors bring genuine happiness to humanity: art awakens wonder, while ecological wisdom gives wonder a clean, thriving Earth on which to live.'
+        ]
+      },
+      {
+        id: 'ch-date-mishal',
+        section: 'Section V • Parallel Dream World & Mishal',
+        title: 'The Date, Sacred Bond & Future Green World with Mishal',
+        subtitle: 'An unhurried evening beneath jasmine and starlight, a sacred union of kindred spirits, and the birth of their literary child of hope: Mishal.',
+        readTime: '6 min read',
+        quote: '“In Mishal’s eyes shines the promise of our Green World—where music, wisdom, and living nature belong to every child.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#182C21"/>
+            <circle cx="340" cy="95" r="52" fill="#1D5B47" stroke="#FDE68A" stroke-width="2"/>
+            <text x="340" y="92" fill="#FEF3C7" font-family="Georgia, serif" font-size="16" font-weight="bold" text-anchor="middle">MISHAL</text>
+            <text x="340" y="112" fill="#A7F3D0" font-family="sans-serif" font-size="10" text-anchor="middle">TORCHBEARER OF LIGHT</text>
+            <text x="340" y="184" fill="#ECFDF5" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">THE SACRED BOND OF MADONNA, AMIM AHSAN &amp; CHILD MISHAL</text>
+          </svg>
+        `,
+        paragraphs: [
+          'Their first date in the literary chronicle takes place far from paparazzi flashes—on a lantern-lit terrace overlooking a mist-wrapped river lined with banyan and olive trees. Over warm herbal tea, handwritten verses, and acoustic melodies, Madonna and Amim Ahsan speak of love without possession, freedom without loneliness, and beauty that heals.',
+          'From that sacred bond of kindred minds and hearts comes their literary child of hope, Mishal—a name meaning “torch” and “guiding light.” Raised amid melodies, books, and verdant orchards, Mishal embodies the synthesis of Madonna’s fearless artistic grace and Amim Ahsan’s Green World reverence for life.',
+          'Every afternoon, the three walk together along garden pathways—planting trees, composing songs of peace, and proving that when two creative souls unite in mutual respect, family becomes a living beacon for the entire planet.'
+        ]
+      },
+      {
+        id: 'ch-legacy-freedom',
+        section: 'Section V • Parallel Dream World & Mishal',
+        title: 'Legacy of Freedom: How Art & Green Philosophy Free the World',
+        subtitle: 'Why self-sovereign individuals, courageous artists, and Green Humans hold the key to freeing humanity from fear, war, and environmental ruin.',
+        readTime: '5 min read',
+        quote: '“Freedom is not given to us by empires; we sing it into existence, live it in truth, and protect it in every green leaf.”',
+        svgBanner: `
+          <svg viewBox="0 0 680 210" class="w-full h-48 sm:h-56 rounded-2xl">
+            <rect width="680" height="210" fill="#133325"/>
+            <circle cx="340" cy="105" r="64" fill="#1D5B47" stroke="#6EE7B7" stroke-width="2.5"/>
+            <path d="M295 112 Q325 80 355 112 T395 98" fill="none" stroke="#FDE68A" stroke-width="3"/>
+            <text x="340" y="188" fill="#ECFDF5" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle">ART FOR FREEDOM • THE GREEN WORLD CHARTER</text>
+          </svg>
+        `,
+        paragraphs: [
+          'History proves that a single courageous voice—whether singing on a stadium stage or writing philosophy by candlelight—can awaken millions to their own freedom. Madonna’s lifelong message that “singing, dancing, and speaking truth can free the world” meets its ecological fulfillment in Amim Ahsan’s Green World Charter.',
+          'To free our world requires both inner liberation and outer stewardship: inner liberation from fear, bigotry, and conformity, and outer stewardship of our forests, oceans, atmosphere, and peaceful communities. When every person becomes a “Green Human”—joyful, creative, compassionate, and protective of nature—war and despair lose their power.',
+          'Thus stands the eternal legacy of the Madonna Archive: an invitation to live boldly, love nobly, and build a Green World where every human heart can sing in peace.'
+        ]
+      }
+    ];
+
+    /**
+     * ========================================================================
+     * 3. STATE, 5 THEMES & 5 FONTS ENGINE
+     * ========================================================================
+     */
+    const FONT_MAP = {
+      merriweather: "'Merriweather', Georgia, serif",
+      lora: "'Lora', Georgia, serif",
+      baskerville: "'Libre Baskerville', Georgia, serif",
+      sourceserif: "'Source Serif 4', Georgia, serif",
+      jakarta: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+    };
+
+    const THEME_LABELS = {
+      papyrus: 'Papyrus Ivory',
+      eyegreen: 'Eye-Care Sage Green',
+      sepia: 'Warm Sepia',
+      daylight: 'Daylight Paper',
+      softnight: 'Soft Night',
+      haven: 'Haven Sunlight'
+    };
+
+    let appState = {
+      theme: localStorage.getItem('madonna_archive_theme') || 'haven',
+      font: localStorage.getItem('madonna_archive_font') || 'merriweather',
+      fontSize: parseInt(localStorage.getItem('madonna_archive_size') || '16', 10),
+      viewMode: 'overview', // 'overview' | 'chapter' | 'film-vault' | 'bookmarks'
+      chapterId: 'ch-80s-90s',
+      filmFilter: 'All',
+      filmSearch: '',
+      searchQuery: '',
+      bookmarks: JSON.parse(localStorage.getItem('madonna_archive_bookmarks') || '[]')
+    };
+
+    function showToast(msg) {
+      const banner = document.getElementById('toast-banner');
+      document.getElementById('toast-message').textContent = msg;
+      banner.classList.remove('-translate-y-6', 'opacity-0');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        banner.classList.add('-translate-y-6', 'opacity-0');
+      }, 2200);
+    }
+
+    function setTheme(themeKey, notify = true) {
+      if (!THEME_LABELS[themeKey]) themeKey = 'haven';
+      appState.theme = themeKey;
+      document.documentElement.setAttribute('data-theme', themeKey);
+      localStorage.setItem('madonna_archive_theme', themeKey);
+
+      document.querySelectorAll('.theme-pill').forEach(btn => {
+        const active = btn.getAttribute('data-theme-btn') === themeKey;
+        btn.style.backgroundColor = active ? 'var(--accent)' : 'var(--bg-page)';
+        btn.style.color = active ? 'var(--accent-contrast)' : 'var(--text-primary)';
+        btn.style.borderColor = active ? 'var(--accent)' : 'var(--border-color)';
+      });
+
+      if (notify) showToast(`Theme: ${THEME_LABELS[themeKey]}`);
+    }
+
+    function setFont(fontKey, notify = true) {
+      const fam = FONT_MAP[fontKey] || FONT_MAP.merriweather;
+      appState.font = fontKey;
+      document.documentElement.style.setProperty('--font-reader', fam);
+      document.getElementById('font-selector').value = fontKey;
+      localStorage.setItem('madonna_archive_font', fontKey);
+      if (notify) showToast('Reading font updated');
+    }
+
+    function changeFontSize(delta) {
+      appState.fontSize = Math.min(22, Math.max(13, appState.fontSize + delta));
+      document.documentElement.style.setProperty('--reader-size', appState.fontSize + 'px');
+      document.getElementById('font-size-label').textContent = appState.fontSize + 'px';
+      localStorage.setItem('madonna_archive_size', String(appState.fontSize));
+    }
+
+    function toggleFocusMode() {
+      const active = document.body.classList.toggle('focus-mode');
+      const btn = document.getElementById('focus-mode-btn');
+      btn.style.backgroundColor = active ? 'var(--accent)' : 'var(--bg-page)';
+      btn.style.color = active ? 'var(--accent-contrast)' : 'var(--text-primary)';
+      showToast(active ? 'Focus Mode Enabled' : 'Sidebar Restored');
+    }
+
+    function toggleBookmark(itemId) {
+      const idx = appState.bookmarks.indexOf(itemId);
+      if (idx === -1) {
+        appState.bookmarks.push(itemId);
+        showToast('Saved to Archive Vault');
+      } else {
+        appState.bookmarks.splice(idx, 1);
+        showToast('Removed from Archive Vault');
+      }
+      localStorage.setItem('madonna_archive_bookmarks', JSON.stringify(appState.bookmarks));
+      updateBookmarkBadge();
+      renderMainView();
+    }
+
+    function updateBookmarkBadge() {
+      const badge = document.getElementById('bookmark-count-badge');
+      if (badge) badge.textContent = appState.bookmarks.length;
+    }
+
+    /**
+     * ========================================================================
+     * 4. NAVIGATION & SUBMENU CONTROLLERS
+     * ========================================================================
+     */
+    function toggleSidebarGroup(id) {
+      const el = document.getElementById(id);
+      const chev = document.getElementById('chevron-' + id);
+      const isOpen = el.classList.toggle('open');
+      if (chev) chev.textContent = isOpen ? '▼' : '▶';
+    }
+
+    function updateActiveNav(navKey) {
+      document.querySelectorAll('.nav-item-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-nav') === navKey);
+      });
+    }
+
+    function openOverview() {
+      appState.viewMode = 'overview';
+      updateActiveNav('overview');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openChapter(chId) {
+      appState.viewMode = 'chapter';
+      appState.chapterId = chId;
+      updateActiveNav(chId);
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openFilmVault() {
+      appState.viewMode = 'film-vault';
+      updateActiveNav('film-vault');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openBookmarks() {
+      appState.viewMode = 'bookmarks';
+      updateActiveNav('bookmarks');
+      renderMainView();
+      closeMobileDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /**
+     * ========================================================================
+     * 5. FILM DETAIL MODAL
+     * ========================================================================
+     */
+    function openFilmModal(filmId) {
+      const film = FILMS_DATABASE.find(f => f.id === filmId);
+      if (!film) return;
+      document.getElementById('modal-film-year').textContent = `${film.year} • ${film.category}`;
+      document.getElementById('film-modal-body').innerHTML = `
+        <div class="rounded-2xl overflow-hidden border border-theme">
+          ${buildFilmPosterSVG(film, true)}
+        </div>
+        <div class="space-y-2">
+          <h2 class="heading-font text-2xl font-bold text-ink">${film.title} (${film.year})</h2>
+          <div class="flex flex-wrap gap-2 text-xs font-bold">
+            <span class="px-3 py-1 rounded-full" style="background-color: var(--accent-soft); color: var(--accent);">Role: ${film.role}</span>
+            <span class="px-3 py-1 rounded-full" style="background-color: var(--green-soft); color: var(--green-accent);">Director: ${film.director}</span>
+          </div>
+        </div>
+        <p class="reader-font text-ink-secondary">${film.synopsis}</p>
+      `;
+      const modal = document.getElementById('film-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeFilmModal() {
+      const modal = document.getElementById('film-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    /**
+     * ========================================================================
+     * 6. MAIN READER & INTERACTIVE FILM VAULT RENDERER
+     * ========================================================================
+     */
+    function renderMainView() {
+      const container = document.getElementById('main-content');
+      const q = appState.searchQuery.trim().toLowerCase();
+
+      // Global Search Results View
+      if (q.length > 0) {
+        const matchedChapters = CHAPTERS.filter(ch =>
+          ch.title.toLowerCase().includes(q) ||
+          ch.subtitle.toLowerCase().includes(q) ||
+          ch.paragraphs.join(' ').toLowerCase().includes(q)
+        );
+        const matchedFilms = FILMS_DATABASE.filter(f =>
+          f.title.toLowerCase().includes(q) ||
+          f.role.toLowerCase().includes(q) ||
+          f.director.toLowerCase().includes(q) ||
+          f.synopsis.toLowerCase().includes(q) ||
+          String(f.year).includes(q)
+        );
+
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card p-6 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent">Archive Search</span>
+                <h2 class="heading-font text-2xl font-bold text-ink mt-1">
+                  Found ${matchedChapters.length} Essays &amp; ${matchedFilms.length} Films for "${appState.searchQuery}"
+                </h2>
+              </div>
+              <button onclick="clearSearch()" class="btn-theme px-4 py-2 rounded-xl text-xs font-bold">Clear Search</button>
+            </div>
+
+            ${matchedChapters.length ? `
+              <div class="space-y-3">
+                <h3 class="heading-font text-xl font-bold text-ink">Matching Editorial Chapters</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${matchedChapters.map(ch => `
+                    <article class="surface-card rounded-2xl p-5 flex flex-col justify-between space-y-3">
+                      <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">${ch.section}</span>
+                        <h4 class="heading-font text-lg font-bold text-ink mt-1">${ch.title}</h4>
+                        <p class="text-xs text-ink-secondary mt-1">${ch.subtitle}</p>
+                      </div>
+                      <button onclick="clearSearch(); openChapter('${ch.id}');" class="btn-accent px-4 py-2 rounded-xl text-xs font-bold self-start">Read Chapter →</button>
+                    </article>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${matchedFilms.length ? `
+              <div class="space-y-3">
+                <h3 class="heading-font text-xl font-bold text-ink">Matching Films (${matchedFilms.length})</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  ${matchedFilms.map(f => `
+                    <div onclick="openFilmModal('${f.id}')" class="surface-card rounded-2xl overflow-hidden cursor-pointer hover:opacity-95 transition">
+                      ${buildFilmPosterSVG(f, false)}
+                      <div class="p-4">
+                        <div class="text-xs font-bold text-accent">${f.year} • ${f.role}</div>
+                        <div class="heading-font text-base font-bold text-ink mt-0.5">${f.title}</div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </section>
+        `;
+        return;
+      }
+
+      // 1. ARCHIVE COVER / OVERVIEW VIEW
+      if (appState.viewMode === 'overview') {
+        container.innerHTML = `
+          <section class="space-y-8">
+            <!-- Hero Editorial Banner -->
+            <div class="surface-card rounded-3xl p-6 sm:p-10 space-y-6">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style="background-color: var(--accent-soft); color: var(--accent);">
+                  Dreamy, Deep &amp; Green World Chronicle
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold" style="background-color: var(--green-soft); color: var(--green-accent);">
+                  Curated by Amim Ahsan (Amimul Ahsan)
+                </span>
+              </div>
+
+              <h1 class="heading-font text-3xl sm:text-4xl font-bold text-ink leading-tight">
+                Madonna Archive: Queen of Pop, Cinema Retrospective &amp; The Green World Philosophy
+              </h1>
+
+              <!-- Custom Hero Portrait Emblem -->
+              <svg viewBox="0 0 720 220" class="w-full h-48 sm:h-56 rounded-2xl">
+                <defs>
+                  <linearGradient id="heroMadonna" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2D1224"/>
+                    <stop offset="50%" stop-color="#581C3C"/>
+                    <stop offset="100%" stop-color="#17382C"/>
+                  </linearGradient>
+                </defs>
+                <rect width="720" height="220" fill="url(#heroMadonna)"/>
+                <circle cx="360" cy="102" r="64" fill="none" stroke="#FDE68A" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="330,72 345,48 360,66 375,48 390,72" fill="#FDE68A"/>
+                <text x="360" y="106" fill="#FFFFFF" font-family="Georgia, serif" font-size="22" font-weight="bold" text-anchor="middle">MADONNA</text>
+                <text x="360" y="128" fill="#FBCFE8" font-family="sans-serif" font-size="11" letter-spacing="3" text-anchor="middle">QUEEN OF POP • CONTAINER OF HAPPINESS</text>
+                <text x="360" y="192" fill="#A7F3D0" font-family="sans-serif" font-size="11" letter-spacing="2" text-anchor="middle">400M+ RECORDS • 26 FILMS • $10B CULTURAL IMPACT • GREEN WORLD CHRONICLE</text>
+              </svg>
+
+              <blockquote class="surface-quote p-5 rounded-r-2xl">
+                <p class="reader-font italic font-bold text-ink">
+                  “She is the undisputed Queen of Pop, a timeless beauty icon, a Golden Globe–winning actress, a New York Times #1 children’s author, and a vessel of human happiness—whose spirit unites in our Green World chronicle with Amim Ahsan and child Mishal.”
+                </p>
+              </blockquote>
+
+              <!-- Key Metrics Strip -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+                <div class="surface-page p-4 rounded-2xl border border-theme text-center">
+                  <div class="heading-font text-xl font-bold text-accent">400M+</div>
+                  <div class="text-[11px] font-bold text-ink-muted mt-0.5">Records Sold Worldwide</div>
+                </div>
+                <div class="surface-page p-4 rounded-2xl border border-theme text-center">
+                  <div class="heading-font text-xl font-bold text-green-theme">26 Films</div>
+                  <div class="text-[11px] font-bold text-ink-muted mt-0.5">Acting, Docs &amp; Directing</div>
+                </div>
+                <div class="surface-page p-4 rounded-2xl border border-theme text-center">
+                  <div class="heading-font text-xl font-bold text-gold">$850M–$10B</div>
+                  <div class="text-[11px] font-bold text-ink-muted mt-0.5">Forbes Net Worth / Cultural Impact</div>
+                </div>
+                <div class="surface-page p-4 rounded-2xl border border-theme text-center">
+                  <div class="heading-font text-xl font-bold text-accent">100+</div>
+                  <div class="text-[11px] font-bold text-ink-muted mt-0.5">Global Cultural Legacy Tree</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="openFilmVault()" class="btn-accent px-5 py-3 rounded-xl text-xs font-bold">
+                  Open Interactive 26-Film Poster Vault →
+                </button>
+                <button onclick="openChapter('ch-80s-90s')" class="btn-theme px-5 py-3 rounded-xl text-xs font-bold">
+                  Begin Reading Chapters
+                </button>
+              </div>
+            </div>
+
+            <!-- All 5 Archive Pillars Directory -->
+            <div class="space-y-4">
+              <h2 class="heading-font text-2xl font-bold text-ink">Explore All Archive Chapters</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                ${CHAPTERS.map(ch => `
+                  <article class="surface-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-accent">${ch.section}</span>
+                      <h3 class="heading-font text-lg font-bold text-ink">${ch.title}</h3>
+                      <p class="text-xs text-ink-secondary leading-relaxed">${ch.subtitle}</p>
+                    </div>
+                    <div class="pt-3 border-t border-theme flex items-center justify-between">
+                      <span class="text-[11px] text-ink-muted">${ch.readTime}</span>
+                      <button onclick="openChapter('${ch.id}')" class="btn-accent px-3.5 py-1.5 rounded-xl text-xs font-bold">
+                        Read →
+                      </button>
+                    </div>
+                  </article>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      // 2. INTERACTIVE 26-FILM POSTER VAULT VIEW
+      else if (appState.viewMode === 'film-vault') {
+        const categories = ['All', 'Acting', 'Directing', 'Documentary', 'Music & Cameo'];
+        const filteredFilms = FILMS_DATABASE.filter(f => {
+          const matchesCat = appState.filmFilter === 'All' || f.category === appState.filmFilter;
+          const fq = appState.filmSearch.trim().toLowerCase();
+          const matchesText = !fq || f.title.toLowerCase().includes(fq) || f.role.toLowerCase().includes(fq) || String(f.year).includes(fq);
+          return matchesCat && matchesText;
+        });
+
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card rounded-3xl p-6 sm:p-8 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-gold">Section II • Complete Cinema Retrospective</span>
+                  <h1 class="heading-font text-3xl font-bold text-ink mt-1">Interactive Film Vault (All 26 Films &amp; Posters)</h1>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold" style="background-color: var(--accent-soft); color: var(--accent);">
+                  Showing ${filteredFilms.length} of 26 Works
+                </span>
+              </div>
+              <p class="text-sm text-ink-secondary">
+                Click any custom movie poster cover below to inspect Madonna’s character role, director, year, and cinematic notes.
+              </p>
+
+              <!-- Filter Pills & Film Search -->
+              <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <div class="flex flex-wrap gap-1.5">
+                  ${categories.map(cat => `
+                    <button onclick="setFilmFilter('${cat}')" class="${appState.filmFilter === cat ? 'btn-accent' : 'btn-theme'} px-3 py-1.5 rounded-xl text-xs font-bold">
+                      ${cat}
+                    </button>
+                  `).join('')}
+                </div>
+                <input
+                  type="text"
+                  value="${appState.filmSearch}"
+                  oninput="setFilmSearch(this.value)"
+                  placeholder="Filter by title, year, or role..."
+                  class="px-3.5 py-2 rounded-xl text-xs font-semibold surface-page border border-theme text-ink focus:outline-none w-full sm:w-64"
+                />
+              </div>
+            </div>
+
+            <!-- 26-Film Poster Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              ${filteredFilms.map(film => `
+                <article onclick="openFilmModal('${film.id}')" class="surface-card rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between transition transform hover:-translate-y-0.5">
+                  <div>
+                    ${buildFilmPosterSVG(film, false)}
+                    <div class="p-5 space-y-2">
+                      <div class="flex items-center justify-between text-[11px] font-bold">
+                        <span class="text-accent">${film.year}</span>
+                        <span class="text-ink-muted">${film.category}</span>
+                      </div>
+                      <h3 class="heading-font text-lg font-bold text-ink leading-snug">${film.title}</h3>
+                      <div class="text-xs font-semibold text-green-theme">Role: ${film.role}</div>
+                      <p class="text-xs text-ink-secondary line-clamp-2 leading-relaxed pt-1">${film.synopsis}</p>
+                    </div>
+                  </div>
+                  <div class="px-5 py-3 border-t border-theme flex items-center justify-between text-xs font-bold text-accent">
+                    <span>Inspect Film Dossier</span>
+                    <span>→</span>
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 3. CHAPTER READER VIEW
+      else if (appState.viewMode === 'chapter') {
+        const chIdx = CHAPTERS.findIndex(c => c.id === appState.chapterId);
+        const ch = CHAPTERS[chIdx >= 0 ? chIdx : 0];
+        const prevCh = chIdx > 0 ? CHAPTERS[chIdx - 1] : null;
+        const nextCh = chIdx < CHAPTERS.length - 1 ? CHAPTERS[chIdx + 1] : null;
+        const isSaved = appState.bookmarks.includes(ch.id);
+
+        container.innerHTML = `
+          <article class="surface-card rounded-3xl p-6 sm:p-10 space-y-7">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-theme pb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent">${ch.section}</span>
+                <div class="text-xs text-ink-muted mt-0.5">By Amim Ahsan • ${ch.readTime}</div>
+              </div>
+              <button onclick="toggleBookmark('${ch.id}')" class="${isSaved ? 'btn-accent' : 'btn-theme'} px-3.5 py-1.5 rounded-xl text-xs font-bold">
+                ${isSaved ? '★ Saved in Vault' : '☆ Save Chapter'}
+              </button>
+            </div>
+
+            <div class="space-y-3">
+              <h1 class="heading-font text-3xl sm:text-4xl font-bold text-ink leading-tight">${ch.title}</h1>
+              <p class="text-sm sm:text-base text-ink-secondary leading-relaxed">${ch.subtitle}</p>
+            </div>
+
+            <div>${ch.svgBanner}</div>
+
+            <blockquote class="surface-quote p-5 rounded-r-2xl">
+              <p class="reader-font italic font-bold text-ink">${ch.quote}</p>
+            </blockquote>
+
+            <div class="reader-font text-ink space-y-5">
+              ${ch.paragraphs.map(p => `<p>${p}</p>`).join('')}
+            </div>
+
+            ${ch.tableData ? `
+              <div class="overflow-x-auto rounded-2xl border border-theme">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                  <thead>
+                    <tr class="surface-sidebar border-b border-theme">
+                      ${ch.tableData.headers.map(h => `<th class="p-3.5 font-bold text-ink">${h}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${ch.tableData.rows.map(row => `
+                      <tr class="border-b border-theme last:border-b-0">
+                        ${row.map((cell, i) => `<td class="p-3.5 ${i === 0 ? 'font-bold text-accent' : 'text-ink-secondary'}">${cell}</td>`).join('')}
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            ` : ''}
+
+            <!-- Sequential Chapter Navigation -->
+            <div class="pt-6 border-t border-theme flex flex-wrap items-center justify-between gap-3">
+              ${
+                prevCh
+                  ? `<button onclick="openChapter('${prevCh.id}')" class="btn-theme px-4 py-2.5 rounded-xl text-xs font-bold">← ${prevCh.title}</button>`
+                  : `<button onclick="openOverview()" class="btn-theme px-4 py-2.5 rounded-xl text-xs font-bold">← Back to Archive Cover</button>`
+              }
+              ${
+                nextCh
+                  ? `<button onclick="openChapter('${nextCh.id}')" class="btn-accent px-4 py-2.5 rounded-xl text-xs font-bold">${nextCh.title} →</button>`
+                  : `<button onclick="openFilmVault()" class="btn-accent px-4 py-2.5 rounded-xl text-xs font-bold">Explore All 26 Films →</button>`
+              }
+            </div>
+          </article>
+        `;
+      }
+
+      // 4. SAVED VAULT / BOOKMARKS VIEW
+      else if (appState.viewMode === 'bookmarks') {
+        const saved = CHAPTERS.filter(ch => appState.bookmarks.includes(ch.id));
+        container.innerHTML = `
+          <section class="space-y-6">
+            <div class="surface-card p-6 sm:p-8 rounded-3xl space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-accent">Personal Archive</span>
+              <h1 class="heading-font text-3xl font-bold text-ink">Saved Vault &amp; Bookmarks (${saved.length})</h1>
+              <p class="text-sm text-ink-secondary">Your saved essays from the Madonna Archive.</p>
+            </div>
+            ${
+              saved.length
+                ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    ${saved.map(ch => `
+                      <article class="surface-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                          <span class="text-xs font-bold uppercase tracking-wider text-accent">${ch.section}</span>
+                          <h3 class="heading-font text-xl font-bold text-ink">${ch.title}</h3>
+                          <p class="text-xs text-ink-secondary">${ch.subtitle}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-theme">
+                          <button onclick="openChapter('${ch.id}')" class="btn-accent px-4 py-2 rounded-xl text-xs font-bold">Read →</button>
+                          <button onclick="toggleBookmark('${ch.id}')" class="btn-theme px-3 py-2 rounded-xl text-xs font-bold">Remove</button>
+                        </div>
+                      </article>
+                    `).join('')}
+                  </div>`
+                : `<div class="surface-card p-8 rounded-2xl text-sm text-ink-muted">No chapters bookmarked yet. Click <strong>“☆ Save Chapter”</strong> inside any chapter to store it here.</div>`
+            }
+          </section>
+        `;
+      }
+    }
+
+    function setFilmFilter(cat) {
+      appState.filmFilter = cat;
+      renderMainView();
+    }
+
+    function setFilmSearch(val) {
+      appState.filmSearch = val;
+      renderMainView();
+    }
+
+    /**
+     * ========================================================================
+     * 7. SEARCH & MOBILE DRAWER INITIALIZATION
+     * ========================================================================
+     */
+    const searchInput = document.getElementById('global-search');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+
+    searchInput.addEventListener('input', e => {
+      appState.searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle('hidden', appState.searchQuery.length === 0);
+      renderMainView();
+    });
+
+    function clearSearch() {
+      appState.searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderMainView();
+    }
+    clearSearchBtn.addEventListener('click', clearSearch);
+
+    const sidebarEl = document.getElementById('sidebar');
+    const backdropEl = document.getElementById('sidebar-backdrop');
+
+    function openMobileDrawer() {
+      sidebarEl.classList.remove('-translate-x-full');
+      backdropEl.classList.remove('hidden');
+    }
+
+    function closeMobileDrawer() {
+      sidebarEl.classList.add('-translate-x-full');
+      backdropEl.classList.add('hidden');
+    }
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', openMobileDrawer);
+    document.getElementById('close-sidebar-btn').addEventListener('click', closeMobileDrawer);
+    backdropEl.addEventListener('click', closeMobileDrawer);
+
+    /**
+     * ========================================================================
+     * 8. HAVEN SUNLIGHT — flying walnuts, juicy water-food, happiness only
+     * ========================================================================
+     */
+    const HAVEN_WALNUT_SVG = `
+      <svg viewBox="0 0 64 64" width="46" height="46" aria-hidden="true">
+        <path d="M32 6c9 0 17 6 19 15 2 8-1 16-7 22-4 4-8 9-12 15-4-6-8-11-12-15-6-6-9-14-7-22C15 12 23 6 32 6Z" fill="#B07A45" stroke="#6E4520" stroke-width="1.6"/>
+        <path d="M32 9v46" stroke="#6E4520" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+        <path d="M22 22c3 3 4 8 2 12M42 22c-3 3-4 8-2 12M20 40c3 1 5 4 6 7M44 40c-3 1-5 4-6 7" stroke="#6E4520" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <ellipse cx="26" cy="20" rx="5" ry="3" fill="#E4B77F" opacity="0.55" transform="rotate(-18 26 20)"/>
+      </svg>
+    `;
+    const HAVEN_FOODS = ['🍉', '🍇', '🍑', '🍧', '🍲', '🐟', '🥭', '🫧', '🍍', '🥥', '🧃', '🍹', '🦐', '🍋'];
+    const HAVEN_WORDS = ['happiness', 'sunlit juice', 'sweet joy', 'forever happy', 'haven water', 'no one, only joy', 'juice pressing under', 'curry-sweet dream'];
+
+    function initHavenGarden() {
+      const layer = document.getElementById('haven-layer');
+      if (!layer || layer.dataset.ready) return;
+      layer.dataset.ready = 'true';
+
+      // Tiny sunlight motes drifting from haven
+      for (let i = 0; i < 14; i++) {
+        const mote = document.createElement('span');
+        mote.className = 'haven-mote';
+        const size = 6 + Math.random() * 16;
+        mote.style.width = size + 'px';
+        mote.style.height = size + 'px';
+        mote.style.left = Math.random() * 100 + '%';
+        mote.style.top = Math.random() * 100 + '%';
+        mote.style.setProperty('--dur', (5 + Math.random() * 6) + 's');
+        mote.style.setProperty('--delay', (-Math.random() * 8) + 's');
+        layer.appendChild(mote);
+      }
+
+      // Flying walnuts — tap one for a juicy water-food that melts away
+      for (let i = 0; i < 9; i++) {
+        const walnut = document.createElement('button');
+        walnut.type = 'button';
+        walnut.className = 'haven-walnut';
+        walnut.setAttribute('aria-label', 'A flying walnut — tap for a little happiness');
+        walnut.innerHTML = HAVEN_WALNUT_SVG;
+        walnut.style.left = (6 + Math.random() * 84) + '%';
+        walnut.style.top = (10 + Math.random() * 74) + '%';
+        walnut.style.setProperty('--dx', (Math.random() * 60 - 30) + 'px');
+        walnut.style.setProperty('--dy', (Math.random() * 50 - 30) + 'px');
+        walnut.style.setProperty('--dur', (7 + Math.random() * 7) + 's');
+        walnut.style.setProperty('--delay', (-Math.random() * 8) + 's');
+        walnut.addEventListener('click', () => spawnHavenFood(walnut));
+        layer.appendChild(walnut);
+      }
+    }
+
+    function spawnHavenFood(walnut) {
+      const layer = document.getElementById('haven-layer');
+      if (!layer) return;
+      const rect = walnut.getBoundingClientRect();
+      const food = document.createElement('div');
+      food.className = 'haven-food';
+      food.style.left = (rect.left + rect.width / 2) + 'px';
+      food.style.top = (rect.top + rect.height / 2) + 'px';
+
+      const emoji = HAVEN_FOODS[Math.floor(Math.random() * HAVEN_FOODS.length)];
+      const word = HAVEN_WORDS[Math.floor(Math.random() * HAVEN_WORDS.length)];
+
+      const droplets = Array.from({ length: 7 }, () => {
+        const tx = (Math.random() * 76 - 38).toFixed(0);
+        const ty = (-22 - Math.random() * 46).toFixed(0);
+        const delay = (Math.random() * 0.14).toFixed(2);
+        return `<span class="haven-drop" style="--tx:${tx}px;--ty:${ty}px;animation-delay:${delay}s"></span>`;
+      }).join('');
+
+      const trails = Array.from({ length: 3 }, () => {
+        const tx = (Math.random() * 40 - 20).toFixed(0);
+        const delay = (0.12 + Math.random() * 0.2).toFixed(2);
+        return `<span class="haven-trail" style="--tx:${tx}px;animation-delay:${delay}s"></span>`;
+      }).join('');
+
+      food.innerHTML = `
+        <span class="haven-ripple"></span>
+        <span class="haven-ripple second"></span>
+        <span class="haven-ripple third"></span>
+        ${droplets}
+        ${trails}
+        <span class="haven-food-emoji">${emoji}</span>
+        <span class="haven-food-word">${word}</span>
+      `;
+      layer.appendChild(food);
+      setTimeout(() => food.remove(), 1850);
+
+      if (!window._havenGreeted) {
+        window._havenGreeted = true;
+        showToast('Haven fruit appears, then melts into happiness');
+      }
+    }
+
+    window.onload = function () {
+      setTheme(appState.theme, false);
+      setFont(appState.font, false);
+      document.documentElement.style.setProperty('--reader-size', appState.fontSize + 'px');
+      document.getElementById('font-size-label').textContent = appState.fontSize + 'px';
+      updateBookmarkBadge();
+      renderMainView();
+      initHavenGarden();
+    };
+  </script>
+</body>
+</html>
