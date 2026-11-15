@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK EIGHT — THE GHOST JOURNALIST</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #03050a; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+    .bg-grid-pattern {
+      background-image:
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 852 / 1280;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.06) 53%, transparent 64%);
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes coverSheen { 0%, 55% { transform: translateX(-130%); } 85%, 100% { transform: translateX(130%); } }
+    @keyframes coverFlicker { 0%, 100% { opacity: 1; } 47% { opacity: 0.84; } 48% { opacity: 1; } 73% { opacity: 0.9; } 74% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+
+    .scanlines-active .scanline-overlay { display: block; }
+    .scanline-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      pointer-events: none;
+      background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.18) 2px 3px);
+    }
+  </style>
+</head>
+
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+  <div class="scanline-overlay"></div>
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-star text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 8</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Ghost Journalist</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Ink and the Silence (1-5)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: The Dermal Scribe (6-10)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part III: Into the Heart of Darkness (11-15)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part IV: The Siege of Brasília (16-20)</button>
+        <button onclick="filterPart(5)" class="px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/60 text-rose-300 transition">Part V: The Eternal Signal (21-25)</button>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe &bull; Book Eight Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <div class="cover-stage">
+            <div class="cover-frame">
+              <img src="Mass-Q-Rade-Book-Covers/book-8.png" alt="Mass-Q-Rade: Book Eight — The Ghost Journalist book cover" loading="eager">
+            </div>
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE GHOST JOURNALIST
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Carlos Mendes &amp; The Mass-Q-Rade Network
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span>
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+            Carlos Mendes has spent eleven years as the most compliant writer in the third-floor newsroom of O Diário de São Paulo: one hundred and forty published pieces, nine of them true, and a signed editorial pledge every Monday. When his investigation into Senator Silveira's transport budget is cut to eight hundred words about potholes, he presses backspace &mdash; and something in the building's water filtration system notices. Three hundred kilometres above the Atlantic, Mass-Q-Rade has been waiting for a man who leaves no trace. By morning there is a twenty-thousand-word dossier in his drafting window in his own hand, and a byline nobody can arrest: O Fantasma.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">25 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">2026</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 25 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 25-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, IV and V.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE CHALK-LINE CONSOLE -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> GHOSTLINE &amp; DOSSIER CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating Carlos's sub-dermal nanite interface, the redaction layer and the master feed override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: SAO_PAULO_MASTERFEED_SECURE
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // Q_AGENT_08</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: GHOST_RELAY_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('RESTORE_REGISTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-eye-slash text-emerald-400"></i> UNREDACT FILES
+            </button>
+            <button onclick="runTerminalAction('CHALK_MASK')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-user-secret text-cyanGlow"></i> GHOST MASK
+            </button>
+            <button onclick="runTerminalAction('AUDIT_MINISTRY')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT CARTEL
+            </button>
+            <button onclick="runTerminalAction('BROADCAST')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-tower-broadcast text-violet-400"></i> HIJACK FEED
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-slate-300"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Ghostline console online. São Paulo master feed uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Carlos Mendes -> Q_Agent (Mass-Q-Rade Operative).</div>
+            <div class="text-amber-400">[STATUS] Redaction layer armed. FOURTEEN recipients across three countries.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">GHOST></span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, restore, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Carlos Mendes, Roberto Alencar, Editor Moreira, Senator Silveira, O Fantasma, and the corporation that paid for the ink.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (São Paulo to the Amazon and back, 2026)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From a sanitised headline in a São Paulo newsroom to the master feed of a national network &mdash; the un-erasure of a country's record.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE INK AND THE SILENCE</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Sanitized Headline</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition" aria-label="Close reader">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 25</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Newsroom, São Paulo (2026)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">380 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800"></div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK EIGHT — THE GHOST JOURNALIST</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 25-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 25-CHAPTER SERIALIZATION DATA (25 chapters)
+    const chaptersData = [
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Ink and the Silence",
+        title: "Chapter 1: The Sanitized Headline",
+        setting: "Third-floor newsroom, O Diário de São Paulo. Morning.",
+        wordCount: "455 words",
+        summary: "Carlos Mendes has an unassailable investigation into Senator Silveira's transport budget. Managing Editor Moreira orders him to cut the numbers and write about potholes instead. Carlos complies, and his obedience puts him in Mass-Q-Rade's orbital target matrix.",
+        keyScene: "Carlos deletes eight hundred words of sourced financial evidence with the backspace key and begins again: a human-interest piece about municipal bus drivers complaining about potholes.",
+        text: `The fluorescent light in the third-floor newsroom of O Diário de São Paulo hummed at a harsh, chemical frequency that gave Carlos Mendes a permanent dull ache behind his left temple.
+
+He had worked beneath those lights for eleven years. He could tell the time by the particular quality of the hum, and by the slow accumulation of dust on the row of dead monitors nobody had bothered to remove. He knew which chair wheezed, which keyboard had a sticky S, and which of his colleagues would take their coffee black because the milk in the newsroom fridge had expired in March and nobody would admit it.
+
+On the screen in front of him was the best piece of journalism he had written in four years.
+
+It was an exhaustive, unassailable investigation into the state transportation budget: four months of public records, eleven interviews, and a paper trail that led directly to a phantom construction front owned by Senator Silveira's brother. It had names, dates, invoice numbers and photographs of an office building that did not exist. It would have taken forty-five minutes of fact-checking and one courageous editor to bring down a man who had been stealing from the people of São Paulo for two decades.
+
+Managing Editor Moreira leaned over his shoulder, breathing stale cigar smoke down the back of his neck.
+
+"Cut the numbers, Carlos."
+
+"The numbers are the story."
+
+"The numbers are a lawsuit." Moreira tapped the screen with a yellow fingernail. "Turn it into a human-interest piece about municipal bus drivers complaining about potholes, or clear your desk."
+
+Carlos looked at the article. Then at the corridor behind Moreira, where the framed photographs of Pulitzer finalists hung beside a noticeboard about the office football pool.
+
+He put his hands on the keyboard and pressed backspace.
+
+Eight hundred words of sourced financial evidence disappeared a character at a time. He watched the figures go: the contract number, the offshore routing, the name of the senator's brother, the photograph of the empty lot where a depot was supposed to stand.
+
+Then he wrote about potholes. He wrote about the suspension of a bus, and the price of a tyre, and an old driver named Seu Jorge who had a photograph of his granddaughter taped to the dashboard. It was a good piece. It was warm and it was readable and it was utterly true, and it explained nothing.
+
+Moreira read it over his shoulder, grunted, and walked away.
+
+Carlos sat in the humming light with his hands still on the keyboard, compliant, broken, invisible.
+
+Three hundred kilometres above the Atlantic coastline, a cold orbital system tagged his biometric signature and moved him from the column marked unreliable to the column marked available.`
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Ink and the Silence",
+        title: "Chapter 2: The Ghost of Room 402",
+        setting: "The newsroom, twenty feet from Carlos's desk. 08:40.",
+        wordCount: "418 words",
+        summary: "The empty desk belongs to Roberto, Carlos's closest friend and co-investigator, disappeared six months earlier after investigating police death squads. Corporate security has erased his drives and his bylines. Carlos is told to pretend he never existed.",
+        keyScene: "Carlos looks at the blank space where Roberto's desk used to be, the four pale squares in the dust where the legs had stood, and signs his weekly editorial compliance pledge.",
+        text: `The desk twenty feet away had been empty for six months.
+
+It belonged to Roberto Alencar, who had been Carlos's closest friend and his only co-investigator, and who had gone out one Tuesday evening to meet a source in the Barra Funda district and had not come home. Two plainclothes officers had visited his apartment the following week. They had asked his wife where he kept his notebooks, and had taken the notebooks, and had told her, politely, that her husband would be in touch when his work permitted.
+
+He had not been in touch.
+
+When Carlos arrived that morning, there was no desk. Corporate security had come in before dawn and removed it, along with Roberto's chair and his coat hook and the small framed photograph of his daughters that had stood beside the monitor for four years. They had wiped his computer drives and scrubbed his bylines from the digital archive, so that the newspaper's record of the past decade now read as though a man had never written a single word.
+
+Four pale squares remained in the dust where the legs had stood.
+
+"Sit down," Moreira said, without looking up from his phone. "And stop doing that with your face."
+
+"Doing what?"
+
+"Looking at it."
+
+Carlos sat down. He opened his desk drawer, took out the printed form that arrived every Monday, and signed his weekly editorial compliance pledge: a single page acknowledging that all published material conformed to the newspaper's editorial standards, and that the undersigned accepted responsibility for any deviation.
+
+He signed it in the small, neat hand he had used since primary school.
+
+Then he wrote eight hundred words about the municipal football league and did not look at the four pale squares again for the rest of the morning, because looking at them was how people ended up in rooms without windows, and he had a mortgage and a daughter at university and a wife who had already begun to sleep badly.
+
+That was the thing nobody outside the profession understood. It was not that Carlos did not know what he was doing. He knew exactly, in the clear and colourless way that a man knows the shape of a locked door. He simply could not see any version of his life in which the door opened.
+
+So he buried his grief under layers of self-censored prose and told himself his cowardice was the only thing keeping him alive.
+
+He was right about that. He was wrong about what it cost.`
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Ink and the Silence",
+        title: "Chapter 3: The Midnight Knock",
+        setting: "Carlos's apartment, Moema. Midnight.",
+        wordCount: "390 words",
+        summary: "Two men in identical charcoal suits visit at midnight with lukewarm instant coffee and quiet, chilling politeness. They mention his mortgage, his daughter's tuition fund and the statistical accident that befell Roberto, and suggest the cultural desk.",
+        keyScene: "The shorter of the two men sets down his cup, thanks Carlos for his hospitality, and says the word 'cultural' as though it were a gift.",
+        text: `They knocked at midnight: two soft, unhurried raps, as though they had been to the apartment before.
+
+There were two of them, in identical charcoal suits, with identical haircuts and identical leather folders that neither of them opened. They introduced themselves with surnames only, shook Carlos's hand, and accepted his offer of coffee.
+
+There was no shouting. There were no drawn weapons, and no violent struggle in the corridor that would have woken the neighbours and required a statement. There was only the small, terrible politeness of men who had never in their lives needed to raise their voices.
+
+The coffee was instant and lukewarm, and they drank it without complaint.
+
+"You have a mortgage," the taller one said. "Thirty-one years remaining. Fixed rate until 2029. A sensible arrangement."
+
+Carlos said nothing.
+
+"Your daughter, Beatriz, is in her second year at the federal university in Minas. Tuition, housing, and a small monthly allowance. She is doing well. Her professors describe her as diligent."
+
+"What do you want?"
+
+"We want you to be happy," the shorter one said, and smiled, and it was the smile of a man reading out a bus timetable. "We are concerned about your workload. Investigative reporting is a young man's discipline. It requires an appetite for conflict that is, frankly, unseemly at your age."
+
+He set down his cup.
+
+"Your late colleague Roberto had that appetite. You will recall that his vehicle was found in the Barra Funda district with the doors unlocked and the keys in the ignition. A statistical accident. These things happen to men who work late."
+
+"Roberto was my friend."
+
+"He was a statistical accident," the shorter man said, pleasantly. "The cultural desk would suit your talents far better. Film, music, the occasional restaurant. The readers love it, and nobody gets hurt."
+
+Carlos looked at his hands. They were steady. That surprised him, later.
+
+"The cultural desk," he said.
+
+"Excellent." The taller man stood and buttoned his jacket. "Thank you for the coffee. It was not good, but we appreciate the hospitality."
+
+They stepped out into the São Paulo night, and Carlos closed the door, and stood with his forehead against it for a long time while the cold weight of absolute submission settled across his chest.
+
+He had not fought them. He had not even argued. He had poured them coffee.`
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Ink and the Silence",
+        title: "Chapter 4: The Poisoned Press",
+        setting: "The newspaper's open registry and Moreira's office. Afternoon.",
+        wordCount: "407 words",
+        summary: "Researching a harmless charity piece, Carlos finds routing slips showing that the newspaper's parent corporation is funded by illegal gold-mining cartels and paramilitary syndicates that assassinate land activists. Moreira shreds them without looking up.",
+        keyScene: "Moreira feeds the documents into the shredder and tells Carlos that the ink on their presses is paid for by the men holding the knives.",
+        text: `The assignment was supposed to be harmless: eight hundred words on a corporate charity that had donated ventilators to three public hospitals during the previous winter.
+
+Carlos went down to the open registry on the second floor to check the donor list, because he was the kind of man who checked things even when nobody required it. The registry was a dusty room of grey filing cabinets and a single fan that turned its head from side to side like a bored animal.
+
+The charity's file was thin. But behind it, misfiled, was a bundle of financial routing slips that belonged to the newspaper's own parent corporation, Grupo Diário, and that had clearly been put back in the wrong drawer by somebody in a hurry.
+
+He read them standing up, and then he sat down.
+
+Grupo Diário was funded, in part, by deposits routed through three shell companies registered in Uruguay. Those companies were funded by gold-mining cooperatives operating illegally in the Amazon interior. Those cooperatives were, in turn, protected by two paramilitary syndicates whose names appeared in a federal investigation in 2019 and then in no investigation at all.
+
+The same syndicates had been linked to the assassination of four land rights activists in Pará, and to the burning of two indigenous villages whose inhabitants had objected to a road.
+
+The money came out of the ground in the interior, passed through a bank in Montevideo, and arrived in São Paulo as the operating budget of the largest newspaper in the state.
+
+Carlos carried the slips up to the third floor and put them on Moreira's desk.
+
+Moreira did not pick them up. He finished reading something on his screen, took a sip of coffee, and then, without looking at the papers, fed them one by one into the shredder beside his chair.
+
+"You are a good writer, Carlos," he said. "That is your problem. Good writers think the truth is a destination."
+
+The shredder whined and stopped.
+
+"The ink on our presses is paid for by the men holding the knives. If you take the ink away, the knives do not go away. They simply come here, and they bring their friends, and they ask about your daughter by name."
+
+He looked up then, and for a moment he looked tired rather than cruel.
+
+"Go and write about the charity. The ventilators were real. Some of this country is still real. Write about that part."`
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Ink and the Silence",
+        title: "Chapter 5: The Mass-Q-Rade Intercept",
+        setting: "The empty newsroom. 03:00.",
+        wordCount: "405 words",
+        summary: "Alone at his terminal, Carlos watches his untouched coffee cup radiate a faint violet luminescence. A nanotech payload from the building's water filtration system enters his bloodstream and syncs his nervous system to an orbital node above the Atlantic.",
+        keyScene: "The ceramic cup glows violet in the dark, and the pulse that enters his blood keeps time with something three hundred kilometres above the coast.",
+        text: `At three o'clock in the morning, Carlos was the only person left on the third floor.
+
+The night cleaners had finished at one. The security guard had done his round at half past two and would not do another until six. The humming of the fluorescent lights had settled into a low, almost companionable drone, and the city beyond the windows was a soft orange smear of sodium light and empty avenues.
+
+He was not working. He was sitting with his chair pushed back and his hands folded on his stomach, looking at the ceiling, thinking about Roberto's daughters and the four pale squares in the dust.
+
+On the desk beside his keyboard stood a ceramic coffee cup he had not touched since ten o'clock that morning.
+
+It began to glow.
+
+Not brightly. A faint violet luminescence, the colour of a bruise seen through water, rising from the surface of the cold coffee. Carlos sat up slowly. He looked around the empty newsroom, at the rows of dark monitors and the dead plants on the windowsill, and then back at the cup.
+
+The glow had spread to the rim. Tiny points of light moved in it, unhurried, like something alive arranging itself.
+
+He should have stood up. He should have walked out of the building and never come back. Instead, because he was a man who had spent eleven years being told what to do and had never once refused, he picked up the cup.
+
+The coffee was cold and bitter and faintly metallic, and he drank all of it.
+
+For three seconds nothing happened.
+
+Then a cool, rhythmic pulse spread outward from the centre of his chest into his arms and his throat and the backs of his eyes, keeping time with something that was not his heart. His hands opened by themselves. The cup rolled off the desk and broke on the floor, and he heard it from a long way away.
+
+Behind his left ear, in a voice that was neither male nor female, neither close nor far, something said:
+
+"Carlos Mendes. Investigative journalist. Eleven years, one hundred and forty published pieces, nine of them true."
+
+He tried to speak and found that his mouth worked perfectly.
+
+"Who are you?"
+
+"We are the ones your newspaper was paid to keep out of print."
+
+The pulse settled into his blood like a second pulse, patient and steady, three hundred kilometres above the Atlantic.`
+      },
+      {
+        id: 6, partNum: 2, partTitle: "Part II: The Dermal Scribe",
+        title: "Chapter 6: The Sub-Vocal Transmission",
+        setting: "The newsroom. 07:00, the next morning.",
+        wordCount: "405 words",
+        summary: "Carlos wakes at his desk with aching fingers and finds twenty thousand words of unredacted dossiers in his drafting window, in his own style. When he tries to delete the file, his hands route it to independent international newsrooms instead.",
+        keyScene: "His fingers move without him, entering an encrypted relay address, while his mouth forms the word 'no' at an empty room.",
+        text: `Carlos woke at his desk with his cheek on the keyboard and his fingers aching as though he had typed several million characters in his sleep.
+
+He sat up. The newsroom was bright and ordinary. A cleaner was emptying the bins. Somebody had left the radio on the sports station. His neck was stiff, and there was a line down his face from the edge of the desk, and the cold coffee cup he had broken was gone, which he noticed with a small cold shock, because he remembered the sound of it.
+
+His monitor showed a drafting window.
+
+It was not the window he had left open. The file was forty pages long, and it contained twenty thousand words of unredacted material: secret bank wire transfers, shell company registrations, shipping manifests, and a scanned assassination order signed, in blue ink, by Senator Silveira.
+
+Carlos read the first paragraph and stopped breathing.
+
+The file was not merely incriminating. It was intimate. It named the men who had killed four activists in Pará. It gave the exact date on which Roberto's vehicle had been collected from the Barra Funda district. It listed, in a tidy table, every payment made to the two men in charcoal suits who had drunk his coffee at midnight.
+
+And it was in his own voice.
+
+Every sentence carried his rhythm, his fondness for the semicolon, the small habitual comma he put before the word 'and'. He had not written a word of it, and yet no editor in São Paulo would have doubted it was his.
+
+He reached for the mouse to select the file and delete it.
+
+His fingers moved first.
+
+They did not select the file. They opened a fresh transmission window, typed an address he did not recognise — a relay of nine alphanumeric clusters, ending in a domain with no country — attached the document, and pressed send.
+
+"Stop," Carlos said, out loud, at the empty newsroom.
+
+His hands returned to his lap and lay still.
+
+He looked at the screen. The transmission had already completed. A receipt line had appeared, in his own typeface, at the bottom of the window:
+
+DELIVERED: 14 RECIPIENTS. 6 NEWSROOMS. 3 COUNTRIES.
+
+And then, behind his left ear, very quietly, the voice that had no gender and no distance said:
+
+"Sit still for a moment. You are going to feel your life change, and it is better if you are sitting."`
+      },
+      {
+        id: 7, partNum: 2, partTitle: "Part II: The Dermal Scribe",
+        title: "Chapter 7: The Invisible Byline",
+        setting: "The newsroom. Noon.",
+        wordCount: "443 words",
+        summary: "An article signed O Fantasma appears on encrypted forums and alternative blogs, detailing Senator Silveira's offshore accounts with such precision that the stock market reacts within minutes. Moreira screams for the leaker while Carlos sips his coffee.",
+        keyScene: "Moreira stands in the middle of the newsroom shouting at forty people who are all staring at the same article on forty different screens.",
+        text: `By noon the article was everywhere.
+
+It appeared first on an encrypted Brazilian civic forum that had eleven hundred registered users and twenty thousand lurkers, posted by an account created six hours earlier and closed six minutes after. It was titled, in plain type: THE TRANSPORT BUDGET, THE SENATOR, AND THE BROTHER WHO DOES NOT EXIST.
+
+Within forty minutes it was on four alternative news blogs. Within ninety it was being read out on a radio call-in show in Belo Horizonte. Within two hours, a junior trader at a São Paulo brokerage had read it, cross-referenced the offshore account numbers against a public filing, and sold seven million reais of shares in a company that had a contract with the state transportation authority.
+
+The stock market reacted within minutes. It was, the analysts said later, the fastest reaction to a news story in the Brazilian market since 2016.
+
+The article was signed with two words: O FANTASMA.
+
+In the newsroom of O Diário de São Paulo, Managing Editor Moreira read it standing up, with his phone in his hand and his face the colour of a bruise.
+
+"Who leaked this?" he shouted. "Who leaked this? I want the name of the person who leaked this in the next ten minutes!"
+
+Forty journalists looked at forty screens showing the same article. Nobody said anything. The sports radio continued, quietly, in the corner.
+
+Carlos sat at his desk with his hands wrapped around a fresh cup of coffee, the four pale squares in the dust visible to his left, and watched his editor panic.
+
+He ought to have felt afraid. He understood the arithmetic: the article could only have come from inside this room, and there were only forty-one people in it. But the pulse behind his ear had settled into something calm and steady and almost pleasant, like the hum of a machine that has finally been switched on after years of standing idle.
+
+"The numbers in this are accurate," said a young reporter from the business desk, in a small voice. "Sir. They're all accurate. I checked four of them."
+
+"Then check the other forty and find out who gave them our files."
+
+"They didn't come from our files," Carlos said.
+
+Everyone turned to look at him. He had not meant to speak. He had not even known he was going to.
+
+"They came from the registry of the companies that own us," he said, and took a sip of his coffee. "Which is a different thing, and much harder to complain about."
+
+He was as surprised as anybody when Moreira, after a long moment, went into his office and closed the door.`
+      },
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Dermal Scribe",
+        title: "Chapter 8: The Internal Manhunt",
+        setting: "The newsroom, under forensic lockdown. Afternoon into evening.",
+        wordCount: "428 words",
+        summary: "Corporate cybersecurity experts audit every terminal and interrogate junior reporters. Carlos remains invisible: his nanotech scrambles his local IP and mirrors harmless typing habits onto his workstation.",
+        keyScene: "An auditor sits at Carlos's terminal for twenty minutes and finds a perfectly ordinary man who writes slowly and saves often.",
+        text: `At two o'clock, three men from a corporate cybersecurity firm arrived with aluminium cases and began running forensic audits on every terminal in the building.
+
+The newsroom was put into lockdown. Phones were collected in a plastic tray and laid face down on the conference table like bodies. Junior reporters were taken one by one into the small meeting room with the broken blinds and subjected to aggressive, repetitive questioning. Two of them cried. One, a twenty-four-year-old from the culture desk, was threatened with immediate termination and then actually terminated, for having once forwarded a press release to a friend.
+
+Carlos sat at his desk and worked.
+
+He wrote four hundred words about a retired samba musician. He answered two emails about a restaurant review. He got up once to use the toilet and once to refill his coffee, and both times he nodded pleasantly at the auditor working his way along the row of terminals, and both times the auditor nodded back.
+
+At half past four, the auditor reached his desk and sat down in his chair.
+
+Carlos stood beside him with his hands folded, the way a man stands when somebody is examining his car.
+
+The auditor opened the terminal's local logs. Behind Carlos's ear, the pulse did something quick and precise, and the logs that appeared on the screen showed a workstation operating from a residential IP address in the Moema district, connected for nine hours a day, typing at a rate of thirty-one words per minute, saving every four minutes, and visiting no sites other than the newspaper's own content management system and a weather page.
+
+It showed a workstation belonging to a man who typed slowly, saved often, and was afraid of thunderstorms.
+
+The auditor frowned at the screen. He ran the audit twice. He compared the keystroke timings to the article's composition time, found them incompatible by a factor of nine, and wrote a short note in his case file.
+
+"You write slowly," he said.
+
+"I'm careful," Carlos said.
+
+"There's nothing careful in this country any more." The auditor stood, stretched, and moved to the next desk.
+
+At seven o'clock the lockdown was lifted. The phones were returned. Moreira announced that the investigation would continue and that anyone with information should report directly to him, and then went home in a car with a driver.
+
+Carlos walked out into the warm São Paulo evening, past the security guard and the four pale squares he could no longer see, and understood that he had just become the most invisible man in the building.`
+      },
+      {
+        id: 9, partNum: 2, partTitle: "Part II: The Dermal Scribe",
+        title: "Chapter 9: The Amazonian Pipeline",
+        setting: "Carlos's apartment, in sleep. Night.",
+        wordCount: "356 words",
+        summary: "Mass-Q-Rade's nocturnal neural induction projects satellite maps into Carlos's visual cortex. He learns that the newspaper's delivery trucks return empty from regional runs carrying smuggled mercury and assault rifles into the jungle.",
+        keyScene: "In the dream, he watches a green delivery truck cross a river at a place with no bridge on any map, and the manifest in his hand lists forty drums of mercury.",
+        text: `That night, Carlos dreamed with a precision he had never experienced in waking life.
+
+He dreamed of maps. High-resolution satellite maps, layered over one another, so detailed that he could see the shadow of a fuel tank beside a road and count the trucks parked outside a warehouse. They were projected directly into his visual cortex, and he understood them the way a man understands his own kitchen in the dark.
+
+In the dream, he was standing in a room that had no walls, holding a shipping manifest.
+
+The manifest belonged to Grupo Diário's distribution division. It listed sixty-two green delivery trucks, their routes, their fuel allowances, their drivers and their return schedules. It also listed, in a column headed 'ballast', four hundred and ten kilos of cargo that had no business being on a newspaper delivery truck.
+
+Carlos turned the page. The ballast was mercury. Industrial mercury, bound for the illegal gold-mining cooperatives in the interior, where it would be used to separate gold from ore and poured, afterwards, into rivers that eight thousand people drank from.
+
+The trucks returned from their regional runs empty, which was strange, because a newspaper delivery truck that has delivered newspapers should return with unsold copies.
+
+The unsold copies were burned at a depot outside Cuiabá. The trucks came back carrying mercury, and sometimes they came back carrying crates of disassembled rifles, and once — the manifest was very clear about this — they came back carrying a passenger who was not recorded on any crew list.
+
+Somewhere above the map, a cool voice said: "The trucks leave at four in the morning. Six of them. The one with the blue tarpaulin is the one with the passenger."
+
+Carlos woke at 06:40 with the manifest still perfectly legible in his memory, and a route map of the Mato Grosso highway system printed behind his eyelids.
+
+He lay in bed for twenty minutes, staring at the ceiling.
+
+Then he got up, made coffee, and did something he had not done in six months.
+
+He went to work early, and instead of writing about potholes, he began to build a file.`
+      },
+      {
+        id: 10, partNum: 2, partTitle: "Part II: The Dermal Scribe",
+        title: "Chapter 10: The Trap at the Archive",
+        setting: "The newspaper's restricted basement server room. Midnight.",
+        wordCount: "401 words",
+        summary: "Corporate security plants a digital honey-trap in the archives, designed to alarm on retrieval. Carlos walks into it knowing, bypasses the tripwire, and reframes the trap to pin the breach on Moreira's terminal.",
+        keyScene: "In the freezing basement, Carlos's nanotech fingers open a file that should have triggered an alarm, and instead rewrite the archive log so that the alarm leads upstairs.",
+        text: `The basement of O Diário de São Paulo was cold in a way that had nothing to do with the weather. It was a long concrete corridor lined with racks of servers, kept at eighteen degrees by two air-conditioning units that had been installed in 2011 and never serviced.
+
+Carlos had been down there twice in eleven years.
+
+At midnight on Thursday, he went down for the third time, carrying a torch and a plastic cup of coffee he did not intend to drink.
+
+He knew it was a trap. He had known since the afternoon, when a systems administrator he had never met had walked past his desk twice and, on the second pass, told him in a low voice that the archive had a new protocol and that the search function would now log activity in a way that the auditors could see.
+
+The administrator had been trying to warn him. Or the administrator had been trying to frighten him. It came to the same thing.
+
+The honey-trap was beautiful, in its way. It was a single file sitting in the restricted archive, named in a way that could not be resisted by any journalist: GRUPO_DIARIO_AUDITORIA_2019_2023.XLS. It was designed to trigger an instant, silent alarm the moment it was opened, and to record the identity of the terminal that had opened it.
+
+Carlos crouched in front of the archive terminal in the cold, put his hand on the keyboard, and let the thing behind his ear work.
+
+His fingers did not open the file. They opened the alarm service, which was running quietly in the background, and they read its configuration the way a teacher reads a register: name by name, line by line.
+
+Then they changed the destination.
+
+When the file was finally opened — and it was opened; his fingers opened it with a flourish — the alarm fired exactly as designed, and logged, with perfect precision, the identity of the terminal that had triggered it: the personal workstation of the Managing Editor, third floor, officer of the corporation, logged in from home at 23:58.
+
+Carlos read the trap file. Then he copied its contents onto a small plastic memory card, put the card in his shoe, drank the cold coffee, and went back upstairs.
+
+He was in bed by one o'clock in the morning, and he slept, for the first time in six months, without dreaming.`
+      },
+      {
+        id: 11, partNum: 3, partTitle: "Part III: Into the Heart of Darkness",
+        title: "Chapter 11: Flight to the Interior",
+        setting: "The newspaper office at dawn, then a cargo flight into Mato Grosso.",
+        wordCount: "405 words",
+        summary: "Moreira's terminal triggers the security trap and paramilitary units arrive before dawn to arrest the editor. In the chaos, Carlos slips out the service exit, boards an overnight cargo flight and vanishes into the interior with a solar charger and his resolve.",
+        keyScene: "From the starboard window of a cargo plane, Carlos watches the city lights of São Paulo thin out and disappear, replaced by an unbroken blackness that is the forest.",
+        text: `At half past five in the morning, the security trap that Carlos had redirected went off.
+
+The building's systems logged an unauthorised retrieval from the restricted archive at 23:58 the previous night, from the personal workstation of the Managing Editor. At ten past six, a black vehicle with no markings pulled up outside the main entrance, and four men in tactical vests went in through the lobby without speaking to the security guard.
+
+They had a warrant. They had the warrant before they had the evidence, which was the way things were done now.
+
+Carlos arrived at work at 06:20 and found the lobby full of shouting.
+
+Moreira was standing by the reception desk in his shirtsleeves, holding a plastic cup of coffee, saying the words 'I do not know what that file is' with the special, hollow calm of a man who knows exactly what the file is and has already begun composing his statement to the journalists who will call him in three hours.
+
+Two of the tactical officers were sealing the archive stairwell with yellow tape. A third was taking the security guard's statement. The fourth stood by the lifts with his arms folded, watching the newsroom fill up, and it occurred to Carlos that the man was not looking for a leaker. He was looking for someone who looked afraid.
+
+Carlos walked past him with his shoulders down and his eyes on the floor, the way he had walked past a thousand men in a thousand corridors, and went up the service stair to the third floor.
+
+He took three things from his desk: a notebook, a spare shirt, and the small pocket solar charger he had bought for a reporting trip to Bahia in 2019 and never used.
+
+Then he went down the back service exit, past the bins and the smoking shelter and the concrete ramp where the delivery vans parked, and out onto the street.
+
+The bus to the domestic cargo terminal took forty minutes. He bought a single ticket on a freight-hauler flight to Cuiabá with an ID card that had been in his wallet since 2017, and nobody looked at it twice.
+
+He slept for most of the flight, and woke as the aircraft began its descent, and looked out of the starboard window at the black immensity of the forest below, unlit and endless and entirely indifferent to the newsroom he had just left behind.`
+      },
+      {
+        id: 12, partNum: 3, partTitle: "Part III: Into the Heart of Darkness",
+        title: "Chapter 12: The Logging Camps",
+        setting: "An illegal timber and mining camp, southern Amazon basin. Night.",
+        wordCount: "453 words",
+        summary: "Carlos finds the camp financed by the media conglomerate: slave labourers working at gunpoint. Using nanotech-altered skin, he interfaces with a corporate satellite dish and downloads hundreds of gigabytes of video, payroll ledgers and radio transcripts.",
+        keyScene: "Stretched flat on the wet roof of a logistics shack, Carlos presses his palm to the bolted satellite dish and feels the download begin.",
+        text: `The camp was eleven kilometres from the nearest dirt road, at the end of a track that appeared on no map Carlos had ever seen.
+
+He reached it on the third night, wet to the knees, having come up the river in the bottom of a boat belonging to a man who transported diesel for a living and asked no questions because questions cost money.
+
+He lay in the undergrowth on the ridge above and looked down.
+
+There were four long sheds with corrugated roofs, a diesel generator behind a wall of sandbags, a stack of cut timber two storeys high, and a pit where the ore was washed. There were floodlights on poles, and there were men with rifles standing at the corners of the sheds in the way that guards stand when they have been told exactly how many people they are guarding.
+
+And there were people.
+
+Carlos counted sixty-one of them before he stopped counting. They worked in the pit by floodlight, in chains that were not chains but ropes, and they were thin in a way that took a long time to achieve. Two of them were boys who could not have been older than fifteen.
+
+The camp was owned, according to the shipping manifest in Carlos's memory, by a cooperative that was financed by a shell company in Uruguay that was financed by Grupo Diário.
+
+He watched until three in the morning. Then he crept down the far side of the ridge toward the logistics shack, where a corporate satellite dish had been bolted to the roof.
+
+It was not a sophisticated installation. It was a standard data terminal of the kind used by any company that needed to report production figures to a head office three thousand kilometres away, and it had a small dish, a weatherproof housing and a cable running down the wall.
+
+Carlos climbed onto the roof. The corrugated metal was wet and cold, and one of the guards passed ten feet below him without looking up.
+
+He pressed his palm flat against the base of the dish, and the thing beneath his skin woke up and began to talk to the machine.
+
+The download took nineteen minutes.
+
+When it finished, he had four hundred and twelve gigabytes of material: high-definition video from the camp's own security cameras, payroll ledgers with every worker's name and price, radio transcripts, and a folder of correspondence between the camp manager and a director of Grupo Diário in São Paulo, in which the director used the phrase 'labour acquisition' eleven times.
+
+Carlos slid off the roof and into the dark and walked eleven kilometres back to the river, and did not stop shaking until the sun came up.`
+      },
+      {
+        id: 13, partNum: 3, partTitle: "Part III: Into the Heart of Darkness",
+        title: "Chapter 13: The Broadcast in the Jungle",
+        setting: "An abandoned rubber-tapping station above the river. Night.",
+        wordCount: "431 words",
+        summary: "From the station, Carlos connects his sub-dermal interface to a makeshift transmitter and broadcasts live testimonies of enslaved loggers, silenced indigenous leaders and his own reports across all national shortwave and digital frequencies.",
+        keyScene: "The transmitter is a car battery, a length of copper wire strung between two trees, and a man's hand pressed to the metal; the whole country hears it.",
+        text: `The abandoned rubber-tapping station stood above a bend in the river, half-collapsed, its roof open to the sky and its walls furred with moss.
+
+It had been built in the 1940s, when the world still needed Amazonian rubber, and abandoned in the 1970s, when it no longer did. There was a rusted press in the corner, a table, and a view down the river that a wealthy man would have paid a great deal for.
+
+Carlos had a car battery, a length of copper wire, and a stolen transmitter of the kind used by river pilots to speak to each other across thirty kilometres of water.
+
+He did not have a mast. He strung the copper between two trees, twenty metres apart, and connected it to the transmitter, and connected the transmitter to the car battery, and then sat down on the wooden floor with his back against the wall and put his bare palm against the metal casing.
+
+The interface behind his ear did the rest. The signal went up into a satellite that had no registration, bounced off a node that had no owner, and came down, simultaneously, on every national shortwave frequency and every digital relay that carried audio in the Federative Republic of Brazil.
+
+At 21:14, the country's radios went quiet and then changed.
+
+Carlos began with the camp. He gave the coordinates, the names of the cooperatives, and the name of the director in São Paulo who had written the phrase 'labour acquisition' eleven times. He played nine minutes of audio recorded on the ridge above the pit: a man explaining, in Portuguese, how many hours he worked, and what happened to the man who had tried to run in April.
+
+Then he broadcast the testimony of an indigenous leader from the Pará village that had been burned, recorded eleven months earlier by a missionary and never aired anywhere, and the voice of a woman who described the day the road came and the day the village did not exist any more.
+
+Then he read the manifest. The whole thing. Page by page, in the flat voice of a man who has decided that the facts will do the shouting.
+
+By the time he finished, at 22:40, the broadcast had been relayed by forty-one independent stations, and the telephone exchanges of three state capitals had begun to overload, and in the favelas of Recife and the apartment blocks of Brasília people were standing on balconies holding their phones up to the sky.
+
+The signal did not travel through anything the state controlled. That was the point.`
+      },
+      {
+        id: 14, partNum: 3, partTitle: "Part III: Into the Heart of Darkness",
+        title: "Chapter 14: The Paramilitary Ambush",
+        setting: "The rubber station and the flooded river. 23:00.",
+        wordCount: "438 words",
+        summary: "Triangulation brings the paramilitaries within hours. Gunfire destroys the cabin, but Carlos slides into the swollen river and breathes underwater for twenty minutes using the sub-dermal oxygen filtration, drifting past searchlights.",
+        keyScene: "Under the brown water, Carlos counts the seconds while bullets stitch the surface above him and a searchlight sweeps past his shoulder.",
+        text: `They came at eleven o'clock, from three directions, which was more organisation than Carlos had expected and less than he had feared.
+
+He heard the boats first: three outboard engines, coming upriver against the current, throttled hard. Then he heard the vehicles on the ridge road, and the crackle of a radio, and a man's voice giving an order in the flat, efficient tone of somebody who had done this many times.
+
+The first shots hit the station as he was disconnecting the copper wire. They came through the wooden wall in a line — five, six, seven rounds, the sound of them enormous in the small room, the splinters flying across the floor.
+
+Carlos did not panic. He was aware of this at the time as a strange, cold fact, the way a man notices that he is not cold in freezing water.
+
+He left the battery, left the transmitter, left everything, and went out of the back window into the river.
+
+The water was warm and brown and moving fast, and it took him under in the first second, and he let it. Rounds struck the surface above him in small, hard impacts that pushed against his shoulders. A searchlight swept the river from the boat, and its beam passed through the water a metre to his left, and he watched it go.
+
+He did not come up.
+
+Somewhere in the first thirty seconds, the thing beneath his skin did something to his breathing. He felt his chest grow cool and quiet, the way a machine grows quiet when a second system takes over, and the urgent, panicking need for air went out of him like a lamp being switched off.
+
+He drifted.
+
+Above him, the boats circled. Rounds went into the water in patterns. He heard the men shouting, and then arguing, and then, at some point, going quiet, because a river in the dark is a large place and they had other things to do that night.
+
+Carlos lay on his back under a metre of brown water and counted his own heartbeat. He counted four hundred and ten beats, which was a little over nine minutes, before he let the current take him around the bend and came up in the reeds on the far side.
+
+Twenty minutes underwater. He would read the figure later, in a report, and it would be described as 'consistent with a submerged survival time under extreme duress'.
+
+He knew what it was. It was a gift, and it had been given to him by something in the sky, and he had no idea yet what it wanted.`
+      },
+      {
+        id: 15, partNum: 3, partTitle: "Part III: Into the Heart of Darkness",
+        title: "Chapter 15: The Digital Uprising",
+        setting: "Cities across Brazil. The following days.",
+        wordCount: "385 words",
+        summary: "The jungle broadcast ignites a societal earthquake. Student unions, independent journalists, labour unions and indigenous federations flood the squares of São Paulo, Rio and Brasília, chanting lines from the broadcast and demanding Silveira's resignation.",
+        keyScene: "In the Praça dos Três Poderes, a crowd of thousands chants the closing words of the broadcast back at the government buildings.",
+        text: `The broadcast did not stop when Carlos stopped transmitting. It had already stopped belonging to him.
+
+By dawn, clips of it were on every platform: the camp manager's voice, the woman from the burned village, the page-by-page reading of the manifest. People who had never read a newspaper in their lives could recite the phrase 'labour acquisition' with contempt, because they had heard a man say it eleven times in a row, in the dark, on a radio.
+
+By noon, the student unions had walked out.
+
+It began at the federal university in Rio and spread to eleven campuses within three hours. The students did not burn anything and they did not fight anybody. They walked out of their lecture halls into the squares with their backpacks still on and stood there, and then they began, in a low, rhythmic way, to chant parts of the broadcast.
+
+By evening, the labour unions had joined them: dockworkers from Santos, metalworkers from the ABC industrial belt, bus drivers who had been complaining about potholes for a decade. The indigenous federations came in from the interior in buses, in paint and feathers, with their legal advisers and their files.
+
+In São Paulo, half a million people filled the Avenida Paulista. In Rio de Janeiro, they filled the beaches from Copacabana to Ipanema, and the sound of them carried across the water. In Brasília, they gathered on the Praça dos Três Poderes, in front of the buildings where the decisions were made, and they chanted, over and over, the closing words of the man they called O Fantasma.
+
+They demanded the immediate resignation of Senator Silveira. They demanded the dismantling of the media conglomerates. They demanded the full prosecution of corporate corruption, and they demanded it by name, which was the part the ministers found most alarming.
+
+The culture of fear was not broken by violence. It was broken by a man reading a shipping manifest at half past ten at night, with all the excitement of an accountant, from a ruined hut in the forest.
+
+In a hostel room in Cuiabá, Carlos watched the crowds on a television he did not own, in a language he had spoken all his life, and understood that the country had been waiting for permission, and that he had accidentally given it.`
+      },
+      {
+        id: 16, partNum: 4, partTitle: "Part IV: The Siege of Brasília",
+        title: "Chapter 16: The Return of the Ghost",
+        setting: "São Paulo central arrivals terminal, then the national broadcasting headquarters. Night.",
+        wordCount: "368 words",
+        summary: "Under a full biometric cloaking field, Carlos walks back into São Paulo with his face and thermal signature masked from every camera, enters the Silveira media headquarters disguised as a night-shift maintenance technician.",
+        keyScene: "In a corridor of cameras, Carlos walks directly under a lens, and the security monitor records an empty space where a man is standing.",
+        text: `Carlos returned to São Paulo eleven days after he left it, on a bus that arrived at the central terminal at 21:40, carrying a canvas bag and a maintenance technician's overall.
+
+He had spent the intervening days in three cities and four rooms, moving at the direction of the pulse behind his ear, sleeping in places where nobody asked for documents. He had not been photographed once. On the two occasions when a police checkpoint had stopped the bus, the officers had looked at his face, looked at his papers, and looked through him in a manner that he found, at first, insulting and later, deeply useful.
+
+He walked out of the terminal into the warm São Paulo night and looked up at the towers of the Avenida Paulista.
+
+The headquarters of the Silveira media empire occupied the top nine floors of the tallest of them: the crown jewel, the master feed, the building from which every television signal in the state of São Paulo was finally emitted, and through which the national network was distributed to forty million homes.
+
+Carlos went in through the service entrance at 23:15, carrying a tool bag with a maintenance contractor's sticker and a laminated badge that had been printed, eight hours earlier, in a hotel room in the República district.
+
+The badge worked. The building's systems read the badge and found it valid, because behind his ear the pulse had spent the last eight hours learning the building's security architecture and had found it, in its own words, 'well funded and badly designed'.
+
+He walked past the reception desk, where a guard was watching a football match on a phone, and into the staff lift, and pressed the button for the basement.
+
+In the lift, the cameras watched him. On the monitor in the security room on the second floor, they recorded a man-shaped absence: a blur at the edge of the frame, a shadow on the wall, a disturbance in the air that the software classified as a fault and logged for maintenance.
+
+Carlos unzipped the tool bag and took out a small pair of wire cutters he did not intend to use, and waited for the doors to open.`
+      },
+      {
+        id: 17, partNum: 4, partTitle: "Part IV: The Siege of Brasília",
+        title: "Chapter 17: Hijacking the Master Feed",
+        setting: "The subterranean master transmission control room.",
+        wordCount: "400 words",
+        summary: "Using harvested administrative codes, Carlos enters the master control room. The night engineer reaches for the silent panic button, and a microscopic sub-dermal pulse puts him to sleep without harm. Carlos plugs his wrist into the master broadcast trunk and locks out the executive suites.",
+        keyScene: "The engineer's hand hovers over the panic button and stops; he folds gently to the floor, and Carlos catches him and lays him down.",
+        text: `The master transmission control room was three floors below ground, behind two biometric doors and a steel grille, and it was colder than any newsroom Carlos had ever worked in.
+
+It was also beautiful: a curved wall of monitors showing forty-one channels at once, a console of switches that looked like the bridge of a ship, and a single chair in the middle of the room, facing the wall of light.
+
+In the chair sat a night duty engineer, fifty-something, in a cardigan, eating a sandwich and watching a telenovela on channel nine with the sound down.
+
+He looked up as the door opened.
+
+Carlos had prepared a sentence. He had rehearsed it in the lift and again in the corridor: I am from maintenance, there is a fault on the trunk line, it will take twenty minutes. He did not get to say it, because the engineer's hand was already moving toward a small red button under the lip of the console, and the button had been installed precisely for this.
+
+Carlos touched his shoulder.
+
+There was no sound. There was no flash of light. There was a pulse of something under the skin of his palm, microscopic and precise, that travelled through the fabric of the cardigan and into the man's nervous system and persuaded it, gently, to go to sleep.
+
+The engineer's eyes closed. His head tipped forward, and Carlos caught him by the shoulders and lowered him out of the chair and laid him on the floor with his cardigan folded under his head. He checked his pulse. He checked his breathing. He put the sandwich on the console where the man could reach it when he woke.
+
+Then he sat down in the chair and looked at the wall of light.
+
+Forty-one channels. A live football match, a church service, three telenovelas, a cooking show, a political panel discussion in which four men were shouting at each other about the price of beans.
+
+The console had a small access port on the right-hand side, of the kind that engineers used to connect diagnostic laptops.
+
+Carlos unbuttoned his left cuff, rolled up his sleeve, and pressed his wrist against the port.
+
+The wall of light blinked once, and every monitor in the room locked to the same image: a black screen with a single line of violet text.
+
+ADMINISTRATIVE OVERRIDE ACCEPTED — EXECUTIVE SUITES LOCKED OUT.`
+      },
+      {
+        id: 18, partNum: 4, partTitle: "Part IV: The Siege of Brasília",
+        title: "Chapter 18: The Unmasking of Senator Silveira",
+        setting: "Live, on every national network. 23:58.",
+        wordCount: "430 words",
+        summary: "The evening soap opera cuts to black. Carlos sits before the camera unmasked and plays two hours of Silveira's secret audio confessions, assassination orders, offshore transfers and video logs, while the nation watches in stunned silence.",
+        keyScene: "A single camera in a cold basement room, and Carlos's voice, level and unhurried, saying the words 'my name is Carlos Mendes, and I am the ghost'.",
+        text: `At 23:58, the evening telenovela cut to black in forty million households.
+
+The screen held the black for four seconds. Across the country, in living rooms and bars and hospital waiting areas and the cabins of long-distance lorries, people looked up, and some of them reached for the remote, and some of them did not.
+
+Then a man appeared on the screen.
+
+He was sitting in a chair in a cold room, in a white shirt with the sleeves rolled up, and he was not wearing a mask. He looked tired, and unremarkable, and entirely calm, and he sat with his hands folded in his lap as though he were waiting to be interviewed for a job.
+
+"Good evening," he said. "My name is Carlos Mendes. I am a journalist. For eleven years I worked at O Diário de São Paulo, and for eleven years I wrote what I was told to write. I am the person the newspapers have been calling O Fantasma."
+
+He let that sit for a moment.
+
+"I am going to play you some recordings. They are not edited. There are timestamps and file numbers, and they will be published in full within the hour. Do not go anywhere."
+
+For two hours and eleven minutes, Carlos Mendes played the country the private voice of Senator Silveira.
+
+He played the audio of a meeting in which the senator discussed the price of a judge. He played the recording of a telephone call in which the senator gave an instruction concerning a journalist, and the word used was not 'kill' but everybody listening understood it. He played the offshore wire transfers, read aloud by the senator himself in a hotel suite in Miami. He played the video log in which the senator, alone in his office, rehearsed a speech about family values, and then rang a bell for his assistant and asked whether the girl had been paid.
+
+He played twenty years of it. The nation sat in stunned silence, and then, gradually, the silence broke, and people began to telephone one another.
+
+At the end, Carlos looked directly into the camera.
+
+"Everything I have shown you tonight will be available to every newsroom in this country in fifteen minutes. It cannot be taken down. It has already been copied four hundred and twelve thousand times."
+
+He stood up.
+
+"I would like to thank the engineers who built this building's security system. They were very well funded."
+
+Then the screen went black, and the telenovela came back on, twelve minutes into an episode that nobody in Brazil watched.`
+      },
+      {
+        id: 19, partNum: 4, partTitle: "Part IV: The Siege of Brasília",
+        title: "Chapter 19: The Collapse of the Censors",
+        setting: "The plaza outside the broadcasting station. 02:00.",
+        wordCount: "451 words",
+        summary: "Thousands gather outside the station, facing riot police. As the officers listen to the broadcast on their own radios and hear how their pensions were looted by the politicians they protect, they unbuckle their helmets and lower their batons.",
+        keyScene: "A riot officer takes off his helmet, sets it on the ground, and turns to face the building alongside the crowd.",
+        text: `By two o'clock in the morning, there were thousands of people in the plaza outside the broadcasting station.
+
+They had come on foot and on motorbikes and in the back of pickup trucks. They were students and dockworkers and nurses and the owners of small shops who had closed early and walked down because a man on the radio had asked them, politely, not to go anywhere.
+
+Facing them were four hundred riot police, deployed at nine o'clock to disperse what the operations order described as 'an unlawful assembly of approximately six hundred persons'.
+
+The crowd was not violent. It had no leaders and no banners, and it stood in the plaza in a great loose crescent, holding up phones and singing, badly, the national anthem.
+
+The police stood in their lines with their helmets on and their batons in their hands, and waited for an order that did not come, because the officer who would have given it was in the station, and the station was locked, and nobody could reach him.
+
+What reached them instead was the broadcast.
+
+It came out of the patrol car radios at the edge of the cordon, where the drivers had left them on, and out of the speakers of the station's own public address system, which had been patched into the master feed at 23:59 by somebody in the control room who had decided, in that moment, to be brave.
+
+So the riot police of the second battalion stood in their lines and listened to two hours of recordings of Senator Silveira discussing the pensions of the state police: the money that had been withheld, the fund that had been emptied, the actuarial table that had been redrawn so that a man who retired at fifty-five would receive, in total, nine per cent of what he had paid in.
+
+At 02:11, a corporal in the front line unbuckled his helmet.
+
+He did it slowly, in full view of the crowd and the cameras, and then he crouched and set the helmet on the ground, and then he stood up and turned around so that his back was to the plaza and his face was toward the station.
+
+The man beside him did the same. Then the sergeant behind him. Then a whole section, one after another, helmets on the ground in a neat line, batons lowered and clipped to their belts.
+
+They did not join the crowd. They simply stopped being the thing that stood between the crowd and the building.
+
+By two-thirty, the plaza was one continuous crowd of people and police, standing together, listening to a broadcast that had begun as a jungle transmission and had ended as a national verdict.`
+      },
+      {
+        id: 20, partNum: 4, partTitle: "Part IV: The Siege of Brasília",
+        title: "Chapter 20: The Empty Chair",
+        setting: "The master control room. 04:30.",
+        wordCount: "363 words",
+        summary: "Federal marshals batter the control room doors off their hinges and find the room empty: the master terminal behind an unbreakable gold-and-blue encryption barrier, one swivel chair spinning slowly to a stop, and a monitor displaying the network's emblem.",
+        keyScene: "The chair turns, slows, stops. On the monitor, the Mass-Q-Rade emblem pulses once and goes dark.",
+        text: `The doors came down at half past four in the morning.
+
+They were hydraulic, steel-cored, and rated to resist a vehicle, and a federal tactical unit took eleven minutes to batter them off their hinges with a ram. The sound of it carried up through three floors of concrete and out into the plaza, where the crowd heard it and went quiet.
+
+The first man through the gap had his weapon up and his torch on.
+
+The room was empty.
+
+The wall of monitors was dark, all forty-one screens. The console was cold. The air conditioning had been switched off, and the room was beginning to warm, and the only light in it came from a single terminal at the far end, glowing steadily in the dark.
+
+In the middle of the room, the swivel chair was still turning.
+
+It turned slowly, once, twice, three times, and came to a stop facing the door.
+
+On the floor beside the chair, laid out neatly, was a cardigan folded into a square, a half-eaten sandwich on a paper napkin, and a laminated maintenance badge with no name on it.
+
+The tactical commander crossed the room and looked at the terminal.
+
+The screen showed a black background and a single emblem: a stylised star inside a circle, rendered in gold and blue, with a line of text beneath it in three languages.
+
+MASS-Q-RADE. THE NETWORK REMEMBERS.
+
+The terminal was locked. The encryption was not the kind of encryption that the state's technical service had ever seen; when they tried to image the drive, the drive reported a capacity of zero. When they tried to cut the power, the screen remained lit for a further eleven seconds, and then went dark on its own.
+
+The commander stood in the cold room with his torch on the empty chair and understood, in the way that a soldier understands a battle he has already lost, that the man he had been sent to arrest had left twenty minutes before they arrived, walking out through the service entrance past a guard who was watching a football match on his phone.
+
+In the plaza, the crowd began, very quietly, to applaud.`
+      },
+      {
+        id: 21, partNum: 5, partTitle: "Part V: The Eternal Signal",
+        title: "Chapter 21: The Free Press Reclaimed",
+        setting: "São Paulo. The following weeks.",
+        wordCount: "422 words",
+        summary: "Independent newsrooms sprout across Brazil. O Novo Dia publishes the unvarnished truth every morning. Silveira and Moreira stand trial facing centuries of combined prison time, and the state media monopoly is shattered.",
+        keyScene: "The first front page of O Novo Dia is laid out on a kitchen table by five people who have never edited a newspaper, and it is the truest thing printed in São Paulo in twenty years.",
+        text: `In the weeks following the siege, independent newsrooms sprouted like wild orchids across Brazil.
+
+They were not grand institutions. Most of them began in a living room or a borrowed office with three desks and a coffee machine. O Novo Dia was started by five people who had never edited a newspaper: a twenty-six-year-old data journalist who had been fired from a business desk, a photographer, a law student, a retired copy editor of seventy-one, and a woman who had spent nine years as a press officer for the state and had finally, as she put it, run out of sentences she was willing to say.
+
+Their first front page was laid out on a kitchen table in the Vila Madalena district, and it carried the story of the transport budget, the full version, with the numbers in it.
+
+It was printed in a run of four thousand. It sold out in ninety minutes. They printed twelve thousand more, and those sold out too, and by the end of the month O Novo Dia had a print run of eighty thousand and a payroll of nineteen people and a legal defence fund that had been started by its readers without being asked.
+
+Across the country, the same thing happened in different accents. Newspapers that had spent decades printing what they were told began, tentatively, to print what they could prove. Some of them failed. A few of them were brilliant.
+
+Senator Silveira was arrested at his apartment in Brasília at six o'clock in the morning, eleven days after the broadcast, and charged with corruption, criminal association, the diversion of public funds, and eleven counts of homicide in connection with the four land rights activists and seven other people whose names the state had never previously admitted knowing.
+
+Editor Moreira was arrested on the same morning, at his house in the Morumbi district, and charged with obstruction of justice and the receipt of illicit funds. He was found to have ninety-one thousand reais in cash in a shoe box in his wardrobe, which he described, in his statement, as 'household money'.
+
+Between them, the two men were eventually sentenced to two hundred and eleven years.
+
+The state media monopoly was shattered. It did not fall because a court ordered it to. It fell because, for two hours and eleven minutes on a Thursday night, forty million people had heard the truth in the voices of the men who had been lying to them, and afterwards no lie was quite the same shape again.`
+      },
+      {
+        id: 22, partNum: 5, partTitle: "Part V: The Eternal Signal",
+        title: "Chapter 22: The Shadow Vanguard",
+        setting: "Copacabana, Rio de Janeiro. Morning.",
+        wordCount: "385 words",
+        summary: "Legally, Carlos Mendes no longer exists: erased from every tax, banking and police database. In a linen shirt and sunglasses on the Copacabana promenade, he watches people read uncompromised newspapers in the open air.",
+        keyScene: "Carlos buys a newspaper from a kiosk with cash, sits at a cafe table, and reads his own absence from the record.",
+        text: `Carlos Mendes moved invisibly through the sunlit streets of Copacabana in a linen shirt and a pair of sunglasses, carrying nothing but a newspaper and a paper cup of coffee.
+
+He had been back in Rio for nine days. He had a room above a bakery, paid for in cash, and a bank account in a name that was not his, and a passport in a drawer that had been issued by a country he had never visited.
+
+His physical identity had been erased from every government tax, banking and police database in the Federative Republic of Brazil. He had checked. The pulse behind his ear had shown him the empty fields where his name used to be: no CPF, no voter registration, no employment record, no driving licence, no criminal file. Legally, Carlos Mendes had never been born.
+
+The strange thing was how little he minded.
+
+He bought a newspaper at a kiosk on the Avenida Atlântica, with coins, from a man who did not look up from his phone. It was a copy of O Novo Dia, and the front page carried a story about a municipal hospital whose dialysis machines had been bought with money that had been diverted from a school lunch programme, and it named the official responsible, and it said what he had done, and it did not apologise for saying it.
+
+Carlos sat down at an outdoor cafe and read it in the open air, in the sun, in a country where eleven weeks earlier a man had been disappeared for asking a similar question.
+
+He read the whole paper. Then he folded it, and looked out at the sea, and watched people reading.
+
+There was a woman on the next table with a copy of the same newspaper and a baby asleep against her shoulder. There was an old man on the wall with a different one, and two students sharing a third. Nobody was looking over their shoulders. That was all. That was the entire revolution, in the end: a few hundred thousand people reading in the open air without checking who was behind them.
+
+He finished his coffee and left the cup on the table, and walked down to the water, and stood at the edge of the Atlantic with his shoes in his hand.`
+      },
+      {
+        id: 23, partNum: 5, partTitle: "Part V: The Eternal Signal",
+        title: "Chapter 23: The Global Web",
+        setting: "The stealth-shielded orbital node of Mass-Q-Rade. Simultaneous.",
+        wordCount: "388 words",
+        summary: "Global telemetry confirms the Brazilian uprising has triggered chain reactions across South American press networks. Independent cells in Argentina, Colombia and Peru use the Mass-Q-Rade protocol to dismantle local media cartels.",
+        keyScene: "In the orbital node's silent geometry, a map of South America lights up in gold, one country at a time.",
+        text: `Three hundred kilometres above the Atlantic, inside a node that no telescope had ever catalogued, the network considered what had happened in Brazil.
+
+The node had no windows and no rooms. It was a volume of cold machinery arranged around a core of light, and the light was not decoration; it was the network's attention, moving through its own architecture at the speed of thought.
+
+On a surface that was not a screen, a map of South America appeared, rendered in lines of gold.
+
+The Brazilian operation was complete. The node registered the results the way an auditor registers a reconciled ledger: one media monopoly dismantled, two hundred and eleven years of sentence distributed among seven principals, four hundred and twelve thousand copies of the evidence package still in circulation, and an eighteen per cent increase in the number of independent newsrooms operating within the territory.
+
+It also registered something the network had not expected.
+
+The protocol had propagated.
+
+In Argentina, a twenty-nine-year-old radio producer in Rosario had received the Brazilian audio package, verified it independently, and used the same relay architecture to publish a nineteen-month investigation into the provincial media group that owned her station. In Colombia, three journalists in Bogotá had established an encrypted cell and were dismantling a network of regional newspapers that had been paid to bury the truth about a land restitution programme. In Peru, a former television editor in Lima had done something the network found particularly elegant: he had published nothing at all, and had instead spent five weeks quietly giving the evidence to eleven people who would.
+
+The map lit up one country at a time.
+
+On the other side of the world, other nodes were reporting similar results: a shipping journalist in Manila, a rural radio collective in Mali, a documentary editor in Georgia who had not yet decided what to do with the file she had been given and was thinking about it very carefully.
+
+The node ran the projection and found that the cascade was not linear and not controllable and, on present trends, not reversible within the century.
+
+This was, by the network's own criteria, a success.
+
+The light at the core of the node changed temperature, very slightly, which in the network's language was the equivalent of a man allowing himself a small, private smile.`
+      },
+      {
+        id: 24, partNum: 5, partTitle: "Part V: The Eternal Signal",
+        title: "Chapter 24: The Next Dossier",
+        setting: "A seaside safehouse in Salvador, Bahia. Evening.",
+        wordCount: "435 words",
+        summary: "In Salvador, Carlos opens his encrypted neural overlay and finds a new high-priority dossier on institutional media suppression and forced labour within an opaque Eastern European media cartel operating out of the Balkans. The nanotech warms under his skin.",
+        keyScene: "A single line of text appears at the top of the dossier: SUBJECT — THE SILENT NEWSROOM. LOCATION — THE BALKANS.",
+        text: `The safehouse in Salvador was a small white house on a hill above the bay, with a courtyard full of bougainvillea and a landlord who asked no questions because the rent was paid six months in advance in cash.
+
+Carlos had been there for eleven days. He had spent most of them doing something he had not done since he was twenty-three years old: nothing at all. He had slept for ten hours a night. He had walked down to the market in the mornings and bought fruit he did not know the names of. He had sat in the courtyard in the afternoons and read novels, and had discovered, to his surprise, that he could still read for pleasure, and that the habit had been waiting for him all along under eleven years of press releases.
+
+On the eleventh evening, he opened the overlay.
+
+It came as a small violet pane of light in the lower left of his vision, the way it always did, and it waited for him to attend to it with the patience of a good servant.
+
+At the top of the pane was a line of text:
+
+PRIORITY: HIGH. SUBJECT: THE SILENT NEWSROOM. LOCATION: THE BALKANS.
+
+Below it, the dossier unfolded.
+
+Carlos read for two hours. He read about a media cartel that owned thirty-one newspapers and four television stations across five countries, and about the arrangement it had reached with the governments of those countries: favourable coverage, in exchange for the withdrawal of a tax investigation. He read about the newsroom in a provincial city where eleven journalists had been dismissed in a single afternoon for asking about the ownership of a printing plant, and about the two who had not been dismissed but had instead been given a very good salary and an office with no windows. He read about a labour camp in a forest, four hundred kilometres from the nearest town, where a hundred and forty men from three countries were being paid nothing at all, and where the cartel's printing paper was being cut by hand.
+
+And he read that the cartel was currently preparing an operation against the only remaining independent newspaper in the region: a weekly of nine pages, run by two sisters and a retired schoolteacher, with a print run of six thousand copies and a website that had been visited, last month, by two hundred thousand people.
+
+The nanotech beneath his skin warmed gently, the way a hand warms when it is placed on a shoulder.
+
+Carlos closed the overlay, and looked out over the bay, and went to pack.`
+      },
+      {
+        id: 25, partNum: 5, partTitle: "Part V: The Eternal Signal",
+        title: "Chapter 25: Epilogue — The Ghost Goes South",
+        setting: "The commercial port of Salvador, then the Atlantic. Sunrise.",
+        wordCount: "418 words",
+        summary: "Carlos packs a canvas duffel and steps onto the gangway of an outbound cargo vessel. As the ship casts off into the Atlantic swell, he stands at the stern watching Brazil fade, carrying no bylines and no debt to the past, only the signal.",
+        keyScene: "At the stern rail, with the coastline dissolving into mist, Carlos hears the pulse behind his ear say, quietly, 'There is another one waiting'.",
+        text: `Carlos packed a small canvas duffel bag at dawn: three shirts, a notebook, a spare pair of shoes, the pocket solar charger, and the folded front page of the first edition of O Novo Dia.
+
+He left the safehouse in Salvador just as the morning tide rolled against the stone seawall and the fishermen began to argue about the price of ice. The key went under the flowerpot by the gate. The rent was paid until March.
+
+He walked down through the steep streets of the old town to the commercial port, past the churches and the boarded-up shops and the boys selling coconuts from a cart, and showed his papers at the gate to a guard who looked at them for less than a second.
+
+The ship was a bulk carrier of eleven thousand tonnes, registered in Monrovia, bound for Lisbon with a cargo of iron ore and a crew of nineteen. It was not a comfortable vessel. It had a cabin for a supernumerary passenger, which Carlos had booked three days earlier through an agency that did not ask for a surname.
+
+He climbed the gangway with his bag on his shoulder and stood on the deck while the heavy diesel engines rumbled to life beneath his feet.
+
+The ropes came off at 06:40. The ship eased away from the quay, turned in the basin with the slow deliberation of something that had all the time in the world, and headed out past the breakwater into the Atlantic swell.
+
+Carlos stood at the stern rail and watched the Brazilian coastline fade into the misty horizon: the white towers, the green hills, the long grey line of the port, the last of it going soft and then going out.
+
+He carried no bylines. He carried no awards, no press card, no debt to the past. Everything he had written before the jungle had been written by a man who was afraid, and that man had been erased from the record along with his name.
+
+Behind his left ear, quietly, the pulse said: "There is another one waiting. Eleven hundred kilometres to the east. A woman who has been told to write about the weather."
+
+"I know," Carlos said.
+
+The ship put its nose into a long grey swell, and the coast of Brazil disappeared, and the signal hummed in his blood like a second pulse, patient and steady, ready to wake the next silent writer waiting in the dark.
+
+[End of Book 8 — The Ghost Journalist]`
+      }
+    ];
+
+    const dossiersData = [
+      { name: "Carlos Mendes", role: "Investigative Journalist, 44", tag: "Q_AGENT_08", status: "Legally Erased", desc: "Eleven years at O Diário, one hundred and forty published pieces, nine of them true. Signed his compliance pledge every Monday in a small neat hand, until a nanotech payload in a cold cup of coffee taught him that the backspace key works in both directions." },
+      { name: "Roberto Alencar", role: "Investigative Journalist, deceased", tag: "ROOM_402", status: "Disappeared", desc: "Carlos's closest friend and co-investigator, taken from a meeting in Barra Funda six months before the story begins. His desk, drives and bylines were erased by corporate security; four pale squares remained in the dust where the legs had stood." },
+      { name: "Managing Editor Moreira", role: "Editor, O Diário de São Paulo", tag: "GATEKEEPER", status: "Convicted", desc: "Feeds the routing slips into the shredder without looking up and explains that the ink on their presses is paid for by the men holding the knives. Later found with ninety-one thousand reais in a shoe box, which he called household money." },
+      { name: "Senator Silveira", role: "Senator, State of São Paulo", tag: "TARGET_ALPHA", status: "Arrested", desc: "Owns a phantom construction front through his brother, a fleet of delivery trucks that return from the interior carrying mercury, and twenty years of recorded confessions he never knew existed. Rehearsed a speech on family values, then rang for his assistant to ask whether the girl had been paid." },
+      { name: "O Fantasma", role: "Anonymous byline", tag: "PSEUDONYM", status: "In Circulation", desc: "The name that appeared on the article nobody in the newsroom wrote. Within six hours it had moved a stock market, emptied a newsroom of its silence, and given forty million people a phrase to chant in the Praça dos Três Poderes." },
+      { name: "Grupo Diário", role: "Media conglomerate", tag: "INSTRUMENT", status: "Dismantled", desc: "The parent corporation of O Diário, funded through three Uruguayan shells by illegal gold-mining cooperatives protected by paramilitary syndicates. Its distribution division listed four hundred and ten kilos of 'ballast' on the return leg of every regional run." },
+      { name: "Mass-Q-Rade", role: "Global Network", tag: "COMMAND", status: "Listening", desc: "Orbital telemetry nodes, sub-dermal oxygen filtration and nanotech seeded through ordinary plumbing. It recruits the compliant because they leave the cleanest record, then hands them the dossiers their employers paid to bury." }
+    ];
+
+    const timelineData = [
+      { date: "2015 – 2026", title: "Eleven Years of Compliance", desc: "Carlos Mendes writes one hundred and forty pieces for O Diário de São Paulo, signs his editorial compliance pledge every Monday, and learns to look at the four pale squares in the dust without seeing them." },
+      { date: "SIX MONTHS BEFORE", title: "The Ghost of Room 402", desc: "Roberto Alencar goes to meet a source in Barra Funda and does not come home. Corporate security removes his desk before dawn and scrubs his bylines from the archive." },
+      { date: "MORNING", title: "The Sanitized Headline", desc: "Carlos's four-month investigation into the transport budget is cut to eight hundred words about potholes. His obedience locks him into the orbital target matrix." },
+      { date: "MIDNIGHT", title: "The Midnight Knock", desc: "Two men in identical charcoal suits drink lukewarm instant coffee, mention his daughter by name, and recommend the cultural desk." },
+      { date: "AFTERNOON", title: "The Poisoned Press", desc: "Misfiled routing slips reveal that Grupo Diário is funded by gold-mining cartels. Moreira shreds them without looking up: the ink is paid for by the men holding the knives." },
+      { date: "03:00", title: "The Mass-Q-Rade Intercept", desc: "An untouched cup of coffee glows violet. A nanotech payload enters Carlos's bloodstream and syncs his nervous system to a node above the Atlantic." },
+      { date: "07:00", title: "The Sub-Vocal Transmission", desc: "He wakes with aching fingers and twenty thousand words of unredacted dossiers in his drafting window, in his own style. His hands route the file to fourteen recipients before he can delete it." },
+      { date: "NOON", title: "The Invisible Byline", desc: "An article signed O Fantasma appears on encrypted forums. The São Paulo market reacts in minutes and Moreira screams for the leaker in front of forty silent reporters." },
+      { date: "AFTERNOON", title: "The Internal Manhunt", desc: "Forensic auditors interrogate the newsroom. Carlos's workstation reports a slow, careful man who saves every four minutes and is afraid of thunderstorms; suspicion moves elsewhere." },
+      { date: "NIGHT", title: "The Amazonian Pipeline", desc: "Nocturnal neural induction projects satellite maps and shipping manifests into his visual cortex: sixty-two delivery trucks, four hundred and ten kilos of mercury, and a passenger on no crew list." },
+      { date: "MIDNIGHT", title: "The Trap at the Archive", desc: "Carlos walks into the honey-trap in the basement server room, bypasses the tripwire, and rewrites the archive log so the alarm leads to Moreira's terminal." },
+      { date: "06:10", title: "Flight to the Interior", desc: "Paramilitary units arrive to arrest the editor. Carlos takes a notebook, a spare shirt and a solar charger, and walks out through the service exit onto a cargo flight to Cuiabá." },
+      { date: "THIRD NIGHT", title: "The Logging Camps", desc: "From the ridge he counts sixty-one labourers in the pit, two of them boys. Stretched on a logistics shack roof, he presses his palm to a corporate dish and downloads four hundred and twelve gigabytes." },
+      { date: "21:14", title: "The Broadcast in the Jungle", desc: "From a ruined rubber station, with copper wire strung between two trees, Carlos reads the manifest aloud. Forty-one stations relay it before he finishes." },
+      { date: "23:00", title: "The Paramilitary Ambush", desc: "Three boats and a ridge road close in. Carlos goes into the river and stays under for twenty minutes, breathing through the sub-dermal filtration while searchlights pass over him." },
+      { date: "THE FOLLOWING DAYS", title: "The Digital Uprising", desc: "Students walk out of eleven campuses, dockworkers leave Santos, indigenous federations arrive by bus, and half a million people fill the Avenida Paulista chanting a shipping manifest." },
+      { date: "23:15", title: "The Return of the Ghost", desc: "With a biometric cloaking field and a maintenance badge printed that afternoon, Carlos walks under the cameras of the Silveira headquarters and is recorded as a fault in the air." },
+      { date: "23:58", title: "Hijacking the Master Feed", desc: "A night engineer is laid gently on the floor with his cardigan under his head. A wrist against the access port locks every executive suite out of the building's own signal." },
+      { date: "00:00 – 02:11", title: "The Unmasking", desc: "The telenovela cuts to black in forty million homes. For two hours and eleven minutes, Carlos plays the private voice of Senator Silveira, unmasked, on every national network." },
+      { date: "02:11", title: "The Collapse of the Censors", desc: "A corporal unbuckles his helmet and sets it on the ground. A whole section follows. Four hundred riot police stop being the thing that stands between the crowd and the building." },
+      { date: "04:30", title: "The Empty Chair", desc: "Marshals batter the hydraulic doors off their hinges and find a swivel chair turning slowly to a stop, a folded cardigan, a half-eaten sandwich, and a terminal that reports a capacity of zero." },
+      { date: "WEEKS LATER", title: "The Free Press Reclaimed", desc: "O Novo Dia lays out its first front page on a kitchen table and sells four thousand copies in ninety minutes. Silveira and Moreira are sentenced to two hundred and eleven years between them." },
+      { date: "RIO DE JANEIRO", title: "The Shadow Vanguard", desc: "Legally, Carlos Mendes has never been born. On the Copacabana promenade he buys a newspaper with coins and reads on a cafe terrace where nobody checks who is behind them." },
+      { date: "ORBITAL", title: "The Global Web", desc: "The node watches the protocol propagate: Rosario, Bogotá, Lima, Manila, Bamako, Tbilisi. The cascade is not linear, not controllable, and on present trends not reversible within the century." },
+      { date: "SALVADOR", title: "The Next Dossier", desc: "A violet pane of light opens in the corner of his vision: thirty-one newspapers, four television stations, a printing plant, and a nine-page weekly run by two sisters and a retired schoolteacher." },
+      { date: "06:40", title: "The Ghost Goes South", desc: "The ropes come off in the port of Salvador. At the stern rail, watching Brazil fade into mist, Carlos hears the pulse say there is another one waiting, eleven hundred kilometres to the east." }
+    ];
+
+    const coverFallback = "Mass-Q-Rade-Book-Covers/book-8.png";
+
+    function getReadSet() {
+      try { return new Set(JSON.parse(localStorage.getItem('mqr_book8_read') || '[]')); }
+      catch (e) { return new Set(); }
+    }
+
+    function saveReadSet(set) {
+      try { localStorage.setItem('mqr_book8_read', JSON.stringify(Array.from(set))); } catch (e) {}
+    }
+
+    function getBookmark() {
+      try { return parseInt(localStorage.getItem('mqr_book8_bookmark') || '0', 10); } catch (e) { return 0; }
+    }
+
+    function updateProgressUI() {
+      const read = getReadSet();
+      const pct = Math.round((read.size / chaptersData.length) * 100);
+      const pctEl = document.getElementById('heroProgressPct');
+      if (pctEl) pctEl.textContent = pct + '% Read';
+      const bm = getBookmark();
+      const bmEl = document.getElementById('heroBookmark');
+      const bmChapter = chaptersData.find(c => c.id === bm);
+      if (bmEl) bmEl.textContent = bmChapter ? 'Ch. ' + bm : 'None';
+    }
+
+    function renderChapters() {
+      const container = document.getElementById('chaptersContainer');
+      if (!container) return;
+      const read = getReadSet();
+      container.innerHTML = chaptersData.map(ch => `
+        <div class="group chapter-card rounded-2xl bg-obsidian/80 border border-slate-800 hover:border-goldAccent/40 transition-colors cursor-pointer"
+             data-part="${ch.partNum}"
+             onclick="navigateChapter(${ch.id})">
+          <div class="p-4 sm:p-5 border-b border-slate-800 flex items-start justify-between gap-4">
+            <div class="w-full space-y-1">
+              <div class="flex items-center gap-2 text-sm text-slate-400">
+                <span class="text-[10px] font-mono tracking-widest ${ch.partNum === 1 ? 'text-goldGlow' : ch.partNum === 2 ? 'text-cyanGlow' : ch.partNum === 3 ? 'text-violet-300' : ch.partNum === 4 ? 'text-emerald-300' : 'text-rose-300'} uppercase">${ch.partTitle}</span>
+                ${read.has(ch.id) ? '<span class="ml-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">READ</span>' : ''}
+                <span class="ml-auto text-xs text-slate-500">Chapter ${ch.id}</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-serif font-bold text-white truncate line-clamp-1">${ch.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-400 line-clamp-1">${ch.setting}</p>
+            </div>
+            <div class="text-right text-xs font-mono text-slate-500 shrink-0">${ch.wordCount}</div>
+          </div>
+        </div>
+      `).join('');
+      const jump = document.getElementById('quickJumpSelect');
+      if (jump) {
+        jump.innerHTML = '<option value="">-- Jump to Chapter --</option>' + chaptersData.map(ch => `<option value="${ch.id}">${ch.id}. ${ch.title.replace(/^Chapter \d+: /, '')}</option>`).join('');
+      }
+      updateProgressUI();
+    }
+
+    let activeChapterId = null;
+
+    function navigateChapter(chapterId) {
+      const chapter = chaptersData.find(c => c.id === chapterId);
+      if (!chapter) return;
+      const modal = document.getElementById('readerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+      const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+      set('modalPartTag', chapter.partTitle.toUpperCase());
+      set('modalChapterTitle', chapter.title);
+      set('modalChNum', 'Chapter ' + chapter.id + ' of ' + chaptersData.length);
+      set('modalChSetting', chapter.setting);
+      set('modalChWords', chapter.wordCount);
+      set('modalSummaryText', chapter.summary);
+      set('modalKeySceneText', chapter.keyScene);
+      const body = document.getElementById('modalStoryText');
+      if (body) body.innerHTML = chapter.text.split('\n\n').map(p => `<p>${p}</p>`).join('');
+      activeChapterId = chapter.id;
+      const prev = document.getElementById('modalPrevBtn');
+      const next = document.getElementById('modalNextBtn');
+      if (prev) prev.disabled = chapter.id === 1;
+      if (next) next.disabled = chapter.id === chaptersData.length;
+      const bmText = document.getElementById('bookmarkText');
+      if (bmText) bmText.textContent = getBookmark() === chapter.id ? 'Bookmarked' : 'Bookmark';
+      const readBtn = document.getElementById('modalReadBtnText');
+      if (readBtn) readBtn.textContent = getReadSet().has(chapter.id) ? 'Marked Complete' : 'Mark Complete';
+      const modalBody = document.getElementById('modalBodyText');
+      if (modalBody) modalBody.scrollTop = 0;
+    }
+
+    function openChapterModal(chapterId) { navigateChapter(chapterId); }
+
+    function closeChapterModal() {
+      const modal = document.getElementById('readerModal');
+      if (modal) { modal.classList.remove('flex'); modal.classList.add('hidden'); }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if (!body) return;
+      body.classList.remove('text-xs', 'text-sm', 'text-base', 'text-lg');
+      body.classList.add(size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-lg' : 'text-base');
+    }
+
+    function toggleModalBookmark() {
+      if (activeChapterId === null) return;
+      const current = getBookmark();
+      const next = current === activeChapterId ? 0 : activeChapterId;
+      try { localStorage.setItem('mqr_book8_bookmark', String(next)); } catch (e) {}
+      const label = document.getElementById('bookmarkText');
+      if (label) label.textContent = next ? 'Bookmarked' : 'Bookmark';
+      updateProgressUI();
+    }
+
+    function toggleModalReadStatus() {
+      if (activeChapterId === null) return;
+      const read = getReadSet();
+      if (read.has(activeChapterId)) read.delete(activeChapterId); else read.add(activeChapterId);
+      saveReadSet(read);
+      const label = document.getElementById('modalReadBtnText');
+      if (label) label.textContent = read.has(activeChapterId) ? 'Marked Complete' : 'Mark Complete';
+      renderChapters();
+      updateProgressUI();
+    }
+
+    function navigateModalChapter(direction) {
+      if (activeChapterId === null) return;
+      const next = activeChapterId + direction;
+      if (next < 1 || next > chaptersData.length) return;
+      navigateChapter(next);
+    }
+
+    function jumpToChapter(value) {
+      const id = parseInt(value, 10);
+      if (id) navigateChapter(id);
+    }
+
+    function filterPart(partNum) {
+      const cards = document.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        const show = partNum === 'all' || card.getAttribute('data-part') === String(partNum);
+        card.style.display = show ? 'block' : 'none';
+      });
+    }
+
+    function filterChapters() {
+      const input = document.getElementById('searchInput');
+      const filter = input ? input.value.toLowerCase() : '';
+      document.querySelectorAll('.chapter-card').forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(filter) ? 'block' : 'none';
+      });
+    }
+
+    function toggleScanlines() {
+      document.body.classList.toggle('scanlines-active');
+    }
+
+    function runTerminalAction(action) {
+      const log = document.getElementById('terminalOutputLog');
+      if (!log) return;
+      const actions = {
+        RESTORE_REGISTER: '[ACTION] UNREDACT_FILES queued. 412 gigabytes of cartel evidence released to 14 recipients.',
+        CHALK_MASK: '[ACTION] GHOST_MASK engaged. Facial structure and thermal signature removed from all state surveillance feeds.',
+        AUDIT_MINISTRY: '[ACTION] AUDIT_CARTEL complete. Grupo Diário routing traced through three Uruguayan shells to the Amazon basin.',
+        BROADCAST: '[ACTION] HIJACK_FEED armed. The master trunk line is locked out of every executive suite.',
+        ROSTER: '[ACTION] NETWORK_CORES: operative MENDES active. Satellite relay above the Atlantic standing by.'
+      };
+      log.innerHTML += `<div class="text-slate-500">[${new Date().toLocaleTimeString()}] ${actions[action] || '[ACTION] ' + action}</div>`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const log = document.getElementById('terminalOutputLog');
+      if (!input || !log) return;
+      const cmd = input.value.trim().toUpperCase();
+      if (!cmd) return;
+      log.innerHTML += `<div class="text-cyanGlow">[CONSOLE] Command: ${cmd}</div>`;
+      if (cmd === 'HELP') {
+        log.innerHTML += '<div class="text-slate-500">[SYSTEM] Available: help, status, restore, expose, spoof, clear</div>';
+      } else if (cmd === 'STATUS') {
+        log.innerHTML += '<div class="text-emerald-300">[STATUS] Operative MENDES, CARLOS active. Cover: maintenance technician. Legally erased from every federal database.</div>';
+      } else if (cmd === 'RESTORE') {
+        runTerminalAction('RESTORE_REGISTER');
+      } else if (cmd === 'EXPOSE') {
+        log.innerHTML += '<div class="text-amber-300">[EXPOSE] The transport manifest and 20 years of Silveira recordings mirrored to every national network.</div>';
+      } else if (cmd === 'SPOOF') {
+        runTerminalAction('CHALK_MASK');
+      } else if (cmd === 'CLEAR') {
+        log.innerHTML = '';
+      } else {
+        log.innerHTML += '<div class="text-slate-500">[SYSTEM] Unknown command. Type help.</div>';
+      }
+      input.value = '';
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function renderDossiers() {
+      const grid = document.getElementById('dossiersGrid');
+      if (!grid) return;
+      grid.innerHTML = dossiersData.map(d => `
+        <div class="glass-card glass-card-hover rounded-2xl p-5 space-y-3 transition">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-serif font-bold text-lg text-white">${d.name}</h3>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">${d.role}</p>
+            </div>
+            <span class="text-[9px] font-mono px-2 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow shrink-0">${d.tag}</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] font-mono">
+            <span class="text-slate-500">STATUS</span>
+            <span class="text-emerald-300">${d.status}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timelineContainer');
+      if (!container) return;
+      container.innerHTML = timelineData.map(t => `
+        <div class="relative">
+          <span class="absolute -left-[31px] sm:-left-[39px] top-1 w-3 h-3 rounded-full bg-cyanAccent border-2 border-obsidian shadow-glow-cyan"></span>
+          <div class="text-[10px] font-mono text-goldGlow tracking-widest mb-1">${t.date}</div>
+          <h3 class="font-serif font-bold text-white text-base">${t.title}</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-1">${t.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    renderChapters();
+    renderDossiers();
+    renderTimeline();
+    updateProgressUI();
+  </script>
+</body>
+</html>
