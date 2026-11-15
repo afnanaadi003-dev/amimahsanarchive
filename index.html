@@ -423,6 +423,53 @@
                 </div>
             </div>
 
+            <!-- Mass-Q-Rade Reading Progress Strip: Books 7 & 8 -->
+            <div class="glass-card rounded-2xl p-5 sm:p-6 mb-8" id="mqr-progress-strip">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="h-1.5 w-1.5 rounded-full bg-amberGold"></span>
+                        <span class="text-[11px] uppercase tracking-widest text-amberGold font-semibold">Mass-Q-Rade &mdash; Latest Two Volumes</span>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-mono">Progress saved in this browser</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="Mass-Q-Rade%20Book%207%20-%20The%20Erased%20Teacher.html" class="group/vol flex gap-4 rounded-xl border border-slate-800 bg-slate-950/50 p-3 transition-colors hover:border-amber-700/60">
+                        <img src="Mass-Q-Rade-Book-Covers/book-7.png" alt="The Erased Teacher book cover" loading="lazy" onerror="this.remove()" class="w-12 shrink-0 self-start rounded-md border border-slate-800 bg-obsidian">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-[10px] font-mono font-bold text-amberGold/70">07</span>
+                                <h3 class="text-sm font-semibold text-slate-100 truncate transition-colors group-hover/vol:text-amberGold">The Erased Teacher</h3>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Nigeria &middot; Amara Okonkwo</p>
+                            <div class="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+                                <div id="prog7-bar" class="h-full w-0 rounded-full bg-gradient-to-r from-amber-600 to-brightGold transition-all duration-700"></div>
+                            </div>
+                            <div class="mt-1.5 flex items-center justify-between gap-2">
+                                <span id="prog7-text" class="text-[11px] text-slate-400 font-mono">0 of 20 chapters</span>
+                                <span id="prog7-cta" class="text-[11px] font-semibold text-amberGold whitespace-nowrap">Start reading <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="Mass-Q-Rade%20Book%208%20-%20The%20Ghost%20Journalist.html" class="group/vol flex gap-4 rounded-xl border border-slate-800 bg-slate-950/50 p-3 transition-colors hover:border-violet-700/60">
+                        <img src="Mass-Q-Rade-Book-Covers/book-8.png" alt="The Ghost Journalist book cover" loading="lazy" onerror="this.remove()" class="w-12 shrink-0 self-start rounded-md border border-slate-800 bg-obsidian">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-[10px] font-mono font-bold text-violet-300/70">08</span>
+                                <h3 class="text-sm font-semibold text-slate-100 truncate transition-colors group-hover/vol:text-violet-300">The Ghost Journalist</h3>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Brazil &middot; Carlos Mendes</p>
+                            <div class="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+                                <div id="prog8-bar" class="h-full w-0 rounded-full bg-gradient-to-r from-violet-600 to-cyan-400 transition-all duration-700"></div>
+                            </div>
+                            <div class="mt-1.5 flex items-center justify-between gap-2">
+                                <span id="prog8-text" class="text-[11px] text-slate-400 font-mono">0 of 25 chapters</span>
+                                <span id="prog8-cta" class="text-[11px] font-semibold text-violet-300 whitespace-nowrap">Start reading <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <!-- Books Grid Container -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="books-grid">
                 
@@ -1274,6 +1321,23 @@
                 link: "#"
             }
         };
+
+        // Reading progress strip for the two newest Mass-Q-Rade volumes.
+        function updateSeriesProgress() {
+            [['7', 20], ['8', 25]].forEach(([n, total]) => {
+                let read = 0;
+                try { read = new Set(JSON.parse(localStorage.getItem('mqr_book' + n + '_read') || '[]')).size; } catch (e) {}
+                read = Math.max(0, Math.min(read, total));
+                const pct = Math.round((read / total) * 100);
+                const bar = document.getElementById('prog' + n + '-bar');
+                const text = document.getElementById('prog' + n + '-text');
+                const cta = document.getElementById('prog' + n + '-cta');
+                if (bar) bar.style.width = pct + '%';
+                if (text) text.textContent = read + ' of ' + total + ' chapters' + (read ? ' \u00b7 ' + pct + '%' : '');
+                if (cta) cta.innerHTML = (read === 0 ? 'Start reading' : read >= total ? 'Revisit' : 'Continue') + ' <i class="fa-solid fa-arrow-right text-[9px]"></i>';
+            });
+        }
+        document.addEventListener('DOMContentLoaded', updateSeriesProgress);
 
         const modal = document.getElementById('book-modal');
         const modalContent = document.getElementById('modal-content');
