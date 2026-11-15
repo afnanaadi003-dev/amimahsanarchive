@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASS-Q-RADE: BOOK SEVEN — THE ERASED TEACHER</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b14',
+            obsidian: '#03050a',
+            goldAccent: '#d4af37',
+            goldGlow: '#f3e5ab',
+            cyanAccent: '#00f2fe',
+            cyanGlow: '#4facfe',
+            terminalBg: '#020307',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'glow-cyan': '0 0 25px rgba(0, 242, 254, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #03050a; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+    .bg-grid-pattern {
+      background-image:
+        linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .glass-card {
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    .cover-stage {
+      display: flex;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 4px 0 2px;
+      animation: coverFloat 7s ease-in-out infinite;
+    }
+
+    .cover-frame {
+      position: relative;
+      width: min(260px, 64vw);
+      aspect-ratio: 852 / 1280;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transform: rotateX(7deg) rotateZ(-1.5deg);
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        0 18px 45px -12px rgba(0, 0, 0, 0.95),
+        0 0 40px rgba(212, 175, 55, 0.25),
+        0 0 30px rgba(0, 242, 254, 0.18);
+      will-change: transform;
+    }
+
+    .cover-frame:hover {
+      transform: rotateX(0deg) rotateZ(0deg) translateY(-6px) scale(1.035);
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.25),
+        0 26px 60px -10px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(212, 175, 55, 0.45),
+        0 0 55px rgba(0, 242, 254, 0.35);
+    }
+
+    .cover-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.06) 53%, transparent 64%);
+      mix-blend-mode: screen;
+      transform: translateX(-130%);
+      animation: coverSheen 5.5s ease-in-out infinite;
+    }
+
+    .cover-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 40%, transparent 52%, rgba(0, 0, 0, 0.6) 100%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+      animation: coverFlicker 6s steps(1, end) infinite;
+    }
+
+    @keyframes coverFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes coverSheen { 0%, 55% { transform: translateX(-130%); } 85%, 100% { transform: translateX(130%); } }
+    @keyframes coverFlicker { 0%, 100% { opacity: 1; } 47% { opacity: 0.84; } 48% { opacity: 1; } 73% { opacity: 0.9; } 74% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cover-stage, .cover-frame::before, .cover-frame::after { animation: none !important; }
+      .cover-frame::after { opacity: 0; }
+    }
+
+    .scanlines-active .scanline-overlay { display: block; }
+    .scanline-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      pointer-events: none;
+      background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.18) 2px 3px);
+    }
+  </style>
+</head>
+
+<body id="mainBody" class="bg-obsidian text-slate-200 font-sans min-h-screen bg-grid-pattern relative flex flex-col selection:bg-goldAccent selection:text-obsidian">
+  <div class="scanline-overlay"></div>
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent via-amber-600 to-cyanAccent p-[1px] shadow-glow-gold">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center group-hover:bg-slate-900 transition">
+            <i class="fa-solid fa-star text-goldAccent text-sm group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono tracking-widest text-goldAccent uppercase font-bold">MASS-Q-RADE</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyanGlow border border-cyan-500/30">BOOK 7</span>
+          </div>
+          <span class="text-base font-serif font-bold text-white tracking-tight">The Erased Teacher</span>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-1.5 text-xs font-mono flex-wrap justify-center">
+        <button onclick="filterPart('all')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">All Chapters</button>
+        <button onclick="filterPart(1)" class="px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/60 border border-amber-800/60 text-amber-300 transition">Part I: The Ghost Ledger (1-5)</button>
+        <button onclick="filterPart(2)" class="px-3 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/60 border border-blue-800/60 text-blue-300 transition">Part II: The Sub-Dermal Archive (6-10)</button>
+        <button onclick="filterPart(3)" class="px-3 py-1.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 border border-violet-800/60 text-violet-300 transition">Part III: The March to Kaduna (11-15)</button>
+        <button onclick="filterPart(4)" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/60 text-emerald-300 transition">Part IV: The Final Bell (16-20)</button>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleScanlines()" class="px-2.5 py-1.5 text-xs font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Toggle Scanline FX">
+          <i class="fa-solid fa-tv"></i> <span class="hidden sm:inline">Scanlines</span>
+        </button>
+        <a href="#terminal" class="px-3 py-1.5 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyanGlow hover:bg-cyan-500/20 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal"></i> CLI Terminal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative rounded-3xl bg-gradient-to-b from-midnight via-obsidian to-obsidian border border-goldAccent/30 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyanAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-goldAccent/40 text-xs font-mono text-goldGlow shadow-glow-gold/20">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span>Mass-Q-Rade Sci-Fi Universe &bull; Book Seven Complete Serialization</span>
+        </div>
+
+        <div class="space-y-2">
+          <div class="cover-stage">
+            <div class="cover-frame">
+              <img src="Mass-Q-Rade-Book-Covers/book-7.png" alt="Mass-Q-Rade: Book Seven — The Erased Teacher book cover" loading="eager">
+            </div>
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-goldGlow tracking-tight">
+            THE ERASED TEACHER
+          </h1>
+          <h2 class="text-base sm:text-xl font-mono text-cyanGlow tracking-wider uppercase font-semibold">
+            Amara Okonkwo &amp; The Mass-Q-Rade Network
+          </h2>
+        </div>
+
+        <div class="text-sm sm:text-base font-medium text-slate-300">
+          Written by <span class="text-goldGlow font-semibold underline decoration-goldAccent underline-offset-4">Amim Ahsan</span>
+          <span class="text-slate-400">(writing under the pen name Amimul Ahsan)</span>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed">
+            For twenty-four years Amara Okonkwo has taught the girls of Government Girls Secondary, Zamfara, without a single missed roll call, a single complaint, or a single salary paid on time. When Directorate Order 44 suspends the rural curriculum, converts her classroom into a regional grain store and relocates female educators to agricultural camps, she obeys &mdash; and then, that same night, teaches forty-five girls chemistry by moonlight. Three hundred kilometres above the Sahara, Mass-Q-Rade has been reading her silence as a ledger. Now the erased teacher holds the one weapon the ministry cannot confiscate: the truth, written where everyone can see it.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto text-left font-mono">
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">SERIALIZATION</div>
+            <div class="text-base sm:text-lg font-bold text-goldGlow">20 Chapters</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">TIMELINE SPAN</div>
+            <div class="text-base sm:text-lg font-bold text-cyanGlow">2026</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">READING PROGRESS</div>
+            <div id="heroProgressPct" class="text-base sm:text-lg font-bold text-emerald-400">0% Read</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-obsidian/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">ACTIVE BOOKMARK</div>
+            <div id="heroBookmark" class="text-base sm:text-lg font-bold text-slate-200">None</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="openChapterModal(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-goldAccent text-obsidian font-extrabold text-xs sm:text-sm hover:opacity-95 transition shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-book-open"></i> Start Reading Chapter 1
+          </button>
+          <a href="#reader" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-ul"></i> All 20 Chapters
+          </a>
+          <a href="#dossiers" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyanGlow text-xs sm:text-sm font-mono border border-cyan-500/30 transition flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> Character Dossiers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER READER DIRECTORY -->
+    <section id="reader" class="scroll-mt-20 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-book text-goldAccent"></i> Complete 20-Chapter Directory
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Browse summaries, settings, word counts, and key scenes across Parts I, II, III, and IV.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search title, setting, keywords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyanAccent transition">
+          </div>
+          <select id="quickJumpSelect" onchange="jumpToChapter(this.value)" class="w-full sm:w-56 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl py-2 px-3 focus:outline-none focus:border-cyanAccent font-mono">
+            <option value="">-- Jump to Chapter --</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="chaptersContainer" class="space-y-12">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- MASS-Q-RADE CHALK-LINE CONSOLE -->
+    <section id="terminal" class="scroll-mt-20 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2 font-mono">
+            <i class="fa-solid fa-terminal text-cyanGlow"></i> CHALK-LINE &amp; RECORD CONSOLE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interactive terminal simulating Amara's sub-dermal nanite interface, the chalk-box ledger and the district override protocols.</p>
+        </div>
+        <span class="hidden sm:inline-flex px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow text-xs font-mono">
+          NODE: ZAMFARA_LEDGER_SECURE
+        </span>
+      </div>
+
+      <div class="bg-terminalBg rounded-2xl border border-cyan-500/30 shadow-glow-cyan/10 overflow-hidden font-mono">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-slate-400 font-semibold ml-2">MASS-Q-RADE_NODE // Q_AGENT_07</span>
+          </div>
+          <div class="text-slate-500">ENCRYPTION: CHALK_DUST_ACTIVE</div>
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-5">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="runTerminalAction('RESTORE_REGISTER')" class="p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-rotate-left text-emerald-400"></i> RESTORE NAMES
+            </button>
+            <button onclick="runTerminalAction('CHALK_MASK')" class="p-2.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-700/50 text-cyan-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-dna text-cyanGlow"></i> CHALK MASK
+            </button>
+            <button onclick="runTerminalAction('AUDIT_MINISTRY')" class="p-2.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-700/50 text-amber-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-file-shield text-goldGlow"></i> AUDIT MINISTRY
+            </button>
+            <button onclick="runTerminalAction('BROADCAST')" class="p-2.5 rounded-lg bg-violet-950/40 hover:bg-violet-900/50 border border-violet-700/50 text-violet-300 text-xs font-semibold text-left transition flex items-center gap-2">
+              <i class="fa-solid fa-tower-broadcast text-violet-400"></i> BLACKBOARD LIVE
+            </button>
+            <button onclick="runTerminalAction('ROSTER')" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-xs font-semibold text-left transition flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-users text-slate-300"></i> NETWORK CORES
+            </button>
+          </div>
+
+          <div class="bg-black/90 rounded-xl p-4 border border-slate-800 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-cyanGlow font-mono" id="terminalOutputLog">
+            <div class="text-slate-500">[SYSTEM READY] Chalk-line console online. Zamfara district uplink active...</div>
+            <div class="text-slate-500">[IDENTITY] Subject: Amara Okonkwo -> Q_Agent (Mass-Q-Rade Operative).</div>
+            <div class="text-amber-400">[STATUS] Ledger armed. FORTY-FIVE pupils in Classroom 3-B accounted for.</div>
+            <div class="text-cyanGlow">[READY] Select a macro action above or type commands below (e.g. 'help').</div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+            <span class="text-cyanGlow font-bold text-sm">CHALK></span>
+            <input type="text" id="terminalInput" placeholder="Type command (help, status, restore, expose, clear)..." onkeydown="if(event.key==='Enter') processTerminalCmd()" class="w-full bg-transparent border-none text-xs sm:text-sm text-slate-200 focus:outline-none placeholder-slate-600 font-mono">
+            <button onclick="processTerminalCmd()" class="px-3 py-1 rounded bg-cyan-500/20 text-cyanGlow text-xs border border-cyan-500/40 hover:bg-cyan-500/30 transition">EXEC</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER DOSSIERS -->
+    <section id="dossiers" class="scroll-mt-20 space-y-8">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-cyanGlow"></i> Character &amp; Key Figure Dossiers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">Profiles for Amara Okonkwo, Zainab Danjuma, Principal Ibrahim, Inspector Bello, Minister Aliyu, and the decree that tried to close a classroom.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossiersGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="scroll-mt-20 space-y-6">
+      <div class="border-b border-slate-800 pb-3">
+        <h2 class="text-2xl font-serif font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-goldAccent"></i> Narrative Arc Timeline (Zamfara to Kaduna, 2026)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400">From a quarter-paid salary in Zamfara to the ministry vault in Kaduna &mdash; the un-erasure of a generation of pupils.</p>
+      </div>
+
+      <div class="relative border-l-2 border-cyan-500/40 ml-4 pl-6 sm:pl-8 space-y-8" id="timelineContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CHAPTER FOCUS READER MODAL -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-obsidian border border-cyan-500/40 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col my-auto max-h-[90vh]">
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-midnight/90 rounded-t-2xl">
+        <div>
+          <span id="modalPartTag" class="text-[10px] font-mono text-cyanGlow uppercase tracking-widest block">PART I: THE CHALK</span>
+          <h3 id="modalChapterTitle" class="text-lg sm:text-xl font-serif font-bold text-white">Chapter 1: The Dust of Zamfara</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 bg-slate-900 rounded-lg p-1 text-xs font-mono">
+            <button onclick="setModalFontSize('sm')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A-</button>
+            <button onclick="setModalFontSize('md')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A</button>
+            <button onclick="setModalFontSize('lg')" class="px-2 py-0.5 hover:bg-slate-800 rounded text-slate-300">A+</button>
+          </div>
+          <button id="modalBookmarkBtn" onclick="toggleModalBookmark()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-goldAccent text-xs font-mono transition flex items-center gap-1">
+            <i class="fa-solid fa-bookmark"></i> <span id="bookmarkText">Bookmark</span>
+          </button>
+          <button onclick="closeChapterModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition" aria-label="Close reader">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-slate-300" id="modalBodyText">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2">
+          <div><span class="text-slate-500">CHAPTER:</span> <span id="modalChNum" class="text-cyanGlow font-bold">Chapter 1 of 20</span></div>
+          <div><span class="text-slate-500">SETTING:</span> <span id="modalChSetting" class="text-slate-200">Zamfara, northern Nigeria (2026)</span></div>
+          <div><span class="text-slate-500">WORD COUNT:</span> <span id="modalChWords" class="text-goldGlow">380 words</span></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 text-xs font-mono text-cyan-300">
+            <strong class="text-cyanGlow">SUMMARY:</strong> <span id="modalSummaryText"></span>
+          </div>
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-800/30 text-xs font-mono text-amber-200">
+            <strong class="text-goldGlow">KEY SCENE:</strong> <span id="modalKeySceneText"></span>
+          </div>
+          <div id="modalStoryText" class="leading-relaxed text-sm sm:text-base text-slate-200 whitespace-pre-line font-sans pt-2 border-t border-slate-800"></div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-800 flex items-center justify-between bg-midnight/90 rounded-b-2xl">
+        <button id="modalPrevBtn" onclick="navigateModalChapter(-1)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+        </button>
+        <button id="modalMarkReadBtn" onclick="toggleModalReadStatus()" class="px-4 py-2 rounded-xl bg-cyan-950/40 border border-cyan-800 text-cyanGlow text-xs font-semibold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-check"></i> <span id="modalReadBtnText">Mark Complete</span>
+        </button>
+        <button id="modalNextBtn" onclick="navigateModalChapter(1)" class="px-4 py-2 rounded-xl bg-cyanAccent hover:bg-cyan-400 text-obsidian font-extrabold text-xs transition flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+          Next Chapter <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-obsidian py-8 px-4 text-center space-y-3 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-mono">
+      <div>
+        <span class="font-bold text-slate-300">MASS-Q-RADE: BOOK SEVEN — THE ERASED TEACHER</span>
+        <span class="block text-[11px] text-slate-500">Written by Amim Ahsan (writing under the pen name Amimul Ahsan)</span>
+      </div>
+      <div>Mass-Q-Rade Sci-Fi Universe &copy; Complete 20-Chapter Serialization</div>
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-cyanGlow transition">Top <i class="fa-solid fa-arrow-up text-[10px]"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT & DATA -->
+  <script>
+    // FULL 20-CHAPTER SERIALIZATION DATA (20 chapters)
+    const chaptersData = [
+      {
+        id: 1, partNum: 1, partTitle: "Part I: The Ghost Ledger",
+        title: "Chapter 1: The Dust of Zamfara",
+        setting: "Government Girls Secondary School, Zamfara, northern Nigeria. 2026.",
+        wordCount: "392 words",
+        summary: "For twenty-four years Amara Okonkwo has taught silently, never late, never loud, never questioning the blank line where her district's education budget should be. Three hundred kilometres above the Sahara, an orbital Mass-Q-Rade node logs her absolute obedience as the perfect baseline profile.",
+        keyScene: "Amara writes an equation on the cracked slate, and the harmattan dust lifts off the chalk tray as if something above the roof has taken an interest in the lesson.",
+        text: `The classroom air in Government Girls Secondary, Zamfara, tasted of dry harmattan dust and old, unread government circulars.
+
+Amara Okonkwo stood before forty-five girls with a piece of chalk worn down to a sharp white stub. She wrote equations on the cracked slate in her small, upright hand, in the same rhythm she had used for twenty-four years: bracket, exponent, root, answer. Behind her the window frames had swollen so badly with the dry season that none of them closed, and the red dust came in and settled on the shoulders of the girls like a second uniform.
+
+"If two x plus nine equals twenty-nine," she said, "what is x?"
+
+Forty-five hands rose. She chose the girl in the third row with the torn collar, because she had been quiet for two days.
+
+"Ten, ma."
+
+"Show the class why."
+
+The girl came forward, took the stub from Amara's fingers, and wrote the working slowly and correctly. Amara watched her arm move and felt the small, disciplined satisfaction she had long ago stopped calling joy. This was the whole of her ambition, and she had never pretended otherwise: a slate, a piece of chalk, forty-five girls who came back the next morning.
+
+She had never raised her voice in that school. She had never missed a morning roll call, not in the season her mother died, not in the season the roof of the science block fell in, not in the two years when the salary came late every single month. She was the model of submissive civil service: invisible, compliant, and thoroughly ignored. The inspectors wrote 'satisfactory' beside her name because they could not think of anything else to write.
+
+What Amara did not know, and could not have known, was that she was being watched by something that had no interest in her salary.
+
+Three hundred kilometres above the Sahara, a Mass-Q-Rade telemetry node turned slowly in its orbital arc and read the district's administrative traffic the way a farmer reads weather. It found a school with no laboratory, a budget line with no figures, and a teacher with twenty-four years of unbroken attendance and not one recorded complaint. The node compared her profile against eleven thousand others across the Sahel.
+
+ABSOLUTE OBEDIENCE. BASELINE CANDIDATE.
+
+Somewhere above the dust, a decision that had been waiting a long time was quietly made.`
+      },
+      {
+        id: 2, partNum: 1, partTitle: "Part I: The Ghost Ledger",
+        title: "Chapter 2: The Empty Allocation",
+        setting: "The principal's office, Zamfara. 2026.",
+        wordCount: "409 words",
+        summary: "Every month Abuja disburses money for laboratories, maintenance and school meals. Every month it arrives as a fraction. Principal Ibrahim hands Amara a brown envelope with a quarter of her salary and an apology, and she thanks him for it.",
+        keyScene: "Amara counts the notes twice on the sun-baked path home and understands, for the first time, that the arithmetic of the envelope is the arithmetic of the whole district.",
+        text: `Every month, the federal ministry in Abuja disbursed funds for school maintenance, laboratory chemicals, and student nutrition. Every month, by the time the allocation reached Zamfara District, it had been reduced to a fraction: just enough to buy a box of chalk and pay Amara a quarter of her scheduled salary.
+
+Principal Ibrahim kept the paperwork in a cardboard folder tied with green string. He was a heavy, tired man who had spent thirty-one years in the service and had learned to fold his signature small, as though to take up less room on documents that would be used against him.
+
+"The balance is coming," he said. "The ministry has assured us. There is a delay in the reconciliation."
+
+"Yes, sir."
+
+He pushed the brown envelope across the desk. It was thin. Amara could feel the shape of the notes through the paper without opening it.
+
+"It is a quarter this month, Amara. I have written to the directorate twice."
+
+"Thank you, sir."
+
+He looked at her for a moment with something close to anger, though she could not tell whether it was meant for her or for himself. "You never complain," he said. "Do you know that? In thirty-one years I have never once heard you complain."
+
+"The girls are learning, sir. That is the important thing."
+
+"It is not the only important thing." He turned back to his file. "Go home. It is Friday."
+
+Amara walked home along the sun-baked path with the envelope in her bag. She stopped under the neem tree by the culvert and counted the notes twice, then a third time, as if a different answer might appear. The rent was three months behind. Her cousin in Sokoto had sent a message about the hospital bill. She would pay the rent, keep back the price of a bag of rice, and carry the rest of the shortfall into next month, where it would meet the shortfall from the month before.
+
+This was the arithmetic she had been teaching without knowing it: a fraction taken from a fraction, and the remainder called a budget.
+
+What Amara did not see was the line of data her silence produced that evening in an office in Kaduna. A clerk entered: NO FORMAL COMPLAINT RECEIVED. NO INFRASTRUCTURE REQUEST LOGGED. DISTRICT SATISFACTORY.
+
+The state's algorithms read her patience as proof that the district required no further investment. Her quiet was entered into the ledger as an absence of need.`
+      },
+      {
+        id: 3, partNum: 1, partTitle: "Part I: The Ghost Ledger",
+        title: "Chapter 3: The Directive from Kaduna",
+        setting: "Government Girls Secondary School, Zamfara. Tuesday morning. 2026.",
+        wordCount: "389 words",
+        summary: "Directorate Order 44 arrives in an unsealed envelope: rural secondary curriculum suspended, facilities converted to grain storage, female educators relocated to agricultural camps. Principal Ibrahim tells Amara to pack.",
+        keyScene: "Amara folds twenty-four years of lesson plans into a cardboard box while the clerk who delivered the order waits outside for a receipt.",
+        text: `The decree arrived on a Tuesday morning, in an unsealed courier envelope delivered by a sullen district clerk who had walked the last kilometre because the motorcycle would not start.
+
+Amara was teaching the water cycle when the knock came. She heard the principal's door open and close. She kept teaching, because the girls were copying the diagram and it is a poor teacher who abandons a diagram halfway.
+
+Twenty minutes later Ibrahim came to Classroom 3-B himself, which he had not done in four years. He held a single sheet of paper. His hands were steady, and she understood from that steadiness that he had already read it twice and had decided how he would behave.
+
+"Directorate Order 44," he said. "Read it."
+
+The paper was thin and the print was grey. It said that, in the interest of regional food security and administrative rationalisation, all secondary curriculum in designated rural zones was suspended with immediate effect; that the facilities of affected schools would be converted to regional grain storage under the supervision of the district agricultural office; and that female educators in the affected zones would be compulsorily relocated to administrative agricultural camps, where their skills would be 'redeployed in support of the national harvest'.
+
+There was no appeal process. There was no committee meeting scheduled. There was no public debate. The paper contained no mention of the forty-five girls in Classroom 3-B, or of the two thousand one hundred children in the district, or of the examination entries already paid for in June.
+
+"They cannot do this," Amara said. Her voice was quiet and did not shake, which surprised her.
+
+"They have done it," Ibrahim said. "The notice is dated yesterday. The agricultural officer is coming on Thursday to inspect the store."
+
+"And the girls?"
+
+He folded his hands. "The state has decided that these young women do not need an education. It has also decided that you do not need a classroom. I am sorry, Amara. Pack your personal belongings."
+
+She looked at the forty-five faces in the room, which had gone completely still, and then at the chalk stub in her fingers.
+
+"Yes, sir," she said.
+
+She folded twenty-four years of lesson plans into a cardboard box that afternoon while the clerk waited outside for his receipt, whistling through his teeth in the heat.`
+      },
+      {
+        id: 4, partNum: 1, partTitle: "Part I: The Ghost Ledger",
+        title: "Chapter 4: The Midnight Lesson",
+        setting: "Classroom 3-B, after the closure notice. 2026.",
+        wordCount: "363 words",
+        summary: "With no lights and an official closure order on the door, Amara teaches forty-five girls by moonlight, whispering chemistry and algebra, until a warmth behind her left ear opens an encrypted channel.",
+        keyScene: "The half-moon moves across the barred window while Amara whispers a formula and a faint pulse begins behind her left ear.",
+        text: `That evening, despite the official closure notice posted to the door, forty-five girls sat quietly in the dark of Classroom 3-B.
+
+There were no lights. The district had cut the school's supply in March to save diesel, and the closure notice had taken even the small generator. So Amara taught by the pale, silver glow of a half-moon filtering through the barred windows, and the girls wrote in the margins of old newspapers with pencils sharpened to points on the concrete floor.
+
+She whispered her lessons, because sound carries in a village at night.
+
+"The valency of oxygen is two," she whispered, drawing a circle on the blackboard that could only just be seen. "It will take two hydrogens. That is water. Write it."
+
+Newspapers rustled. A pencil scratched.
+
+"The valency of sodium is one. So the formula is NaCl. Salt. The same salt in your mother's kitchen and the same salt on the roads of Europe. There is one chemistry, and it does not care whose country you live in."
+
+She taught the quadratic formula. She taught the causes of the First World War. She taught the circulation of blood and the difference between a hypothesis and a guess, and at ten o'clock she made them recite, in a whisper so soft it was almost only breath, the names of the first five elements in order and their atomic numbers.
+
+"Again," she said. "Because tomorrow the inspectors may take the blackboard."
+
+For years she had believed that obedience meant following the rules. Tonight she understood that survival meant breaking them in a whisper.
+
+As she spoke, a strange warmth began to throb behind her left ear, just under the bone, in time with her own pulse. She touched it. There was nothing there: no swelling, no insect, no heat she could show a doctor.
+
+"Ma?" the girl in the torn collar whispered. "Are you well?"
+
+"I am well," Amara said. "Copy the next line."
+
+The warmth pulsed again, twice, and settled into a rhythm that was not quite her heartbeat. It carried no sound at all, and yet she had the clear and unreasonable impression that something had just said her name.`
+      },
+      {
+        id: 5, partNum: 1, partTitle: "Part I: The Ghost Ledger",
+        title: "Chapter 5: The Selection",
+        setting: "Amara's room, Zamfara. That same night.",
+        wordCount: "405 words",
+        summary: "The pulse identifies itself as Mass-Q-Rade, seeds a nanotech payload through her water filter, and fills her sleep with server schematics, encrypted protocols, and every teacher the ministry erased. At dawn she is clear-eyed and unfatigued.",
+        keyScene: "Amara wakes before the first call to prayer and finds her hands steady, her eyes clear, and the whole district network laid out behind her eyelids like a map of a school she has never entered.",
+        text: `The pulse identified itself simply: Mass-Q-Rade.
+
+It did not threaten her. It did not offer her money, or a party, or a political slogan, or the promise of a foreign passport. It did none of the things that men with microphones did when they came to the district before an election.
+
+"You are the teacher of Classroom 3-B," it said, and the voice was neither male nor female, neither close nor far. "You have attended school for twenty-four years without a single absence. You have not complained. You have not been paid. You have kept a record."
+
+"Who is this?" Amara asked the dark room.
+
+"We are the ones the state cannot see, because we were never written down."
+
+She sat up in bed. Outside, a dog barked once and stopped. The ceiling fan had not turned in two years and the air was perfectly still.
+
+"I am a teacher," she said. "I have nothing you would want."
+
+"You have the ledger," Mass-Q-Rade said. "Everything else, we can provide."
+
+What it provided came through her water filter. In the morning she found the clay jar on the shelf faintly warm, and the water in it had a taste like clean metal, and she drank it because she had been thirsty for twenty-four years and had never once said so.
+
+That night her sleep was flooded. She saw architectural schematics of regional server nodes drawn in gold lines on black; she saw encrypted communication protocols unrolling like the times tables; she saw files, thousands of them, each carrying the unredacted name, salary, school and dismissal date of a teacher the ministry had erased in the past two decades. There were more of them than there were stars above the school yard, and she understood in the dream that they were the same number, because someone had made it so.
+
+She also saw her own file. It was short. It said: compliant. It said: no complaints on record. It said: expendable.
+
+When Amara awoke at dawn, before the first call to prayer, her eyes were clear. Her body felt unburdened by twenty-four years of fatigue, as though a debt had quietly been paid on her behalf overnight.
+
+She washed, dressed, folded her wrapper, and stood at the door of her room looking down the road toward the school.
+
+"What do I do?" she asked.
+
+The pulse behind her ear said: "Teach. This time, take attendance of everyone."`
+      },
+      {
+        id: 6, partNum: 2, partTitle: "Part II: The Sub-Dermal Archive",
+        title: "Chapter 6: The First Override",
+        setting: "The school gates, Zamfara. 08:00.",
+        wordCount: "413 words",
+        summary: "Inspector Bello arrives with two municipal guards and eviction notices, expecting weeping teachers. Amara meets him at the gate holding a metal ledger, and a silent packet from her wrist dissolves his seizure warrant and freezes the department's accounts.",
+        keyScene: "Under the skin of Amara's wrist a sapphire light pulses once, and Inspector Bello's terminal fills with scrambled nonsense.",
+        text: `Inspector Bello arrived at the school gates unannounced at eight o'clock, flanked by two municipal guards carrying eviction notices and a crowbar.
+
+He expected weeping teachers. He expected panicked students, a principal wringing his hands, and the quiet surrender that had met him at every rural school from Sokoto to Yola. He had done this eleven times. He had a system: arrive early, bring a witness, and hand the paper to the woman who cried the least, because she was usually the one the others listened to.
+
+Instead he found Amara Okonkwo standing at the gates alone, in her green wrapper, holding a simple metal ledger.
+
+"Inspector," she said.
+
+"Madam. This is an eviction notice under Directorate Order 44. The premises revert to the district agricultural office as of this morning."
+
+"I know what the order says. I read it on Tuesday."
+
+"Then you will give me the keys."
+
+Behind her, through the open windows of Classroom 3-B, he could hear the low sound of forty-five girls reciting. He frowned. "There should be no classes."
+
+"There are no classes," Amara said. "There is only attendance."
+
+Bello held out his hand. When she did not move, he raised his voice and took a step forward.
+
+Amara raised her right hand, palm open, in the way a teacher raises a hand to end a conversation.
+
+Beneath the skin of her wrist, a faint sapphire light pulsed once against the bone.
+
+A silent digital packet, invisible to every eye in the yard, flashed from her pulse-point into the inspector's handheld administrative terminal. Bello did not feel it. He only felt his palm grow warm.
+
+He looked down. The seizure warrant on the screen had dissolved into scrambled nonsense: rows of consonants, standing columns of numbers, fragments of a language that had no letters. He tapped the screen. The nonsense spread. The department accounts closed one after another in front of him, like doors along a corridor being shut by someone walking calmly from the far end. His regional travel permission blinked twice and went grey.
+
+"What have you done?" he said.
+
+"Nothing, Inspector," Amara said. "The system seems to be reconciling."
+
+The crowbar stayed on the guard's shoulder. Nobody had told the guards what to do with a woman who had not touched anybody and against whom there was nothing on the screen to read.
+
+Amara opened the metal ledger, wrote the time, and said, "I am recording the attendance of the district officers as well."`
+      },
+      {
+        id: 7, partNum: 2, partTitle: "Part II: The Sub-Dermal Archive",
+        title: "Chapter 7: The Ledger of the Forgotten",
+        setting: "The school's offline computer room. Mid-morning.",
+        wordCount: "363 words",
+        summary: "With the district network locked, the school's dead terminal wakes and shows the scrubbed files: embezzled funds, diverted scholarships, and the real names of thousands of children. Amara copies the archive onto a chip hidden in her chalk box.",
+        keyScene: "The old monitor flickers to life by itself and a directory of erased names scrolls past faster than any eye can read.",
+        text: `With the local administrative network disabled by Amara's sub-dermal interface, the school's old offline computer terminal flickered to life.
+
+It had not worked since the ministry migrated the district to a cloud system four years earlier. The monitor was yellowed, the keyboard missing three keys, and Principal Ibrahim kept a folded cloth over it to protect it from the dust. When Amara pushed the power button, the machine came on without complaint.
+
+Files that had been scrubbed from the state's cloud servers appeared on the screen one after another.
+
+She read for two hours. Ibrahim stood behind her, and after the first hour he stopped talking.
+
+There were purchase orders for laboratory reagents that had never been ordered and invoices from a supplier that had no address. There were scholarship grants for girls from Zamfara district, released by Abuja, arriving in grand totals and leaving in smaller ones, each departure marked 'administrative charge'. There were transport votes for inspectors who had never travelled. There were contracts for grain silos in districts that had no schools left to convert.
+
+And there were names. Thousands of them.
+
+Each child had a file: date of enrolment, guardian, last attendance, reason for removal. The reasons were a small, terrible vocabulary repeated until it lost all meaning. TRANSFERRED. RELOCATED. EMIGRATED. NOT ENROLLED. DECEASED. The actual reasons were elsewhere: a bride price, a harvest, a road, a district officer's promotion, a line on a spreadsheet that had to balance before an inspection.
+
+Amara downloaded the complete archive onto a tiny optical chip, no larger than a fingernail, and hid it inside her chalk box, under the false bottom where she kept the good chalk.
+
+"This is three decades," Ibrahim said quietly. "This is everyone. If this leaves the district-"
+
+"It will leave the district," she said.
+
+She understood then that her classroom had never been only a place of learning. It was the physical vault in which the evidence of institutional theft had been kept, unread, under a cloth, because the state had assumed that nobody left in Zamfara could read.
+
+Outside, a child was reciting the periodic table in the corridor, getting the order slightly wrong, correcting herself.`
+      },
+      {
+        id: 8, partNum: 2, partTitle: "Part II: The Sub-Dermal Archive",
+        title: "Chapter 8: The District Inspector's Dilemma",
+        setting: "The district border, then the school compound. Noon.",
+        wordCount: "383 words",
+        summary: "Stranded at the border by digital locks, Inspector Bello summons a militia to force the school. They find the gates open, the courtyards empty, and forty-five girls reciting chemistry proofs from the dark classrooms.",
+        keyScene: "The militiamen stand in the empty compound as a girl's voice, perfectly calm, recites the proof of the Pythagorean theorem from inside a locked room.",
+        text: `By noon, Inspector Bello was stranded at the district border.
+
+His transport vehicle had refused him completely. The doors had locked themselves from the inside while he stood beside them, and the console now displayed a sentence he did not recognise: RECONCILIATION IN PROGRESS. His communications were cut off from Kaduna. Every call rang twice and died. The satellite phone found no satellite, which was impossible, because the satellite phone had found a satellite on the day the desert was full of lightning.
+
+Humiliated, sweating through his white shirt, he did what men of his rank did when the machine failed them: he summoned men.
+
+A local militia unit arrived in a pickup truck in the middle of the afternoon, six of them, with a corporal who did not ask questions and a rifle that was older than the corporal. Bello told them there were intruders in a government facility, which was true in a way that would not survive a second question.
+
+They drove to the school at speed and found the iron gates wide open.
+
+That stopped them. The corporal looked at the gates, and then at Bello, because an open gate had not been in the description.
+
+The compound was silent and completely empty of staff. The imam's son who swept the corridors was gone. Ibrahim's office door stood open with the green string folder on the desk and nobody guarding it. The dust lay undisturbed across the yard, except for a single line of bare footprints, small ones, walking in order toward the northern wall.
+
+Then, from the darkened classrooms, they heard a girl's voice reciting.
+
+"Let the triangle have sides a, b and c, with the right angle between a and b. On each side construct a square. The area of the square on a is a squared; the area of the square on b is b squared. Draw the perpendicular from the right angle..."
+
+Another voice took over, then another, one after another, in turn, each one picking up the proof exactly where the last had left off, the whole building murmuring geometry in the dark.
+
+The corporal lowered his rifle. "There is nobody here," he said.
+
+"There are forty-five of them," Bello said.
+
+"There is nobody here," the corporal repeated, and got back into the truck.`
+      },
+      {
+        id: 9, partNum: 2, partTitle: "Part II: The Sub-Dermal Archive",
+        title: "Chapter 9: The Invisible Network",
+        setting: "Colonial storm drains beneath Zamfara. Late afternoon.",
+        wordCount: "385 words",
+        summary: "Amara does not fight the militia. Guided by Mass-Q-Rade's tactical routing, she leads forty-five girls through colonial-era storm drains that appear on no municipal survey, out past the northern wall and into the open savanna.",
+        keyScene: "The girls lower themselves one by one through the grate behind the science block, notebooks held above their heads, while the guards kick down doors in the empty offices above.",
+        text: `Amara did not fight the militia with weapons.
+
+She had thought about it for one bad hour in the afternoon, and had put the thought away the way a teacher puts away a book that is not appropriate for the class.
+
+Mass-Q-Rade's tactical routing appeared in her mind as a thin gold line drawn over the shape of the town she had lived in for twenty-four years. It ran from behind the science block, under the market, beneath the emir's road, and out past the northern wall to the edge of the open savanna. It had been built in the last years of the colonial administration to carry rain off the new tarmac, and had been forgotten by every municipal survey since.
+
+"They are not on the maps," Amara said.
+
+"They are not on the maps," Mass-Q-Rade agreed. "That is the same thing as being safe, for now."
+
+She took the girls out through the science block at half past four, when the light goes flat and everyone in the district stops working. The grate behind the block had rusted into place. Two of the older girls levered it up with a hoe while the others kept watch, and then they went down into the ground one by one, holding their notebooks above their heads, the way girls in that district had once carried water.
+
+The tunnels were low and dry and smelled of old rainwater. Amara went first with the optical chip in her chalk box and the metal ledger under her arm. Behind her came forty-five girls in single file, hands on the shoulder of the girl in front, whispering the periodic table to keep from being afraid.
+
+Above them, the guards kicked down the wooden doors of empty administrative offices. The sound reached the tunnels as a series of soft, distant knocks.
+
+They came up on the far side of the northern wall as the first cool air of evening moved across the plain, and stood in a line in the scrub, covered in white dust, all forty-five of them, plus a teacher of twenty-four years' unbroken service.
+
+Amara looked back at the school, at the small dark shapes of the classrooms she had swept for two decades, and then at the girls.
+
+"Roll call," she said.
+
+All forty-five answered their names.`
+      },
+      {
+        id: 10, partNum: 2, partTitle: "Part II: The Sub-Dermal Archive",
+        title: "Chapter 10: Whispers Across the State",
+        setting: "Three northern provinces. Sunset.",
+        wordCount: "360 words",
+        summary: "The pulse from Zamfara ripples outward. Administrative terminals across three provinces shut down and flash a single golden line: the ledger is open; the teachers have returned. Dismissed educators watch their blank screens wake with unredacted curricula.",
+        keyScene: "In a shuttered school board office in Kano, a clerk's abandoned screen lights gold and holds one sentence until the power fails.",
+        text: `By sunset, the digital pulse that had begun in Zamfara was rippling outward through regional telecommunication towers.
+
+It travelled the way dust travels, without asking permission. It went along the fibre that ran beside the railway, through the microwave repeater on the ridge above Gusau, and into the copper that belonged to a telephone exchange built in 1962 and repaired only when it failed completely.
+
+Across three northern provinces, administrative terminals in rural school boards shut down one after another.
+
+The first was in Kano, at a quarter past six, in an office where a clerk had gone home for the evening and left the machine running because it took eleven minutes to start in the morning. The screen filled with amber light. Then a single line of golden text appeared across it and did not move:
+
+THE LEDGER IS OPEN. THE TEACHERS HAVE RETURNED.
+
+The clerk was already three streets away, walking home with a bag of tomatoes. He never saw it. The night watchman saw it and did not know what it meant, and stood in front of it for a long time with his torch switched off.
+
+Then Katsina. Then Sokoto. Then a board office in Bauchi that had not received a working computer since the previous administration and had three of them, unplugged, in a cupboard.
+
+In cities hundreds of miles away, dismissed educators looked at their blank computer screens as they flickered to life with unredacted curricula and scholarship funds: the real figures, the real recipients, the real lines where money had been taken. A woman in Zaria who had been dismissed in 2019 for asking about her own unpaid arrears sat at her kitchen table at midnight with her son's laptop open and read the names of the girls from her old school who had been removed from the register the year she left.
+
+She had believed, for seven years, that she was the only person who remembered them.
+
+By morning, in eleven towns, teachers who had never met one another were writing the same sentence on the same wall of the same kind of office.
+
+They were no longer alone in the dark.`
+      },
+      {
+        id: 11, partNum: 3, partTitle: "Part III: The March to Kaduna",
+        title: "Chapter 11: Across the Dry Plains",
+        setting: "The trade routes between Zamfara and Kaduna. Days one to three.",
+        wordCount: "354 words",
+        summary: "A hundred and twenty miles of cracked earth and military patrols. Mass-Q-Rade's orbital mapping finds hidden wells and safe routes; at night, under the stars, Amara teaches geometry and literature.",
+        keyScene: "The girls sleep in a ring of acacia shade by day and, at night, take turns solving a geometry problem scratched into the sand.",
+        text: `The journey from Zamfara to the regional capital of Kaduna was a hundred and twenty miles of cracked earth, thorny scrubland, and unrelenting heat.
+
+They walked at night and at first light, and rested through the worst of the afternoon under the sparse shade of acacia trees, where the ground was a few degrees cooler and the flies were too tired to bother anyone.
+
+Mass-Q-Rade's orbital environmental mapping showed Amara the shape of the land the way a good teacher shows a child a diagram: the dry riverbed that still held water two feet under the sand, the well behind the abandoned veterinary post, the gully that would hide forty-six people from a road for the length of a patrol. It also showed her the patrols themselves, moving along the highways in the heat shimmer, in the patterns of men who had been given a route and no imagination.
+
+They saw nothing of those men all the way to Kaduna.
+
+On the first night, one of the girls began to cry, silently, and would not say why, and Amara sat with her until she stopped and then said, "Now you will learn the difference between an integer and a fraction," because grief is easier to carry when the hands are busy.
+
+On the second night, Amara taught literature. She had no book, so she recited from memory the passage she had taught for twenty years: a man walking home to a city he does not recognise, and the question he asks of the gatekeeper. The girls argued about the answer until midnight and then slept in a ring with their feet toward the centre, as they had been taught by their grandmothers.
+
+On the third night she scratched a geometry problem into the sand with a stick and made them solve it in turn, out loud, one step each.
+
+"A classroom," she told them, "is not a room with a roof. It is a place where somebody asks a question and somebody else is not permitted to lie."
+
+Behind them, the lights of Zamfara had gone small and yellow and then gone out altogether.`
+      },
+      {
+        id: 12, partNum: 3, partTitle: "Part III: The March to Kaduna",
+        title: "Chapter 12: The Oasis of Intellect",
+        setting: "An abandoned agricultural research station near Kano. Fourth night.",
+        wordCount: "384 words",
+        summary: "The group reaches a vine-swallowed research station where an intact analog satellite uplink still stands in a basement generator room. Amara's altered hands bridge the ancient wiring with global relays.",
+        keyScene: "Amara grips two bare copper cables and the station's dead dials light up one after another in the dark.",
+        text: `On the fourth night, the group reached an abandoned agricultural research station near Kano.
+
+It had been built in the seventies with money from a programme nobody now remembered, to study drought-resistant sorghum. The programme had ended, the money had ended, and the buildings had remained: a sprawl of concrete blocks, half-swallowed by creeping vines and desert sand, and a water tower with a hole in it that the birds used.
+
+"Why here?" Amara asked.
+
+"Because they built it to talk to the sky," Mass-Q-Rade said.
+
+Its tactical interface drew the station's internal plan behind Amara's eyes and lit a path down a service stair to the basement generator room, where the air was cool and smelled of oil and old dust.
+
+In the centre of the room, in its heavy metal housing, sat an analog satellite uplink. It was older than Amara, older than the state that had closed her school, and it was intact: the dish above it still aimed at the southern sky, and the copper was thick and unbroken.
+
+The power was gone. The mains had been cut in 1998. The diesel generator had been removed for scrap in 2004, by men who had left the bolts in a neat pile, which Amara found obscene.
+
+She crouched beside the housing, opened the maintenance panel, and looked at the terminals.
+
+"There is no current," she said.
+
+"There is current in you," Mass-Q-Rade said. "Put your hands on the cables."
+
+Amara put her hands on the cables. The nanites in her altered skin moved under her palms like a slow tide. The ancient wiring woke: the dials on the console lit one after another in the dark, softly, the way lights come on in a village when a generator is started. A needle climbed out of the red and settled in the black. Somewhere above the concrete, the dish turned two degrees and stopped.
+
+The girls had come down the stair behind her and stood in the doorway with their notebooks against their chests, staring at the woman in the green wrapper, who was now, unmistakably, also a piece of machinery.
+
+"Sit down," Amara said. "We are going to have a school broadcast."
+
+They sat on the floor of the generator room, and the station hummed around them like a lesson beginning.`
+      },
+      {
+        id: 13, partNum: 3, partTitle: "Part III: The March to Kaduna",
+        title: "Chapter 13: The Broadcast from the Ruins",
+        setting: "The research station. Midnight.",
+        wordCount: "391 words",
+        summary: "Across every radio, television and educational terminal in northern Nigeria, Amara reads the names of the children whose futures were stolen, the financial records, and the unredacted history of intellectual suppression.",
+        keyScene: "Amara begins with the roll call of Classroom 3-B, reading all forty-five names into a national broadcast.",
+        text: `At midnight, the satellite uplink surged to life.
+
+Across every radio frequency, television broadcast channel, and educational terminal in northern Nigeria, the interference cleared and a single clear, steady voice began to speak.
+
+It was Amara Okonkwo, and she was reading a register.
+
+"Abubakar, Aisha. Class three. Last attendance: the eleventh of February. Reason recorded by the district: transferred. Reason in fact: marriage."
+
+Market squares where the traders had left their radios on a stool. University dormitories with a television in the common room. Government offices where a cleaner was mopping a corridor at midnight. Bus stations. Barbershops with a fan that did not work. The voice came out of all of them at once, and it did not sound political, or angry, or even particularly loud. It sounded like a teacher taking attendance.
+
+"Balarabe, Hauwa. Class two. Last attendance: the third of March. Reason recorded: relocated. Reason in fact: the family could not pay the examination fee, so the girl was removed quietly and the fee was still collected by the school's accounts officer."
+
+She read all forty-five names of Classroom 3-B, in alphabetical order, slowly, because a name read aloud is a small proof that someone exists.
+
+Then she read the money.
+
+She read the line items: the laboratory reagents budget for Zamfara district over eleven years, and the three hundred and ninety thousand naira that arrived, and the eleven thousand that reached the school. She read the scholarship grants. She read the transport votes. She read the contract for the grain storage conversion, awarded two months before the order that required it. She gave the dates, the reference numbers, the names on the signatures, and she did not editorialise, because the numbers were already the loudest thing anyone had heard in that country for a generation.
+
+She did not issue violent threats. She made no political demands, and named no party.
+
+She simply recited the unredacted history of the region's intellectual suppression from a plastic folding table in a ruined generator room, with forty-five girls sitting on the floor around her, taking notes.
+
+The broadcast bypassed every state censor, because it did not travel through anything the state controlled.
+
+When she finished, she said: "This is the end of today's lesson. Class dismissed."
+
+Then she switched the console off, and the whole north sat in the dark, awake.`
+      },
+      {
+        id: 14, partNum: 3, partTitle: "Part III: The March to Kaduna",
+        title: "Chapter 14: The Ministry in Panic",
+        setting: "The Ministry of Regional Development, Abuja. Night.",
+        wordCount: "345 words",
+        summary: "Minister Aliyu watches the broadcast in the air-conditioned executive suites. His security teams cannot locate the signal, and the ministry's vaults lock one by one as stolen education funds return to community accounts.",
+        keyScene: "The minister's personal screen, the only one in the building still working, displays his own signature on the grain storage contract.",
+        text: `Inside the air-conditioned executive suites of the Ministry of Regional Development in Abuja, Minister Aliyu watched the broadcast in absolute horror.
+
+He had been finishing a late meeting about the northern harvest. There were eight men in the room, four bottles of water on the table, and a plate of biscuits that nobody had touched. Then the wall screen had changed.
+
+For the first twenty seconds he thought it was a joke, some local station running an old recording. Then the woman read his signature.
+
+"Contract number RD-44/BM/2026. Awarded to Sahel Agro Storage Limited. Signed: A. Aliyu. Date: the sixth of September."
+
+Nobody in the room looked at him. That was worse than if they had.
+
+"Find it," he said. "Shut it down."
+
+His digital security teams scrambled. They traced the signal to a telecommunications tower in Kano, then to a repeater on a ridge above Gusau, then to an orbital node that had no registration, and then to four satellites that were, according to the register, not there. Every time they located the origin, it moved with the unhurried patience of something that had done this a thousand times and had never yet been caught.
+
+One of the technicians made a small sound. The ministry's own financial vaults were locking up, one after another, in sequence, from the outside in.
+
+"That is not possible," Aliyu said.
+
+"It is transferring, sir. The education funds. It is returning them."
+
+"Returning them to whom?"
+
+The technician read from the screen. "To community accounts, sir. Local school committees. Parent associations. One hundred and ninety-four of them. It is opening them as we speak, and each one is being registered to a named bank of teachers."
+
+On the wall screen, the woman from Zamfara read the figure that had been budgeted for the school laboratory, and then the figure that had arrived, and the room listened to the difference between them in complete silence.
+
+Minister Aliyu reached for his phone. Then he set it down, because his screen had lit up with the same golden line as the wall.`
+      },
+      {
+        id: 15, partNum: 3, partTitle: "Part III: The March to Kaduna",
+        title: "Chapter 15: The Mobilization of the Educators",
+        setting: "Lagos, Port Harcourt, Enugu, and the northern villages. Days later.",
+        wordCount: "384 words",
+        summary: "The broadcast ignites a quiet wildfire: teachers walk out of administrative offices, students occupy faculty boards demanding transparency, and rural communities form school councils to protect their educators.",
+        keyScene: "In Enugu, seven teachers stand outside a board office and read the names of their own dismissed colleagues aloud, one by one, to a gathering crowd.",
+        text: `The broadcast ignited a quiet, unstoppable wildfire across the nation.
+
+It was not the kind of protest that fills a stadium. It was the kind that empties an office on a Wednesday morning.
+
+In Lagos, teachers in the state education secretariat walked out of their administrative offices in silence at ten o'clock and stood in the compound with their ID cards held up, face out. Nine hundred of them. They had not been called by a union, because the union had been negotiating and had asked them to wait. They had heard a woman from Zamfara reading a register and had decided they were tired of waiting.
+
+In Port Harcourt, the staff of a secondary school locked the head teacher's office from the outside and taught their classes in the car park under the mango trees, with the roll call written on a sheet of plywood because the register was in the locked office.
+
+In Enugu, seven teachers stood outside a board office and read aloud the names of their own dismissed colleagues, one by one, to a crowd that grew from eleven people to four hundred in half an hour. Each name got a short pause. That was all they did.
+
+University students occupied faculty boards from Ibadan to Maiduguri, demanding curriculum transparency and the publication of every scholarship grant released since 2015. They brought their own chairs and their own water and behaved, on the whole, better than the faculty.
+
+And in the villages, where the broadcast had come out of a radio on a stool, something older and steadier took hold. Communities formed self-organized school councils: a farmer, the imam's wife, a retired nurse, three parents and a teacher, sitting under a tree with a receipt book, protecting a classroom the state had forgotten. They wrote down every child in the village, whether the child attended or not.
+
+The submissive silence that had allowed bureaucratic corruption to flourish for decades was shattered, and what replaced it was not noise. It was an organised and digitally coordinated network of intellectual resistance, and it kept records.
+
+In the ruined generator room near Kano, Amara watched the reports come in on the analog console, one province at a time, and did what she had done for twenty-four years.
+
+"We have more students," she said.`
+      },
+      {
+        id: 16, partNum: 4, partTitle: "Part IV: The Final Bell",
+        title: "Chapter 16: The Return to Kaduna",
+        setting: "The Kaduna road. Morning.",
+        wordCount: "368 words",
+        summary: "With the regional bureaucracy paralysed and public support surging, Amara turns the march toward the Ministry of Education in Kaduna. Hundreds of teachers, parents and students join, carrying books, slates and notebooks.",
+        keyScene: "At a village crossroad, a school that closed a decade ago hangs its old bell on a pole and rings it as the procession passes.",
+        text: `With the regional bureaucracy paralysed and public support surging behind the educational awakening, Amara and her students turned their march toward the Ministry of Education headquarters in Kaduna.
+
+They were no longer a small group of refugees hiding in desert tunnels. They were a procession.
+
+At the first village after the station, a woman came out of her compound with a bucket of water and forty-six cups that did not match. At the second, four teachers who had been dismissed in 2021 joined them, carrying their certificates in plastic folders. At the third, the whole primary school fell in behind them, in uniform, out of step, singing a song about a boat.
+
+They carried no banners of rebellion. That had been Amara's one condition, and she had held it against every argument.
+
+They carried books. They carried slates, chalk, and handwritten notebooks filled with equations and poetry. One old man carried a chair, having decided that the correct contribution to a march for education was something to sit on. A girl of nine carried a globe with a crack in it, held together with tape, and would not let anyone else touch it, and was right not to.
+
+By the time they reached the outskirts of Kaduna there were hundreds of teachers, parents and students; some counted six hundred, others a thousand, and the truth depended on how far back you stood. They walked in the road because the road was where the people were, and the traffic gave way without being asked, and the drivers did not honk.
+
+At a crossroad near the city boundary, an old school that had closed a decade earlier still had its bell in the care of the caretaker's widow. She had kept it oiled for ten years for reasons she could not have explained to a committee.
+
+As the procession passed, she hung it on a pole by the road and rang it, hard, for a long time.
+
+The sound went out across the fields and the filling stations and the half-built estates. Amara stopped, and so did everyone behind her, and they stood in the road and listened to a school bell ringing for a school that no longer existed.`
+      },
+      {
+        id: 17, partNum: 4, partTitle: "Part IV: The Final Bell",
+        title: "Chapter 17: The Siege of the Bureaucracy",
+        setting: "Ministry of Education headquarters, Kaduna. Morning.",
+        wordCount: "388 words",
+        summary: "Three cordons of police surround the ministry. Minister Aliyu shouts through a megaphone about illegal assembly. Amara walks through the front line alone and a sapphire flash freezes their digital riot gear.",
+        keyScene: "The officers' batons are raised, and Amara takes one more step; every electronic trigger in the line disengages at once with a sound like a sigh.",
+        text: `The Ministry of Education headquarters in Kaduna was surrounded by three cordons of heavily armed state police and riot units.
+
+The building itself was not beautiful. It was eleven storeys of grey concrete with vertical louvres and a marble portico that had been added in a better decade, and the whole of it was now guarded as though it contained a head of state, which in a sense it did.
+
+Minister Aliyu had flown in from Abuja before dawn under heavy guard. He stood on the marble steps of the portico in a dark suit and a white shirt, and he held a megaphone as though it were a document he had been asked to read aloud.
+
+"This assembly is unlawful," he said. "It is prohibited under the Emergency Public Safety Decrees. Disperse immediately and no action will be taken."
+
+Nobody dispersed. A boy near the front, twelve or thirteen, sat down on the tarmac in a manner that suggested he intended to remain for some time.
+
+Amara walked forward, alone, out of the crowd.
+
+She was wearing her green wrapper. She had no bag and no papers. She looked exactly like every woman the ministry had ever asked to wait in a corridor.
+
+The front line of officers closed ranks and raised their batons.
+
+"Stop," an officer said.
+
+Amara took another step, and raised her hand the way she had raised it at the school gate.
+
+Her wrist emitted a subtle, blinding sapphire flash.
+
+Every electronic lock in the first cordon disengaged at once, with a sound like a sigh. The riot helmets, which carried digital visors with live facial recognition, went black. The batons, which carried authentication chips and recorded every strike for the official log, ceased to authenticate anything. The officers' radios filled with a low tone and then with nothing at all. And the sidearms, every one of them, disengaged their electronic triggers and would not re-engage, because somewhere in a system none of them could name, the permission to fire on a teacher had been withdrawn.
+
+A hundred men in full riot gear stood in the road and did not move, holding equipment that had become, in one second, the most expensive scrap in Kaduna.
+
+The officer who had spoken looked at his useless radio, and then at Amara's face, and stepped aside.`
+      },
+      {
+        id: 18, partNum: 4, partTitle: "Part IV: The Final Bell",
+        title: "Chapter 18: Entering the Vault",
+        setting: "The ministry's central executive vault.",
+        wordCount: "326 words",
+        summary: "Amara climbs the marble steps, pushes open the mahogany doors, and finds Minister Aliyu trembling behind his desk, pressing a panic button that no longer works.",
+        keyScene: "The mahogany doors close behind her, cutting off the noise of a thousand people, and the vault is silent except for a man breathing.",
+        text: `Amara walked past the paralysed police lines and climbed the grand marble steps.
+
+Behind her, a thousand people were making the sound that a crowd makes when it has understood that something is ending. Some of them were cheering. Some of them were crying. The girl with the cracked globe was holding it above her head.
+
+At the top of the steps she stopped in front of the mahogany doors.
+
+They were high and old and very heavy, and they had a brass plate that said, in letters worn by eighty years of hands: AUTHORITY IS THE ASSENT OF THE GOVERNED.
+
+Amara read it twice. Then she pushed the doors open.
+
+The vault was one floor below the minister's office, and she descended by the private staircase, past a portrait of a founding minister, past a fire extinguisher that had last been inspected in 2011, into a room with no windows and a temperature of twenty-two degrees.
+
+The room was enormous. It held the state's core educational records: thirty years of quotas, attendance, examination entries, scholarship awards, and the names of every child who had passed through a government school in the region.
+
+Minister Aliyu stood trembling behind his massive mahogany desk.
+
+His hand was reaching for the panic button under the desk, and pressing it, and pressing it again, and it no longer worked. It had not worked for forty minutes. It had gone silent at the same moment the police radios had, and Aliyu had spent those forty minutes alone in a cold room pressing a dead button while his country listened to a woman from Zamfara read out his signature.
+
+"You cannot be here," he said. "The records in this room are classified."
+
+Amara closed the doors behind her. The noise of the crowd stopped, as though a switch had been thrown.
+
+She looked at him with the calm, unwavering authority of a teacher addressing an unruly student who had failed his examinations.`
+      },
+      {
+        id: 19, partNum: 4, partTitle: "Part IV: The Final Bell",
+        title: "Chapter 19: The Decommissioning of Ignorance",
+        setting: "The central executive vault.",
+        wordCount: "324 words",
+        summary: "Amara places her chalk box on the minister's desk, names the assumption his power was built on, and presses her glowing palm to the master terminal. Thirty years of quotas and neglect dissolve into open, decentralised academic access.",
+        keyScene: "The master terminal dissolves into gold-and-blue Mass-Q-Rade code and the vault's record of thirty years becomes open to every child in the country.",
+        text: `"You built your power on the assumption that silence is weakness," Amara said.
+
+She placed her chalk box on the polished mahogany desk: an old tin, dented at one corner, with a picture of a child on the lid, and a white stub inside.
+
+Aliyu looked at the box as though it might be a weapon.
+
+"Forty-five girls in my classroom," Amara said. "For twenty-four years I was silent, and you used my silence to prove that the district needed nothing. I did not understand how much I was worth to you. I was not a teacher in your ledger. I was evidence."
+
+"There are procedures," he began.
+
+"There are marches of a hundred and twenty miles and scholars who have not been paid. There will be procedures again. Sit down."
+
+He sat down.
+
+Amara pressed her glowing palm against the vault's master administrative terminal.
+
+Instantly, the state's entire educational database dissolved into gold-and-blue Mass-Q-Rade code, pouring down the screen in columns the way chalk dust pours off a board into a tray. Thirty years of discriminatory quotas were unwritten. Falsified attendance records were restored to the truth and then released. Diverted scholarship money was traced, itemised, and returned to the accounts of one hundred and ninety-four school communities. The files of a hundred thousand erased children were opened and printed with their real names on them, and then, one by one, re-entered in the national register as pupils who existed and had been wrongfully removed.
+
+"You are deleting the state's records," Aliyu whispered.
+
+"No," Amara said. "I am marking them. There is a difference, and it is the whole of my profession."
+
+The screen held for a moment on the final line of the transfer, and then cleared, and displayed a statement in gold letters:
+
+DECENTRALISED ACADEMIC ACCESS — ENABLED FOR EVERY CHILD, EVERY DISTRICT, EVERY REGION.
+
+From somewhere above them, through eleven floors of louvred concrete, a bell had begun to ring.`
+      },
+      {
+        id: 20, partNum: 4, partTitle: "Part IV: The Final Bell",
+        title: "Chapter 20: The Final Bell",
+        setting: "The balcony of the Ministry headquarters, Kaduna. Sunrise.",
+        wordCount: "346 words",
+        summary: "Dawn over Kaduna. Amara stands on the balcony with her forty-five girls, and an old brass bell silent for half a century rings across the city, the plains and the world.",
+        keyScene: "The brass bell above the portico, silent for fifty years, rings out once and then for a long, uninterrupted minute.",
+        text: `The morning sun over Kaduna rose with brilliant, unhindered clarity.
+
+The harmattan haze had lifted in the night, as it sometimes does, and the light came straight down the streets without a shutter in front of it. Amara stood on the balcony of the Ministry headquarters and looked out over a sea of thousands of teachers, students, and citizens filling the grand plaza below: the dismissed and the employed, the urban and the rural, the ones in uniform and the ones who had come as they were.
+
+Beside her stood her forty-five girls from Zamfara, holding their notebooks high above their heads so that the people below could see the pages and understand what the march had been about.
+
+Behind the crowd, someone had brought a truck with a blackboard on it and was teaching. That was the thing Amara would remember longest: not the shouting, but a man in a market shirt drawing a diagram of the water cycle for a hundred people in a car park at seven in the morning, and the hundred people copying it down.
+
+"Well," Mass-Q-Rade said behind her ear, quietly, and for the last time in that particular voice. "What will you do now?"
+
+"I will teach," Amara said. "Attendance is much larger than it used to be."
+
+From an old brass bell mounted above the portico, silent for half a century, a clear, resonant chime rang out across the morning air. It carried across the city, across the dry plains, across the thousand kilometres of scrub and road between Kaduna and the classroom in Zamfara with the cracked slate and the twelve unfinished diagrams.
+
+It kept ringing for a long time, because the young woman with the cracked globe had climbed the scaffolding in her slippers and was not going to stop until her arms gave out.
+
+And in forty-five notebooks, in a hundred small villages, in eleven towns where teachers had written the same sentence on the same wall, the future woke up and began, very slowly, to learn.
+
+[End of Book 7 — The Erased Teacher]`
+      }
+    ];
+
+    const dossiersData = [
+      { name: "Amara Okonkwo", role: "Secondary School Teacher, 47", tag: "Q_AGENT_07", status: "Active Vanguard", desc: "Twenty-four years of unbroken service, unpaid for months at a time, never once complaining. Keeps a metal ledger of every child the district removed from the register, and carries her good chalk in a tin with a child's face on the lid." },
+      { name: "Zainab Danjuma", role: "Pupil, 15", tag: "REG_0044", status: "Restored", desc: "Top of the class in chemistry and the girl who reads the roll call when Amara's voice gives out. Walks the hundred and twenty miles to Kaduna with her notebook held above her head so the crowd can see the pages." },
+      { name: "Principal Musa Ibrahim", role: "Principal, 31 years' service", tag: "RELUCTANT", status: "Witness", desc: "A tired administrator who folds his signature small and keeps the district's paperwork in a cardboard folder tied with green string. Reads the scrubbed archive over Amara's shoulder and stops talking after the first hour." },
+      { name: "Inspector Bello", role: "District Inspector", tag: "GATEKEEPER", status: "Stranded", desc: "Has executed eleven rural closures with a crowbar, a witness and a smile. Arrives at the gates expecting weeping teachers, and leaves the district with a vehicle that will not start and a panic that will not stop." },
+      { name: "Minister Aliyu", role: "Minister, Regional Development", tag: "TARGET_ALPHA", status: "Detained", desc: "Awards the grain storage contract two months before the order that demands it. Builds his authority on the assumption that silence is weakness, then presses a dead panic button for forty minutes while a teacher reads his signature to the country." },
+      { name: "Directorate Order 44", role: "Ministry decree", tag: "INSTRUMENT", status: "Voided", desc: "One grey-printed sheet: rural curriculum suspended, classrooms converted to grain storage, female educators relocated to agricultural camps. No appeal, no committee, no mention of the two thousand one hundred children of the district." },
+      { name: "Mass-Q-Rade", role: "Global Network", tag: "COMMAND", status: "Listening", desc: "Orbital telemetry nodes and nanotech seeded into the materials of ordinary life. It chooses the most obedient person in each country because obedience leaves the cleanest record, and then hands her the ledger." }
+    ];
+
+    const timelineData = [
+      { date: "1990s – 2026", title: "Twenty-Four Silent Years", desc: "Amara Okonkwo teaches at Government Girls Secondary, Zamfara, without a single absence, complaint or recorded request. Every quarter of salary she accepts becomes a line of data proving the district needs nothing." },
+      { date: "EARLY 2026", title: "The Empty Allocation", desc: "Abuja releases the maintenance, laboratory and nutrition funds. A fraction reaches Zamfara. Principal Ibrahim hands over a brown envelope and an apology, and Amara thanks him for it." },
+      { date: "TUESDAY, 2026", title: "Directorate Order 44", desc: "The decree suspends rural secondary curriculum, converts the school to grain storage, and relocates female educators to agricultural camps. Amara folds twenty-four years of lesson plans into a cardboard box." },
+      { date: "THAT NIGHT", title: "The Midnight Lesson", desc: "Forty-five girls sit in the dark of Classroom 3-B and are taught chemistry by moonlight, whispering. A warmth begins behind Amara's left ear." },
+      { date: "DAWN", title: "The Selection", desc: "Mass-Q-Rade seeds a nanotech payload through her water filter. Amara sleeps through a flood of server schematics, encrypted protocols and erased teachers, and wakes clear-eyed." },
+      { date: "08:00", title: "The First Override", desc: "Inspector Bello arrives with two guards and a crowbar. A sapphire pulse from Amara's wrist dissolves his seizure warrant and locks the department's accounts from the inside." },
+      { date: "MID-MORNING", title: "The Ledger of the Forgotten", desc: "The school's dead terminal wakes and shows the scrubbed archive: embezzled funds, diverted scholarships, and the real names of thousands of children. The chip goes into the chalk box." },
+      { date: "NOON", title: "The Inspector's Dilemma", desc: "Stranded at the district border, Bello summons a militia. They find the gates open, the yards empty, and forty-five girls reciting geometry in the dark." },
+      { date: "LATE AFTERNOON", title: "The Invisible Network", desc: "Amara leads the class through colonial storm drains that appear on no municipal survey, out past the northern wall to the open savanna. Roll call: forty-five answered." },
+      { date: "SUNSET", title: "Whispers Across the State", desc: "Terminals in three provinces flash a single golden line: the ledger is open, the teachers have returned. Dismissed educators read their own districts' unredacted files by midnight." },
+      { date: "FOUR DAYS ON THE PLAIN", title: "The March to Kaduna", desc: "Hunger, hidden wells, patrols avoided by orbital mapping, and geometry scratched into the sand at night. The hundred and twenty miles are walked as a syllabus." },
+      { date: "FOURTH NIGHT", title: "The Oasis of Intellect", desc: "An abandoned agricultural research station near Kano still holds an intact analog satellite uplink. Amara puts her hands on the copper and the station wakes." },
+      { date: "MIDNIGHT", title: "The Broadcast from the Ruins", desc: "Across every radio, television and school terminal in the north, a teacher reads forty-five names, then eleven years of line items, then the history of the region's intellectual suppression." },
+      { date: "SAME NIGHT", title: "The Ministry in Panic", desc: "Minister Aliyu's security teams chase a signal across unregistered orbital nodes. One hundred and ninety-four community school accounts open, each registered to a named bank of teachers." },
+      { date: "THE FOLLOWING DAYS", title: "The Mobilization of the Educators", desc: "Nine hundred teachers walk out in Lagos; seven read the names of dismissed colleagues in Enugu; students occupy faculty boards; villages form school councils with receipt books and every child's name." },
+      { date: "MORNING", title: "The Siege of the Bureaucracy", desc: "Three cordons ring the ministry in Kaduna. Amara walks through the first line alone, and every electronic trigger in it disengages at once." },
+      { date: "MORNING", title: "Entering the Vault", desc: "Past the marble steps and the mahogany doors, Minister Aliyu presses a panic button that has been dead for forty minutes." },
+      { date: "MORNING", title: "The Decommissioning of Ignorance", desc: "A chalk box on a mahogany desk. A glowing palm on the master terminal. Thirty years of quotas, falsified attendance and diverted funds become open, decentralised access for every child." },
+      { date: "SUNRISE", title: "The Final Bell", desc: "Thousands fill the plaza below the balcony. An old brass bell, silent for half a century, rings across the city, the plains and the world, and a girl with a cracked globe refuses to stop ringing it." }
+    ];
+
+    const coverFallback = "Mass-Q-Rade-Book-Covers/book-7.png";
+
+    function getReadSet() {
+      try { return new Set(JSON.parse(localStorage.getItem('mqr_book7_read') || '[]')); }
+      catch (e) { return new Set(); }
+    }
+
+    function saveReadSet(set) {
+      try { localStorage.setItem('mqr_book7_read', JSON.stringify(Array.from(set))); } catch (e) {}
+    }
+
+    function getBookmark() {
+      try { return parseInt(localStorage.getItem('mqr_book7_bookmark') || '0', 10); } catch (e) { return 0; }
+    }
+
+    function updateProgressUI() {
+      const read = getReadSet();
+      const pct = Math.round((read.size / chaptersData.length) * 100);
+      const pctEl = document.getElementById('heroProgressPct');
+      if (pctEl) pctEl.textContent = pct + '% Read';
+      const bm = getBookmark();
+      const bmEl = document.getElementById('heroBookmark');
+      const bmChapter = chaptersData.find(c => c.id === bm);
+      if (bmEl) bmEl.textContent = bmChapter ? 'Ch. ' + bm : 'None';
+    }
+
+    function renderChapters() {
+      const container = document.getElementById('chaptersContainer');
+      if (!container) return;
+      const read = getReadSet();
+      container.innerHTML = chaptersData.map(ch => `
+        <div class="group chapter-card rounded-2xl bg-obsidian/80 border border-slate-800 hover:border-goldAccent/40 transition-colors cursor-pointer"
+             data-part="${ch.partNum}"
+             onclick="navigateChapter(${ch.id})">
+          <div class="p-4 sm:p-5 border-b border-slate-800 flex items-start justify-between gap-4">
+            <div class="w-full space-y-1">
+              <div class="flex items-center gap-2 text-sm text-slate-400">
+                <span class="text-[10px] font-mono tracking-widest ${ch.partNum === 1 ? 'text-goldGlow' : ch.partNum === 2 ? 'text-cyanGlow' : ch.partNum === 3 ? 'text-violet-300' : 'text-emerald-300'} uppercase">${ch.partTitle}</span>
+                ${read.has(ch.id) ? '<span class="ml-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">READ</span>' : ''}
+                <span class="ml-auto text-xs text-slate-500">Chapter ${ch.id}</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-serif font-bold text-white truncate line-clamp-1">${ch.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-400 line-clamp-1">${ch.setting}</p>
+            </div>
+            <div class="text-right text-xs font-mono text-slate-500 shrink-0">${ch.wordCount}</div>
+          </div>
+        </div>
+      `).join('');
+      const jump = document.getElementById('quickJumpSelect');
+      if (jump) {
+        jump.innerHTML = '<option value="">-- Jump to Chapter --</option>' + chaptersData.map(ch => `<option value="${ch.id}">${ch.id}. ${ch.title.replace(/^Chapter \d+: /, '')}</option>`).join('');
+      }
+      updateProgressUI();
+    }
+
+    let activeChapterId = null;
+
+    function navigateChapter(chapterId) {
+      const chapter = chaptersData.find(c => c.id === chapterId);
+      if (!chapter) return;
+      const modal = document.getElementById('readerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+      const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+      set('modalPartTag', chapter.partTitle.toUpperCase());
+      set('modalChapterTitle', chapter.title);
+      set('modalChNum', 'Chapter ' + chapter.id + ' of ' + chaptersData.length);
+      set('modalChSetting', chapter.setting);
+      set('modalChWords', chapter.wordCount);
+      set('modalSummaryText', chapter.summary);
+      set('modalKeySceneText', chapter.keyScene);
+      const body = document.getElementById('modalStoryText');
+      if (body) body.innerHTML = chapter.text.split('\n\n').map(p => `<p>${p}</p>`).join('');
+      activeChapterId = chapter.id;
+      const prev = document.getElementById('modalPrevBtn');
+      const next = document.getElementById('modalNextBtn');
+      if (prev) prev.disabled = chapter.id === 1;
+      if (next) next.disabled = chapter.id === chaptersData.length;
+      const bmText = document.getElementById('bookmarkText');
+      if (bmText) bmText.textContent = getBookmark() === chapter.id ? 'Bookmarked' : 'Bookmark';
+      const readBtn = document.getElementById('modalReadBtnText');
+      if (readBtn) readBtn.textContent = getReadSet().has(chapter.id) ? 'Marked Complete' : 'Mark Complete';
+      const modalBody = document.getElementById('modalBodyText');
+      if (modalBody) modalBody.scrollTop = 0;
+    }
+
+    function openChapterModal(chapterId) { navigateChapter(chapterId); }
+
+    function closeChapterModal() {
+      const modal = document.getElementById('readerModal');
+      if (modal) { modal.classList.remove('flex'); modal.classList.add('hidden'); }
+    }
+
+    function setModalFontSize(size) {
+      const body = document.getElementById('modalStoryText');
+      if (!body) return;
+      body.classList.remove('text-xs', 'text-sm', 'text-base', 'text-lg');
+      body.classList.add(size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-lg' : 'text-base');
+    }
+
+    function toggleModalBookmark() {
+      if (activeChapterId === null) return;
+      const current = getBookmark();
+      const next = current === activeChapterId ? 0 : activeChapterId;
+      try { localStorage.setItem('mqr_book7_bookmark', String(next)); } catch (e) {}
+      const label = document.getElementById('bookmarkText');
+      if (label) label.textContent = next ? 'Bookmarked' : 'Bookmark';
+      updateProgressUI();
+    }
+
+    function toggleModalReadStatus() {
+      if (activeChapterId === null) return;
+      const read = getReadSet();
+      if (read.has(activeChapterId)) read.delete(activeChapterId); else read.add(activeChapterId);
+      saveReadSet(read);
+      const label = document.getElementById('modalReadBtnText');
+      if (label) label.textContent = read.has(activeChapterId) ? 'Marked Complete' : 'Mark Complete';
+      renderChapters();
+      updateProgressUI();
+    }
+
+    function navigateModalChapter(direction) {
+      if (activeChapterId === null) return;
+      const next = activeChapterId + direction;
+      if (next < 1 || next > chaptersData.length) return;
+      navigateChapter(next);
+    }
+
+    function jumpToChapter(value) {
+      const id = parseInt(value, 10);
+      if (id) navigateChapter(id);
+    }
+
+    function filterPart(partNum) {
+      const cards = document.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        const show = partNum === 'all' || card.getAttribute('data-part') === String(partNum);
+        card.style.display = show ? 'block' : 'none';
+      });
+    }
+
+    function filterChapters() {
+      const input = document.getElementById('searchInput');
+      const filter = input ? input.value.toLowerCase() : '';
+      document.querySelectorAll('.chapter-card').forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(filter) ? 'block' : 'none';
+      });
+    }
+
+    function toggleScanlines() {
+      document.body.classList.toggle('scanlines-active');
+    }
+
+    function runTerminalAction(action) {
+      const log = document.getElementById('terminalOutputLog');
+      if (!log) return;
+      const actions = {
+        RESTORE_REGISTER: '[ACTION] RESTORE_REGISTER queued. Erased pupils of the district scheduled for reinstatement.',
+        CHALK_MASK: '[ACTION] CHALK_MASK engaged. Biometric signature scattered across the chalk box and 40,000 dust particles.',
+        AUDIT_MINISTRY: '[ACTION] AUDIT_MINISTRY complete. Directorate Order 44 traced to contract RD-44/BM/2026.',
+        BROADCAST: '[ACTION] BLACKBOARD_LIVE armed. Every radio and school terminal in the north is now a register.',
+        ROSTER: '[ACTION] NETWORK_CORES: operative OKONKWO active. Kaduna vault uplink standing by.'
+      };
+      log.innerHTML += `<div class="text-slate-500">[${new Date().toLocaleTimeString()}] ${actions[action] || '[ACTION] ' + action}</div>`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function processTerminalCmd() {
+      const input = document.getElementById('terminalInput');
+      const log = document.getElementById('terminalOutputLog');
+      if (!input || !log) return;
+      const cmd = input.value.trim().toUpperCase();
+      if (!cmd) return;
+      log.innerHTML += `<div class="text-cyanGlow">[CONSOLE] Command: ${cmd}</div>`;
+      if (cmd === 'HELP') {
+        log.innerHTML += '<div class="text-slate-500">[SYSTEM] Available: help, status, restore, expose, spoof, clear</div>';
+      } else if (cmd === 'STATUS') {
+        log.innerHTML += '<div class="text-emerald-300">[STATUS] Operative OKONKWO, AMARA active. Cover: teacher. District ledger integrity: 87% restored.</div>';
+      } else if (cmd === 'RESTORE') {
+        runTerminalAction('RESTORE_REGISTER');
+      } else if (cmd === 'EXPOSE') {
+        log.innerHTML += '<div class="text-amber-300">[EXPOSE] Directorate Order 44 and the grain storage contract mirrored to 12 external newsrooms.</div>';
+      } else if (cmd === 'SPOOF') {
+        runTerminalAction('CHALK_MASK');
+      } else if (cmd === 'CLEAR') {
+        log.innerHTML = '';
+      } else {
+        log.innerHTML += '<div class="text-slate-500">[SYSTEM] Unknown command. Type help.</div>';
+      }
+      input.value = '';
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function renderDossiers() {
+      const grid = document.getElementById('dossiersGrid');
+      if (!grid) return;
+      grid.innerHTML = dossiersData.map(d => `
+        <div class="glass-card glass-card-hover rounded-2xl p-5 space-y-3 transition">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-serif font-bold text-lg text-white">${d.name}</h3>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">${d.role}</p>
+            </div>
+            <span class="text-[9px] font-mono px-2 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyanGlow shrink-0">${d.tag}</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${d.desc}</p>
+          <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] font-mono">
+            <span class="text-slate-500">STATUS</span>
+            <span class="text-emerald-300">${d.status}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timelineContainer');
+      if (!container) return;
+      container.innerHTML = timelineData.map(t => `
+        <div class="relative">
+          <span class="absolute -left-[31px] sm:-left-[39px] top-1 w-3 h-3 rounded-full bg-cyanAccent border-2 border-obsidian shadow-glow-cyan"></span>
+          <div class="text-[10px] font-mono text-goldGlow tracking-widest mb-1">${t.date}</div>
+          <h3 class="font-serif font-bold text-white text-base">${t.title}</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-1">${t.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    renderChapters();
+    renderDossiers();
+    renderTimeline();
+    updateProgressUI();
+  </script>
+</body>
+</html>

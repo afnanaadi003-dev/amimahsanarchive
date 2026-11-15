@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Mass-Q-Rade: Book Seven — The Erased Teacher</title>
+  <desc id="desc">A dark chalkboard cover under harmattan dust: a chalk-drawn schoolhouse, a row of girls, one smudged-out pupil, and a teacher's silhouette holding a stub of glowing chalk beneath the title The Erased Teacher by Amim Ahsan.</desc>
+  <defs>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e2019"/>
+      <stop offset="0.55" stop-color="#07120f"/>
+      <stop offset="1" stop-color="#030806"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#8ff0c8" stop-opacity="0.20"/>
+      <stop offset="0.55" stop-color="#3aa37c" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f2d79a" stop-opacity="0.35"/>
+      <stop offset="0.6" stop-color="#d4af37" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8cf8a"/>
+      <stop offset="0.5" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#8f7220"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#c8a86a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c8a86a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="chalk" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sapphire" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="dust" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="0.7" fill="#dfeee7" opacity="0.10"/>
+      <circle cx="12" cy="11" r="0.5" fill="#dfeee7" opacity="0.07"/>
+      <circle cx="7" cy="15" r="0.6" fill="#dfeee7" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#board)"/>
+  <rect width="852" height="1280" fill="url(#glow)"/>
+
+  <!-- harmattan sun low over the board -->
+  <circle cx="700" cy="250" r="150" fill="url(#sun)"/>
+  <circle cx="700" cy="250" r="44" fill="none" stroke="#d4af37" stroke-width="1.6" opacity="0.35" filter="url(#chalk)"/>
+
+  <rect width="852" height="1280" fill="url(#dust)"/>
+  <rect y="880" width="852" height="400" fill="url(#haze)"/>
+
+  <!-- chalk tray lines -->
+  <rect x="0" y="0" width="852" height="10" fill="#000" opacity="0.45"/>
+  <rect x="0" y="1270" width="852" height="10" fill="#000" opacity="0.55"/>
+
+  <!-- top series mark -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="426" y="92" fill="#d4af37" font-size="25" letter-spacing="14">MASS-Q-RADE</text>
+    <line x1="316" y1="114" x2="536" y2="114" stroke="#d4af37" stroke-width="1.2" opacity="0.6"/>
+    <text x="426" y="150" fill="#bfe9d8" font-size="17" letter-spacing="9" opacity="0.8">BOOK SEVEN</text>
+  </g>
+
+  <!-- chalkboard frame -->
+  <g transform="translate(96 190) rotate(-0.7 330 305)">
+    <rect x="0" y="0" width="660" height="610" rx="10" fill="#08150f" stroke="#c9e7da" stroke-width="2.4" opacity="0.9" filter="url(#chalk)"/>
+    <rect x="14" y="14" width="632" height="582" rx="6" fill="none" stroke="#c9e7da" stroke-width="0.8" opacity="0.28"/>
+
+    <!-- schoolhouse -->
+    <g stroke="#e7f4ee" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)" opacity="0.85">
+      <path d="M150 292 L268 208 L386 292"/>
+      <path d="M172 284 L172 372 L366 372 L366 284"/>
+      <rect x="248" y="308" width="46" height="64"/>
+      <path d="M271 308 L271 372"/>
+      <rect x="192" y="304" width="28" height="26"/>
+      <rect x="318" y="304" width="28" height="26"/>
+      <path d="M138 372 L400 372"/>
+      <path d="M212 194 L212 158 L230 158 L230 208"/>
+    </g>
+
+    <!-- the state's stamp over the school -->
+    <g transform="rotate(-9 268 300)" opacity="0.5">
+      <rect x="180" y="252" width="176" height="42" rx="4" fill="none" stroke="#d4af37" stroke-width="2" filter="url(#chalk)"/>
+      <text x="268" y="280" fill="#d4af37" font-size="15" font-family="Georgia, serif" letter-spacing="3" text-anchor="middle" filter="url(#chalk)">SUSPENDED</text>
+    </g>
+
+    <!-- teacher silhouette with chalk, upper right -->
+    <g stroke="#e9f6f0" stroke-width="2.8" fill="none" stroke-linecap="round" filter="url(#chalk)" opacity="0.8">
+      <circle cx="530" cy="252" r="18"/>
+      <path d="M530 270 L530 352"/>
+      <path d="M530 288 L500 318"/>
+      <path d="M530 288 L560 300"/>
+      <path d="M530 352 L512 396"/>
+      <path d="M530 352 L548 396"/>
+      <path d="M560 300 L574 286"/>
+    </g>
+    <!-- glowing stick of chalk in her hand -->
+    <g filter="url(#sapphire)">
+      <path d="M574 286 L584 278" stroke="#7fe9ff" stroke-width="4.5" stroke-linecap="round"/>
+      <circle cx="585" cy="277" r="6" fill="#7fe9ff" opacity="0.5"/>
+    </g>
+
+    <!-- row of girls -->
+    <g stroke="#cfe9dd" stroke-width="2.6" fill="none" stroke-linecap="round" filter="url(#chalk)" opacity="0.85">
+      <circle cx="176" cy="470" r="12"/><path d="M176 482 L176 514 M176 490 L162 504 M176 490 L190 504 M176 514 L164 540 M176 514 L188 540"/>
+      <circle cx="236" cy="466" r="12"/><path d="M236 478 L236 512 M236 486 L222 500 M236 486 L250 500 M236 512 L224 540 M236 512 L248 540"/>
+      <circle cx="296" cy="470" r="12"/><path d="M296 482 L296 514 M296 490 L282 504 M296 490 L310 504 M296 514 L284 540 M296 514 L308 540"/>
+      <circle cx="356" cy="466" r="12"/><path d="M356 478 L356 512 M356 486 L342 500 M356 486 L370 500 M356 512 L344 540 M356 512 L368 540"/>
+      <circle cx="416" cy="470" r="12"/><path d="M416 482 L416 514 M416 490 L402 504 M416 490 L430 504 M416 514 L414 540 M416 514 L428 540"/>
+    </g>
+
+    <!-- erased pupil: smudged silhouette -->
+    <g opacity="0.45">
+      <circle cx="472" cy="470" r="12" fill="#a9c8ba" opacity="0.16"/>
+      <path d="M472 482 L472 512 M472 490 L458 504 M472 490 L486 504 M472 512 L460 540 M472 512 L484 540" stroke="#a9c8ba" stroke-width="2.6" opacity="0.13" stroke-linecap="round"/>
+      <g stroke="#c9e7da" stroke-width="9" stroke-linecap="round" opacity="0.15" filter="url(#chalk)">
+        <path d="M446 446 C476 470 476 516 450 548"/>
+        <path d="M498 442 C478 472 480 518 504 550"/>
+      </g>
+    </g>
+
+    <!-- chalk dust cloud -->
+    <g fill="#e9f6f0">
+      <circle cx="474" cy="480" r="2" opacity="0.35"/>
+      <circle cx="490" cy="454" r="1.4" opacity="0.28"/>
+      <circle cx="458" cy="528" r="1.6" opacity="0.25"/>
+      <circle cx="502" cy="516" r="1.2" opacity="0.22"/>
+      <circle cx="442" cy="492" r="1.1" opacity="0.2"/>
+    </g>
+
+    <!-- open ledger line across the board -->
+    <g filter="url(#chalk)" opacity="0.75">
+      <path d="M120 566 L560 566" stroke="#d4af37" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="340" y="592" fill="#d4af37" font-size="15" font-family="Georgia, serif" letter-spacing="4" text-anchor="middle" opacity="0.9">THE LEDGER IS OPEN</text>
+    </g>
+  </g>
+
+  <!-- title -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="426" y="880" fill="#f4efe2" font-size="63" font-weight="bold" letter-spacing="3">THE ERASED</text>
+    <text x="426" y="956" fill="url(#gold)" font-size="63" font-weight="bold" letter-spacing="8" filter="url(#softGlow)">TEACHER</text>
+    <line x1="286" y1="994" x2="566" y2="994" stroke="#d4af37" stroke-width="1.3" opacity="0.65"/>
+    <text x="426" y="1042" fill="#cfe9dd" font-size="19" letter-spacing="6" opacity="0.85">AMARA OKONKWO &amp; THE MASS-Q-RADE NETWORK</text>
+  </g>
+
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="426" y="1146" fill="#e8e2d2" font-size="21" letter-spacing="7">AMIM AHSAN</text>
+    <text x="426" y="1184" fill="#93b3a5" font-size="14" letter-spacing="3" opacity="0.85">writing under the pen name Amimul Ahsan</text>
+    <text x="426" y="1240" fill="#5f7f71" font-size="12" letter-spacing="5">A MASS-Q-RADE SERIALIZED NOVEL</text>
+  </g>
+</svg>
