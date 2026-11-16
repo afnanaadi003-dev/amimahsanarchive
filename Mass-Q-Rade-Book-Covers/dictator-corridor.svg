@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="title desc" style="display:block; margin:0">
+  <title id="title">The Dictator Corridor — A Novel by Amim Ahsan</title>
+  <desc id="desc">A stag's antlered head rises as a silhouette against a burning mountain corridor at night, with embers drifting and a pair of amber tiger eyes watching from the dark. Title The Dictator Corridor by Amim Ahsan.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#030508"/>
+      <stop offset="0.26" stop-color="#0b0910"/>
+      <stop offset="0.44" stop-color="#1d0d0c"/>
+      <stop offset="0.58" stop-color="#4b1607"/>
+      <stop offset="0.66" stop-color="#963407"/>
+      <stop offset="0.72" stop-color="#c2510c"/>
+      <stop offset="0.78" stop-color="#7a2a08"/>
+      <stop offset="0.88" stop-color="#2a1007"/>
+      <stop offset="1" stop-color="#080403"/>
+    </linearGradient>
+
+    <radialGradient id="fireGlow" cx="50%" cy="74%" r="52%">
+      <stop offset="0" stop-color="#ffb861" stop-opacity="0.55"/>
+      <stop offset="0.42" stop-color="#e2561a" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffbf72" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#ffbf72" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a1a12"/>
+      <stop offset="1" stop-color="#120a08"/>
+    </linearGradient>
+
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.92"/>
+      <stop offset="0.30" stop-color="#000000" stop-opacity="0.10"/>
+      <stop offset="0.62" stop-color="#000000" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <radialGradient id="eyeHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffd489" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#df6a16" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#df6a16" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="b8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="b16" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="b34" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="34"/></filter>
+
+    <style>
+      .title { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; fill: #f8ead0; }
+      .meta  { font-family: Georgia, 'Times New Roman', serif; fill: #eed6ab; letter-spacing: 5px; }
+    </style>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#sky)"/>
+  <rect width="852" height="1280" fill="url(#fireGlow)"/>
+
+  <!-- soft smoke banks -->
+  <g filter="url(#b34)" opacity="0.5">
+    <ellipse cx="180" cy="640" rx="330" ry="120" fill="#240f0a"/>
+    <ellipse cx="720" cy="700" rx="360" ry="130" fill="#240f0a"/>
+  </g>
+
+  <!-- distant ridge -->
+  <path d="M0 838 C 90 806, 150 824, 226 786 C 300 750, 356 782, 426 806 C 500 832, 566 792, 640 812 C 712 832, 780 800, 852 826 L 852 1010 L 0 1010 Z" fill="url(#ridge)" opacity="0.85"/>
+
+  <!-- fire band behind treeline -->
+  <g filter="url(#b16)" opacity="0.75">
+    <path d="M0 902 C 70 872, 140 898, 210 878 C 286 856, 350 886, 428 872 C 506 858, 574 888, 652 874 C 726 860, 792 886, 852 872 L 852 960 L 0 960 Z" fill="#ff7d1d"/>
+  </g>
+
+  <!-- burning treeline -->
+  <g fill="#0a0504" filter="url(#b8)">
+    <path d="M0 1000 L 0 912 C 14 900, 22 916, 30 898 C 34 878, 44 872, 50 890 C 56 872, 66 868, 70 886 L 74 916 L 84 924 L 84 902 C 90 884, 100 880, 104 900 L 108 930 L 118 910 C 124 888, 134 884, 138 906 L 142 934 L 156 928 C 160 906, 172 902, 176 924 L 180 940 L 194 916 C 200 894, 212 892, 214 914 L 216 938 L 232 944 C 236 922, 248 918, 250 940 L 252 950 L 268 926 C 274 904, 286 902, 288 924 L 290 946 L 306 950 C 310 928, 322 924, 324 946 L 326 954 L 342 930 C 348 908, 360 906, 362 928 L 364 950 L 380 954 C 384 932, 396 928, 398 950 L 400 958 L 416 932 C 422 910, 434 908, 436 930 L 438 952 L 454 956 C 458 934, 470 930, 472 952 L 474 960 L 490 934 C 496 912, 508 910, 510 932 L 512 954 L 528 958 C 532 936, 544 932, 546 954 L 548 962 L 564 936 C 570 914, 582 912, 584 934 L 586 956 L 602 960 C 606 938, 618 934, 620 956 L 622 964 L 638 938 C 644 916, 656 914, 658 936 L 660 958 L 676 962 C 680 940, 692 936, 694 958 L 696 966 L 712 940 C 718 918, 730 916, 732 938 L 734 960 L 750 964 C 754 942, 766 938, 768 960 L 770 968 L 786 942 C 792 920, 804 918, 806 940 L 808 962 L 824 966 C 828 944, 840 940, 842 962 L 852 968 L 852 1006 Z"/>
+    <path d="M0 1006 L 0 964 C 20 958, 34 968, 52 958 C 70 948, 92 964, 116 956 C 142 948, 160 966, 186 958 C 214 950, 236 968, 262 960 C 290 952, 310 970, 338 962 C 368 954, 390 972, 420 964 C 452 956, 474 972, 504 964 C 536 956, 558 974, 588 966 C 620 958, 642 974, 672 966 C 704 958, 726 976, 756 968 C 788 960, 812 974, 852 966 L 852 1010 L 0 1010 Z"/>
+  </g>
+
+  <!-- glow halo behind the stag -->
+  <circle cx="430" cy="880" r="360" fill="url(#halo)"/>
+
+  <!-- tiger eyes in the dark, right -->
+  <g transform="translate(668 1042)">
+    <ellipse cx="0" cy="0" rx="88" ry="50" fill="url(#eyeHalo)" opacity="0.5"/>
+    <ellipse cx="66" cy="0" rx="88" ry="50" fill="url(#eyeHalo)" opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="14" ry="8.5" fill="#ffd88a"/>
+    <ellipse cx="66" cy="0" rx="14" ry="8.5" fill="#ffd88a"/>
+    <ellipse cx="0" cy="0" rx="3" ry="8" fill="#100702"/>
+    <ellipse cx="66" cy="0" rx="3" ry="8" fill="#100702"/>
+    <ellipse cx="0" cy="-1.4" rx="6" ry="3.4" fill="#fff6dc" opacity="0.4"/>
+    <ellipse cx="66" cy="-1.4" rx="6" ry="3.4" fill="#fff6dc" opacity="0.4"/>
+  </g>
+
+  <!-- STAG HEAD + ANTLERS -->
+  <g transform="translate(246 520) scale(1.9)" fill="#050302">
+    <g fill="none" stroke="#050302" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <!-- left beam -->
+      <path d="M 100 152 C 94 112, 86 72, 60 32"/>
+      <path d="M 96 132 C 80 120, 66 110, 46 106"/>
+      <path d="M 90 98 C 74 86, 62 72, 50 54"/>
+      <path d="M 79 64 C 67 54, 58 42, 52 24"/>
+      <!-- right beam -->
+      <path d="M 124 158 C 134 114, 150 68, 178 30"/>
+      <path d="M 129 128 C 147 116, 163 106, 186 100"/>
+      <path d="M 141 92 C 159 80, 171 64, 186 48"/>
+      <path d="M 157 58 C 169 48, 179 36, 186 20"/>
+    </g>
+
+    <!-- ear -->
+    <path d="M 110 184 C 120 156, 136 144, 156 140 C 154 164, 142 182, 128 194 Z"/>
+
+    <!-- head profile facing left -->
+    <path d="M 62 400
+             C 58 340, 60 300, 70 272
+             C 52 268, 34 258, 22 240
+             C 12 232, 10 222, 18 214
+             C 30 204, 48 196, 66 190
+             C 84 180, 92 166, 96 150
+             C 112 150, 124 156, 130 168
+             C 148 210, 152 270, 150 400 Z"/>
+  </g>
+
+  <!-- foreground bank -->
+  <path d="M0 1150 C 60 1120, 130 1146, 196 1128 C 260 1110, 300 1140, 268 1160 L 0 1230 Z" fill="#050303"/>
+  <path d="M852 1170 C 786 1138, 720 1162, 654 1144 C 600 1130, 564 1160, 596 1184 L 852 1244 Z" fill="#050303"/>
+
+  <!-- embers -->
+  <g fill="#ffbe72">
+    <circle cx="196" cy="892" r="2.4" opacity="0.9"/>
+    <circle cx="248" cy="852" r="1.6" opacity="0.65"/>
+    <circle cx="312" cy="930" r="2.7" opacity="0.85"/>
+    <circle cx="364" cy="864" r="1.7" opacity="0.6"/>
+    <circle cx="520" cy="900" r="2.4" opacity="0.8"/>
+    <circle cx="586" cy="856" r="1.6" opacity="0.6"/>
+    <circle cx="640" cy="934" r="2.2" opacity="0.85"/>
+    <circle cx="716" cy="872" r="1.5" opacity="0.55"/>
+    <circle cx="784" cy="936" r="2.0" opacity="0.75"/>
+    <circle cx="140" cy="960" r="1.8" opacity="0.6"/>
+    <circle cx="430" cy="742" r="2.6" opacity="0.75"/>
+    <circle cx="470" cy="690" r="1.6" opacity="0.45"/>
+    <circle cx="382" cy="700" r="1.3" opacity="0.35"/>
+    <circle cx="660" cy="760" r="1.9" opacity="0.45"/>
+    <circle cx="300" cy="1090" r="1.7" opacity="0.4"/>
+    <circle cx="560" cy="1080" r="1.5" opacity="0.35"/>
+  </g>
+
+  <!-- frame -->
+  <rect x="24" y="24" width="804" height="1232" fill="none" stroke="#d9a75f" stroke-width="2" opacity="0.30"/>
+  <rect x="36" y="36" width="780" height="1208" fill="none" stroke="#d9a75f" stroke-width="1" opacity="0.14"/>
+
+  <rect width="852" height="1280" fill="url(#vignette)"/>
+
+  <!-- typography -->
+  <g text-anchor="middle">
+    <text class="meta" x="426" y="124" font-size="17" opacity="0.75">A NOVEL</text>
+    <text class="meta" x="426" y="160" font-size="16" letter-spacing="7" fill="#e6c893" opacity="0.9">AMIM AHSAN</text>
+    <text class="title" x="426" y="252" font-size="72" letter-spacing="3">THE</text>
+    <text class="title" x="426" y="342" font-size="86" letter-spacing="1">DICTATOR</text>
+    <text class="title" x="426" y="432" font-size="86" letter-spacing="1">CORRIDOR</text>
+    <path d="M 300 468 L 552 468" stroke="#e0a860" stroke-width="1.6" opacity="0.5"/>
+    <text class="meta" x="426" y="506" font-size="14" opacity="0.65">FEAR &#183; FIRE &#183; THE HERD REMEMBERS</text>
+
+  </g>
+</svg>
