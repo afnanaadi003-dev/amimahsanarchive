@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Before I Die Wore — a novel by Amim Ahsan</title>
+  <desc id="desc">A midnight harbor cover: a lone figure in a long coat at the end of a wooden pier, a small rowboat, a lighthouse beam, and a cream paper list headed Before I Die, beneath the title Before I Die Wore.</desc>
+
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#0a1c26"/>
+      <stop offset="0.42" stop-color="#0c2531"/>
+      <stop offset="0.72" stop-color="#07161d"/>
+      <stop offset="1" stop-color="#040c11"/>
+    </linearGradient>
+    <radialGradient id="moonHalo" cx="74%" cy="20%" r="42%">
+      <stop offset="0" stop-color="#f4e7c9" stop-opacity="0.34"/>
+      <stop offset="0.4" stop-color="#d9c49b" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e2d39"/>
+      <stop offset="0.5" stop-color="#0a2029"/>
+      <stop offset="1" stop-color="#050f14"/>
+    </linearGradient>
+    <linearGradient id="pier" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2924"/>
+      <stop offset="1" stop-color="#0d0f0f"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efdd"/>
+      <stop offset="1" stop-color="#e8dcc3"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e2b487"/>
+      <stop offset="0.45" stop-color="#c98b55"/>
+      <stop offset="1" stop-color="#8f5a31"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6e9c8" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#f6e9c8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lantern" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffdca0" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#e8ad62" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#e8ad62" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="grain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="8" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="paperGrain" width="7" height="7" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.55" fill="#6b5334" opacity="0.10"/>
+      <circle cx="5" cy="4" r="0.4" fill="#6b5334" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <!-- sky and sea -->
+  <rect width="852" height="1280" fill="url(#night)"/>
+  <rect width="852" height="1280" fill="url(#moonHalo)"/>
+  <circle cx="646" cy="238" r="52" fill="#f3e6c7" opacity="0.88" filter="url(#soft)"/>
+  <circle cx="646" cy="238" r="120" fill="#f3e6c7" opacity="0.10" filter="url(#glow)"/>
+
+  <!-- distant headland and lighthouse -->
+  <path d="M0 690 L96 664 L178 678 L268 646 L344 668 L430 650 L520 676 L612 656 L706 680 L790 662 L852 676 L852 800 L0 800 Z" fill="#081820" opacity="0.9"/>
+  <g transform="translate(706 604)">
+    <rect x="-2" y="-46" width="5" height="50" fill="#0b1a20"/>
+    <path d="M-9 -46 L9 -46 L6 -70 L-6 -70 Z" fill="#0e2028"/>
+    <rect x="-5" y="-66" width="10" height="7" rx="1" fill="#f0d9a6" opacity="0.9"/>
+    <path d="M6 -64 L210 -96 L210 -74 Z" fill="url(#beam)" opacity="0.55"/>
+    <path d="M-6 -64 L-190 -92 L-190 -72 Z" fill="url(#beam)" opacity="0.22"/>
+  </g>
+
+  <!-- sea water -->
+  <rect y="760" width="852" height="520" fill="url(#sea)"/>
+  <g stroke="#7fa8a0" opacity="0.16" stroke-width="1.2">
+    <path d="M0 824 Q120 816 244 824 T500 824 T760 824 T900 824" fill="none"/>
+    <path d="M0 862 Q150 852 300 862 T600 862 T900 862" fill="none"/>
+    <path d="M0 906 Q110 896 226 906 T470 906 T720 906 T900 906" fill="none"/>
+    <path d="M0 960 Q160 948 320 960 T640 960 T900 960" fill="none"/>
+    <path d="M0 1030 Q130 1018 264 1030 T540 1030 T820 1030" fill="none"/>
+  </g>
+  <path d="M586 742 Q654 738 710 744" stroke="#e6d7b6" stroke-width="1" opacity="0.18" fill="none"/>
+
+  <!-- rowboat with lantern -->
+  <g transform="translate(560 842)">
+    <ellipse cx="70" cy="70" rx="120" ry="34" fill="#e8ad62" opacity="0.08" filter="url(#glow)"/>
+    <path d="M-8 34 Q70 76 150 34 L136 52 Q70 82 6 52 Z" fill="#0a1419"/>
+    <path d="M6 34 Q70 58 136 34 L128 22 Q70 40 14 22 Z" fill="#16282f"/>
+    <path d="M28 22 L44 22 L40 34 L26 34 Z" fill="#0d1a1f"/>
+    <circle cx="38" cy="8" r="15" fill="url(#lantern)"/>
+    <rect x="35" y="2" width="6" height="8" rx="1" fill="#ffdfa4"/>
+    <path d="M70 34 L70 6" stroke="#2c3d3f" stroke-width="2"/>
+    <path d="M64 8 L84 14 L64 22 Z" fill="#c98b55" opacity="0.55"/>
+  </g>
+
+  <!-- pier -->
+  <g>
+    <path d="M0 1018 L470 962 L470 986 L0 1050 Z" fill="url(#pier)"/>
+    <path d="M0 1050 L470 986 L470 1000 L0 1066 Z" fill="#070b0c" opacity="0.9"/>
+    <g stroke="#403b31" stroke-width="7" opacity="0.65">
+      <path d="M92 1041 L96 1120"/>
+      <path d="M212 1027 L214 1110"/>
+      <path d="M332 1011 L334 1096"/>
+      <path d="M446 995 L448 1084"/>
+    </g>
+    <g stroke="#1a201f" stroke-width="3" opacity="0.7">
+      <path d="M0 1024 L470 968"/>
+      <path d="M0 1036 L470 980"/>
+    </g>
+  </g>
+
+  <!-- lone figure at pier end -->
+  <g transform="translate(430 902)">
+    <ellipse cx="0" cy="78" rx="38" ry="9" fill="#05090a" opacity="0.7"/>
+    <path d="M-9 2 C-13 -12 -6 -26 0 -26 C8 -26 12 -12 9 2 Z" fill="#141b1b"/>
+    <path d="M-24 6 C-42 20 -48 52 -50 78 L50 78 C48 50 42 20 24 6 C14 12 -14 12 -24 6 Z" fill="#10191a"/>
+    <path d="M-24 6 C-30 34 -33 58 -33 76 L-4 76 L-6 24 Z" fill="#0a1213"/>
+    <path d="M24 6 C30 34 33 58 33 76 L4 76 L6 24 Z" fill="#0d1516"/>
+    <path d="M-3 22 L3 22 L4 78 L-4 78 Z" fill="#1e2929" opacity="0.8"/>
+    <circle cx="0" cy="-31" r="13" fill="#111818"/>
+    <path d="M-9 -36 Q0 -44 9 -36 Q5 -28 0 -28 Q-5 -28 -9 -36 Z" fill="#0a1010"/>
+    <path d="M-10 76 L-10 84 L-3 84 L-3 76 Z" fill="#070c0d"/>
+    <path d="M3 76 L3 84 L10 84 L10 76 Z" fill="#070c0d"/>
+  </g>
+
+  <!-- foreground reeds -->
+  <g stroke="#0a1518" stroke-width="3" fill="none" opacity="0.85">
+    <path d="M0 1280 Q18 1190 6 1110"/>
+    <path d="M16 1280 Q40 1200 30 1126"/>
+    <path d="M34 1280 Q52 1212 50 1150"/>
+    <path d="M820 1280 Q806 1200 818 1128"/>
+    <path d="M840 1280 Q826 1210 836 1156"/>
+  </g>
+
+  <!-- title -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="426" y="118" fill="#c98b55" font-size="15" letter-spacing="11" font-family="Helvetica, Arial, sans-serif">A NOVEL OF THE DAYS THAT REMAIN</text>
+    <line x1="306" y1="146" x2="546" y2="146" stroke="#c98b55" stroke-width="1" opacity="0.55"/>
+
+    <text x="426" y="252" fill="#f4ecd9" font-size="68" letter-spacing="6" filter="url(#grain)">BEFORE I DIE</text>
+    <text x="426" y="352" fill="url(#copper)" font-size="92" font-style="italic" letter-spacing="10">Wore</text>
+
+    <text x="426" y="404" fill="#9fb6b2" font-size="17" letter-spacing="5" font-family="Helvetica, Arial, sans-serif">EVERY MASK HAS AN ENDING</text>
+  </g>
+
+  <!-- the paper list -->
+  <g transform="translate(196 462) rotate(-2.2 230 210)">
+    <rect x="0" y="0" width="460" height="418" rx="5" fill="url(#cream)" opacity="0.97"/>
+    <rect x="0" y="0" width="460" height="418" rx="5" fill="url(#paperGrain)"/>
+    <rect x="0" y="0" width="460" height="418" rx="5" fill="none" stroke="#b99f77" stroke-width="1.2" opacity="0.6"/>
+    <line x1="34" y1="66" x2="426" y2="66" stroke="#b0855c" stroke-width="1" opacity="0.55"/>
+    <line x1="34" y1="118" x2="426" y2="118" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="158" x2="426" y2="158" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="198" x2="426" y2="198" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="238" x2="426" y2="238" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="278" x2="426" y2="278" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="318" x2="426" y2="318" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+    <line x1="34" y1="358" x2="426" y2="358" stroke="#c8b294" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="230" y="46" fill="#6b4a2c" font-family="Georgia, serif" font-size="27" text-anchor="middle" letter-spacing="2">Before I Die</text>
+
+    <g font-family="'Segoe Script', 'Bradley Hand', 'Comic Sans MS', cursive" font-size="17" fill="#4a3a28" opacity="0.88">
+      <text x="42" y="100">1. Quit the firm. Tomorrow.</text>
+      <text x="42" y="140">2. Finish painting the guest room.</text>
+      <text x="42" y="180">3. Call Daniel.</text>
+      <text x="42" y="220">7. Burn the unopened letters.</text>
+      <text x="42" y="260">11. Tell Marcus what happened.</text>
+      <text x="42" y="300">14. Take Clara back to the coast.</text>
+      <text x="42" y="340">23. Stop apologizing for taking up space.</text>
+    </g>
+    <path d="M34 372 Q120 380 214 374" stroke="#8f5a31" stroke-width="1" opacity="0.35" fill="none"/>
+    <circle cx="408" cy="382" r="16" fill="#c98b55" opacity="0.18"/>
+  </g>
+
+  <!-- copper leaf -->
+  <g transform="translate(712 436) rotate(18)">
+    <path d="M0 0 C26 -22 56 -10 58 18 C40 40 10 34 0 0 Z" fill="#b36f3c" opacity="0.9"/>
+    <path d="M2 2 C20 8 40 16 54 22" stroke="#7c4826" stroke-width="1.2" fill="none" opacity="0.8"/>
+  </g>
+
+  <!-- footer -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <line x1="356" y1="1152" x2="496" y2="1152" stroke="#c98b55" stroke-width="1" opacity="0.5"/>
+    <text x="426" y="1198" fill="#f1e6ce" font-size="23" letter-spacing="8">AMIM AHSAN</text>
+    <text x="426" y="1232" fill="#8fa7a4" font-size="13" letter-spacing="3" font-family="Helvetica, Arial, sans-serif">writing under the pen name Amimul Ahsan</text>
+    <text x="426" y="1262" fill="#657d7c" font-size="10" letter-spacing="5" font-family="Helvetica, Arial, sans-serif">A LITERARY NOVEL</text>
+  </g>
+</svg>

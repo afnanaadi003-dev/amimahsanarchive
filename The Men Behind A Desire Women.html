@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper" data-font="serif">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Men Behind A Desire Women — A Novel by Amim Ahsan</title>
+<meta name="description" content="The Men Behind A Desire Women — a literary novel by Amim Ahsan. Thirty-five chapters of ink, paper, hunger and the price of a printed truth. Read in paper-white, sepia, sage, dusk, or midnight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ui:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --read-size:1.135rem;
+  --read-leading:1.95;
+  --measure:68ch;
+  --radius:18px;
+}
+html[data-theme="paper"]{
+  --bg:#faf8f3; --bg-deep:#f1ece1; --paper:#fffdf8; --paper-edge:#eee7d9;
+  --ink:#2d2a25; --ink-soft:#514b41; --muted:#7a7264; --accent:#9a5b34;
+  --accent-soft:#f1e3d6; --rule:#e2d9c9; --shadow:0 26px 60px -34px rgba(74,55,30,.38);
+  --glow:rgba(154,91,52,.10);
+}
+html[data-theme="sand"]{
+  --bg:#f2e9d7; --bg-deep:#e9dcc3; --paper:#fbf4e4; --paper-edge:#e6d7b8;
+  --ink:#3a3125; --ink-soft:#574b38; --muted:#857258; --accent:#8a5726;
+  --accent-soft:#efe0c4; --rule:#ddcba9; --shadow:0 26px 60px -34px rgba(80,58,25,.4);
+  --glow:rgba(138,87,38,.10);
+}
+html[data-theme="sage"]{
+  --bg:#eaeFE9; --bg-deep:#dfe8dc; --paper:#f6faf3; --paper-edge:#dce6d7;
+  --ink:#253228; --ink-soft:#414f43; --muted:#6c7b6e; --accent:#4e7359;
+  --accent-soft:#e0ebdf; --rule:#d2ded0; --shadow:0 26px 60px -34px rgba(42,66,48,.3);
+  --glow:rgba(78,115,89,.10);
+}
+html[data-theme="dusk"]{
+  --bg:#211e1a; --bg-deep:#191713; --paper:#2a2621; --paper-edge:#38322b;
+  --ink:#e6dfd1; --ink-soft:#cfc6b5; --muted:#a39a8a; --accent:#d3a469;
+  --accent-soft:#3a3228; --rule:#3d372f; --shadow:0 30px 70px -30px rgba(0,0,0,.75);
+  --glow:rgba(211,164,105,.10);
+}
+html[data-theme="midnight"]{
+  --bg:#121722; --bg-deep:#0c1119; --paper:#1a202c; --paper-edge:#28303d;
+  --ink:#d9e0ea; --ink-soft:#bfc9d7; --muted:#8e9caf; --accent:#8fb8cb;
+  --accent-soft:#243040; --rule:#2a3442; --shadow:0 30px 70px -30px rgba(0,0,0,.8);
+  --glow:rgba(143,184,203,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--ui);
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  transition:background-color .45s ease,color .45s ease;
+  background-image:radial-gradient(900px 500px at 12% -6%,var(--glow),transparent 70%),radial-gradient(700px 420px at 96% 8%,var(--glow),transparent 72%);
+  background-attachment:fixed;
+}
+body.reading .landing{display:none}
+body:not(.reading) .reader{display:none}
+a{color:inherit}
+button{font-family:inherit}
+::selection{background:var(--accent);color:var(--paper)}
+
+.topbar{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);transition:background-color .45s,border-color .45s}
+.progress-line{height:3px;background:transparent}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,#e8c79a));transition:width .5s ease}
+.topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:9px 18px;min-height:58px}
+.back-link{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--muted);white-space:nowrap;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+.back-link svg{width:14px;height:14px}
+.topbar-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;text-align:center;color:var(--ink)}
+.topbar-title em{color:var(--accent);font-style:italic}
+.controls{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.contents-link{border:1px solid var(--rule);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:7px 13px;font-size:11.5px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.contents-link:hover{border-color:var(--accent);color:var(--accent)}
+.swatches{display:flex;align-items:center;gap:6px;padding:3px 5px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.swatch{width:19px;height:19px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;position:relative;transition:transform .18s,box-shadow .18s}
+.swatch:hover{transform:scale(1.12)}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--accent)}
+.swatch.paper{background:#fbf8ef;border-color:#d9cfba}
+.swatch.sand{background:#f0e1c6;border-color:#cbb08a}
+.swatch.sage{background:#dfead9;border-color:#9fb79f}
+.swatch.dusk{background:#2c2722;border-color:#6b5e4c}
+.swatch.midnight{background:#1a2231;border-color:#4c5f75}
+.font-tools{display:flex;align-items:center;gap:2px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);padding:3px}
+.font-tools button{border:0;background:transparent;color:var(--ink-soft);cursor:pointer;border-radius:999px;width:28px;height:25px;font-size:12px;display:grid;place-items:center;transition:background .18s,color .18s}
+.font-tools button:hover{background:var(--accent-soft);color:var(--accent)}
+.type-toggle{width:auto!important;padding:0 9px;font-size:10.5px;letter-spacing:.06em;font-weight:600}
+@media(max-width:900px){.topbar-title{display:none}.topbar-inner{gap:8px;justify-content:space-between}.controls{gap:6px}.back-link span{display:none}}
+@media(max-width:620px){.font-tools{display:none}.contents-link{padding:6px 10px}.swatch{width:17px;height:17px}.topbar-inner{padding:7px 12px;min-height:52px}}
+
+.landing{max-width:1160px;margin:0 auto;padding:34px 20px 70px}
+.hero-card{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--paper-edge);border-radius:26px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:background-color .45s,border-color .45s}
+.hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 300px at 100% 0%,var(--glow),transparent 70%);pointer-events:none}
+.cover-col{position:relative;z-index:1;display:flex;justify-content:center}
+.cover-frame{position:relative;width:100%;max-width:286px;border-radius:12px;overflow:hidden;background:var(--bg-deep);box-shadow:0 2px 0 rgba(255,255,255,.25) inset,0 24px 44px -20px rgba(30,20,10,.55),0 0 0 1px rgba(0,0,0,.08);transform:perspective(1100px) rotateY(2deg) rotateX(1deg);transition:transform .5s ease,box-shadow .5s ease}
+.cover-frame:hover{transform:perspective(1100px) rotateY(0) rotateX(0) translateY(-5px);box-shadow:0 32px 60px -24px rgba(30,20,10,.65),0 0 0 1px rgba(0,0,0,.08)}
+.cover-frame img{display:block;width:100%;height:auto}
+.cover-spine{position:absolute;left:0;top:0;bottom:0;width:9px;background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(255,255,255,.07));pointer-events:none}
+.hero-copy{position:relative;z-index:1;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.7}
+.hero-copy h1{font-family:var(--display);font-weight:600;font-size:clamp(2.8rem,6vw,4.6rem);line-height:.94;letter-spacing:-.012em;margin:0 0 4px;color:var(--ink)}
+.hero-copy h1 em{display:block;font-style:italic;color:var(--accent);padding-left:2px;font-size:.94em;letter-spacing:.01em}
+.byline{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:18px 0 0;font-weight:500}
+.byline b{color:var(--ink-soft);font-weight:600}
+.tagline{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.98rem;margin:15px 0 0}
+.blurb{font-family:var(--serif);font-size:1.01rem;line-height:1.8;color:var(--ink-soft);margin:22px 0 0;max-width:60ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.stat{border:1px solid var(--rule);background:var(--bg);border-radius:10px;padding:8px 12px;min-width:86px}
+.stat b{display:block;font-family:var(--serif);font-size:15px;color:var(--ink);font-weight:500;line-height:1.3}
+.stat span{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{appearance:none;border:1px solid transparent;border-radius:999px;padding:12px 22px;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .18s,box-shadow .18s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--paper);box-shadow:0 12px 24px -14px color-mix(in srgb,var(--accent) 80%,black)}
+.btn-primary:hover{box-shadow:0 16px 30px -12px color-mix(in srgb,var(--accent) 70%,black)}
+.btn-ghost{background:transparent;border-color:var(--rule);color:var(--ink-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn svg{width:14px;height:14px}
+.theme-note{display:flex;align-items:center;gap:7px;margin-top:20px;color:var(--muted);font-size:11px;letter-spacing:.02em}
+.theme-note .dot-row{display:inline-flex;gap:3px}
+.theme-note i{width:9px;height:9px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.08)}
+
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin:64px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.section-head h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;margin:0;color:var(--ink)}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:12.5px;max-width:52ch}
+.section-head .count{font-family:var(--ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--rule);border-radius:999px;padding:5px 11px;background:var(--paper)}
+.act-block{margin-bottom:30px}
+.act-block h3{display:flex;align-items:center;gap:12px;font-family:var(--ui);font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.act-block h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+.act-block h3 span{color:var(--muted);font-weight:400;letter-spacing:.08em;text-transform:none;font-size:10.5px}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.toc-item{display:flex;align-items:baseline;gap:12px;text-decoration:none;padding:11px 14px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--ink-soft);font-family:var(--serif);font-size:.94rem;line-height:1.45;transition:background .18s,border-color .18s,color .18s,transform .18s;cursor:pointer;text-align:left;width:100%}
+.toc-item:hover{background:var(--paper);border-color:var(--rule);color:var(--ink);transform:translateX(2px)}
+.toc-num{font-family:var(--ui);font-size:10px;letter-spacing:.06em;color:var(--accent);min-width:20px;font-variant-numeric:tabular-nums;font-weight:600}
+.toc-item .toc-title{flex:1;min-width:0}
+.toc-item .toc-arrow{opacity:0;color:var(--accent);font-size:11px;transition:opacity .18s}
+.toc-item:hover .toc-arrow{opacity:1}
+
+.reader{max-width:var(--measure);margin:0 auto;padding:46px 22px 40px}
+.reader .chapter{display:none}
+.reader .chapter.active{display:block;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.chapter-kicker{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:34px;font-family:var(--ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.chapter-kicker .accent{color:var(--accent);font-weight:600}
+.chapter h2{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4.6vw,3.15rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 6px;color:var(--ink)}
+.chapter-sub{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.95rem;margin:0 0 26px}
+.chapter-ornament{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:9px;letter-spacing:.4em;margin:0 0 34px;opacity:.75}
+.chapter-ornament::before,.chapter-ornament::after{content:"";height:1px;width:34px;background:var(--accent);opacity:.45}
+.chapter-body{font-family:var(--serif);font-size:var(--read-size);line-height:var(--read-leading);color:var(--ink-soft);letter-spacing:.003em;text-rendering:optimizeLegibility;hyphens:auto}
+html[data-font="sans"] .chapter-body{font-family:var(--ui);font-size:calc(var(--read-size) - .04rem);line-height:calc(var(--read-leading) - .08);letter-spacing:.002em}
+.chapter-body p{margin:0 0 1.22em;text-align:left}
+.chapter-body p+p{text-indent:1.35em;margin-top:-.35em}
+.chapter-body p.no-indent{text-indent:0}
+.chapter-body em{color:var(--ink);font-style:italic}
+.chapter-body .break{text-align:center;text-indent:0;color:var(--accent);letter-spacing:.5em;margin:1.9em 0;font-size:.8em;opacity:.7}
+.chapter-body .drop::first-letter{font-family:var(--display);float:left;font-size:3.35em;line-height:.78;padding:.06em .11em 0 0;color:var(--accent);font-weight:600}
+.chapter-body blockquote{margin:1.7em 0 1.7em 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);font-style:italic;color:var(--ink);opacity:.9}
+.chapter-body .letter{margin:1.8em 0;padding:20px 22px;background:var(--bg);border:1px solid var(--rule);border-radius:12px;font-size:.94em;line-height:1.85}
+.chapter-body .letter p{text-indent:0;margin-bottom:.9em}
+.chapter-body .letter p:last-child{margin-bottom:0}
+.chapter-body .list-block{font-family:var(--ui);font-size:.92em;line-height:2.05;margin:1.4em 0 1.7em;padding:18px 20px;border:1px solid var(--rule);border-radius:12px;background:var(--bg)}
+.chapter-body .list-block div{display:flex;gap:14px}
+.chapter-body .list-block b{color:var(--accent);font-weight:600;min-width:20px;font-variant-numeric:tabular-nums}
+.end-mark{text-align:center;color:var(--accent);letter-spacing:.5em;font-size:12px;margin:44px 0 10px;opacity:.65}
+.chapter-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--rule);margin-top:34px;padding-top:22px}
+.chapter-nav button{appearance:none;border:1px solid var(--rule);background:var(--paper);color:var(--ink-soft);border-radius:10px;padding:10px 15px;font-size:11px;letter-spacing:.04em;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .18s,color .18s}
+.chapter-nav button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.chapter-nav button:disabled{opacity:.35;cursor:not-allowed}
+.chapter-nav .contents-mid{border-color:transparent;background:transparent;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chapter-nav svg{width:13px;height:13px}
+
+.footer{border-top:1px solid var(--rule);margin-top:40px;padding:34px 20px 44px;text-align:center;color:var(--muted);font-size:11.5px}
+.footer .f-title{font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:6px}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.footer .f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:10px}
+
+@media(max-width:860px){.hero-card{grid-template-columns:1fr;gap:30px;padding:30px 24px}.cover-col{order:-1}.cover-frame{max-width:230px}.hero-copy{text-align:center}.eyebrow{justify-content:center}.blurb{margin-left:auto;margin-right:auto}.stats,.actions,.theme-note{justify-content:center}.toc-grid{grid-template-columns:1fr}.landing{padding-top:22px}}
+@media(max-width:620px){.hero-card{padding:24px 18px;border-radius:20px}.cover-frame{max-width:200px}.actions .btn{width:100%;justify-content:center}.reader{padding:32px 18px 34px}.chapter-kicker{font-size:9px;letter-spacing:.1em}.chapter-body{--read-size:1.06rem}.chapter-nav button{padding:9px 11px;font-size:10px}.section-head{margin-top:46px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.cover-frame{transform:none}}
+@media print{.topbar,.chapter-nav,.footer,.theme-note,.actions{display:none!important}.landing{display:none!important}body{background:#fff;color:#111}.reader .chapter{display:block!important;page-break-after:always}.chapter-body{font-size:11.5pt;line-height:1.6;color:#111}.chapter h2{color:#111}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="progress-line"><div id="progressFill"></div></div>
+  <div class="topbar-inner">
+    <a class="back-link" href="index.html" aria-label="Back to the library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg>
+      <span>Library</span>
+    </a>
+    <button class="contents-link" onclick="showLanding()">Contents</button>
+    <div class="topbar-title">The Men Behind <em>A Desire Women</em></div>
+    <div class="controls">
+      <div class="swatches" role="group" aria-label="Reading theme">
+        <button class="swatch paper" data-set-theme="paper" title="Paper white" aria-label="Paper white theme" aria-pressed="true"></button>
+        <button class="swatch sand" data-set-theme="sand" title="Warm sand" aria-label="Warm sand theme" aria-pressed="false"></button>
+        <button class="swatch sage" data-set-theme="sage" title="Soft sage" aria-label="Soft sage theme" aria-pressed="false"></button>
+        <button class="swatch dusk" data-set-theme="dusk" title="Dusk" aria-label="Dusk theme" aria-pressed="false"></button>
+        <button class="swatch midnight" data-set-theme="midnight" title="Midnight" aria-label="Midnight theme" aria-pressed="false"></button>
+      </div>
+      <div class="font-tools" role="group" aria-label="Text size">
+        <button onclick="stepFont(-1)" title="Smaller text" aria-label="Smaller text">A&minus;</button>
+        <button onclick="resetFont()" title="Reset text size" aria-label="Reset text size" style="font-size:10px">A</button>
+        <button onclick="stepFont(1)" title="Larger text" aria-label="Larger text">A+</button>
+        <button class="type-toggle" id="typeToggle" onclick="toggleType()" title="Switch between serif and sans-serif">Serif</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="landing" id="landing">
+  <section class="hero-card" aria-labelledby="bookTitle">
+    <div class="cover-col">
+      <div class="cover-frame">
+        <img src="Mass-Q-Rade-Book-Covers/the-men-behind-a-desire-women.svg" alt="The Men Behind A Desire Women — book cover: a lamp over a manuscript in a rain-streaked window, with a woman's silhouette fading in the glass" width="852" height="1280">
+        <span class="cover-spine" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">Literary Drama &middot; A Complete Novel</div>
+      <h1 id="bookTitle">The Men Behind <em>A Desire Women</em></h1>
+      <p class="byline">by <b>Amim Ahsan</b> &middot; writing under the pen name Amimul Ahsan</p>
+      <p class="tagline">Every empire begins with a confession.</p>
+      <p class="blurb">
+        John is twenty-three, hungry, and writing in a room with one bulb when a small publisher named Jackson offers him ten percent and a chance. The novel he writes becomes the confession a city reads on buses and at traffic lights, and the first thing it buys him is the power to control the paper it is printed on. What follows is a publishing empire built in Motijheel, a marriage tested by an honest speech given to the wrong room, and a long walk back to the only thing that was ever worth keeping: a sentence that is true.
+      </p>
+      <div class="stats" aria-label="Book details">
+        <div class="stat"><b>35</b><span>Chapters</span></div>
+        <div class="stat"><b id="totalWords">&mdash;</b><span>Words</span></div>
+        <div class="stat"><b id="readTime">&mdash;</b><span>Reading time</span></div>
+        <div class="stat"><b>5</b><span>Themes</span></div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="showChapter(1)">
+          Begin reading
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a class="btn btn-ghost" href="#contents">Table of contents</a>
+      </div>
+      <p class="theme-note">
+        <span class="dot-row" aria-hidden="true"><i style="background:#fbf8ef"></i><i style="background:#f0e1c6"></i><i style="background:#dfead9"></i><i style="background:#2c2722"></i><i style="background:#1a2231"></i></span>
+        Paper-white by default &middot; soft sepia, sage, dusk and midnight themes &middot; adjustable type
+      </p>
+    </div>
+  </section>
+
+  <section id="contents" aria-labelledby="contentsHeading">
+    <div class="section-head">
+      <div>
+        <h2 id="contentsHeading">Contents</h2>
+        <p>Thirty-five chapters in four acts. Short enough for one sitting, and the reader remembers where you stopped.</p>
+      </div>
+      <span class="count">35 chapters &middot; 4 acts</span>
+    </div>
+
+    <div class="act-block">
+      <h3>Act I <span>Ink &amp; Hunger &middot; 1&ndash;9</span></h3>
+      <div class="toc-grid">
+        <button class="toc-item" onclick="showChapter(1)"><span class="toc-num">01</span><span class="toc-title">The Ink and the Ashes</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(2)"><span class="toc-num">02</span><span class="toc-title">The Weight of Unpaid Tea</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(3)"><span class="toc-num">03</span><span class="toc-title">The Shadow of Forty-Five Percent</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(4)"><span class="toc-num">04</span><span class="toc-title">Ink on the Pavement</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(5)"><span class="toc-num">05</span><span class="toc-title">The River of Rice and Cellulose</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(6)"><span class="toc-num">06</span><span class="toc-title">The Ledger of Ash and Iron</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(7)"><span class="toc-num">07</span><span class="toc-title">Glass Walls and Paper Ghosts</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(8)"><span class="toc-num">08</span><span class="toc-title">The Tuesday Ledger</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(9)"><span class="toc-num">09</span><span class="toc-title">The Open Ledger</span><span class="toc-arrow">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="act-block">
+      <h3>Act II <span>Paper &amp; Power &middot; 10&ndash;18</span></h3>
+      <div class="toc-grid">
+        <button class="toc-item" onclick="showChapter(10)"><span class="toc-num">10</span><span class="toc-title">The Echo of the Coast</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(11)"><span class="toc-num">11</span><span class="toc-title">The Winter Pavilion</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(12)"><span class="toc-num">12</span><span class="toc-title">The Tea Stall by the Gate</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(13)"><span class="toc-num">13</span><span class="toc-title">The Spring Issue</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(14)"><span class="toc-num">14</span><span class="toc-title">The First Distribution</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(15)"><span class="toc-num">15</span><span class="toc-title">Letters from Sylhet</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(16)"><span class="toc-num">16</span><span class="toc-title">The Monsoon Archive</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(17)"><span class="toc-num">17</span><span class="toc-title">The Autumn Reprint</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(18)"><span class="toc-num">18</span><span class="toc-title">The Threshold of Winter</span><span class="toc-arrow">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="act-block">
+      <h3>Act III <span>The Glass Floor &middot; 19&ndash;27</span></h3>
+      <div class="toc-grid">
+        <button class="toc-item" onclick="showChapter(19)"><span class="toc-num">19</span><span class="toc-title">The Open Lectern</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(20)"><span class="toc-num">20</span><span class="toc-title">The Balcony at Dusk</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(21)"><span class="toc-num">21</span><span class="toc-title">The First Snow of the Mind</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(22)"><span class="toc-num">22</span><span class="toc-title">The Shadow of the Presses</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(23)"><span class="toc-num">23</span><span class="toc-title">The Spring Catalogue</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(24)"><span class="toc-num">24</span><span class="toc-title">The Rain on the Tin Roof</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(25)"><span class="toc-num">25</span><span class="toc-title">The Archive of Stone and Water</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(26)"><span class="toc-num">26</span><span class="toc-title">The Morning Bench</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(27)"><span class="toc-num">27</span><span class="toc-title">The Unwritten Margin</span><span class="toc-arrow">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="act-block">
+      <h3>Act IV <span>The Unbroken Line &middot; 28&ndash;35</span></h3>
+      <div class="toc-grid">
+        <button class="toc-item" onclick="showChapter(28)"><span class="toc-num">28</span><span class="toc-title">The Permanent Rain</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(29)"><span class="toc-num">29</span><span class="toc-title">The Unfinished Horizon</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(30)"><span class="toc-num">30</span><span class="toc-title">The Salt and the Rice</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(31)"><span class="toc-num">31</span><span class="toc-title">The Dust on the Ledger</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(32)"><span class="toc-num">32</span><span class="toc-title">The Lantern in the Window</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(33)"><span class="toc-num">33</span><span class="toc-title">The Silent Inch</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(34)"><span class="toc-num">34</span><span class="toc-title">The Wooden Bench in the Clearing</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(35)"><span class="toc-num">35</span><span class="toc-title">The Unbroken Line</span><span class="toc-arrow">&rarr;</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="aboutHeading">
+    <div class="section-head">
+      <div>
+        <h2 id="aboutHeading">About this edition</h2>
+        <p>A reading room for the long night before the press runs.</p>
+      </div>
+    </div>
+    <p class="blurb" style="max-width:78ch;margin-top:0">
+      <em>The Men Behind A Desire Women</em> is a complete novel in thirty-five chapters. This edition gives the text room to breathe: a paper-white page by default, five low-glare themes, a choice of serif or sans-serif type, adjustable text size, and a remembered bookmark. Nothing flashes, nothing chases the eye. Choose a theme from the palette above, then begin at Chapter One.
+    </p>
+  </section>
+</main>
+<main class="reader" id="reader">
+  <article class="chapter" id="chapter-1" data-num="1" data-title="The Ink and the Ashes">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter One</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Ink and the Ashes</h2>
+    <p class="chapter-sub">November. Room 113, a lamp, and a phantom caller.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The fluorescent tube above the desk flickered with a faint, high-pitched hum, the sound of a mosquito trapped behind glass. It was three in the morning in Dhaka, and the city outside Room 113 had gone quiet in the way a city only goes quiet when it is holding its breath.</p>
+      <p>John sat on the edge of the bed, a notebook open on his knees, a pen in his hand that had not moved in twenty minutes. The page was blank except for a single line at the top, written in handwriting that looked like someone else's: <em>Man Behind One His Desire Women.</em></p>
+      <p>He had written the title first, before he had written a single word of the story, because the title was the only part he was sure of. The rest of it was a fog. The rest of it was the smell of boiled rice from the corridor, the ceiling fan turning with a click that came around every two seconds, the damp patch on the wall shaped vaguely like a map of a country that did not exist.</p>
+      <p>The phone rang.</p>
+      <p>Nobody called at three in the morning unless something had happened. John looked at the screen, at the unknown number, and let it ring twice more before he picked up. A man's voice, older, careful, with the polished flatness of someone who had made this call many times before.</p>
+      <p>"Is this the author of <em>Man Behind One His Desire Women</em>?"</p>
+      <p>John almost laughed. "I'm the person who typed it," he said.</p>
+      <p>"I'm Jackson," the voice said. "I run a small press. I read your manuscript on a train from Chittagong to Dhaka, all two hundred and forty pages of it, and I have not stopped thinking about it since. I want to publish it."</p>
+      <p>John looked at the blank page in his lap. The pen was still in his hand. Outside, a dog barked somewhere in the dark, and a rickshaw bell answered it, thin and far away.</p>
+      <p>"At what percent?" John asked.</p>
+      <p>The line was quiet for a moment. "Ten," Jackson said.</p>
+      <p>"Ten," John repeated.</p>
+      <p>"Ten percent of the cover price, on every copy sold, paid quarterly. I know it isn't much. It is what I can offer. I am not a big house. I am one man and a rented press and a list of eleven authors who trust me."</p>
+      <p>John closed his eyes. He was twenty-three years old, he had four hundred taka in his wallet, and he had been eating rice and lentils for eleven days because the money his father sent each month had stopped arriving and he had been too proud to ask why.</p>
+      <p>"Then publish it," he said.</p>
+      <p>"Don't you want to know the terms? The print run? The date?"</p>
+      <p>"No," John said. "I want to know that someone read it."</p>
+      <p>The line was quiet again. Then Jackson said, in a different voice, softer, almost sad, "I read it twice. The part where the boy carries his mother's sewing machine through the flood. Did that happen?"</p>
+      <p>The pen moved in John's hand then, a small unconscious circle on the corner of the page, like a signature, like a wound. "Everything in it happened," he said. "That's the problem."</p>
+      <p>After he hung up, he sat for a long time in the dark, listening to the ceiling fan. The lamp was still on. The notebook was still open. The title was still there, and beneath it, where the story was supposed to go, the paper was white and clean and awful in its patience.</p>
+      <p>He wrote one sentence. Then another. Then he crossed out the first.</p>
+      <p>At four in the morning, the call to prayer rose from the mosque at the end of the lane, and John put down the pen, and went out onto the small balcony, and stood in the cold with his hands on the railing, watching the sky turn from black to a color he had no name for.</p>
+      <p>He was going to be published. He was going to be a writer. He was going to be somebody.</p>
+      <p>He did not know, standing there in the cold, that the book would sell eleven thousand copies in its first year, and that Jackson would call him again in the spring, and that by the following winter John would know exactly how much a man's soul weighed, because he would have carried his own to the market and sold it, and he would have gotten a very good price.</p>
+      <p>For now there was only the cold, and the fan, and the blank page.</p>
+      <p>And the title, patient as a creditor.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Previous</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(2)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-2" data-num="2" data-title="The Weight of Unpaid Tea">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Two</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Weight of Unpaid Tea</h2>
+    <p class="chapter-sub">A contract, a tea stall, and the arithmetic of shame.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The advance was five thousand taka. Jackson sent it by bKash on a Thursday afternoon, with a message that said: <em>Against royalties. Do not spend it all on one thing.</em></p>
+      <p>John read the message four times and then laughed out loud in the empty room, because five thousand taka was not a sum of money to him; it was a door. He could pay the rent. He could buy a new bulb for the corridor. He could eat something that had not been boiled in the same pot as yesterday's something.</p>
+      <p>He did none of those things. He walked to the tea stall at the corner of the lane and sat down on the bench and ordered a cup of tea, and then another, and then a plate of singara, and he paid for the man at the next table who had been arguing with the stall owner about eleven taka since before John arrived.</p>
+      <p>The stall owner's name was Karim. He was fifty-eight years old, he had a mustache like a comma, and he had known John since John was a first-year student who could not afford milk in his tea.</p>
+      <p>"You look like a man who has won something," Karim said, wiping the counter with a cloth that had given up.</p>
+      <p>"I have," John said. "A publisher."</p>
+      <p>Karim stopped wiping. "A publisher," he repeated, in the tone of a man being told about a relative who has married a foreigner.</p>
+      <p>"A small one. His name is Jackson. He read the book."</p>
+      <p>"The book." Karim looked at him for a long moment. "Your book. The one you sit here and write in the mornings when you should be at your classes."</p>
+      <p>"That one."</p>
+      <p>Karim put down the cloth. He poured a fresh cup of tea without being asked and set it in front of John, and then he leaned on the counter with both elbows, which meant he had something to say that would take a while.</p>
+      <p>"Listen to me," he said. "My father had a shop in Old Dhaka. Cloth. Good cloth. For thirty years, everyone in that lane bought their cloth from my father, and everyone said, Karim's father, what a man, what a shop. Then my father died, and the shop was mine, and I discovered that everyone who had said those things had also been taking cloth on credit for thirty years. Not stealing. Never stealing. Just not paying. And I could not ask them for it, because they were my father's friends, my uncles, my neighbors, men who had held me as a baby."</p>
+      <p>He picked up the cloth again and folded it into a square.</p>
+      <p>"That is what a debt is," Karim said. "It is not a number. It is a person's face. You will learn this now, with your publisher, or you will learn it later, with your readers. Either way, you will learn it."</p>
+      <p>John drank his tea. It was too sweet. It was always too sweet. He had never once told Karim.</p>
+      <p>"I'll be careful," he said.</p>
+      <p>"No," Karim said. "You won't. Nobody is careful at your age. But come and sit here when it goes wrong, and I will give you tea, and you will not have to pay for it."</p>
+      <p>John laughed. But walking home, he took out his phone and opened the agreement Jackson had emailed, and read the ten percent again, and read the part about the print run of two thousand copies, and read the part about the author's copies, which were three.</p>
+      <p>He stood in the corridor outside Room 113 for a moment, key in hand, and did the arithmetic in his head. Two thousand copies. Ten percent. A cover price he could not remember.</p>
+      <p>Behind him, someone came up the stairs carrying something heavy, and he stepped aside without looking, and he heard a woman say, "You live in 113. You are always awake."</p>
+      <p>Seema. She lived on the third floor, she studied statistics, she carried her father's old briefcase because it was the only bag she owned that fit her notebooks, and she had asked him once, at this same hour, whether he ever slept.</p>
+      <p>"I'm awake," John said. "I'm published now. Apparently."</p>
+      <p>She stopped on the step above him and looked down, and her face was half in shadow and half in the yellow corridor light, and she did the one thing nobody else in his life had done since he had told them the news.</p>
+      <p>She asked, "Are you sure you want that?"</p>
+      <p>He should have said yes.</p>
+      <p>Later, much later, when the presses were his and the paper was his and the city came to him with its cap in its hands, he would remember that he had said yes, and that she had nodded slowly, and gone up the stairs, and closed her door, and that the corridor bulb had hummed in the silence she left behind.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 1</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(3)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-3" data-num="3" data-title="The Shadow of Forty-Five Percent">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Three</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Shadow of Forty-Five Percent</h2>
+    <p class="chapter-sub">The first print run and the difference between fame and a receipt.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The first copies arrived in six boxes on the last day of November, and John opened them in the corridor because Room 113 was too small to hold the smell of new paper and hot ink and something like certainty.</p>
+      <p>The cover was simple: a dark room, a window, a woman's shape in the glass. Jackson had designed it himself, and John had hated it at first and then loved it and then hated it again, which he understood to be how a writer loves everything he has not yet learned to distrust.</p>
+      <p>He gave one copy to Karim, who kept it under the counter next to the tea and said he would read it on Friday. He gave one to Mizan, his roommate, who read the first chapter and announced that the protagonist was obviously John with a better haircut. He gave one to Seema, who did not read it, or did not say she had.</p>
+      <p>And then the book was out, in eleven bookshops and one railway stall and a website Jackson had built with his own hands, and nothing happened for two weeks.</p>
+      <p>Nothing. John checked the sales dashboard every hour, then every morning, then once a day, then with a kind of grim dignity once every three days. Six copies. Nine copies. Fourteen copies. A man from Khulna wrote a review that was three paragraphs long and said the novel was "a fever, and a good one."</p>
+      <p>Then the second month arrived, and the shipments went out, and the numbers became something else. Sixty. Eighty. One hundred and forty. Jackson called and said the print run had sold through and he was doing another, three thousand this time, and would John please come to the office and sign the papers.</p>
+      <p>The office was one room above a bakery on Elephant Road. Jackson was not what John had imagined. He was tall and thin and very old, with a white beard that looked like something he had acquired rather than grown, and he wore a watch too big for his wrist and had a habit of holding his pen between two fingers like it might at any moment turn back into a bird and leave.</p>
+      <p>"The second printing will be four thousand," Jackson said. "I have had to renegotiate with the paper man. The price of paper has gone up. Everything is paper in the end."</p>
+      <p>John sat across from him. There was a contract on the desk, one page, two columns of small print.</p>
+      <p>"Ten percent," John said.</p>
+      <p>"Ten percent," Jackson agreed.</p>
+      <p>"And the paper man charges you forty-five percent of the cover price."</p>
+      <p>Jackson's pen stopped. He did not look up. "Who told you that?"</p>
+      <p>"I know a man at the paper market in Sadarghat. He told me what the mills are charging. I did the arithmetic."</p>
+      <p>The old man raised his eyes, and for the first time John saw something in them that was not kindly, that had been there all along, in fact, that was the reason the press existed and had survived and would outlive them both.</p>
+      <p>"You're not a writer," Jackson said. "You're a businessman."</p>
+      <p>"No," John said. "I'm a hungry writer. There's a difference."</p>
+      <p>Jackson leaned back. "The difference is what?"</p>
+      <p>"The businessman would ask for twenty percent," John said. "The writer is asking how much of the cost is mine."</p>
+      <p>Jackson smiled. It was not a warm smile. "None of it is yours. That is the beauty of a percentage. If the book sells, you eat. If it does not, you starve. And I go on printing."</p>
+      <p>"Then why did the last print run have a four-page insert that I never approved?"</p>
+      <p>The pen went still.</p>
+      <p>"It was a catalogue," Jackson said. "For the press. A short one. Why?"</p>
+      <p>"No reason," John said. "I'm learning."</p>
+      <p>He signed the second printing. Three thousand copies. Ten percent. But that night, in Room 113, with the fan clicking and the corridor bulb humming and the city breathing outside, John made the first entry in a notebook he would keep for the next four years.</p>
+      <p>He wrote: <em>Paper = 45%. Press = 20%. Ink = 6%. Labour = 4%. Jackson = 15%. Me = 10%.</em></p>
+      <p>He looked at the numbers for a long time. Then he wrote, underneath, in letters so small they were almost a secret:</p>
+      <p><em>Note: the paper is the queen.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 2</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(4)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-4" data-num="4" data-title="Ink on the Pavement">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Four</span><span>The Men Behind A Desire Women</span></div>
+    <h2>Ink on the Pavement</h2>
+    <p class="chapter-sub">The book finds strangers, and strangers find the author.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The pavement outside the university gate had a book stall that appeared at nine and vanished at six, run by a boy named Rafiq who was nineteen and could sell anything printed, including, once, a manual for a washing machine model that had not been imported since 1984.</p>
+      <p>John went there on a Tuesday and found his own book on the table, between a pirated medical textbook and a collection of poems by a dead man, and he stood in front of it for so long that Rafiq asked if he needed help.</p>
+      <p>"How many of these do you sell?" John asked.</p>
+      <p>Rafiq looked at the cover. "This one? Six, seven a week. A rickshaw puller bought one last Thursday. He read the first page standing at the light and then he paid me and left. He came back Monday and asked if there was another one like it."</p>
+      <p>"Like it how?"</p>
+      <p>Rafiq shrugged. "Like a man's own life written down by somebody else."</p>
+      <p>John bought a copy of his own book that day, at Rafiq's price, without explaining, and walked back to Room 113 with it under his arm. He put it on the shelf next to his mother's photograph and did not open it.</p>
+      <p>The reviews came in the spring. A newspaper called it "the confession the city had been waiting for." A magazine called it "too much feeling and not enough plot," which John read four times and secretly agreed with. A professor in Chittagong wrote a long essay claiming that the novel's unnamed woman was a symbol of the river, which was so wrong that John laughed for a full minute and then could not stop thinking about it for a week.</p>
+      <p>But it was the rickshaw puller he remembered. Because the rickshaw puller had not been reading a symbol. He had been reading a story about a boy who carried his mother's sewing machine through the flood, and had recognized the street, and had wept, or had not, and had come back for more.</p>
+      <p>That was the first hook in him. Not the money, which was still small. Not the reviews, which were kind. The first hook was the knowledge that sentences could enter a man's chest, and settle there, and change the shape of how he breathed.</p>
+      <p>He tried to explain this to Seema on a Friday, in the corridor, where the third-floor tap had burst and a thin lake of water was making its patient way down the stairs.</p>
+      <p>"Six or seven a week," he said. "One of them was a rickshaw puller."</p>
+      <p>"I heard you the first time," Seema said. She was carrying her father's briefcase and wearing a blue shawl, and she was waiting for the water to stop or for someone to come and fix it, whichever came first.</p>
+      <p>"Isn't it strange? They don't know me. They'll never know me. And they are reading about my mother's sewing machine."</p>
+      <p>"It isn't yours anymore," Seema said.</p>
+      <p>"What?"</p>
+      <p>"The sewing machine. The flood. The boy. You sold it to them. That's what publishing is." She said it without cruelty, the way she might have explained a statistical theorem, and then, because she was not a cruel person, she added, "It isn't a bad thing. It's just a real thing."</p>
+      <p>John looked at the water on the floor. "You haven't read it."</p>
+      <p>"I have."</p>
+      <p>He looked up.</p>
+      <p>"All of it. Twice." She pulled the shawl tighter. "The part where the mother says she does not need the machine, that she has already lost it and kept the important half. That part is true. I don't know a woman who would not say it exactly like that."</p>
+      <p>"Including you?"</p>
+      <p>Seema picked up her briefcase. "Especially me," she said, and went up the stairs, through the water, without getting her shoes wet, which he had never been able to do.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 3</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(5)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-5" data-num="5" data-title="The River of Rice and Cellulose">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Five</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The River of Rice and Cellulose</h2>
+    <p class="chapter-sub">Sadarghat, a mill owner, and the first bargain.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The paper market at Sadarghat began at four in the morning, when the barges came in from the mills upriver and the wholesale men gathered on the wet stone steps with their hands in their pockets.</p>
+      <p>John went there alone, wearing the only shirt he owned that had no stains, carrying a notebook and a pen and the five thousand taka Jackson had advanced him against the second printing.</p>
+      <p>He had spent three weeks learning the words. He knew that paper was measured in reams and in the weight of a thousand sheets, that the difference between forty-two GSM and fifty-eight GSM was the difference between a book that felt like a prayer and a book that felt like a brochure, and that bulk bought at the right hour on the right morning could be sold at the right hour on the right morning to a man who had underestimated his print run.</p>
+      <p>The mill owner was a widow named Mrs. Chowdhury, and she had inherited the mill from her husband and the mill's debts from her husband's brother, and she did not smile at John when he sat down across from her at the tea shop.</p>
+      <p>"You are the writer," she said.</p>
+      <p>"Yes."</p>
+      <p>"You want paper cheaper than Jackson gives you."</p>
+      <p>"Yes."</p>
+      <p>"Why would I sell to you instead of him?"</p>
+      <p>John put his notebook on the table. "Because Jackson buys four thousand reams a year, and I've looked at his orders, and three of them arrive eleven days late. Because you are running at seventy percent capacity and your warehouse in Narayanganj is holding stock for a buyer in Khulna who is disputing the invoice. Because you have two hundred reams of forty-five GSM in the godown behind this market that has been rained on, and you cannot sell it at full price, and I can."</p>
+      <p>Mrs. Chowdhury looked at him for a long time. The tea arrived. She did not touch it.</p>
+      <p>"How do you know about the godown?"</p>
+      <p>"I walked around it. The back wall is wet. I asked a man who loads trucks."</p>
+      <p>"What do you want?"</p>
+      <p>"I want the two hundred reams at sixty percent. I'll take the water damage. I'll dry it in my building's stairwell, and I'll sell it to writers who cannot afford Jackson's price. In six months, I'll buy your good paper at your good price, and I'll pay on delivery, not on ninety days."</p>
+      <p>"And in six months, when you are a competitor?"</p>
+      <p>"Then I'll still be the only man who paid you on delivery."</p>
+      <p>Mrs. Chowdhury picked up her tea, drank it down as if it were medicine, and set the cup on the table.</p>
+      <p>"Seventy percent," she said. "And you carry it yourself. I will not pay for the truck."</p>
+      <p>That night John carried the first bale up five flights of stairs, and then another, and then another, until his hands were raw and his shirt was ruined and Mizan stood in the doorway of Room 113 with his mouth open, and Seema came down from the third floor, saw him, and asked, "What have you done?"</p>
+      <p>"I bought paper," John said.</p>
+      <p>"You bought rain," she said, and went to find a fan.</p>
+      <p>It took four days to dry the two hundred reams in the stairwell, and the whole building smelled of wet wood and lime, and the neighbor on the first floor complained, and Karim sent up tea twice a day without being asked.</p>
+      <p>But on the fifth day, a young poet named Anwar came to Room 113 with a manuscript and a problem: he had a hundred and fifty pages of poems and no money to have them printed. John sold him forty reams at cost, and Anwar wept, and John felt something turn over in his chest, something that was not pity and not pride but very close to both.</p>
+      <p>He wrote in the notebook that night: <em>Paper $=$ power. I have the queen.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 4</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(6)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-6" data-num="6" data-title="The Ledger of Ash and Iron">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Six</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Ledger of Ash and Iron</h2>
+    <p class="chapter-sub">A weekly accounting, and a first taste of leverage.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">By the end of the first year John had a ledger, and the ledger had a name. He had bought it at a stationer's on Nilkhet Road, a thick green book with ruled columns, and he kept it in a locked biscuit tin under his bed because he had read enough crime novels to believe that ledgers should be locked up.</p>
+      <p>The ledger recorded three things: what he bought, what he sold, and what he owed. The first two columns grew. The third column was the interesting one, because it was not money. It was people.</p>
+      <p>There was Karim, who had lent him twelve thousand taka without interest and refused to take it back early, saying that a debt paid too quickly was a debt that had not been properly honored. There was Mrs. Chowdhury, whose two hundred damaged reams had sold out in nine days and who now called John on Wednesdays, always Wednesdays, to ask what he needed. There was Anwar the poet, whose little book of poems had sold four hundred copies and who came every month with a hundred taka and an apology for not having more.</p>
+      <p>And there was Seema, who had no entry in any column, and who appeared in the ledger anyway.</p>
+      <p>She appeared because she did his statistics. John could write a sentence that made a stranger cry, but he could not look at a stack of invoices and see a trend, and Seema could look at anything and see a trend. She came down from the third floor on Sunday evenings with a pencil and her father's briefcase and sat on the floor of Room 113 while he made tea, and she sorted his receipts into piles that she called "the past," "the lie," and "the future."</p>
+      <p>"The lie?" he asked the first time.</p>
+      <p>"Receipts from people who will never pay you," she said. "You keep them because they make you feel generous. They are not assets. They are stories."</p>
+      <p>She was right, of course. She was almost always right, and the strange thing was that it did not make her unbearable. It made the room feel safer than any room John had ever slept in.</p>
+      <p>On the last Sunday of that year, she finished the columns, closed the book, and said, "You are going to be rich."</p>
+      <p>"That is not a nice thing to say."</p>
+      <p>"It is not a nice fact." She looked at him. "It is just arithmetic."</p>
+      <p>"How rich?"</p>
+      <p>She told him the number. It was not a large number, but it was a number that did not exist anywhere in his family's history, and it sat in the room between them like a third person.</p>
+      <p>"I don't want to be rich," John said. "I want to write."</p>
+      <p>Seema raised an eyebrow. "Then why are you buying paper?"</p>
+      <p>"Because nobody at the press will give me what I want."</p>
+      <p>"What do you want?"</p>
+      <p>He did not have an answer ready, so he said the truest thing he had: "To keep the book on the pavement."</p>
+      <p>Seema looked at him for a moment too long, and then she stood up and put on her shoes, and said, "That is either the most romantic thing I have ever heard or the beginning of something terrible."</p>
+      <p>Years later, he would think that she had been exactly right, and that the only question was whether she had meant both halves at once.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(5)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 5</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(7)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-7" data-num="7" data-title="Glass Walls and Paper Ghosts">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Seven</span><span>The Men Behind A Desire Women</span></div>
+    <h2>Glass Walls and Paper Ghosts</h2>
+    <p class="chapter-sub">An invitation to the new press, and the ghosts behind it.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The new press had glass walls.</p>
+      <p>Jackson had moved, in the fourth year, from the room above the bakery on Elephant Road to the second floor of a building on Motijheel with a lobby that smelled of floor polish and a lift whose doors closed with a sound like a soft cough. He had not bought the building. He had bought the floor, or the lease of the floor, or something in between that John could not quite work out from the papers Jackson showed him, which were always, in some way, one paper short of a full answer.</p>
+      <p>"Look at the light," Jackson said, standing at the window with his hands behind his back. "A press should have light. Writers need to see what they are missing."</p>
+      <p>Below the glass was the intersection: three roads, a traffic light that did not work, a man selling coconuts from a cart, a hundred thousand people passing each other at speed. John stood beside the old man and watched the city come at the window and break against it.</p>
+      <p>"There are eleven authors on this floor," Jackson said. "Twelve, with you. Eleven ghosts and one living man."</p>
+      <p>"That's a strange way to describe your list."</p>
+      <p>"It's a strange list." Jackson turned. "Do you know why I published your book?"</p>
+      <p>"Because you read it on a train."</p>
+      <p>"Because I read it on a train and it was true." The old man came back to his desk, where the manuscript of someone else's novel sat in a neat stack, unread. "The eleven others write well. Two of them write better than you. But they write the books they think they should write. You wrote the book you could not help writing. That is the only kind of book that lasts."</p>
+      <p>"Then why do you keep the others?"</p>
+      <p>Jackson smiled, and for a moment John saw the whole machine of him: the rents, the paper, the percentages, the patient old arithmetic of staying alive in a business that killed everyone eventually.</p>
+      <p>"Because they pay for your books," Jackson said. "You are my loss leader, John. Do not look so wounded. It is a compliment. It means I am willing to lose money on you."</p>
+      <p>John looked at the glass wall, at the reflections of the two of them, and the city behind them, and thought: no. You are not losing money on me. You are losing money on the truth of me, and charging that loss to eleven other people, and calling it publishing.</p>
+      <p>But he said nothing. He was twenty-seven years old, and he had learned that the moment you say a thing out loud, you have to do something about it.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 6</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(8)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-8" data-num="8" data-title="The Tuesday Ledger">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Eight</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Tuesday Ledger</h2>
+    <p class="chapter-sub">A column changes, and a friendship is tested.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The Tuesday Ledger was not an actual ledger. It was a meeting, held every Tuesday at the press, at which Jackson counted the money and the rest of them listened.</p>
+      <p>There were eleven authors, a production manager named Farid, an accountant named Miss Haq, and a woman named Renu who did the distribution from a desk by the door and who knew, John suspected, more about the business than all of them combined.</p>
+      <p>On the second Tuesday of the fifth year, John brought his green book and set it on the table.</p>
+      <p>"What is that?" Jackson asked.</p>
+      <p>"The truth," John said.</p>
+      <p>Anwar, who had been invited that day to discuss his second collection, looked at the book and then at the floor. Farid looked at the ceiling. Renu did not look away from John at all.</p>
+      <p>"Tell them," John said. "Tell them what the paper costs. Tell them what the press costs. Tell them what they are actually being paid per copy, and then tell them why every one of their books has left this room with a four-page catalogue in the back that none of us approved."</p>
+      <p>Jackson did not move for a long moment. Then he did the thing that John had not expected and would remember for the rest of his life: he opened the green book, and read it.</p>
+      <p>He read it slowly, page by page, for nine minutes, in a room so quiet the traffic outside seemed to have stopped. When he finished, he closed it and set it down and folded his hands.</p>
+      <p>"Mr. John has done his arithmetic," Jackson said. "I will not insult him by pretending it is wrong. The paper is dearer than it was. The press runs fewer books than it should. The catalogue pays for the rent on this glass floor, which is rented because eleven ghosts and one living man needed a place to be published." He turned to Anwar. "Your first collection sold four hundred copies. I printed six hundred. I have two hundred in the godown, and I will not sell them, because they are poetry, and poetry does not sell after the first month. I paid you your four hundred copies' worth. Did I not?"</p>
+      <p>Anwar nodded.</p>
+      <p>"And you were glad of it. As I was glad of you." The old man turned back to John. "There is no villain in this room. There is a business. If you want to save everyone, you must first own something. Do you own something, Mr. John?"</p>
+      <p>John looked at the green book.</p>
+      <p>"Not yet," he said.</p>
+      <p>"No," Jackson agreed. "Not yet."</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 7</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(9)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-9" data-num="9" data-title="The Open Ledger">
+    <div class="chapter-kicker"><span class="accent">Act I &middot; Ink &amp; Hunger &middot; Chapter Nine</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Open Ledger</h2>
+    <p class="chapter-sub">An offer of partnership, and the price attached to it.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">Jackson's offer came in the spring, on paper so thick it felt like an apology.</p>
+      <p><em>Partnership. Twenty-five percent of the press, in exchange for the paper contracts and the distribution list. Effective the first of next month.</em></p>
+      <p>John read it three times in the lobby, standing up, while the lift doors opened and closed behind him. Twenty-five percent. A room with glass walls. His name, small, on the spine of every book that left the building.</p>
+      <p>He took it upstairs. Jackson was at his desk with his too-big watch and his pen between two fingers, and he did not pretend to be surprised.</p>
+      <p>"Why now?" John asked.</p>
+      <p>"Because you are going to leave," Jackson said. "You are going to take the paper and the authors and the pavement, and you will start your own press, and in three years you will be me. I would rather you were me inside this building, where I can still see the light."</p>
+      <p>"And if I refuse?"</p>
+      <p>"Then I will wish you well, and I will not publish your next book, and you will discover that the book trade is a small country and I have been its postmaster for thirty years."</p>
+      <p>John sat down. The chair was the same chair he had sat in at twenty-three, when a voice on the phone at three in the morning had told him he was a writer.</p>
+      <p>"Who gets the other seventy-five?" he asked.</p>
+      <p>"Farid has five. Renu has ten. The rest is mine."</p>
+      <p>"And the catalogue in the back of every book?"</p>
+      <p>Jackson's pen turned once, slowly, between his fingers. "The catalogue stays."</p>
+      <p>"Then I can't sign it."</p>
+      <p>The old man nodded, as if John had confirmed a diagnosis he had suspected for years. "You understand that this is not a moral refusal. It is a strategic one. You are not better than me. You are just younger, and you have not yet learned what the rent costs."</p>
+      <p>"Then teach me," John said. "Sell me the press. Not a share. The whole thing. Name a price."</p>
+      <p>Jackson looked up. For a moment, something crossed his face that John would spend years trying to name. It was not anger. It was closer to relief.</p>
+      <p>"You cannot afford it," Jackson said.</p>
+      <p>"Not today," John said. "Ask me in three years."</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(8)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 8</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(10)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-10" data-num="10" data-title="The Echo of the Coast">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Ten</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Echo of the Coast</h2>
+    <p class="chapter-sub">Cox's Bazar, his mother's house, and a question in the sand.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">They went to the coast in December, John and Seema, on a bus that took eleven hours and broke down twice and arrived in Cox's Bazar at four in the morning with the sea invisible and the air tasting of salt.</p>
+      <p>His mother's house was three rooms and a veranda at the end of a lane that flooded every monsoon and had a mango tree in the yard that his father had planted the year John was born. His mother had died when he was nineteen. The house had been rented since then to a family who kept goats in the yard and had painted the door blue.</p>
+      <p>They slept until noon, and then walked to the beach, and Seema took off her shoes and stood in the water and said nothing for a long time.</p>
+      <p>John had brought the green ledger, because he brought it everywhere now. He sat on the sand with it closed in his lap and watched her, and thought about the fact that he had written a novel about his mother's sewing machine and had never once written a sentence about the woman standing in the water.</p>
+      <p>"What are you thinking about?" Seema asked.</p>
+      <p>"Us," he said.</p>
+      <p>"That's a dangerous subject."</p>
+      <p>"I want to marry you."</p>
+      <p>She did not turn around. The sea came in and went out, and a boy ran past them with a kite and a string, and somewhere behind them a woman was selling boiled eggs from a basket.</p>
+      <p>"Is that a proposal," Seema said, "or a line item?"</p>
+      <p>"It's a proposal."</p>
+      <p>She turned then, and her face was doing something complicated, and she walked out of the water and sat down beside him on the sand with her wet feet and her father's briefcase in the sand and said, "Ask me properly."</p>
+      <p>He asked her properly.</p>
+      <p>She said yes, and then she cried, which he had not expected, and then she hit him on the arm, which he had also not expected.</p>
+      <p>"What was that for?"</p>
+      <p>"For making me wait five years," she said. "You are a very slow writer."</p>
+      <p>They stayed until the light went. On the bus home, in the dark, with her head on his shoulder and the green ledger wedged between them like a third passenger, John thought: this is the thing. Not the press, not the percentage, not the pavement. This. If I lose this, nothing else counts.</p>
+      <p>He believed it completely. He was thirty years old, and he had not yet learned that a man can believe a thing completely and still do the opposite, one small decision at a time, until the belief is a room he can no longer find the door to.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(9)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 9</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(11)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-11" data-num="11" data-title="The Winter Pavilion">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Eleven</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Winter Pavilion</h2>
+    <p class="chapter-sub">A wedding, a book fair, and the first brick in the empire.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">They married in January at the mosque at the end of the lane, with Karim as a witness and Mizan holding the rings and Seema's mother weeping into a handkerchief that Karim had supplied, because Karim supplied everything.</p>
+      <p>The wedding was small. The reception was in the courtyard of the building, with borrowed chairs and a borrowed sound system and food cooked by three of the neighbors, and at some point in the evening Jackson arrived in a car, wearing a white beard and a dark suit, carrying a wrapped parcel.</p>
+      <p>He handed it to John and said, "For the shelf."</p>
+      <p>It was a first edition of a novel by a writer John had never heard of, published in Dhaka in 1962, with a dedication in ink on the title page: <em>To the one who keeps the light.</em></p>
+      <p>"Who was he?" John asked.</p>
+      <p>"Nobody," Jackson said. "He sold four hundred copies and died at forty. But he kept the light." The old man looked around the courtyard, at the borrowed chairs, at the bride, at the rented sound system, and his face was unreadable. "You will be very rich, Mr. John," he said. "I hope you will be careful what you keep."</p>
+      <p>Three weeks later, at the book fair in Bangla Academy, John did the arithmetic again and made a decision.</p>
+      <p>He had thirty-eight thousand taka in the bank, a paper contract with Mrs. Chowdhury that would last three more years, and the loyalty of four authors — Anwar, a novelist named Shenaz, a historian named Dr. Alam, and a young man named Tanvir who wrote detective stories with astonishing speed and no sense of shame.</p>
+      <p>He rented a room above a garage in Azimpur, bought two secondhand machines, and named the imprint for the river: <em>Padma Press.</em></p>
+      <p>The first brick was laid. It was such a small brick, and it cost so little, and it would take him nine years to understand how heavy it had been.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(10)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 10</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(12)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-12" data-num="12" data-title="The Tea Stall by the Gate">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Twelve</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Tea Stall by the Gate</h2>
+    <p class="chapter-sub">The first author he took from Jackson.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The first author John took from Jackson was Shenaz.</p>
+      <p>She wrote quiet novels about women in small towns, and she had published four of them with Jackson, and none had sold more than twelve hundred copies. She came to the tea stall by the university gate on a Thursday because John had asked her to, and she sat across from him with her hands around her cup and said, "You're going to ask me to leave him."</p>
+      <p>"I'm going to ask you what he pays you."</p>
+      <p>"Ten percent."</p>
+      <p>"And how many copies of your last book did he print?"</p>
+      <p>"Two thousand."</p>
+      <p>"And how many are in his godown?"</p>
+      <p>She looked at him.</p>
+      <p>"That's right," John said. "I know. I counted."</p>
+      <p>Karim came out from behind the counter and wiped their table, which did not need wiping, and then stood there with his cloth, looking at John as if he had never seen him before.</p>
+      <p>"Leave us, Karim," John said.</p>
+      <p>"No," Karim said. "I have known you since you had holes in your shoes. I will not leave."</p>
+      <p>Shenaz looked from one of them to the other and set down her cup. "What are you offering?"</p>
+      <p>"Twenty percent. Print on demand after the first run. Your backlist, all four books, reprinted with new covers. And I will not put a catalogue in the back of your novels."</p>
+      <p>"That's all?"</p>
+      <p>"That's all."</p>
+      <p>She signed the next week. Anwar came the week after. Dr. Alam, who had been with Jackson for nineteen years, came in the summer and did not look John in the eye when he did it.</p>
+      <p>John's ledger grew. The numbers were good. The stairwell of the new building smelled of ink instead of rain, and there was a girl at the front desk who answered the phone in a voice that sounded like a business.</p>
+      <p>And one afternoon Karim came up to the office, uninvited, and stood in the doorway with his cloth over his shoulder.</p>
+      <p>"You are doing to him what he did to you," Karim said.</p>
+      <p>"Who?"</p>
+      <p>"Jackson. You are taking his authors. You are undercutting his paper. You are telling everyone that his catalogue is a cheat and your press is clean. Tomorrow you will buy his building."</p>
+      <p>"If I can, I will."</p>
+      <p>"Why?"</p>
+      <p>"Because he was wrong," John said.</p>
+      <p>Karim looked around the office at the new furniture and the new machines and the new girl at the front desk. "He was wrong," Karim agreed. "And you are right. But you are also becoming him, and you do not notice it, because you are right."</p>
+      <p>He left without drinking the tea John had poured for him. It sat on the desk for two days before John threw it out.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(11)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 11</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(13)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-13" data-num="13" data-title="The Spring Issue">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Thirteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Spring Issue</h2>
+    <p class="chapter-sub">Padma Press's first list, and a hit nobody planned.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The first Padma Press list had four books: Shenaz's <em>The Small Town</em>, Anwar's second collection, Dr. Alam's history of the river, and Tanvir's detective novel, <em>The Third Floor</em>, which John had agreed to publish mostly because Tanvir had a way of talking about money that made John feel like the reckless one.</p>
+      <p><em>The Third Floor</em> sold eleven thousand copies in four months.</p>
+      <p>Nobody had planned it. It was not better than the others. It was simply the right book at the right moment: a locked-room mystery set in a Dhaka apartment building, with a detective who was tired and underpaid and had a mother who called him every night. The city read it on the bus, on the ferry, in the tea stalls, and then asked for more.</p>
+      <p>Tanvir wrote two more that year. John printed fifteen thousand of each and sold out in six weeks. He hired a marketing man named Shafiq who had never read a novel in his life and was therefore, John discovered, the best marketing man in the country. Shafiq put the books in pharmacies, in grocery shops, in the glass cabinets at the airport. He invented a subscription: three books a year, delivered, with a letter from the author.</p>
+      <p>The money came in so fast that John had to open a second account. Seema did the accounts on Sundays, as she always had, but now the Sundays happened in a flat in Dhanmondi with two bedrooms and a balcony, and the green ledger had been replaced by a laptop, and the receipts were no longer sorted into piles but into spreadsheets with colors.</p>
+      <p>She did not say anything about the colors. But one Sunday she closed the laptop and said, "When did you stop writing?"</p>
+      <p>"I write every day."</p>
+      <p>"You answer emails every day. When did you last write a sentence that belonged to a book?"</p>
+      <p>He opened his mouth to answer, and found that he did not know. The last thing he had written was the back-cover copy for Tanvir's third novel, and he had been proud of it at the time, which was the worst part.</p>
+      <p>"Soon," he said. "When the press is stable."</p>
+      <p>Seema looked at him for a long moment, and then she did the thing she had done on the stairs in the corridor eleven years earlier: she asked a question nobody else in his life would ask.</p>
+      <p>"And if it is never stable?"</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(12)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 12</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(14)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-14" data-num="14" data-title="The First Distribution">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Fourteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The First Distribution</h2>
+    <p class="chapter-sub">The shelves, the trucks, and the cost of a monopoly.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">Distribution was the part nobody saw.</p>
+      <p>Readers saw covers. Authors saw percentages. But between the press and the reader there was a country of trucks and depots and men with ledgers, and whoever controlled that country decided which books a child in Rangpur would find on the shelf when she went to the shop with her mother's money in her fist.</p>
+      <p>John learned distribution the way he had learned paper: by walking around the back of buildings and asking the men who loaded trucks.</p>
+      <p>Within two years, Padma Press had seven trucks, four depots, and a contract with the largest wholesaler in the north. Within three, it had something better than a contract: it had a reputation for paying on time, which in the book trade was worth more than any discount.</p>
+      <p>Jackson, meanwhile, had stopped calling on Wednesdays. His authors were leaving, his paper was dearer, and his glass floor was beginning to look like a window onto a smaller and smaller room.</p>
+      <p>John went to see him in the autumn of the fourth year. The office was the same. The old man was the same, except smaller, and his too-big watch had been replaced by no watch at all.</p>
+      <p>"You've come to gloat," Jackson said.</p>
+      <p>"I've come to buy."</p>
+      <p>"The press?"</p>
+      <p>"The press, the floor, the list, the name. Everything."</p>
+      <p>Jackson looked out the window at the intersection, at the traffic light that still did not work, at the coconut seller who had been there so long he seemed to have grown out of the pavement.</p>
+      <p>"There is a condition," the old man said.</p>
+      <p>"Name it."</p>
+      <p>"Keep the catalogue out of the books."</p>
+      <p>John almost laughed. "That's your condition? The thing you fought me over for nine years?"</p>
+      <p>"I fought you over it because it was the only honest lie in the business. It paid for the light. Somebody has to pay for the light." Jackson turned from the window. "You will buy this press and you will be very rich, and one day you will find that you have become the thing you hated, and you will look for the man who taught you, and he will be dead. So I am telling you now, while I am alive: the catalogue was never the sin. The sin was pretending it wasn't there."</p>
+      <p>John paid him in three installments. The old man died eleven months later, in his sleep, and left his library to a school in Comilla and his pen to John, in an envelope with no note.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(13)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 13</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(15)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-15" data-num="15" data-title="Letters from Sylhet">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Fifteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>Letters from Sylhet</h2>
+    <p class="chapter-sub">His father's handwriting, and a debt that was never money.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The letter came from Sylhet in a blue envelope with a stamp that had been licked twice, and John knew before he opened it that something had happened, because his father wrote once a year and never in summer.</p>
+      <p>His father was a retired schoolteacher who had spent forty-one years teaching arithmetic to boys who did not want to learn it, and who had raised a son who wrote novels about sewing machines and floods, which he had read in secret and never once discussed.</p>
+      <p>The letter was two pages. The first page was about the mango tree, which had borne fruit, and the neighbor's wedding, which had been too loud. The second page was about money.</p>
+      <p><em>I have borrowed from the cooperative for the roof. It is not a large sum. I did not want to trouble you. Your cousin says you have become a big man in Dhaka. I told him you were always a big man, only thin.</em></p>
+      <p>John read the letter twice, and then he called his father, and they talked for eleven minutes about the roof and the mango tree, and at the end his father said, "Are you eating?" and John said yes, and his father said, "Then that is enough," and hung up.</p>
+      <p>That night John transferred four hundred thousand taka to the cooperative account and another two hundred thousand to his father's account, and then he sat on the balcony of the Dhanmondi flat and smoked a cigarette, which he had started doing that year without ever deciding to.</p>
+      <p>Seema came out with two cups of tea and sat down beside him.</p>
+      <p>"How much did you send?"</p>
+      <p>"Six."</p>
+      <p>She nodded, as if six hundred thousand taka were a number that had been in her pocket all along. "He'll send it back."</p>
+      <p>"He won't."</p>
+      <p>"He'll send some of it back. He'll say it's too much, and he'll keep the roof money, and he'll put the rest in a fixed deposit in your name, and he will not tell you."</p>
+      <p>John looked at her. "How do you know that?"</p>
+      <p>"Because my father was the same," she said. "All the men of that generation are the same. They would rather have a debt than a son who pities them."</p>
+      <p>She was right, of course. The money came back three weeks later, half of it, in an envelope, with a note: <em>For the roof, and for your mother's grave. The rest is yours. Do not send more. We are proud of you but we are not hungry.</em></p>
+      <p>John put the note in the green ledger, which he still kept, though he no longer wrote in it. He put it between the page that said <em>Paper = 45%</em> and the page that said <em>Note: the paper is the queen.</em></p>
+      <p>He did not know why. It was the only page in the ledger that did not have a number on it.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(14)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 14</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(16)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-16" data-num="16" data-title="The Monsoon Archive">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Sixteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Monsoon Archive</h2>
+    <p class="chapter-sub">The flood, the warehouse, and the price of paper.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The flood came in June, as it did every year, and that year it came into the Narayanganj warehouse.</p>
+      <p>John was at a launch party in Gulshan when Farid called, and he took the call on the balcony with a glass in his hand and a plate of something he had not eaten, and Farid said, "The godown is under water. Not all of it. The back two rows."</p>
+      <p>"How much is the back two rows?"</p>
+      <p>"Eleven thousand reams."</p>
+      <p>The number took a moment to arrive. Eleven thousand reams was not a warehouse. It was the paper for every book Padma Press would print until the following spring — the detective novels, the poetry, the history of the river, the new list, the subscriptions, all of it, sitting in two feet of brown water in a rented godown in Narayanganj.</p>
+      <p>"Get the rest onto the trucks," John said. "All of it. Tonight. Pay whatever the drivers want."</p>
+      <p>He went back into the party and finished his drink and shook hands with a man from the ministry, and did not tell anyone what had happened.</p>
+      <p>By morning, they had saved nine thousand reams. The rest was pulp. The loss was eleven million taka, and the insurance would cover, after the surveyor and the paperwork and the wait, perhaps four.</p>
+      <p>The obvious solution was to sell the damaged paper cheap, as Jackson had done with Mrs. Chowdhury's rain-damaged reams, to writers who could not afford better. There were desks in Dhaka full of manuscripts that would never be printed because the paper cost more than the author's monthly salary.</p>
+      <p>John sat in the office with Farid and Shafiq, and Shafiq said the thing that was in everyone's mind.</p>
+      <p>"We could raise the cover price of the new Tanvir by twenty taka. The demand is there. Nobody will notice."</p>
+      <p>"And the paper?" Farid asked.</p>
+      <p>"We sell the damaged areas to the small presses. At full price. They don't have to know it was under water."</p>
+      <p>John listened. The room was silent. Outside, the city was going on with its business in the rain.</p>
+      <p>"Print the Tanvir on the wet paper," he said at last. "At our cost. And offer the small presses the good stock at last year's price. Take it out of the marketing budget."</p>
+      <p>Farid wrote it down. Shafiq looked at him with an expression John had seen before, in a mirror, at twenty-three, when he had told Jackson to sell him the press.</p>
+      <p>"It will cost us the quarter," Shafiq said.</p>
+      <p>"I know."</p>
+      <p>That night John wrote in the green ledger, on a page so far back it was almost the cover: <em>The paper is the queen. But I am not the queen.</em></p>
+      <p>It was the first sentence he had written in two years that was not an email.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(15)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 15</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(17)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-17" data-num="17" data-title="The Autumn Reprint">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Seventeen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Autumn Reprint</h2>
+    <p class="chapter-sub">The award, the speech, and a marriage with a margin.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The award was called the Prothom Alo prize, though it was not given by the newspaper; it was a small plaque from a literary society, awarded that year to <em>Man Behind One His Desire Women</em> for "a decade of influence."</p>
+      <p>John went to the ceremony in a suit, with Seema in a green saree, and sat in the third row, and when his name was called he walked to the stage and stood at the lectern and looked out at the room.</p>
+      <p>He had prepared a speech. It was in his pocket, folded three times.</p>
+      <p>He did not read it.</p>
+      <p>"When I wrote this book," he said, "I was twenty-three years old and I had not eaten properly in eleven days. I wrote it on a bed in a room with one bulb and a ceiling fan that clicked. I did not write it to be published. I wrote it because I could not afford a doctor and I thought I might be dying, and I wanted to leave something behind that was true."</p>
+      <p>The room was very quiet.</p>
+      <p>"Tonight, I employ forty-one people. I own a press and four warehouses and seven trucks. I publish eleven authors, and I have just bought the press of the man who published me. I am, by every measure my father would have recognized, a success."</p>
+      <p>He paused.</p>
+      <p>"And I have not written a word of my own in two years."</p>
+      <p>He looked at Seema in the third row. She was not smiling. She was looking at him the way she had looked at him on the stairs, all those years ago, when he told her he was published, and asked him if he was sure he wanted that.</p>
+      <p>"So I accept this award," John said, "on behalf of the twenty-three-year-old who wrote the book. He is not here tonight. But he is the only one of us who deserves it."</p>
+      <p>He sat down. The applause was polite and a little confused, and afterward a woman from a magazine asked him what he meant by that, and he said, "Nothing. It was a speech," and went to find his wife.</p>
+      <p>They took a car home. Seema looked out the window at the city and said, "That was a very honest speech."</p>
+      <p>"Thank you."</p>
+      <p>"It was also a warning," she said. "To yourself."</p>
+      <p>John did not answer. The car turned onto the road toward Dhanmondi, and the lights of the shops slid across the glass, and somewhere in all that brightness was a room in Azimpur with a green ledger in a biscuit tin, and a man who had once been able to put a sentence on a page.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(16)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 16</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(18)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-18" data-num="18" data-title="The Threshold of Winter">
+    <div class="chapter-kicker"><span class="accent">Act II &middot; Paper &amp; Power &middot; Chapter Eighteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Threshold of Winter</h2>
+    <p class="chapter-sub">Jackson's funeral, and the pen in the envelope.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">Jackson was buried in Comilla on a cold January morning, in the cemetery behind the school where he had once taught, and John was one of eleven people at the grave.</p>
+      <p>The others were old: old authors, old printers, an old woman who had been his secretary for thirty years. They stood in their coats with their hands folded and their breath white in the air, and one of them read a poem by a man none of them had heard of, and then it was over.</p>
+      <p>Afterward, John walked through the schoolyard with the pen in his pocket. It was a fountain pen, black, with a gold nib worn to a slight angle on the left side, the way a right-handed man's pen wears after forty years. There was ink dried in the feed. He had not been able to make it write.</p>
+      <p>A boy of about fourteen came up to him near the gate and asked if he was the publisher from Dhaka.</p>
+      <p>"I am."</p>
+      <p>"Sir, did he really publish four hundred books?"</p>
+      <p>"More."</p>
+      <p>"And did he write any of them?"</p>
+      <p>"No," John said. "He published them."</p>
+      <p>The boy thought about this. "So he was like a father," he said.</p>
+      <p>John looked at the grave they had just left, at the school, at the eleven old people getting into cars.</p>
+      <p>"Yes," he said. "He was like a father."</p>
+      <p>He went back to Dhaka that night and sat in the office above the garage where Padma Press had begun, which was now a storage room full of old ledgers and broken chairs. He found the first ledger he had ever kept, the green one, and opened it to the first page.</p>
+      <p><em>Paper = 45%. Press = 20%. Ink = 6%. Labour = 4%. Jackson = 15%. Me = 10%.</em></p>
+      <p>Underneath, in his own younger handwriting: <em>Note: the paper is the queen.</em></p>
+      <p>He turned to the last page. <em>The paper is the queen. But I am not the queen.</em></p>
+      <p>Between those two sentences was twelve years. A marriage. A press. Forty-one employees. A plaque from a literary society. A book that a rickshaw puller had read at a traffic light.</p>
+      <p>John closed the ledger. Then he took out Jackson's pen and a sheet of paper and tried, for the first time in two years, to write something that was not a contract.</p>
+      <p>He wrote: <em>The old man is dead.</em></p>
+      <p>And then he sat for an hour, with the pen in his hand and the ink drying in the feed, and could not think of a second sentence.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(17)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 17</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(19)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-19" data-num="19" data-title="The Open Lectern">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Nineteen</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Open Lectern</h2>
+    <p class="chapter-sub">A lecture, a question, and the woman in the book.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The university invited him to speak in February, as part of a series on "Literature and the Market," which was a title John suspected had been chosen by someone who had read his interviews and wanted to see him squirm.</p>
+      <p>He stood at the lectern in the big hall with three hundred students in front of him, and he talked for forty minutes about paper, distribution, contracts, the economics of the small press. He was good at it. He had been good at it for years. The students wrote things down.</p>
+      <p>Then came the questions, and a girl in the second row stood up and said, "Sir, the woman in your novel. The one the writer loves. She has no name. Why?"</p>
+      <p>The hall was quiet. John looked at her, at her earnest face, at the notebook in her hand, and felt something shift in his chest, a door he had kept closed so long he had forgotten it was there.</p>
+      <p>"Because I didn't know what to call her," he said.</p>
+      <p>"But she is a real person?"</p>
+      <p>The room waited. John looked at the ceiling, at the lights, at the rows of faces, and told the truth for the first time in public.</p>
+      <p>"She is my wife," he said.</p>
+      <p>There was a murmur, a small stir, the sound of three hundred people adjusting their understanding of a book they thought they knew. The girl sat down, satisfied. The moderator moved to the next question. John answered three more questions about distribution and said thank you and left the stage.</p>
+      <p>Seema was not at the lecture. She was at her mother's house in Narayanganj that week, because her mother had been ill, and because the flat in Dhanmondi had become a place where the two of them moved around each other like furniture in a room that had been rearranged badly.</p>
+      <p>She heard about the lecture from a friend, who called her, laughing, and said, "Did you know you are famous?"</p>
+      <p>That evening she called John. She was not laughing.</p>
+      <p>"You told a hall of students that the woman in your book is me."</p>
+      <p>"Yes."</p>
+      <p>"Without asking me."</p>
+      <p>"I didn't think —"</p>
+      <p>"No," she said. "You didn't."</p>
+      <p>He heard her breathing on the line, and behind it the sound of her mother's television, and a bird in the courtyard.</p>
+      <p>"John," she said at last, "for twelve years I have lived with that book. I typed parts of it. I did the accounts that kept you free to write it. I have defended it to people who called it obscene, and I have kept my name off it, because you needed it to be yours. And tonight you gave it to me in front of three hundred strangers, without asking, because it made a good answer to a good question."</p>
+      <p>"That isn't why —"</p>
+      <p>"Then why?"</p>
+      <p>He could not answer. He could hear himself not answering.</p>
+      <p>"I'll come home Friday," she said, and hung up.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(18)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 18</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(20)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-20" data-num="20" data-title="The Balcony at Dusk">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Balcony at Dusk</h2>
+    <p class="chapter-sub">A decision made by not deciding.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">She came home Friday. She made tea. They sat on the balcony and watched the sun go down over the rooftops, and neither of them said anything for a long time.</p>
+      <p>John had prepared things to say. He had prepared an apology, and an explanation, and an argument about how the book had always been about her, and how that was a compliment, and how she was the best thing in it.</p>
+      <p>He said none of them, because sitting there in the dusk he understood that all of them were speeches, and that what she wanted from him was not a speech.</p>
+      <p>"I've been thinking," Seema said. "About the press."</p>
+      <p>"What about it?"</p>
+      <p>"You have forty-one employees and eleven authors and seven trucks. You have not written in two years. You have not read a book for pleasure in three. You have started smoking, and you don't sleep, and when you laugh it is at things that are not funny."</p>
+      <p>"That's not —"</p>
+      <p>"It is true." She turned to look at him. "I am not asking you to give it up. I am asking you to tell me honestly: if you had to choose, tomorrow, between the press and the writing, which would you choose?"</p>
+      <p>The sun went down. The call to prayer came from the mosque at the end of the lane, the same mosque where they had married, and John sat in the chair with his tea going cold and understood that the question was not hypothetical.</p>
+      <p>"I don't know," he said.</p>
+      <p>Seema nodded slowly. She stood up, and took her cup inside, and came back with her father's briefcase.</p>
+      <p>"I'm going to my mother's for a while," she said. "Not because of the lecture. Because of that answer."</p>
+      <p>He stood up. "Seema."</p>
+      <p>"Don't," she said. "Don't make it a scene. I have loved you since you were a boy in a corridor with ink on your hands, and I will love you when you are an old man with a press and no books. But I will not watch you become someone I cannot respect in the same room where I sleep."</p>
+      <p>She went inside. The door clicked. He heard her shoes in the hallway, and the lift, and then nothing.</p>
+      <p>John stood on the balcony for a long time. The city lit up below him, and the traffic moved, and the coconut seller packed his cart, and somewhere in the dark a dog barked and a rickshaw bell answered it, thin and far away.</p>
+      <p>He went inside, and opened his laptop, and answered forty-one emails.</p>
+      <p>At two in the morning he stopped, and looked at the blank page he had opened in another window, the one he had been opening every night for a year and never writing on.</p>
+      <p>He wrote: <em>She left in the winter, and I let her.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(19)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 19</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(21)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-21" data-num="21" data-title="The First Snow of the Mind">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-One</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The First Snow of the Mind</h2>
+    <p class="chapter-sub">Winter in a city that does not have winter.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">Dhaka does not have snow. The title was Seema's, from a poem she had copied into the front of a notebook when she was nineteen: <em>the first snow of the mind, when the thinking stops.</em></p>
+      <p>That winter John learned what it meant.</p>
+      <p>The press ran. The trucks moved. The subscriptions arrived in their brown paper envelopes, and Shafiq sent reports with arrows going up, and every Wednesday John sat at the head of a table and made decisions that were correct in every particular and felt like nothing at all.</p>
+      <p>He tried to write. He sat down every night at eleven, after the last email, with a notebook and Jackson's pen, which he had finally managed to fill and which now wrote a thin, elegant line.</p>
+      <p>What came out was not a book. It was a list of things he could not do.</p>
+      <p><em>I cannot write the flood because I have not seen water in three years except from a car.</em></p>
+      <p><em>I cannot write hunger because I have not been hungry since I was twenty-five.</em></p>
+      <p><em>I cannot write the corridor because the building has been demolished.</em></p>
+      <p><em>I cannot write her.</em></p>
+      <p>He read the list in the morning and tore it into eight pieces.</p>
+      <p>In March, a letter came to the office, forwarded by the university, from the rickshaw puller. He had written in careful, patient handwriting, and he had sent it carelessly, without a return address.</p>
+      <p><em>Sir, I read your book in 2014. I was a rickshaw puller then. I am a supervisor in a garment factory now. I have bought eleven copies of your book over the years and given them to my nephews. Please write another one. I am waiting.</em></p>
+      <p>John sat at his desk for a long time with the letter in his hand. Then he called Shafiq and asked how many copies the book had sold that year.</p>
+      <p>"Three hundred and ten," Shafiq said. "Mostly academic adoptions."</p>
+      <p>Three hundred and ten copies, twelve years after publication, and one of them had been bought by a man who had read it on a rickshaw and now supervised a floor of sewing machines and was waiting, patiently, for a second book.</p>
+      <p>That night John opened the notebook and wrote a sentence.</p>
+      <p><em>He was waiting.</em></p>
+      <p>It was not much. But it was the first sentence in three years that belonged to a book, and he sat with it for an hour, and did not tear it up.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(20)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 20</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(22)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-22" data-num="22" data-title="The Shadow of the Presses">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Two</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Shadow of the Presses</h2>
+    <p class="chapter-sub">The year the machines ran all night.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">By the seventh year of Padma Press the machines ran all night.</p>
+      <p>There were eleven presses now, in three buildings, and the noise of them was a thing John had stopped hearing, the way a man stops hearing his own heart. He had bought Jackson's old rival press in Tejgaon, and the paper mill's distribution arm in Narayanganj, and the largest bookshop chain in the country, which had been losing money for years and which he bought for the leases and the shelves.</p>
+      <p>At the printers' association dinner that spring, a man he did not know came up to his table and said, "You have made paper a commodity of the state."</p>
+      <p>"I have made books cheaper," John said.</p>
+      <p>"You have made everyone else unable to make them at all."</p>
+      <p>The man was from a small press in Rajshahi, one of the ones that had bought paper from John in the year of the flood. He was not angry. He was tired, and he held his glass with both hands like a man warming himself.</p>
+      <p>"Your last price rise closed us," he said. "We cannot buy at your bulk rate. Your trucks reach the shops before ours. Your authors get the reviews. We are not even your competition anymore. We are your audience."</p>
+      <p>John looked at him, and for a moment he was standing in the paper market at Sadarghat at four in the morning, twenty-three years old, with five thousand taka and a notebook.</p>
+      <p>Then the moment passed, and the band started, and someone put a hand on John's shoulder and said, "Mr. John, the minister would like to meet you."</p>
+      <p>He went to meet the minister. The man from Rajshahi put down his glass and left, and John never learned his name.</p>
+      <p>In the morning, a press release went out from Padma House: <em>PADMA PRESS ACQUIRES REMAINING SHARES OF THE NATIONAL BOOK DISTRIBUTORS' CONSORTIUM.</em> The papers called it "a consolidation for the good of readers." Shafiq gave an interview in which he used the word "ecosystem" nine times.</p>
+      <p>John read the interview on his phone in the car and felt nothing. Then he opened his notebook, and wrote a sentence, and looked at it for a long time.</p>
+      <p><em>The old man is dead, and I am sitting in his chair.</em></p>
+      <p>He did not tear it up.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(21)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 21</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(23)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-23" data-num="23" data-title="The Spring Catalogue">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Three</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Spring Catalogue</h2>
+    <p class="chapter-sub">A young writer, a contract, and a page in the back.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The young writer's name was Rakib, and he came to Padma House in the spring with a manuscript under his arm and a look on his face that John recognized.</p>
+      <p>He was twenty-two. He had written a novel about his father's fish shop in Chattogram, and it was good — not perfect, but alive, in the way that a book is alive when its author has not yet learned to be careful. John read it in one sitting and called him the next morning.</p>
+      <p>"Ten percent," he said.</p>
+      <p>Rakib looked at him across the wide desk. The office had glass walls now, floor to ceiling, and a view of the Motijheel intersection where the traffic light still did not work.</p>
+      <p>"Ten percent," Rakib repeated.</p>
+      <p>"Of the cover price, on every copy sold, paid quarterly. I know it isn't much. It is what I can offer. I am not a charity. I am a business."</p>
+      <p>Rakib nodded slowly. He did not ask about the print run. He did not ask about the distribution list or the advertising or the returns policy. He asked the one question John had asked on a phone at three in the morning, half his life ago.</p>
+      <p>"Can I see the paper?"</p>
+      <p>"What?"</p>
+      <p>"The paper. The contract. I want to read it before I sign."</p>
+      <p>John slid it across the desk. He watched the young man read it, line by line, with his finger, the way Seema had taught him to read a contract in the year of the second printing.</p>
+      <p>Rakib stopped at page four. He looked up.</p>
+      <p>"There's a clause about the back matter," he said. "You can insert up to eight pages of promotional material in any printing. What's the promotional material?"</p>
+      <p>John looked at the clause, which he had written himself, which had been in every Padma contract for nine years.</p>
+      <p>"A catalogue," he said. "Other books. From the press."</p>
+      <p>"Whose books?"</p>
+      <p>"Mine."</p>
+      <p>Rakib set the contract down. He did not look angry. He looked, terribly, understanding.</p>
+      <p>"So I sell my book," he said, "and eight pages of it belong to you."</p>
+      <p>The room was quiet. Out in the corridor, the front desk phone rang, and someone laughed, and a truck shifted gear in the street below.</p>
+      <p>John opened his mouth to say the thing he had said a hundred times, the reasonable thing, the thing about rent and light and how a press stays alive.</p>
+      <p>Instead he heard Jackson's voice, dry and patient, across twelve years: <em>The catalogue was never the sin. The sin was pretending it wasn't there.</em></p>
+      <p>"Give me the contract," John said.</p>
+      <p>He took a pen and crossed out the clause.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(22)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 22</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(24)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-24" data-num="24" data-title="The Rain on the Tin Roof">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Four</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Rain on the Tin Roof</h2>
+    <p class="chapter-sub">Karim's stall, and the sound of a beginning.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">Karim died in July, at sixty-nine, of a heart attack behind his own counter, on a morning when it had rained so hard that the lane was a river and the tea stall's tin roof played like a drum.</p>
+      <p>John heard about it from Mizan, who had become an accountant at a shipping firm and still called twice a year. He went to the funeral in the rain, in a lane that was ankle-deep, and stood with the other men under umbrellas that kept turning inside out, and watched them lower the old man into the ground.</p>
+      <p>Afterward, he did not go back to the office. He walked to the corner where the stall had been. It was still there — Karim's nephew had taken it over, a boy of twenty-five named Sabuj who had worked the counter since he was fourteen. The bench was the same bench. The tin roof was the same roof.</p>
+      <p>Sabuj gave him tea without asking and set it in front of him, and it was too sweet, as it had always been.</p>
+      <p>"He used to say you were the only customer who never complained about the sugar," Sabuj said.</p>
+      <p>"I never noticed."</p>
+      <p>"He knew. He said, this boy is saving his complaints for bigger things."</p>
+      <p>John sat on the bench with the tea in his hands and listened to the rain on the tin. It was a sound he had heard ten thousand times in his life and had not heard in years, and it did something to his chest that he could not name.</p>
+      <p>He took out his notebook. He wrote: <em>Rain on a tin roof is not a sound. It is a counting.</em></p>
+      <p>Then he wrote: <em>The stall owner believed that a man who saves his complaints for bigger things will one day have a very big complaint.</em></p>
+      <p>Then he wrote nothing for a while, and the rain kept counting.</p>
+      <p>"Uncle," Sabuj said, "are you writing?"</p>
+      <p>"I don't know," John said. "I think I might be."</p>
+      <p>He stayed until the rain stopped, and then he walked back to the office, and on the way he called Shafiq and told him to cancel the rest of the week.</p>
+      <p>"All of it?"</p>
+      <p>"All of it."</p>
+      <p>"Mr. John, there is the meeting with the bank on Thursday."</p>
+      <p>"There will be other Thursdays," John said, and hung up, and stood in the street in the wet with the traffic going past and realized that he had just said the first true thing he had said in years.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(23)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 23</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(25)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-25" data-num="25" data-title="The Archive of Stone and Water">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Five</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Archive of Stone and Water</h2>
+    <p class="chapter-sub">Sylhet, his father, and a box of letters.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">His father had a stroke in September. John drove to Sylhet that night, four hours on roads that were half a construction site, and arrived at the hospital at two in the morning to find his father sitting up in bed, arguing with a nurse about the cost of a saline drip.</p>
+      <p>"Your generation," his father said when he saw him, "has no idea what a tube of saline is worth."</p>
+      <p>He was seventy-nine. He had lost the use of his left hand and some of the feeling in his left leg, and he had not lost any of his opinions. John stayed for eleven days.</p>
+      <p>They talked about the mango tree, and the roof, and the neighbor's wedding. They did not talk about the book, or the press, or the money that had been sent back. On the ninth day, his father said, "In the almirah, in my room, there is a box. Bring it."</p>
+      <p>John brought it. It was a tin box, rusted at the corners, and it held forty years of letters — from his mother, from his uncles, from John himself, who had written home every month in his first three years at university and then every six months and then every year and then not at all.</p>
+      <p>His father took out one letter and handed it to him. It was in John's own handwriting, dated fifteen years before, and it said: <em>Baba, I am going to be published. The advance is five thousand taka. I am going to pay you back for everything.</em></p>
+      <p>"You never paid me back," his father said.</p>
+      <p>"I sent you money every month."</p>
+      <p>"That is not the same." The old man closed his eyes. "The money was not the debt. The letters were."</p>
+      <p>John sat with the box on his knees. The hospital light was the color of old paper. Somewhere in the corridor a trolley went past.</p>
+      <p>"I stopped writing," John said. "Not letters. Everything."</p>
+      <p>"I know," his father said. "I read the interview."</p>
+      <p>"Which interview?"</p>
+      <p>"The one where you said you had not written in two years. Your cousin brought it from Dhaka. I read it three times." He opened his eyes. "I thought: my son has finally discovered what I knew when I was forty. That a man can be a success and still be an empty envelope."</p>
+      <p>"Is that what you think I am?"</p>
+      <p>"No," his father said. "I think you are a full envelope that has forgotten the address."</p>
+      <p>He died in January, in his sleep, in his own bed, with the mango tree outside the window and the box of letters on the chair beside him. John found him in the morning.</p>
+      <p>He did not cry until the funeral was over. Then he sat in the empty house with the box on his knees, and opened every letter, one by one, and read them all.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(24)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 24</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(26)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-26" data-num="26" data-title="The Morning Bench">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Six</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Morning Bench</h2>
+    <p class="chapter-sub">Rafiq's stall, and a manuscript with no plot.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">In February, John went back to the pavement outside the university gate.</p>
+      <p>Rafiq was still there. He was thirty-two now, with a mustache and a folding chair and a table that had been painted twice, and he sold new books and used books and phone chargers and, John noticed, four copies of <em>Man Behind One His Desire Women</em>.</p>
+      <p>"You're the author," Rafiq said.</p>
+      <p>"How did you know?"</p>
+      <p>"Nobody else stands in front of this table for ten minutes looking at one book." He grinned. "You used to do it when you were thin."</p>
+      <p>They talked for an hour. Rafiq had two children and a wife who taught at a school in Mirpur, and he had, two years ago, started a lending library from the back of the stall — forty members, twenty taka a month, mostly students who could not afford new books.</p>
+      <p>"The problem is finding the books," Rafiq said. "The students want everything, and I can only afford what people bring me."</p>
+      <p>John looked at the lending library, at the shelf of worn paperbacks with the names of five different owners written inside them, and felt something click into place in his chest.</p>
+      <p>"I have four warehouses," he said. "Full of books. Some of them have been sitting there for nine years."</p>
+      <p>Rafiq looked at him.</p>
+      <p>"You're serious?"</p>
+      <p>"I'm serious."</p>
+      <p>Three weeks later, Padma Press donated eleven thousand books to a lending network of forty-one stalls and school libraries. Shafiq called it a marketing expense and put out a press release. John did not read the press release. He was in the office above the garage in Azimpur, at the old desk, with the green ledger open and a notebook beside it.</p>
+      <p>He had been writing for eleven days. Not a novel — he did not have a novel in him yet — but something. A chronicle. Pieces of a life, written down in order, without a plot and without an ending.</p>
+      <p>At the top of the first page he had written a title.</p>
+      <p><em>The Men Behind A Desire Women.</em></p>
+      <p>He looked at it for a long time. Then he crossed out <em>A</em> and wrote <em>One</em>, and then crossed that out too, and sat back, and laughed at himself, and left it as it was.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(25)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 25</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(27)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-27" data-num="27" data-title="The Unwritten Margin">
+    <div class="chapter-kicker"><span class="accent">Act III &middot; The Glass Floor &middot; Chapter Twenty-Seven</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Unwritten Margin</h2>
+    <p class="chapter-sub">The board, the clause, and a vote.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The board met on the last Monday of March, in the glass room on the top floor, and there were nine of them at the table, including Shafiq and Farid and two men from the bank who had been invited because the bank had begun to have opinions.</p>
+      <p>John had crossed the back-matter clause out of every contract. It had cost the press two and a half crore in the first quarter. Rakib's novel, published without a catalogue, had sold nine thousand copies, which was good, and Shafiq had told the board it would have sold fourteen thousand with the promotional pages, which was also true.</p>
+      <p>"You are running a business," said the bank man on the left, whose name was Mr. Haque and who had a tie the color of a bruise. "Not a charity. Not a literary society. A business."</p>
+      <p>"I know what I am running."</p>
+      <p>"Then explain the donation of eleven thousand books. Explain the paper sold at cost in the flood year. Explain the clause."</p>
+      <p>John looked around the table. He had hired these people. He had made them rich. He had made himself rich, and the building was glass, and the trucks were moving, and the machines ran all night.</p>
+      <p>"Because I was wrong," he said.</p>
+      <p>The room was silent.</p>
+      <p>"Fifteen years ago, a man offered me ten percent and I took it because I was hungry. A few years later I learned what that ten percent cost, and I built this press to prove that it did not have to cost that. Then I became bigger than him, and for nine years I have been charging other people for the light." He looked at Shafiq. "How many authors do we have now?"</p>
+      <p>"Sixty-one."</p>
+      <p>"How many of them have asked me to remove the clause?"</p>
+      <p>"None."</p>
+      <p>"None," John repeated. "Because they cannot afford to ask. That is what a monopoly is. It is a room where nobody has to ask, because everyone already knows the answer."</p>
+      <p>Mr. Haque leaned forward. "If you continue on this course, the bank will call its loans. You understand me? The loans on this building. On the presses. On the warehouses."</p>
+      <p>"I understand you."</p>
+      <p>"Then I am asking the board to vote," Mr. Haque said. "A motion of no confidence in the managing director."</p>
+      <p>The vote was six to three. John lost.</p>
+      <p>He did not argue. He stood up, and thanked them, and walked out of the room, and rode the lift down to the lobby, and stood on the pavement outside Padma House in the sun.</p>
+      <p>It was the first free afternoon he had had in fourteen years. He did not know what to do with it. So he walked, and the city went on around him, and by the time he reached the university gate the sun was going down and Rafiq's stall was closing.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(26)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 26</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(28)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-28" data-num="28" data-title="The Permanent Rain">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Twenty-Eight</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Permanent Rain</h2>
+    <p class="chapter-sub">The monsoon that did not end, and the small press in Rajshahi.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The monsoon that year did not end in September. It went on into October, and the rivers rose, and the paper godowns in Narayanganj flooded for the second time in nine years.</p>
+      <p>By then John was no longer managing director. He was the largest shareholder, which in practice meant that he was the person the bank called when the numbers did not work, and the numbers had not worked for three months. The new managing director was a man from the bank named Iqbal, who was competent and careful and had never read a novel.</p>
+      <p>The press was not failing. That was the strange thing. It was making money, more money than ever, selling textbooks and exam guides and detective novels with promotional pages in the back. It was making so much money that the bank had begun to talk about an initial public offering.</p>
+      <p>John went to the Rajshahi small press in November. It had closed the year after the price rise, and the owner, whose name was Mr. Sattar, had spent two years selling insurance before the bank took the building.</p>
+      <p>They met in a tea shop near the station. Mr. Sattar was fifty and tired and had a way of holding his glass with both hands.</p>
+      <p>"You wrote to me," John said.</p>
+      <p>"Three years ago. You did not answer."</p>
+      <p>"I know. I'm sorry."</p>
+      <p>The old man looked at him. "Why are you here now?"</p>
+      <p>"Because I want to buy your press back."</p>
+      <p>Mr. Sattar set down his glass. "It doesn't exist anymore. The machines were sold. The name is dead."</p>
+      <p>"The name can be registered again. The machines can be bought. I want to know if you would run it."</p>
+      <p>"You want to give me a press?"</p>
+      <p>"I want to give you the paper contract at cost and a distribution deal with my trucks, and I want to apologize for taking it from you in the first place."</p>
+      <p>The tea shop was quiet. The rain was falling on the tin roof, the same rain, the same counting. Mr. Sattar looked at John for a long moment, and then he did something John had not expected: he began to cry, quietly, with his hands still around his glass.</p>
+      <p>"I don't want your charity," he said.</p>
+      <p>"It isn't charity," John said. "It's restitution. There's a difference, and I have spent nine years learning it."</p>
+      <p>They talked until the tea shop closed. Mr. Sattar would take the press. He would take the paper contract. He would publish the books he had wanted to publish for twenty years, and John would have no share in it, not one percent, and that was the point.</p>
+      <p>John walked to the station through the rain. He bought a ticket for the night train, and sat on the platform with his bag between his feet, and opened his notebook and wrote for the first time in months.</p>
+      <p><em>The permanent rain is not the rain. It is the feeling that nothing you do will change the weather.</em></p>
+      <p>Then, beneath it: <em>But a man can still hand somebody an umbrella.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(27)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 27</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(29)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-29" data-num="29" data-title="The Unfinished Horizon">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Twenty-Nine</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Unfinished Horizon</h2>
+    <p class="chapter-sub">A sale, a resignation, and a letter.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The sale of Padma Press took nine months and cost John more than money.</p>
+      <p>He sold the presses, the warehouses, the trucks, the chain of bookshops, the distribution consortium, and the name. He kept the old green ledger, Jackson's pen, and a fifty-one percent stake in a small imprint that published eleven authors and no promotional pages in the back of anything.</p>
+      <p>The new owners were a media group from Singapore. They paid him a sum that the newspapers described, with relish, as "a windfall." The financial pages called him a visionary who had built a publishing empire from a room with one bulb and had known, at the height of his power, that the future was in "rights management."</p>
+      <p>He resigned from every board on the same day. The last letter he wrote was to the bank, and it was four sentences long, and he did not keep a copy.</p>
+      <p>That evening he sat in the office above the garage in Azimpur, which he had never given up, and took the green ledger out of the biscuit tin.</p>
+      <p>The last entry was nine years old. He turned to a clean page near the back and wrote:</p>
+      <p><em>Assets: one pen. One ledger. One book, still selling three hundred copies a year. One wife, who is not an asset, and whom I have not seen in four years.</em></p>
+      <p>He looked at that last line for a long time.</p>
+      <p><em>One marriage. Status: unknown.</em></p>
+      <p>He closed the ledger. Then he tore the page out, folded it twice, and put it in his pocket.</p>
+      <p>The next morning he took the train to Narayanganj, to his mother-in-law's house, where Seema had been living since the winter she left. He had written to her once a year for four years. She had never replied.</p>
+      <p>He stood at the gate with his bag in his hand, in the early light, and the gate was open, and the courtyard smelled of rain and jasmine, and a woman was sitting on the veranda with a cup of tea.</p>
+      <p>She looked up.</p>
+      <p>"You're early," Seema said.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(28)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 28</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(30)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-30" data-num="30" data-title="The Salt and the Rice">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Salt and the Rice</h2>
+    <p class="chapter-sub">Four years, a veranda, and one honest question.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">They sat on the veranda for a long time without saying anything. The jasmine was loud with bees. A woman came out with a tray and set down two cups of tea and a plate of muri, and Seema said, "Thank you, Rina," and the woman went back inside.</p>
+      <p>"You look older," Seema said.</p>
+      <p>"You look the same."</p>
+      <p>"Liar."</p>
+      <p>"Not about that."</p>
+      <p>She smiled, a little, and looked down at her tea. There were grey threads in her hair now, and she had stopped wearing her father's briefcase, and she held her cup with both hands, the way her mother did.</p>
+      <p>"Four years," she said.</p>
+      <p>"Four years."</p>
+      <p>"I read that you sold everything."</p>
+      <p>"Not everything. I kept a small press. Eleven authors."</p>
+      <p>"And the trucks?"</p>
+      <p>"Gone."</p>
+      <p>"And the glass floor?"</p>
+      <p>"Sold to a company that makes software."</p>
+      <p>She looked at him over the cup. "Why?"</p>
+      <p>"Because you were right," John said. "Because I could not write. Because I became the thing I hated and I did not notice until a boy of twenty-two asked me to show him the paper."</p>
+      <p>Seema set the cup down. She was quiet for a while, and the bees went on with their business, and somewhere in the house a television murmured.</p>
+      <p>"What do you want, John?" she said at last. "Not what you've given up. Not what you're sorry for. What do you want?"</p>
+      <p>He had thought about this question for four years. He had thought about it on the balcony in Dhanmondi and in the hospital in Sylhet and on the night train from Rajshahi. He had written answers in notebooks and torn them up.</p>
+      <p>"I want to write a book," he said. "A real one. Not a press release, not a contract, not a speech at an award ceremony. I want to sit in a room with a pen and write something true, and I want to finish it, and I want to hand it to you before anyone else reads it."</p>
+      <p>Seema looked at him.</p>
+      <p>"And I want to be your husband," he said. "If you'll have me. Not on the terms of the man who owned the press. On the terms of the man who is sitting on this veranda with nothing but a pen and a ledger and a very old apology."</p>
+      <p>The bees went on. A rickshaw passed in the lane. Seema picked up her tea, drank, and set it down again.</p>
+      <p>"Eat something," she said. "You look like you haven't eaten."</p>
+      <p>"I haven't. Not properly."</p>
+      <p>"Then eat," she said, "and we'll talk about the rest after."</p>
+      <p>He ate the muri. It was the best thing he had tasted in years, and he did not say so, because he was afraid that if he said anything at all he would begin to cry.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(29)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 29</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(31)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-31" data-num="31" data-title="The Dust on the Ledger">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty-One</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Dust on the Ledger</h2>
+    <p class="chapter-sub">The books, the dust, and a decision about the house.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">She came back to Dhaka with him in December, not to the flat in Dhanmondi — that had been sold — but to a two-room flat in Mohammadpur with a balcony and a mango tree in the yard that belonged to the landlord and dropped fruit on the tin roof of the ground floor.</p>
+      <p>They spent the first week cleaning. The old green ledger came out of the biscuit tin, and the notebooks, and the letters, and Jackson's pen, which had dried out again and had to be soaked and cleaned and filled.</p>
+      <p>Seema read the ledger at the kitchen table while John made tea. She read every page, including the torn stub where the page about the marriage had been, and when she finished she closed it and put her hand flat on the cover.</p>
+      <p>"Twelve years of arithmetic," she said.</p>
+      <p>"Twelve years of avoiding the arithmetic that mattered."</p>
+      <p>She looked at him. "That's a good line. Write it down."</p>
+      <p>"I'm not writing a book about the press."</p>
+      <p>"I know." She pushed the ledger across the table. "But you're going to need something to write about, and it's not going to be the flood or the sewing machine. You've used those. You need the last ten years."</p>
+      <p>John sat down across from her. "I don't know how to write about it without it becoming an apology."</p>
+      <p>"Then let it be an apology. A real one. Not the kind you give on a veranda." She stood up and went to the window. "You spent your whole life thinking a book was a thing you made to prove you were worth something. That's what the first one was. That's why it was good. It was true because you had nothing else."</p>
+      <p>"And now?"</p>
+      <p>"Now you have something else," Seema said. "You have everything you did. The press. The trucks. The sixty-one authors. Me. You have to decide whether you are going to write about it or spend the rest of your life being polite about it."</p>
+      <p>She went out to the balcony. John sat at the table with the green ledger and the pen and the sound of the city coming through the window, and after a long time he opened the ledger to a clean page, and wrote at the top of it:</p>
+      <p><em>The Men Behind A Desire Women.</em></p>
+      <p>Then, underneath, in smaller letters:</p>
+      <p><em>Chapter One: The Ink and the Ashes.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(30)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 30</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(32)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-32" data-num="32" data-title="The Lantern in the Window">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty-Two</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Lantern in the Window</h2>
+    <p class="chapter-sub">A year of mornings, and a first reader.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">He wrote for a year.</p>
+      <p>Not every day. Some days he sat at the desk for four hours and produced a paragraph, and some days he read, and some days he walked to the university gate and sat with Rafiq and talked about the lending library, which now served four hundred students and had a waiting list for the detective novels.</p>
+      <p>The new press was small on purpose. Eleven authors, one office, two machines, and a rule that John had written on the wall in marker: <em>No pages in the back that the author did not put there.</em></p>
+      <p>Mr. Sattar ran it with a young woman named Rukhsana who had been an accountant at Padma Press and had resigned the same day John had. They published four books in the first year. One of them won a prize. John was not the publisher of the winner; he was the man who had lent Mr. Sattar the money for the paper and had refused to take a share.</p>
+      <p>In the evenings, Seema read what he had written. She read it in the kitchen, with a pencil, and she wrote in the margins, and some of her notes were kind and some were not, and he learned to wait for them the way he had once waited for sales figures.</p>
+      <p>One evening in November, she finished the pages and put them down and said, "It's good."</p>
+      <p>"It's not."</p>
+      <p>"It's good," she said again. "It's not the first book. The first book was a wound. This one is a man looking at the wound and telling the truth about how it happened."</p>
+      <p>John looked at the pages on the table, at her pencil marks, at the lamp reflected in the window. Outside, a rickshaw bell rang, thin and far away, and a dog answered it, as dogs always did.</p>
+      <p>"I don't know how it ends," he said.</p>
+      <p>Seema picked up her pencil. "You do," she said. "You just don't want to write it."</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(31)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 31</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(33)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-33" data-num="33" data-title="The Silent Inch">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty-Three</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Silent Inch</h2>
+    <p class="chapter-sub">Four notebooks, and the apology he had never made.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">She gave him the notebooks in February.</p>
+      <p>There were four of them, one for each year she had spent in Narayanganj, and they were not diaries. They were ledgers of a different kind: columns of figures, notes on the price of lentils, dates when her mother's medicine ran out, passages copied from books she had read in the afternoons, and, in the middle of the second notebook, a single page in her own handwriting that began: <em>Things I would have said if the phone had rung.</em></p>
+      <p>John read them all in one night. He did not sleep. He sat at the kitchen table with the lamp on and read the four years of his wife's life, and at the end of it he understood that the worst thing he had done was not the lecture, or the press, or the clause in the contract.</p>
+      <p>The worst thing he had done was leave her alone with a story he had told badly.</p>
+      <p>In the morning, she came out and found him still at the table.</p>
+      <p>"Did you read them?" she asked.</p>
+      <p>"All of it."</p>
+      <p>"Then you know."</p>
+      <p>"I know," John said. "I should have called."</p>
+      <p>"You wrote once a year."</p>
+      <p>"Once a year is not a phone call." He looked at the notebooks. "Once a year is a man keeping a fire alive so he can say he kept a fire alive. It isn't warmth. It's the idea of warmth."</p>
+      <p>Seema sat down across from him. The city was waking up outside; a man was washing a car in the lane, and the water ran in the gutter, and the birds in the mango tree were making an enormous noise about nothing.</p>
+      <p>"Why didn't you call?" she said.</p>
+      <p>"Because I was ashamed. Because every week I thought, this week I will finish the thing I am doing and then I will call, and be a man who has finished something. And the weeks became years, and the thing was never finished, and I could not call you from the middle of it."</p>
+      <p>"That's not an apology," Seema said. "That's a description."</p>
+      <p>John looked at her.</p>
+      <p>"I'm sorry," he said. "For the lecture, and the four years, and the fire I kept so I would not have to feel the cold. I'm sorry that I made you a symbol in a book and then could not make you a phone call. I'm sorry that when you asked me to choose, I said I didn't know."</p>
+      <p>He stopped. The water ran in the gutter. The birds went on with their noise.</p>
+      <p>Seema put her hand on the table between them, palm up. The inch of tabletop between their hands was the shortest distance in the world and the longest he had ever crossed.</p>
+      <p>He put his hand in hers.</p>
+      <p>"All right," she said.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(32)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 32</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(34)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-34" data-num="34" data-title="The Wooden Bench in the Clearing">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty-Four</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Wooden Bench in the Clearing</h2>
+    <p class="chapter-sub">A bench, a school, and a day with nothing in it.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">In April they went to Comilla, to the school where Jackson had taught, because the school had written to John asking if he would come and speak to the boys about publishing.</p>
+      <p>He said he would come, but he would not speak about publishing. He would speak about reading, and about the old man who had published twelve hundred books and written none of them, and who had once told him that the light had to be paid for.</p>
+      <p>They put a wooden bench in the clearing behind the library, with a brass plaque that said: <em>For the one who keeps the light.</em> John paid for the bench. The school paid for the plaque.</p>
+      <p>He sat on it after the speech, in the afternoon, with Seema beside him and the boys playing cricket somewhere beyond the trees, and did nothing at all for two hours. It was, he later thought, the first afternoon of his adult life in which he had done nothing at all, and it was not empty. It was full of the sound of the boys and the heat and the smell of the grass.</p>
+      <p>A teacher came out and asked if they wanted tea.</p>
+      <p>"Two cups," Seema said. "With milk. And don't be shy with the sugar."</p>
+      <p>The teacher laughed and went away, and Seema leaned back on the bench and closed her eyes.</p>
+      <p>"What are you thinking?" John asked.</p>
+      <p>"Nothing," she said. "For once, nothing."</p>
+      <p>He looked at her profile in the light, and at the brass plaque, and at the tree line where the boys were, and he thought about the old man in the envelope with no note, and the ledger with the torn page, and the rickshaw puller who was waiting for a second book.</p>
+      <p>That evening, on the bus home, he wrote the last line of the novel on the back of a receipt.</p>
+      <p><em>The light is not free. But it can be shared.</em></p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(33)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 33</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(35)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-35" data-num="35" data-title="The Unbroken Line">
+    <div class="chapter-kicker"><span class="accent">Act IV &middot; The Unbroken Line &middot; Chapter Thirty-Five</span><span>The Men Behind A Desire Women</span></div>
+    <h2>The Unbroken Line</h2>
+    <p class="chapter-sub">A small print run, a first reader, and the line.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <p class="drop">The new novel was published in the winter by a small press in Rajshahi run by a man named Sattar, in a print run of one thousand copies, with no pages in the back except the ones the author had put there.</p>
+      <p>There was no launch. There was no glass floor, no minister, no band. There was a table at the university gate, next to Rafiq's stall, and a stack of books with a dark cover and a woman's shape fading in a wet window, and John sitting behind the table in a chair he had borrowed from Karim's nephew.</p>
+      <p>Rafiq sold forty-one copies that day and refused to take a commission.</p>
+      <p>The first reader came on the second day, in the afternoon. He was a man of about forty, in a supervisor's shirt, with a factory ID on a lanyard, and he stood in front of the table for a long time without saying anything.</p>
+      <p>"Sir," he said at last. "I wrote to you."</p>
+      <p>John stood up. "I know," he said. "I have your letter. I've had it for six years."</p>
+      <p>The man looked at the book on the table. "Is it the same one?"</p>
+      <p>"No. It's a different one."</p>
+      <p>"Is it true?"</p>
+      <p>John thought about the question. He thought about the corridor and the ceiling fan and the five thousand taka; about Jackson's pen and the green ledger; about the four notebooks and the inch of tabletop; about his father's box of letters and the bench in the clearing.</p>
+      <p>"It's as true as I could make it," he said.</p>
+      <p>The man bought a copy and asked John to sign it, and John wrote his name and, underneath, the only thing he could think of: <em>For the one who was waiting.</em></p>
+      <p>The man read the first page standing at the light, the way he had read the first book, and then he put the book under his arm and walked away into the crowd.</p>
+      <p>John sat down. Seema came out of the tea stall with two cups and set one in front of him.</p>
+      <p>"Forty-two," she said.</p>
+      <p>"Forty-two what?"</p>
+      <p>"Copies. I counted."</p>
+      <p>"That's not many."</p>
+      <p>"It's a beginning," she said, and sat down beside him on the borrowed chair, and put her feet up on the empty crate that served as a table, and opened her own copy of the book to the first page.</p>
+      <p>The traffic light changed. The city went past. A rickshaw bell rang, thin and far away, and a dog answered it, and the line of it — the bell, the dog, the page, the woman, the ink — went on unbroken, the way it always had, the way it always would, as long as there was someone left to write it down.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(34)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 34</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(1)">Back to the beginning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+</main>
+
+<div class="footer">
+  <div class="f-title">The Men Behind <em>A Desire Women</em></div>
+  <p>A novel by Amim Ahsan &middot; Thirty-five chapters</p>
+  <div class="f-links">
+    <a href="index.html">The Library</a>
+    <a href="index.html#books">All Books</a>
+    <a href="Amim's Truth/Amim's Truth.html">Amim&rsquo;s Truth</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <p style="margin-top:14px">&copy; 2026 Amim Ahsan. All rights reserved.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  const STORE_KEY = 'tmbadw-reader-v1';
+  const chapters = Array.from(document.querySelectorAll('.reader .chapter'));
+  const total = chapters.length;
+  const landing = document.getElementById('landing');
+  const progressFill = document.getElementById('progressFill');
+  const typeToggle = document.getElementById('typeToggle');
+
+  let state = { chapter: 0, theme: 'paper', size: 1.135, font: 'serif' };
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+    if (saved && typeof saved === 'object') state = Object.assign(state, saved);
+  } catch (e) {}
+
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function applyTheme(theme) {
+    state.theme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('[data-set-theme]').forEach(function(btn){
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-set-theme') === theme));
+    });
+    save();
+  }
+
+  function applyFont(font) {
+    state.font = font;
+    document.documentElement.setAttribute('data-font', font);
+    if (typeToggle) typeToggle.textContent = font === 'sans' ? 'Sans' : 'Serif';
+    save();
+  }
+
+  function applySize(size) {
+    state.size = Math.min(1.55, Math.max(0.95, size));
+    document.documentElement.style.setProperty('--read-size', state.size.toFixed(3) + 'rem');
+    save();
+  }
+
+  function setProgress(n) {
+    if (!progressFill) return;
+    const pct = Math.round((n / total) * 100);
+    progressFill.style.width = pct + '%';
+    document.querySelector('.progress-line').setAttribute('aria-valuenow', String(pct));
+  }
+
+  function clearActive() {
+    chapters.forEach(function(c){ c.classList.remove('active'); });
+  }
+
+  function showChapter(n) {
+    n = Math.max(1, Math.min(total, Number(n) || 1));
+    clearActive();
+    const target = document.getElementById('chapter-' + n);
+    if (!target) return;
+    target.classList.add('active');
+    document.body.classList.add('reading');
+    state.chapter = n;
+    setProgress(n);
+    save();
+    try { history.replaceState(null, '', '#chapter-' + n); } catch (e) { location.hash = 'chapter-' + n; }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    const heading = target.querySelector('h2');
+    if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+    document.title = 'Chapter ' + n + ' \u2014 The Men Behind A Desire Women';
+  }
+
+  function showLanding() {
+    clearActive();
+    document.body.classList.remove('reading');
+    state.chapter = 0;
+    setProgress(0);
+    save();
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = 'The Men Behind A Desire Women \u2014 A Novel by Amim Ahsan';
+  }
+
+  window.showChapter = showChapter;
+  window.showLanding = showLanding;
+
+  window.stepFont = function(dir) { applySize(state.size + dir * 0.06); };
+  window.resetFont = function() { applySize(1.135); };
+
+  window.toggleType = function() { applyFont(state.font === 'sans' ? 'serif' : 'sans'); };
+
+  document.querySelectorAll('[data-set-theme]').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyTheme(btn.getAttribute('data-set-theme')); });
+  });
+
+  document.querySelectorAll('.chapter-nav button, .toc-item, .actions .btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setTimeout(function(){ window.scrollTo(0, 0); }, 0); });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (!document.body.classList.contains('reading')) return;
+    if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if (e.key === 'ArrowRight') showChapter(state.chapter + 1);
+    if (e.key === 'ArrowLeft') showChapter(state.chapter - 1);
+    if (e.key === 'Escape') showLanding();
+  });
+
+  // Word count and reading time
+  let words = 0;
+  chapters.forEach(function(c){
+    const body = c.querySelector('.chapter-body');
+    if (body) words += (body.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+  });
+  const totalWords = document.getElementById('totalWords');
+  const readTime = document.getElementById('readTime');
+  if (totalWords) totalWords.textContent = words.toLocaleString();
+  if (readTime) readTime.textContent = Math.max(1, Math.round(words / 230)) + ' min';
+
+  // Restore preferences
+  applyTheme(state.theme);
+  applyFont(state.font);
+  applySize(state.size);
+
+  // Resume affordance
+  const actions = document.querySelector('.landing .actions');
+  if (actions && state.chapter > 1) {
+    const resume = document.createElement('button');
+    resume.className = 'btn btn-ghost';
+    resume.type = 'button';
+    const label = chapters[state.chapter - 1];
+    const title = label ? label.getAttribute('data-title') : '';
+    resume.innerHTML = 'Continue &mdash; Chapter ' + state.chapter + (title ? ' &middot; ' + title : '');
+    resume.addEventListener('click', function(){ showChapter(state.chapter); });
+    actions.appendChild(resume);
+  }
+
+  // Deep link on load
+  const match = /^#chapter-(\d+)$/.exec(location.hash || '');
+  if (match) {
+    showChapter(parseInt(match[1], 10));
+  } else {
+    setProgress(0);
+  }
+})();
+</script>
+</body>
+</html>
