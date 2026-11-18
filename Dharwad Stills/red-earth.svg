@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Aerial view of red-earth fields around Dharwad">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a3a12"/><stop offset="1" stop-color="#2d1207"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<g fill="none" stroke="#f0b070" opacity=".3"><path d="M0 120c220 40 340 20 520-10s380-20 680 30"/><path d="M0 260c240 30 360 10 540-20s360-10 660 40"/><path d="M0 410c260 26 380 6 560-26s360-6 640 44"/><path d="M0 560c280 20 400 0 580-30s350 0 620 50"/></g>
+<g stroke="#5a240d" stroke-width="2" opacity=".6" fill="none"><path d="M120 0v675M420 0v675M760 0v675M1040 0v675"/></g>
+<g fill="#1a0b05" opacity=".85"><rect x="470" y="300" width="120" height="80" rx="6"/><rect x="620" y="330" width="90" height="60" rx="6"/><rect x="300" y="380" width="110" height="70" rx="6"/></g>
+<g fill="#ffd9a0" opacity=".85"><circle cx="530" cy="340" r="3"/><circle cx="664" cy="360" r="2.5"/><circle cx="352" cy="414" r="2.5"/></g>
+<path d="M0 620c300-60 520-40 760 0s280 30 440 10v45H0z" fill="#1c0d06" opacity=".7"/>
+<rect x="16" y="16" width="1168" height="643" fill="none" stroke="#d9a24a" stroke-width="1" opacity=".3"/>
+<text x="600" y="640" text-anchor="middle" fill="#f2d3a8" font-family="Georgia, serif" font-size="18" letter-spacing="6" opacity=".6">DHARWAD · RED SOIL · 15.4589° N</text>
+</svg>

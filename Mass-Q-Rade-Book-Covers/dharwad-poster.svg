@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">Dharwad: The Cradle of Echoes — a film by Amim Ahsan</title>
+  <desc id="d">A basalt arch of a Karnataka college silhouetted against a brass sunset over red-earth fields, with concentric sound ripples rising from the ground and the title Dharwad in gold.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1308"/><stop offset="0.45" stop-color="#57240c"/>
+      <stop offset="0.72" stop-color="#a44a15"/><stop offset="1" stop-color="#3a1508"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="72%" r="46%">
+      <stop offset="0" stop-color="#ffe3a8" stop-opacity="0.95"/><stop offset="0.4" stop-color="#f0a44a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="earth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c2d12"/><stop offset="1" stop-color="#2b0f06"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#241a14"/><stop offset="1" stop-color="#0d0907"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe6b0"/><stop offset="1" stop-color="#c9821f"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.65"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.6" r="0.5" fill="#fff" opacity="0.04"/><circle cx="4.4" cy="4.2" r="0.34" fill="#fff" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#sky)"/>
+  <rect width="852" height="1280" fill="url(#sun)"/>
+  <circle cx="426" cy="905" r="96" fill="#ffd79a" opacity="0.9"/>
+  <circle cx="426" cy="905" r="190" fill="#ffb765" opacity="0.18"/>
+
+  <!-- distant Malnad hills -->
+  <path d="M0 880c70-30 120-6 176-22 62-18 100-42 158-30 60 12 96 34 150 26 54-8 92-30 148-18 44 10 84 26 120 20v64H0z" fill="#3a1a0c" opacity="0.9"/>
+
+  <!-- red earth field -->
+  <path d="M0 940h852v340H0z" fill="url(#earth)"/>
+  <path d="M0 940h852" stroke="#e0a05a" stroke-width="1.6" opacity="0.5"/>
+  <g stroke="#a34d1d" stroke-width="1" opacity="0.5">
+    <path d="M0 1000c120 14 200 34 300 30s180-26 300-14 180 10 252-2"/>
+    <path d="M0 1064c140 18 230 40 340 34s200-30 320-16 140 8 192 0"/>
+    <path d="M0 1130c150 20 250 42 360 36s210-32 330-18 120 6 162 0"/>
+  </g>
+
+  <!-- college arch -->
+  <g>
+    <path d="M238 940V636c0-96 84-166 188-166s188 70 188 166v304h-70V642c0-62-56-108-118-108s-118 46-118 108v298z" fill="url(#stone)"/>
+    <path d="M238 940V636c0-96 84-166 188-166s188 70 188 166v304" fill="none" stroke="#e2b071" stroke-width="1.4" opacity="0.45"/>
+    <path d="M318 940V648c0-48 48-84 108-84s108 36 108 84v292" fill="none" stroke="#8a5a2b" stroke-width="1" opacity="0.55"/>
+    <g fill="#0b0705">
+      <rect x="238" y="700" width="46" height="16"/><rect x="238" y="780" width="46" height="16"/><rect x="238" y="860" width="46" height="16"/>
+      <rect x="568" y="700" width="46" height="16"/><rect x="568" y="780" width="46" height="16"/><rect x="568" y="860" width="46" height="16"/>
+    </g>
+    <path d="M186 940h480" stroke="#e2b071" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- sound ripples rising from the soil -->
+  <g fill="none" stroke="#ffcf8f" opacity="0.4">
+    <path d="M426 1000c-60-16-96-52-96-96" stroke-width="1.2" stroke-dasharray="3 8"/>
+    <path d="M426 1000c60-16 96-52 96-96" stroke-width="1.2" stroke-dasharray="3 8"/>
+    <path d="M426 1030c-96-22-152-70-152-134" stroke-width="1" stroke-dasharray="2 12" opacity="0.7"/>
+    <path d="M426 1030c96-22 152-70 152-134" stroke-width="1" stroke-dasharray="2 12" opacity="0.7"/>
+    <path d="M426 1064c-134-30-210-92-210-180" stroke-width="0.9" stroke-dasharray="2 16" opacity="0.5"/>
+    <path d="M426 1064c134-30 210-92 210-180" stroke-width="0.9" stroke-dasharray="2 16" opacity="0.5"/>
+  </g>
+
+  <!-- a lone figure on the highway line -->
+  <g fill="#0b0604" transform="translate(640 1006)">
+    <circle cx="0" cy="-26" r="7"/><path d="M-7-18h14l4 34h-8l-3-18-3 18h-8z"/>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect width="852" height="1280" fill="url(#grain)"/>
+
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.4"/>
+  <rect x="54" y="54" width="744" height="1172" fill="none" stroke="#d9a24a" stroke-width="0.7" opacity="0.2"/>
+
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="426" y="152" fill="#f0c078" font-size="16" letter-spacing="8" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.9">AN AMIM AHSAN SERIAL</text>
+    <text x="426" y="262" fill="url(#gold)" font-size="96" letter-spacing="10">DHARWAD</text>
+    <path d="M336 292h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="336" fill="#f1d8b0" font-size="22" letter-spacing="7" font-family="'Trebuchet MS', Verdana, sans-serif">THE CRADLE OF ECHOES</text>
+    <text x="426" y="1190" fill="#e8cfa6" font-size="16" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.8">TWENTY CHAPTERS · A CINEMATIC SERIAL</text>
+  </g>
+</svg>

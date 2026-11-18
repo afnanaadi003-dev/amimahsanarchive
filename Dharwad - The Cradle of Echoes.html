@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharwad: The Cradle of Echoes | A Cinematic Serial</title>
+    <meta name="description" content="Dharwad: The Cradle of Echoes — a twenty-chapter cinematic serial by Amim Ahsan, with a scene gallery slider, a watch section and the full chapter reader.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #12100e; color: #f3f0ea; }
+        .cinzel { font-family: 'Cinzel', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .slide-img { transition: opacity .45s ease, transform 6s linear; }
+        .slide-img.is-hidden { opacity: 0; }
+        .fade-in { animation: fade .5s ease both; }
+        @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+        .scene { scroll-margin-top: 96px; }
+        .film-grain { background-image: radial-gradient(rgba(255,255,255,.025) 1px, transparent 0); background-size: 22px 22px; }
+        .sp-slug { font-family:'JetBrains Mono',monospace; text-transform:uppercase; font-size:.82em; letter-spacing:.05em; color:#f6d8a8; border-left:3px solid #b45309; padding-left:.7rem; margin:1.4rem 0 .7rem; }
+        .sp-act { color:#d6cdc2; line-height:1.75; margin-bottom:.9rem; }
+        .sp-char { font-family:'JetBrains Mono',monospace; text-transform:uppercase; font-size:.8em; letter-spacing:.06em; color:#fbbf24; margin-top:1rem; margin-bottom:.15rem; }
+        .sp-line { color:#f7f2e9; line-height:1.65; margin-bottom:.9rem; }
+        .sp-trans { text-align:right; text-transform:uppercase; font-family:'JetBrains Mono',monospace; font-size:.78em; letter-spacing:.08em; color:#a89e92; margin:1.2rem 0; }
+        ::selection { background:#b45309; color:#fff; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center film-grain">
+
+    <header class="sticky top-0 z-40 w-full bg-[#12100e]/92 backdrop-blur-md border-b border-amber-900/40">
+        <div class="max-w-5xl mx-auto px-5 h-20 flex items-center justify-between">
+            <a href="index.html" class="cinzel text-xl sm:text-2xl font-bold tracking-widest text-amber-500">DHARWAD</a>
+            <nav class="hidden sm:flex items-center gap-6 text-[11px] uppercase tracking-widest text-amber-100/70">
+                <a href="#film" class="hover:text-amber-400 transition">Film</a>
+                <a href="#watch" class="hover:text-amber-400 transition">Watch</a>
+                <a href="#gallery" class="hover:text-amber-400 transition">Gallery</a>
+                <a href="#chapters" class="hover:text-amber-400 transition">Chapters</a>
+            </nav>
+            <a href="index.html#film" class="px-4 py-2 rounded-lg border border-amber-800/60 hover:border-amber-500/60 text-amber-200 text-[11px] uppercase tracking-widest transition">Films</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-5xl px-5">
+
+        <section id="film" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12 border-b border-amber-900/30">
+            <div class="lg:col-span-5 mx-auto w-full max-w-xs">
+                <div class="rounded-xl overflow-hidden border border-amber-900/40 shadow-2xl">
+                    <img src="Mass-Q-Rade-Book-Covers/dharwad-poster.svg" alt="Dharwad poster — a college arch against a brass sunset over red earth" class="w-full h-auto block">
+                </div>
+            </div>
+            <div class="lg:col-span-7 space-y-5">
+                <p class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/80">A twenty-chapter cinematic serial</p>
+                <h1 class="cinzel text-4xl sm:text-5xl font-bold tracking-widest text-amber-500 leading-none">DHARWAD</h1>
+                <p class="cinzel text-lg tracking-[.2em] text-amber-200/70 uppercase">The Cradle of Echoes</p>
+                <p class="text-stone-300 leading-relaxed text-sm sm:text-base font-light max-w-xl">
+                    A young archivist steps off a state bus into the red-earth morning of Dharwad with a blank notebook and a borrowed recorder. In a college of basalt arches, a lake that keeps sound, and a radio shop that trades in old frequencies, he begins to suspect the town has been waiting for him to write something down.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-1">
+                    <button onclick="openTrailer()" class="px-6 py-3 rounded-lg bg-amber-700 hover:bg-amber-600 text-stone-950 font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch
+                    </button>
+                    <a href="#chapters" class="px-6 py-3 rounded-lg bg-stone-900 border border-amber-900/50 hover:border-amber-600/60 text-amber-100 text-xs uppercase tracking-widest transition">Read the 20 Chapters</a>
+                </div>
+                <div class="grid grid-cols-3 gap-3 pt-4 max-w-md">
+                    <div class="bg-stone-900/70 border border-amber-900/30 rounded-lg p-3"><div class="mono text-[9px] uppercase text-stone-500">Chapters</div><div class="text-sm font-bold text-amber-300 mt-0.5">20</div></div>
+                    <div class="bg-stone-900/70 border border-amber-900/30 rounded-lg p-3"><div class="mono text-[9px] uppercase text-stone-500">Scenes</div><div class="text-sm font-bold text-amber-300 mt-0.5">62</div></div>
+                    <div class="bg-stone-900/70 border border-amber-900/30 rounded-lg p-3"><div class="mono text-[9px] uppercase text-stone-500">Runtime</div><div class="text-sm font-bold text-amber-300 mt-0.5">134 min</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="watch" class="py-12 border-b border-amber-900/30">
+            <div class="text-center mb-6">
+                <p class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/80">Cinematic Preview</p>
+                <h2 class="cinzel text-2xl sm:text-3xl text-amber-400 mt-1">Watch</h2>
+                <p class="text-xs text-stone-400 mt-2">Official teaser &bull; 2:08 &bull; Dharwad cut</p>
+            </div>
+            <div onclick="openTrailer()" class="relative rounded-xl overflow-hidden aspect-video border border-amber-900/40 shadow-2xl cursor-pointer group">
+                <img src="Dharwad%20Stills/sadhanakeri-lake.svg" alt="" aria-hidden="true" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition duration-500">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="w-20 h-20 rounded-full bg-amber-600/95 text-stone-950 flex items-center justify-center shadow-2xl shadow-amber-900/60 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                </div>
+                <div class="absolute bottom-4 left-5 right-5 flex flex-wrap justify-between gap-2 mono text-[10px] uppercase tracking-widest text-amber-100/80">
+                    <span>Teaser (2:08)</span><span class="text-amber-400">Click to play</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-12 border-b border-amber-900/30">
+            <div class="bg-stone-900/80 border border-amber-900/30 rounded-xl p-5 sm:p-6 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <div>
+                        <p class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/80">Scene Gallery</p>
+                        <h2 class="cinzel text-xl text-amber-400 mt-0.5">The Cradle, In Frames</h2>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="autoplay-btn" onclick="toggleAutoplay()" class="px-3 py-2 rounded-lg bg-stone-800 border border-stone-700 hover:border-amber-600/60 text-amber-200 text-[11px] uppercase tracking-widest transition">Pause slides</button>
+                        <button onclick="prevSlide()" aria-label="Previous slide" class="p-2.5 rounded-lg bg-stone-800 border border-stone-700 hover:bg-amber-700 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button onclick="nextSlide()" aria-label="Next slide" class="p-2.5 rounded-lg bg-stone-800 border border-stone-700 hover:bg-amber-700 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-lg aspect-video bg-black">
+                    <img id="slider-image" src="Dharwad%20Stills/college-arches.svg" alt="Karnataka Arts College archway, Dharwad" class="slide-img w-full h-full object-cover">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-4">
+                        <p id="slider-caption" class="text-amber-100/95 font-medium text-sm">Chapter 2 &mdash; Karnataka College archway, basalt and morning light</p>
+                    </div>
+                    <div class="absolute top-3 right-3 mono text-[10px] uppercase tracking-widest text-amber-200/80 bg-black/50 border border-amber-500/20 rounded px-2 py-1">
+                        <span id="slide-count">1 / 5</span>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-center justify-center gap-2" id="dots-container"></div>
+                <div class="mt-3 grid grid-cols-5 gap-2" id="thumbs"></div>
+            </div>
+        </section>
+        <section id="chapters" class="py-12">
+            <div class="text-center mb-6">
+                <p class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/80">Narrative Architecture</p>
+                <h2 class="cinzel text-2xl sm:text-3xl text-amber-400 mt-1">The Twenty Chapters</h2>
+                <p class="text-xs text-stone-400 mt-2">Pick a chapter. The reader remembers where you were, and the arrow keys move you through the serial.</p>
+            </div>
+
+            <div class="bg-stone-900/80 border border-amber-900/30 rounded-xl p-5 sm:p-6 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <span class="mono text-[10px] uppercase tracking-[.25em] text-stone-400">Chapter Navigator</span>
+                    <span id="chapter-status" class="mono text-[11px] text-amber-300/80">Chapter 1 of 20</span>
+                </div>
+                <div id="chapter-grid" class="grid grid-cols-5 md:grid-cols-10 gap-2"></div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 mt-4">
+                <button id="prev-chapter" onclick="changeChapter(-1)" class="px-4 py-2.5 rounded-lg bg-stone-900 border border-amber-900/40 hover:border-amber-600/60 disabled:opacity-40 text-amber-100 text-xs uppercase tracking-widest transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg> Previous
+                </button>
+                <div id="chapter-dots" class="hidden sm:flex items-center gap-1"></div>
+                <button id="next-chapter" onclick="changeChapter(1)" class="px-4 py-2.5 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-40 text-stone-950 font-bold text-xs uppercase tracking-widest transition flex items-center gap-2">
+                    Next <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <article id="chapter-content" class="scene mt-5 bg-stone-950/70 border border-stone-800 rounded-xl p-6 sm:p-8 text-sm leading-relaxed text-stone-300 fade-in"></article>
+        </section>
+    </main>
+
+    <footer class="w-full max-w-5xl text-center py-8 border-t border-amber-900/40 text-[11px] text-stone-500 mono">
+        <div class="space-y-2">
+            <div class="cinzel text-base tracking-widest text-amber-500">DHARWAD &middot; THE CRADLE OF ECHOES</div>
+            <p>A serial by Amim Ahsan &middot; twenty chapters</p>
+            <div class="flex justify-center gap-5 text-stone-400">
+                <a href="index.html" class="hover:text-amber-400 transition">The Library</a>
+                <a href="index.html#film" class="hover:text-amber-400 transition">Films</a>
+                <a href="index.html#contact" class="hover:text-amber-400 transition">Contact</a>
+            </div>
+            <p>&copy; 2026 Amim Ahsan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="trailer-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-stone-950 border border-amber-900/40 rounded-xl overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between p-4 border-b border-amber-900/30">
+                <h3 class="cinzel text-sm text-amber-300 uppercase tracking-widest">Official Teaser &mdash; Dharwad</h3>
+                <button onclick="closeTrailer()" aria-label="Close trailer" class="p-1.5 rounded-lg text-stone-400 hover:text-white bg-stone-900 hover:bg-stone-800 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="aspect-video relative bg-black flex items-center justify-center">
+                <img src="Dharwad%20Stills/sadhanakeri-lake.svg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-70">
+                <div class="relative z-10 text-center px-6">
+                    <div class="mono text-[10px] uppercase tracking-[.3em] text-amber-300/80 mb-2">Teaser &bull; 2:08</div>
+                    <p class="cinzel text-2xl sm:text-4xl text-amber-400 tracking-widest">DHARWAD</p>
+                    <p class="text-[11px] text-stone-400 mt-3 mono uppercase tracking-widest">The singer becomes the soil</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-stone-900 border border-amber-600/50 text-amber-50 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span id="toast-message" class="text-xs font-medium">Notification</span>
+        </div>
+    </div>
+    <script>
+    const SLIDES = [
+        { src: "Dharwad%20Stills/college-arches.svg", alt: "Karnataka College archway at dawn",
+          cap: "Chapter 2 &mdash; Karnataka College archway, basalt and morning light" },
+        { src: "Dharwad%20Stills/red-earth.svg", alt: "Aerial red-earth fields around Dharwad",
+          cap: "Chapter 1 &mdash; The Hubli&ndash;Dharwad bypass and the red soil of the plateau" },
+        { src: "Dharwad%20Stills/sadhanakeri-lake.svg", alt: "Sadhanakeri lake at dusk",
+          cap: "Chapter 4 &mdash; Sadhanakeri lake at dusk, where the water keeps the sound" },
+        { src: "Dharwad%20Stills/gandhi-chowk.svg", alt: "Cassette and radio shop in Gandhi Chowk",
+          cap: "Chapter 6 &mdash; Gandhi Chowk, a shop of reels, dust and old frequencies" },
+        { src: "Mass-Q-Rade-Book-Covers/dharwad-poster.svg", alt: "Dharwad film poster",
+          cap: "The poster &mdash; one arch, one field, one figure walking into ochre" }
+    ];
+
+    const CHAPTERS = [
+        { n: 1, act: "Act I &middot; The Arrival", title: "The Arrival at Hubli-Dharwad Bypass", blocks: [
+            { t: "slug", v: "EXT. HUBLI-DHARWAD BYPASS - MORNING" },
+            { t: "act", v: "A state transport bus exhales at the shoulder of the highway. Red dust settles on the neem leaves. ANANT (24) steps down with one bag and a recorder he does not yet know how to use." },
+            { t: "d", c: "ANANT", l: "Twenty-two hours, and the air still smells of iron. Nobody tells you the earth has a colour like a held breath." },
+            { t: "act", v: "He walks toward the town, notebook open at the first blank page. Behind him, the bus pulls away, and the dust closes the road like a sentence." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 2, act: "Act I &middot; The Archway", title: "The Karnataka College Archway", blocks: [
+            { t: "slug", v: "EXT. KARNATAKA COLLEGE - DAY" },
+            { t: "act", v: "Basalt arches, cut a century ago, throw shadows that look carved rather than cast. Anant passes beneath them, footsteps doubling in the stone." },
+            { t: "act", v: "An empty hostel room: one cot, one window, a wardrobe with a notebook left behind in 1995. The name inside the cover has been scratched out but not erased." },
+            { t: "d", c: "ANANT", p: "(reading the cover)", l: "Somebody stayed here and wrote nothing. Or wrote everything and took it away." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 3, act: "Act I &middot; Archives", title: "The Library of Forgotten Scripts", blocks: [
+            { t: "slug", v: "INT. UNIVERSITY LIBRARY - MANUSCRIPT ROOM - DAY" },
+            { t: "act", v: "Dust in slanted light. Palm-leaf manuscripts stacked in cloth bindings. PROFESSOR SHRIPAD (60s) looks up without surprise, as though he had been expecting this particular student for years." },
+            { t: "d", c: "PROFESSOR SHRIPAD", l: "You are late by about four decades. The room has been keeping your seat warm." },
+            { t: "d", c: "ANANT", l: "I came to study the folk recordings. The department said you had the originals." },
+            { t: "d", c: "PROFESSOR SHRIPAD", l: "The department says a great many things. The originals are not a department. They are a habit of listening." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 4, act: "Act I &middot; The Lake", title: "The Sadhanakeri Evening", blocks: [
+            { t: "slug", v: "EXT. SADHANAKERI LAKE - SUNSET" },
+            { t: "act", v: "The water turns the colour of beaten brass. Anant walks the stone edge alone, recorder in hand, then stops: a voice, unhurried, coming from the steps below." },
+            { t: "d", c: "KAMALA", p: "(singing, to nobody)", l: "&hellip;the river takes the name, the name takes the river&hellip;" },
+            { t: "act", v: "He does not move. The song ends. The lake holds the last note a half-second longer than the singer did." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 5, act: "Act I &middot; The Voice", title: "The Voice by the Water", blocks: [
+            { t: "slug", v: "EXT. SADHANAKERI STEPS - CONTINUOUS" },
+            { t: "act", v: "KAMALA (23) sits with her feet on the second step, not quite touching the water. She does not turn around." },
+            { t: "d", c: "KAMALA", l: "You've been standing there for eleven minutes. That's either respect or a very slow decision." },
+            { t: "d", c: "ANANT", l: "I didn't want to break it." },
+            { t: "d", c: "KAMALA", l: "You can't. The lake already has it. That's what it's for." },
+            { t: "act", v: "She finally looks at him, and at the recorder, and something in her expression closes like a door left politely ajar." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 6, act: "Act II &middot; The Shop", title: "The Peddler of Cassettes", blocks: [
+            { t: "slug", v: "INT. GANDHI CHOWK MUSIC SHOP - DAY" },
+            { t: "act", v: "Reel-to-reel machines stacked to the ceiling, each tagged in a different decade's handwriting. THE PEDDLER (70s) winds a reel with his eyes closed, listening to the room rather than the tape." },
+            { t: "d", c: "THE PEDDLER", l: "Folk recordings, you said. Everyone says folk. Nobody asks which year the folk was recorded in." },
+            { t: "d", c: "ANANT", l: "Which year?" },
+            { t: "d", c: "THE PEDDLER", l: "The year the singer was hungry. That's the year you can hear." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 7, act: "Act II &middot; The Signal", title: "The Midnight Broadcast", blocks: [
+            { t: "slug", v: "INT. HOSTEL ROOM - NIGHT" },
+            { t: "act", v: "Anant scans the dial past the usual stations. At the far end, a frequency no listing mentions: a chorus, distant, recorded on equipment older than the country." },
+            { t: "d", c: "RADIO VOICE", p: "(through static)", l: "&hellip;this is not a request programme. This is a repetition. Quit India. Quit India. Quit&mdash;" },
+            { t: "act", v: "The signal cuts. The room is ordinary again. On the recorder, though, the tape is still running, and the chorus is still there." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 8, act: "Act II &middot; The Peda", title: "The Peda Stall on the Corner", blocks: [
+            { t: "slug", v: "EXT. SWEET STALL - AFTERNOON" },
+            { t: "act", v: "Warm peda on a steel tray, ghee shining. HANUMANTHA (60s) hands one over before Anant can ask the price." },
+            { t: "d", c: "HANUMANTHA", l: "Bendre used to stand right there. Not for the sweet. For the argument. He said a town that argues well will sing well." },
+            { t: "d", c: "ANANT", l: "And did it?" },
+            { t: "d", c: "HANUMANTHA", l: "Ask the lake. It's the only one who never left the conversation." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 9, act: "Act II &middot; Translation", title: "The Translation of Grief", blocks: [
+            { t: "slug", v: "EXT. COLLEGE STEPS - EVENING" },
+            { t: "act", v: "Kamala turns the recorder over in her hands, reading it like a strange instrument." },
+            { t: "d", c: "KAMALA", l: "You want to translate the songs. Don't. A song is not a sentence that lost its way." },
+            { t: "d", c: "ANANT", l: "Then what is it?" },
+            { t: "d", c: "KAMALA", l: "A tectonic plate. It moves a millimetre a year and one morning the whole town is somewhere else." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 10, act: "Act II &middot; Storm", title: "The Storm over the Malnad Border", blocks: [
+            { t: "slug", v: "EXT. UNIVERSITY DISTRICT - NIGHT" },
+            { t: "act", v: "The monsoon arrives like a decision. Power fails across the district; the hostels go dark one block at a time. Candles appear in windows." },
+            { t: "act", v: "Anant finds Kamala under the arch, soaked, laughing at nothing. Thunder rolls down from the Malnad hills and the stone arches answer it back." },
+            { t: "d", c: "KAMALA", l: "Listen. That's the whole archive. Every storm that ever came through here is still in the rock." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 11, act: "Act III &middot; The Well", title: "The Manuscript in the Well", blocks: [
+            { t: "slug", v: "EXT. OLD WELL - DAY" },
+            { t: "act", v: "Behind the college, a dry well sealed with a slab. Under the slab: an oilcloth bundle of palm leaves, poetry in a hand nobody in the department recognises." },
+            { t: "d", c: "PROFESSOR SHRIPAD", p: "(very quietly)", l: "I looked for this for thirty-one years. It was four hundred metres from my desk." },
+            { t: "d", c: "ANANT", l: "Who wrote it?" },
+            { t: "d", c: "PROFESSOR SHRIPAD", l: "People who assumed they would be forgotten. That is the most optimistic thing a writer can do." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 12, act: "Act III &middot; Echoes", title: "The Dialogue of Echoes", blocks: [
+            { t: "slug", v: "INT. COLLEGE PILLAR HALL - NIGHT" },
+            { t: "act", v: "Anant sets the recorder between two basalt pillars. Kamala sings a single line, then stops. He plays it back. The pillars return it altered: a third voice that neither of them sang." },
+            { t: "d", c: "KAMALA", l: "Play it again." },
+            { t: "d", c: "ANANT", l: "It's the same recording." },
+            { t: "d", c: "KAMALA", l: "It isn't. The building is answering." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 13, act: "Act III &middot; The Bus", title: "The Departure of the Bus", blocks: [
+            { t: "slug", v: "EXT. BUS STAND - DAWN" },
+            { t: "act", v: "The same state transport bus idles at the stand, door open. Anant stands with his bag at his feet, ticket in hand, not moving." },
+            { t: "d", c: "THE PEDDLER", p: "(from the tea stall)", l: "It waits eleven minutes. It has waited eleven minutes for forty years. It can wait eleven more." },
+            { t: "d", c: "ANANT", l: "And if I get on?" },
+            { t: "d", c: "THE PEDDLER", l: "Then you'll hear this town in every other town. Most people do. That's why they call it a cradle." },
+            { t: "act", v: "The door closes. The bus leaves without him." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 14, act: "Act III &middot; Festival", title: "The Convergence at the Crossroads", blocks: [
+            { t: "slug", v: "EXT. SOMESHWARA TEMPLE - NIGHT" },
+            { t: "act", v: "Festival lights. Drummers whose rhythms are older than the temple's outer wall. Anant records from the edge until Kamala pulls him into the circle." },
+            { t: "d", c: "KAMALA", p: "(shouting over the drums)", l: "You can't archive this standing outside it!" },
+            { t: "d", c: "ANANT", l: "I'm archiving it!" },
+            { t: "d", c: "KAMALA", l: "Then dance, archivist." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 15, act: "Act III &middot; Frequency", title: "The Unbroken Line", blocks: [
+            { t: "slug", v: "EXT. TEMPLE GATE - PRE-DAWN" },
+            { t: "act", v: "The last bell rings out over the highway. A truck passes; the hum of the road and the tail of the bell settle into the same note." },
+            { t: "d", c: "ANANT", p: "(into the recorder, whispering)", l: "Nineteen forty-two and twenty twenty-six, same frequency. The line was never broken. We just stopped standing where it lands." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 16, act: "Act IV &middot; The Notebook", title: "The Rewriting", blocks: [
+            { t: "slug", v: "INT. HOSTEL ROOM - NIGHT" },
+            { t: "act", v: "The 1995 notebook is open on the desk. New entries have appeared in Anant's own handwriting: dates he has not lived yet, names he has not met." },
+            { t: "d", c: "ANANT", p: "(reading)", l: "&lsquo;The lake will be low in March. Do not record the song twice.&rsquo; I didn't write this." },
+            { t: "act", v: "He turns the page. The next line is being written as he watches, ink still wet." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 17, act: "Act IV &middot; Silence", title: "The Silence of the Archives", blocks: [
+            { t: "slug", v: "INT. MANUSCRIPT ROOM - DAY" },
+            { t: "act", v: "The room is empty. The palm leaves are gone. On the desk, a reel-to-reel machine turns, spooling silence through the heads." },
+            { t: "d", c: "ANANT", p: "(to himself)", l: "Professor? Professor Shripad?" },
+            { t: "act", v: "The only answer is the air moving through the empty shelves, and under it, very faintly, the eleven-beat phrase from the lake." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 18, act: "Act IV &middot; Duet", title: "The Duet", blocks: [
+            { t: "slug", v: "EXT. SADHANAKERI LAKE - DAWN" },
+            { t: "act", v: "Mist lifting off the water. Kamala begins; Anant, who has never sung in his life, answers. Their voices meet in the middle and the lake returns both." },
+            { t: "d", c: "KAMALA", l: "You're flat." },
+            { t: "d", c: "ANANT", l: "The lake doesn't seem to mind." },
+            { t: "d", c: "KAMALA", p: "(smiling)", l: "No. It doesn't." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 19, act: "Act IV &middot; Transmission", title: "The Final Transmission", blocks: [
+            { t: "slug", v: "EXT. GANDHI CHOWK - NIGHT" },
+            { t: "act", v: "Every radio in the square is on, tuned to nothing, and all of them say the same sentence at the same moment." },
+            { t: "d", c: "RADIO VOICE", l: "The singer becomes the soil. The soil becomes the song. This has always been the arrangement." },
+            { t: "act", v: "Anant stands in the middle of the square with the recorder running. For once, he does not take a note." },
+            { t: "trans", v: "CUT TO:" }
+        ]},
+        { n: 20, act: "Act IV &middot; Fade", title: "Fade to Red Earth", blocks: [
+            { t: "slug", v: "EXT. HIGHWAY - LATE AFTERNOON" },
+            { t: "act", v: "Anant sets the recorder down on a station bench, presses record, and walks toward the highway. The red earth takes the light and gives back ochre." },
+            { t: "d", c: "KAMALA", p: "(off screen, gentle)", l: "You're leaving it running." },
+            { t: "d", c: "ANANT", p: "(not turning)", l: "Somebody has to keep listening." },
+            { t: "act", v: "The camera holds on the recorder, the bench, the dust. Then the ochre takes the frame." },
+            { t: "trans", v: "FADE TO RED EARTH." },
+            { t: "trans", v: "THE END" }
+        ]}
+    ];
+
+    const KEY = "dharwad-portal-v1";
+    let state = { slide: 0, chapter: 0, playing: true };
+    try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
+    function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+    /* ---------------- gallery ---------------- */
+    let timer = null;
+
+    function renderGallery() {
+        const img = document.getElementById("slider-image");
+        const s = SLIDES[state.slide];
+        img.classList.add("is-hidden");
+        setTimeout(() => {
+            img.src = s.src; img.alt = s.alt;
+            document.getElementById("slider-caption").innerHTML = s.cap;
+            img.classList.remove("is-hidden");
+        }, 180);
+        document.getElementById("slide-count").textContent = `${state.slide + 1} / ${SLIDES.length}`;
+        document.getElementById("dots-container").innerHTML = SLIDES.map((_, i) =>
+            `<button onclick="goToSlide(${i})" aria-label="Slide ${i + 1}" class="w-3 h-3 rounded-full transition ${i === state.slide ? "bg-amber-500 scale-110" : "bg-stone-700 hover:bg-stone-600"}"></button>`).join("");
+        document.getElementById("thumbs").innerHTML = SLIDES.map((sl, i) =>
+            `<button onclick="goToSlide(${i})" class="rounded overflow-hidden border ${i === state.slide ? "border-amber-500" : "border-stone-800 hover:border-stone-600"} transition">
+                <img src="${sl.src}" alt="" aria-hidden="true" loading="lazy" class="w-full h-12 sm:h-16 object-cover"></button>`).join("");
+        document.getElementById("autoplay-btn").textContent = state.playing ? "Pause slides" : "Play slides";
+    }
+
+    function goToSlide(i) { state.slide = (i + SLIDES.length) % SLIDES.length; save(); renderGallery(); restartTimer(); }
+    function nextSlide() { goToSlide(state.slide + 1); }
+    function prevSlide() { goToSlide(state.slide - 1); }
+    function toggleAutoplay() { state.playing = !state.playing; save(); renderGallery(); restartTimer(); }
+
+    function restartTimer() {
+        clearInterval(timer);
+        if (state.playing) timer = setInterval(() => { state.slide = (state.slide + 1) % SLIDES.length; save(); renderGallery(); }, 6000);
+    }
+
+    /* ---------------- chapters ---------------- */
+    function renderChapterGrid() {
+        document.getElementById("chapter-grid").innerHTML = CHAPTERS.map((ch, i) =>
+            `<button onclick="goToChapter(${i})" class="p-2 rounded text-xs font-semibold transition ${i === state.chapter ? "bg-amber-700 text-stone-950" : "bg-stone-800 hover:bg-amber-800/60 text-amber-200"}">Ch ${ch.n}</button>`).join("");
+        document.getElementById("chapter-dots").innerHTML = CHAPTERS.map((_, i) =>
+            `<span class="w-1.5 h-1.5 rounded-full ${i === state.chapter ? "bg-amber-500" : "bg-stone-700"}"></span>`).join("");
+    }
+
+    function renderChapter() {
+        const ch = CHAPTERS[state.chapter];
+        const body = ch.blocks.map(b => {
+            if (b.t === "slug") return `<div class="sp-slug">${b.v}</div>`;
+            if (b.t === "act") return `<p class="sp-act">${b.v}</p>`;
+            if (b.t === "trans") return `<div class="sp-trans">${b.v}</div>`;
+            return `<div class="sp-char">${b.c}${b.p ? " " + b.p : ""}</div><p class="sp-line">${b.l}</p>`;
+        }).join("");
+        const el = document.getElementById("chapter-content");
+        el.classList.remove("fade-in");
+        void el.offsetWidth;
+        el.classList.add("fade-in");
+        el.innerHTML = `<div class="flex flex-wrap items-end justify-between gap-2 border-b border-stone-800 pb-3 mb-4">
+                <div>
+                    <div class="mono text-[10px] uppercase tracking-[.25em] text-amber-600">${ch.act}</div>
+                    <h3 class="cinzel text-xl sm:text-2xl text-amber-200 mt-1">Chapter ${ch.n} &mdash; ${ch.title}</h3>
+                </div>
+                <span class="mono text-[10px] text-stone-500 uppercase tracking-widest">${ch.n} / 20</span>
+            </div>${body}`;
+        document.getElementById("chapter-status").textContent = `Chapter ${ch.n} of 20`;
+        document.getElementById("prev-chapter").disabled = state.chapter === 0;
+        document.getElementById("next-chapter").disabled = state.chapter === CHAPTERS.length - 1;
+    }
+
+    function goToChapter(i) {
+        state.chapter = Math.max(0, Math.min(CHAPTERS.length - 1, i));
+        save(); renderChapterGrid(); renderChapter();
+    }
+    function changeChapter(d) { goToChapter(state.chapter + d); }
+
+    /* ---------------- modal, toast ---------------- */
+    function openTrailer() { const m = document.getElementById("trailer-modal"); m.classList.remove("hidden"); m.classList.add("flex"); }
+    function closeTrailer() { const m = document.getElementById("trailer-modal"); m.classList.add("hidden"); m.classList.remove("flex"); }
+    document.getElementById("trailer-modal").addEventListener("click", e => { if (e.target.id === "trailer-modal") closeTrailer(); });
+
+    let toastTimer;
+    function toast(msg) {
+        const box = document.getElementById("toast");
+        document.getElementById("toast-message").textContent = msg;
+        box.classList.remove("translate-y-20", "opacity-0");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => box.classList.add("translate-y-20", "opacity-0"), 3000);
+    }
+
+    document.addEventListener("keydown", e => {
+        if (/input|select|textarea/i.test(document.activeElement.tagName)) return;
+        if (e.key === "Escape") closeTrailer();
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    renderGallery();
+    renderChapterGrid();
+    renderChapter();
+    restartTimer();
+    </script>
+</body>
+</html>

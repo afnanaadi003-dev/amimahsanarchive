@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="The basalt archway of Karnataka College, Dharwad">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d1c0b"/><stop offset="1" stop-color="#0f0a07"/></linearGradient>
+<linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c4a16"/><stop offset="1" stop-color="#2a1208"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#s)"/>
+<circle cx="600" cy="330" r="240" fill="#ffbe72" opacity=".2"/>
+<g fill="#120c08">
+<path d="M240 675V330c0-108 100-186 220-186s220 78 220 186v345h-74V336c0-70-64-122-146-122s-146 52-146 122v339z"/>
+<rect x="100" y="150" width="52" height="525"/><rect x="1048" y="150" width="52" height="525"/>
+<path d="M100 150h1000l-30-46H130z"/>
+</g>
+<path d="M240 675V330c0-108 100-186 220-186s220 78 220 186v345" fill="none" stroke="#e8b878" stroke-width="2" opacity=".5"/>
+<g stroke="#8a5a2b" stroke-width="1.2" opacity=".5" fill="none"><path d="M330 675V336c0-58 52-100 130-100s130 42 130 100v339"/><path d="M286 470h628M286 560h628"/></g>
+<g fill="#0a0705"><rect x="100" y="250" width="52" height="18"/><rect x="100" y="360" width="52" height="18"/><rect x="100" y="470" width="52" height="18"/><rect x="1048" y="250" width="52" height="18"/><rect x="1048" y="360" width="52" height="18"/><rect x="1048" y="470" width="52" height="18"/></g>
+<path d="M0 600h1200v75H0z" fill="url(#f)"/>
+<path d="M0 600h1200" stroke="#e8b878" stroke-width="2" opacity=".45"/>
+<g fill="#0b0704"><circle cx="640" cy="596" r="9"/><path d="M631 606h18l5 44h-11l-4-24-4 24h-11z"/></g>
+<rect x="16" y="16" width="1168" height="643" fill="none" stroke="#d9a24a" stroke-width="1" opacity=".3"/>
+</svg>
