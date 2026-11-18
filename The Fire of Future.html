@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper" data-font="serif">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fire of Future — A Book by Amim Ahsan</title>
+<meta name="description" content="The Fire of Future — a research book by Amim Ahsan on the fuels that come after oil: solar, hydrogen, storage, nuclear, synthetic fuels, synthetic biology, quantum energy and fusion. Seventeen chapters in five reading themes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ui:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --read-size:1.135rem;
+  --read-leading:1.95;
+  --measure:68ch;
+  --radius:18px;
+}
+html[data-theme="paper"]{
+  --bg:#faf8f3; --bg-deep:#f1ece1; --paper:#fffdf8; --paper-edge:#eee7d9;
+  --ink:#2d2a25; --ink-soft:#514b41; --muted:#7a7264; --accent:#9a5b34;
+  --accent-soft:#f1e3d6; --rule:#e2d9c9; --shadow:0 26px 60px -34px rgba(74,55,30,.38);
+  --glow:rgba(154,91,52,.10);
+}
+html[data-theme="sand"]{
+  --bg:#f2e9d7; --bg-deep:#e9dcc3; --paper:#fbf4e4; --paper-edge:#e6d7b8;
+  --ink:#3a3125; --ink-soft:#574b38; --muted:#857258; --accent:#8a5726;
+  --accent-soft:#efe0c4; --rule:#ddcba9; --shadow:0 26px 60px -34px rgba(80,58,25,.4);
+  --glow:rgba(138,87,38,.10);
+}
+html[data-theme="sage"]{
+  --bg:#eaeFE9; --bg-deep:#dfe8dc; --paper:#f6faf3; --paper-edge:#dce6d7;
+  --ink:#253228; --ink-soft:#414f43; --muted:#6c7b6e; --accent:#4e7359;
+  --accent-soft:#e0ebdf; --rule:#d2ded0; --shadow:0 26px 60px -34px rgba(42,66,48,.3);
+  --glow:rgba(78,115,89,.10);
+}
+html[data-theme="dusk"]{
+  --bg:#211e1a; --bg-deep:#191713; --paper:#2a2621; --paper-edge:#38322b;
+  --ink:#e6dfd1; --ink-soft:#cfc6b5; --muted:#a39a8a; --accent:#d3a469;
+  --accent-soft:#3a3228; --rule:#3d372f; --shadow:0 30px 70px -30px rgba(0,0,0,.75);
+  --glow:rgba(211,164,105,.10);
+}
+html[data-theme="midnight"]{
+  --bg:#121722; --bg-deep:#0c1119; --paper:#1a202c; --paper-edge:#28303d;
+  --ink:#d9e0ea; --ink-soft:#bfc9d7; --muted:#8e9caf; --accent:#8fb8cb;
+  --accent-soft:#243040; --rule:#2a3442; --shadow:0 30px 70px -30px rgba(0,0,0,.8);
+  --glow:rgba(143,184,203,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--ui);
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  transition:background-color .45s ease,color .45s ease;
+  background-image:radial-gradient(900px 500px at 12% -6%,var(--glow),transparent 70%),radial-gradient(700px 420px at 96% 8%,var(--glow),transparent 72%);
+  background-attachment:fixed;
+}
+body.reading .landing{display:none}
+body:not(.reading) .reader{display:none}
+a{color:inherit}
+button{font-family:inherit}
+::selection{background:var(--accent);color:var(--paper)}
+
+.topbar{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);transition:background-color .45s,border-color .45s}
+.progress-line{height:3px;background:transparent}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,#e8c79a));transition:width .5s ease}
+.topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:9px 18px;min-height:58px}
+.back-link{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--muted);white-space:nowrap;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+.back-link svg{width:14px;height:14px}
+.topbar-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;text-align:center;color:var(--ink)}
+.topbar-title em{color:var(--accent);font-style:italic}
+.controls{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.contents-link{border:1px solid var(--rule);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:7px 13px;font-size:11.5px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.contents-link:hover{border-color:var(--accent);color:var(--accent)}
+.swatches{display:flex;align-items:center;gap:6px;padding:3px 5px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.swatch{width:19px;height:19px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;position:relative;transition:transform .18s,box-shadow .18s}
+.swatch:hover{transform:scale(1.12)}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--accent)}
+.swatch.paper{background:#fbf8ef;border-color:#d9cfba}
+.swatch.sand{background:#f0e1c6;border-color:#cbb08a}
+.swatch.sage{background:#dfead9;border-color:#9fb79f}
+.swatch.dusk{background:#2c2722;border-color:#6b5e4c}
+.swatch.midnight{background:#1a2231;border-color:#4c5f75}
+.font-tools{display:flex;align-items:center;gap:2px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);padding:3px}
+.font-tools button{border:0;background:transparent;color:var(--ink-soft);cursor:pointer;border-radius:999px;width:28px;height:25px;font-size:12px;display:grid;place-items:center;transition:background .18s,color .18s}
+.font-tools button:hover{background:var(--accent-soft);color:var(--accent)}
+.type-toggle{width:auto!important;padding:0 9px;font-size:10.5px;letter-spacing:.06em;font-weight:600}
+@media(max-width:900px){.topbar-title{display:none}.topbar-inner{gap:8px;justify-content:space-between}.controls{gap:6px}.back-link span{display:none}}
+@media(max-width:620px){.font-tools{display:none}.contents-link{padding:6px 10px}.swatch{width:17px;height:17px}.topbar-inner{padding:7px 12px;min-height:52px}}
+
+.landing{max-width:1160px;margin:0 auto;padding:34px 20px 70px}
+.hero-card{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--paper-edge);border-radius:26px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:background-color .45s,border-color .45s}
+.hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 300px at 100% 0%,var(--glow),transparent 70%);pointer-events:none}
+.cover-col{position:relative;z-index:1;display:flex;justify-content:center}
+.cover-frame{position:relative;width:100%;max-width:286px;border-radius:12px;overflow:hidden;background:var(--bg-deep);box-shadow:0 2px 0 rgba(255,255,255,.25) inset,0 24px 44px -20px rgba(30,20,10,.55),0 0 0 1px rgba(0,0,0,.08);transform:perspective(1100px) rotateY(2deg) rotateX(1deg);transition:transform .5s ease,box-shadow .5s ease}
+.cover-frame:hover{transform:perspective(1100px) rotateY(0) rotateX(0) translateY(-5px);box-shadow:0 32px 60px -24px rgba(30,20,10,.65),0 0 0 1px rgba(0,0,0,.08)}
+.cover-frame img{display:block;width:100%;height:auto}
+.cover-spine{position:absolute;left:0;top:0;bottom:0;width:9px;background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(255,255,255,.07));pointer-events:none}
+.hero-copy{position:relative;z-index:1;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.7}
+.hero-copy h1{font-family:var(--display);font-weight:600;font-size:clamp(2.8rem,6vw,4.6rem);line-height:.94;letter-spacing:-.012em;margin:0 0 4px;color:var(--ink)}
+.hero-copy h1 em{display:block;font-style:italic;color:var(--accent);padding-left:2px;font-size:.94em;letter-spacing:.01em}
+.byline{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:18px 0 0;font-weight:500}
+.byline b{color:var(--ink-soft);font-weight:600}
+.tagline{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.98rem;margin:15px 0 0}
+.blurb{font-family:var(--serif);font-size:1.01rem;line-height:1.8;color:var(--ink-soft);margin:22px 0 0;max-width:60ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.stat{border:1px solid var(--rule);background:var(--bg);border-radius:10px;padding:8px 12px;min-width:86px}
+.stat b{display:block;font-family:var(--serif);font-size:15px;color:var(--ink);font-weight:500;line-height:1.3}
+.stat span{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{appearance:none;border:1px solid transparent;border-radius:999px;padding:12px 22px;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .18s,box-shadow .18s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--paper);box-shadow:0 12px 24px -14px color-mix(in srgb,var(--accent) 80%,black)}
+.btn-primary:hover{box-shadow:0 16px 30px -12px color-mix(in srgb,var(--accent) 70%,black)}
+.btn-ghost{background:transparent;border-color:var(--rule);color:var(--ink-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn svg{width:14px;height:14px}
+.theme-note{display:flex;align-items:center;gap:7px;margin-top:20px;color:var(--muted);font-size:11px;letter-spacing:.02em}
+.theme-note .dot-row{display:inline-flex;gap:3px}
+.theme-note i{width:9px;height:9px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.08)}
+
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin:64px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.section-head h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;margin:0;color:var(--ink)}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:12.5px;max-width:52ch}
+.section-head .count{font-family:var(--ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--rule);border-radius:999px;padding:5px 11px;background:var(--paper)}
+.act-block{margin-bottom:30px}
+.act-block h3{display:flex;align-items:center;gap:12px;font-family:var(--ui);font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.act-block h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+.act-block h3 span{color:var(--muted);font-weight:400;letter-spacing:.08em;text-transform:none;font-size:10.5px}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.toc-item{display:flex;align-items:baseline;gap:12px;text-decoration:none;padding:11px 14px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--ink-soft);font-family:var(--serif);font-size:.94rem;line-height:1.45;transition:background .18s,border-color .18s,color .18s,transform .18s;cursor:pointer;text-align:left;width:100%}
+.toc-item:hover{background:var(--paper);border-color:var(--rule);color:var(--ink);transform:translateX(2px)}
+.toc-num{font-family:var(--ui);font-size:10px;letter-spacing:.06em;color:var(--accent);min-width:20px;font-variant-numeric:tabular-nums;font-weight:600}
+.toc-item .toc-title{flex:1;min-width:0}
+.toc-item .toc-arrow{opacity:0;color:var(--accent);font-size:11px;transition:opacity .18s}
+.toc-item:hover .toc-arrow{opacity:1}
+
+.reader{max-width:var(--measure);margin:0 auto;padding:46px 22px 40px}
+.reader .chapter{display:none}
+.reader .chapter.active{display:block;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.chapter-kicker{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:34px;font-family:var(--ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.chapter-kicker .accent{color:var(--accent);font-weight:600}
+.chapter h2{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4.6vw,3.15rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 6px;color:var(--ink)}
+.chapter-sub{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.95rem;margin:0 0 26px}
+.chapter-ornament{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:9px;letter-spacing:.4em;margin:0 0 34px;opacity:.75}
+.chapter-ornament::before,.chapter-ornament::after{content:"";height:1px;width:34px;background:var(--accent);opacity:.45}
+.chapter-body{font-family:var(--serif);font-size:var(--read-size);line-height:var(--read-leading);color:var(--ink-soft);letter-spacing:.003em;text-rendering:optimizeLegibility;hyphens:auto}
+html[data-font="sans"] .chapter-body{font-family:var(--ui);font-size:calc(var(--read-size) - .04rem);line-height:calc(var(--read-leading) - .08);letter-spacing:.002em}
+.chapter-body p{margin:0 0 1.22em;text-align:left}
+.chapter-body p+p{text-indent:1.35em;margin-top:-.35em}
+.chapter-body p.no-indent{text-indent:0}
+.chapter-body em{color:var(--ink);font-style:italic}
+.chapter-body .break{text-align:center;text-indent:0;color:var(--accent);letter-spacing:.5em;margin:1.9em 0;font-size:.8em;opacity:.7}
+.chapter-body .drop::first-letter{font-family:var(--display);float:left;font-size:3.35em;line-height:.78;padding:.06em .11em 0 0;color:var(--accent);font-weight:600}
+.chapter-body blockquote{margin:1.7em 0 1.7em 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);font-style:italic;color:var(--ink);opacity:.9}
+.chapter-body .letter{margin:1.8em 0;padding:20px 22px;background:var(--bg);border:1px solid var(--rule);border-radius:12px;font-size:.94em;line-height:1.85}
+.chapter-body .letter p{text-indent:0;margin-bottom:.9em}
+.chapter-body .letter p:last-child{margin-bottom:0}
+.chapter-body .list-block{font-family:var(--ui);font-size:.92em;line-height:2.05;margin:1.4em 0 1.7em;padding:18px 20px;border:1px solid var(--rule);border-radius:12px;background:var(--bg)}
+.chapter-body .list-block div{display:flex;gap:14px}
+.chapter-body .list-block b{color:var(--accent);font-weight:600;min-width:20px;font-variant-numeric:tabular-nums}
+.end-mark{text-align:center;color:var(--accent);letter-spacing:.5em;font-size:12px;margin:44px 0 10px;opacity:.65}
+.chapter-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--rule);margin-top:34px;padding-top:22px}
+.chapter-nav button{appearance:none;border:1px solid var(--rule);background:var(--paper);color:var(--ink-soft);border-radius:10px;padding:10px 15px;font-size:11px;letter-spacing:.04em;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .18s,color .18s}
+.chapter-nav button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.chapter-nav button:disabled{opacity:.35;cursor:not-allowed}
+.chapter-nav .contents-mid{border-color:transparent;background:transparent;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chapter-nav svg{width:13px;height:13px}
+
+.footer{border-top:1px solid var(--rule);margin-top:40px;padding:34px 20px 44px;text-align:center;color:var(--muted);font-size:11.5px}
+.footer .f-title{font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:6px}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.footer .f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:10px}
+
+@media(max-width:860px){.hero-card{grid-template-columns:1fr;gap:30px;padding:30px 24px}.cover-col{order:-1}.cover-frame{max-width:230px}.hero-copy{text-align:center}.eyebrow{justify-content:center}.blurb{margin-left:auto;margin-right:auto}.stats,.actions,.theme-note{justify-content:center}.toc-grid{grid-template-columns:1fr}.landing{padding-top:22px}}
+@media(max-width:620px){.hero-card{padding:24px 18px;border-radius:20px}.cover-frame{max-width:200px}.actions .btn{width:100%;justify-content:center}.reader{padding:32px 18px 34px}.chapter-kicker{font-size:9px;letter-spacing:.1em}.chapter-body{--read-size:1.06rem}.chapter-nav button{padding:9px 11px;font-size:10px}.section-head{margin-top:46px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.cover-frame{transform:none}}
+@media print{.topbar,.chapter-nav,.footer,.theme-note,.actions{display:none!important}.landing{display:none!important}body{background:#fff;color:#111}.reader .chapter{display:block!important;page-break-after:always}.chapter-body{font-size:11.5pt;line-height:1.6;color:#111}.chapter h2{color:#111}}
+</style>
+  <style>
+    .chapter-body .sub{font-family:var(--display);font-size:1.06em;font-weight:600;line-height:1.3;color:var(--ink);margin:2.2em 0 .85em;letter-spacing:.005em;text-indent:0}
+    .chapter-body .sub:first-child{margin-top:0}
+    .chapter-body .sub .sub-num{display:inline-block;min-width:2.1em;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+    .chapter-body .list-block{margin:1.3em 0 1.8em}
+    .chapter-body .list-block div{gap:12px}
+    .chapter-body .list-block b{min-width:16px;opacity:.75}
+    .chapter-body b{color:var(--ink);font-weight:600}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="progress-line"><div id="progressFill"></div></div>
+  <div class="topbar-inner">
+    <a class="back-link" href="index.html" aria-label="Back to the library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg>
+      <span>Library</span>
+    </a>
+    <button class="contents-link" onclick="showLanding()">Contents</button>
+    <div class="topbar-title">The Fire of <em>Future</em></div>
+    <div class="controls">
+      <div class="swatches" role="group" aria-label="Reading theme">
+        <button class="swatch paper" data-set-theme="paper" title="Paper white" aria-label="Paper white theme" aria-pressed="true"></button>
+        <button class="swatch sand" data-set-theme="sand" title="Warm sand" aria-label="Warm sand theme" aria-pressed="false"></button>
+        <button class="swatch sage" data-set-theme="sage" title="Soft sage" aria-label="Soft sage theme" aria-pressed="false"></button>
+        <button class="swatch dusk" data-set-theme="dusk" title="Dusk" aria-label="Dusk theme" aria-pressed="false"></button>
+        <button class="swatch midnight" data-set-theme="midnight" title="Midnight" aria-label="Midnight theme" aria-pressed="false"></button>
+      </div>
+      <div class="font-tools" role="group" aria-label="Text size">
+        <button onclick="stepFont(-1)" title="Smaller text" aria-label="Smaller text">A&minus;</button>
+        <button onclick="resetFont()" title="Reset text size" aria-label="Reset text size" style="font-size:10px">A</button>
+        <button onclick="stepFont(1)" title="Larger text" aria-label="Larger text">A+</button>
+        <button class="type-toggle" id="typeToggle" onclick="toggleType()" title="Switch between serif and sans-serif">Serif</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="landing" id="landing">
+  <section class="hero-card" aria-labelledby="bookTitle">
+    <div class="cover-col">
+      <div class="cover-frame">
+        <img src="Mass-Q-Rade-Book-Covers/the-fire-of-future.svg" alt="The Fire of Future book cover — a small flame held above a dark horizon of solar panels and power lines" width="852" height="1280">
+        <span class="cover-spine" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">Science &amp; Energy &middot; A Research Book</div>
+      <h1 id="bookTitle">The Fire of <em>Future</em></h1>
+      <p class="byline">by <b>Amim Ahsan</b> &middot; writing under the pen name Amimul Ahsan</p>
+      <p class="tagline">The fire of the past was combustion. The fire of the future is light.</p>
+      <p class="blurb">
+        The century of easy oil is closing. What replaces it is not one fuel but a dozen unfinished arguments: sunlight turned into chemistry, hydrogen carried across oceans, batteries holding the evening, reactors small enough to ship, fuel brewed by engineered cells, and a fusion reaction we have been chasing for seventy years. This book walks through them one at a time — the physics, the cost, the promise, and the reasons each could still fail — and asks what kind of civilisation is left when the flame no longer comes out of the ground.
+      </p>
+      <div class="stats" aria-label="Book details">
+        <div class="stat"><b>17</b><span>Chapters</span></div>
+        <div class="stat"><b id="totalWords">&mdash;</b><span>Words</span></div>
+        <div class="stat"><b id="readTime">&mdash;</b><span>Reading time</span></div>
+        <div class="stat"><b>17</b><span>Fuel frontiers</span></div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="showChapter(1)">
+          Begin reading
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a class="btn btn-ghost" href="#contents">Table of contents</a>
+      </div>
+      <p class="theme-note">
+        <span class="dot-row" aria-hidden="true"><i style="background:#fbf8ef"></i><i style="background:#f0e1c6"></i><i style="background:#dfead9"></i><i style="background:#2c2722"></i><i style="background:#1a2231"></i></span>
+        Paper-white by default &middot; soft sepia, sage, dusk and midnight themes &middot; adjustable type
+      </p>
+    </div>
+  </section>
+
+  <section id="contents" aria-labelledby="contentsHeading">
+    <div class="section-head">
+      <div>
+        <h2 id="contentsHeading">Contents</h2>
+        <p>Seventeen chapters, from the last barrel of oil to the energy architecture of other worlds.</p>
+      </div>
+      <span class="count">17 chapters</span>
+    </div>
+
+    <div class="act-block">
+      <h3>Seventeen Fuels <span>The fire after oil &middot; 1&ndash;17</span></h3>
+      <div class="toc-grid">
+        <button class="toc-item" onclick="showChapter(1)"><span class="toc-num">01</span><span class="toc-title">The Energy Abyss — Earth's Last Fossil Fuel</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(2)"><span class="toc-num">02</span><span class="toc-title">Solar Alchemy — Harnessing Pure Sunlight</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(3)"><span class="toc-num">03</span><span class="toc-title">Hydrogen Horizons — The Invisible Flame</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(4)"><span class="toc-num">04</span><span class="toc-title">The Battery Imperative — Storing the Lightning</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(5)"><span class="toc-num">05</span><span class="toc-title">Nuclear Renaissance — Between Promise and Peril</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(6)"><span class="toc-num">06</span><span class="toc-title">Hydrogen Horizon — Fuel of the Lightest Element</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(7)"><span class="toc-num">07</span><span class="toc-title">The Grid Reimagined — Smart, Decentralized, and Resilient</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(8)"><span class="toc-num">08</span><span class="toc-title">Beyond Earth — Energy Frontiers in Space</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(9)"><span class="toc-num">09</span><span class="toc-title">Synthetic Fuels — Engineering the Future of Combustion</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(10)"><span class="toc-num">10</span><span class="toc-title">The Hydrogen Horizon — The Smallest Molecule, the Biggest Promise</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(11)"><span class="toc-num">11</span><span class="toc-title">Nuclear Renaissance — Fission, Fusion, and the Quest for Infinite Power</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(12)"><span class="toc-num">12</span><span class="toc-title">Advanced Nuclear Fuels — Safe, Abundant, and Sustainable?</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(13)"><span class="toc-num">13</span><span class="toc-title">Space-Based Fuel Sources — Asteroids, Moons, and the Extraterrestrial Frontier</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(14)"><span class="toc-num">14</span><span class="toc-title">Synthetic Biology and Biofuels of the Next Century</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(15)"><span class="toc-num">15</span><span class="toc-title">Quantum Energy and the Zero-Point Revolution</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(16)"><span class="toc-num">16</span><span class="toc-title">Magnetoplasma and Controlled Fusion Breakthroughs</span><span class="toc-arrow">&rarr;</span></button>
+        <button class="toc-item" onclick="showChapter(17)"><span class="toc-num">17</span><span class="toc-title">Terraforming and the Energy Architecture of Interplanetary Civilizations</span><span class="toc-arrow">&rarr;</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="aboutHeading">
+    <div class="section-head">
+      <div>
+        <h2 id="aboutHeading">About this edition</h2>
+        <p>A reading room for a long argument about energy.</p>
+      </div>
+    </div>
+    <p class="blurb" style="max-width:78ch;margin-top:0">
+      <em>The Fire of Future</em> is a research book in seventeen chapters, written for readers who want the engineering and the politics in the same sentence. This edition gives the text room to breathe: a paper-white page by default, five low-glare themes, a choice of serif or sans-serif type, adjustable text size, and a remembered bookmark. Figures are given as they appear in the source chapters and are meant as orders of magnitude, not forecasts. Choose a theme from the palette above, then begin at Chapter One.
+    </p>
+  </section>
+</main>
+<main class="reader" id="reader">
+  <article class="chapter" id="chapter-1" data-num="1" data-title="The Energy Abyss — Earth's Last Fossil Fuel">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter One</span><span>01 / 17</span></div>
+    <h2>The Energy Abyss — Earth's Last Fossil Fuel</h2>
+    <p class="chapter-sub">Prologue to a crisis: what happens when the last drop is burned.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Prologue to a Crisis</h3>
+      <p class="drop">In the fading twilight of the twenty-first century, humanity stands at the precipice of an energy abyss. The Industrial Revolution — our first dance with mechanised power — was fuelled by coal and accelerated by oil. But in the blink of geological time, we have burned through what Earth took millions of years to produce. Fossil fuels, once seen as limitless and divine, are now finite relics of a reckless past. The once-celebrated "black gold" has become both poison and crutch. By 2050, over 85% of known petroleum reserves will have passed peak production. Even as extraction technology becomes more sophisticated and invasive, the returns diminish. Deep-sea drilling, shale fracking and arctic exploration are all pushing physical, financial and environmental limits. Yet the addiction persists. In many regions, oil is not just energy — it is identity, economy and geopolitical leverage. The world's largest nations, including the United States, China, Russia and India, continue to rely on fossil fuels for industrial heat, transport, chemical manufacturing and defence. Despite climate agreements, pledges and declarations, the withdrawal from fossil dependency has been sluggish and conflicted. But what happens when the last drop is burned? What happens when the machines stall, and the skies finally clear? This chapter explores not just the end of oil, but the psychological and infrastructural collapse it threatens. We examine the deep entanglement of civilisation with carbon-based fuels and begin to chart the course for a world that must survive beyond them.</p>
+      <h3 class="sub"><span class="sub-num">2</span>A Geological Perspective: Millions of Years in Minutes</h3>
+      <p>Petroleum, coal and natural gas are organic remnants — the compressed, chemically transformed detritus of prehistoric marine life and vegetation. They are the slow whisper of time, made over eons beneath heat, pressure and darkness. The process cannot be repeated within a human lifetime. Oil formation requires three key conditions:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Organic-rich source rock, typically marine sediment.</span></div>
+        <div><b>&mdash;</b><span>Sufficient burial depth and time, typically millions of years.</span></div>
+        <div><b>&mdash;</b><span>A proper thermal window of roughly 60–120°C to initiate kerogen-to-hydrocarbon conversion.</span></div>
+      </div>
+      <p>These fuels do not replenish. There is no regrowth, no renewable cycle. Every barrel burned is permanently removed from Earth's energetic inheritance. The oil boom of the twentieth century was built on <em>easy oil</em> — shallow, high-quality, low-sulphur crude found in geologically generous regions. But we have moved far past easy oil. Now, companies dig into tar sands, ultra-deep offshore wells and chemically intensive fracking fields to squeeze out low-yield hydrocarbons. According to the International Energy Agency, if we continue current trajectories, known conventional reserves will be depleted or economically unviable by 2075. Unconventional reserves may extend that by a few decades, but at vastly increased cost to climate, water and ecosystems. The bottom line: the clock is ticking, and the abyss is real.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Economic Implications: The Collapse Scenario</h3>
+      <p>The global economy is structurally built on cheap energy. Oil is not simply a product — it is a multiplier. It lubricates global logistics, powers farming equipment, enables air travel, and is embedded in the supply chains of nearly every material good. Remove oil, and you introduce chaos into food systems, medicine production, shipping, and even internet infrastructure, dependent as it is on diesel-powered data centres in many countries. A sudden or unmanaged depletion of fossil fuels could trigger:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Energy price hyperinflation.</span></div>
+        <div><b>&mdash;</b><span>Massive unemployment in oil-dependent sectors.</span></div>
+        <div><b>&mdash;</b><span>Transportation collapse.</span></div>
+        <div><b>&mdash;</b><span>National security breakdowns.</span></div>
+        <div><b>&mdash;</b><span>Civil unrest due to energy and food shortages.</span></div>
+      </div>
+      <p>In countries with petro-economies such as Venezuela, Iraq or Nigeria, the implications are existential. These states could implode socially and economically as the world moves away from oil. The resulting geopolitical instability might ripple across regions, drawing in alliances and military interventions. Economists term this phenomenon <em>the carbon crash</em> — an irreversible deflation of the oil-driven economy, leaving behind rusting infrastructure, abandoned wells and societal shock.</p>
+      <h3 class="sub"><span class="sub-num">4</span>The Climate Debt: Fossil Fuels as Ecological Time Bombs</h3>
+      <p>Burning fossil fuels emits CO₂, methane and other greenhouse gases. These have elevated Earth's atmospheric CO₂ concentration from 280 parts per million in pre-industrial times to over 420 ppm, leading to widespread climate disruption:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Rising sea levels.</span></div>
+        <div><b>&mdash;</b><span>Melting polar ice caps.</span></div>
+        <div><b>&mdash;</b><span>Desertification.</span></div>
+        <div><b>&mdash;</b><span>Ocean acidification.</span></div>
+        <div><b>&mdash;</b><span>Extreme weather events.</span></div>
+      </div>
+      <p>Every additional molecule of carbon burned deepens this crisis. The <em>carbon budget</em> — the maximum allowable emissions to keep warming below 1.5°C — is nearly exhausted. Continuing to extract and burn oil in a climate-constrained world is both ecological suicide and economic self-harm.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Psychological and Political Inertia</h3>
+      <p>Why, despite decades of warning, have we not escaped fossil fuel dependence? The answer is complex:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Economic lock-in.</b> Trillions are invested in existing infrastructure.</span></div>
+        <div><b>&mdash;</b><span><b>Political lobbying.</b> Fossil fuel companies exert massive influence.</span></div>
+        <div><b>&mdash;</b><span><b>Public convenience.</b> Cheap fuel sustains lifestyles and expectations.</span></div>
+        <div><b>&mdash;</b><span><b>Geopolitical strategy.</b> Energy independence is tied to national power.</span></div>
+      </div>
+      <p>Moreover, energy transitions in history — from wood to coal, coal to oil — took over fifty to a hundred years. We do not have that long this time. The transition must be forced, fast and global. This creates a paradox: we must build the future with the very fuel that is destroying it.</p>
+      <h3 class="sub"><span class="sub-num">6</span>The Concept of Energy Descent</h3>
+      <p>Many scientists now advocate for <em>energy descent</em> — a managed reduction of energy use per capita, combined with decarbonisation. The idea is not just substitution, replacing oil with solar or hydrogen, but rethinking our relationship with energy itself. This includes:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Localised economies.</span></div>
+        <div><b>&mdash;</b><span>Electrification of transport.</span></div>
+        <div><b>&mdash;</b><span>Circular manufacturing.</span></div>
+        <div><b>&mdash;</b><span>Regenerative agriculture.</span></div>
+        <div><b>&mdash;</b><span>Behavioural change in consumption.</span></div>
+      </div>
+      <p>But energy descent is politically toxic. It implies sacrifice, limits and redistribution. It threatens corporate profits and status-quo power dynamics. A realistic plan must therefore address both technical substitution and cultural transformation — a dual revolution.</p>
+      <h3 class="sub"><span class="sub-num">7</span>The Last Oil Projects: A Glimpse at the End</h3>
+      <p>Even as warnings mount, new oil projects continue: the Willow Project in Alaska, deep-sea exploration in the South China Sea, Arctic drilling licences in Russia. These are last-ditch attempts to squeeze out energy profit before the decline becomes irreversible. But each of these projects carries enormous environmental risk, has a breakeven price higher than market tolerance, and faces legal and social resistance. They represent the death throes of an industry that cannot imagine itself ending.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Pathways Beyond the Abyss</h3>
+      <p>The goal is not just to mourn oil, but to transcend it. The rest of this book explores the emerging fuel technologies and systems that can replace, decentralise and democratise energy. From fusion to synthetic biology, from solar chemicals to space mining — the science exists. What remains is scaling, political will and systemic redesign. The key principles are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Decentralisation.</b> Smaller, distributed fuel systems.</span></div>
+        <div><b>&mdash;</b><span><b>Sustainability.</b> Fuels that regenerate and recycle.</span></div>
+        <div><b>&mdash;</b><span><b>Resilience.</b> Systems that can survive climate chaos.</span></div>
+        <div><b>&mdash;</b><span><b>Equity.</b> Energy access for all, not just the wealthy.</span></div>
+      </div>
+      <p>The fire of the future must be clean, intelligent and just.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Final Reflections: Standing on the Brink</h3>
+      <p>We are not the first civilisation to burn through its resources. The Maya, the Mesopotamians, even the Roman Empire — each collapsed in part due to ecological overshoot. But we are the first global civilisation. Our collapse, if it comes, will be planetary. Or our transformation, if it succeeds, will mark the beginning of a new era in human evolution. The age of fossil fuel is ending. The abyss is before us. The fire of the future awaits.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Previous</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(2)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-2" data-num="2" data-title="Solar Alchemy — Harnessing Pure Sunlight">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Two</span><span>02 / 17</span></div>
+    <h2>Solar Alchemy — Harnessing Pure Sunlight</h2>
+    <p class="chapter-sub">One hour of sunlight carries more energy than the world uses in a year. The problem was never the light.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: A Star in Our Backyard</h3>
+      <p class="drop">Every second, the Sun releases more energy than humanity has consumed in all of history. In just one hour, Earth receives more solar energy than the entire planet uses in a year. Yet less than 3% of global energy comes directly from solar power. This discrepancy is not due to lack of light, but lack of infrastructure, materials and political foresight. Solar energy represents the most direct, abundant and cleanest form of energy available to us — a ceaseless nuclear fusion reaction only 93 million miles away, delivering light, heat and life itself. This chapter investigates how humanity can rise from the ashes of fossil fuel and build an energy regime based on sunlight. But more than panels and batteries, we explore the alchemy of solar: converting light into fuels, chemicals, structures and even intelligence.</p>
+      <h3 class="sub"><span class="sub-num">2</span>The Physics of Sunlight: Understanding the Source</h3>
+      <p>The Sun is a G-type main-sequence star, fusing hydrogen into helium at its core. Every square metre on Earth's surface receives, on average, about 1,366 watts of solar power before atmospheric losses. The important parameters are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Solar constant.</b> Approximately 1.366 kW/m², measured before the atmosphere.</span></div>
+        <div><b>&mdash;</b><span><b>Average insolation.</b> Roughly 250 W/m² after clouds, angle and weather.</span></div>
+        <div><b>&mdash;</b><span><b>Global solar availability.</b> More than 100,000 TW, against a global demand of about 20 TW.</span></div>
+      </div>
+      <p>Sunlight is composed of electromagnetic radiation across ultraviolet, visible and infrared bands. Modern solar technologies attempt to harvest this spectrum through three routes: photovoltaics, which convert light into electricity; solar thermal, which uses heat for steam and mechanical energy; and photoelectrochemistry, which generates hydrogen and fuels directly. The theoretical efficiency of solar collection is bounded by thermodynamic and material constraints — but practical deployment remains far from those ceilings.</p>
+      <h3 class="sub"><span class="sub-num">3</span>The Rise of Photovoltaics</h3>
+      <p>Photovoltaics represent the most widely recognised form of solar energy. A PV cell uses semiconductor materials, typically silicon, to absorb photons and liberate electrons, generating direct current. The key breakthroughs have been:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Monocrystalline silicon.</b> The highest efficiency, around 26% in the laboratory.</span></div>
+        <div><b>&mdash;</b><span><b>Perovskite materials.</b> Cheaper alternatives with rapidly rising promise.</span></div>
+        <div><b>&mdash;</b><span><b>Tandem cells.</b> Combining materials for broader spectrum capture.</span></div>
+        <div><b>&mdash;</b><span><b>Flexible organic PV.</b> For wearable and portable use.</span></div>
+      </div>
+      <p>Yet limitations persist. Sunlight is intermittent. Storage dependence is total, since a panel without a battery produces nothing at night. Land use and aesthetics complicate large-scale urban deployment. And material toxicity — cadmium, lead, rare earths — presents disposal challenges. The cost of PV has dropped more than 90% since 2010. Still, the transition requires trillions in grid updates, smart inverters and robust storage systems.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Solar Fuels: Liquid Light</h3>
+      <p>One of the most promising advances is the transformation of sunlight into chemical fuels — storable, transportable and scalable. This is solar alchemy. <b>Artificial photosynthesis.</b> Mimicking nature's strategy, artificial leaves and photoelectrochemical cells split water using sunlight to generate hydrogen gas, a clean-burning high-energy fuel, or methanol and syngas, liquid fuels synthesised from captured CO₂ and hydrogen. The challenges are real: catalysts must be cheap, stable and efficient; water availability and purity matter; and CO₂ capture must be integrated sustainably. <b>Solar thermochemical cycles.</b> These systems use high-temperature solar concentrators to drive redox reactions and split water or CO₂. The cerium oxide cycle, for example, produces syngas using concentrated solar heat at around 1,500°C. Such systems are promising for aviation fuel, space travel and industrial use, where batteries fall short.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Solar in the Desert: Scale and Opportunity</h3>
+      <p>Deserts receive the most intense solar insolation. Projects like Desertec proposed covering a fraction of the Sahara to power all of Europe. The advantages are obvious: high irradiance, low population density, vast unused land. The drawbacks are equally obvious: sandstorms damage panels, transmission infrastructure is expensive, and host regions are not always politically stable. Emerging solutions include agrophotovoltaics, which combine panels with crops or water condensation systems, and floating solar farms installed on lakes or oceans to reduce evaporation and use space twice. The <em>solar continent</em> idea — where Africa, Australia or the Middle East becomes a global power exporter — remains plausible, but contingent on peace, technology transfer and equitable agreements.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Beyond Panels: Embedded and Smart Solar</h3>
+      <p>The future of solar is invisible and intelligent. Panels will not remain rigid boxes on rooftops; they will be woven into the materials of our lives.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Solar textiles.</b> Clothing that charges phones, sensors or health monitors.</span></div>
+        <div><b>&mdash;</b><span><b>Transparent solar glass.</b> Windows that double as power sources.</span></div>
+        <div><b>&mdash;</b><span><b>Solar roads and walkways.</b> Infrastructure embedded with generating surfaces.</span></div>
+        <div><b>&mdash;</b><span><b>Space-based solar.</b> Satellites capturing sunlight and beaming it down as microwaves.</span></div>
+      </div>
+      <p>These technologies face hurdles in efficiency, durability and cost. But as AI, nanotechnology and materials science converge, the line between structure and generator will blur.</p>
+      <h3 class="sub"><span class="sub-num">7</span>The Storage Bottleneck</h3>
+      <p>Sunlight is free, but useless at night unless stored. Batteries are the key bottleneck in solar deployment. Current storage solutions include lithium-ion batteries, limited in life, flammable and dependent on rare materials; redox flow batteries, built for grid scale but low in energy density; molten salt systems, used in solar thermal plants; and hydrogen produced by electrolysis. Breakthroughs to watch include solid-state batteries, safer and more compact; graphene supercapacitors with very high charge-discharge rates; quantum dot energy traps; and gravity-based storage that lifts masses during sunlight and lowers them at night. Storage must scale across seconds for devices, hours for homes and months for grids.</p>
+      <h3 class="sub"><span class="sub-num">8</span>The Solar-Economic Nexus</h3>
+      <p>Solar is not just a technology — it is a paradigm shift. It decentralises power production and disrupts global energy monopolies. The economic implications run deep:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Decline of oil-exporting nations.</span></div>
+        <div><b>&mdash;</b><span>Rise of energy independence for small states and even households.</span></div>
+        <div><b>&mdash;</b><span>A shift in employment from mining to technology and maintenance.</span></div>
+        <div><b>&mdash;</b><span>The creation of <em>solar deserts</em> as economic zones.</span></div>
+      </div>
+      <p>Solar can democratise energy, but it can also reinforce technological imperialism, in which rich nations dominate intellectual property and manufacturing. An equitable transition must ensure open-source designs, localised manufacturing, and skill training for displaced fossil workers.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Solar Ethics: The Light and Its Shadow</h3>
+      <p>Like any technology, solar has shadows. The environmental concerns are mining of rare metals such as indium, tellurium and cobalt; lifecycle pollution from panel manufacturing; and a looming e-waste crisis as expired panels are retired. The social concerns are land grabs for solar farms that displace communities, energy colonialism in underdeveloped nations, and data-driven <em>solar capitalism</em> that tracks usage and behaviour. Solar energy, while cleaner, must still be deployed consciously, with justice, sustainability and inclusiveness in mind.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Final Reflection: From Fire to Light</h3>
+      <p>Our ancestors worshipped the Sun as Ra, Surya, Amaterasu — gods of life and judgement. Today we return to that source, not in reverence but in desperation and science. The fire of the past was combustion: destructive, dense, dirty. The fire of the future is light itself — clean, constant and cosmic. Solar power offers not just an energy solution but a civilisational shift, from extraction to illumination, from dominance to harmony. But to harness it fully, we must transform not just technology, but economics, politics and philosophy.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 1</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(3)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-3" data-num="3" data-title="Hydrogen Horizons — The Invisible Flame">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Three</span><span>03 / 17</span></div>
+    <h2>Hydrogen Horizons — The Invisible Flame</h2>
+    <p class="chapter-sub">The cleanest fire has no flame at all, and one of the hardest fuels to make honestly.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: A New Flame for a New Age</h3>
+      <p class="drop">For centuries, fire meant heat, smoke and carbon. Fossil fuels ruled industry, economy and war. But in the era of energy transition, the cleanest fire has no flame at all — hydrogen. Invisible, odourless and often misunderstood, hydrogen holds the promise of an energy future that is both zero-emission and high-capacity. Yet hydrogen is not magic, and it is not mined or burned. It must be crafted, like a chemical poem, through processes powered by other energy sources. Therein lies the paradox: it is both the cleanest fuel and one of the hardest to make sustainably. This chapter explores hydrogen from first principles to planetary infrastructure — its science, its promise, and the real barriers standing in its way.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Is Hydrogen? A Primer in Simplicity</h3>
+      <p>Hydrogen is the most abundant element in the universe, making up about 74% of all visible matter. It is the fuel that powers the stars through nuclear fusion, and the first element in the periodic table. Its key properties are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Energy density by mass.</b> Around 120 MJ/kg, roughly three times that of gasoline.</span></div>
+        <div><b>&mdash;</b><span><b>Energy density by volume.</b> Very low unless compressed or liquefied.</span></div>
+        <div><b>&mdash;</b><span><b>Combustion byproduct.</b> Water, and nothing else.</span></div>
+        <div><b>&mdash;</b><span><b>State on Earth.</b> Almost always bonded, as in H₂O or CH₄.</span></div>
+      </div>
+      <p>Because of its high flammability and low molecular weight, hydrogen must be isolated, stored and handled with precision. Its potential is immense — if we can master its containment and generation.</p>
+      <h3 class="sub"><span class="sub-num">3</span>How Is Hydrogen Produced? The Colours of the Rainbow</h3>
+      <p>Hydrogen does not come in one form; it comes in colours, denoting how it was made. <b>Green hydrogen</b> is produced by electrolysis of water using renewable energy. It is the cleanest form, still expensive and energy-intensive, and currently around 1% of global hydrogen supply. <b>Blue hydrogen</b> is generated from natural gas with carbon capture and storage. It emits less than grey hydrogen, but CCS remains expensive and inefficient. <b>Grey hydrogen</b> is produced from natural gas or coal without carbon capture. It is currently the most common form, about 95% of global supply, and very polluting. <b>Pink, yellow and turquoise hydrogen</b> describe other pathways based on feedstock: nuclear power, solar-driven electrolysis, methane pyrolysis. In essence, hydrogen is only as clean as the process that created it.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Electrolysis: Splitting Water With Light</h3>
+      <p>The most sustainable way to make hydrogen is by electrolysis — using electricity to split water into hydrogen and oxygen. If that electricity is renewable, the hydrogen is green. The three main electrolyser families are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Alkaline electrolysers.</b> Low cost and mature.</span></div>
+        <div><b>&mdash;</b><span><b>Proton exchange membrane electrolysers.</b> High efficiency, expensive.</span></div>
+        <div><b>&mdash;</b><span><b>Solid oxide electrolysers.</b> Operate at high temperature.</span></div>
+      </div>
+      <p>Efficiency ranges from 55% to 70%, meaning 30% to 45% of the energy is lost in conversion. Researchers are exploring photocatalytic water splitting — artificial photosynthesis — to remove the need for external electricity altogether.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Hydrogen Storage: Containing the Phantom</h3>
+      <p>Hydrogen is elusive. It is the smallest molecule, highly diffusive and highly flammable, and storing it safely and efficiently is a major engineering challenge. The main methods are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Compressed gas at 350–700 bar.</b> Used in fuel cell vehicles.</span></div>
+        <div><b>&mdash;</b><span><b>Liquid hydrogen at −253°C.</b> Cryogenic storage, used in rockets.</span></div>
+        <div><b>&mdash;</b><span><b>Metal hydrides.</b> Solid materials that absorb hydrogen.</span></div>
+        <div><b>&mdash;</b><span><b>Ammonia.</b> Easier to transport, then <em>cracked</em> back into hydrogen at the destination.</span></div>
+        <div><b>&mdash;</b><span><b>Liquid organic hydrogen carriers.</b> Organic liquids infused with hydrogen.</span></div>
+      </div>
+      <p>Each method has trade-offs in weight, energy loss, infrastructure and cost.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Fuel Cells: Electricity from Hydrogen</h3>
+      <p>The fuel cell is where hydrogen reveals its quiet brilliance. In a proton exchange membrane fuel cell, hydrogen and oxygen combine electrochemically to produce water, electricity and heat: H₂ + ½O₂ → H₂O + electricity + heat. The advantages are zero tailpipe emissions, efficiency up to 60%, and silent operation. The uses are vehicles such as buses, trains, aircraft and ships; backup power for hospitals and telecoms; and portable devices such as drones and laptops. Fuel cells are not combustion — they are electrochemical converters, which makes them ideal for clean electricity in mobile or critical contexts.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Hydrogen Infrastructure: Pipelines, Ports and Problems</h3>
+      <p>Hydrogen infrastructure is immature and fragmented. Creating a global hydrogen economy requires electrolysers at renewable energy hubs, pipelines or conversions of existing natural gas pipes, high-pressure tanks and trucks, liquid hydrogen tankers for shipping, refuelling stations for vehicles, and sensors with leak detection systems. The global hydrogen infrastructure is roughly where the oil industry was in 1900. Tremendous investment and policy support are needed to build this skeleton.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Sectoral Applications: Hydrogen's Reach</h3>
+      <p>Hydrogen is not just for cars. It is a cross-sector solution, especially where electrification is hard. <b>Heavy industry.</b> Steel, replacing coal in blast furnaces. Cement, high-heat production using hydrogen. Glass and chemicals, process heating. <b>Transportation.</b> Long-haul trucks and buses, which refuel faster than batteries. Trains, already in use in Germany and Japan. Aviation, with zero-emission hydrogen aircraft prototypes emerging. Maritime, with hydrogen and ammonia-based marine fuel in trials. <b>Power and grid.</b> Hydrogen turbines for peak power generation, and seasonal energy storage that banks excess renewables as hydrogen. Hydrogen is often described as the missing link in the energy puzzle: where batteries fail, hydrogen fills the gap.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Challenges: Not a Silver Bullet</h3>
+      <p>Hydrogen is no panacea. Its challenges are technical, economic and systemic.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Low round-trip efficiency.</b> Electrolysis, storage and a fuel cell together can waste 50–60% of the energy.</span></div>
+        <div><b>&mdash;</b><span><b>High costs.</b> Green hydrogen can cost three to five times more than fossil fuels.</span></div>
+        <div><b>&mdash;</b><span><b>Infrastructure gaps.</b> Especially in the Global South.</span></div>
+        <div><b>&mdash;</b><span><b>Safety concerns.</b> Hydrogen leaks and explosions.</span></div>
+        <div><b>&mdash;</b><span><b>Policy confusion.</b> A lack of clear standards and certification.</span></div>
+      </div>
+      <p>Critics argue hydrogen is overhyped and driven by fossil lobbies. Supporters see it as essential to deep decarbonisation. The reality is that hydrogen is necessary — but only in specific niches where batteries cannot go.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Looking Forward: From Earth to Stars</h3>
+      <p>Hydrogen is the gateway to the ultimate energy source: fusion. The Sun runs on hydrogen, and if we can replicate fusion, hydrogen becomes the literal fuel of the stars. Projects like ITER, the International Thermonuclear Experimental Reactor, and SPARC, from MIT and Commonwealth Fusion, are attempting this alchemy: using hydrogen isotopes deuterium and tritium, confined by magnetic fields in tokamaks, creating temperatures above 150 million °C. If fusion succeeds, hydrogen's role will go beyond fuel. It will become creation itself.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Conclusion: The Ghost Flame Beckons</h3>
+      <p>Hydrogen is the cleanest fire — a flame without carbon, a whisper of energy with explosive strength. From powering our cars to possibly igniting the stars, it bridges the gap between today's decay and tomorrow's regeneration. But hydrogen is a tool, not a saviour. Its success depends on where, how and why we use it. A hydrogen-powered world demands more than chemistry. It requires systems thinking, equity and courage. The invisible flame is rising. But we must decide whether it will illuminate, or merely flicker.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 2</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(4)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-4" data-num="4" data-title="The Battery Imperative — Storing the Lightning">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Four</span><span>04 / 17</span></div>
+    <h2>The Battery Imperative — Storing the Lightning</h2>
+    <p class="chapter-sub">In a world powered by electrons, storage is salvation.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Era of Energy-on-Demand</h3>
+      <p class="drop">Energy today is no longer just about generation. It is about timing. The sun shines only during the day. The wind does not always blow. Yet society runs around the clock. The challenge of our era is simple: how do we store energy at scale, safely, cheaply and sustainably? Batteries — once relegated to phones and toys — are now global infrastructure. They are the unsung heroes of the electric vehicle revolution, the glue binding renewable grids, and the lifeblood of portable technology. But they are also a bottleneck: of raw materials, design, safety and geopolitics. This chapter explores the inner world of batteries, from their electrochemical hearts to their planetary footprints.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Is a Battery? The Physics of Storage</h3>
+      <p>At its core, a battery stores chemical energy and converts it into electrical energy through electrochemical reactions. Its components are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Anode.</b> The negative electrode, where electrons flow out during discharge.</span></div>
+        <div><b>&mdash;</b><span><b>Cathode.</b> The positive electrode, where electrons flow in.</span></div>
+        <div><b>&mdash;</b><span><b>Electrolyte.</b> The medium that allows ions to move between electrodes.</span></div>
+        <div><b>&mdash;</b><span><b>Separator.</b> The barrier that prevents direct contact between anode and cathode.</span></div>
+      </div>
+      <p>During discharge, electrons flow through an external circuit and power devices while ions flow internally to balance the reaction. During charging, the process reverses.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Types of Batteries: Beyond Lithium</h3>
+      <p>While lithium-ion dominates headlines, batteries come in many chemistries, each with trade-offs. <b>Lithium-ion.</b> Used in electric vehicles, phones and laptops. High energy density and fast charging, but with fire risk and cobalt supply concerns. The main variants are LFP, lithium iron phosphate, and NMC, nickel manganese cobalt. <b>Lead-acid.</b> Cheap and reliable, used in cars and backup systems, but heavy with low energy density. <b>Nickel-metal hydride.</b> Used in hybrid cars such as the Toyota Prius. Stable and long-lasting, with lower capacity than lithium-ion. <b>Flow batteries.</b> Energy is stored in external liquid tanks, which scales well for grid storage but responds slowly and requires complex systems. <b>Sodium-ion.</b> An emerging technology that is cheaper than lithium, with lower energy density but abundant salt-based materials. <b>Solid-state.</b> Replacing the liquid electrolyte with a solid ceramic promises safety, longer life and higher energy, but remains in research and development.</p>
+      <h3 class="sub"><span class="sub-num">4</span>The Lithium Boom: Blessing or Curse?</h3>
+      <p>Lithium is the white gold of the energy transition. It comes from brine deposits in South America, chiefly Chile, Argentina and Bolivia, and from hard rock mining in Australia and China. The problems are substantial. Brine extraction is water-intensive. Mining disrupts ecosystems. Cobalt supply chains have been repeatedly linked to child labour and human rights abuses in the Democratic Republic of Congo. And China dominates refining and cell production. Demand for lithium is expected to quadruple by 2035. The race is on to find alternatives, or to radically improve recycling.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Batteries and the Grid: A New Infrastructure</h3>
+      <p>As renewables grow, battery storage is no longer optional. Its applications include frequency regulation, load balancing, peak shaving, and time-shifting solar and wind. The key technologies are grid-scale lithium-ion installations such as the Tesla Megapack and Fluence systems, flow batteries using iron or vanadium, gravity-based storage such as Energy Vault, and thermal storage in molten salt. California, South Korea and Germany are all building gigawatt-scale battery farms. The future grid is distributed, digital and deeply dependent on storage.</p>
+      <h3 class="sub"><span class="sub-num">6</span>EV Batteries: Powering the Road</h3>
+      <p>Electric vehicles are driving battery innovation. A typical EV battery pack holds 30–100 kWh and accounts for 30–40% of the vehicle's cost, mostly using lithium-ion cells with NMC or LFP chemistries. The concerns are familiar: charging time and infrastructure gaps, range anxiety, thermal management, and battery ageing with replacement costs. New chemistries using silicon anodes and sulphur cathodes, faster charging protocols, and vehicle-to-grid systems are reshaping how batteries fit into the transport ecosystem.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Recycling and Second Life</h3>
+      <p>By 2030, millions of EV batteries will reach end-of-life. The question is what comes next. Recycling extracts lithium, nickel and cobalt through pyrometallurgy, which uses high temperature; hydrometallurgy, which uses chemical leaching; or direct recycling, the newest and most promising route. Second life applications put retired packs into grid and storage roles where performance demands are lower, extending battery value by five to ten years. Battery circularity is essential for both environmental sustainability and supply security.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Battery Economics: Price, Power and Politics</h3>
+      <p>Battery prices have fallen roughly 90% since 2010 and now sit near $100–150 per kWh, against a goal of $60/kWh for mass EV adoption. Raw materials are concentrated in a few countries, refining is dominated by China, and cell manufacturing in the United States and Europe is catching up. Policy is now a major variable. The Inflation Reduction Act in the United States incentivises domestic battery manufacturing, and the EU Battery Regulation sets standards on carbon footprint and sourcing. Energy storage will define economic power, which makes batteries geopolitical assets rather than mere technology.</p>
+      <h3 class="sub"><span class="sub-num">9</span>The Frontier: Beyond the Battery</h3>
+      <p>Even the best battery cannot match hydrogen's long-duration storage, pumped hydro's terawatt scale, or the simplicity of thermal and mechanical systems. Still, for most consumer technology and mobility, batteries are irreplaceable. Emerging technologies include:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Quantum batteries.</b> Still theoretical.</span></div>
+        <div><b>&mdash;</b><span><b>Organic batteries.</b> Non-toxic chemistries.</span></div>
+        <div><b>&mdash;</b><span><b>Metal-air batteries.</b> Aluminium-air and zinc-air designs.</span></div>
+        <div><b>&mdash;</b><span><b>Structural batteries.</b> Energy stored in vehicle frames.</span></div>
+      </div>
+      <p>The battery of 2035 may look nothing like today's lithium pack.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Conclusion: Holding Lightning in a Box</h3>
+      <p>Batteries are the keystones of a net-zero world — the digital-age equivalent of silos, vaults and warehouses. They allow us to hold power, move it and shape it, not just generate it. But as we build bigger and better batteries, we must also build better systems: recycling, policy, equity and resilience. Storage is not just a technological issue. It is a civilisational one. As we chase lightning in a bottle, the real question becomes whether we will wield it wisely.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 3</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(5)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-5" data-num="5" data-title="Nuclear Renaissance — Between Promise and Peril">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Five</span><span>05 / 17</span></div>
+    <h2>Nuclear Renaissance — Between Promise and Peril</h2>
+    <p class="chapter-sub">When humanity split the atom it opened a path to limitless energy, and to annihilation.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Fission's Long Shadow</h3>
+      <p class="drop">The twentieth century's most powerful invention — nuclear energy — arrived bathed in both hope and horror. From Hiroshima to Chernobyl, it has shaped our fears. Yet in a world facing a climate crisis and a need for carbon-free baseload power, nuclear is rising from its radioactive slumber. Today a new generation of scientists and engineers is driving what many call a <em>nuclear renaissance</em>. It includes advanced fission, small modular reactors, molten salt designs and even fusion prospects. This chapter explores the realities, myths and frontiers of this reborn force.</p>
+      <h3 class="sub"><span class="sub-num">2</span>How Nuclear Energy Works: The Physics of Fission</h3>
+      <p>At its core, nuclear power derives from fission — the splitting of heavy atomic nuclei, usually uranium-235 or plutonium-239, to release massive amounts of energy. A neutron strikes a uranium nucleus; the nucleus splits, releasing heat energy, more neutrons that trigger further fissions, and fission fragments that become radioactive waste. The chain reaction is controlled in a reactor and uncontrolled in a bomb. The energy yield is extraordinary: one gram of uranium yields roughly as much energy as a tonne of coal, and no carbon dioxide is produced during the reaction.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Current Nuclear Technologies</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Pressurised water reactors.</b> The most common design worldwide, using water as both coolant and neutron moderator under high pressure to prevent boiling.</span></div>
+        <div><b>&mdash;</b><span><b>Boiling water reactors.</b> Water boils inside the reactor to generate steam directly, a simpler design with more exposure to radioactive steam.</span></div>
+        <div><b>&mdash;</b><span><b>Heavy water reactors.</b> CANDU designs use deuterium oxide as moderator and can run on natural, unenriched uranium.</span></div>
+        <div><b>&mdash;</b><span><b>Gas-cooled reactors.</b> Helium or CO₂ as coolant, with high thermal efficiency.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">4</span>The Advantages of Nuclear</h3>
+      <p>Nuclear offers carbon-free electricity, a capacity factor near 90%, a small land footprint, extremely energy-dense fuel, and long-term price stability. In contrast to intermittent renewables, nuclear is dispatchable, providing stable round-the-clock power without fossil fuels.</p>
+      <h3 class="sub"><span class="sub-num">5</span>The Disadvantages and Risks</h3>
+      <p><b>Accidents.</b> Chernobyl in 1986 combined a design flaw with operator error; Fukushima in 2011 saw a tsunami destroy backup systems. Public fear increased, and several countries, including Germany and Japan, moved to phase out nuclear. <b>Radioactive waste.</b> Spent fuel remains hazardous for thousands of years. Storage solutions include dry casks and deep geological repositories, but both remain politically and technically controversial. <b>High costs.</b> Nuclear is expensive to build, finance and insure, with construction times of ten to fifteen years and a persistent risk of cost overruns. <b>Proliferation.</b> Civilian nuclear technology can aid weapons programmes, which is why safeguards under the IAEA and the Non-Proliferation Treaty are essential.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Small Modular Reactors: A Scalable Future</h3>
+      <p>Small modular reactors represent a major leap in nuclear design. They have capacities under 300 MW, are factory-built and shipped to site, promise faster construction and lower upfront cost, and are easier to deploy in remote or developing regions. The leading examples are NuScale Power in the United States, the first American design to be certified; the Rolls-Royce SMR in the United Kingdom; Terrestrial Energy in Canada with a molten salt design; and Rosatom in Russia, which already operates a floating SMR. The challenges are regulatory lag, public perception, and economics that remain unproven at scale.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Generation IV Reactors</h3>
+      <p>Next-generation nuclear aims for safety, sustainability, non-proliferation and reduced waste. The leading designs are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Molten salt reactors.</b> Liquid fuel, uranium or thorium dissolved in salt, inherently safer at low pressure with passive cooling.</span></div>
+        <div><b>&mdash;</b><span><b>Fast breeder reactors.</b> Convert uranium-238 into fissile plutonium, and can consume existing nuclear waste.</span></div>
+        <div><b>&mdash;</b><span><b>High-temperature gas reactors.</b> Helium-cooled and ultra-efficient.</span></div>
+        <div><b>&mdash;</b><span><b>Lead-cooled fast reactors.</b> Still experimental, but promising.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">8</span>The Thorium Dream</h3>
+      <p>Thorium-232 is a fertile material that can be converted into fissile uranium-233 inside a reactor. Its benefits are considerable: it is three to four times more abundant than uranium, produces less long-lived radioactive waste, and cannot be used directly in bombs. India, China and Norway are exploring thorium reactors, especially molten salt thorium systems.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Nuclear Waste: The Forever Problem</h3>
+      <p>High-level waste such as spent fuel needs deep storage. Intermediate and low-level waste includes tools, water and clothing. Disposal options are on-site dry storage, deep geological repositories such as Finland's Onkalo, and transmutation, an experimental route that converts long-lived isotopes into shorter-lived ones. The politics of siting waste facilities remains a global dilemma.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Fusion: The Eternal Hope</h3>
+      <p>If fission is splitting atoms, fusion is joining them, mimicking the sun. Fusing hydrogen isotopes, deuterium and tritium, produces helium and massive energy, with no long-lived waste and no meltdown risk. The key projects are ITER in France, a global collaboration aiming for first plasma in the mid-2020s; SPARC in the United States, a compact reactor using high magnetic fields; and private ventures including TAE Technologies, Commonwealth Fusion and First Light Fusion. The challenges are plasma confinement, whether magnetic or inertial; achieving net energy gain; and materials durable enough to survive neutron bombardment. Fusion is often joked to be always thirty years away, but progress is accelerating.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Public Perception and Politics</h3>
+      <p>Nuclear energy suffers from historical trauma, media sensationalism and misinformation. Yet surveys show younger generations are more open to nuclear, especially when the case is framed around climate change and energy independence. Governments must invest in public education, transparent regulation and open data on reactor performance.</p>
+      <h3 class="sub"><span class="sub-num">12</span>The Renaissance or the Requiem?</h3>
+      <p>Nuclear energy stands at a crossroads. In one scenario, a clean, compact, low-carbon future uses nuclear baseload, small modular reactors in rural grids, and fusion replacing fossil power. In the other, public resistance, economic failure, ageing infrastructure and stagnation prevail. Which future arrives depends not only on technology, but on trust.</p>
+      <h3 class="sub"><span class="sub-num">13</span>Conclusion: Controlled Fire, Careful Hands</h3>
+      <p>Nuclear energy is the most powerful fire humanity has ever harnessed, and it demands care, ethics and humility. As we face a heating planet, an energy-hungry civilisation and dwindling fossil reserves, we must decide whether we will fear the atom or master it for good.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 4</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(6)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-6" data-num="6" data-title="Hydrogen Horizon — Fuel of the Lightest Element">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Six</span><span>06 / 17</span></div>
+    <h2>Hydrogen Horizon — Fuel of the Lightest Element</h2>
+    <p class="chapter-sub">The universe's first element may hold the key to a post-carbon civilisation.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Hydrogen Promise</h3>
+      <p class="drop">In the energy discourse of the twenty-first century, hydrogen has re-emerged as both a symbol and a substance of transformation. The idea is old — balloons, airships, early rocket experiments — but hydrogen's role as a clean, versatile energy carrier is gaining new relevance. As nations pledge net-zero targets and fossil dependence becomes untenable, hydrogen offers mobility, storage and industrial solutions without carbon. Yet the promise is laced with complexity: how it is produced, how it is stored, how safe it is, and whether its infrastructure can scale globally.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Is Hydrogen Fuel?</h3>
+      <p>Hydrogen is not an energy source like oil or coal. It is an energy carrier, meaning it must be produced using another energy input. Its defining properties are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Molecular weight.</b> 2.016 g/mol, the lightest of all gases.</span></div>
+        <div><b>&mdash;</b><span><b>Combustion.</b> It burns cleanly, producing only water.</span></div>
+        <div><b>&mdash;</b><span><b>Energy per kilogram.</b> 120 MJ/kg, about three times gasoline.</span></div>
+        <div><b>&mdash;</b><span><b>Energy per litre.</b> Very low, which makes compact storage difficult.</span></div>
+      </div>
+      <p>Hydrogen does not naturally exist in pure form on Earth. It must be extracted from water or hydrocarbons, and that process determines whether it is clean or carbon-intensive.</p>
+      <h3 class="sub"><span class="sub-num">3</span>The Hydrogen Colour Spectrum</h3>
+      <p>Hydrogen is categorised by colour, not literally but by how it was produced.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Grey hydrogen.</b> Made from natural gas via steam methane reforming, the most common route today, emitting CO₂ as a byproduct.</span></div>
+        <div><b>&mdash;</b><span><b>Blue hydrogen.</b> The same process with the CO₂ captured and stored, relying on carbon capture and storage.</span></div>
+        <div><b>&mdash;</b><span><b>Green hydrogen.</b> Made by electrolysis of water using renewable electricity, zero-emission but still expensive and limited.</span></div>
+        <div><b>&mdash;</b><span><b>Turquoise hydrogen.</b> From methane pyrolysis, producing solid carbon instead of CO₂.</span></div>
+        <div><b>&mdash;</b><span><b>Pink or purple hydrogen.</b> Electrolysis powered by nuclear energy.</span></div>
+        <div><b>&mdash;</b><span><b>Brown or black hydrogen.</b> From coal gasification, highly polluting.</span></div>
+      </div>
+      <p>The global push is toward green hydrogen, but most current production is still grey.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Production Methods</h3>
+      <p><b>Steam methane reforming.</b> Methane reacts with steam at high temperature to yield carbon monoxide and hydrogen. It is inexpensive and dominant, and emits CO₂ unless captured. <b>Electrolysis.</b> Water is split into hydrogen and oxygen. If the electricity is renewable, the hydrogen is green. Electrolysers come in alkaline, PEM and solid oxide designs. Cost is high and scale is low, with green hydrogen under 1% of supply. <b>Methane pyrolysis.</b> Methane breaks down at high temperature into hydrogen and solid carbon. Still experimental, but it avoids CO₂ entirely. <b>Biomass gasification.</b> Organic matter is converted to syngas and then to hydrogen, with carbon-neutral potential if sustainably managed.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Storage and Transportation Challenges</h3>
+      <p>Hydrogen is notoriously difficult to store and move. Its volumetric density is low, it leaks easily because it is the smallest molecule, and it embrittles metals over time. The main storage methods are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Compressed gas at 700 bar.</b> The standard for vehicles.</span></div>
+        <div><b>&mdash;</b><span><b>Liquid hydrogen at −253°C.</b> Cryogenic, with a high energy cost.</span></div>
+        <div><b>&mdash;</b><span><b>Hydrides.</b> Hydrogen absorbed into metals or compounds.</span></div>
+        <div><b>&mdash;</b><span><b>Ammonia.</b> A hydrogen carrier that is easier to store and transport.</span></div>
+      </div>
+      <p>Pipelines must be specially designed or retrofitted to handle hydrogen safely.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Hydrogen in Transportation</h3>
+      <p>Hydrogen is seen as a competitor to batteries in decarbonising mobility. <b>Fuel cell electric vehicles</b> convert hydrogen to electricity electrochemically, emitting only water vapour, with refuelling in about five minutes and long range. Examples include the Toyota Mirai and Hyundai Nexo. <b>Heavy transport</b> — trucks, buses and trains — suits hydrogen because of its high energy-to-weight ratio. Alstom's Coradia iLint was the first hydrogen train in Germany. <b>Aviation and shipping</b> are in prototype stages, with liquid hydrogen or ammonia-fuelled aircraft and ships under study, and Boeing and Airbus exploring hydrogen-powered commercial jets by 2035.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Hydrogen in Industry</h3>
+      <p>Hydrogen plays a critical role in industrial decarbonisation. <b>Steelmaking</b> currently uses coal in blast furnaces. Hydrogen direct reduction can eliminate most emissions; Sweden's HYBRIT project produced the first fossil-free steel. <b>Ammonia and fertiliser</b> depend on hydrogen as a core input through the Haber-Bosch process, and green hydrogen can decarbonise the global fertiliser industry. <b>Refining and chemicals</b> use hydrogen for hydrocracking and desulphurisation, so cleaner hydrogen means cleaner fuels.</p>
+      <h3 class="sub"><span class="sub-num">8</span>National Hydrogen Strategies</h3>
+      <p>Countries are racing to become hydrogen leaders.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Germany.</b> A €9 billion hydrogen strategy announced in 2020, focused on importing green hydrogen.</span></div>
+        <div><b>&mdash;</b><span><b>Japan.</b> A hydrogen society vision since the early 2000s, and the world's first hydrogen-powered Olympic village in Tokyo in 2021.</span></div>
+        <div><b>&mdash;</b><span><b>South Korea.</b> A target of 6.2 million fuel cell vehicles by 2040.</span></div>
+        <div><b>&mdash;</b><span><b>Australia.</b> An export-oriented strategy turning solar and wind into green hydrogen for Asia.</span></div>
+        <div><b>&mdash;</b><span><b>United States.</b> Hydrogen hubs funded by the Bipartisan Infrastructure Law, and the Department of Energy's Hydrogen Shot aiming at $1 per kilogram of green hydrogen by 2030.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">9</span>Hydrogen versus Batteries</h3>
+      <p>Hydrogen and batteries are not enemies. They are complementary. Hydrogen offers longer range, refuelling in three to five minutes, and higher energy density by mass. Batteries offer higher energy density by volume, round-trip efficiency of 80–90% against 30–40% for hydrogen, expanding infrastructure, and falling costs. Hydrogen is more viable in heavy transport, industry and storage, while batteries lead in passenger vehicles and short-range applications.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Safety and Public Perception</h3>
+      <p>Hydrogen is flammable, like gasoline or natural gas. The Hindenburg disaster of 1937 still haunts public memory. Its flames are nearly invisible and its leaks odourless, and high-pressure tanks carry explosion risk if mishandled. Modern systems include leak detection, crash-tested tanks, pressure relief valves and fire suppression technology. Public education and transparency are vital to build trust.</p>
+      <h3 class="sub"><span class="sub-num">11</span>The Green Premium Problem</h3>
+      <p>Green hydrogen currently costs $4–6 per kilogram, against $1–2 for grey hydrogen and $0.50–1 for natural gas on an energy-equivalent basis. The green premium must shrink through cheaper renewable power, scale in electrolyser manufacturing, global carbon pricing and technological innovation. BloombergNEF estimates green hydrogen could become competitive by 2030–2035 in many sectors.</p>
+      <h3 class="sub"><span class="sub-num">12</span>The Role of Hydrogen in Future Grids</h3>
+      <p>Hydrogen can balance renewables by acting as seasonal energy storage. Excess summer solar becomes electrolysis, and the stored hydrogen is used in winter for heating or electricity. Hydrogen turbines and fuel cells could also replace peaker plants, backing up solar and wind.</p>
+      <h3 class="sub"><span class="sub-num">13</span>Conclusion: Toward a Hydrogen Economy</h3>
+      <p>Hydrogen is not a silver bullet, but it is a silver thread woven through the tapestry of future energy. As costs fall and policies align, it may decarbonise heavy industry, fuel long-distance transport, store seasonal electricity and enable energy trade between continents. But its success depends on production pathways, infrastructure investment and public confidence. In the long shadow of hydrocarbons, the lightest element may carry the heaviest hopes.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(5)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 5</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(7)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-7" data-num="7" data-title="The Grid Reimagined — Smart, Decentralized, and Resilient">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Seven</span><span>07 / 17</span></div>
+    <h2>The Grid Reimagined — Smart, Decentralized, and Resilient</h2>
+    <p class="chapter-sub">The future of energy depends not only on what we generate, but on how wisely we distribute it.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Cracks in the Old Grid</h3>
+      <p class="drop">The electrical grid — once a marvel of centralised engineering — is now showing its age. Built for one-way flow from large power plants to passive consumers, it struggles to accommodate the modern world's demands:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span>Intermittent renewable sources such as solar and wind.</span></div>
+        <div><b>&mdash;</b><span>Electric vehicles.</span></div>
+        <div><b>&mdash;</b><span>Decentralised generation such as rooftop solar and home batteries.</span></div>
+        <div><b>&mdash;</b><span>Frequent climate-induced disruption from heatwaves, wildfires and floods.</span></div>
+      </div>
+      <p>Blackouts from California to Texas, Germany's grid overload during solar surges, and chronic power instability in developing nations all point to one reality: the twentieth-century grid cannot support the twenty-first-century energy economy. To meet net-zero goals and build climate resilience, we must redesign the grid itself — smart, decentralised and digitally managed.</p>
+      <h3 class="sub"><span class="sub-num">2</span>From Centralized to Distributed</h3>
+      <p>Traditionally, power generation followed a hub-and-spoke model: centralised plants burning coal or running on nuclear and hydro, long-distance transmission lines, local transformers and distribution, and passive consumption. Now a shift is underway. Distributed energy resources such as rooftop solar, batteries and microturbines are appearing behind the meter. <em>Prosumers</em> both consume and produce energy. Peer-to-peer trading is emerging. Smart meters, real-time pricing and AI energy management are becoming ordinary. This shift creates multi-directional flows: not just from plant to plug, but from house to grid and back.</p>
+      <h3 class="sub"><span class="sub-num">3</span>What Makes a Smart Grid Smart?</h3>
+      <p>A smart grid incorporates digital communication, sensors and automation to manage electricity production and consumption dynamically. Its key features are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Smart meters</b> that monitor usage in real time.</span></div>
+        <div><b>&mdash;</b><span><b>Advanced sensors</b> that detect faults instantly.</span></div>
+        <div><b>&mdash;</b><span><b>Automated controls</b> that reroute power to avoid outages.</span></div>
+        <div><b>&mdash;</b><span><b>Demand response systems</b> that reduce peak load by incentivising off-peak use.</span></div>
+        <div><b>&mdash;</b><span><b>AI and machine learning</b> that forecast demand and optimise supply.</span></div>
+        <div><b>&mdash;</b><span><b>Two-way communication</b> between utility and user.</span></div>
+      </div>
+      <p>It is not just smarter. It is interactive, predictive and adaptive.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Microgrids: Islands of Energy Independence</h3>
+      <p>A microgrid is a local energy network that can disconnect from the central grid and operate independently, which makes it crucial for resilience. Its components are local generation such as solar panels and small wind turbines, energy storage in batteries and flywheels, load management through smart thermostats and EV chargers, and software controllers. The benefits are power continuity during outages, localised decarbonisation, cost savings in remote areas, and energy autonomy for hospitals, campuses, military bases and disaster zones. In Puerto Rico, Bangladesh and rural Africa, microgrids are revolutionising energy access where central grids have failed.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Peer-to-Peer Energy Trading</h3>
+      <p>Blockchain and smart contracts allow individuals to sell excess energy from solar panels or home batteries directly to neighbours. Consider a simple case: Alice produces extra solar energy at noon, Bob next door buys it through an app, and a decentralised ledger handles payment securely. Platforms such as Power Ledger, LO3 Energy and WePower are piloting this <em>Airbnb for electricity</em> approach. It democratises energy, cuts out middlemen and boosts local efficiency, but it requires regulatory reform and cybersecurity safeguards.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Virtual Power Plants</h3>
+      <p>A virtual power plant aggregates thousands of small energy assets — solar panels, EVs, thermostats, batteries — into a coordinated digital entity. It balances load and supply in real time, sells excess power to the wholesale market, and participates in demand response. Tesla's virtual power plant in California links over 50,000 homes; Germany's Next Kraftwerke links 13,000 assets across Europe. Virtual power plants could replace peaker plants, smooth renewable fluctuations, and respond to crises faster than any central system.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Energy Storage: The Grid's New Backbone</h3>
+      <p>In a renewable future, the grid must store power when it is available and dispatch it when it is needed. The key technologies are lithium-ion batteries, dominant but limited in lifespan; flow batteries, scalable and built for long duration; solid-state batteries, safer and denser; pumped hydro, the gravity-based water system; compressed air stored underground; thermal storage in molten salts, concrete or hot sand; and hydrogen, converting electricity to gas and back. Storage smooths solar sunsets, flattens wind droughts, and transforms clean electricity into reliable round-the-clock supply.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Cybersecurity: Protecting the Digital Grid</h3>
+      <p>As grids become digitised, they become vulnerable. The threats include malware such as Stuxnet, nation-state attacks on utilities, ransomware targeting smart meter networks, and grid manipulation through hijacked IoT devices. The United States Department of Energy's CESER office and the European Union's ENISA are investing in AI-based threat detection, hardware firewalls and zero-trust architecture. In a smart grid world, energy security equals cybersecurity.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Digital Twins and Predictive Maintenance</h3>
+      <p>A digital twin is a virtual replica of a physical system, updated in real time with sensor data. Utilities now use them for grid visualisation, predictive failure detection, weather-based outage modelling and load balancing optimisation. The result is preemptive repair, fewer blackouts and data-driven upgrades.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The EV as a Grid Asset</h3>
+      <p>Electric vehicles are more than cars. They are mobile batteries. Through vehicle-to-grid technology, EVs discharge power back to the grid when parked, helping balance demand, with owners paid for the energy service. Japan, the United Kingdom and California are testing bi-directional charging in which EVs stabilise the grid during peak demand. In time, millions of EVs could act as a decentralised storage network, absorbing solar at noon and powering cities at dusk.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Decentralization and Energy Justice</h3>
+      <p>Smart grids and local systems also correct historic injustices. Indigenous communities can control their own microgrids. Poor urban areas can access clean power through rooftop solar. Developing nations can leapfrog centralised systems. Women's energy cooperatives in Africa can build gender equity along with generation. A decentralised grid is not just smarter. It is more democratic.</p>
+      <h3 class="sub"><span class="sub-num">12</span>Regulation and Policy Lag</h3>
+      <p>Technology has outpaced regulation. Grid codes were not designed for two-way flows. Rooftop solar is restricted in many jurisdictions, net metering is under debate, and utilities resist decentralisation. Progressive policies are now emerging. FERC Order 2222 in the United States enables distributed energy resources in wholesale markets. The EU Clean Energy Package mandates prosumer rights. India's Revamped Distribution Sector Scheme targets smart grid expansion. Law must evolve for the grid to evolve.</p>
+      <h3 class="sub"><span class="sub-num">13</span>Case Studies in Smart Grid Innovation</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>South Korea.</b> Jeju Island is a smart grid testbed with AI controls and electric vehicle fleets.</span></div>
+        <div><b>&mdash;</b><span><b>Germany.</b> Decentralised solar and wind feed local grids.</span></div>
+        <div><b>&mdash;</b><span><b>Bangladesh.</b> Six million off-grid solar homes financed through microcredit.</span></div>
+        <div><b>&mdash;</b><span><b>Texas.</b> ERCOT's failure in 2021 sparked massive investment in distributed resources.</span></div>
+        <div><b>&mdash;</b><span><b>California.</b> PG&amp;E's wildfire shutoffs led to microgrid innovation.</span></div>
+      </div>
+      <p>These experiments show the future is already happening, but unevenly distributed.</p>
+      <h3 class="sub"><span class="sub-num">14</span>The AI Grid: Learning to Adapt</h3>
+      <p>Machine learning optimises grid balancing, outage prediction, load forecasting, customer behaviour modelling and fraud detection. In China, State Grid Corporation uses AI to route power across provinces in milliseconds. Google DeepMind cut data centre energy use by 40%. The self-healing, self-learning grid is the ultimate goal.</p>
+      <h3 class="sub"><span class="sub-num">15</span>Conclusion: The Nervous System of the Future</h3>
+      <p>The grid is no longer an invisible backdrop. It is the nervous system of civilisation. A smart, decentralised, resilient and participatory energy web will determine how quickly we phase out fossil fuels, how equitably we distribute clean energy, and how safely we withstand climate extremes. The question is not whether we can reinvent the grid, but whether we can do it in time.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 6</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(8)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-8" data-num="8" data-title="Beyond Earth — Energy Frontiers in Space">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Eight</span><span>08 / 17</span></div>
+    <h2>Beyond Earth — Energy Frontiers in Space</h2>
+    <p class="chapter-sub">From solar satellites to helium-3 on the Moon, the cosmos offers answers as well as escape.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Why Space? Why Now?</h3>
+      <p class="drop">The Earth is reaching its planetary energy ceiling. Finite fossil fuels, geopolitical tension, grid saturation and climate breakdown are forcing us to consider more radical frontiers. Among them, one stands luminous and near-infinite: space. Why venture beyond Earth for energy? The Sun emits 3.8 × 10²⁶ watts, more energy in an hour than humanity uses in a year. The Moon holds helium-3, a rare isotope suited to fusion. Asteroids are rich in platinum-group metals for energy technology. Orbital platforms avoid cloud cover and night, enabling continuous solar capture. Mars offers geothermal possibilities for permanent settlements. This chapter examines how space energy could redefine civilisation — not in centuries, but in decades.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Space-Based Solar Power</h3>
+      <p>The core concept of space-based solar power is deceptively simple: capture solar energy in space, where it is constant and intense; convert it into microwaves or lasers; and beam it wirelessly to receivers, called rectennas, on Earth. The advantages are no atmospheric loss, round-the-clock availability with no night and no clouds, remote power delivery to deserts, islands and disaster zones, and virtually limitless scaling. The technologies involved are lightweight photovoltaic panels, microwave transmission arrays, orbital platforms in geostationary orbit, and gigantic rectifying antennas on the ground. The challenges are high launch and construction costs, beam accuracy and safety, space debris collision risk, and atmospheric interference with microwave transmission. Still, countries are racing forward. Japan's JAXA, China's CAST and Caltech's Space Solar Power Project are all working on orbital solar prototypes, and China aims for operational space-based solar power by 2035.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Helium-3 and Lunar Mining</h3>
+      <p>The Moon contains an estimated one million metric tonnes of helium-3, implanted by the solar wind over billions of years. This isotope is almost nonexistent on Earth. Helium-3 is attractive because it is suited to fusion, its reaction with deuterium produces minimal radioactive waste, the absence of neutron bombardment means less structural damage to reactors, and it is therefore a safer, cleaner alternative to deuterium-tritium fusion. The reaction He-3 + D → He-4 + proton + 18.4 MeV releases energy without the neutron flux that plagues conventional designs. Extraction would mean mining lunar regolith in the top three metres, heating it to about 600°C to release helium-3, and transporting the gas to Earth or to fusion reactors in space. The barriers are formidable: no commercial fusion reactor exists, Moon mining infrastructure would be enormously expensive, and lunar territory is already a matter of geopolitical competition under the Outer Space Treaty. Yet the prize is immense: 25 tonnes of helium-3 could power the entire United States for a year.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Dyson Swarms and Solar Megastructures</h3>
+      <p>Physicist Freeman Dyson envisioned that an advanced civilisation would encircle its star with energy-collecting satellites — a Dyson sphere. A solid sphere is impossible with today's technology, but a Dyson swarm, a constellation of coordinated solar satellites, is theoretically achievable. Its components would be tens of thousands of solar satellites, laser or microwave beaming systems, and orbital AI coordination. The potential is capture of up to 1.7 × 10¹⁷ watts from the Sun, enough to power entire planetary economies and supply off-world colonies. While a full swarm is centuries away, early components such as space-based solar arrays could emerge within this century.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Energy on Mars and Other Planets</h3>
+      <p>If humans are to colonise Mars or beyond, indigenous energy sources must be used. On Mars, solar energy is weaker than on Earth but viable; compact nuclear fission reactors such as NASA's Kilopower are a strong candidate; geothermal energy is theoretical but unconfirmed; wind is limited by the thin atmosphere; and perchlorate batteries could be made from Martian soil chemistry. Europa and Enceladus may have hydrothermal vents that support geothermal power, and ice-melting reactors could tap sub-ice oceans. Titan has an atmosphere rich in methane and hydrocarbons, offering potential for organic-based combustion systems. Space energy is not just for Earth. It is the foundation for extraterrestrial civilisation.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Asteroid Mining for Energy Materials</h3>
+      <p>Asteroids, especially carbonaceous chondrites, contain rare materials vital to energy technology: platinum-group elements for fuel cells, nickel, cobalt and lithium for batteries, and water ice for hydrogen fuel. The concepts include robotic mining swarms, on-site refining and 3D printing, and material transport to orbital depots or Earth. Companies such as Planetary Resources and Deep Space Industries, now part of Bradford Space, were early pioneers, and the European Space Agency and China are now leading the charge. Energy material abundance in space could end Earth-based resource wars.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Beamed Power for Spacecraft</h3>
+      <p>Microwave or laser-based beamed energy can also propel spacecraft, removing the need for heavy fuel loads. The benefits are smaller and lighter spacecraft, higher acceleration, and continuous thrust. The concepts include Breakthrough Starshot's laser sails for Alpha Centauri, microwave thermal propulsion that heats propellant with beamed power, and solar electric propulsion using continuous low-thrust ion engines. This could dramatically reduce the cost and duration of interplanetary missions, and eventually of interstellar probes.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Orbital Fusion Reactors</h3>
+      <p>Why wait for Earth-based regulation and safety hurdles? Fusion reactors built in orbit could avoid risk to Earth ecosystems, use space for thermal and radiation management, and be powered by in-situ solar energy or helium-3. Startups such as Helion and TAE Technologies, along with national agencies, envision fusion not only for Earth's grid but as spaceborne power stations serving satellites, lunar bases and planetary outposts.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Legal and Ethical Dimensions</h3>
+      <p>The rush for space energy raises serious questions. Who owns the Moon or the asteroids? Can nations claim resources mined off-world? Should energy be shared or hoarded? The Outer Space Treaty of 1967 bans sovereign claims but is silent on private mining. The Moon Agreement of 1979, which aimed to share lunar wealth, was rejected by major powers. We may need a new legal regime for the cosmic commons, or risk space becoming the next theatre of energy imperialism.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The Space-Earth Feedback Loop</h3>
+      <p>Energy breakthroughs in space can transform life on Earth. Advanced solar materials tested in orbit, wireless power transmission perfected in satellites, AI grid systems scaled globally, and fusion technology fast-tracked by lunar helium all feed back to the ground. Conversely, Earth's needs will accelerate space innovation. As humanity's energy appetite grows beyond Earth's capacity, space is not just an escape. It is the next grid node.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Conclusion: The Cosmic Engine Begins</h3>
+      <p>We began by burning wood and coal beneath our feet. Now we reach toward helium on the Moon, light from orbit, and metals in drifting rocks. Our civilisation is transitioning from a planetary energy system to an interplanetary one. In the twenty-first century, the stars are no longer unreachable. They are the source code of our survival.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 7</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(9)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-9" data-num="9" data-title="Synthetic Fuels — Engineering the Future of Combustion">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Nine</span><span>09 / 17</span></div>
+    <h2>Synthetic Fuels — Engineering the Future of Combustion</h2>
+    <p class="chapter-sub">Fuels made from air, water and sunlight, molecule by molecule.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The New Alchemy</h3>
+      <p class="drop">The industrial revolution was powered by fossil fuels — coal, oil, gas. But these resources are limited, environmentally harmful and politically weaponised. As global mandates call for net-zero emissions, an urgent question arises: can we continue to burn without guilt? The answer may lie in synthetic fuels: engineered molecules designed to mimic or surpass the performance of traditional fuels, yet with net-zero or even negative emissions profiles.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Are Synthetic Fuels?</h3>
+      <p>Synthetic fuels, or e-fuels, are man-made hydrocarbons or alcohols produced by chemical synthesis rather than fossil extraction. They include synthetic gasoline, synthetic diesel, synthetic kerosene for jet fuel, synthetic methane, methanol and ethanol, and ammonia and other hydrogen carriers. These fuels are not harvested. They are created from base ingredients: carbon dioxide, water, hydrogen and renewable electricity from solar, wind or nuclear power.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Core Technologies in Synthetic Fuel Production</h3>
+      <p><b>Electrolysis.</b> Water is split into hydrogen and oxygen using electricity: 2H₂O → 2H₂ + O₂. It works best when powered by green electricity and produces clean hydrogen for further synthesis. <b>CO₂ capture.</b> Carbon dioxide is captured from the air through direct air capture, from industrial emissions, or from ocean water. <b>Fischer-Tropsch synthesis.</b> Invented in the 1920s by German chemists, this process converts hydrogen and carbon dioxide into liquid hydrocarbons using metal catalysts such as cobalt or iron. It is highly tunable and can produce gasoline, diesel and waxes. <b>Methanation.</b> Synthetic methane is produced by CO₂ + 4H₂ → CH₄ + 2H₂O. <b>Methanol and ethanol synthesis.</b> CO₂ + 3H₂ → CH₃OH gives methanol, and related catalytic routes produce ethanol.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Types of Synthetic Fuels and Their Applications</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Synthetic gasoline.</b> For cars and light trucks, drop-in compatible with existing internal combustion engines.</span></div>
+        <div><b>&mdash;</b><span><b>Synthetic diesel.</b> For heavy transport and shipping, burning cleaner with less soot.</span></div>
+        <div><b>&mdash;</b><span><b>E-kerosene.</b> For aviation, and central to net-zero flight.</span></div>
+        <div><b>&mdash;</b><span><b>Methanol and ethanol.</b> Flexible across engines and fuel cells, with higher octane ratings.</span></div>
+        <div><b>&mdash;</b><span><b>Synthetic methane.</b> For power plants and home gas, working in existing pipelines.</span></div>
+        <div><b>&mdash;</b><span><b>Ammonia.</b> For shipping and as a hydrogen carrier, carbon-free but toxic to handle.</span></div>
+        <div><b>&mdash;</b><span><b>Dimethyl ether.</b> For cooking and as a diesel alternative, with clean combustion.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">5</span>Key Global Initiatives and Companies</h3>
+      <p>Porsche and Siemens Energy operate an e-fuel plant in Chile using wind power and captured CO₂. Carbon Engineering in Canada is a world leader in direct air capture and fuels. Sunfire in Germany specialises in Fischer-Tropsch synthesis using solid oxide electrolysis. HIF Global produces synthetic fuel for aviation. Governments including Germany, Japan and the European Union are now investing heavily in synthetic fuel research as part of decarbonisation strategy.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Advantages of Synthetic Fuels</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Carbon neutral.</b> CO₂ captured for the fuel equals CO₂ emitted during use, giving net-zero emissions.</span></div>
+        <div><b>&mdash;</b><span><b>Drop-in compatibility.</b> They work in existing engines, aircraft, ships and pipelines.</span></div>
+        <div><b>&mdash;</b><span><b>Energy dense.</b> Higher volumetric energy than batteries or hydrogen.</span></div>
+        <div><b>&mdash;</b><span><b>Storage and transport.</b> They can be stored like fossil fuels, with no need for new infrastructure.</span></div>
+        <div><b>&mdash;</b><span><b>Global scalability.</b> They can be produced anywhere with renewable energy and access to CO₂ and water.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">7</span>Limitations and Challenges</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Cost.</b> Currently five to ten times more expensive than fossil fuels.</span></div>
+        <div><b>&mdash;</b><span><b>Efficiency losses.</b> Production is energy-intensive, with round-trip efficiency of 30–40%.</span></div>
+        <div><b>&mdash;</b><span><b>Scale.</b> Massive renewable power and global infrastructure are required.</span></div>
+        <div><b>&mdash;</b><span><b>CO₂ supply.</b> Efficient, low-cost direct air capture or large point-source capture is needed.</span></div>
+        <div><b>&mdash;</b><span><b>Policy gaps.</b> A lack of global carbon pricing or fuel mandates hinders investment.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">8</span>Military and Aerospace Applications</h3>
+      <p>Synthetic fuels offer energy independence for forward bases, reduced logistics through on-site production from air and sun, cold-environment performance, and cleaner combustion with a lower thermal signature. NASA, ESA and SpaceX have studied methane and kerosene synthetic alternatives for orbital launches, and the military is investing in portable Fischer-Tropsch reactors.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Case Study: Iceland's Carbon Recycling Plant</h3>
+      <p>In Iceland, renewable hydro and geothermal power are used to capture CO₂ from the air, electrolyse water to produce hydrogen, and synthesise methanol. The plant outputs 4,000 tonnes of fuel per year, carbon neutral and usable in European vehicles. It represents a closed carbon loop in action.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The Road to 2050: Can Synthetic Fuels Scale?</h3>
+      <p>To replace even 10% of global fossil fuel demand with synthetic alternatives, we would need roughly 30,000 TWh of clean electricity, 200 million tonnes of hydrogen, and billions of tonnes of captured CO₂. The payoff would be massive emission cuts, a secure energy supply, clean aviation and shipping, and long-term carbon circularity. The International Energy Agency projects that synthetic fuels could meet up to 20% of transport needs by 2050 with proper investment.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Synthetic Biology and the Next Generation of Fuels</h3>
+      <p>Using genetically modified microbes, scientists are engineering life to exhale diesel-like hydrocarbons, produce butanol, jet fuel or ethanol directly, and break down CO₂ while building fuel molecules. Examples include E. coli producing biodiesel from sugar or CO₂, cyanobacteria engineered to excrete ethanol, and yeast strains producing jet fuel precursors. This is the living chemistry of synthetic fuels: biological reactors replacing oil wells.</p>
+      <h3 class="sub"><span class="sub-num">12</span>Conclusion: Engineered Flames of the Future</h3>
+      <p>Synthetic fuels may never completely replace fossil fuels, but they do not need to. Their purpose is strategic decarbonisation: long-distance aviation and shipping, legacy vehicles and military fleets, and the areas where electrification fails. In a decarbonised world, we will still burn. But we will burn smarter, cleaner, and with full awareness of the chemistry and consequences of each molecule. The age of synthetic fuels is not a return to fire. It is the redesign of fire itself.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(8)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 8</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(10)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-10" data-num="10" data-title="The Hydrogen Horizon — The Smallest Molecule, the Biggest Promise">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Ten</span><span>10 / 17</span></div>
+    <h2>The Hydrogen Horizon — The Smallest Molecule, the Biggest Promise</h2>
+    <p class="chapter-sub">Invisible, odourless, and holding more energy per unit mass than any other fuel.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Hydrogen Awakening</h3>
+      <p class="drop">Hydrogen is the most abundant element in the universe, yet on Earth it exists only bound in compounds such as water or hydrocarbons. For over a century it has whispered promises of clean combustion and infinite energy. In the twenty-first century the whisper is turning into a roar. Hydrogen is now seen as a cornerstone of the clean energy transition, capable of decarbonising sectors where electrification stumbles: heavy industry, long-haul transportation, aviation and maritime shipping, and energy storage with grid balancing. The question is no longer why hydrogen, but how soon, and at what scale.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Properties of Hydrogen as a Fuel</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Energy density by mass.</b> 120 MJ/kg, the highest of all fuels.</span></div>
+        <div><b>&mdash;</b><span><b>Energy density by volume.</b> Very low, requiring compression or liquefaction.</span></div>
+        <div><b>&mdash;</b><span><b>Combustion byproduct.</b> Only water.</span></div>
+        <div><b>&mdash;</b><span><b>Flammability range.</b> Wide, from 4% to 75% in air.</span></div>
+        <div><b>&mdash;</b><span><b>Ignition energy.</b> Very low.</span></div>
+        <div><b>&mdash;</b><span><b>Storage.</b> Compressed gas, liquid, metal hydrides or liquid organic carriers.</span></div>
+      </div>
+      <p>Hydrogen offers clean energy without carbon emissions, but its lightness creates major storage and transport challenges.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Types of Hydrogen: The Colour Spectrum</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Grey.</b> Natural gas via steam reforming, with high CO₂ emissions.</span></div>
+        <div><b>&mdash;</b><span><b>Blue.</b> The same process with carbon capture and storage, giving reduced emissions.</span></div>
+        <div><b>&mdash;</b><span><b>Green.</b> Electrolysis from renewable power, zero emissions.</span></div>
+        <div><b>&mdash;</b><span><b>Turquoise.</b> Methane pyrolysis, with solid carbon as a byproduct.</span></div>
+        <div><b>&mdash;</b><span><b>Pink or purple.</b> Electrolysis via nuclear power, zero carbon plus baseload.</span></div>
+        <div><b>&mdash;</b><span><b>White.</b> Naturally occurring underground hydrogen, rare and still being explored.</span></div>
+      </div>
+      <p>Green hydrogen is the holy grail, but it remains expensive and energy-intensive to produce.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Hydrogen Production Methods</h3>
+      <p><b>Steam methane reforming.</b> Methane reacts with steam at high temperature to produce CO₂ and hydrogen. It is cheap but carbon-intensive unless paired with carbon capture. <b>Electrolysis.</b> Water is split using electricity: 2H₂O → 2H₂ + O₂. Powered by renewables it yields green hydrogen, with current efficiency around 60–70%. <b>Methane pyrolysis.</b> High-temperature breakdown of methane into hydrogen and solid carbon. Still under research, with potential for turquoise hydrogen. <b>Biomass gasification.</b> Organic matter is heated in limited oxygen to produce syngas, a mixture of carbon monoxide and hydrogen. It can be carbon-neutral, or carbon-negative when combined with bio-energy carbon capture. <b>Photoelectrochemical and biological methods.</b> Algae or photocatalysts generate hydrogen from water. Early-stage research with low yields.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Hydrogen Storage and Distribution</h3>
+      <p>Because hydrogen is so light, storing it requires ingenuity.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Compressed gas at 350–700 bar.</b> Simple, but with energy losses in compression.</span></div>
+        <div><b>&mdash;</b><span><b>Liquid hydrogen at −253°C.</b> Dense, but expensive with high boil-off.</span></div>
+        <div><b>&mdash;</b><span><b>Metal hydrides.</b> Hydrogen absorbed into metals such as magnesium, heavy with slow kinetics.</span></div>
+        <div><b>&mdash;</b><span><b>Liquid organic hydrogen carriers.</b> Reversible hydrogenation of liquids, chemically complex with slow release.</span></div>
+      </div>
+      <p>Pipeline transport of hydrogen is under study, but embrittlement of steel and low energy density per volume are engineering hurdles.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Fuel Cells: Turning Hydrogen into Electricity</h3>
+      <p>Fuel cells convert the chemical energy of hydrogen into electricity without combustion. The most common type is the proton exchange membrane fuel cell, operating at around 80°C with high power density, ideal for vehicles. Others include the solid oxide fuel cell for stationary power and higher efficiency, and alkaline and phosphoric acid cells for niche uses. The benefits are quiet operation, modularity, efficiency of 40–60%, and zero emissions apart from water. Applications range from cars such as the Toyota Mirai and Hyundai Nexo, to buses, trains and forklifts, to backup power for hospitals and data centres.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Hydrogen in Transportation</h3>
+      <p>Hydrogen is ideal for transport that is hard to electrify. On the road, fuel cell vehicles refuel in three to five minutes and offer 500–700 km of range, which suits fleet vehicles, trucks and taxis. On rail, hydrogen trains now operate in Germany, France and Japan; Alstom's Coradia iLint emits only steam and condensed water. At sea, hydrogen is used for ferries and container ships in pilot projects, with liquid hydrogen and ammonia tested as marine fuels. In the air, Airbus plans hydrogen-powered planes by 2035, with weight, volume and cold storage as the central challenges.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Hydrogen in Industry and Energy Storage</h3>
+      <p>In heavy industry, hydrogen reduces iron ore in green steel production, decarbonises cement, ammonia and chemical manufacturing, and replaces natural gas in industrial furnaces. For grid storage, hydrogen can bank excess solar and wind power, provide seasonal storage by banking summer energy for winter, and convert back to electricity through fuel cells or turbines.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Key Global Hydrogen Initiatives</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>European Union.</b> A 2020 hydrogen strategy targeting 40 GW of electrolysers by 2030.</span></div>
+        <div><b>&mdash;</b><span><b>Japan.</b> A national hydrogen roadmap since 2017, covering transport and industry.</span></div>
+        <div><b>&mdash;</b><span><b>Australia.</b> Exporting hydrogen to Asia as ammonia.</span></div>
+        <div><b>&mdash;</b><span><b>Saudi Arabia.</b> NEOM, the world's largest green hydrogen plant, under construction.</span></div>
+        <div><b>&mdash;</b><span><b>India.</b> A National Green Hydrogen Mission launched in 2023.</span></div>
+      </div>
+      <p>Private sector leaders include Air Liquide, Linde, ITM Power, Plug Power and Nel Hydrogen.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Challenges of the Hydrogen Economy</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Cost.</b> Green hydrogen costs roughly two to six times fossil hydrogen.</span></div>
+        <div><b>&mdash;</b><span><b>Infrastructure.</b> Pipelines, fuelling stations and storage tanks are lacking.</span></div>
+        <div><b>&mdash;</b><span><b>Efficiency.</b> End-to-end losses can exceed 60%.</span></div>
+        <div><b>&mdash;</b><span><b>Safety.</b> Hydrogen is flammable and leaks easily.</span></div>
+        <div><b>&mdash;</b><span><b>Public perception.</b> Misconceptions about hydrogen explosions persist.</span></div>
+        <div><b>&mdash;</b><span><b>Policy uncertainty.</b> Subsidies, standards and mandates are still emerging.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">11</span>The Future: Is Hydrogen the Answer?</h3>
+      <p>Hydrogen is not a silver bullet, but it is a critical piece of the energy puzzle. Battery-electric vehicles dominate small transport, but hydrogen will power long-haul trucks, ships and planes, steel and chemical plants, and grid-scale energy backup. To succeed, hydrogen must become cheaper, targeting under $2 per kilogram for green hydrogen; widespread, through networks of infrastructure; and more efficient, through next-generation electrolysis and storage.</p>
+      <h3 class="sub"><span class="sub-num">12</span>Conclusion: The Lightest Molecule, the Heaviest Task</h3>
+      <p>Hydrogen's promise is massive, but its path is delicate. It will not be the fuel for all. But where batteries stumble and carbon chokes, hydrogen may just lift us. It is the smallest molecule, yet its impact could be planetary. A new horizon rises, not from fire or fossil, but from the splitting of water, the capturing of air, and the convergence of light and science.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(9)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 9</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(11)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-11" data-num="11" data-title="Nuclear Renaissance — Fission, Fusion, and the Quest for Infinite Power">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Eleven</span><span>11 / 17</span></div>
+    <h2>Nuclear Renaissance — Fission, Fusion, and the Quest for Infinite Power</h2>
+    <p class="chapter-sub">The atomic nucleus holds immense energy, and the problem of harnessing it safely is older than the industry itself.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Atom's Dual Legacy</h3>
+      <p class="drop">Nuclear power has long been a symbol of both immense potential and deep controversy. Since the first controlled chain reaction in 1942, nuclear fission has powered cities, submarines and spacecraft, but it has also raised fears of accidents, waste and proliferation. Today, climate urgency and technological advances are rekindling interest in nuclear energy — not just as a stopgap, but as a cornerstone of a clean, reliable and scalable energy future. Simultaneously, fusion, the process that powers the Sun, beckons as the ultimate prize: limitless energy from abundant fuels, with minimal waste.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Nuclear Fission: The Established Giant</h3>
+      <p>Fission splits heavy atomic nuclei, typically uranium-235 or plutonium-239, into lighter fragments, releasing neutrons and tremendous energy as heat. The main reactor types are:</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Light water reactors.</b> The most common globally, using ordinary water as coolant and moderator. Pressurised water reactors and boiling water reactors are the two primary designs.</span></div>
+        <div><b>&mdash;</b><span><b>Fast breeder reactors.</b> These convert fertile material such as uranium-238 into fissile fuel, increasing fuel efficiency.</span></div>
+        <div><b>&mdash;</b><span><b>Small modular reactors.</b> Compact and factory-built, potentially safer and more flexible.</span></div>
+      </div>
+      <p>The advantages are striking. Energy density is enormous: one kilogram of uranium produces millions of times more energy than fossil fuels. Operational carbon emissions are low. And the output is reliable baseload power unaffected by weather. The challenges are equally familiar: radioactive waste management, high capital costs and long construction times, public opposition and political risk, and the risk of catastrophic accidents at Three Mile Island, Chernobyl and Fukushima.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Innovations in Fission Technology</h3>
+      <p><b>Small modular reactors</b> range from 10 to 300 MW of electric capacity. Their benefits are factory fabrication, reduced construction risk and flexible deployment. Their applications are remote locations, grid stabilisation and co-generation of heat. <b>Generation IV reactors</b> aim for improved safety, sustainability and waste minimisation. The types include molten salt reactors with liquid fuel, low pressure and high efficiency; gas-cooled fast reactors with high temperature and potential hydrogen production; and lead-cooled fast reactors with enhanced safety and passive cooling. <b>The thorium fuel cycle</b> uses thorium-232, which is abundant and fertile. It produces less long-lived radioactive waste and has potential for proliferation resistance.</p>
+      <h3 class="sub"><span class="sub-num">4</span>The Promise and Challenge of Nuclear Fusion</h3>
+      <p>Fusion joins light nuclei, such as the hydrogen isotopes deuterium and tritium, to form helium and release energy. The canonical reaction is D + T → He-4 + neutron + 17.6 MeV. Its advantages are a virtually limitless fuel supply from seawater and lithium, no high-level radioactive waste, no chain reaction and therefore inherent safety, and enormous energy density. The scientific challenge is achieving and sustaining the extreme conditions of temperature, around 150 million °C, and pressure. Confinement is attempted by magnetic fields in tokamaks and stellarators, or by inertial confinement using lasers. Maintaining net energy gain, known as breakeven, remains the goal.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Major Fusion Projects</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>ITER.</b> The International Thermonuclear Experimental Reactor in France, the largest magnetic confinement project, aiming for first plasma in the mid-2020s.</span></div>
+        <div><b>&mdash;</b><span><b>JET.</b> The Joint European Torus, a precursor experiment with record plasma heating.</span></div>
+        <div><b>&mdash;</b><span><b>NIF.</b> The National Ignition Facility in the United States, pursuing laser-driven fusion.</span></div>
+        <div><b>&mdash;</b><span><b>Private ventures.</b> Commonwealth Fusion Systems, Tokamak Energy and TAE Technologies are pushing faster, smaller and novel approaches.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">6</span>Fusion Fuel Cycles</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Deuterium-tritium.</b> The easiest to ignite, but tritium is scarce and radioactive.</span></div>
+        <div><b>&mdash;</b><span><b>Deuterium-deuterium.</b> More abundant fuels, harder to ignite.</span></div>
+        <div><b>&mdash;</b><span><b>Deuterium-helium-3.</b> Fewer neutrons and a cleaner reaction, but helium-3 is rare.</span></div>
+        <div><b>&mdash;</b><span><b>Proton-boron-11.</b> Aneutronic and cleaner, but very difficult to ignite.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">7</span>Nuclear Waste and Decommissioning</h3>
+      <p>Fission produces high-level waste requiring secure storage for thousands of years. The strategies are deep geological repositories such as Finland's Onkalo, recycling and reprocessing of fuel, and advanced reactors that burn waste through transmutation. Fusion produces minimal radioactive waste, mainly from neutron-activated structural materials, and that waste is shorter-lived.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Safety and Public Perception</h3>
+      <p>Modern reactors incorporate passive safety systems. Small modular reactors promise reduced accident risk. Education and transparency are essential to rebuild public trust, and nuclear's zero-emission nature is gaining recognition in climate policy.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Nuclear's Role in a Renewable World</h3>
+      <p>Nuclear provides stable baseload power that complements intermittent renewables. It enables hydrogen production through high-temperature electrolysis. It can power desalination and industrial heat. And it has the potential to decarbonise heavy industry.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Conclusion: The Atomic Crossroads</h3>
+      <p>The nuclear renaissance is both an opportunity and a challenge. Fission offers proven, scalable low-carbon power but must overcome its legacy issues. Fusion remains the holy grail, the promise of star power on Earth. Together they could illuminate the fire of the future: a civilisation powered by atomic mastery rather than atomic fear.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(10)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 10</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(12)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-12" data-num="12" data-title="Advanced Nuclear Fuels — Safe, Abundant, and Sustainable?">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Twelve</span><span>12 / 17</span></div>
+    <h2>Advanced Nuclear Fuels — Safe, Abundant, and Sustainable?</h2>
+    <p class="chapter-sub">Reactor design gets the attention, but the fuel at the core decides efficiency, waste and security.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Rethinking the Fuel Core</h3>
+      <p class="drop">The conversation around nuclear energy is often dominated by reactor design, safety protocols and waste management. Yet at the heart of every reactor lies the element that determines efficiency, longevity, sustainability and geopolitical security: the nuclear fuel itself. Uranium-235 has been the traditional choice for decades, but it is far from the only viable option. The future of nuclear power may depend not just on new reactors, but on advanced fuels — from thorium to metallic alloys, molten salts to recycled materials — that promise safer, cleaner and more efficient energy.</p>
+      <h3 class="sub"><span class="sub-num">2</span>The Limitations of Conventional Uranium Fuel</h3>
+      <p>Natural uranium contains only about 0.7% fissile uranium-235; the rest is uranium-238. Most reactors require enrichment to 3–5% uranium-235, a process that is energy-intensive, costly and carries proliferation risk. Global uranium resources are finite, and while they are not immediately scarce, long-term energy security requires diversification. There is also the question of burn-up. Traditional uranium oxide fuel has a limited burn-up, meaning only a small percentage of the material undergoes fission before it becomes inefficient. Spent fuel still contains a significant amount of fissile material, which means waste and underutilisation.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Thorium: The Forgotten Fuel</h3>
+      <p>Thorium-232 is a fertile material rather than a fissile one. In a reactor it absorbs a neutron and transmutes into uranium-233, which is fissile. Its advantages are substantial. Thorium is three to four times more abundant than uranium in Earth's crust. It produces significantly less long-lived radioactive waste. Uranium-233 produced in the cycle is typically contaminated with uranium-232, which complicates weaponisation and improves proliferation resistance. And the conversion ratio is high when thorium is used in molten salt reactors. India leads thorium research with its three-stage nuclear programme, and several experimental molten salt reactors are investigating thorium cycles in Europe and North America.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Metallic and Ceramic Fuel Innovations</h3>
+      <p><b>Metal fuels</b> such as uranium-zirconium and uranium-molybdenum alloys provide higher thermal conductivity than oxide fuels, enabling higher power density and safer thermal profiles. They have been tested in fast reactors and in some small modular designs. <b>TRISO fuel</b> consists of uranium kernels encapsulated in multiple ceramic layers. The particles can withstand temperatures around 1,800°C without melting down, and are used in high-temperature gas-cooled reactors. <b>Accident-tolerant fuels</b>, developed after Fukushima to widen safety margins, replace traditional zirconium cladding with materials such as silicon carbide composites or chromium-coated cladding. These can maintain integrity under severe accident conditions.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Molten Salt Fuels</h3>
+      <p>The liquid fuel concept dissolves fuel in a molten salt mixture such as FLiBe, a combination of lithium fluoride and beryllium fluoride. The reactor operates at atmospheric pressure, avoiding the risks of pressurised water systems. The advantages are inherent safety, because the salt expands with heat and reduces reactivity naturally; continuous online reprocessing; and compatibility with both thorium and uranium fuels. Oak Ridge National Laboratory pioneered molten salt reactors in the 1960s, and interest has renewed because of passive safety and load-following capability.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Recycled and Mixed Fuels</h3>
+      <p><b>MOX fuel</b>, or mixed oxide, combines plutonium from reprocessed spent fuel with uranium. It reduces stockpiles of weapons-grade material and is already used in reactors in Europe and Japan. <b>Transmutation and recycling</b> allow fast reactors to burn transuranic elements, reducing high-level waste. Partitioning and transmutation could eventually close the fuel cycle. <b>Integral fast reactors</b> combine fast neutron reactors with on-site fuel reprocessing. Demonstrated in the 1980s and 1990s, they are now being re-examined for revival.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Fusion Fuels: Preparing for the Plasma Age</h3>
+      <p>Fusion fuels are not yet commercial, but they will one day form the backbone of post-fission nuclear power.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Deuterium.</b> Abundant in seawater, about 33 milligrams per litre.</span></div>
+        <div><b>&mdash;</b><span><b>Tritium.</b> Rare, produced from lithium-6, and radioactive with a 12.3-year half-life.</span></div>
+        <div><b>&mdash;</b><span><b>Helium-3.</b> Virtually nonexistent on Earth, with possible future mining on the Moon.</span></div>
+        <div><b>&mdash;</b><span><b>Boron-11.</b> An aneutronic fusion candidate, extremely difficult to ignite.</span></div>
+      </div>
+      <p>Breeding tritium is the central engineering problem. In a fusion reactor, lithium blankets breed tritium through neutron capture: Li-6 + n → He-4 + T + 4.8 MeV. Ensuring closed tritium cycles is a key challenge for commercial fusion.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Safety Considerations for New Fuels</h3>
+      <p>Many advanced fuels reduce the risks of hydrogen generation and cladding failure. Liquid fuels in molten salt reactors reduce pressure-related explosion risk. Enhanced burn-up reduces the volume of waste per unit of energy produced.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Proliferation Risk and Nonproliferation Strategies</h3>
+      <p>The thorium fuel cycle has intrinsic resistance but still requires monitoring. MOX and reprocessed fuels must be tightly secured. Next-generation safeguards using remote monitoring, blockchain records and AI analysis are under exploration.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Global Research and Future Directions</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>India.</b> Thorium reactors and fast breeder programmes.</span></div>
+        <div><b>&mdash;</b><span><b>China.</b> A molten salt thorium reactor test in Gansu province.</span></div>
+        <div><b>&mdash;</b><span><b>United States and Russia.</b> Small modular reactor deployment with accident-tolerant fuels.</span></div>
+        <div><b>&mdash;</b><span><b>Europe.</b> High-assay low-enriched uranium and TRISO fuel experimentation.</span></div>
+      </div>
+      <p>Industry partnerships include TerraPower, working on sodium fast reactors; X-energy, focused on high-temperature gas reactors with TRISO fuel; and Kairos Power, developing fluoride salt-cooled reactors.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Conclusion: Fuelling the Nuclear Future</h3>
+      <p>Advanced nuclear fuels are not a luxury. They are a necessity. The path to safer, more efficient and sustainable nuclear power lies in fuels that maximise energy output, minimise waste and enhance security. As fission matures and fusion rises, the research and deployment of next-generation fuels will define our energy horizon. These fuels are more than atoms. They are architects of an energy paradigm shift, where power, safety and sustainability converge in the atomic core.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(11)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 11</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(13)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-13" data-num="13" data-title="Space-Based Fuel Sources — Asteroids, Moons, and the Extraterrestrial Frontier">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Thirteen</span><span>13 / 17</span></div>
+    <h2>Space-Based Fuel Sources — Asteroids, Moons, and the Extraterrestrial Frontier</h2>
+    <p class="chapter-sub">The next fuel revolution may come not from Earth's core but from a drifting rock between Mars and Jupiter.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Beyond the Crust, Beyond the Sky</h3>
+      <p class="drop">As Earth's reserves of fossil fuels deplete and terrestrial mining faces growing ecological constraints, humanity is slowly turning its gaze outward. With the rapid advance of space technology and commercial interest in exploration, sourcing fuel beyond our planet has moved from speculative fiction into strategic foresight. This chapter explores the potential of space-based fuel sources: asteroid mining for rare elements, helium-3 harvesting on the Moon, and even plasma tapped from the Sun's corona. These sources are far from mainstream today, but they may become critical energy frontiers in the coming centuries.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Why Look to Space for Fuel?</h3>
+      <p><b>Earth's supply is finite.</b> Fossil fuels are not renewable on a human timescale, and rare-earth elements critical for clean energy, such as lithium, cobalt and neodymium, are unevenly distributed and politically sensitive. <b>Clean energy needs new inputs.</b> Fusion fuels such as helium-3, unavailable on Earth in sufficient quantities, may enable cleaner and safer fusion reactions. Solar power collected in space offers continuous energy unaffected by night or weather. <b>The space industry needs in-situ resources.</b> Space stations, lunar colonies and Mars missions will require locally sourced fuel for logistics and self-sufficiency.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Asteroid Mining: A New Fuel Frontier</h3>
+      <p>Asteroids come in three broad classes. C-type, carbonaceous asteroids are rich in water ice and organics. S-type, silicaceous asteroids contain iron, nickel and magnesium. M-type, metallic asteroids hold high concentrations of platinum-group metals and radioactive isotopes. The potential fuels are considerable. Water can be electrolysed into hydrogen and oxygen, serving as rocket propellant. Some C-type asteroids contain tholins, organic compounds formed in deep space. Trace uranium and thorium are usable in microreactors. The mining methods under study include robotic drills that extract and refine autonomously, thermal extraction using solar concentrators to vaporise and separate volatiles, and magnetic separation that exploits metallic content in zero gravity. The challenges are severe. Transporting material back to Earth is currently prohibitive, and operations demand autonomy, low-gravity adaptation and long-term energy storage.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Lunar Resources: The Helium-3 Dream</h3>
+      <p>Helium-3 is a light, stable isotope of helium with two protons and one neutron. It is not radioactive, and produces negligible long-term waste in fusion reactions. It is valuable because it enables aneutronic fusion, in which energy is released directly as charged particles rather than neutrons, making the reaction safer and more efficient. It is rare on Earth because the magnetosphere blocks the solar wind that carries it. The Moon's surface, especially its regolith, has been exposed to the solar wind for billions of years. An estimated one million metric tonnes of helium-3 exists there, enough in principle to supply Earth's energy for centuries. Extraction would require heating regolith to about 600°C to release the embedded gas, then large-scale thermal desorption and cryogenic capture. The fuel would be compressed and transported by robotic shuttles or magnetic rail guns. China's Chang'e missions have explicitly focused on helium-3 potential, and NASA's Artemis programme and private ventures such as Blue Origin include in-situ resource utilisation goals.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Mars and the Martian Fuel Cycle</h3>
+      <p>Mars has a thin atmosphere of which 96% is carbon dioxide, which can be used to produce methane through the Sabatier reaction: CO₂ + 4H₂ → CH₄ + 2H₂O. This requires transported hydrogen or water extracted from Martian ice. Perchlorate compounds in Martian soil may yield oxygen through electrolysis, and cosmic radiation exposure demands underground or shielded reactors for safety. Fuel produced on Mars would primarily support return missions, rovers and local power generation using compact reactors or solar.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Solar Power Satellites and Space-Based Solar Energy</h3>
+      <p>The concept is straightforward. Collect solar energy in orbit with massive solar arrays, convert it to microwaves or laser beams, and transmit it wirelessly to receivers on Earth. The advantages are constant sunlight, roughly six times the exposure available on Earth's surface, and the elimination of night, weather and seasonal variation. It also enables power supply to remote or disaster-affected areas. The engineering risks are considerable. Gigantic orbital structures must be lightweight, resilient and foldable, and there are risks of debris collision, beam misalignment and geopolitical dispute. Research is ongoing at JAXA in Japan, ESA, NASA and China.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Cosmic Fuels of the Future</h3>
+      <p><b>Solar plasma tapping.</b> The hypothetical harvesting of plasma from the Sun's corona using solar skimmers would require unprecedented heat shielding and magnetic confinement. <b>Interstellar hydrogen scoops.</b> Interstellar spacecraft may one day collect hydrogen through Bussard ramjets, a concept explored for deep-space propulsion but currently unfeasible because of fuel drag. <b>Antimatter harvesting.</b> Trace antimatter particles trapped in planetary magnetospheres, such as Jupiter's, would offer ultra-high energy density, but generation and storage remain decades away.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Legal, Ethical and Geopolitical Issues</h3>
+      <p>The Outer Space Treaty of 1967 prohibits national appropriation of celestial bodies but is unclear on resource use, and private companies operate in grey zones of international law. Resource nationalism is a real risk. Countries with advanced space programmes may monopolise key orbital zones or lunar sites, and space-based cartels could come to mirror petroleum organisations. The environmental impact of space extraction is also uncertain. Space mining avoids Earth's ecosystems, but it may disturb lunar or Martian environments, and industrial debris could increase the risk of Kessler syndrome collisions.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Toward a Solar Civilization</h3>
+      <p>Fuel is not just an earthly concern. In the long arc of civilisation, energy defines expansion. As humans evolve from a Type I civilisation, planet-bound, toward Type II, stellar-bound, space-based fuel sources become not optional but inevitable. If we are to light the dark spaces between stars, we must learn to extract power from the void itself: from asteroid hearts, lunar dust, solar winds and cosmic plasma.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Conclusion: The Fuel Above Us</h3>
+      <p>The path to future energy security is not solely beneath our feet but above our heads. Space-based fuel systems, though technologically and politically complex, are key to building a resilient, post-terrestrial energy infrastructure. What today seems like science fiction will, within this century, become the logistical foundation of humanity's expansion beyond Earth. Our next fuel revolution may come not from Earth's core, but from a distant moon or a drifting rock between Mars and Jupiter. The fire of the future, it seems, burns in orbit.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(12)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 12</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(14)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-14" data-num="14" data-title="Synthetic Biology and Biofuels of the Next Century">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Fourteen</span><span>14 / 17</span></div>
+    <h2>Synthetic Biology and Biofuels of the Next Century</h2>
+    <p class="chapter-sub">Once we dug fuel out of the ground. Now we are learning to grow it.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Life as an Engine of Energy</h3>
+      <p class="drop">The search for sustainable, carbon-neutral fuels has turned science's gaze toward life itself. Beyond crude oil and coal — products of ancient biology — we are now engineering living systems to produce fuel in real time. Synthetic biology, the frontier where biology meets engineering, is redefining how we can grow our energy rather than dig or burn it. This chapter explores how genetic engineering, bioreactor design and artificial organisms are paving the way for custom-designed biofuels: from algae that exhale gasoline to bacteria that digest plastic and yield hydrogen. These innovations could be humanity's greatest weapon against fossil dependency, pollution and the climate crisis.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Is Synthetic Biology?</h3>
+      <p>Synthetic biology is the design and construction of new biological parts, devices and systems, or the redesign of existing natural biological systems for useful purposes. It works through gene editing, such as CRISPR-Cas9, to reprogramme microorganisms. It designs genetic circuits the way engineers build electronic ones. And it integrates software modelling and automation to simulate and build living systems. For biofuels, synthetic biology allows us to programme life to convert sunlight, waste or CO₂ into fuel, to optimise fuel yields, composition and efficiency, and to create scalable, renewable sources of energy.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Generations of Biofuels</h3>
+      <p><b>First generation.</b> Made from food crops such as corn for ethanol or soybeans for biodiesel. Criticised for contributing to food insecurity and deforestation. <b>Second generation.</b> Derived from non-food biomass such as switchgrass, crop residues and algae. Less impact on food supply, but more complex processing. <b>Third generation.</b> Genetically engineered organisms such as microalgae, bacteria and yeast producing custom fuels, optimised for specific molecules such as jet fuel or diesel. <b>Fourth generation.</b> Synthetic biology fuels that incorporate carbon capture directly into fuel production, often through synthetic pathways not found in nature and engineered from scratch using DNA synthesis, artificial genomes or cell-free systems.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Designer Organisms for Fuel</h3>
+      <p><b>Algae.</b> Photosynthetic microalgae convert sunlight and CO₂ into lipids that are processed into biodiesel. Some strains are engineered to sweat hydrocarbons, releasing usable fuel into the medium. Their advantages are extremely high biomass yield per hectare, growth on non-arable land and brackish water, and applicability in carbon-negative setups. <b>Cyanobacteria.</b> Engineered to produce ethanol, butanol or hydrogen directly from CO₂ and sunlight. They are more robust and simpler than algae and thrive in harsh conditions. <b>E. coli and yeast.</b> Modified to convert waste biomass, lignocellulose or glycerol into specific fuels. They can be programmed to yield gasoline equivalents, jet fuel or biobutanol. <b>Methanogenic archaea.</b> These thrive in anaerobic digesters, converting wastewater, sewage or sludge into methane. Research focuses on altering the gas profile and increasing reaction speed.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Advanced Bioreactor Systems</h3>
+      <p>Open ponds are cost-effective but vulnerable to contamination. Photobioreactors allow precise control of inputs, lighting, temperature and harvesting. AI-controlled cultures use machine learning to optimise light cycles, CO₂ injection, harvest timing and nutrient flow. Modular and urban biofuel farms use vertical farming with modular bioreactors to operate in cities, deserts or aboard spacecraft, enabling decentralised fuel production for disaster zones, military outposts or deep-sea rigs.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Innovations in Biofuel Molecules</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Biobutanol.</b> A four-carbon alcohol, more energy-dense and engine-compatible than ethanol, less volatile and mixing well with gasoline.</span></div>
+        <div><b>&mdash;</b><span><b>Farnesene.</b> A diesel alternative derived from engineered yeast, used in aviation and specialty vehicles.</span></div>
+        <div><b>&mdash;</b><span><b>Isobutanol and drop-in fuels.</b> Chemically identical to fossil fuels and usable in existing engines without modification.</span></div>
+        <div><b>&mdash;</b><span><b>Electrofuels.</b> Produced by microorganisms that use electricity and CO₂ to generate hydrocarbons, blurring the line between biological and electrochemical fuels.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">7</span>Environmental and Economic Benefits</h3>
+      <p>Synthetic biology can design carbon-neutral or carbon-negative cycles in which CO₂ captured from the atmosphere or from industry is recycled into fuel. Bacteria can be engineered to digest agricultural residue, municipal waste, plastic and industrial solvents, turning waste streams into fuel. Localised bioreactors enable on-site energy generation, empowering agricultural economies and off-grid regions.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Challenges to Overcome</h3>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>Biosafety.</b> Engineered organisms could escape into the wild. Containment, kill-switches and genetic fences are under development.</span></div>
+        <div><b>&mdash;</b><span><b>Genetic drift.</b> Long-term operation may see designed traits mutate, requiring constant monitoring and re-editing.</span></div>
+        <div><b>&mdash;</b><span><b>Scale-up bottlenecks.</b> Laboratory results do not always scale to commercial volumes, with problems in light penetration, biomass separation and cost per litre.</span></div>
+        <div><b>&mdash;</b><span><b>Public perception.</b> Fears about <em>frankenfuel</em> and misinformation about synthetic biology require transparent governance, open data and bioethics engagement.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">9</span>Regulatory and Policy Framework</h3>
+      <p>Synthetic biology biofuels fall under multiple agencies: the Environmental Protection Agency, Department of Energy and Food and Drug Administration in the United States, and REACH and EFSA in Europe. There is a need for unified global biofuel regulation, and for licensing frameworks covering DNA sequences and bioreactor designs.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The Next Century of Living Fuel</h3>
+      <p><b>Integration with AI and robotics.</b> Fully automated, self-optimising biofuel systems producing on demand according to energy usage patterns. <b>Mars and beyond.</b> Biofuel-producing microbes may be central to space colonies, with oxygen and methane from engineered algae powering extraterrestrial settlements. <b>Synthetic ecosystems.</b> Engineered ecologies that self-regulate fuel, food and waste cycles, and biologically integrated cities where a building's wall might grow fuel.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Conclusion: Life Reengineered to Power Civilisation</h3>
+      <p>Fuel, once the domain of geology and chemistry, is becoming a product of biology and code. Synthetic biology gives us the power not just to extract energy from life, but to design life itself to serve humanity's energy needs. In the coming decades, energy farms may resemble laboratories more than fields, and fuels may be brewed like beer: custom-made, carbon-neutral and programmed down to the molecule. We are not merely harvesting life. We are shaping it, instructing it to power our lights, planes and future. As we leave the age of extraction and enter the age of design, the fuel of the future may grow not underground, but in glass tubes, DNA strands and digital blueprints.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(13)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 13</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(15)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-15" data-num="15" data-title="Quantum Energy and the Zero-Point Revolution">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Fifteen</span><span>15 / 17</span></div>
+    <h2>Quantum Energy and the Zero-Point Revolution</h2>
+    <p class="chapter-sub">The vacuum is not empty. Whether it is a fuel is another question entirely.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: Unlocking the Vacuum</h3>
+      <p class="drop">In the void we once considered empty lies an ocean of potential energy: a background hum of quantum fluctuations rippling through every cubic centimetre of space. This ghostly field, known as zero-point energy, is one of the strangest concepts in physics. If it could be tapped, it might provide an infinite, non-polluting, fuel-less source of energy. Quantum energy is not mere science fiction. It is grounded in quantum field theory, the most accurate description of nature we have. It challenges the foundations of classical physics and opens a door to technologies that could revolutionise propulsion, communication and energy generation. This chapter explores the theoretical underpinnings, experimental pursuits and technological visions surrounding quantum energy and zero-point dynamics, while acknowledging the scientific scepticism and engineering difficulty that surround this alluring field.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Understanding Zero-Point Energy</h3>
+      <p><b>Quantum vacuum fluctuations.</b> In quantum mechanics, even at absolute zero temperature, particles still exhibit motion. These fluctuations follow from Heisenberg's uncertainty principle: we cannot precisely know both the position and momentum of a particle, so it must jitter. The vacuum is not empty. It teems with temporary virtual particles popping in and out of existence. <b>The Casimir effect.</b> In 1948 the Dutch physicist Hendrik Casimir predicted that two uncharged metallic plates placed a few nanometres apart in a vacuum would experience an attractive force, arising from the suppression of vacuum modes between them. The effect has been measured experimentally, which confirms that the vacuum possesses measurable energy. <b>The Dirac sea and quantum fields.</b> Quantum field theory models every particle as an excitation of an underlying field. The Dirac sea picture suggests the vacuum is filled with negative-energy states. Zero-point energy is intrinsic to every field, electromagnetic, gravitational and scalar, and contributes to vacuum energy density.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Energy Density of the Vacuum</h3>
+      <p>The estimated energy density of vacuum space is extraordinarily high. Even one cubic centimetre of vacuum may contain 10⁹⁴ ergs of energy, enough to boil oceans if it could be harnessed. But there is a problem. Quantum field theory predicts a vacuum energy far greater than cosmology observes, and the discrepancy runs to as much as 120 orders of magnitude. This is one of the biggest unsolved problems in physics, known as the cosmological constant problem. Vacuum energy is also believed to contribute to dark energy, the mysterious force accelerating the universe's expansion. If dark energy and zero-point energy are linked, then space itself could be an engine.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Attempts to Harness Zero-Point Energy</h3>
+      <p><b>Resonant cavity thrusters.</b> NASA's Eagleworks laboratory investigated the EmDrive, a propulsion concept allegedly working without propellant, and some theories suggested it might interact with the quantum vacuum. The results have not passed rigorous peer review. <b>Quantum coherence and extraction.</b> Theorists propose that under extreme conditions such as superconductivity or quantum coherence, vacuum energy might be tapped, with some designs aiming to resonate specific quantum fields and create energy differentials. <b>Tesla and zero-point lore.</b> Nikola Tesla claimed to have discovered free energy systems via the aether, a concept since abandoned by physics. His ideas have inspired generations of researchers and fringe scientists to pursue zero-point devices.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Breakthrough Technologies in Development</h3>
+      <p><b>Casimir battery systems.</b> Nanoengineered materials that exploit the Casimir effect for small but persistent energy output, potentially powering low-energy devices indefinitely. <b>Vacuum fluctuation reactors.</b> Experimental concepts in which cavities are constructed at quantum scales to modulate vacuum fields. Still theoretical, but increasingly modelled with quantum electrodynamics. <b>Energy from virtual particles.</b> Particle-antiparticle pairs form and annihilate in the vacuum. Concepts exist to create energy differentials by manipulating pair creation near event horizons or energetic boundaries, as in analogues of Hawking radiation. <b>Casimir thrusters.</b> Proposals to engineer nanoscale asymmetric cavities that create directional forces from vacuum pressure imbalance, offering micro-propulsion for satellites or deep-space missions.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Quantum Energy and Future Propulsion</h3>
+      <p><b>Field manipulation drives.</b> Quantum drives could manipulate inertial mass or gravitational fields. Warp drive concepts such as the Alcubierre metric suggest that negative energy densities, like those associated with zero-point energy, could compress space ahead of a ship. <b>Zero-point energy as a propellant substitute.</b> Spacecraft could in theory draw energy from the vacuum, eliminating heavy fuel loads, and deep-space missions would be self-sustaining. <b>Antigravity theories.</b> If zero-point energy could be focused or cancelled, it might allow manipulation of gravitational interactions. Work in quantum gravity and string theory may one day illuminate the possibility.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Challenges and Criticisms</h3>
+      <p><b>Thermodynamic limits.</b> The first law of thermodynamics warns that energy must come from somewhere, and critics argue zero-point energy cannot be extracted without violating conservation laws. <b>Measurement difficulties.</b> Quantum fluctuations are incredibly subtle and difficult to manipulate or isolate. Many claimed zero-point devices fall prey to confirmation bias or measurement noise. <b>Fringe science and pseudoscience.</b> The field has attracted a great deal of non-peer-reviewed work, which makes it hard to separate real breakthroughs from speculation. Rigorous experimental validation and open data sharing are essential.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Philosophical Implications</h3>
+      <p><b>Is the universe an energy engine?</b> If vacuum fluctuations could be harnessed, space-time would not be inert but active and fertile, a vast latent engine waiting to be awakened. <b>Energy without entropy?</b> A non-entropic energy source would permit perpetual computation, self-repairing machines and enduring ecosystems. <b>A bridge between matter and mind?</b> Some quantum theories suggest consciousness interacts with the quantum field, raising the question of whether zero-point energy could be an interface between thought and energy.</p>
+      <h3 class="sub"><span class="sub-num">9</span>The Road Ahead</h3>
+      <p>Quantum simulators are now used to model vacuum states and fluctuation dynamics. Metamaterials may enhance Casimir and vacuum effects. Space-based laboratories, such as low-Earth-orbit quantum sensors, may allow clearer detection of subtle vacuum behaviour. Interdisciplinary research combining quantum field theory, nanotechnology, AI and thermodynamics is essential.</p>
+      <h3 class="sub"><span class="sub-num">10</span>Conclusion: Power from the Void</h3>
+      <p>Zero-point energy is not merely a wild theory. It is a proven reality of quantum mechanics. The question is not whether it exists, but whether humanity can access it in meaningful and scalable ways. The challenges are immense, and the prize is epochal: a fuel-less future in which space is the source and the vacuum is the vessel. The implications extend beyond science into philosophy, ecology and the destiny of civilisation. If we succeed, the engines of tomorrow may hum not with combustion but with the silent song of quantum fields. In the emptiness of space may lie the fullness of energy.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(14)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 14</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(16)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-16" data-num="16" data-title="Magnetoplasma and Controlled Fusion Breakthroughs">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Sixteen</span><span>16 / 17</span></div>
+    <h2>Magnetoplasma and Controlled Fusion Breakthroughs</h2>
+    <p class="chapter-sub">For seventy years fusion has been thirty years away. The distance is finally closing.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Promise of Controlled Starfire</h3>
+      <p class="drop">For over a century, humans have dreamed of harnessing the power of the stars. At the heart of every sun lies nuclear fusion, the process in which atoms merge to release immense energy. Unlike fission, fusion promises abundant, clean, safe and virtually limitless energy. Yet controlled fusion, reproducing and maintaining a stellar process on Earth, has remained one of the greatest scientific and engineering challenges in human history. In recent years a series of breakthroughs in magnetically confined plasma physics, laser-induced ignition and high-temperature superconductors have brought fusion's promise closer. This chapter examines the principles behind controlled fusion, the machines built to achieve it, and the implications for the energy future of Earth.</p>
+      <h3 class="sub"><span class="sub-num">2</span>What Is Fusion? A Primer</h3>
+      <p>Fusion combines two light atomic nuclei to form a heavier nucleus, releasing energy. The most efficient reaction on Earth is deuterium plus tritium yielding helium-4, a neutron and 17.6 MeV. The key features are extreme heat and pressure, measured in millions of degrees Celsius; the need to overcome Coulomb repulsion, the electrostatic force between nuclei; and an energy release three to four times greater per unit mass than fission. Fusion is attractive because the fuel is abundant, with deuterium extracted from seawater and tritium bred from lithium. It produces no long-term radioactive waste, carries no meltdown risk, offers virtually unlimited power, and emits no carbon.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Containing the Fire: The Challenge of Plasma</h3>
+      <p>Fusion does not happen in a solid or a liquid. It happens in plasma, the fourth state of matter, in which atoms are ionised and extremely energetic. Plasma is an ionised gas of free electrons and nuclei. It requires temperatures above 100 million °C. And it is extremely unstable, so it must be confined and stabilised. There are two main approaches: magnetic confinement fusion, which uses powerful magnetic fields, and inertial confinement fusion, which uses laser or particle beams to compress fuel pellets rapidly.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Magnetic Confinement Systems</h3>
+      <p><b>The tokamak</b> is a torus-shaped reactor that traps plasma in a ring with magnetic fields. It was invented in the Soviet Union in the 1950s and remains the most developed fusion design. The global flagship is ITER in France, a joint project of thirty-five countries, aiming at the first fusion experiment to produce net positive energy, with a goal of 500 MW of output from 50 MW of input and first plasma scheduled for the early 2030s. <b>Stellarators</b> use complex, twisted magnetic field geometry to achieve passive stability without relying on plasma current. The leading example is Wendelstein 7-X in Germany. <b>Magnetic mirrors and reversed field pinches</b> use linear confinement with magnetic mirrors. Research continues, but both suffer from plasma leakage and instability.</p>
+      <h3 class="sub"><span class="sub-num">5</span>Inertial Confinement Fusion</h3>
+      <p>In laser ignition, a fuel pellet of deuterium and tritium is rapidly compressed by powerful lasers. The surface of the pellet explodes outward, causing the inner core to implode, which requires symmetrical compression and nanosecond timing. The National Ignition Facility in the United States achieved ignition in 2022, releasing more energy than the lasers delivered. Particle beam ignition uses high-energy ions instead of lasers to induce fusion, and remains experimental.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Magnetised Target Fusion</h3>
+      <p>Magnetised target fusion is a hybrid of magnetic and inertial approaches. Magnetically confined plasma is compressed by physical pistons or liners, which is promising for smaller, modular reactors. General Fusion in Canada uses liquid metal spheres and pulsed compression.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Innovations in Reactor Materials and Design</h3>
+      <p><b>High-temperature superconductors</b> are used in next-generation magnets. They provide stronger magnetic fields with lower energy loss and enable compact fusion reactors. Commonwealth Fusion Systems, an MIT spin-off, is building SPARC, expected to achieve net energy in the late 2020s. <b>Tritium breeding and fuel cycles.</b> Tritium is rare and must be bred from lithium inside reactor walls. Breeding blankets made of lithium ceramics or liquid metals are intended to make the fuel cycle self-sufficient. <b>Heat exhaust and divertors.</b> Fusion produces extreme heat and requires novel cooling. Advanced materials include tungsten, beryllium and carbon composites.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Fusion Startups and the Commercial Race</h3>
+      <p>Private ventures are racing governments to deliver fusion.</p>
+      <div class="list-block">
+        <div><b>&mdash;</b><span><b>TAE Technologies</b>, United States. Field-reversed configuration, targeting boron fusion.</span></div>
+        <div><b>&mdash;</b><span><b>Helion Energy</b>, United States. Pulsed magnetic fusion, promising net power by 2028.</span></div>
+        <div><b>&mdash;</b><span><b>First Light Fusion</b>, United Kingdom. Projectile-driven inertial fusion with a simpler design.</span></div>
+        <div><b>&mdash;</b><span><b>Tokamak Energy</b>, United Kingdom. Spherical tokamak with high-temperature superconductors, aimed at compact systems.</span></div>
+        <div><b>&mdash;</b><span><b>General Fusion</b>, Canada. Magnetised target fusion, with a commercial plant in planning.</span></div>
+      </div>
+      <h3 class="sub"><span class="sub-num">9</span>Problems, Setbacks and Scientific Challenges</h3>
+      <p><b>Plasma instabilities.</b> Plasma exhibits chaotic behaviour, including turbulence, kink and sawtooth instabilities, and requires active feedback control. Diagnostics and AI models now help predict and manage disruptions. <b>Material degradation.</b> Neutron bombardment damages reactor walls, causing embrittlement, swelling and radioactivation. <b>Breeding and recycling fuel.</b> Tritium is radioactive and hard to store, which requires closed-cycle operation. <b>Scalability and cost.</b> Upfront investments are massive, above $20 billion for ITER, and demand political will, industrial commitment and global cooperation.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The Fusion Economy: Impact and Transformation</h3>
+      <p>If controlled fusion succeeds, grid-level baseload energy could be available around the clock. Desalination, hydrogen production and CO₂ capture would become viable at scale. Transport sectors including aviation, shipping and interstellar craft could use fusion engines. Fusion space travel could shorten a Mars trip to thirty days or less. And fusion could enable AI megastructures, orbital factories and lunar habitats.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Fusion Beyond Earth</h3>
+      <p>The possibilities include lunar fusion reactors using helium-3, solar satellites powered by fusion and beaming energy to Earth, interstellar spacecraft driven by compact fusion engines such as the Daedalus and Polywell concepts, and terraforming Mars with fusion heat sources.</p>
+      <h3 class="sub"><span class="sub-num">12</span>Philosophical and Ethical Implications</h3>
+      <p><b>Energy abundance and civilisation.</b> Access to limitless clean energy could eliminate resource wars and redefine economic paradigms, ending energy scarcity. But it raises the question of who owns the sunfire. <b>Fusion and planetary stewardship.</b> Fusion could allow restoration of ecosystems and enable geoengineering to reverse climate damage, or it could accelerate exploitation. <b>The Prometheus dilemma.</b> Are we ready to control star power, and are our political systems equipped to distribute it wisely?</p>
+      <h3 class="sub"><span class="sub-num">13</span>Conclusion: Starfire Within Reach</h3>
+      <p>For decades fusion has remained just thirty years away. Today humanity stands on the precipice of success. From global megaprojects to agile startups, the fusion landscape is being redrawn, with artificial intelligence, quantum computing and materials science converging to unlock the most coveted form of energy the universe offers. Whether in tokamaks or liquid metal spheres, whether powered by lasers or magnets, fusion now burns within reach: not in stars light-years away, but in laboratories and prototypes here on Earth. We are preparing to hold a star in our hands. With it comes both infinite energy and infinite responsibility.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(15)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 15</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(17)">Next chapter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+  <article class="chapter" id="chapter-17" data-num="17" data-title="Terraforming and the Energy Architecture of Interplanetary Civilizations">
+    <div class="chapter-kicker"><span class="accent">The Fire of Future &middot; Chapter Seventeen</span><span>17 / 17</span></div>
+    <h2>Terraforming and the Energy Architecture of Interplanetary Civilizations</h2>
+    <p class="chapter-sub">Every leap of civilisation has been powered by energy. Expansion will be no different.</p>
+    <div class="chapter-ornament" aria-hidden="true">&#10022;</div>
+    <div class="chapter-body">
+      <h3 class="sub"><span class="sub-num">1</span>Introduction: The Energy Imperative of Expansion</h3>
+      <p class="drop">From the caveman's fire to the electric grid, every leap of civilisation has been powered by energy. Now humanity stands at a new horizon, not just of survival but of expansion. The stars beckon, and so does the silent red dust of Mars, the icy moons of Jupiter and the distant belts of mineral-rich asteroids. But dreams of space colonisation are meaningless without one foundational factor: energy infrastructure. Terraforming planets, sustaining life beyond Earth and maintaining interplanetary economies demand an energy revolution unlike any we have yet seen. This final chapter explores the theoretical and practical frameworks for building energy systems across the solar system, and eventually beyond it.</p>
+      <h3 class="sub"><span class="sub-num">2</span>Terraforming: Engineering Habitable Worlds</h3>
+      <p>Terraforming is the large-scale engineering of a planetary environment to make it suitable for Earth-based life. It involves manipulating atmospheric pressure, temperature, radiation, gravity response and biospheres. The primary candidates are Mars, Venus, Titan and Europa.</p>
+      <h3 class="sub"><span class="sub-num">3</span>Terraforming Mars: The Closest Frontier</h3>
+      <p>Mars today has an atmosphere that is 95% CO₂ and thin, at about 0.6% of Earth's pressure. Its average surface temperature is −63°C. It lacks a magnetic field and carries high radiation levels. The energy requirements are formidable. Estimates suggest that 10¹⁵ to 10¹⁷ joules per year of sustained energy would be needed to sublimate the polar CO₂ caps and thicken the atmosphere, to melt permafrost and release water vapour, and to produce greenhouse gases such as perfluorocarbons in vast quantities. That is hundreds of times Earth's total annual energy consumption. The possible energy sources are orbital mirrors reflecting sunlight onto the polar caps; fusion reactors, on the ground or in orbit, for direct thermal manipulation; nuclear fission, portable but dangerous; laser beaming from solar-powered stations on Phobos or Deimos; and solar collectors, less efficient on Mars at about 43% of Earth's sunlight.</p>
+      <h3 class="sub"><span class="sub-num">4</span>Terraforming Venus: The Hellscape Reversed</h3>
+      <p>Venus has a surface temperature near 470°C, a pressure 92 times Earth's, an atmosphere of carbon dioxide and sulphuric acid, and an extreme greenhouse effect in full force. The energy solutions under discussion include orbital sunshades that reduce solar input and initiate cooling, atmospheric seeding with genetically engineered algae to fix carbon, floating cities at 50 km altitude in more temperate layers, massive solar reflectors to cool the surface over centuries, and fusion-powered pumps to extract and convert atmospheric gases.</p>
+      <h3 class="sub"><span class="sub-num">5</span>The Lunar Energy Matrix</h3>
+      <p>The Moon offers unique conditions: no atmosphere, fourteen-day day-night cycles, and extreme temperature swings. Its energy systems would include helium-3 mining from surface regolith as fusion fuel, lunar solar arrays sited on peaks of eternal light, microwave beaming stations acting as power relays to Earth or space bases, and subsurface fusion plants shielded by lunar rock.</p>
+      <h3 class="sub"><span class="sub-num">6</span>Titan, Europa and the Outer System</h3>
+      <p><b>Titan</b>, Saturn's moon, has a nitrogen-rich atmosphere at roughly Earth-like pressure, lakes of liquid methane on the surface, and a temperature of −180°C. Its potential lies in methane-fuelled power cells, thermal borehole fusion units, and radioisotope heating networks. <b>Europa</b>, Jupiter's moon, has an icy crust and a liquid ocean beneath, possible subsurface life, and a radiation-rich surface. Its energy strategies include cryo-reactors, fusion-heated oceanic bases, and geothermal vents tapped for power.</p>
+      <h3 class="sub"><span class="sub-num">7</span>Dyson Spheres and Megastructures</h3>
+      <p>A truly advanced civilisation, Type II on the Kardashev scale, would capture the full energy output of its star. The structures proposed are Dyson swarms of satellites in solar orbit, Dyson bubbles held by light pressure, and Dyson shells, a hypothetical solid sphere likely impossible because of mechanical stress. The energy capacity is on the order of 10²⁶ watts, the full output of a Sun. That would be enough to run trillions of artificial intelligences, support planetary-scale quantum computation, enable full-planet terraforming, and act as a defence network against cosmic threats.</p>
+      <h3 class="sub"><span class="sub-num">8</span>Antimatter, Zero-Point Energy and Exotic Possibilities</h3>
+      <p><b>Antimatter reactors</b> would be theoretically the most energy-dense source: one gram of antimatter releases roughly three times the energy of the Hiroshima bomb. Containment remains a massive challenge. <b>Zero-point energy</b> is the vacuum energy of space-time. It is theoretical only, and exploiting it could alter fundamental physics, but it might enable warp drives and space-folding. <b>Gravitational energy tapping</b> would draw on black hole thermodynamics, through the Penrose process or the harvesting of Hawking radiation, with quantum gravitational theories still in development.</p>
+      <h3 class="sub"><span class="sub-num">9</span>Building the Interplanetary Grid</h3>
+      <p><b>Beamed power.</b> Laser or microwave transmission, with solar satellites relaying energy between Earth, the Moon and Mars. It is key to powering early colonies without heavy infrastructure. <b>Storage systems.</b> Cryogenic hydrogen tanks, space-based batteries using carbon nanotube supercapacitors, and the speculative idea of artificial moons as capacitors. <b>Smart interplanetary grids.</b> AI-managed load balancing, multi-planetary peak-demand prediction, and quantum-secure communication networks.</p>
+      <h3 class="sub"><span class="sub-num">10</span>The Politics of Interplanetary Power</h3>
+      <p>Who owns the solar collectors on the Moon? Will Mars have energy independence? How do we avoid energy imperialism? Energy can also be diplomacy. Shared fusion grids could bind Earth and Mars in alliances, power trading may replace mineral extraction as an economic driver, and energy-sharing treaties could serve as peace-keeping mechanisms.</p>
+      <h3 class="sub"><span class="sub-num">11</span>Ethical and Environmental Dilemmas</h3>
+      <p>Should we terraform if it destroys native microbiology? Do we have the right to rewrite entire planets? How do we prevent runaway geoengineering? The next hundred years must answer what sustainability means beyond Earth, and what energy ethics will guide a multi-world civilisation.</p>
+      <h3 class="sub"><span class="sub-num">12</span>Civilisation Type Shift: From Type I to Type II</h3>
+      <p>Humanity's current status is roughly 0.73 on the Kardashev scale. The pathway runs from Type I, full control of Earth's energy at 10¹⁶ to 10¹⁷ watts, to Type II, full control of a star's energy at 10²⁶ watts, and eventually Type III, control of an entire galaxy's energy at around 10³⁶ watts. The energy of tomorrow will not just light homes or run data centres. It will define what kind of species we become.</p>
+      <h3 class="sub"><span class="sub-num">13</span>Conclusion: Fire Between the Stars</h3>
+      <p>Once, fire was a secret stolen from the gods. Now humanity wields it as a tool, a weapon and soon a passport to the stars. The fusion reactors we build, the solar webs we weave and the antimatter traps we devise will not merely power machinery. They will power the terraforming of planets, the birth of space cities and the shaping of interstellar destiny. Energy is no longer just physics. It is philosophy, diplomacy, ecology, ethics and evolution. As <em>The Fire of Future</em> blazes forward, the question we must ask is not only whether we can, but whether we should. And if we should, how wisely we will wield the flame.</p>
+      <div class="end-mark" aria-hidden="true">&#10022; &#10022; &#10022;</div>
+    </div>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <button onclick="showChapter(16)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 18l-6-6 6-6"/></svg> Chapter 16</button>
+      <button class="contents-mid" onclick="showLanding()">Contents</button>
+      <button onclick="showChapter(1)">Back to the beginning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+    </nav>
+  </article>
+</main>
+
+<div class="footer">
+  <div class="f-title">The Fire of <em>Future</em></div>
+  <p>A book by Amim Ahsan &middot; Seventeen chapters</p>
+  <div class="f-links">
+    <a href="index.html">The Library</a>
+    <a href="index.html#books">All Books</a>
+    <a href="Amim's Truth/Amim's Truth.html">Amim&rsquo;s Truth</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <p style="margin-top:14px">&copy; 2026 Amim Ahsan. All rights reserved.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  const STORE_KEY = 'tfof-reader-v1';
+  const chapters = Array.from(document.querySelectorAll('.reader .chapter'));
+  const total = chapters.length;
+  const landing = document.getElementById('landing');
+  const progressFill = document.getElementById('progressFill');
+  const typeToggle = document.getElementById('typeToggle');
+
+  let state = { chapter: 0, theme: 'paper', size: 1.135, font: 'serif' };
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+    if (saved && typeof saved === 'object') state = Object.assign(state, saved);
+  } catch (e) {}
+
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function applyTheme(theme) {
+    state.theme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('[data-set-theme]').forEach(function(btn){
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-set-theme') === theme));
+    });
+    save();
+  }
+
+  function applyFont(font) {
+    state.font = font;
+    document.documentElement.setAttribute('data-font', font);
+    if (typeToggle) typeToggle.textContent = font === 'sans' ? 'Sans' : 'Serif';
+    save();
+  }
+
+  function applySize(size) {
+    state.size = Math.min(1.55, Math.max(0.95, size));
+    document.documentElement.style.setProperty('--read-size', state.size.toFixed(3) + 'rem');
+    save();
+  }
+
+  function setProgress(n) {
+    if (!progressFill) return;
+    const pct = Math.round((n / total) * 100);
+    progressFill.style.width = pct + '%';
+    document.querySelector('.progress-line').setAttribute('aria-valuenow', String(pct));
+  }
+
+  function clearActive() {
+    chapters.forEach(function(c){ c.classList.remove('active'); });
+  }
+
+  function showChapter(n) {
+    n = Math.max(1, Math.min(total, Number(n) || 1));
+    clearActive();
+    const target = document.getElementById('chapter-' + n);
+    if (!target) return;
+    target.classList.add('active');
+    document.body.classList.add('reading');
+    state.chapter = n;
+    setProgress(n);
+    save();
+    try { history.replaceState(null, '', '#chapter-' + n); } catch (e) { location.hash = 'chapter-' + n; }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    const heading = target.querySelector('h2');
+    if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+    document.title = 'Chapter ' + n + ' \u2014 The Fire of Future';
+  }
+
+  function showLanding() {
+    clearActive();
+    document.body.classList.remove('reading');
+    state.chapter = 0;
+    setProgress(0);
+    save();
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = 'The Fire of Future \u2014 A Book by Amim Ahsan';
+  }
+
+  window.showChapter = showChapter;
+  window.showLanding = showLanding;
+
+  window.stepFont = function(dir) { applySize(state.size + dir * 0.06); };
+  window.resetFont = function() { applySize(1.135); };
+
+  window.toggleType = function() { applyFont(state.font === 'sans' ? 'serif' : 'sans'); };
+
+  document.querySelectorAll('[data-set-theme]').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyTheme(btn.getAttribute('data-set-theme')); });
+  });
+
+  document.querySelectorAll('.chapter-nav button, .toc-item, .actions .btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setTimeout(function(){ window.scrollTo(0, 0); }, 0); });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (!document.body.classList.contains('reading')) return;
+    if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if (e.key === 'ArrowRight') showChapter(state.chapter + 1);
+    if (e.key === 'ArrowLeft') showChapter(state.chapter - 1);
+    if (e.key === 'Escape') showLanding();
+  });
+
+  // Word count and reading time
+  let words = 0;
+  chapters.forEach(function(c){
+    const body = c.querySelector('.chapter-body');
+    if (body) words += (body.textContent || '').trim().split(/\s+/).filter(Boolean).length;
+  });
+  const totalWords = document.getElementById('totalWords');
+  const readTime = document.getElementById('readTime');
+  if (totalWords) totalWords.textContent = words.toLocaleString();
+  if (readTime) readTime.textContent = Math.max(1, Math.round(words / 230)) + ' min';
+
+  // Restore preferences
+  applyTheme(state.theme);
+  applyFont(state.font);
+  applySize(state.size);
+
+  // Resume affordance
+  const actions = document.querySelector('.landing .actions');
+  if (actions && state.chapter > 1) {
+    const resume = document.createElement('button');
+    resume.className = 'btn btn-ghost';
+    resume.type = 'button';
+    const label = chapters[state.chapter - 1];
+    const title = label ? label.getAttribute('data-title') : '';
+    resume.innerHTML = 'Continue &mdash; Chapter ' + state.chapter + (title ? ' &middot; ' + title : '');
+    resume.addEventListener('click', function(){ showChapter(state.chapter); });
+    actions.appendChild(resume);
+  }
+
+  // Deep link on load
+  const match = /^#chapter-(\d+)$/.exec(location.hash || '');
+  if (match) {
+    showChapter(parseInt(match[1], 10));
+  } else {
+    setProgress(0);
+  }
+})();
+</script>
+</body>
+</html>

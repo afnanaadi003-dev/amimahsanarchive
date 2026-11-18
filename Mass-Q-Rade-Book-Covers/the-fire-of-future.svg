@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="title desc">
+  <title id="title">The Fire of Future — a book by Amim Ahsan</title>
+  <desc id="desc">A dark horizon at dusk: a low sun burning behind a field of solar panels and a transmission pylon, with the title The Fire of Future set above it in cream serif type.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#070d16"/>
+      <stop offset="0.34" stop-color="#0c1a24"/>
+      <stop offset="0.62" stop-color="#1d2b2c"/>
+      <stop offset="0.82" stop-color="#4a3526"/>
+      <stop offset="1" stop-color="#0b0f12"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="63%" r="52%">
+      <stop offset="0" stop-color="#ffd9a0" stop-opacity="0.85"/>
+      <stop offset="0.22" stop-color="#f0a95c" stop-opacity="0.42"/>
+      <stop offset="0.55" stop-color="#b96f36" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sunCore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4d8"/>
+      <stop offset="0.55" stop-color="#ffca82"/>
+      <stop offset="1" stop-color="#e0883c"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10161a"/>
+      <stop offset="1" stop-color="#05080a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#16323f"/>
+      <stop offset="1" stop-color="#07131a"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8b97c" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#e8b97c" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf4e3"/>
+      <stop offset="1" stop-color="#e6d4b2"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="45%" r="72%">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.6" r="0.5" fill="#ffffff" opacity="0.035"/>
+      <circle cx="4.6" cy="4.2" r="0.35" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+    <filter id="blur24" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="blur7" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#sky)"/>
+  <rect width="852" height="1280" fill="url(#sunGlow)"/>
+
+  <!-- faint circuit tracery in the upper sky -->
+  <g stroke="#8fb6c9" stroke-width="1" opacity="0.12" fill="none">
+    <path d="M0 232h180l46 46h150"/>
+    <path d="M852 316H690l-38-38H500"/>
+    <path d="M118 96v96l52 52"/>
+    <path d="M742 132v82l-44 44"/>
+  </g>
+  <g fill="#bcd7e4" opacity="0.35">
+    <circle cx="180" cy="232" r="2.6"/>
+    <circle cx="376" cy="278" r="2.6"/>
+    <circle cx="690" cy="316" r="2.6"/>
+    <circle cx="462" cy="278" r="2.6"/>
+    <circle cx="170" cy="244" r="2"/>
+    <circle cx="698" cy="214" r="2"/>
+  </g>
+
+  <!-- stars -->
+  <g fill="#f4ead7">
+    <circle cx="96" cy="176" r="1.4" opacity="0.7"/>
+    <circle cx="214" cy="126" r="1.1" opacity="0.55"/>
+    <circle cx="302" cy="196" r="1.3" opacity="0.6"/>
+    <circle cx="410" cy="104" r="1.5" opacity="0.75"/>
+    <circle cx="520" cy="158" r="1.1" opacity="0.5"/>
+    <circle cx="604" cy="92" r="1.4" opacity="0.65"/>
+    <circle cx="686" cy="146" r="1.2" opacity="0.6"/>
+    <circle cx="772" cy="212" r="1.5" opacity="0.7"/>
+    <circle cx="148" cy="286" r="1.2" opacity="0.45"/>
+    <circle cx="470" cy="236" r="1" opacity="0.4"/>
+  </g>
+
+  <!-- low sun behind the horizon -->
+  <circle cx="426" cy="806" r="230" fill="#f7b26a" opacity="0.20" filter="url(#blur24)"/>
+  <circle cx="426" cy="806" r="150" fill="url(#sunCore)" opacity="0.92" filter="url(#blur7)"/>
+  <circle cx="426" cy="806" r="104" fill="url(#sunCore)"/>
+
+  <!-- horizon haze -->
+  <rect x="0" y="792" width="852" height="120" fill="#e5a464" opacity="0.16" filter="url(#blur24)"/>
+
+  <!-- ground -->
+  <path d="M0 856h852v424H0z" fill="url(#ground)"/>
+  <path d="M0 856h852" stroke="#c98b55" stroke-width="1.6" opacity="0.55"/>
+
+  <!-- transmission pylon -->
+  <g stroke="#0a1014" stroke-width="7" fill="none" opacity="0.95">
+    <path d="M676 856l24-196 24 196"/>
+    <path d="M700 700l-58 66"/>
+    <path d="M700 700l58 66"/>
+    <path d="M700 748l-40 46"/>
+    <path d="M700 748l40 46"/>
+  </g>
+  <g stroke="#0a1014" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M626 766q74 34 148 0"/>
+    <path d="M660 814q40 18 80 0"/>
+  </g>
+
+  <!-- solar field -->
+  <g>
+    <g transform="translate(120 872)">
+      <path d="M0 0h150l30 62H18z" fill="url(#panel)" stroke="#0a1116" stroke-width="2"/>
+      <path d="M0 0h150l30 62H18z" fill="none" stroke="#7fb0c8" stroke-width="1" opacity="0.22"/>
+      <path d="M50 0l10 62M100 0l20 62" stroke="#7fb0c8" stroke-width="1" opacity="0.16"/>
+      <path d="M8 21h163M15 42h166" stroke="#7fb0c8" stroke-width="1" opacity="0.14"/>
+      <path d="M60 62v54M120 62v54" stroke="#0a1116" stroke-width="5"/>
+    </g>
+    <g transform="translate(330 872)">
+      <path d="M0 0h150l30 62H18z" fill="url(#panel)" stroke="#0a1116" stroke-width="2"/>
+      <path d="M8 21h163M15 42h166" stroke="#7fb0c8" stroke-width="1" opacity="0.14"/>
+      <path d="M60 62v54M120 62v54" stroke="#0a1116" stroke-width="5"/>
+    </g>
+    <g transform="translate(540 872)">
+      <path d="M0 0h150l30 62H18z" fill="url(#panel)" stroke="#0a1116" stroke-width="2"/>
+      <path d="M8 21h163M15 42h166" stroke="#7fb0c8" stroke-width="1" opacity="0.14"/>
+      <path d="M60 62v54M120 62v54" stroke="#0a1116" stroke-width="5"/>
+    </g>
+  </g>
+
+  <!-- horizon rim light on the panels -->
+  <g fill="none" stroke="url(#rim)" stroke-width="2" opacity="0.8">
+    <path d="M120 872h150l30 62"/>
+    <path d="M330 872h150l30 62"/>
+    <path d="M540 872h150l30 62"/>
+  </g>
+
+  <!-- a small flame held above the ground, the book's emblem -->
+  <g transform="translate(426 610)">
+    <path d="M0 64C-30 40-22 4 2-26c8 18 24 24 24 46C26 46 12 60 0 64z" fill="#ffcf94" opacity="0.9"/>
+    <path d="M0 50C-14 36-9 16 4 0c4 12 12 18 12 30C16 40 8 47 0 50z" fill="#fff3da"/>
+    <circle cx="0" cy="6" r="46" fill="#ffc07a" opacity="0.22" filter="url(#blur7)"/>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vignette)"/>
+  <rect width="852" height="1280" fill="url(#grain)"/>
+
+  <!-- frame -->
+  <rect x="44" y="44" width="764" height="1192" fill="none" stroke="#e0b783" stroke-width="1.2" opacity="0.35"/>
+  <rect x="56" y="56" width="740" height="1168" fill="none" stroke="#e0b783" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- typography -->
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="426" y="176" fill="#e6b97e" font-size="19" letter-spacing="9" font-family="'Trebuchet MS', Verdana, sans-serif">A BOOK OF ENERGY</text>
+    <text x="426" y="236" fill="#fbf4e3" font-size="26" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.75">AMIM AHSAN</text>
+
+    <text x="426" y="352" fill="url(#cream)" font-size="82" letter-spacing="3">THE FIRE</text>
+    <text x="426" y="438" fill="url(#cream)" font-size="82" letter-spacing="3" font-style="italic">OF FUTURE</text>
+
+    <path d="M356 476h140" stroke="#e0b783" stroke-width="1" opacity="0.5"/>
+    <text x="426" y="518" fill="#dcc9a8" font-size="21" letter-spacing="4" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.85">SEVENTEEN FUELS AFTER OIL</text>
+
+    <text x="426" y="1188" fill="#e8d6b6" font-size="18" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.75">SOLAR · HYDROGEN · FUSION · SPACE</text>
+  </g>
+</svg>
