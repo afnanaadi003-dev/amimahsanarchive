@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750" role="img" aria-label="Dr. Elena Vance">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06202e"/><stop offset="1" stop-color="#040a10"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7ff3ff" stop-opacity=".9"/><stop offset="1" stop-color="#7ff3ff" stop-opacity="0"/></linearGradient></defs>
+<rect width="600" height="750" fill="url(#bg)"/>
+<g stroke="#38bdf8" opacity=".16" fill="none" stroke-width="1"><path d="M0 140h180l40 40h120"/><path d="M600 210H440l-30-30H300"/><path d="M90 60v90l40 40"/></g>
+<circle cx="300" cy="300" r="250" fill="#0ea5e9" opacity=".10"/>
+<g fill="#03151f"><ellipse cx="300" cy="640" rx="210" ry="150"/><rect x="255" y="500" width="90" height="90" rx="34"/><ellipse cx="300" cy="360" rx="112" ry="134"/><path d="M188 340c0-108 50-166 112-166s112 58 112 166c-28-46-54-66-112-66s-84 20-112 66z"/></g>
+<path d="M188 360c-6-116 52-176 112-176" stroke="url(#rim)" stroke-width="3" fill="none"/>
+<g stroke="#7ff3ff" opacity=".55" fill="none" stroke-width="1.2"><path d="M150 620c60-40 110-30 150 0s100 30 150-6"/><path d="M120 660c70-26 130-14 180 12s120 24 180-10"/></g>
+<g fill="#7ff3ff" opacity=".5"><circle cx="430" cy="120" r="1.8"/><circle cx="500" cy="180" r="1.4"/><circle cx="120" cy="230" r="1.6"/><circle cx="470" cy="300" r="1.2"/></g>
+<rect x="18" y="18" width="564" height="714" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".35"/>
+</svg>

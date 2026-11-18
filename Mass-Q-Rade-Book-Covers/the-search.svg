@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">The Search — a film by Amim Ahsan</title>
+  <desc id="d">A dark ocean trench seen from below: pale cyan sonar rings radiate from a crystalline structure on the seabed, a tiny submersible hangs in the black water, and the title The Search is set in gold above it.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#04121c"/>
+      <stop offset="0.42" stop-color="#061c2b"/>
+      <stop offset="0.72" stop-color="#02101a"/>
+      <stop offset="1" stop-color="#01070c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="76%" r="46%">
+      <stop offset="0" stop-color="#7ff3ff" stop-opacity="0.55"/>
+      <stop offset="0.35" stop-color="#12a7c4" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="crystal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8fbff"/>
+      <stop offset="0.5" stop-color="#4fd8ef"/>
+      <stop offset="1" stop-color="#0b5f77"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e3b0"/>
+      <stop offset="1" stop-color="#c99a3c"/>
+    </linearGradient>
+    <linearGradient id="surf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9be9ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#9be9ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+    <radialGradient id="vig" cx="50%" cy="48%" r="70%">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.5" fill="#ffffff" opacity="0.035"/>
+      <circle cx="4.5" cy="4" r="0.35" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#sea)"/>
+
+  <!-- light shafts from the surface -->
+  <g opacity="0.5">
+    <path d="M120 0l90 520-140 40z" fill="url(#surf)" filter="url(#soft)"/>
+    <path d="M330 0l70 470-110 20z" fill="url(#surf)" filter="url(#soft)"/>
+    <path d="M610 0l60 430-130 30z" fill="url(#surf)" filter="url(#soft)"/>
+  </g>
+
+  <!-- marine snow -->
+  <g fill="#d7f8ff">
+    <circle cx="140" cy="420" r="1.6" opacity="0.5"/><circle cx="212" cy="332" r="1.1" opacity="0.4"/>
+    <circle cx="300" cy="470" r="1.3" opacity="0.35"/><circle cx="380" cy="300" r="1" opacity="0.3"/>
+    <circle cx="470" cy="410" r="1.7" opacity="0.45"/><circle cx="560" cy="340" r="1.2" opacity="0.3"/>
+    <circle cx="640" cy="470" r="1.5" opacity="0.5"/><circle cx="720" cy="380" r="1" opacity="0.35"/>
+    <circle cx="250" cy="560" r="1.4" opacity="0.4"/><circle cx="520" cy="560" r="1.1" opacity="0.3"/>
+    <circle cx="680" cy="600" r="1.3" opacity="0.35"/><circle cx="170" cy="640" r="1" opacity="0.3"/>
+  </g>
+
+  <!-- trench walls -->
+  <path d="M0 470c86 44 118 150 96 262-18 92-64 148-96 176V470z" fill="#020a11"/>
+  <path d="M852 430c-96 54-126 168-102 292 20 100 74 154 102 178V430z" fill="#020a11"/>
+  <path d="M0 470c86 44 118 150 96 262-18 92-64 148-96 176" fill="none" stroke="#0d3a4c" stroke-width="1.6" opacity="0.55"/>
+  <path d="M852 430c-96 54-126 168-102 292 20 100 74 154 102 178" fill="none" stroke="#0d3a4c" stroke-width="1.6" opacity="0.55"/>
+
+  <!-- seabed -->
+  <path d="M0 1000c120-42 210-14 300 10 96 26 190 30 292-6 96-34 190-22 260 12v264H0z" fill="#02080d"/>
+  <path d="M0 1000c120-42 210-14 300 10 96 26 190 30 292-6 96-34 190-22 260 12" fill="none" stroke="#0f4a5e" stroke-width="1.4" opacity="0.6"/>
+
+  <!-- sonar rings -->
+  <g fill="none" stroke="#54e6ff" opacity="0.55">
+    <circle cx="426" cy="936" r="86" stroke-width="1.6" stroke-dasharray="6 10"/>
+    <circle cx="426" cy="936" r="150" stroke-width="1.2" stroke-dasharray="4 14" opacity="0.6"/>
+    <circle cx="426" cy="936" r="226" stroke-width="1" stroke-dasharray="3 18" opacity="0.45"/>
+    <circle cx="426" cy="936" r="312" stroke-width="0.9" stroke-dasharray="2 22" opacity="0.32"/>
+    <circle cx="426" cy="936" r="404" stroke-width="0.8" stroke-dasharray="2 26" opacity="0.22"/>
+  </g>
+  <circle cx="426" cy="936" r="300" fill="url(#glow)"/>
+
+  <!-- crystalline megastructure -->
+  <g>
+    <path d="M356 978l34-150 36-58 34 58 34 150-70 26z" fill="url(#crystal)" opacity="0.92"/>
+    <path d="M426 770l-36 58 36 66 36-66z" fill="#eafdff" opacity="0.9"/>
+    <path d="M390 828l-34 150 70 26z" fill="#0e7d97" opacity="0.55"/>
+    <path d="M462 828l34 150-70 26z" fill="#0a5c73" opacity="0.6"/>
+    <path d="M426 894v110" stroke="#eafdff" stroke-width="1.4" opacity="0.6"/>
+    <g stroke="#bff6ff" stroke-width="1" opacity="0.35" fill="none">
+      <path d="M286 992h96l20 26h-116z"/>
+      <path d="M566 992h-96l-20 26h116z"/>
+    </g>
+    <circle cx="426" cy="836" r="150" fill="#57e6ff" opacity="0.16" filter="url(#soft)"/>
+  </g>
+
+  <!-- submersible -->
+  <g transform="translate(606 640)" opacity="0.92">
+    <ellipse cx="0" cy="0" rx="62" ry="26" fill="#0c1a22" stroke="#6fd8ec" stroke-width="1.6"/>
+    <circle cx="26" cy="0" r="15" fill="#0a1a26" stroke="#a9eefc" stroke-width="1.3"/>
+    <path d="M-62 0h-26l-14-10h14l10 4h16z" fill="#0c1a22" stroke="#6fd8ec" stroke-width="1.2"/>
+    <path d="M46 -14l16-16h10" fill="none" stroke="#6fd8ec" stroke-width="1.2"/>
+    <circle cx="26" cy="0" r="7" fill="#bff6ff" opacity="0.75" filter="url(#soft2)"/>
+  </g>
+  <g stroke="#8ee9ff" opacity="0.25" stroke-width="1">
+    <path d="M560 700l-70 60M560 646l-70-20"/>
+    <circle cx="470" cy="780" r="2" fill="#8ee9ff"/>
+    <circle cx="500" cy="740" r="1.6" fill="#8ee9ff"/>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect width="852" height="1280" fill="url(#grain)"/>
+
+  <!-- frame -->
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.38"/>
+  <rect x="54" y="54" width="744" height="1172" fill="none" stroke="#d4af37" stroke-width="0.7" opacity="0.18"/>
+
+  <!-- typography -->
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="426" y="150" fill="#8fe6f7" font-size="17" letter-spacing="8" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.9">AN AMIM AHSAN FILM</text>
+    <text x="426" y="236" fill="url(#gold)" font-size="86" letter-spacing="4">THE SEARCH</text>
+    <path d="M326 268h200" stroke="#d4af37" stroke-width="1" opacity="0.55"/>
+    <text x="426" y="308" fill="#cfeef6" font-size="18" letter-spacing="5" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.85">SIX MILES DOWN, SOMETHING ANSWERS</text>
+    <text x="426" y="1150" fill="#e8d6a8" font-size="16" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.8">TWELVE CHAPTERS · A SCREENPLAY</text>
+  </g>
+</svg>
