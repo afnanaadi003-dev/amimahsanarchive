@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">The Exact Man — Mass-Q-Rade Book Fourteen, on Josiah Parsons Cooke, by Amim Ahsan</title>
+  <desc id="d">A nineteenth-century chemist in silhouette stands before a balance whose pans hold a glowing atom and a stack of ledgers, drawn in dark teal and amber.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#04121a"/><stop offset="0.55" stop-color="#071c26"/><stop offset="1" stop-color="#02070b"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="46%" r="46%">
+      <stop offset="0" stop-color="#67e8f9" stop-opacity="0.4"/><stop offset="0.45" stop-color="#0891b2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde6b0"/><stop offset="1" stop-color="#c58a24"/>
+    </linearGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a6a2a"/><stop offset="1" stop-color="#d9a94e"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.5" fill="#fff" opacity="0.04"/><circle cx="4.4" cy="4.2" r="0.34" fill="#fff" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <rect width="852" height="1280" fill="url(#halo)"/>
+
+  <!-- ghosted periodic lattice -->
+  <g stroke="#7dd3fc" opacity="0.12" fill="none" stroke-width="1">
+    <path d="M80 300h58v58H80zM158 300h58v58h-58zM236 300h58v58h-58zM314 300h58v58h-58zM392 300h58v58h-58zM470 300h58v58h-58zM548 300h58v58h-58zM626 300h58v58h-58zM704 300h58v58h-58z"/>
+    <path d="M80 378h58v58H80zM158 378h58v58h-58zM236 378h58v58h-58zM392 378h58v58h-58zM470 378h58v58h-58zM548 378h58v58h-58zM626 378h58v58h-58zM704 378h58v58h-58z"/>
+    <path d="M80 456h58v58H80zM158 456h58v58h-58zM236 456h58v58h-58zM314 456h58v58h-58zM470 456h58v58h-58zM548 456h58v58h-58zM704 456h58v58h-58z"/>
+  </g>
+
+  <!-- balance stand -->
+  <g stroke="url(#brass)" stroke-width="5" fill="none">
+    <path d="M426 780V1010"/>
+    <path d="M336 1010h180"/>
+    <path d="M300 640h252"/>
+  </g>
+  <circle cx="426" cy="640" r="9" fill="#d9a94e"/>
+
+  <!-- left pan: the atom -->
+  <g>
+    <path d="M300 640v60" stroke="url(#brass)" stroke-width="2.4"/>
+    <path d="M240 700h120l-18 26H258z" fill="#0d2634" stroke="#67e8f9" stroke-width="1.4" opacity="0.9"/>
+    <circle cx="300" cy="664" r="26" fill="#7dd3fc" opacity="0.25" filter="url(#soft)"/>
+    <circle cx="300" cy="664" r="11" fill="#c7f9ff"/>
+    <g stroke="#7dd3fc" stroke-width="1" opacity="0.7" fill="none">
+      <ellipse cx="300" cy="664" rx="26" ry="9" transform="rotate(24 300 664)"/>
+      <ellipse cx="300" cy="664" rx="26" ry="9" transform="rotate(-24 300 664)"/>
+    </g>
+  </g>
+
+  <!-- right pan: ledgers -->
+  <g>
+    <path d="M552 640v60" stroke="url(#brass)" stroke-width="2.4"/>
+    <path d="M492 700h120l-18 26H510z" fill="#0d2634" stroke="#67e8f9" stroke-width="1.4" opacity="0.9"/>
+    <g fill="#132a36" stroke="#5f8798" stroke-width="1.2">
+      <rect x="524" y="646" width="56" height="16" rx="2"/><rect x="522" y="664" width="60" height="16" rx="2"/><rect x="526" y="682" width="52" height="14" rx="2"/>
+    </g>
+  </g>
+
+  <!-- chemist silhouette -->
+  <g fill="#020a0f">
+    <ellipse cx="426" cy="980" rx="150" ry="120"/>
+    <path d="M372 900c0-34 24-58 54-58s54 24 54 58v90h-108z"/>
+    <circle cx="426" cy="812" r="44"/>
+    <path d="M382 806c0-30 20-52 44-52s44 22 44 52c-10-12-26-18-44-18s-34 6-44 18z"/>
+  </g>
+  <path d="M382 812c0-32 20-54 44-54" stroke="#7dd3fc" stroke-width="2" fill="none" opacity="0.55"/>
+  <path d="M336 1010h180" stroke="#d9a94e" stroke-width="2" opacity="0.5"/>
+
+  <!-- floating digits -->
+  <g fill="#8ee9ff" font-family="'JetBrains Mono', monospace" font-size="13" opacity="0.35">
+    <text x="120" y="720">121.760</text><text x="660" y="700">35.453</text><text x="150" y="880">1.008</text>
+    <text x="676" y="900">63.546</text><text x="110" y="1020">12.011</text><text x="690" y="1040">118.710</text>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect width="852" height="1280" fill="url(#grain)"/>
+
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.36"/>
+  <rect x="54" y="54" width="744" height="1172" fill="none" stroke="#d9a24a" stroke-width="0.7" opacity="0.18"/>
+
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="426" y="150" fill="#8ee9ff" font-size="16" letter-spacing="7" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.9">MASS-Q-RADE &middot; BOOK FOURTEEN</text>
+    <text x="426" y="236" fill="url(#gold)" font-size="80" letter-spacing="5">THE EXACT</text>
+    <text x="426" y="320" fill="url(#gold)" font-size="80" letter-spacing="5">MAN</text>
+    <path d="M336 350h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="392" fill="#dfeff5" font-size="19" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.85">JOSIAH PARSONS COOKE</text>
+    <text x="426" y="1128" fill="#e8d6a8" font-size="18" letter-spacing="6" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.8">A NOVEL BY AMIM AHSAN</text>
+    <text x="426" y="1162" fill="#8ee9ff" font-size="12" letter-spacing="5" font-family="'Trebuchet MS', Verdana, sans-serif" opacity="0.55">EVERY MASS HAS A PRICE</text>
+  </g>
+</svg>
