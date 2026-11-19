@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 5 — THE ZONE</title>
-  <desc id="d">Title slide for chapter 5 of Sykes–Picot, Act I.</desc>
+  <desc id="d">Illustrated title slide for chapter 5 of Sykes–Picot, Act I.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="53%" cy="29%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="75%" cy="33%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,51 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g><g transform="translate(640 0) scale(-1 1)">
+  <path d="M0 300 H640 V360 H0 Z" fill="#050403"/><path d="M0 300 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <g transform="rotate(-3 400 180)">
+    <rect x="256" y="58" width="330" height="204" fill="#141008" stroke="#f0d4a2" stroke-opacity="0.55"/>
+    <g stroke="#f0d4a2" stroke-opacity="0.14">
+      <path d="M256 86 H586"/><path d="M256 116 H586"/><path d="M256 146 H586"/><path d="M256 176 H586"/><path d="M256 206 H586"/><path d="M256 236 H586"/>
+      <path d="M286 58 V262"/><path d="M326 58 V262"/><path d="M366 58 V262"/><path d="M406 58 V262"/><path d="M446 58 V262"/><path d="M486 58 V262"/><path d="M526 58 V262"/><path d="M566 58 V262"/>
+    </g>
+    <path d="M282 226 C330 200 360 214 402 186 C446 158 480 170 548 130" fill="none" stroke="#a4442f" stroke-opacity="0.85" stroke-width="1.7"/>
+    <path d="M282 240 C332 216 366 228 408 202 C452 176 486 186 552 148" fill="none" stroke="#a4442f" stroke-opacity="0.4" stroke-width="1.1" stroke-dasharray="4 5"/>
+    <g fill="none" stroke="#f0d4a2" stroke-opacity="0.3">
+      <path d="M300 120 C340 108 372 126 410 116"/>
+      <path d="M300 140 C342 130 374 146 412 136"/>
+      <path d="M440 96 C480 88 512 100 552 92"/>
+    </g>
+    <g fill="#f0d4a2">
+      <circle cx="352" cy="196" r="2.8"/><circle cx="430" cy="168" r="2.4" opacity="0.75"/>
+      <circle cx="492" cy="140" r="2.4" opacity="0.75"/><circle cx="318" cy="214" r="2" opacity="0.5"/>
+    </g>
+    <g fill="none" stroke="#f0d4a2" stroke-opacity="0.5">
+      <circle cx="430" cy="168" r="10"/><path d="M430 154 v-8 M430 182 v8 M416 168 h-8 M444 168 h8"/>
+    </g>
+    <!-- hatching in the divided zone -->
+    <g stroke="#f0d4a2" stroke-opacity="0.12">
+      <path d="M470 96 L420 150"/><path d="M478 96 L428 150"/><path d="M486 96 L436 150"/><path d="M494 96 L444 150"/><path d="M502 96 L452 150"/><path d="M510 96 L460 150"/><path d="M518 96 L468 150"/>
+    </g>
+    <path d="M256 58 h330 v204 h-330 Z" fill="none" stroke="#f0d4a2" stroke-opacity="0.2"/>
+  </g></g></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 173 L150 145 L330 177 L500 131 L650 155"/>
-    <path d="M-10 181 L150 153 L330 185 L500 139 L650 163" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="325" cy="153" r="3.4" fill="#d8b26a"/>
-  <circle cx="325" cy="153" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT I · JANUARY 1916</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT I · JANUARY 1916</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">05 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">05</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">05</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE ZONE</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">HOTEL MEURICE, PARIS · JANUARY 1916</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

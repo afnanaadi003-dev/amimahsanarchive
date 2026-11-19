@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 42 — THE LINE</title>
-  <desc id="d">Title slide for chapter 42 of Sykes–Picot, Act IV.</desc>
+  <desc id="d">Illustrated title slide for chapter 42 of Sykes–Picot, Act IV.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="56%" cy="36%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="46%" cy="20%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,53 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g>
+  <path d="M0 300 H640 V360 H0 Z" fill="#050403"/><path d="M0 300 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <!-- archive shelves -->
+  <g stroke="#f0d4a2" stroke-opacity="0.55" fill="none" stroke-width="2.5">
+    <path d="M356 44 H636 M356 100 H636 M356 156 H636 M356 212 H636 M356 268 H636"/>
+  </g>
+  <g stroke="#f0d4a2" stroke-opacity="0.3" fill="none">
+    <path d="M356 44 V300 M636 44 V300"/>
+  </g>
+  <g fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.45">
+    <rect x="364" y="68" width="12" height="26"/><rect x="394" y="53" width="15" height="41"/><rect x="424" y="58" width="18" height="36"/><rect x="454" y="63" width="12" height="31"/><rect x="484" y="68" width="15" height="26"/><rect x="514" y="53" width="18" height="41"/><rect x="544" y="58" width="12" height="36"/><rect x="574" y="63" width="15" height="31"/><rect x="604" y="68" width="18" height="26"/><rect x="364" y="119" width="15" height="31"/><rect x="394" y="124" width="18" height="26"/><rect x="424" y="109" width="12" height="41"/><rect x="454" y="114" width="15" height="36"/><rect x="484" y="119" width="18" height="31"/><rect x="514" y="124" width="12" height="26"/><rect x="544" y="109" width="15" height="41"/><rect x="574" y="114" width="18" height="36"/><rect x="604" y="119" width="12" height="31"/><rect x="364" y="170" width="18" height="36"/><rect x="394" y="175" width="12" height="31"/><rect x="424" y="180" width="15" height="26"/><rect x="454" y="165" width="18" height="41"/><rect x="484" y="170" width="12" height="36"/><rect x="514" y="175" width="15" height="31"/><rect x="544" y="180" width="18" height="26"/><rect x="574" y="165" width="12" height="41"/><rect x="604" y="170" width="15" height="36"/><rect x="364" y="221" width="12" height="41"/><rect x="394" y="226" width="15" height="36"/><rect x="424" y="231" width="18" height="31"/><rect x="454" y="236" width="12" height="26"/><rect x="484" y="221" width="15" height="41"/><rect x="514" y="226" width="18" height="36"/><rect x="544" y="231" width="12" height="31"/><rect x="574" y="236" width="15" height="26"/><rect x="604" y="221" width="18" height="41"/><rect x="364" y="292" width="15" height="26"/><rect x="394" y="277" width="18" height="41"/><rect x="424" y="282" width="12" height="36"/><rect x="454" y="287" width="15" height="31"/><rect x="484" y="292" width="18" height="26"/><rect x="514" y="277" width="12" height="41"/><rect x="544" y="282" width="15" height="36"/><rect x="574" y="287" width="18" height="31"/><rect x="604" y="292" width="12" height="26"/>
+  </g>
+  <!-- table with the original map -->
+  <path d="M0 296 H320 L350 344 H-30 Z" fill="#160f08" stroke="#f0d4a2" stroke-opacity="0.4"/>
+  <g transform="rotate(-4 150 312)">
+    <rect x="40" y="270" width="230" height="82" fill="#241a0f" stroke="#f0d4a2" stroke-opacity="0.65"/>
+    <path d="M56 334 C104 308 128 322 166 298 C204 274 232 288 258 274" fill="none" stroke="#b04a33" stroke-opacity="0.85" stroke-width="1.8"/>
+    <g stroke="#f0d4a2" stroke-opacity="0.18"><path d="M40 292 H270 M40 310 H270 M40 328 H270"/></g>
+    <circle cx="118" cy="316" r="3" fill="#f0d4a2" opacity="0.8"/>
+    <circle cx="206" cy="292" r="2.6" fill="#f0d4a2" opacity="0.6"/>
+  </g>
+  <!-- lamp -->
+  <g stroke="#f0d4a2" stroke-opacity="0.5" fill="none">
+    <path d="M248 0 V150"/><path d="M214 158 h68"/>
+  </g>
+  <path d="M214 158 h68 l-14 -16 h-40 Z" fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.65"/>
+  <path d="M214 158 L150 300 H318 L282 158 Z" fill="#f0d4a2" opacity="0.06"/>
+  <g fill="#f0d4a2" opacity="0.55">
+    <circle cx="248" cy="160" r="4"/>
+  </g></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 180 L150 152 L330 184 L500 138 L650 162"/>
-    <path d="M-10 188 L150 160 L330 192 L500 146 L650 170" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="224" cy="160" r="3.4" fill="#d8b26a"/>
-  <circle cx="224" cy="160" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT IV · PRESENT DAY</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT IV · PRESENT DAY</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">42 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">42</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">42</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE LINE</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">BERLIN · PRESENT DAY</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

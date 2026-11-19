@@ -4,6 +4,7 @@ import act1 from './act1.js';
 import act2 from './act2.js';
 import act3 from './act3.js';
 import act4 from './act4.js';
+import { sceneFor } from './scenes.js';
 
 const ROOT = process.cwd();
 const chapters = [...act1, ...act2, ...act3, ...act4];
@@ -72,17 +73,31 @@ function cardSvg(c) {
   const titleSvg = lines.map((l, i) =>
     `<text x="48" y="${214 + i * 40}" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">${esc(l)}</text>`
   ).join('\n  ');
-  const markerX = 90 + ((c.n * 47) % 460);
-  const markerY = 96 + ((c.n * 29) % 26);
+  const { svg: scene, palette: P } = sceneFor(c);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter ${c.n} — ${title}</title>
-  <desc id="d">Title slide for chapter ${c.n} of Sykes–Picot, ${c.act}.</desc>
+  <desc id="d">Illustrated title slide for chapter ${c.n} of Sykes–Picot, ${c.act}.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="${P.sky[0]}"/><stop offset="1" stop-color="${P.sky[1]}"/>
     </linearGradient>
-    <radialGradient id="glow" cx="${18 + (c.n * 7) % 64}%" cy="${24 + (c.n * 11) % 50}%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="${40 + (c.n * 7) % 48}%" cy="${20 + (c.n * 11) % 42}%" r="66%">
+      <stop offset="0" stop-color="${P.glow}" stop-opacity="0.2"/><stop offset="1" stop-color="${P.glow}" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="${P.glow}" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="${P.glow}" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -90,31 +105,24 @@ function cardSvg(c) {
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g>${scene}</g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 ${markerY + 62} L150 ${markerY + 34} L330 ${markerY + 66} L500 ${markerY + 20} L650 ${markerY + 44}"/>
-    <path d="M-10 ${markerY + 70} L150 ${markerY + 42} L330 ${markerY + 74} L500 ${markerY + 28} L650 ${markerY + 52}" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="${markerX}" cy="${markerY + 42}" r="3.4" fill="#d8b26a"/>
-  <circle cx="${markerX}" cy="${markerY + 42}" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">${act} · ${esc(c.place.split(' · ')[1] || '')}</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="${P.rim}" letter-spacing="5">${act} · ${esc(c.place.split(' · ')[1] || '')}</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">${n} / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">${n}</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="${P.rim}" opacity="0.2" letter-spacing="-3">${n}</text>
 
   ${titleSvg}
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">${esc(c.place)}</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="${P.rim}" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>
@@ -443,7 +451,7 @@ const html = `<!DOCTYPE html>
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
                 <div>
                     <p class="mono text-[10px] uppercase tracking-[.35em] text-[#d8b26a]/80">The Slides</p>
-                    <h2 class="font-cinzel text-2xl sm:text-3xl text-stone-100 mt-1">Forty-Two Title Cards</h2>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-stone-100 mt-1">Forty-Two Illustrated Slides</h2>
                 </div>
                 <p class="text-xs text-stone-400 max-w-md">One slide per chapter. Click to read.</p>
             </div>
@@ -537,7 +545,7 @@ const html = `<!DOCTYPE html>
                 '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500">' + c.words + ' words</p>' +
             '</div>' +
             (mode === 'slide'
-                ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Title slide for chapter ' + c.n + ': ' + c.title + '"></div>'
+                ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Illustrated slide for chapter ' + c.n + ': ' + c.title + '"></div>'
                 : '<h3 class="font-cinzel text-xl sm:text-2xl text-stone-100 mb-1">' + c.title + '</h3>' +
                   '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500 mb-6">' + c.place + '</p>') +
             '<div class="script">' + c.html + '</div></div>';

@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 35 — THE LONG WAR</title>
-  <desc id="d">Title slide for chapter 35 of Sykes–Picot, Act IV.</desc>
+  <desc id="d">Illustrated title slide for chapter 35 of Sykes–Picot, Act IV.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="71%" cy="59%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="45%" cy="27%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,58 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g><g transform="translate(640 0) scale(-1 1) translate(320 180) scale(1.08) translate(-320 -180)">
+  <path d="M0 302 H640 V360 H0 Z" fill="#050403"/><path d="M0 302 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <!-- ruined skyline -->
+  <g fill="#0a0806" stroke="#f0d4a2" stroke-opacity="0.5">
+    <path d="M0 302 V210 h46 l7 -16 9 16 h32 v-30 h44 v30 h30 v92 Z"/>
+    <path d="M180 302 V232 h38 l9 -14 9 14 h34 v-22 h28 v92 Z"/>
+    <path d="M472 302 V216 h38 v-24 h46 v24 h32 v86 Z"/>
+  </g>
+  <g stroke="#f0d4a2" stroke-opacity="0.22">
+    <path d="M0 250 H640 M0 274 H640"/>
+  </g>
+  <!-- smoke -->
+  <g fill="none" stroke="#f0d4a2" stroke-opacity="0.16" stroke-width="1.4">
+    <path d="M232 206 c-14 -18 12 -26 -2 -44 c-12 -16 10 -22 2 -38"/>
+    <path d="M210 210 c-10 -16 10 -22 0 -38 c-8 -14 8 -18 2 -30"/>
+    <path d="M508 172 c-12 -16 10 -24 -2 -40 c-10 -14 8 -18 2 -30"/>
+  </g>
+  <!-- searchlight -->
+  <path d="M420 302 L392 92 H462 Z" fill="#f0d4a2" opacity="0.06"/>
+  <path d="M420 302 L426 92" stroke="#f0d4a2" stroke-opacity="0.18"/>
+  <!-- tank -->
+  <g fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.8" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M276 300 h132 l-12 -24 h-108 Z"/>
+    <path d="M300 276 c0 -16 12 -26 30 -26 h34 c18 0 30 10 30 26 Z"/>
+    <path d="M394 254 L470 246" fill="none"/>
+  </g>
+  <path d="M276 300 h132" stroke="#f0d4a2" stroke-opacity="0.5"/>
+  <g fill="#f0d4a2" opacity="0.45">
+    <circle cx="304" cy="302" r="10"/><circle cx="342" cy="302" r="10"/><circle cx="380" cy="302" r="10"/>
+  </g>
+  <!-- barbed wire -->
+  <g stroke="#f0d4a2" stroke-opacity="0.5" fill="none">
+    <path d="M0 332 C80 316 160 344 240 330 S400 342 480 328 S600 342 640 332"/>
+    <path d="M40 332 l-9 -11 M40 332 l9 -11 M120 328 l-9 -11 M120 328 l9 -11 M200 336 l-9 -11 M200 336 l9 -11 M280 332 l-9 -11 M280 332 l9 -11"/>
+  </g></g></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 159 L150 131 L330 163 L500 117 L650 141"/>
-    <path d="M-10 167 L150 139 L330 171 L500 125 L650 149" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="355" cy="139" r="3.4" fill="#d8b26a"/>
-  <circle cx="355" cy="139" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT IV · 1980–1988</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT IV · 1980–1988</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">35 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">35</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">35</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE LONG WAR</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">THE IRAQ–IRAN BORDER · 1980–1988</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

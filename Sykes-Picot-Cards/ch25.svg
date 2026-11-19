@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 25 — THE CAIRO CONFERENCE</title>
-  <desc id="d">Title slide for chapter 25 of Sykes–Picot, Act III.</desc>
+  <desc id="d">Illustrated title slide for chapter 25 of Sykes–Picot, Act III.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="65%" cy="49%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="71%" cy="43%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,32 +29,54 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g><g transform="translate(640 0) scale(-1 1)">
+  <path d="M0 258 H640 V360 H0 Z" fill="#050403"/><path d="M0 258 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <circle cx="506.40449438202245" cy="78" r="16" fill="#f0d4a2" opacity="0.75"/>
+  <circle cx="513.4044943820224" cy="74" r="15" fill="#3d2d18"/>
+  <g fill="#f0d4a2" opacity="0.5">
+    <circle cx="616.4044943820224" cy="52" r="1.4"/><circle cx="646.4044943820224" cy="96" r="1"/>
+    <circle cx="416.40449438202245" cy="40" r="1.1"/><circle cx="566.4044943820224" cy="122" r="0.9"/>
+  </g>
+  <path d="M0 262 C120 232 200 250 300 258 C420 266 520 244 640 254 V360 H0 Z" fill="#0a0705"/>
+  <path d="M0 274 C150 256 250 272 360 276 C470 280 560 262 640 268" fill="none" stroke="#f0d4a2" stroke-opacity="0.16"/>
+  <!-- tents -->
+  <g fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.72">
+    <path d="M196 286 L258 214 L320 286 Z"/>
+    <path d="M258 214 L258 286" stroke-opacity="0.3"/>
+    <path d="M290 286 L336 232 L382 286 Z"/>
+    <path d="M126 288 L166 246 L206 288 Z"/>
+  </g>
+  <path d="M196 286 L258 214" fill="none" stroke="#f0d4a2" stroke-opacity="0.6" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M320 286 L258 214" fill="none" stroke="#f0d4a2" stroke-opacity="0.25" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- poles and guy ropes -->
+  <g stroke="#f0d4a2" stroke-opacity="0.28">
+    <path d="M258 214 V198"/><path d="M336 232 V218"/><path d="M166 246 V234"/>
+    <path d="M258 198 L226 288 M258 198 L292 288 M336 218 L310 288 M336 218 L364 288"/>
+  </g>
+  <!-- distant caravan -->
+  <g fill="#0b0705" opacity="0.85">
+    <path d="M452 262 c4 -8 12 -10 14 -2 c6 -2 8 4 4 8 h-18 Z"/>
+    <path d="M486 264 c5 -9 14 -11 16 -2 c7 -2 9 4 5 9 h-21 Z"/>
+    <path d="M520 262 c4 -8 12 -10 14 -2 c6 -2 8 4 4 8 h-18 Z"/>
+  </g></g></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 181 L150 153 L330 185 L500 139 L650 163"/>
-    <path d="M-10 189 L150 161 L330 193 L500 147 L650 171" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="345" cy="161" r="3.4" fill="#d8b26a"/>
-  <circle cx="345" cy="161" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT III · MARCH 1921</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT III · MARCH 1921</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">25 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">25</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">25</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE CAIRO</text>
   <text x="48" y="254" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">CONFERENCE</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">SEMIRAMIS HOTEL, CAIRO · MARCH 1921</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

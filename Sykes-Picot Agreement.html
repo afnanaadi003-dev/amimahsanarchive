@@ -240,7 +240,7 @@
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
                 <div>
                     <p class="mono text-[10px] uppercase tracking-[.35em] text-[#d8b26a]/80">The Slides</p>
-                    <h2 class="font-cinzel text-2xl sm:text-3xl text-stone-100 mt-1">Forty-Two Title Cards</h2>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-stone-100 mt-1">Forty-Two Illustrated Slides</h2>
                 </div>
                 <p class="text-xs text-stone-400 max-w-md">One slide per chapter. Click to read.</p>
             </div>
@@ -502,7 +502,7 @@
                 '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500">' + c.words + ' words</p>' +
             '</div>' +
             (mode === 'slide'
-                ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Title slide for chapter ' + c.n + ': ' + c.title + '"></div>'
+                ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Illustrated slide for chapter ' + c.n + ': ' + c.title + '"></div>'
                 : '<h3 class="font-cinzel text-xl sm:text-2xl text-stone-100 mb-1">' + c.title + '</h3>' +
                   '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500 mb-6">' + c.place + '</p>') +
             '<div class="script">' + c.html + '</div></div>';

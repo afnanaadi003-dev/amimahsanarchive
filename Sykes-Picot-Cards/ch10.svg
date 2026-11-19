@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 10 — THE INITIALS</title>
-  <desc id="d">Title slide for chapter 10 of Sykes–Picot, Act I.</desc>
+  <desc id="d">Illustrated title slide for chapter 10 of Sykes–Picot, Act I.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="24%" cy="34%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="62%" cy="46%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,43 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g>
+  <path d="M0 300 H640 V360 H0 Z" fill="#050403"/><path d="M0 300 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <!-- candle -->
+  <g>
+    <rect x="470" y="196" width="18" height="104" fill="#171008" stroke="#f0d4a2" stroke-opacity="0.5"/>
+    <path d="M479 190 c12 -12 0 -22 0 -34 c-2 12 -14 22 0 34 Z" fill="#f0d4a2" opacity="0.85"/>
+    <circle cx="479" cy="176" r="34" fill="#f0d4a2" opacity="0.1"/>
+    <ellipse cx="479" cy="300" rx="24" ry="5" fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.35"/>
+  </g>
+  <!-- envelope -->
+  <g transform="rotate(3 300 268)">
+    <rect x="176" y="204" width="240" height="140" fill="#160f07" stroke="#f0d4a2" stroke-opacity="0.55"/>
+    <path d="M176 204 L296 282 L416 204" fill="none" stroke="#f0d4a2" stroke-opacity="0.5"/>
+    <circle cx="296" cy="286" r="21" fill="#5c1f16" stroke="#f0d4a2" stroke-opacity="0.5"/>
+    <circle cx="296" cy="286" r="14" fill="none" stroke="#f0d4a2" stroke-opacity="0.35"/>
+    <path d="M296 277 l4 6 7 1 -5 5 1 7 -7 -4 -7 4 1 -7 -5 -5 7 -1 Z" fill="#f0d4a2" opacity="0.75"/>
+  </g>
+  <!-- pen on the table -->
+  <path d="M430 292 L520 258" stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="2"/>
+  <path d="M520 258 l10 -4 -4 10 Z" fill="#f0d4a2" opacity="0.6"/></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 162 L150 134 L330 166 L500 120 L650 144"/>
-    <path d="M-10 170 L150 142 L330 174 L500 128 L650 152" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="100" cy="142" r="3.4" fill="#d8b26a"/>
-  <circle cx="100" cy="142" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT I · 3 JANUARY 1916</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT I · 3 JANUARY 1916</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">10 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">10</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">10</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE INITIALS</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">FOREIGN OFFICE, LONDON · 3 JANUARY 1916</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

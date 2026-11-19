@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 3 — THE QUAI</title>
-  <desc id="d">Title slide for chapter 3 of Sykes–Picot, Act I.</desc>
+  <desc id="d">Illustrated title slide for chapter 3 of Sykes–Picot, Act I.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="39%" cy="57%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="61%" cy="53%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,56 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g>
+  <path d="M0 244 H640 V360 H0 Z" fill="#050403"/><path d="M0 244 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <rect x="0" y="244" width="640" height="116" fill="#080b0e"/>
+  <path d="M0 250 H640" stroke="#f0d4a2" stroke-opacity="0.18"/>
+  <g stroke="#f0d4a2" stroke-opacity="0.14">
+    <path d="M120 266 h90 M320 280 h120 M170 296 h70 M420 302 h100 M60 312 h120"/>
+  </g>
+  <!-- quai facade -->
+  <g fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.45">
+    <path d="M356 244 V150 h84 v-16 h96 v110 Z"/>
+    <path d="M356 150 l14 -14 h70 v14"/>
+    <path d="M470 134 l16 -16 h50 v16"/>
+  </g>
+  <g fill="#f0d4a2" opacity="0.45">
+    <rect x="374" y="170" width="10" height="16"/><rect x="396" y="170" width="10" height="16"/>
+    <rect x="418" y="170" width="10" height="16"/><rect x="456" y="156" width="10" height="16"/>
+    <rect x="482" y="156" width="10" height="16"/><rect x="508" y="156" width="10" height="16"/>
+  </g>
+  <!-- bridge -->
+  <g fill="none" stroke="#f0d4a2" stroke-opacity="0.55" stroke-width="1.6">
+    <path d="M0 244 C60 206 148 206 208 244"/>
+    <path d="M208 244 C268 216 336 216 396 244"/>
+    <path d="M0 232 H420"/>
+  </g>
+  <path d="M0 244 H200 V360 H0 Z" fill="#050403"/><path d="M0 244 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <!-- lamp post -->
+  <g stroke="#f0d4a2" stroke-opacity="0.6" stroke-width="1.3" fill="none">
+    <path d="M264 244 V176 M264 176 C264 166 276 162 284 168"/>
+    <path d="M284 168 h14"/>
+  </g>
+  <circle cx="302" cy="172" r="5" fill="#f0d4a2" opacity="0.85"/>
+  <circle cx="302" cy="172" r="22" fill="#f0d4a2" opacity="0.08"/>
+  <path d="M302 178 L268 244 H340 Z" fill="#f0d4a2" opacity="0.05"/></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 167 L150 139 L330 171 L500 125 L650 149"/>
-    <path d="M-10 175 L150 147 L330 179 L500 133 L650 157" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="231" cy="147" r="3.4" fill="#d8b26a"/>
-  <circle cx="231" cy="147" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT I · NOVEMBER 1915</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT I · NOVEMBER 1915</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">03 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">03</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">03</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE QUAI</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">QUAI D'ORSAY, PARIS · NOVEMBER 1915</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>

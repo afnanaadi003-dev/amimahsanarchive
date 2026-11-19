@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
   <title id="t">Chapter 7 — THE DESERT DESK</title>
-  <desc id="d">Title slide for chapter 7 of Sykes–Picot, Act I.</desc>
+  <desc id="d">Illustrated title slide for chapter 7 of Sykes–Picot, Act I.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3d2d18"/><stop offset="1" stop-color="#150e08"/>
     </linearGradient>
-    <radialGradient id="glow" cx="67%" cy="51%" r="62%">
-      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="41%" cy="55%" r="66%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.2"/><stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.94"/>
+      <stop offset="0.44" stop-color="#050403" stop-opacity="0.66"/>
+      <stop offset="0.72" stop-color="#050403" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="topscrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050403" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#050403" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050403" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="horizon" cx="62%" cy="72%" r="56%">
+      <stop offset="0" stop-color="#eabf76" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#eabf76" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
@@ -14,31 +29,54 @@
   </defs>
   <rect width="640" height="360" fill="url(#bg)"/>
   <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#horizon)"/>
+
+  <g>
+  <path d="M0 262 H640 V360 H0 Z" fill="#050403"/><path d="M0 262 H640" stroke="#f0d4a2" stroke-opacity="0.3"/>
+  <!-- shelf with rolled maps -->
+  <g stroke="#f0d4a2" stroke-opacity="0.4" fill="none">
+    <path d="M420 96 H604 M420 148 H604"/>
+  </g>
+  <g fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.5">
+    <rect x="432" y="62" width="15" height="34"/><rect x="456" y="58" width="15" height="38"/><rect x="480" y="54" width="15" height="42"/><rect x="504" y="62" width="15" height="34"/><rect x="528" y="58" width="15" height="38"/><rect x="552" y="54" width="15" height="42"/>
+    <rect x="446" y="108" width="26" height="40" transform="rotate(-2 459 128)"/><rect x="486" y="108" width="26" height="40" transform="rotate(0 499 128)"/><rect x="526" y="108" width="26" height="40" transform="rotate(2 539 128)"/>
+  </g>
+  <!-- desk -->
+  <path d="M212 264 H612 L588 300 H236 Z" fill="#120d07" stroke="#f0d4a2" stroke-opacity="0.45"/>
+  <path d="M236 300 V360 M588 300 V360" stroke="#f0d4a2" stroke-opacity="0.25"/>
+  <!-- lamp glow -->
+  <path d="M330 0 V120" stroke="#f0d4a2" stroke-opacity="0.35"/>
+  <path d="M300 128 h60 l-16 -20 h-28 Z" fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.7"/>
+  <path d="M300 128 L262 268 H404 L360 128 Z" fill="#f0d4a2" opacity="0.06"/>
+  <ellipse cx="332" cy="130" rx="10" ry="4" fill="#f0d4a2" opacity="0.8"/>
+  <!-- papers + compass -->
+  <g fill="#1b1309" stroke="#f0d4a2" stroke-opacity="0.45">
+    <rect x="404" y="250" width="88" height="42" transform="rotate(-5 448 271)"/>
+    <rect x="490" y="256" width="70" height="34" transform="rotate(6 525 273)"/>
+  </g>
+  <g fill="none" stroke="#f0d4a2" stroke-opacity="0.65">
+    <circle cx="300" cy="274" r="17"/><circle cx="300" cy="274" r="2"/>
+    <path d="M300 258 l5 14 -5 -3 -5 3 Z" fill="#f0d4a2" stroke="none" opacity="0.8"/>
+  </g>
+  <!-- ink pot and pen -->
+  <path d="M376 272 h22 l-3 18 h-16 Z" fill="#0b0705" stroke="#f0d4a2" stroke-opacity="0.6"/>
+  <path d="M388 268 L410 236" stroke="#f0d4a2" stroke-opacity="0.7"/>
+  <path d="M410 236 l7 -7 -1 9 Z" fill="#f0d4a2" opacity="0.7"/></g>
+
+  <rect width="640" height="360" fill="url(#scrim)"/>
+  <rect width="640" height="130" fill="url(#topscrim)"/>
   <rect width="640" height="360" fill="url(#grain)"/>
 
-  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
-    <path d="M0 96 H640" stroke-dasharray="2 7"/>
-    <path d="M0 300 H640" stroke-dasharray="2 7"/>
-    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
-  </g>
-
-  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
-    <path d="M-10 179 L150 151 L330 183 L500 137 L650 161"/>
-    <path d="M-10 187 L150 159 L330 191 L500 145 L650 169" stroke-dasharray="3 6"/>
-  </g>
-  <circle cx="419" cy="159" r="3.4" fill="#d8b26a"/>
-  <circle cx="419" cy="159" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
-
-  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT I · 1916</text>
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#f0d4a2" letter-spacing="5">ACT I · 1916</text>
   <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">07 / 42</text>
 
-  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">07</text>
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#f0d4a2" opacity="0.2" letter-spacing="-3">07</text>
 
   <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE DESERT DESK</text>
 
   <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">ARAB BUREAU, CAIRO · 1916</text>
 
-  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+  <g stroke="#f0d4a2" stroke-opacity="0.5" stroke-width="1">
     <path d="M48 32 h28 M48 32 v10"/>
     <path d="M592 328 h-28 M592 328 v-10"/>
   </g>
