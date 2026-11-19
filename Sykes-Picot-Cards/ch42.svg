@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Chapter 42 — THE LINE</title>
+  <desc id="d">Title slide for chapter 42 of Sykes–Picot, Act IV.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171008"/><stop offset="0.55" stop-color="#0e0a06"/><stop offset="1" stop-color="#060403"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="56%" cy="36%" r="62%">
+      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.16"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+  <rect width="640" height="360" fill="url(#grain)"/>
+
+  <g stroke="#5a4526" stroke-width="1" opacity="0.55">
+    <path d="M0 96 H640" stroke-dasharray="2 7"/>
+    <path d="M0 300 H640" stroke-dasharray="2 7"/>
+    <path d="M48 0 V24 M48 40 V56" stroke-dasharray="2 5"/>
+  </g>
+
+  <g fill="none" stroke="#a4442f" stroke-width="1.4" opacity="0.55">
+    <path d="M-10 180 L150 152 L330 184 L500 138 L650 162"/>
+    <path d="M-10 188 L150 160 L330 192 L500 146 L650 170" stroke-dasharray="3 6"/>
+  </g>
+  <circle cx="224" cy="160" r="3.4" fill="#d8b26a"/>
+  <circle cx="224" cy="160" r="9" fill="none" stroke="#d8b26a" stroke-opacity="0.35"/>
+
+  <text x="48" y="88" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#d8b26a" letter-spacing="5">ACT IV · PRESENT DAY</text>
+  <text x="592" y="88" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8d7a58" letter-spacing="3">42 / 42</text>
+
+  <text x="44" y="150" font-family="'JetBrains Mono',Consolas,monospace" font-size="82" font-weight="700" fill="#d8b26a" opacity="0.22" letter-spacing="-3">42</text>
+
+  <text x="48" y="214" font-family="Georgia,'Times New Roman',serif" font-size="34" font-weight="700" fill="#efe3cb" letter-spacing="1">THE LINE</text>
+
+  <text x="48" y="316" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#c9b18a" opacity="0.8" letter-spacing="2.6">BERLIN · PRESENT DAY</text>
+
+  <g stroke="#d8b26a" stroke-opacity="0.5" stroke-width="1">
+    <path d="M48 32 h28 M48 32 v10"/>
+    <path d="M592 328 h-28 M592 328 v-10"/>
+  </g>
+</svg>

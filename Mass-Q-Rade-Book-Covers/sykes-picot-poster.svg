@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900" role="img" aria-labelledby="pt pd">
+  <title id="pt">Sykes–Picot — a screenplay in 42 chapters</title>
+  <desc id="pd">Poster: an ink-drawn map of the Levant divided by a single ochre line.</desc>
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1208"/><stop offset="0.5" stop-color="#0d0905"/><stop offset="1" stop-color="#050302"/>
+    </linearGradient>
+    <radialGradient id="pglow" cx="50%" cy="34%" r="70%">
+      <stop offset="0" stop-color="#d8b26a" stop-opacity="0.18"/><stop offset="1" stop-color="#d8b26a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pgrain" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.5" fill="#fff" opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="900" fill="url(#pbg)"/>
+  <rect width="640" height="900" fill="url(#pglow)"/>
+  <rect width="640" height="900" fill="url(#pgrain)"/>
+
+  <g fill="none" stroke="#6b5330" stroke-width="1" opacity="0.6">
+    <path d="M40 40 h40 M40 40 v40"/><path d="M600 40 h-40 M600 40 v40"/>
+    <path d="M40 860 h40 M40 860 v-40"/><path d="M600 860 h-40 M600 860 v-40"/>
+  </g>
+
+  <text x="320" y="120" text-anchor="middle" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#d8b26a" letter-spacing="7">MASS-Q-RADE · AN ORIGINAL SCREENPLAY</text>
+  <text x="320" y="198" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="62" font-weight="700" fill="#efe3cb" letter-spacing="3">SYKES–PICOT</text>
+  <text x="320" y="238" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="19" fill="#c9b18a">A line drawn in 1916, still being lived in.</text>
+
+  <g fill="none" stroke="#8d6f3d" stroke-width="1.1" opacity="0.7">
+    <path d="M80 320 q40 -26 90 -10 t110 6 t120 -18 t90 10 t70 -6"/>
+    <path d="M80 344 q50 22 100 4 t110 8 t120 -12 t90 6 t60 -4" stroke-dasharray="3 7"/>
+    <path d="M70 470 q60 -40 120 -14 t110 10 t120 -26 t110 12"/>
+    <path d="M70 498 q40 30 110 12 t110 -6 t120 18 t80 -8" stroke-dasharray="3 7"/>
+  </g>
+
+  <g stroke="#a4442f" stroke-width="2" opacity="0.9">
+    <path d="M120 430 L250 388 L360 430 L470 366 L560 400"/>
+  </g>
+  <circle cx="360" cy="430" r="4" fill="#d8b26a"/>
+  <circle cx="360" cy="430" r="12" fill="none" stroke="#d8b26a" stroke-opacity="0.4"/>
+
+  <circle cx="320" cy="560" r="86" fill="none" stroke="#8d6f3d" stroke-opacity="0.5"/>
+  <circle cx="320" cy="560" r="62" fill="none" stroke="#8d6f3d" stroke-opacity="0.35" stroke-dasharray="2 6"/>
+  <text x="320" y="548" text-anchor="middle" font-family="'JetBrains Mono',Consolas,monospace" font-size="34" fill="#d8b26a" letter-spacing="2">1916</text>
+  <text x="320" y="578" text-anchor="middle" font-family="'JetBrains Mono',Consolas,monospace" font-size="9" fill="#a8926c" letter-spacing="4">SECRET</text>
+
+  <text x="320" y="742" text-anchor="middle" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#c9b18a" letter-spacing="5">42 CHAPTERS · 4 ACTS · 100 YEARS</text>
+  <path d="M220 770 H420" stroke="#5a4526"/>
+  <text x="320" y="806" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#9a8666">Mark Sykes · François Georges-Picot</text>
+  <text x="320" y="828" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#9a8666">and everyone who had to live on the line</text>
+</svg>
