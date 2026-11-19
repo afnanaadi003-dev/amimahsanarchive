@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Mahabharat — The Bloodline of Kings</title>
+  <desc id="desc">A gold and indigo cover: a burning sunset over the plains of Kurukshetra, a lone war chariot with two figures silhouetted against the sun, a rising forest of spears, and the title Mahabharat by Amim Ahsan.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080612"/>
+      <stop offset="0.28" stop-color="#1a0f2e"/>
+      <stop offset="0.55" stop-color="#3c1330"/>
+      <stop offset="0.74" stop-color="#7a2a20"/>
+      <stop offset="0.9" stop-color="#c06a22"/>
+      <stop offset="1" stop-color="#1a0d10"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffe9b0"/>
+      <stop offset="0.35" stop-color="#ffc55c"/>
+      <stop offset="0.7" stop-color="#f08a24" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#f08a24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffb347" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6e6b4"/>
+      <stop offset="0.42" stop-color="#e3c46a"/>
+      <stop offset="0.62" stop-color="#b8912f"/>
+      <stop offset="1" stop-color="#f0d99a"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8cf86"/>
+      <stop offset="1" stop-color="#a07f2a"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1114"/>
+      <stop offset="0.45" stop-color="#140b12"/>
+      <stop offset="1" stop-color="#07050a"/>
+    </linearGradient>
+    <linearGradient id="smoke" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9a0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffb066" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ff8a3c" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <pattern id="dust" width="7" height="7" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.6" r="0.75" fill="#ffdca6" opacity="0.32"/>
+      <circle cx="5" cy="4.2" r="0.5" fill="#ffc382" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Night sky -->
+  <rect width="852" height="1280" fill="url(#sky)"/>
+
+  <!-- Stars -->
+  <g fill="#ffe9c4">
+    <circle cx="96" cy="96" r="1.6" opacity="0.7"/>
+    <circle cx="188" cy="58" r="1.1" opacity="0.55"/>
+    <circle cx="284" cy="122" r="1.4" opacity="0.6"/>
+    <circle cx="372" cy="72" r="0.9" opacity="0.5"/>
+    <circle cx="474" cy="108" r="1.3" opacity="0.55"/>
+    <circle cx="566" cy="62" r="1.7" opacity="0.7"/>
+    <circle cx="668" cy="118" r="1" opacity="0.5"/>
+    <circle cx="756" cy="78" r="1.5" opacity="0.65"/>
+    <circle cx="132" cy="186" r="1" opacity="0.45"/>
+    <circle cx="704" cy="196" r="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- Great sun behind the field -->
+  <circle cx="426" cy="742" r="322" fill="url(#halo)"/>
+  <circle cx="426" cy="742" r="196" fill="url(#sun)"/>
+  <circle cx="426" cy="742" r="104" fill="#ffd07a" opacity="0.42" filter="url(#glow)"/>
+
+  <!-- Smoke banners -->
+  <g filter="url(#soft)">
+    <path d="M0 470 C 130 400, 210 510, 330 452 C 430 404, 520 486, 620 434 C 700 394, 790 430, 852 400 L 852 520 C 760 548, 690 500, 610 536 C 520 578, 430 512, 336 556 C 220 610, 120 552, 0 606 Z" fill="url(#smoke)"/>
+    <path d="M0 640 C 150 596, 240 664, 360 620 C 470 580, 560 640, 660 606 C 740 578, 800 600, 852 580 L 852 640 C 760 664, 690 634, 614 660 C 520 692, 430 646, 340 668 C 230 696, 120 668, 0 700 Z" fill="url(#smoke)" opacity="0.7"/>
+  </g>
+
+  <!-- Distant plain of spears -->
+  <g stroke="#120a12" stroke-width="4" opacity="0.85">
+    <path d="M46 812 L58 690"/><path d="M92 816 L102 700"/><path d="M140 820 L150 676"/>
+    <path d="M190 824 L198 706"/><path d="M242 826 L250 686"/><path d="M296 828 L304 712"/>
+    <path d="M556 828 L564 706"/><path d="M610 826 L618 684"/><path d="M662 824 L670 700"/>
+    <path d="M712 820 L720 672"/><path d="M762 816 L770 696"/><path d="M808 812 L816 688"/>
+  </g>
+  <g fill="#160c12" opacity="0.9">
+    <circle cx="58" cy="684" r="4"/><circle cx="102" cy="694" r="4"/><circle cx="150" cy="670" r="4"/>
+    <circle cx="198" cy="700" r="4"/><circle cx="250" cy="680" r="4"/><circle cx="304" cy="706" r="4"/>
+    <circle cx="564" cy="700" r="4"/><circle cx="618" cy="678" r="4"/><circle cx="670" cy="694" r="4"/>
+    <circle cx="720" cy="666" r="4"/><circle cx="770" cy="690" r="4"/><circle cx="816" cy="682" r="4"/>
+  </g>
+
+  <!-- Chariot: Krishna driving, Arjuna with bow -->
+  <defs>
+    <g id="horse" fill="#0a0610">
+      <ellipse cx="0" cy="-78" rx="46" ry="30"/>
+      <path d="M-34 -86 C -46 -104 -52 -120 -54 -132 L -36 -138 C -32 -122 -22 -106 -12 -94 Z"/>
+      <path d="M-56 -136 C -68 -138 -80 -134 -88 -122 L -79 -114 C -71 -123 -62 -126 -52 -124 Z"/>
+      <path d="M-48 -138 L -53 -151 L -42 -142 Z"/>
+      <path d="M-36 -134 C -28 -122 -22 -108 -16 -96 L -7 -101 C -15 -117 -24 -131 -32 -141 Z"/>
+      <path d="M44 -88 C 58 -96 70 -86 72 -70 L 62 -68 C 60 -80 54 -84 44 -82 Z"/>
+      <g stroke="#0a0610" stroke-width="13" stroke-linecap="round" fill="none">
+        <path d="M-26 -56 L -34 -6"/>
+        <path d="M-10 -56 L -2 -4"/>
+        <path d="M20 -58 L 26 -8"/>
+        <path d="M34 -58 L 46 -4"/>
+      </g>
+      <g>
+        <rect x="-41" y="-9" width="15" height="9" rx="3"/>
+        <rect x="-9" y="-7" width="15" height="9" rx="3"/>
+        <rect x="19" y="-11" width="15" height="9" rx="3"/>
+        <rect x="39" y="-7" width="15" height="9" rx="3"/>
+      </g>
+    </g>
+  </defs>
+
+  <g transform="translate(430 936)">
+    <ellipse cx="-40" cy="6" rx="300" ry="32" fill="#ffb765" opacity="0.15" filter="url(#glow)"/>
+
+    <!-- horse team -->
+    <use href="#horse" x="-288"/>
+    <use href="#horse" x="-212"/>
+    <use href="#horse" x="-136"/>
+    <path d="M-166 -104 C -180 -118 -186 -132 -184 -145" fill="none" stroke="#f0d99a" stroke-width="2" opacity="0.45"/>
+    <path d="M-180 -147 C -190 -150 -200 -147 -205 -139" fill="none" stroke="#f0d99a" stroke-width="2" opacity="0.35"/>
+
+    <!-- draught pole and yoke -->
+    <path d="M22 -78 C -30 -88 -80 -92 -136 -94" fill="none" stroke="#0a0610" stroke-width="9"/>
+    <path d="M-148 -110 L -128 -80" fill="none" stroke="#0a0610" stroke-width="7"/>
+    <g fill="none" stroke="#e3c46a" stroke-width="1.6" opacity="0.38">
+      <path d="M30 -60 C -20 -68 -70 -74 -130 -78"/>
+      <path d="M30 -54 C -20 -62 -70 -68 -130 -72"/>
+    </g>
+
+    <!-- rear wheel -->
+    <g>
+      <circle cx="62" cy="-44" r="46" fill="#0a0610"/>
+      <circle cx="62" cy="-44" r="36" fill="none" stroke="#e3c46a" stroke-width="2" opacity="0.35"/>
+      <g stroke="#e3c46a" stroke-width="2" opacity="0.28">
+        <path d="M62 -90 L62 2"/><path d="M16 -44 L108 -44"/>
+        <path d="M30 -76 L94 -12"/><path d="M94 -76 L30 -12"/>
+      </g>
+    </g>
+
+    <!-- chariot body -->
+    <path d="M14 -36 L14 -104 C 14 -113 20 -119 31 -119 L 138 -119 C 148 -119 154 -112 154 -103 L 154 -36 Z" fill="#0a0610"/>
+    <path d="M16 -96 L152 -96" stroke="#e3c46a" stroke-width="2" opacity="0.38"/>
+    <path d="M18 -42 L150 -42" stroke="#e3c46a" stroke-width="1.4" opacity="0.2"/>
+
+    <!-- warriors -->
+    <g fill="#0a0610">
+      <circle cx="88" cy="-158" r="11"/>
+      <path d="M76 -146 c 8 -5 20 -5 26 2 l 6 30 l -40 0 z"/>
+      <path d="M80 -140 L 48 -136" stroke="#0a0610" stroke-width="8" stroke-linecap="round"/>
+      <path d="M106 -140 L 118 -126" stroke="#0a0610" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="132" cy="-160" r="11"/>
+      <path d="M120 -148 c 8 -5 20 -5 26 2 l 6 32 l -40 0 z"/>
+      <path d="M142 -142 L 156 -166" stroke="#0a0610" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Arjuna's bow -->
+    <path d="M44 -178 C 18 -160 18 -118 44 -100" fill="none" stroke="#f0d99a" stroke-width="3" opacity="0.9"/>
+    <path d="M44 -178 L 76 -139 L 44 -100" fill="none" stroke="#f0d99a" stroke-width="1.4" opacity="0.6"/>
+    <path d="M76 -139 L 6 -141" stroke="#ffe6b0" stroke-width="2" opacity="0.95"/>
+    <path d="M-2 -141 l 12 -5 l 0 10 z" fill="#ffe6b0" opacity="0.95"/>
+
+    <!-- Krishna's conch -->
+    <path d="M156 -170 c 8 -7 22 -9 30 -4 c -2 9 -13 16 -24 16 c -8 0 -11 -6 -6 -12 z" fill="none" stroke="#f0d99a" stroke-width="3" opacity="0.85"/>
+
+    <!-- front wheel -->
+    <g>
+      <circle cx="140" cy="-30" r="30" fill="#0a0610"/>
+      <circle cx="140" cy="-30" r="22" fill="none" stroke="#e3c46a" stroke-width="2" opacity="0.3"/>
+      <g stroke="#e3c46a" stroke-width="1.6" opacity="0.24">
+        <path d="M140 -60 L140 0"/><path d="M110 -30 L170 -30"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Ground -->
+  <path d="M0 906 C 180 884, 340 926, 470 912 C 620 896, 740 918, 852 902 L 852 1280 L 0 1280 Z" fill="url(#ground)"/>
+  <rect y="906" width="852" height="374" fill="url(#dust)" opacity="0.5"/>
+
+  <!-- Fallen arrows across the field -->
+  <g stroke="#1b1016" stroke-width="2" opacity="0.75">
+    <path d="M64 1012 L172 966"/><path d="M210 1052 L330 1002"/><path d="M470 1040 L588 996"/>
+    <path d="M628 1018 L742 972"/><path d="M116 1122 L246 1082"/><path d="M560 1118 L690 1076"/>
+  </g>
+
+  <!-- Title block -->
+  <g text-anchor="middle" font-family="Cinzel, 'Times New Roman', serif">
+    <text x="426" y="176" font-size="26" letter-spacing="14" fill="#e3c46a" opacity="0.85">THE KURU CHRONICLE</text>
+    <path d="M236 206 L616 206" stroke="#b8912f" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="240" font-size="19" letter-spacing="6" fill="#f0d99a" opacity="0.7">A RETOLD EPIC</text>
+
+    <text x="426" y="1058" font-size="86" letter-spacing="4" fill="url(#gold)" font-weight="700">MAHABHARAT</text>
+    <path d="M148 1090 L704 1090" stroke="url(#goldSoft)" stroke-width="2" opacity="0.75"/>
+    <text x="426" y="1132" font-size="25" letter-spacing="9" fill="#f2e2b6" opacity="0.9">THE BLOODLINE OF KINGS</text>
+    <text x="426" y="1178" font-size="17" letter-spacing="7" fill="#d8c48c" opacity="0.65">TWENTY-FOUR CHAPTERS</text>
+
+    <text x="426" y="1246" font-size="27" letter-spacing="10" fill="url(#gold)" font-weight="700">AMIM AHSAN</text>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="#b8912f" fill="none" opacity="0.55">
+    <path d="M34 34 L34 96 M34 34 L96 34" stroke-width="2"/>
+    <path d="M818 34 L818 96 M818 34 L756 34" stroke-width="2"/>
+    <path d="M34 1246 L34 1184 M34 1246 L96 1246" stroke-width="2"/>
+    <path d="M818 1246 L818 1184 M818 1246 L756 1246" stroke-width="2"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="852" height="1280" fill="none" stroke="#000" stroke-width="90" opacity="0.28"/>
+</svg>
