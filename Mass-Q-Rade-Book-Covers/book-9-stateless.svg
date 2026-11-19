@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+<title id="t">The Stateless Refugee — Mass-Q-Rade Book Nine</title>
+  <desc id="d">A woman stands on a shoreline holding a paper boat, a torn map dissolving into the sea behind her.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#061822"/><stop offset="0.6" stop-color="#082b3a"/><stop offset="1" stop-color="#031016"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b4a5e"/><stop offset="1" stop-color="#041a22"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e3b4"/><stop offset="1" stop-color="#c08c2c"/></linearGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#bff0ff" stop-opacity="0.9"/><stop offset="0.35" stop-color="#4fb3cc" stop-opacity="0.35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="45%" r="72%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.72"/></radialGradient>
+  </defs>
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <circle cx="620" cy="330" r="170" fill="url(#moon)"/>
+  <circle cx="620" cy="330" r="52" fill="#d9f6ff" opacity="0.8"/>
+  <g stroke="#7dd3fc" stroke-width="1" opacity="0.16" fill="none">
+    <path d="M620 330L300 1280M620 330L120 900M620 330L820 1080M620 330L60 620M620 330L400 200"/>
+  </g>
+  <path d="M0 830c120-30 220 20 330 0s220-40 320-14 200 24 202 24v440H0z" fill="url(#sea)"/>
+  <g stroke="#8ee9ff" stroke-width="1.2" opacity="0.28" fill="none">
+    <path d="M40 900c90-14 130 14 220 0M320 940c100-16 150 16 250 0M120 1010c120-18 190 18 300 0M400 1090c130-18 200 18 300 0M60 1160c120-20 200 20 300 0"/>
+  </g>
+  <g fill="#020a0e">
+    <path d="M330 830c-6-58 14-104 56-118 46-15 84 18 92 72 6 40 0 74 0 74l-20 8-10 120h-92l-14-120z"/>
+    <circle cx="392" cy="672" r="40"/>
+    <path d="M350 668c4-30 22-46 44-46 24 0 40 16 44 46-16-12-28-14-44-14-18 0-30 4-44 14z"/>
+  </g>
+  <path d="M356 640c6 10 20 14 36 14s30-4 36-14" stroke="#7dd3fc" stroke-width="2.4" fill="none" opacity="0.5"/>
+  <g>
+    <path d="M300 762l76-34 76 34-38 26h-76z" fill="#e9f7fb" opacity="0.9"/>
+    <path d="M376 728v94" stroke="#0a2a35" stroke-width="2"/>
+    <path d="M300 762l76 26 76-26" stroke="#0a2a35" stroke-width="1.4" fill="none" opacity="0.6"/>
+  </g>
+  <g fill="none" stroke="#d9a94e" stroke-width="1.1" opacity="0.55">
+    <path d="M120 470l150 40-30 120-140-30z"/><path d="M270 510l60-70M150 490l40 90"/>
+  </g>
+  <g fill="#8ee9ff" font-family="monospace" font-size="11" opacity="0.35">
+    <text x="96" y="700">UNHCR 1951</text><text x="640" y="880">No. 0041</text><text x="120" y="1120">Article 14</text>
+  </g>
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.34"/>
+  <g text-anchor="middle" font-family="Georgia, serif">
+    <text x="426" y="150" fill="#8ee9ff" font-size="16" letter-spacing="7" font-family="'Trebuchet MS',sans-serif">MASS-Q-RADE &middot; BOOK NINE</text>
+    <text x="426" y="222" fill="url(#gold)" font-size="66" letter-spacing="3">THE STATELESS</text>
+    <text x="426" y="292" fill="url(#gold)" font-size="66" letter-spacing="9">REFUGEE</text>
+    <path d="M336 322h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="362" fill="#dfeff5" font-size="18" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">FATIMA AL-HASSAN</text>
+    <text x="426" y="1126" fill="#e8d6a8" font-size="17" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">A NOVEL BY AMIM AHSAN</text>
+    <text x="426" y="1160" fill="#8ee9ff" font-size="11" letter-spacing="5" font-family="'Trebuchet MS',sans-serif" opacity="0.6">A COUNTRY IS A WEIGHT</text>
+  </g>
+</svg>

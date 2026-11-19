@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+<title id="t">The Caged Artist — Mass-Q-Rade Book Ten</title>
+  <desc id="d">A red crane flies out through the bars of a black cage while a brush hangs above it.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#120607"/><stop offset="0.6" stop-color="#1b0b0a"/><stop offset="1" stop-color="#060303"/></linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a7a"/><stop offset="1" stop-color="#b0121a"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe4b3"/><stop offset="1" stop-color="#c99433"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff5a3c" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%"><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.78"/></radialGradient>
+  </defs>
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <ellipse cx="470" cy="700" rx="330" ry="280" fill="url(#glow)"/>
+  <g stroke="#2a1212" stroke-width="1" opacity="0.8">
+    <path d="M0 400h852M0 520h852M0 640h852M0 760h852M0 880h852M0 1000h852"/>
+  </g>
+  <g stroke="#e8d6a8" stroke-width="6" opacity="0.85" fill="none">
+    <rect x="232" y="560" width="388" height="440"/>
+    <path d="M280 560v440M328 560v440M376 560v440M424 560v440M472 560v440M520 560v440M568 560v440"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M0 560h232M620 560h232M0 1000h232M620 1000h232" stroke="#e8d6a8" stroke-width="6"/>
+  </g>
+  <g transform="translate(330 640) rotate(-14)">
+    <path d="M0 60c50-46 108-60 170-40 30 10 44 6 58-12 6-8 20-8 24 4 6 18-6 30-20 42-24 20-30 44-18 68 8 16 2 30-14 30-14 0-24-12-30-26-8-20-30-30-58-26-42 6-76-10-112-40z" fill="url(#red)"/>
+    <path d="M66 34c-14-26-34-40-58-46 28-4 54 6 72 26z" fill="#b0121a"/>
+    <circle cx="238" cy="34" r="4" fill="#1b0b0a"/>
+  </g>
+  <g stroke="#f3d9a4" stroke-width="7" stroke-linecap="round">
+    <path d="M700 300l-90 220"/><path d="M614 512c-16 18-14 42 10 54 26 12 50-2 52-24"/>
+  </g>
+  <path d="M666 574c6 22 0 36-14 44-16-12-20-28-12-44z" fill="#b0121a"/>
+  <g fill="#8b1a12" opacity="0.7"><circle cx="150" cy="1150" r="4"/><circle cx="210" cy="1110" r="3"/><circle cx="96" cy="1090" r="3"/></g>
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.34"/>
+  <g text-anchor="middle" font-family="Georgia, serif">
+    <text x="426" y="150" fill="#ffb3a3" font-size="16" letter-spacing="7" font-family="'Trebuchet MS',sans-serif">MASS-Q-RADE &middot; BOOK TEN</text>
+    <text x="426" y="232" fill="url(#gold)" font-size="72" letter-spacing="6">THE CAGED</text>
+    <text x="426" y="310" fill="url(#gold)" font-size="72" letter-spacing="10">ARTIST</text>
+    <path d="M336 340h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="380" fill="#ffe7dc" font-size="18" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">KIM JONG-SOO</text>
+    <text x="426" y="1126" fill="#e8d6a8" font-size="17" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">A NOVEL BY AMIM AHSAN</text>
+    <text x="426" y="1160" fill="#ffb3a3" font-size="11" letter-spacing="5" font-family="'Trebuchet MS',sans-serif" opacity="0.6">A BRUSH CANNOT BE ARRESTED</text>
+  </g>
+</svg>

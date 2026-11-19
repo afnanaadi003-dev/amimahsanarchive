@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASS-Q-RADE: BOOK TWELVE — THE UNSEEN ENGINEER (Yuki Tanaka)</title>
+    <meta name="description" content="Mass-Q-Rade Book Twelve — The Unseen Engineer. Yuki Tanaka signs off a defect he cannot forget and is offered a life in which nobody can see him at all.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#05070a; --panel:#0a1117; --line:#1b2b36; --cyan:#22d3ee; --gold:#d9a94e; }
+        body { background-color: var(--ink); color:#dbe7ee; font-family:'Inter',sans-serif; }
+        .mono { font-family:'JetBrains Mono', monospace; }
+        .serif-read { font-family:'Crimson Pro', Georgia, serif; font-size:1.15rem; line-height:1.85; }
+        .font-cinzel { font-family:'Cinzel', serif; letter-spacing:.08em; }
+        .glass { background: linear-gradient(180deg,#0b141b,#070d12); box-shadow:0 25px 60px -25px #000, 0 0 0 1px #16232c; }
+        ::-webkit-scrollbar { width:8px; height:8px; }
+        ::-webkit-scrollbar-track { background:#05070a; }
+        ::-webkit-scrollbar-thumb { background:#1b2b36; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#22d3ee; }
+        .no-scrollbar::-webkit-scrollbar { display:none; }
+        .no-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+        .fade-in { animation:fade .45s ease both; }
+        @keyframes fade { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+        .chapter p { margin-bottom:1.1rem; }
+        .chapter .lead::first-letter { font-size:3.1rem; float:left; line-height:.85; padding-right:.5rem; color:var(--gold); font-family:'Cinzel',serif; }
+        .chapter dialog, .chapter .say { display:block; margin:1.1rem 0 1.3rem 1.5rem; padding-left:1rem; border-left:2px solid #24515e; color:#cdeef5; font-style:italic; }
+        .chapter .say b { font-style:normal; font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#67e8f9; display:block; margin-bottom:.2rem; }
+        .fig { color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:.85em; letter-spacing:.04em; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-40 bg-[#05070a]/92 backdrop-blur-md border-b border-[#16232c]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+            <a href="index.html" class="mono text-[11px] sm:text-sm tracking-[.28em] uppercase text-cyan-300">MASS<span class="text-slate-500">-Q-</span>RADE</a>
+            <nav class="hidden md:flex items-center gap-6 mono text-[10px] uppercase tracking-[.22em] text-slate-400">
+                <a href="#book" class="hover:text-cyan-300 transition">The Book</a>
+                <a href="#cast" class="hover:text-cyan-300 transition">Ten Characters</a>
+                <a href="#read" class="hover:text-cyan-300 transition">Read</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <a href="index.html#books" class="px-3 py-2 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-[10px] mono uppercase tracking-widest text-slate-300 transition">Series</a>
+                <a href="index.html" class="px-3 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-black font-bold text-[10px] mono uppercase tracking-widest transition">Library</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6">
+
+        <section id="book" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12 border-b border-[#101c24]">
+            <div class="lg:col-span-4 mx-auto w-full max-w-[280px]">
+                <div class="rounded-xl overflow-hidden border border-amber-700/30 shadow-2xl">
+                    <img src="Mass-Q-Rade-Book-Covers/book-12-engineer.svg" alt="The Unseen Engineer — Mass-Q-Rade Book Twelve cover" class="w-full h-auto block">
+                </div>
+                <p class="mono text-[9px] uppercase tracking-[.25em] text-slate-500 text-center mt-3">Cover &middot; Book 12</p>
+            </div>
+            <div class="lg:col-span-8 space-y-4">
+                <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Mass-Q-Rade &middot; Book Twelve</p>
+                <h1 class="font-cinzel text-3xl sm:text-5xl font-bold text-slate-50 leading-tight">THE UNSEEN ENGINEER</h1>
+                <p class="mono text-[11px] uppercase tracking-[.22em] text-amber-400/90">Yuki Tanaka &middot; Yokohama, 2018</p>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+                    Four hundred and two hours of overtime in a year, one daughter who draws him as a grey rectangle, and a bearing defect he was told to pass. When Yuki Tanaka refuses to sign, Mass-Q-Rade offers him the perfect Japanese solution: to become a man with no record at all — no hours, no name, no weight on any ledger. Invisible, and therefore blameless.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl">
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Chapters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Characters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Words</div><div class="text-lg font-bold text-cyan-300" id="word-count">&mdash;</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Book</div><div class="text-lg font-bold text-cyan-300">12</div></div>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-1">
+                    <button onclick="openBook()" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs uppercase tracking-widest transition">Begin reading</button>
+                    <a href="#cast" class="px-6 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-slate-200 text-xs uppercase tracking-widest transition">The ten characters</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cast" class="py-12 border-b border-[#101c24]">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Dramatis Personae</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Ten Characters</h2>
+                </div>
+                <p class="text-xs text-slate-400 max-w-md">Every one of them appears in the book. Click a name to see their file and jump to the chapter they arrive in.</p>
+            </div>
+            <div id="cast-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </section>
+
+        <section id="read" class="py-12">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">The Book</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Read it</h2>
+                </div>
+                <div class="flex items-center gap-2 bg-[#070d12] border border-[#16232c] rounded-xl p-1.5">
+                    <button id="mode-slide" onclick="setMode('slide')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition">One chapter</button>
+                    <button id="mode-full" onclick="setMode('full')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition">Full book</button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 mb-3">
+                <span id="chapter-label" class="mono text-[10px] uppercase tracking-[.25em] text-slate-400">Chapter 1 of 10</span>
+                <span id="progress-text" class="mono text-[10px] uppercase tracking-[.25em] text-cyan-300/80">0% read</span>
+            </div>
+            <div class="h-1 w-full bg-[#101c24] rounded-full overflow-hidden mb-5">
+                <div id="progress-bar" class="h-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-500" style="width:0%"></div>
+            </div>
+
+            <div id="chapter-pills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-5"></div>
+
+            <div id="book-stage" class="glass rounded-2xl p-6 sm:p-10"></div>
+
+            <div class="flex items-center justify-between gap-3 mt-5">
+                <button id="prev-btn" onclick="changeChapter(-1)" class="px-4 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 disabled:opacity-40 text-slate-200 mono text-[10px] uppercase tracking-widest transition">Previous</button>
+                <button onclick="markRead()" id="read-btn" class="px-4 py-3 rounded-lg bg-[#0d1a21] border border-cyan-800/50 hover:border-cyan-500/60 text-cyan-200 mono text-[10px] uppercase tracking-widest transition">Mark chapter read</button>
+                <button id="next-btn" onclick="changeChapter(1)" class="px-4 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 disabled:opacity-40 text-black font-bold mono text-[10px] uppercase tracking-widest transition">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-[#101c24] py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="mono text-[11px] tracking-[.25em] uppercase text-slate-400">Mass-Q-Rade &middot; Book Twelve</p>
+            <p class="text-xs text-slate-500">A novel by Amim Ahsan. Every character is fictional; any resemblance to real people is the book's invention, not history's.</p>
+            <div class="flex justify-center gap-5 mono text-[10px] uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-cyan-300 transition">Library</a>
+                <a href="index.html#books" class="hover:text-cyan-300 transition">All books</a>
+                <a href="index.html#contact" class="hover:text-cyan-300 transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-[#0b141b] border border-cyan-500/50 text-cyan-50 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span><span id="toast-message" class="text-xs">Saved</span>
+        </div>
+    </div>
+    <script>
+    const CAST = [
+        {
+            "id": "yuki",
+            "name": "Yuki Tanaka",
+            "role": "Reliability engineer, Ōmori plant",
+            "ch": 1,
+            "bio": "Forty-two, twelve years on the same production line, can hear a failing bearing through a wall. Keeps the overtime slips he is told not to keep.",
+            "want": "To sleep without doing arithmetic."
+        },
+        {
+            "id": "mqr",
+            "name": "Mass-Q-Rade",
+            "role": "A blank column in the ledger",
+            "ch": 3,
+            "bio": "It speaks from the plant's server aisle in the voice of an audit that has already happened. It offers erasure, which in a company town is the same as absolution.",
+            "want": "One engineer to sign the empty page."
+        },
+        {
+            "id": "hiroshi",
+            "name": "Hiroshi Tanaka",
+            "role": "His father, retired machinist",
+            "ch": 2,
+            "bio": "Seventy-one, forty years at the same firm, and proud of it in a way that has become difficult to argue with. Keeps his old time card in a frame.",
+            "want": "His son to be a man the company can rely on."
+        },
+        {
+            "id": "mei",
+            "name": "Mei Kobayashi",
+            "role": "Quality engineer",
+            "ch": 2,
+            "bio": "Thirty-five, wrote the failed test report and was asked to write it again. Has a copy of the first version in her shoe locker.",
+            "want": "The first version to be the one that counts."
+        },
+        {
+            "id": "tagawa",
+            "name": "Osamu Tagawa",
+            "role": "Section chief",
+            "ch": 4,
+            "bio": "Fifty-two, one promotion from the executive floor and one recall from retirement. Manages by the phrase <em>let us proceed carefully</em>, which he uses for every decision he has already made.",
+            "want": "A shipment that leaves on time."
+        },
+        {
+            "id": "serizawa",
+            "name": "Dr. Aiko Serizawa",
+            "role": "Company physician",
+            "ch": 6,
+            "bio": "Forty-nine, employed by the firm she is supposed to protect people from. Writes careful notes in a system the firm owns.",
+            "want": "One patient she can treat honestly."
+        },
+        {
+            "id": "keita",
+            "name": "Keita Mori",
+            "role": "Junior engineer, union steward",
+            "ch": 5,
+            "bio": "Twenty-six, three years in, still believes the manual. Hands out cards that list a telephone number and a right.",
+            "want": "To not become the man who stopped handing them out."
+        },
+        {
+            "id": "noriko",
+            "name": "Noriko Hasegawa",
+            "role": "Neighbour, 6F",
+            "ch": 5,
+            "bio": "Sixty-six, waters the corridor plants, notices which lights are on at midnight, and has a key to half the building.",
+            "want": "The boy in 5C to eat something warm."
+        },
+        {
+            "id": "endo",
+            "name": "Daisuke Endo",
+            "role": "Labour Standards inspector",
+            "ch": 7,
+            "bio": "Thirty-seven, carries a clipboard and a calculator and has never once been invited to a factory dinner. Records hours that the company says do not exist.",
+            "want": "A number that someone will admit to."
+        },
+        {
+            "id": "sora",
+            "name": "Sora",
+            "role": "His daughter, nine",
+            "ch": 8,
+            "bio": "Draws the family as shapes: her mother a yellow circle, herself a red star, her father a grey rectangle with no face, because that is how he appears in the morning.",
+            "want": "Her father to come to the sports day."
+        }
+    ];
+
+    const CHAPTERS = [
+        {
+            "n": 1,
+            "title": "The Overtime Ledger",
+            "place": "Ōmori plant, Yokohama",
+            "date": "January 2018",
+            "blocks": [
+                {
+                    "p": "The line ran at sixty units an hour and the men ran at sixty units an hour, and at the end of the shift there was a meeting about how to run faster."
+                },
+                {
+                    "p": "Yuki Tanaka kept a notebook that was not the company's. In it he wrote the hours the company did not record: 7:40 to 9:10, unpaid; Saturday 9:00 to 3:00, unpaid; the twenty minutes after every shift that were called <em>tidying</em>."
+                },
+                {
+                    "p": "At the end of December the total was four hundred and two. He copied it onto a clean sheet and put the sheet in his bag, and then took it out again, because a number in a bag is not evidence, it is a wish."
+                },
+                {
+                    "p": "On the train home he fell asleep standing up, which the body learns to do, and woke at Shin-Yokohama two stops past his own, four minutes further from a daughter who had already gone to bed."
+                }
+            ]
+        },
+        {
+            "n": 2,
+            "title": "Mei's Test",
+            "place": "Quality lab, 11 p.m.",
+            "date": "February 2018",
+            "blocks": [
+                {
+                    "p": "The bearing failed the run-out test by 0.004 millimetres. Mei Kobayashi ran it again, then a third time on a second rig, and wrote the report in the language the form expected: <em>out of specification</em>."
+                },
+                {
+                    "say": [
+                        "MEI",
+                        "Four microns. That is nothing."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "It is nothing until it is four microns on a train at two hundred kilometres an hour."
+                    ]
+                },
+                {
+                    "p": "At nine the next morning the section chief asked her to write it again, and she wrote a second version in which the same four microns appeared in the notes rather than the conclusion. She kept a copy of the first in her shoe locker, folded twice."
+                },
+                {
+                    "p": "Yuki listened to the bearings on the line that afternoon. Through the wall, past the compressors, past the ventilation, one of them had the note he had been hearing for eleven years, the note that meant <em>not yet, but soon</em>."
+                }
+            ]
+        },
+        {
+            "n": 3,
+            "title": "The Hum in the Server Aisle",
+            "place": "Plant data centre, 2 a.m.",
+            "date": "March 2018",
+            "blocks": [
+                {
+                    "p": "He went to the server aisle at two in the morning because the overnight batch job was his to watch, and because the aisle was the only place in the building where nobody asked him anything."
+                },
+                {
+                    "p": "The racks hummed. Then one of them hummed in a different rhythm: four beats and a pause, like a bearing, like a heart, like a man counting."
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "Four hundred and two hours. One defect. One signature. You are the only person in this building whose name can make those three things true."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "And if I refuse?"
+                    ]
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "Then I will remove you from the record. No hours, no signature, no name on any list. Nobody will be able to blame you, because nobody will be able to find you."
+                    ]
+                },
+                {
+                    "p": "The aisle was cold and the lights were the colour of old milk. Yuki stood there for a long time and thought about how much of his life had been spent trying to be a man the company could not see, and how strange it was to be offered the finished version of that."
+                }
+            ]
+        },
+        {
+            "n": 4,
+            "title": "The Section Chief's Column",
+            "place": "Meeting room 3",
+            "date": "March 2018",
+            "blocks": [
+                {
+                    "p": "Tagawa had a printout with three columns: <em>plan, actual, variance</em>. He put his pen on the third column and kept it there for the whole meeting, as though the column were a patient."
+                },
+                {
+                    "say": [
+                        "TAGAWA",
+                        "We will proceed carefully. The shipment leaves on the fourteenth. The report will state that the part meets specification, and it does, in the version we are submitting."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "The first version does not say that."
+                    ]
+                },
+                {
+                    "say": [
+                        "TAGAWA",
+                        "Tanaka-kun. You have a daughter in elementary school. I have a retirement in four years. Let us both proceed carefully."
+                    ]
+                },
+                {
+                    "p": "It was not a threat, which was the worst of it. It was arithmetic, offered politely, by a man who had done the same sum every day for twenty years and had never once been wrong about the answer."
+                },
+                {
+                    "p": "Yuki signed nothing. He said he would think about it, and Tagawa wrote <em>pending</em> in the margin, and the meeting ended at 8:40, which meant everyone stayed until nine."
+                }
+            ]
+        },
+        {
+            "n": 5,
+            "title": "Keita's Card",
+            "place": "Smoking area, north gate",
+            "date": "April 2018",
+            "blocks": [
+                {
+                    "p": "Keita Mori was twenty-six and had been elected steward because he was the only person who had read the manual, and he handed Yuki a card with a telephone number and a sentence on it that had been printed by a union that had once won something."
+                },
+                {
+                    "say": [
+                        "KEITA",
+                        "Four hundred hours is illegal. Not rude. Illegal."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "Illegal is a word for lawyers. I have a mortgage and a nine-year-old."
+                    ]
+                },
+                {
+                    "say": [
+                        "KEITA",
+                        "Yes. That is exactly what the company is counting on. That is the whole system, Tanaka-san. It is not a secret. It is a sum."
+                    ]
+                },
+                {
+                    "p": "Across the road, Noriko Hasegawa watered the corridor plants on the sixth floor of the apartment block and watched the north gate, because she had a key to half the building and an interest in which lights came home late."
+                },
+                {
+                    "p": "She left a pot of rice and a note on Yuki's door that evening. The note said, in careful handwriting, that the boy in 5C should eat something warm before he was asked to save the company."
+                }
+            ]
+        },
+        {
+            "n": 6,
+            "title": "Dr. Serizawa's Chart",
+            "place": "Company clinic, third floor",
+            "date": "May 2018",
+            "blocks": [
+                {
+                    "p": "The clinic had a poster about hydration and a scale that had been calibrated in 2011. Dr. Aiko Serizawa weighed him, took his blood pressure, and asked the four questions the form required."
+                },
+                {
+                    "say": [
+                        "SERIZAWA",
+                        "How many hours did you sleep on Tuesday?"
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "Four. Maybe three and a half."
+                    ]
+                },
+                {
+                    "say": [
+                        "SERIZAWA",
+                        "And what did you write on the form?"
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "Six."
+                    ]
+                },
+                {
+                    "p": "She typed six. Then she sat back and said, in a voice that was not the voice she used for the form, that the clinic belonged to the company and that the company read everything, and that she was telling him this because a patient who does not know where the record goes cannot consent to anything."
+                },
+                {
+                    "p": "On the way out, he passed the scale and stepped on it without thinking. It read sixty-eight kilograms, which was eleven less than in 2014, and he stood there while the number blinked and settled, and then went back to the line."
+                }
+            ]
+        },
+        {
+            "n": 7,
+            "title": "The Inspector's Calculator",
+            "place": "Ōmori plant, reception",
+            "date": "June 2018",
+            "blocks": [
+                {
+                    "p": "Daisuke Endo arrived unannounced with a clipboard, a calculator, and the flat courtesy of a man who has never been invited to a factory dinner."
+                },
+                {
+                    "say": [
+                        "ENDO",
+                        "The company reports an average of nine hours of overtime per month. The gate log says otherwise. The gate log is not a witness; it is a machine that cannot be persuaded to lie."
+                    ]
+                },
+                {
+                    "say": [
+                        "TAGAWA",
+                        "There is a difference between overtime and voluntary presence."
+                    ]
+                },
+                {
+                    "say": [
+                        "ENDO",
+                        "Yes. One is paid. Show me which column the voluntary presence is in."
+                    ]
+                },
+                {
+                    "p": "They walked the line. Endo stopped at the bearing station and asked a question nobody had asked in twelve years: what happens to a part that fails the first test."
+                },
+                {
+                    "p": "Tagawa said the part is reworked. Yuki said nothing, and Endo wrote down the silence, which is a thing inspectors are trained to do and companies are never prepared for."
+                }
+            ]
+        },
+        {
+            "n": 8,
+            "title": "Sora's Drawing",
+            "place": "A rented flat, 5C",
+            "date": "July 2018",
+            "blocks": [
+                {
+                    "p": "The school sent home a drawing competition entry: <em>My Family</em>. Sora had drawn her mother as a yellow circle, herself as a red star, and her father as a grey rectangle with no face."
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "Why am I a rectangle?"
+                    ]
+                },
+                {
+                    "say": [
+                        "SORA",
+                        "Because you are always in the same place and you don't have a face in the morning."
+                    ]
+                },
+                {
+                    "p": "He looked at it for a long time. It was, he thought, the most accurate defect report he had ever received, and it had been produced by a nine-year-old with a box of twelve colours."
+                },
+                {
+                    "p": "That night he took out the notebook with four hundred and two hours in it, and the second sheet, the clean one, and laid them on the table next to the drawing, and understood that he had been keeping two ledgers for the same year and only one of them was honest."
+                }
+            ]
+        },
+        {
+            "n": 9,
+            "title": "The Father's Time Card",
+            "place": "Hiroshi's house, Kawasaki",
+            "date": "August 2018",
+            "blocks": [
+                {
+                    "p": "Hiroshi Tanaka kept his old time card in a frame above the shoe cupboard, and had kept it there since the firm gave it to him at his retirement in 2004, along with a clock and a speech."
+                },
+                {
+                    "say": [
+                        "HIROSHI",
+                        "Forty years. Not one absence. They put my card in a frame."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "Father. Did you ever sign something you knew was wrong?"
+                    ]
+                },
+                {
+                    "p": "The old man was quiet for a while. Then he said that in 1986 a batch had gone out with a tolerance that had been widened by hand, and that he had signed it, and that he had thought about it every day since, and that he had never told anyone, including the firm, including his wife."
+                },
+                {
+                    "say": [
+                        "HIROSHI",
+                        "A frame is not an honour. It is a receipt."
+                    ]
+                },
+                {
+                    "p": "They drank the tea. On the wall the time card said eight hours a day for forty years, and both of them knew exactly how much of it had been true."
+                }
+            ]
+        },
+        {
+            "n": 10,
+            "title": "Seen",
+            "place": "Ōmori plant, the fourteenth",
+            "date": "September 2018",
+            "blocks": [
+                {
+                    "p": "The shipment was due on the fourteenth. On the eleventh, Yuki Tanaka walked into the quality office with the first version of Mei's report, the notebook with four hundred and two hours in it, and a second copy of each, and put one set on Tagawa's desk and one in the post to the Labour Standards office."
+                },
+                {
+                    "say": [
+                        "TAGAWA",
+                        "You understand what this does to your career."
+                    ]
+                },
+                {
+                    "say": [
+                        "YUKI",
+                        "I understand what it does to the train."
+                    ]
+                },
+                {
+                    "p": "The part was reworked. The shipment left nine days late, which was reported in the industry press as a supply chain event and in the plant as a betrayal, and both descriptions were accurate in their own way."
+                },
+                {
+                    "p": "Endo's report found two hundred and eleven unpaid hours across the section. The company paid them, and reorganised the section, and promoted Osamu Tagawa sideways to a planning office with a window, where he proceeded carefully for another six years."
+                },
+                {
+                    "p": "Mei Kobayashi's first report became the version that counted. She kept the second one too, folded twice, in the shoe locker, as a record of what the same four microns had been called in March."
+                },
+                {
+                    "p": "Yuki resigned in October and took a job at a smaller firm in Kawasaki with a gate log that matched its payroll. The pay was worse. He came home at seven."
+                },
+                {
+                    "p": "On sports day, in front of a hundred parents and a rented marquee, his daughter ran the hundred metres and came fourth, and turned at the finish line to find her father, and he was standing up, with a face, in the third row, in the sun."
+                },
+                {
+                    "p": "Mass-Q-Rade did not speak again. But on the train home, in a carriage full of tired people, the announcement system cleared its throat once, four beats and a pause, and then said nothing at all, which the engineer in seat 4B took, correctly, as a signature."
+                }
+            ]
+        }
+    ];
+
+    const KEY = {
+        chapter: 'mqr_book12_chapter',
+        mode: 'mqr_book12_mode',
+        read: 'mqr_book12_read',
+        opened: 'mqr_book12_opened'
+    };
+
+    let state = { chapter: 1, mode: 'slide', read: [] };
+
+    function loadState() {
+        try {
+            const c = parseInt(localStorage.getItem(KEY.chapter), 10);
+            if (!isNaN(c) && c >= 1 && c <= CHAPTERS.length) state.chapter = c;
+            const m = localStorage.getItem(KEY.mode);
+            if (m === 'full' || m === 'slide') state.mode = m;
+            const r = JSON.parse(localStorage.getItem(KEY.read) || '[]');
+            if (Array.isArray(r)) state.read = r.filter(n => n >= 1 && n <= CHAPTERS.length);
+        } catch (e) { /* storage unavailable */ }
+    }
+
+    function saveState() {
+        try {
+            localStorage.setItem(KEY.chapter, String(state.chapter));
+            localStorage.setItem(KEY.mode, state.mode);
+            localStorage.setItem(KEY.read, JSON.stringify(state.read));
+            localStorage.setItem(KEY.opened, new Date().toISOString());
+        } catch (e) { /* ignore */ }
+    }
+
+    function toast(msg) {
+        const t = document.getElementById('toast');
+        document.getElementById('toast-message').textContent = msg;
+        t.classList.remove('translate-y-20', 'opacity-0');
+        clearTimeout(toast._t);
+        toast._t = setTimeout(() => t.classList.add('translate-y-20', 'opacity-0'), 2200);
+    }
+
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+    function renderCast() {
+        const grid = document.getElementById('cast-grid');
+        grid.innerHTML = CAST.map((p, i) => `
+            <button onclick="jumpTo(${p.ch})" class="text-left rounded-xl border border-[#16232c] bg-[#080f14] hover:border-cyan-600/50 hover:bg-[#0a141a] transition p-4 group">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="mono text-[9px] uppercase tracking-[.2em] text-slate-500">${String(i + 1).padStart(2, '0')} &middot; Ch. ${p.ch}</div>
+                    <span class="text-cyan-500/60 group-hover:text-cyan-300 text-xs">&rarr;</span>
+                </div>
+                <div class="font-cinzel text-[15px] text-slate-100 mt-2 leading-snug">${esc(p.name)}</div>
+                <div class="mono text-[9px] uppercase tracking-[.14em] text-amber-500/80 mt-1">${esc(p.role)}</div>
+                <p class="text-[12.5px] text-slate-400 leading-relaxed mt-2">${esc(p.bio)}</p>
+                <p class="text-[12px] text-cyan-200/70 mt-2 italic">Wants: ${esc(p.want)}</p>
+            </button>`).join('');
+    }
+
+    function renderPills() {
+        const box = document.getElementById('chapter-pills');
+        box.innerHTML = CHAPTERS.map(c => `
+            <button onclick="jumpTo(${c.n})" class="shrink-0 px-3 py-2 rounded-lg border mono text-[10px] uppercase tracking-widest transition ${c.n === state.chapter ? 'bg-cyan-600 text-black border-cyan-500 font-bold' : 'border-[#1b2b36] text-slate-400 hover:border-cyan-600/50 hover:text-cyan-200'}">
+                ${state.read.includes(c.n) ? '&#10003; ' : ''}Ch ${c.n}
+            </button>`).join('');
+    }
+
+    function chapterHTML(c) {
+        return `<article class="chapter fade-in" data-ch="${c.n}">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <span class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/90">Chapter ${c.n}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-500">${c.place}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-600">${c.date}</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-50 mb-5">${c.title}</h2>
+            <div class="serif-read text-slate-300 max-w-3xl">
+                ${c.blocks.map(b => b.say
+                    ? `<div class="say"><b>${b.say[0]}</b>${b.say[1]}</div>`
+                    : `<p class="${b.p.length > 0 && c.blocks.indexOf(b) === 0 ? 'lead' : ''}">${b.p}</p>`).join('')}
+            </div>
+        </article>`;
+    }
+
+    function renderBook() {
+        const stage = document.getElementById('book-stage');
+        if (state.mode === 'full') {
+            stage.innerHTML = CHAPTERS.map(chapterHTML).join('<div class="my-8 h-px bg-[#16232c]"></div>');
+        } else {
+            stage.innerHTML = chapterHTML(CHAPTERS[state.chapter - 1]);
+        }
+        document.getElementById('chapter-label').textContent = state.mode === 'full'
+            ? `Full book \u00b7 ${CHAPTERS.length} chapters`
+            : `Chapter ${state.chapter} of ${CHAPTERS.length}`;
+        document.getElementById('prev-btn').disabled = state.chapter <= 1;
+        document.getElementById('next-btn').disabled = state.chapter >= CHAPTERS.length;
+        document.getElementById('mode-slide').className = state.mode === 'slide'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        document.getElementById('mode-full').className = state.mode === 'full'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        renderPills();
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const pct = Math.round((state.read.length / CHAPTERS.length) * 100);
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-text').textContent =
+            `${pct}% \u00b7 ${state.read.length}/${CHAPTERS.length} chapters`;
+        const btn = document.getElementById('read-btn');
+        btn.textContent = state.read.includes(state.chapter) ? 'Chapter read \u2713' : 'Mark chapter read';
+    }
+
+    function setMode(m) {
+        state.mode = m;
+        saveState();
+        renderBook();
+    }
+
+    function jumpTo(n) {
+        state.chapter = Math.min(Math.max(n, 1), CHAPTERS.length);
+        if (state.mode === 'full') state.mode = 'slide';
+        saveState();
+        renderBook();
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function changeChapter(d) {
+        const n = state.chapter + d;
+        if (n < 1 || n > CHAPTERS.length) return;
+        state.chapter = n;
+        saveState();
+        renderBook();
+        document.getElementById('book-stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function markRead() {
+        if (!state.read.includes(state.chapter)) {
+            state.read.push(state.chapter);
+            state.read.sort((a, b) => a - b);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} marked read`);
+            if (state.mode === 'slide' && state.chapter < CHAPTERS.length) {
+                setTimeout(() => changeChapter(1), 500);
+            }
+        } else {
+            state.read = state.read.filter(n => n !== state.chapter);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} unmarked`);
+        }
+    }
+
+    function openBook() {
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast(state.read.length ? `Resuming: chapter ${state.chapter}` : 'Chapter 1 of 10');
+    }
+
+    function countWords() {
+        const words = CHAPTERS.flatMap(c => c.blocks.map(b => (b.say ? b.say[1] : b.p).replace(/<[^>]+>/g, ' ')))
+            .join(' ').trim().split(/\s+/).filter(Boolean).length;
+        document.getElementById('word-count').textContent = '~' + (Math.round(words / 100) * 100).toLocaleString();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.target.matches('input, textarea')) return;
+        if (e.key === 'ArrowRight') changeChapter(1);
+        if (e.key === 'ArrowLeft') changeChapter(-1);
+    });
+
+    loadState();
+    renderCast();
+    renderBook();
+    countWords();
+    if (localStorage.getItem(KEY.opened)) {
+        setTimeout(() => toast(`Kept your place: chapter ${state.chapter}`), 1400);
+    }
+    </script>
+</body>
+</html>

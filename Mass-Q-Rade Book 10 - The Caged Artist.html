@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASS-Q-RADE: BOOK TEN — THE CAGED ARTIST (Kim Jong-soo)</title>
+    <meta name="description" content="Mass-Q-Rade Book Ten — The Caged Artist. Kim Jong-soo paints the state's most beautiful lie and is offered a brush that cannot be arrested.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#05070a; --panel:#0a1117; --line:#1b2b36; --cyan:#22d3ee; --gold:#d9a94e; }
+        body { background-color: var(--ink); color:#dbe7ee; font-family:'Inter',sans-serif; }
+        .mono { font-family:'JetBrains Mono', monospace; }
+        .serif-read { font-family:'Crimson Pro', Georgia, serif; font-size:1.15rem; line-height:1.85; }
+        .font-cinzel { font-family:'Cinzel', serif; letter-spacing:.08em; }
+        .glass { background: linear-gradient(180deg,#0b141b,#070d12); box-shadow:0 25px 60px -25px #000, 0 0 0 1px #16232c; }
+        ::-webkit-scrollbar { width:8px; height:8px; }
+        ::-webkit-scrollbar-track { background:#05070a; }
+        ::-webkit-scrollbar-thumb { background:#1b2b36; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#22d3ee; }
+        .no-scrollbar::-webkit-scrollbar { display:none; }
+        .no-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+        .fade-in { animation:fade .45s ease both; }
+        @keyframes fade { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+        .chapter p { margin-bottom:1.1rem; }
+        .chapter .lead::first-letter { font-size:3.1rem; float:left; line-height:.85; padding-right:.5rem; color:var(--gold); font-family:'Cinzel',serif; }
+        .chapter dialog, .chapter .say { display:block; margin:1.1rem 0 1.3rem 1.5rem; padding-left:1rem; border-left:2px solid #24515e; color:#cdeef5; font-style:italic; }
+        .chapter .say b { font-style:normal; font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#67e8f9; display:block; margin-bottom:.2rem; }
+        .fig { color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:.85em; letter-spacing:.04em; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-40 bg-[#05070a]/92 backdrop-blur-md border-b border-[#16232c]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+            <a href="index.html" class="mono text-[11px] sm:text-sm tracking-[.28em] uppercase text-cyan-300">MASS<span class="text-slate-500">-Q-</span>RADE</a>
+            <nav class="hidden md:flex items-center gap-6 mono text-[10px] uppercase tracking-[.22em] text-slate-400">
+                <a href="#book" class="hover:text-cyan-300 transition">The Book</a>
+                <a href="#cast" class="hover:text-cyan-300 transition">Ten Characters</a>
+                <a href="#read" class="hover:text-cyan-300 transition">Read</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <a href="index.html#books" class="px-3 py-2 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-[10px] mono uppercase tracking-widest text-slate-300 transition">Series</a>
+                <a href="index.html" class="px-3 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-black font-bold text-[10px] mono uppercase tracking-widest transition">Library</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6">
+
+        <section id="book" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12 border-b border-[#101c24]">
+            <div class="lg:col-span-4 mx-auto w-full max-w-[280px]">
+                <div class="rounded-xl overflow-hidden border border-amber-700/30 shadow-2xl">
+                    <img src="Mass-Q-Rade-Book-Covers/book-10-caged.svg" alt="The Caged Artist — Mass-Q-Rade Book Ten cover" class="w-full h-auto block">
+                </div>
+                <p class="mono text-[9px] uppercase tracking-[.25em] text-slate-500 text-center mt-3">Cover &middot; Book 10</p>
+            </div>
+            <div class="lg:col-span-8 space-y-4">
+                <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Mass-Q-Rade &middot; Book Ten</p>
+                <h1 class="font-cinzel text-3xl sm:text-5xl font-bold text-slate-50 leading-tight">THE CAGED ARTIST</h1>
+                <p class="mono text-[11px] uppercase tracking-[.22em] text-amber-400/90">Kim Jong-soo &middot; Pyongyang, 2016</p>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+                    Kim Jong-soo has spent twenty years painting the same smile on the same Leader for a state that calls it portraiture. Then a shipment of foreign pigment arrives with a broken tin of a colour that does not exist in his palette, and the brush he mixes it with begins to paint what he is actually looking at. Mass-Q-Rade does not offer him freedom. It offers him an audience of one, and a canvas that cannot be confiscated.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl">
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Chapters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Characters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Words</div><div class="text-lg font-bold text-cyan-300" id="word-count">&mdash;</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Book</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-1">
+                    <button onclick="openBook()" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs uppercase tracking-widest transition">Begin reading</button>
+                    <a href="#cast" class="px-6 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-slate-200 text-xs uppercase tracking-widest transition">The ten characters</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cast" class="py-12 border-b border-[#101c24]">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Dramatis Personae</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Ten Characters</h2>
+                </div>
+                <p class="text-xs text-slate-400 max-w-md">Every one of them appears in the book. Click a name to see their file and jump to the chapter they arrive in.</p>
+            </div>
+            <div id="cast-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </section>
+
+        <section id="read" class="py-12">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">The Book</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Read it</h2>
+                </div>
+                <div class="flex items-center gap-2 bg-[#070d12] border border-[#16232c] rounded-xl p-1.5">
+                    <button id="mode-slide" onclick="setMode('slide')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition">One chapter</button>
+                    <button id="mode-full" onclick="setMode('full')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition">Full book</button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 mb-3">
+                <span id="chapter-label" class="mono text-[10px] uppercase tracking-[.25em] text-slate-400">Chapter 1 of 10</span>
+                <span id="progress-text" class="mono text-[10px] uppercase tracking-[.25em] text-cyan-300/80">0% read</span>
+            </div>
+            <div class="h-1 w-full bg-[#101c24] rounded-full overflow-hidden mb-5">
+                <div id="progress-bar" class="h-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-500" style="width:0%"></div>
+            </div>
+
+            <div id="chapter-pills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-5"></div>
+
+            <div id="book-stage" class="glass rounded-2xl p-6 sm:p-10"></div>
+
+            <div class="flex items-center justify-between gap-3 mt-5">
+                <button id="prev-btn" onclick="changeChapter(-1)" class="px-4 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 disabled:opacity-40 text-slate-200 mono text-[10px] uppercase tracking-widest transition">Previous</button>
+                <button onclick="markRead()" id="read-btn" class="px-4 py-3 rounded-lg bg-[#0d1a21] border border-cyan-800/50 hover:border-cyan-500/60 text-cyan-200 mono text-[10px] uppercase tracking-widest transition">Mark chapter read</button>
+                <button id="next-btn" onclick="changeChapter(1)" class="px-4 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 disabled:opacity-40 text-black font-bold mono text-[10px] uppercase tracking-widest transition">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-[#101c24] py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="mono text-[11px] tracking-[.25em] uppercase text-slate-400">Mass-Q-Rade &middot; Book Ten</p>
+            <p class="text-xs text-slate-500">A novel by Amim Ahsan. Every character is fictional; any resemblance to real people is the book's invention, not history's.</p>
+            <div class="flex justify-center gap-5 mono text-[10px] uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-cyan-300 transition">Library</a>
+                <a href="index.html#books" class="hover:text-cyan-300 transition">All books</a>
+                <a href="index.html#contact" class="hover:text-cyan-300 transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-[#0b141b] border border-cyan-500/50 text-cyan-50 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span><span id="toast-message" class="text-xs">Saved</span>
+        </div>
+    </div>
+    <script>
+    const CAST = [
+        {
+            "id": "jongsoo",
+            "name": "Kim Jong-soo",
+            "role": "State artist, Mansudae",
+            "ch": 1,
+            "bio": "Forty-six. Can render a Leader's jaw in nine brushstrokes and has not drawn a living face from life since 1996. Keeps his real sketches inside the lining of a winter coat.",
+            "want": "To paint one true thing and survive it."
+        },
+        {
+            "id": "mqr",
+            "name": "Mass-Q-Rade",
+            "role": "A colour without a name",
+            "ch": 3,
+            "bio": "It arrives as pigment, and speaks as a smell of turpentine and rain. It has an interest in artists because an image is the only mass a state cannot weigh.",
+            "want": "A picture that changes what it is looked at by."
+        },
+        {
+            "id": "solmi",
+            "name": "Ri Sol-mi",
+            "role": "Museum guide",
+            "ch": 2,
+            "bio": "Twenty-eight, recites four hundred captions from memory and has never been permitted to say what she thinks of a single painting. She notices when a caption and a canvas disagree.",
+            "want": "One hour in a room with no script."
+        },
+        {
+            "id": "hanchol",
+            "name": "Director Han Chol",
+            "role": "Propaganda Bureau",
+            "ch": 1,
+            "bio": "Runs the studio like a factory floor: quotas, drying racks, loyalty meetings at seven. He was a painter once and stopped the day it became safer to sign other people's work.",
+            "want": "A portrait that cannot be criticised."
+        },
+        {
+            "id": "minho",
+            "name": "Pak Min-ho",
+            "role": "Studio guard",
+            "ch": 4,
+            "bio": "Nineteen, assigned to watch a door for twelve hours a day. His father was a miner. He has never held a brush and has begun to suspect this is a kind of sentence.",
+            "want": "To be given something to do with his hands."
+        },
+        {
+            "id": "okja",
+            "name": "Aunt Ok-ja",
+            "role": "Neighbour, market vendor",
+            "ch": 5,
+            "bio": "Sixty-three, sells acorn jelly from a cart and remembers which families stopped buying in which year. Keeps a second purse that is always empty when officials ask.",
+            "want": "Her granddaughter to eat meat twice a year."
+        },
+        {
+            "id": "jaewon",
+            "name": "Jae-won",
+            "role": "Student painter, 17",
+            "ch": 6,
+            "bio": "Assigned to grind pigment and mix size. Draws aircraft and horses in the margins of his exercise book because the state has not yet banned either.",
+            "want": "To be taught how to mix a colour that is not on the chart."
+        },
+        {
+            "id": "sooryun",
+            "name": "Inspector Soo-ryun",
+            "role": "State Security Department",
+            "ch": 7,
+            "bio": "Thirty-eight, investigates deviations in cultural production. Reads reports the way other people read novels, and enjoys the parts where someone is caught.",
+            "want": "A confession with a signature."
+        },
+        {
+            "id": "bahr",
+            "name": "Herr Bähr",
+            "role": "Swiss gallery envoy",
+            "ch": 8,
+            "bio": "Invited to select work for a foreign exhibition and instructed, in three languages, on what he is allowed to like. Has a good eye and a bad conscience and a return ticket.",
+            "want": "One painting he can sell without lying."
+        },
+        {
+            "id": "hyejin",
+            "name": "Hye-jin",
+            "role": "His daughter, in Seoul",
+            "ch": 9,
+            "bio": "Twenty-two, defected at nineteen with her mother and has not spoken to her father since. Works nights, studies days, and keeps a folder of his old paintings downloaded from a museum site.",
+            "want": "One sentence from him that is not a slogan."
+        }
+    ];
+
+    const CHAPTERS = [
+        {
+            "n": 1,
+            "title": "Quota",
+            "place": "Mansudae Art Studio, Pyongyang",
+            "date": "March 2016",
+            "blocks": [
+                {
+                    "p": "The studio smelled of linseed and floor polish, and at seven every morning a hundred and forty painters stood in rows and were told how many smiles they owed the year."
+                },
+                {
+                    "say": [
+                        "HAN CHOL",
+                        "Sixty portraits by August. The jaw is too soft on the last one, Comrade Kim. A Leader's jaw is not a suggestion."
+                    ]
+                },
+                {
+                    "p": "Kim Jong-soo had painted the same jaw four hundred times. He could do it in nine strokes with his eyes half closed, and some mornings he did, and nobody in the room could tell the difference, which was either a craft or a crime depending on the year."
+                },
+                {
+                    "p": "He went home to a room with one window and a winter coat that hung on a nail all summer. Inside the lining were eleven drawings: a woman buying fish, a boy asleep on a bus, a dog with a torn ear. He had made them in 1996 and had not made another since."
+                },
+                {
+                    "p": "That night, with the curtain drawn, he took out a brush and held it over a blank sheet for eleven minutes and put it down without touching the paper, because the hand remembers what the file forgets."
+                }
+            ]
+        },
+        {
+            "n": 2,
+            "title": "The Caption and the Canvas",
+            "place": "Korean Art Gallery",
+            "date": "April 2016",
+            "blocks": [
+                {
+                    "p": "Ri Sol-mi had four hundred captions in her head and delivered them at a walking pace, in the voice of a woman describing weather."
+                },
+                {
+                    "say": [
+                        "SOL-MI",
+                        "This canvas shows the Leader among the workers, whose faces express joy at his presence."
+                    ]
+                },
+                {
+                    "p": "The faces expressed nothing. They had been painted from a photograph in which the workers were looking at a camera, and the painter had given them the expression that photographs give people who are told to look happy: a small, patient terror."
+                },
+                {
+                    "p": "A man at the back of the group stayed after the tour. He was not supposed to be recognised and was recognised anyway, because his jaw was on nine canvases in the building."
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "You said joy. They are afraid."
+                    ]
+                },
+                {
+                    "say": [
+                        "SOL-MI",
+                        "I said what the caption says. The caption is part of the painting now."
+                    ]
+                },
+                {
+                    "p": "She walked him to the door and did not ask his name, and he understood that she had known it for years and had been waiting for someone to say the first true sentence in the building."
+                }
+            ]
+        },
+        {
+            "n": 3,
+            "title": "A Colour Without a Name",
+            "place": "The studio stores",
+            "date": "May 2016",
+            "blocks": [
+                {
+                    "p": "The shipment from the foreign exhibition came in nine crates with customs seals and a list in three languages. Eight crates were ordinary. The ninth contained a tin with no label, and inside the tin was a red that was not on the chart."
+                },
+                {
+                    "p": "It was not vermilion, not cadmium, not the red of the flag on the wall. It was the red of a thing seen once and remembered wrongly, and when Jong-soo opened the lid the room smelled of turpentine and rain in a season that had not arrived."
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "You have painted four hundred jaws and not one mouth. I am not asking you to be brave. I am asking you to be accurate."
+                    ]
+                },
+                {
+                    "p": "He mixed the colour with a palette knife. It did not behave like pigment. It settled into the medium the way a fact settles into an argument, and the brush he loaded with it lay in his hand heavier than any brush he had held."
+                },
+                {
+                    "p": "He painted a line on scrap board. The line was the colour of the wall in his mother's kitchen, which had been painted in 1974 and repainted twice, and which he had not thought about in twenty years."
+                }
+            ]
+        },
+        {
+            "n": 4,
+            "title": "Twelve Hours at a Door",
+            "place": "Studio corridor, night",
+            "date": "June 2016",
+            "blocks": [
+                {
+                    "p": "Pak Min-ho stood at the door from six until six, and in the winter the corridor was the coldest room in the building, and in the summer it was the hottest, and either way nobody spoke to him except to ask whether the Director had gone home."
+                },
+                {
+                    "say": [
+                        "MINHO",
+                        "Comrade Painter. Is it true you can paint a face without the person sitting for it?"
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "It is true. It is not a good thing to be able to do."
+                    ]
+                },
+                {
+                    "p": "Jong-soo gave him a brush and a sheet of practice paper and showed him how to load a tip without drowning it. The boy held the brush like a spoon and then like a knife and then, on the fourth try, like a brush."
+                },
+                {
+                    "p": "He drew a door. Not the door in front of him: a door with a broken hinge and a cat sitting in the gap, from a house he had lived in until he was nine. Jong-soo looked at it for a long time and said nothing, and Min-ho, who had expected ridicule, received instead the only promotion of his life."
+                }
+            ]
+        },
+        {
+            "n": 5,
+            "title": "The Second Purse",
+            "place": "Tongil Market",
+            "date": "July 2016",
+            "blocks": [
+                {
+                    "p": "Aunt Ok-ja had sold acorn jelly from the same cart for thirty-one years and could tell a family's year by what they stopped buying. In 1997 nobody bought oil. In 2003 nobody bought meat. In 2016 the young men bought cigarettes and the old women bought nothing at all."
+                },
+                {
+                    "say": [
+                        "OKJA",
+                        "You want the good jelly. You always want the good jelly and you always have the wrong money."
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "Paint me your granddaughter and I will pay with the right money."
+                    ]
+                },
+                {
+                    "p": "She laughed, and then she did not, and then she described the child for forty minutes: the ear that stuck out, the way she stood with one foot on the other, the dress that was blue until it was grey. Jong-soo drew on the back of a requisition form, in charcoal, standing up."
+                },
+                {
+                    "p": "When he was finished, Ok-ja looked at the drawing and put both hands flat on the cart, and said, in a voice that had nothing in it, that the child had been dead for six years, and that this was the first time anyone had made her look alive without also making her a lesson."
+                }
+            ]
+        },
+        {
+            "n": 6,
+            "title": "Mixing Size",
+            "place": "Studio, the pigment room",
+            "date": "September 2016",
+            "blocks": [
+                {
+                    "p": "Jae-won was seventeen and ground pigment eight hours a day, and in the margins of his exercise book he drew aircraft because aircraft were permitted, and horses because horses had been permitted under the previous Leader and nobody had revised the list."
+                },
+                {
+                    "say": [
+                        "JAEWON",
+                        "Teacher. This red is not on the chart."
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "Then do not write it on the chart."
+                    ]
+                },
+                {
+                    "p": "The boy mixed a thimbleful and painted a stripe on his wrist. The stripe came out the exact brown of the river in July, the colour his father had drowned in, and Jae-won sat down on the floor of the pigment room and cried with the quiet efficiency of someone who has learned to do it in buildings."
+                },
+                {
+                    "p": "Jong-soo sat down beside him and waited, and did not say that everything would be all right, because a man who has painted four hundred jaws knows precisely what that sentence is worth."
+                }
+            ]
+        },
+        {
+            "n": 7,
+            "title": "Inspection",
+            "place": "Studio, Director's office",
+            "date": "October 2016",
+            "blocks": [
+                {
+                    "p": "Inspector Soo-ryun arrived with two men, a folder, and the expression of a woman who had read the file and enjoyed the parts where someone was caught."
+                },
+                {
+                    "say": [
+                        "SOO-RYUN",
+                        "Eleven drawings were found in a coat lining. A woman buying fish. A boy asleep on a bus. These are not compositions, Comrade Kim. They are sightings."
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "They are studies."
+                    ]
+                },
+                {
+                    "say": [
+                        "SOO-RYUN",
+                        "A study is of something the state has approved. What you have made is evidence that you were looking."
+                    ]
+                },
+                {
+                    "p": "She left the folder on the Director's desk and told him the matter would be resolved administratively, which in that building meant quietly, which meant the paintings would be burned and the painter would be reassigned to signage."
+                },
+                {
+                    "p": "Han Chol signed the order with a pen he had used to sign four hundred exhibition approvals, and then, when the inspector had gone, he stood at the window for a long time and said, to nobody, that he had been a painter once."
+                }
+            ]
+        },
+        {
+            "n": 8,
+            "title": "The Envoy",
+            "place": "The gallery, after hours",
+            "date": "November 2016",
+            "blocks": [
+                {
+                    "p": "Herr Bähr had been given a list of approved works, a translator, and a schedule that did not include the storage room at the back, which is where a guide took him at nine in the evening because a caption and a canvas had disagreed."
+                },
+                {
+                    "p": "There were eleven sheets of paper on a trestle table. A woman buying fish. A boy asleep on a bus. A dog with a torn ear. A door with a broken hinge and a cat in the gap."
+                },
+                {
+                    "say": [
+                        "BAHR",
+                        "These are not for exhibition."
+                    ]
+                },
+                {
+                    "say": [
+                        "SOL-MI",
+                        "No. They are for looking at."
+                    ]
+                },
+                {
+                    "p": "He bought nothing, because he could not, and he photographed nothing, because he had been searched at the airport once and had learned what it cost. But he memorised the brushwork, and on the plane he wrote four pages in a notebook, and the sentence he wrote last was: <em>the hand is the only witness that cannot be deported.</em>"
+                }
+            ]
+        },
+        {
+            "n": 9,
+            "title": "The Broadcast",
+            "place": "Seoul, a night-shift flat",
+            "date": "December 2016",
+            "blocks": [
+                {
+                    "p": "Hye-jin worked nights at a dispatch office and studied days, and kept a folder of her father's old paintings downloaded from a museum site that had been mirrored three times and edited twice."
+                },
+                {
+                    "p": "She had not spoken to him since she was nineteen. She wrote letters and did not send them, and one of them, the shortest, said only: <em>Are you still painting the jaw?</em>"
+                },
+                {
+                    "p": "In December a defector's radio programme read a list of cultural inspections, and his name was on it, and the reason given was a deviation in colour. She sat on the floor of her flat with the phone in her hand and the number she had never called, and the radio, which was not switched on, began to hum, four beats and a pause."
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "He is not dead. He is being accurate. It is slower than death and it costs more."
+                    ]
+                },
+                {
+                    "p": "She did not ask who was speaking. She had been in Seoul long enough to know that the only voices worth listening to are the ones that do not want anything, and this one wanted something, and she listened anyway."
+                }
+            ]
+        },
+        {
+            "n": 10,
+            "title": "The Canvas That Cannot Be Confiscated",
+            "place": "Pyongyang, February 2017",
+            "blocks": [
+                {
+                    "p": "They came for the coat on a Tuesday. The drawings were gone by then, given away one at a time to the people they were of: the fish woman's daughter, Min-ho's mother, Ok-ja, Jae-won, a guide who had never been allowed to say what she thought of a painting."
+                },
+                {
+                    "p": "What was left was a canvas two metres wide, painted in a red that was not on the chart, showing a hundred and forty painters standing in rows at seven in the morning, and every face in it looked exactly like the face it belonged to."
+                },
+                {
+                    "say": [
+                        "SOO-RYUN",
+                        "This is a document of the studio."
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "Yes."
+                    ]
+                },
+                {
+                    "say": [
+                        "SOO-RYUN",
+                        "It can be destroyed."
+                    ]
+                },
+                {
+                    "say": [
+                        "JONG-SOO",
+                        "It has been destroyed four times. Ask the people who were in it what it looks like."
+                    ]
+                },
+                {
+                    "p": "They took the canvas. They took the brushes. They did not take the colour, because the colour had gone into the people who had seen it, and a state can search a coat but not a memory."
+                },
+                {
+                    "p": "In Seoul, in March, Hye-jin received a letter with no return address and no words in it, only a drawing on a requisition form: a door with a broken hinge, and a cat sitting in the gap, and a girl standing on one foot with the other foot on top of it."
+                },
+                {
+                    "p": "She put it on the wall of her flat where the light was best, and left it there all year, and told her mother it was a picture of a country, which was the only accurate thing she could say about it."
+                }
+            ]
+        }
+    ];
+
+    const KEY = {
+        chapter: 'mqr_book10_chapter',
+        mode: 'mqr_book10_mode',
+        read: 'mqr_book10_read',
+        opened: 'mqr_book10_opened'
+    };
+
+    let state = { chapter: 1, mode: 'slide', read: [] };
+
+    function loadState() {
+        try {
+            const c = parseInt(localStorage.getItem(KEY.chapter), 10);
+            if (!isNaN(c) && c >= 1 && c <= CHAPTERS.length) state.chapter = c;
+            const m = localStorage.getItem(KEY.mode);
+            if (m === 'full' || m === 'slide') state.mode = m;
+            const r = JSON.parse(localStorage.getItem(KEY.read) || '[]');
+            if (Array.isArray(r)) state.read = r.filter(n => n >= 1 && n <= CHAPTERS.length);
+        } catch (e) { /* storage unavailable */ }
+    }
+
+    function saveState() {
+        try {
+            localStorage.setItem(KEY.chapter, String(state.chapter));
+            localStorage.setItem(KEY.mode, state.mode);
+            localStorage.setItem(KEY.read, JSON.stringify(state.read));
+            localStorage.setItem(KEY.opened, new Date().toISOString());
+        } catch (e) { /* ignore */ }
+    }
+
+    function toast(msg) {
+        const t = document.getElementById('toast');
+        document.getElementById('toast-message').textContent = msg;
+        t.classList.remove('translate-y-20', 'opacity-0');
+        clearTimeout(toast._t);
+        toast._t = setTimeout(() => t.classList.add('translate-y-20', 'opacity-0'), 2200);
+    }
+
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+    function renderCast() {
+        const grid = document.getElementById('cast-grid');
+        grid.innerHTML = CAST.map((p, i) => `
+            <button onclick="jumpTo(${p.ch})" class="text-left rounded-xl border border-[#16232c] bg-[#080f14] hover:border-cyan-600/50 hover:bg-[#0a141a] transition p-4 group">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="mono text-[9px] uppercase tracking-[.2em] text-slate-500">${String(i + 1).padStart(2, '0')} &middot; Ch. ${p.ch}</div>
+                    <span class="text-cyan-500/60 group-hover:text-cyan-300 text-xs">&rarr;</span>
+                </div>
+                <div class="font-cinzel text-[15px] text-slate-100 mt-2 leading-snug">${esc(p.name)}</div>
+                <div class="mono text-[9px] uppercase tracking-[.14em] text-amber-500/80 mt-1">${esc(p.role)}</div>
+                <p class="text-[12.5px] text-slate-400 leading-relaxed mt-2">${esc(p.bio)}</p>
+                <p class="text-[12px] text-cyan-200/70 mt-2 italic">Wants: ${esc(p.want)}</p>
+            </button>`).join('');
+    }
+
+    function renderPills() {
+        const box = document.getElementById('chapter-pills');
+        box.innerHTML = CHAPTERS.map(c => `
+            <button onclick="jumpTo(${c.n})" class="shrink-0 px-3 py-2 rounded-lg border mono text-[10px] uppercase tracking-widest transition ${c.n === state.chapter ? 'bg-cyan-600 text-black border-cyan-500 font-bold' : 'border-[#1b2b36] text-slate-400 hover:border-cyan-600/50 hover:text-cyan-200'}">
+                ${state.read.includes(c.n) ? '&#10003; ' : ''}Ch ${c.n}
+            </button>`).join('');
+    }
+
+    function chapterHTML(c) {
+        return `<article class="chapter fade-in" data-ch="${c.n}">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <span class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/90">Chapter ${c.n}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-500">${c.place}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-600">${c.date}</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-50 mb-5">${c.title}</h2>
+            <div class="serif-read text-slate-300 max-w-3xl">
+                ${c.blocks.map(b => b.say
+                    ? `<div class="say"><b>${b.say[0]}</b>${b.say[1]}</div>`
+                    : `<p class="${b.p.length > 0 && c.blocks.indexOf(b) === 0 ? 'lead' : ''}">${b.p}</p>`).join('')}
+            </div>
+        </article>`;
+    }
+
+    function renderBook() {
+        const stage = document.getElementById('book-stage');
+        if (state.mode === 'full') {
+            stage.innerHTML = CHAPTERS.map(chapterHTML).join('<div class="my-8 h-px bg-[#16232c]"></div>');
+        } else {
+            stage.innerHTML = chapterHTML(CHAPTERS[state.chapter - 1]);
+        }
+        document.getElementById('chapter-label').textContent = state.mode === 'full'
+            ? `Full book \u00b7 ${CHAPTERS.length} chapters`
+            : `Chapter ${state.chapter} of ${CHAPTERS.length}`;
+        document.getElementById('prev-btn').disabled = state.chapter <= 1;
+        document.getElementById('next-btn').disabled = state.chapter >= CHAPTERS.length;
+        document.getElementById('mode-slide').className = state.mode === 'slide'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        document.getElementById('mode-full').className = state.mode === 'full'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        renderPills();
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const pct = Math.round((state.read.length / CHAPTERS.length) * 100);
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-text').textContent =
+            `${pct}% \u00b7 ${state.read.length}/${CHAPTERS.length} chapters`;
+        const btn = document.getElementById('read-btn');
+        btn.textContent = state.read.includes(state.chapter) ? 'Chapter read \u2713' : 'Mark chapter read';
+    }
+
+    function setMode(m) {
+        state.mode = m;
+        saveState();
+        renderBook();
+    }
+
+    function jumpTo(n) {
+        state.chapter = Math.min(Math.max(n, 1), CHAPTERS.length);
+        if (state.mode === 'full') state.mode = 'slide';
+        saveState();
+        renderBook();
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function changeChapter(d) {
+        const n = state.chapter + d;
+        if (n < 1 || n > CHAPTERS.length) return;
+        state.chapter = n;
+        saveState();
+        renderBook();
+        document.getElementById('book-stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function markRead() {
+        if (!state.read.includes(state.chapter)) {
+            state.read.push(state.chapter);
+            state.read.sort((a, b) => a - b);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} marked read`);
+            if (state.mode === 'slide' && state.chapter < CHAPTERS.length) {
+                setTimeout(() => changeChapter(1), 500);
+            }
+        } else {
+            state.read = state.read.filter(n => n !== state.chapter);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} unmarked`);
+        }
+    }
+
+    function openBook() {
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast(state.read.length ? `Resuming: chapter ${state.chapter}` : 'Chapter 1 of 10');
+    }
+
+    function countWords() {
+        const words = CHAPTERS.flatMap(c => c.blocks.map(b => (b.say ? b.say[1] : b.p).replace(/<[^>]+>/g, ' ')))
+            .join(' ').trim().split(/\s+/).filter(Boolean).length;
+        document.getElementById('word-count').textContent = '~' + (Math.round(words / 100) * 100).toLocaleString();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.target.matches('input, textarea')) return;
+        if (e.key === 'ArrowRight') changeChapter(1);
+        if (e.key === 'ArrowLeft') changeChapter(-1);
+    });
+
+    loadState();
+    renderCast();
+    renderBook();
+    countWords();
+    if (localStorage.getItem(KEY.opened)) {
+        setTimeout(() => toast(`Kept your place: chapter ${state.chapter}`), 1400);
+    }
+    </script>
+</body>
+</html>

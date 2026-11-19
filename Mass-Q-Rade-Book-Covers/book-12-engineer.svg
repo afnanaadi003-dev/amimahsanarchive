@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+<title id="t">The Unseen Engineer — Mass-Q-Rade Book Twelve</title>
+  <desc id="d">A lone engineer silhouetted in a server aisle, his outline dissolving into circuit traces.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#02100f"/><stop offset="0.5" stop-color="#05201f"/><stop offset="1" stop-color="#010706"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8fdff"/><stop offset="1" stop-color="#45c7b8"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2dd4bf" stop-opacity="0.35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%"><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.8"/></radialGradient>
+  </defs>
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <rect width="852" height="1280" fill="url(#glow)"/>
+  <g stroke="#0f3d3a" stroke-width="2" fill="none">
+    <path d="M0 300h852M0 1200h852M60 0v1280M792 0v1280"/>
+  </g>
+  <g fill="#07211f" stroke="#155e56" stroke-width="1.4">
+    <rect x="90" y="330" width="150" height="820" rx="6"/>
+    <rect x="610" y="330" width="150" height="820" rx="6"/>
+  </g>
+  <g fill="#4ff0dc" opacity="0.5">
+    <circle cx="118" cy="370" r="4"/><circle cx="140" cy="370" r="4"/><circle cx="118" cy="400" r="4"/>
+    <circle cx="638" cy="370" r="4"/><circle cx="660" cy="370" r="4"/><circle cx="682" cy="400" r="4"/>
+  </g>
+  <g stroke="#1f7a70" stroke-width="1" opacity="0.55">
+    <path d="M240 380h370M240 470h370M240 560h370M240 650h370M240 740h370M240 830h370M240 920h370M240 1010h370"/>
+  </g>
+  <path d="M300 1280l60-260h132l60 260z" fill="#020c0b" opacity="0.9"/>
+  <g fill="#020c0b">
+    <ellipse cx="426" cy="1020" rx="86" ry="16" opacity="0.6"/>
+    <path d="M386 990c0-40 18-64 40-64s40 24 40 64c0 16-6 22-20 22h-40c-14 0-20-6-20-22z"/>
+    <circle cx="426" cy="904" r="22"/>
+  </g>
+  <g stroke="#4ff0dc" stroke-width="1.4" fill="none" opacity="0.8">
+    <path d="M470 950h70l24-24h56M470 970h40l18 18h60M382 960h-52l-20-20h-40"/>
+    <circle cx="620" cy="926" r="3" fill="#4ff0dc"/><circle cx="548" cy="988" r="3" fill="#4ff0dc"/><circle cx="270" cy="940" r="3" fill="#4ff0dc"/>
+  </g>
+  <g stroke="#0b2b28" stroke-width="1" opacity="0.8">
+    <path d="M0 1060h852M0 1100h852"/>
+  </g>
+  <g fill="#9afff0" font-family="monospace" font-size="11" opacity="0.32">
+    <text x="360" y="640">SYS.OK</text><text x="360" y="690">HRS 0402</text><text x="640" y="880">404</text>
+  </g>
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.32"/>
+  <g text-anchor="middle" font-family="Georgia, serif">
+    <text x="426" y="150" fill="#9afff0" font-size="16" letter-spacing="7" font-family="'Trebuchet MS',sans-serif">MASS-Q-RADE &middot; BOOK TWELVE</text>
+    <text x="426" y="222" fill="url(#gold)" font-size="66" letter-spacing="4">THE UNSEEN</text>
+    <text x="426" y="294" fill="url(#gold)" font-size="66" letter-spacing="8">ENGINEER</text>
+    <path d="M336 324h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="364" fill="#dffaf5" font-size="18" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">YUKI TANAKA</text>
+    <text x="426" y="1126" fill="#e8d6a8" font-size="17" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">A NOVEL BY AMIM AHSAN</text>
+    <text x="426" y="1160" fill="#9afff0" font-size="11" letter-spacing="5" font-family="'Trebuchet MS',sans-serif" opacity="0.6">NOBODY SEES THE ONE WHO BUILT IT</text>
+  </g>
+</svg>

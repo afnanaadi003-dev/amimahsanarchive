@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+<title id="t">The Fallen Priest — Mass-Q-Rade Book Eleven</title>
+  <desc id="d">A stained-glass window with a cracked cross and a kneeling silhouette on a church floor.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0713"/><stop offset="0.55" stop-color="#160f22"/><stop offset="1" stop-color="#05030a"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e6bb"/><stop offset="1" stop-color="#c08f31"/></linearGradient>
+    <radialGradient id="light" cx="50%" cy="42%" r="55%"><stop offset="0" stop-color="#ffd9a0" stop-opacity="0.42"/><stop offset="0.6" stop-color="#7c3aed" stop-opacity="0.12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%"><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.8"/></radialGradient>
+    <linearGradient id="glass1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b21b6" stop-opacity="0.85"/><stop offset="1" stop-color="#1e1b4b" stop-opacity="0.9"/></linearGradient>
+    <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b45309" stop-opacity="0.8"/><stop offset="1" stop-color="#7c2d12" stop-opacity="0.9"/></linearGradient>
+  </defs>
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <rect width="852" height="1280" fill="url(#light)"/>
+  <g>
+    <path d="M300 520c0-90 56-150 126-150s126 60 126 150v330H300z" fill="url(#glass1)" stroke="#3b2b55" stroke-width="5"/>
+    <path d="M300 520c0-90 56-150 126-150s126 60 126 150" fill="none" stroke="#d9a94e" stroke-width="2" opacity="0.5"/>
+    <g stroke="#1b1226" stroke-width="4" fill="none">
+      <path d="M426 400v420M330 560h192M330 690h192M330 810h192"/>
+    </g>
+    <g fill="url(#glass2)" opacity="0.65">
+      <path d="M426 402l70 60h-140z"/><rect x="332" y="562" width="88" height="126"/><rect x="432" y="562" width="88" height="126"/>
+      <rect x="332" y="692" width="188" height="116" opacity="0.5"/>
+    </g>
+  </g>
+  <g stroke="#f3e3c4" stroke-width="5" opacity="0.9" fill="none">
+    <path d="M426 560v170M372 610h108"/>
+  </g>
+  <path d="M426 560l-16 62 30 20-24 46 22 26" stroke="#0b0713" stroke-width="4" fill="none" opacity="0.9"/>
+  <path d="M0 900h852v380H0z" fill="#0a0710"/>
+  <g fill="#050309" opacity="0.95">
+    <ellipse cx="426" cy="1010" rx="120" ry="26" opacity="0.5"/>
+    <path d="M366 1000c0-46 26-76 60-76s60 30 60 76c0 18-8 26-24 26h-72c-16 0-24-8-24-26z"/>
+    <circle cx="426" cy="906" r="26"/>
+  </g>
+  <path d="M400 906c6-18 18-26 30-26" stroke="#d9a94e" stroke-width="2" fill="none" opacity="0.5"/>
+  <g opacity="0.35" stroke="#d9a94e" stroke-width="1" fill="none">
+    <ellipse cx="426" cy="1010" rx="200" ry="44"/>
+  </g>
+  <g fill="#c4b5fd" font-family="monospace" font-size="11" opacity="0.3">
+    <text x="90" y="760">Dublin 1994</text><text x="640" y="860">File 11/04</text>
+  </g>
+  <rect width="852" height="1280" fill="url(#vig)"/>
+  <rect x="42" y="42" width="768" height="1196" fill="none" stroke="#d9a24a" stroke-width="1.2" opacity="0.34"/>
+  <g text-anchor="middle" font-family="Georgia, serif">
+    <text x="426" y="150" fill="#d8c9ff" font-size="16" letter-spacing="7" font-family="'Trebuchet MS',sans-serif">MASS-Q-RADE &middot; BOOK ELEVEN</text>
+    <text x="426" y="222" fill="url(#gold)" font-size="70" letter-spacing="4">THE FALLEN</text>
+    <text x="426" y="300" fill="url(#gold)" font-size="70" letter-spacing="10">PRIEST</text>
+    <path d="M336 330h180" stroke="#d9a24a" stroke-width="1" opacity="0.6"/>
+    <text x="426" y="370" fill="#efe6ff" font-size="18" letter-spacing="5" font-family="'Trebuchet MS',sans-serif">FATHER MICHAEL O'BRIEN</text>
+    <text x="426" y="1126" fill="#e8d6a8" font-size="17" letter-spacing="6" font-family="'Trebuchet MS',sans-serif">A NOVEL BY AMIM AHSAN</text>
+    <text x="426" y="1160" fill="#d8c9ff" font-size="11" letter-spacing="5" font-family="'Trebuchet MS',sans-serif" opacity="0.6">THE CONFESSION NOBODY HEARD</text>
+  </g>
+</svg>

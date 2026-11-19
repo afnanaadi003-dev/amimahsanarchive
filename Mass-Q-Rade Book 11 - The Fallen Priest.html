@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASS-Q-RADE: BOOK ELEVEN — THE FALLEN PRIEST (Father Michael O'Brien)</title>
+    <meta name="description" content="Mass-Q-Rade Book Eleven — The Fallen Priest. A parish priest in a dying Irish town is offered a way to carry a secret that is not his to carry.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#05070a; --panel:#0a1117; --line:#1b2b36; --cyan:#22d3ee; --gold:#d9a94e; }
+        body { background-color: var(--ink); color:#dbe7ee; font-family:'Inter',sans-serif; }
+        .mono { font-family:'JetBrains Mono', monospace; }
+        .serif-read { font-family:'Crimson Pro', Georgia, serif; font-size:1.15rem; line-height:1.85; }
+        .font-cinzel { font-family:'Cinzel', serif; letter-spacing:.08em; }
+        .glass { background: linear-gradient(180deg,#0b141b,#070d12); box-shadow:0 25px 60px -25px #000, 0 0 0 1px #16232c; }
+        ::-webkit-scrollbar { width:8px; height:8px; }
+        ::-webkit-scrollbar-track { background:#05070a; }
+        ::-webkit-scrollbar-thumb { background:#1b2b36; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#22d3ee; }
+        .no-scrollbar::-webkit-scrollbar { display:none; }
+        .no-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+        .fade-in { animation:fade .45s ease both; }
+        @keyframes fade { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+        .chapter p { margin-bottom:1.1rem; }
+        .chapter .lead::first-letter { font-size:3.1rem; float:left; line-height:.85; padding-right:.5rem; color:var(--gold); font-family:'Cinzel',serif; }
+        .chapter dialog, .chapter .say { display:block; margin:1.1rem 0 1.3rem 1.5rem; padding-left:1rem; border-left:2px solid #24515e; color:#cdeef5; font-style:italic; }
+        .chapter .say b { font-style:normal; font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#67e8f9; display:block; margin-bottom:.2rem; }
+        .fig { color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:.85em; letter-spacing:.04em; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-40 bg-[#05070a]/92 backdrop-blur-md border-b border-[#16232c]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+            <a href="index.html" class="mono text-[11px] sm:text-sm tracking-[.28em] uppercase text-cyan-300">MASS<span class="text-slate-500">-Q-</span>RADE</a>
+            <nav class="hidden md:flex items-center gap-6 mono text-[10px] uppercase tracking-[.22em] text-slate-400">
+                <a href="#book" class="hover:text-cyan-300 transition">The Book</a>
+                <a href="#cast" class="hover:text-cyan-300 transition">Ten Characters</a>
+                <a href="#read" class="hover:text-cyan-300 transition">Read</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <a href="index.html#books" class="px-3 py-2 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-[10px] mono uppercase tracking-widest text-slate-300 transition">Series</a>
+                <a href="index.html" class="px-3 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-black font-bold text-[10px] mono uppercase tracking-widest transition">Library</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6">
+
+        <section id="book" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12 border-b border-[#101c24]">
+            <div class="lg:col-span-4 mx-auto w-full max-w-[280px]">
+                <div class="rounded-xl overflow-hidden border border-amber-700/30 shadow-2xl">
+                    <img src="Mass-Q-Rade-Book-Covers/book-11-priest.svg" alt="The Fallen Priest — Mass-Q-Rade Book Eleven cover" class="w-full h-auto block">
+                </div>
+                <p class="mono text-[9px] uppercase tracking-[.25em] text-slate-500 text-center mt-3">Cover &middot; Book 11</p>
+            </div>
+            <div class="lg:col-span-8 space-y-4">
+                <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Mass-Q-Rade &middot; Book Eleven</p>
+                <h1 class="font-cinzel text-3xl sm:text-5xl font-bold text-slate-50 leading-tight">THE FALLEN PRIEST</h1>
+                <p class="mono text-[11px] uppercase tracking-[.22em] text-amber-400/90">Father Michael O'Brien &middot; County Tipperary, 1994</p>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+                    Father Michael O'Brien has heard eleven thousand confessions in a church with a leaking roof, and one of them was a crime. He has kept the seal for nine years, in a town where everyone already knows and nobody has said it. When a journalist arrives with a folder and a name, Mass-Q-Rade offers him the one thing a priest cannot manufacture: absolution that costs the sinner nothing and the witness everything.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl">
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Chapters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Characters</div><div class="text-lg font-bold text-cyan-300">10</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Words</div><div class="text-lg font-bold text-cyan-300" id="word-count">&mdash;</div></div>
+                    <div class="rounded-lg border border-[#16232c] bg-[#080f14] p-3"><div class="mono text-[9px] uppercase text-slate-500">Book</div><div class="text-lg font-bold text-cyan-300">11</div></div>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-1">
+                    <button onclick="openBook()" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs uppercase tracking-widest transition">Begin reading</button>
+                    <a href="#cast" class="px-6 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 text-slate-200 text-xs uppercase tracking-widest transition">The ten characters</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cast" class="py-12 border-b border-[#101c24]">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">Dramatis Personae</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Ten Characters</h2>
+                </div>
+                <p class="text-xs text-slate-400 max-w-md">Every one of them appears in the book. Click a name to see their file and jump to the chapter they arrive in.</p>
+            </div>
+            <div id="cast-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </section>
+
+        <section id="read" class="py-12">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-cyan-400/80">The Book</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-100 mt-1">Read it</h2>
+                </div>
+                <div class="flex items-center gap-2 bg-[#070d12] border border-[#16232c] rounded-xl p-1.5">
+                    <button id="mode-slide" onclick="setMode('slide')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition">One chapter</button>
+                    <button id="mode-full" onclick="setMode('full')" class="px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition">Full book</button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 mb-3">
+                <span id="chapter-label" class="mono text-[10px] uppercase tracking-[.25em] text-slate-400">Chapter 1 of 10</span>
+                <span id="progress-text" class="mono text-[10px] uppercase tracking-[.25em] text-cyan-300/80">0% read</span>
+            </div>
+            <div class="h-1 w-full bg-[#101c24] rounded-full overflow-hidden mb-5">
+                <div id="progress-bar" class="h-full bg-gradient-to-r from-cyan-500 to-amber-400 transition-all duration-500" style="width:0%"></div>
+            </div>
+
+            <div id="chapter-pills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-5"></div>
+
+            <div id="book-stage" class="glass rounded-2xl p-6 sm:p-10"></div>
+
+            <div class="flex items-center justify-between gap-3 mt-5">
+                <button id="prev-btn" onclick="changeChapter(-1)" class="px-4 py-3 rounded-lg border border-[#1b2b36] hover:border-cyan-500/50 disabled:opacity-40 text-slate-200 mono text-[10px] uppercase tracking-widest transition">Previous</button>
+                <button onclick="markRead()" id="read-btn" class="px-4 py-3 rounded-lg bg-[#0d1a21] border border-cyan-800/50 hover:border-cyan-500/60 text-cyan-200 mono text-[10px] uppercase tracking-widest transition">Mark chapter read</button>
+                <button id="next-btn" onclick="changeChapter(1)" class="px-4 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 disabled:opacity-40 text-black font-bold mono text-[10px] uppercase tracking-widest transition">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-[#101c24] py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="mono text-[11px] tracking-[.25em] uppercase text-slate-400">Mass-Q-Rade &middot; Book Eleven</p>
+            <p class="text-xs text-slate-500">A novel by Amim Ahsan. Every character is fictional; any resemblance to real people is the book's invention, not history's.</p>
+            <div class="flex justify-center gap-5 mono text-[10px] uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-cyan-300 transition">Library</a>
+                <a href="index.html#books" class="hover:text-cyan-300 transition">All books</a>
+                <a href="index.html#contact" class="hover:text-cyan-300 transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-[#0b141b] border border-cyan-500/50 text-cyan-50 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span><span id="toast-message" class="text-xs">Saved</span>
+        </div>
+    </div>
+    <script>
+    const CAST = [
+        {
+            "id": "michael",
+            "name": "Father Michael O'Brien",
+            "role": "Parish priest, St. Colman's",
+            "ch": 1,
+            "bio": "Fifty-eight. Forty years ordained, nine of them carrying a secret he was told in a box with a curtain. Says Mass for eleven people on Sundays and remembers all of their illnesses.",
+            "want": "To be able to say one true sentence out loud."
+        },
+        {
+            "id": "mqr",
+            "name": "Mass-Q-Rade",
+            "role": "The hum in the confessional",
+            "ch": 3,
+            "bio": "It speaks in the pause after a penance is given. It has a use for secrets: it takes the weight of them, and returns a man who no longer has to decide anything.",
+            "want": "A witness to trade places with."
+        },
+        {
+            "id": "assumpta",
+            "name": "Sister Assumpta Byrne",
+            "role": "Parish housekeeper",
+            "ch": 4,
+            "bio": "Seventy-one, keeps the parish accounts, the Mass intentions, and a diary of dates in a biscuit tin. Has been writing things down since 1974 in the belief that paper is the only honest witness.",
+            "want": "The tin opened by someone with authority."
+        },
+        {
+            "id": "reilly",
+            "name": "Bishop Thomas Reilly",
+            "role": "Diocese of Cashel",
+            "ch": 5,
+            "bio": "Sixty-four, a builder of schools and a signer of transfers. Believes the Church survives by handling things quietly, and has handled a great many things.",
+            "want": "The matter settled before the schools' fundraising dinner."
+        },
+        {
+            "id": "aoife",
+            "name": "Aoife Doyle",
+            "role": "Journalist, The Sunday Review",
+            "ch": 2,
+            "bio": "Thirty-one, from the next parish, with a folder of nine names and a tape recorder she keeps switched off until the third question.",
+            "want": "One man on the record before the file is sealed."
+        },
+        {
+            "id": "nuala",
+            "name": "Detective Sergeant Nuala Kavanagh",
+            "role": "Garda, Thurles",
+            "ch": 7,
+            "bio": "Forty-four, twenty years in a district where she knows every family and every reason not to knock. Has a warrant in her bag and a godmother in the front row on Sundays.",
+            "want": "To do the job without becoming the town's weather."
+        },
+        {
+            "id": "declan",
+            "name": "Declan Moore",
+            "role": "Publican, The Cross Keys",
+            "ch": 6,
+            "bio": "Michael's brother-in-law. Pours for the men who know and the men who pretend not to, and has a photograph of a school football team behind the till in which everyone is nine.",
+            "want": "His pub to stay the one place nobody lies."
+        },
+        {
+            "id": "eimear",
+            "name": "Dr. Eimear Walsh",
+            "role": "Psychiatrist, Clonmel",
+            "ch": 8,
+            "bio": "Fifty, treats the county's insomnia and calls it what it is. Has one rule in the consulting room: the patient decides what is a sin and what is a symptom.",
+            "want": "The man to stop shaking before November."
+        },
+        {
+            "id": "ronan",
+            "name": "Ronan Byrne",
+            "role": "Altar boy, now forty",
+            "ch": 9,
+            "bio": "Left the town at nineteen and came back to bury his mother. Sells agricultural machinery in Coventry. Has not been inside the church since 1988 and can tell you the exact number of steps to the sacristy.",
+            "want": "To hear it said by someone other than himself."
+        },
+        {
+            "id": "grainne",
+            "name": "Gráinne O'Brien",
+            "role": "His niece, 19",
+            "ch": 10,
+            "bio": "Studying law in Galway, home for the summer, the only person in the family who asks Michael questions that are not about his health.",
+            "want": "To know whether her uncle is a coward or a witness."
+        }
+    ];
+
+    const CHAPTERS = [
+        {
+            "n": 1,
+            "title": "The Empty Church",
+            "place": "St. Colman's, County Tipperary",
+            "date": "September 1994",
+            "blocks": [
+                {
+                    "p": "The roof leaked over the fourth pew and had done so since 1987. Father Michael O'Brien had put a bucket under it and then a second bucket, and the two buckets had become, in the way of small things, the parish's most reliable piece of liturgy."
+                },
+                {
+                    "p": "Eleven people came to the eleven o'clock. He knew all eleven, and their ailments, and which of them would need the priest before Christmas. He preached for nine minutes because the roof made a noise at ten."
+                },
+                {
+                    "p": "Afterwards, in the sacristy, he took off the stole and folded it twice and put it in the drawer where it had lived for nineteen years, and stood for a moment with his hand on the drawer, the way a man stands at a door he has decided not to open."
+                },
+                {
+                    "p": "Sister Assumpta brought in the tea and said the boiler man wanted paying, and Michael said he would see to it, and neither of them mentioned the thing that had been in the parish since 1985 and had a name and a file and a bishop's signature."
+                }
+            ]
+        },
+        {
+            "n": 2,
+            "title": "A List of Names",
+            "place": "The parochial house",
+            "date": "September 1994",
+            "blocks": [
+                {
+                    "p": "Aoife Doyle came on a Thursday with a folder, a coat that was too warm for the weather, and the manners of a woman who had grown up two parishes over and knew exactly which gate to close behind her."
+                },
+                {
+                    "say": [
+                        "AOIFE",
+                        "Nine names, Father. Six of them were in this parish. I have five on the record and four who will talk if someone else goes first."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "I cannot discuss anything I have heard in confession."
+                    ]
+                },
+                {
+                    "say": [
+                        "AOIFE",
+                        "I'm not asking what you heard. I'm asking what you did."
+                    ]
+                },
+                {
+                    "p": "He poured the tea. His hands were steady, which surprised him, and then frightened him, because steadiness in a man who should be shaking is a kind of evidence."
+                },
+                {
+                    "p": "She left the folder on the table and told him she would be back on Sunday, and that she would sit in the fourth pew, under the leak, because she wanted to see what he said when the bucket was in the way."
+                }
+            ]
+        },
+        {
+            "n": 3,
+            "title": "The Seal",
+            "place": "The confessional",
+            "date": "October 1994",
+            "blocks": [
+                {
+                    "p": "He went in at four on Saturday, as he had every Saturday for nineteen years, and the box smelled of dust and old wood and the peppermints Mrs. Kelly left in the missal."
+                },
+                {
+                    "p": "Nobody came. At half past four, the hum began, low and regular, four beats and a pause, and the words arrived in the place where a penitent's voice would have been."
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "You are carrying nine years of a thing that was told to you in this box. Give it to me and you will not have to decide anything again."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "And what will I be then?"
+                    ]
+                },
+                {
+                    "say": [
+                        "MASS-Q-RADE",
+                        "A priest. You will say Mass, and hear confessions, and the thing will be mine, and you will never again have to wonder whether silence is a seal or a shelter."
+                    ]
+                },
+                {
+                    "p": "He sat in the dark and understood the offer precisely. It was not forgiveness. It was the removal of the question, and there is a kind of man who would call that peace."
+                },
+                {
+                    "p": "He said no, out loud, into the grille, and his voice cracked on the word, and the hum stopped as though a hand had been lifted from a wire."
+                }
+            ]
+        },
+        {
+            "n": 4,
+            "title": "Assumpta's Ledger",
+            "place": "The kitchen, 2 a.m.",
+            "date": "October 1994",
+            "blocks": [
+                {
+                    "p": "Sister Assumpta had kept the parish accounts since 1974, and in the same biscuit tin she kept a diary of dates: who came to the door, what car was in the drive, which boy was sent home early from the sacristy and on what afternoon."
+                },
+                {
+                    "say": [
+                        "ASSUMPTA",
+                        "I wrote it because I thought paper would be believed. It has not been believed yet."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "You should have gone to the guards."
+                    ]
+                },
+                {
+                    "say": [
+                        "ASSUMPTA",
+                        "I went to the bishop in 1989. He thanked me for my concern and moved the man to a parish in Kerry. I have written that down too."
+                    ]
+                },
+                {
+                    "p": "She opened the tin and laid the pages out on the kitchen table, and they were neat and unhysterical and utterly damning, and Michael read them with the tea going cold in his hand."
+                },
+                {
+                    "p": "At the bottom of the tin was a photograph of a school football team, everyone nine years old, and one boy in the front row with his socks pulled up to his knees, and on the back, in Assumpta's hand, a date in 1971 and the word <em>Ronan</em>."
+                }
+            ]
+        },
+        {
+            "n": 5,
+            "title": "The Bishop's Telephone",
+            "place": "The parochial house, studded door",
+            "date": "November 1994",
+            "blocks": [
+                {
+                    "p": "Bishop Thomas Reilly rang on a Tuesday and did not begin with the weather, which was how Michael knew the file had reached Cashel."
+                },
+                {
+                    "say": [
+                        "REILLY",
+                        "There is a journalist in the diocese. There is also a fund-raising dinner on the fourteenth. I would like the first matter resolved before the second."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "There is a man in Kerry hearing confessions of children."
+                    ]
+                },
+                {
+                    "say": [
+                        "REILLY",
+                        "There is a process. The process is not a newspaper, Michael. Give me six weeks and I will have him retired to a house in Kilkenny with no ministry and no scandal."
+                    ]
+                },
+                {
+                    "p": "Michael stood at the window with the phone against his ear and watched a car turn in the road, and thought about the word <em>process</em>, which is a word that sounds like movement and often means stillness."
+                },
+                {
+                    "p": "He said he would think about it, and the bishop said not to think too long, and hung up first, which he always did."
+                }
+            ]
+        },
+        {
+            "n": 6,
+            "title": "The Cross Keys",
+            "place": "Thurles",
+            "date": "November 1994",
+            "blocks": [
+                {
+                    "p": "The Cross Keys had three rooms, a fire that was lit from October, and a photograph behind the till of a school football team in which everyone was nine."
+                },
+                {
+                    "say": [
+                        "DECLAN",
+                        "They know, Michael. They've known since '86. They're waiting for one of us to say it so they can stop pretending they didn't."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "And if I say it from the altar?"
+                    ]
+                },
+                {
+                    "say": [
+                        "DECLAN",
+                        "Then half of them will leave and the other half will stay, and the half that stays will be the ones who were waiting."
+                    ]
+                },
+                {
+                    "p": "A man at the end of the bar bought him a whiskey he did not drink, and said, without looking at him, that his own son had been an altar boy in 1979 and had never been the same, and that he was not accusing anyone, and that he was accusing everyone."
+                },
+                {
+                    "p": "Michael walked home along the main street past the closed shops, and every window he passed had a light in it and a person behind the light who knew."
+                }
+            ]
+        },
+        {
+            "n": 7,
+            "title": "The File",
+            "place": "Thurles Garda station",
+            "date": "December 1994",
+            "blocks": [
+                {
+                    "p": "Detective Sergeant Nuala Kavanagh had a warrant in her bag and a godmother in the front row on Sundays, and she had been putting off the drive for three weeks."
+                },
+                {
+                    "say": [
+                        "NUALA",
+                        "I'm not here for the seal, Father. I'm here for the transfer letters. Nine of them, all signed, all from this diocese, all in the same hand."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "I don't have them."
+                    ]
+                },
+                {
+                    "say": [
+                        "NUALA",
+                        "I know. The bishop has them, and the bishop's secretary has a photocopier, and I have a warrant for the photocopier."
+                    ]
+                },
+                {
+                    "p": "She stood in the parochial house with her hat in her hand, and said the thing that Michael would remember longer than any of it: that a seal protects a confession, and a file protects a man, and that the two had been confused in this diocese for twenty years by people who knew exactly what they were doing."
+                },
+                {
+                    "p": "When she left, he went into the church and sat in the fourth pew under the leak, and the bucket dripped, and the dripping was the only sound in the building that was not a lie."
+                }
+            ]
+        },
+        {
+            "n": 8,
+            "title": "Dr. Walsh",
+            "place": "Clonmel",
+            "date": "January 1995",
+            "blocks": [
+                {
+                    "p": "He had stopped sleeping in November and had started shaking in December, and by January he was sitting in a consulting room in Clonmel being asked, for the first time in his life, what he wanted."
+                },
+                {
+                    "say": [
+                        "EIMEAR",
+                        "Not what you owe. Not what you should do. What do you want?"
+                    ]
+                },
+                {
+                    "p": "He sat with the question for four minutes. It was the longest silence he had ever permitted in a room, and he found, to his surprise, that it did not kill him."
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "I want to say one true sentence in front of people and not be destroyed by it."
+                    ]
+                },
+                {
+                    "say": [
+                        "EIMEAR",
+                        "That is not a symptom, Father. That is a plan."
+                    ]
+                },
+                {
+                    "p": "She wrote him a prescription for sleep and told him to bring the biscuit tin to the guards, and he said he could not, and she said that was fine, and that she would write down the date anyway."
+                }
+            ]
+        },
+        {
+            "n": 9,
+            "title": "Ronan",
+            "place": "The parochial house, a wet Tuesday",
+            "date": "February 1995",
+            "blocks": [
+                {
+                    "p": "Ronan Byrne came back to bury his mother and stood in the hall of the parochial house with his coat still on, forty years old and shaking like a boy."
+                },
+                {
+                    "say": [
+                        "RONAN",
+                        "I counted the steps. Twenty-two to the sacristy. I could take you there now and I'd know which board creaks."
+                    ]
+                },
+                {
+                    "say": [
+                        "MICHAEL",
+                        "I'm sorry."
+                    ]
+                },
+                {
+                    "say": [
+                        "RONAN",
+                        "Don't. Not that word. That word is what ye say instead of the name."
+                    ]
+                },
+                {
+                    "p": "Michael said the name. Out loud, in the hall, once, and then again, and Ronan stood very still and then sat down on the bottom step of the stairs, and the two of them stayed there while the rain came over the yard."
+                },
+                {
+                    "say": [
+                        "RONAN",
+                        "Now say it where the roof leaks."
+                    ]
+                },
+                {
+                    "p": "That was the whole conversation. It took nine years to arrange and four minutes to have, and afterwards Michael went into the church and did not pray, because there are occasions when prayer is a way of leaving the room."
+                }
+            ]
+        },
+        {
+            "n": 10,
+            "title": "The Sermon",
+            "place": "St. Colman's, First Sunday of Lent",
+            "date": "March 1995",
+            "blocks": [
+                {
+                    "p": "The church was full, which it had not been since Christmas, and Gráinne sat in the third row with her law notes in her lap and her coat folded on the seat beside her."
+                },
+                {
+                    "p": "Michael preached for eleven minutes, which was two more than the roof allowed, and he did not use the word <em>process</em> once."
+                },
+                {
+                    "p": "He read the dates from the biscuit tin. He read the transfers. He read the name of the man in Kerry, and the names of six boys from the parish, and he said, at the end, that the seal of the confessional was a door that protected the penitent, and that it had been used in this diocese as a door that protected the diocese."
+                },
+                {
+                    "p": "Then he sat down in the chair beside the altar, in front of everybody, and the bucket dripped, and nobody moved for eight seconds, and then the front row stood up, and the row behind it, and the row behind that, until the whole church was standing, and it was not applause and it was not a walkout."
+                },
+                {
+                    "p": "The bishop's letter arrived on the Tuesday. Michael read it once, folded it, and put it in the drawer with the stole."
+                },
+                {
+                    "p": "The Guards took the tin. The Sunday Review ran the story on the ninth of March with five names on the record and one priest who had said them from the altar. Aoife Doyle telephoned to ask if he wanted to add anything, and he said only that the roof still leaked."
+                },
+                {
+                    "p": "Gráinne asked him, on the train to Galway, whether he was a coward or a witness, and he said he had been both for nine years and had finally chosen the more expensive one, and she wrote it down in her law notes, in the margin, where the case law went."
+                }
+            ]
+        }
+    ];
+
+    const KEY = {
+        chapter: 'mqr_book11_chapter',
+        mode: 'mqr_book11_mode',
+        read: 'mqr_book11_read',
+        opened: 'mqr_book11_opened'
+    };
+
+    let state = { chapter: 1, mode: 'slide', read: [] };
+
+    function loadState() {
+        try {
+            const c = parseInt(localStorage.getItem(KEY.chapter), 10);
+            if (!isNaN(c) && c >= 1 && c <= CHAPTERS.length) state.chapter = c;
+            const m = localStorage.getItem(KEY.mode);
+            if (m === 'full' || m === 'slide') state.mode = m;
+            const r = JSON.parse(localStorage.getItem(KEY.read) || '[]');
+            if (Array.isArray(r)) state.read = r.filter(n => n >= 1 && n <= CHAPTERS.length);
+        } catch (e) { /* storage unavailable */ }
+    }
+
+    function saveState() {
+        try {
+            localStorage.setItem(KEY.chapter, String(state.chapter));
+            localStorage.setItem(KEY.mode, state.mode);
+            localStorage.setItem(KEY.read, JSON.stringify(state.read));
+            localStorage.setItem(KEY.opened, new Date().toISOString());
+        } catch (e) { /* ignore */ }
+    }
+
+    function toast(msg) {
+        const t = document.getElementById('toast');
+        document.getElementById('toast-message').textContent = msg;
+        t.classList.remove('translate-y-20', 'opacity-0');
+        clearTimeout(toast._t);
+        toast._t = setTimeout(() => t.classList.add('translate-y-20', 'opacity-0'), 2200);
+    }
+
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+    function renderCast() {
+        const grid = document.getElementById('cast-grid');
+        grid.innerHTML = CAST.map((p, i) => `
+            <button onclick="jumpTo(${p.ch})" class="text-left rounded-xl border border-[#16232c] bg-[#080f14] hover:border-cyan-600/50 hover:bg-[#0a141a] transition p-4 group">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="mono text-[9px] uppercase tracking-[.2em] text-slate-500">${String(i + 1).padStart(2, '0')} &middot; Ch. ${p.ch}</div>
+                    <span class="text-cyan-500/60 group-hover:text-cyan-300 text-xs">&rarr;</span>
+                </div>
+                <div class="font-cinzel text-[15px] text-slate-100 mt-2 leading-snug">${esc(p.name)}</div>
+                <div class="mono text-[9px] uppercase tracking-[.14em] text-amber-500/80 mt-1">${esc(p.role)}</div>
+                <p class="text-[12.5px] text-slate-400 leading-relaxed mt-2">${esc(p.bio)}</p>
+                <p class="text-[12px] text-cyan-200/70 mt-2 italic">Wants: ${esc(p.want)}</p>
+            </button>`).join('');
+    }
+
+    function renderPills() {
+        const box = document.getElementById('chapter-pills');
+        box.innerHTML = CHAPTERS.map(c => `
+            <button onclick="jumpTo(${c.n})" class="shrink-0 px-3 py-2 rounded-lg border mono text-[10px] uppercase tracking-widest transition ${c.n === state.chapter ? 'bg-cyan-600 text-black border-cyan-500 font-bold' : 'border-[#1b2b36] text-slate-400 hover:border-cyan-600/50 hover:text-cyan-200'}">
+                ${state.read.includes(c.n) ? '&#10003; ' : ''}Ch ${c.n}
+            </button>`).join('');
+    }
+
+    function chapterHTML(c) {
+        return `<article class="chapter fade-in" data-ch="${c.n}">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <span class="mono text-[10px] uppercase tracking-[.3em] text-amber-500/90">Chapter ${c.n}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-500">${c.place}</span>
+                <span class="mono text-[10px] uppercase tracking-[.2em] text-slate-600">${c.date}</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl text-slate-50 mb-5">${c.title}</h2>
+            <div class="serif-read text-slate-300 max-w-3xl">
+                ${c.blocks.map(b => b.say
+                    ? `<div class="say"><b>${b.say[0]}</b>${b.say[1]}</div>`
+                    : `<p class="${b.p.length > 0 && c.blocks.indexOf(b) === 0 ? 'lead' : ''}">${b.p}</p>`).join('')}
+            </div>
+        </article>`;
+    }
+
+    function renderBook() {
+        const stage = document.getElementById('book-stage');
+        if (state.mode === 'full') {
+            stage.innerHTML = CHAPTERS.map(chapterHTML).join('<div class="my-8 h-px bg-[#16232c]"></div>');
+        } else {
+            stage.innerHTML = chapterHTML(CHAPTERS[state.chapter - 1]);
+        }
+        document.getElementById('chapter-label').textContent = state.mode === 'full'
+            ? `Full book \u00b7 ${CHAPTERS.length} chapters`
+            : `Chapter ${state.chapter} of ${CHAPTERS.length}`;
+        document.getElementById('prev-btn').disabled = state.chapter <= 1;
+        document.getElementById('next-btn').disabled = state.chapter >= CHAPTERS.length;
+        document.getElementById('mode-slide').className = state.mode === 'slide'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        document.getElementById('mode-full').className = state.mode === 'full'
+            ? 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest bg-cyan-600 text-black font-bold transition'
+            : 'px-3 py-2 rounded-lg mono text-[10px] uppercase tracking-widest text-slate-400 hover:text-white transition';
+        renderPills();
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const pct = Math.round((state.read.length / CHAPTERS.length) * 100);
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-text').textContent =
+            `${pct}% \u00b7 ${state.read.length}/${CHAPTERS.length} chapters`;
+        const btn = document.getElementById('read-btn');
+        btn.textContent = state.read.includes(state.chapter) ? 'Chapter read \u2713' : 'Mark chapter read';
+    }
+
+    function setMode(m) {
+        state.mode = m;
+        saveState();
+        renderBook();
+    }
+
+    function jumpTo(n) {
+        state.chapter = Math.min(Math.max(n, 1), CHAPTERS.length);
+        if (state.mode === 'full') state.mode = 'slide';
+        saveState();
+        renderBook();
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function changeChapter(d) {
+        const n = state.chapter + d;
+        if (n < 1 || n > CHAPTERS.length) return;
+        state.chapter = n;
+        saveState();
+        renderBook();
+        document.getElementById('book-stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function markRead() {
+        if (!state.read.includes(state.chapter)) {
+            state.read.push(state.chapter);
+            state.read.sort((a, b) => a - b);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} marked read`);
+            if (state.mode === 'slide' && state.chapter < CHAPTERS.length) {
+                setTimeout(() => changeChapter(1), 500);
+            }
+        } else {
+            state.read = state.read.filter(n => n !== state.chapter);
+            saveState();
+            updateProgress();
+            renderPills();
+            toast(`Chapter ${state.chapter} unmarked`);
+        }
+    }
+
+    function openBook() {
+        document.getElementById('read').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast(state.read.length ? `Resuming: chapter ${state.chapter}` : 'Chapter 1 of 10');
+    }
+
+    function countWords() {
+        const words = CHAPTERS.flatMap(c => c.blocks.map(b => (b.say ? b.say[1] : b.p).replace(/<[^>]+>/g, ' ')))
+            .join(' ').trim().split(/\s+/).filter(Boolean).length;
+        document.getElementById('word-count').textContent = '~' + (Math.round(words / 100) * 100).toLocaleString();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.target.matches('input, textarea')) return;
+        if (e.key === 'ArrowRight') changeChapter(1);
+        if (e.key === 'ArrowLeft') changeChapter(-1);
+    });
+
+    loadState();
+    renderCast();
+    renderBook();
+    countWords();
+    if (localStorage.getItem(KEY.opened)) {
+        setTimeout(() => toast(`Kept your place: chapter ${state.chapter}`), 1400);
+    }
+    </script>
+</body>
+</html>
