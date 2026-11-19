@@ -32,7 +32,7 @@
     <path d="M70 498 q40 30 110 12 t110 -6 t120 18 t80 -8" stroke-dasharray="3 7"/>
   </g>
 
-  <g stroke="#a4442f" stroke-width="2" opacity="0.9">
+  <g fill="none" stroke="#a4442f" stroke-width="2" opacity="0.9">
     <path d="M120 430 L250 388 L360 430 L470 366 L560 400"/>
   </g>
   <circle cx="360" cy="430" r="4" fill="#d8b26a"/>

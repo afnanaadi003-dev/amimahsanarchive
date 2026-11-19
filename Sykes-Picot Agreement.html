@@ -40,10 +40,13 @@
         .card-meta b { font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--sand); letter-spacing:.1em; }
         .card-meta span { font-family:'JetBrains Mono',monospace; font-size:.58rem; letter-spacing:.12em; text-transform:uppercase;
             color:#8d7a58; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-        .cast { border:1px solid #2a2115; background:#0b0805; border-radius:.75rem; padding:1rem; }
+        .cast { border:1px solid #2a2115; background:#0b0805; border-radius:.75rem; padding:.85rem; }
+        .cast-portrait { display:block; width:100%; height:auto; border-radius:.5rem; border:1px solid #3a2d1a; }
+        .synopsis p { font-family:'Crimson Pro', Georgia, serif; font-size:1.08rem; line-height:1.85; color:#d9cdb8; margin-bottom:1rem; }
         .fade-in { animation:fade .4s ease both; }
         @keyframes fade { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:none;} }
         .beat { background:#141009; border:1px solid #2a2115; border-radius:.75rem; padding:.9rem 1rem; }
+        section[id] { scroll-margin-top: 5.5rem; }
         .slide { border:1px solid #3a2d1a; border-radius:.75rem; overflow:hidden; margin-bottom:1.8rem; }
         .slide img { display:block; width:100%; height:auto; }
     </style>
@@ -56,11 +59,13 @@
             <nav class="hidden md:flex items-center gap-6 mono text-[10px] uppercase tracking-[.22em] text-stone-400">
                 <a href="#book" class="hover:text-[#d8b26a] transition">The Script</a>
                 <a href="#cast" class="hover:text-[#d8b26a] transition">Cast</a>
+                <a href="#synopsis" class="hover:text-[#d8b26a] transition">Synopsis</a>
                 <a href="#cards" class="hover:text-[#d8b26a] transition">42 Cards</a>
                 <a href="#read" class="hover:text-[#d8b26a] transition">Read</a>
             </nav>
             <div class="flex items-center gap-2">
                 <a href="Sykes-Picot%20Agreement%20-%20Screenplay.md" download class="px-3 py-2 rounded-lg border border-[#2a2115] hover:border-[#d8b26a]/60 text-[10px] mono uppercase tracking-widest text-stone-300 transition">.md</a>
+                <a href="Sykes-Picot%20Agreement%20-%20Synopsis.md" download class="hidden sm:inline-block px-3 py-2 rounded-lg border border-[#2a2115] hover:border-[#d8b26a]/60 text-[10px] mono uppercase tracking-widest text-stone-300 transition">Synopsis</a>
                 <a href="index.html" class="px-3 py-2 rounded-lg bg-[#d8b26a] hover:bg-[#e4c07a] text-black font-bold text-[10px] mono uppercase tracking-widest transition">Library</a>
             </div>
         </div>
@@ -105,95 +110,129 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/mark-sykes.svg" alt="Portrait of Mark Sykes" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Mark Sykes</h3>
-                <button onclick="jump(1)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 1</button>
+                <button onclick="jump(1)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 1: Conservative MP, colonial negotiator, an…">ch 1</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">British diplomat · 37</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">British diplomat · 37 &middot; 1879–1919</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Conservative MP, colonial negotiator, and the man who drew the line from Acre to Kirkuk. Sentimental, impatient, and cleverer than his own certainty.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To draw a settlement that will hold longer than he will.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/francois-georges-picot.svg" alt="Portrait of François Georges-Picot" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">François Georges-Picot</h3>
-                <button onclick="jump(1)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 1</button>
+                <button onclick="jump(2)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 2: A lawyer turned colonial administrator w…">ch 2</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">French diplomat · 43</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">French diplomat · 43 &middot; 1870–1951</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">A lawyer turned colonial administrator who believes France has been in the Levant since the Crusades. Precise, cold, and entirely consistent.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To make the French claim look like a fact.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/edward-grey.svg" alt="Portrait of Edward Grey" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Edward Grey</h3>
-                <button onclick="jump(1)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 1</button>
+                <button onclick="jump(3)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 3: The man who signs without a parliament. …">ch 3</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Foreign Secretary · 54</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Foreign Secretary · 54 &middot; 1862–1933</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">The man who signs without a parliament. Believes secrecy is a kindness to the public and a courtesy to the future.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To keep the war alliance together at any cost.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/faisal.svg" alt="Portrait of Faisal ibn Hussein" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Faisal ibn Hussein</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(5)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 5: The Sharif's son, a soldier and a diplom…">ch 5</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Arab leader · 31</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Arab leader · 31 &middot; 1885–1933</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">The Sharif's son, a soldier and a diplomat who reads the British better than they read him.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> One Arab country, promised to his father and divided on paper.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/te-lawrence.svg" alt="Portrait of T.E. Lawrence" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">T.E. Lawrence</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 7: Liaison, archaeologist, self-mythologist…">ch 7</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">British officer · 28</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">British officer · 28 &middot; 1888–1935</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Liaison, archaeologist, self-mythologist. He carries the promises between Cairo and the desert and comes to believe in the people he is using.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To be on the right side of a war he helped make.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/gertrude-bell.svg" alt="Portrait of Gertrude Bell" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Gertrude Bell</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(9)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 9: Traveller, cartographer, and the only pe…">ch 9</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Arabist · 47</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Arabist · 47 &middot; 1868–1926</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Traveller, cartographer, and the only person in Cairo who has actually ridden the country she is dividing.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> A map that names the wells, not just the borders.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/chaim-weizmann.svg" alt="Portrait of Chaim Weizmann" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Chaim Weizmann</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(15)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 15: The inventor who trades acetone for a ho…">ch 15</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Chemist · 41</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Chemist · 41 &middot; 1874–1952</p>
             <p class="text-[13px] text-slate-400 leading-relaxed mt-2">The inventor who trades acetone for a homeland, and knows exactly what he is trading.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> A home where a Jew is not a guest.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/salim-haddad.svg" alt="Portrait of Salim Haddad" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Salim Haddad</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(6)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 6: A map-seller and translator whose villag…">ch 6</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Damascus merchant · 50</p>
-            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Fictional. A map-seller and translator whose village is spelled three ways on the British tracing paper.</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Damascus merchant · 50 &middot; Fictional</p>
+            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">A map-seller and translator whose village is spelled three ways on the British tracing paper.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> That the names on the map are the names of the people on the ground.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/nadia-haddad.svg" alt="Portrait of Nadia Haddad" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Nadia Haddad</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(21)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 21: Salim's daughter, who carries his notebo…">ch 21</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Teacher · 19</p>
-            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Fictional. Salim's daughter, who carries his notebook of villages from Damascus to Haifa and beyond.</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Teacher · 19 &middot; Fictional</p>
+            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Salim's daughter, who carries his notebook of villages from Damascus to Haifa and beyond.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To keep the names after the country is taken.</p>
         </article>
         <article class="cast">
-            <div class="flex items-start justify-between gap-2">
+            <img class="cast-portrait" src="Sykes-Picot-Cast/lina-haddad.svg" alt="Portrait of Lina Haddad" loading="lazy">
+            <div class="flex items-start justify-between gap-2 mt-3">
                 <h3 class="font-cinzel text-sm text-slate-100">Lina Haddad</h3>
-                <button onclick="jump(7)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300">ch 7</button>
+                <button onclick="jump(42)" class="mono text-[9px] uppercase tracking-widest text-amber-400/80 hover:text-amber-300" title="Chapter 42: Nadia's great-granddaughter, cataloguing…">ch 42</button>
             </div>
-            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Historian · 40</p>
-            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Fictional. Nadia's great-granddaughter, cataloguing the line a century after it was drawn.</p>
+            <p class="mono text-[9px] uppercase tracking-[.2em] text-[#a4442f] mt-1">Historian · 40 &middot; Fictional</p>
+            <p class="text-[13px] text-slate-400 leading-relaxed mt-2">Nadia's great-granddaughter, cataloguing the line a century after it was drawn.</p>
             <p class="text-[12px] text-slate-300 mt-2"><span class="mono text-[9px] uppercase tracking-widest text-slate-500">Wants</span> To explain the map to people who were not in the room.</p>
         </article>
+            </div>
+        </section>
+
+        <section id="synopsis" class="py-12 border-b border-[#1a1409]">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[.35em] text-[#d8b26a]/80">One Page</p>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl text-stone-100 mt-1">Synopsis</h2>
+                </div>
+                <a href="Sykes-Picot%20Agreement%20-%20Synopsis.md" download class="mono text-[10px] uppercase tracking-widest text-[#d8b26a]/80 hover:text-[#d8b26a] transition">Download one page &darr;</a>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-4">
+                    <div class="beat h-auto self-start">
+                        <p class="mono text-[9px] uppercase tracking-[.3em] text-[#a4442f] mb-2">Logline</p>
+                        <p class="font-cinzel text-base sm:text-lg leading-relaxed text-stone-100">When two diplomats secretly divide the Middle East in 1916, a Damascus map-seller and the four generations after him must live inside a border drawn by strangers &mdash; and decide whether to erase it, escape it, or finally explain it.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-8 synopsis">
+                    <p>December 1915. The war is deadlocked, the Ottoman Empire is coming apart, and the powers that will inherit it are already arguing over the pieces. Sir Mark Sykes, a rumpled Conservative MP with a gift for drawing lines, and François Georges-Picot, a French lawyer who believes the Levant belongs to France by history, meet in a small room in London. Neither is an expert on the country he is dividing. They agree on a map, initial a memorandum on 3 January 1916, and sign on 16 May &mdash; in secret, without consulting a single person who lives there.</p>
+                    <p>Below them, in Damascus, Salim Haddad sells maps for a living. Hired to translate a British tracing sheet, he finds his own village spelled three different ways and divided between two colours. He writes the names down in a notebook and gives it to his daughter Nadia, who carries it to Haifa, and whose life is shaped by every promise that follows: the Arab Revolt, the Balfour Declaration, the leak in Petrograd, the peace conference, San Remo, the mandate, Maysalun, the Cairo Conference, the borders of 1948.</p>
+                    <p>The century that follows is not a history of the treaty but of the people inside it. Coups in Damascus and Baghdad inherit the line and call it a revolution. Oil makes it valuable. Wars make it permanent. Nadia's granddaughter Lina grows up under sanctions, leaves for Berlin, and watches the line declared dead by a bulldozer in 2014 while knowing it is still the ground everyone stands on. On a ferry in the Aegean she meets a boy carrying a school atlas in a plastic bag &mdash; the only thing he saved.</p>
+                    <p>In the last chapter, in a Berlin archive, Lina opens the original map with white gloves beside her great-grandmother's notebook. The archivist tells her it is only paper. She has spent her life learning that it is never only paper. She asks to catalogue the names.</p>
+                </div>
             </div>
         </section>
 
@@ -397,7 +436,7 @@
                 <div id="progress-bar" class="h-full bg-gradient-to-r from-[#a4442f] to-[#d8b26a] transition-all duration-500" style="width:0%"></div>
             </div>
 
-            <div id="chapter-pills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-5"></div>
+            <div id="chapter-pills" class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-5 sm:flex-wrap sm:overflow-visible"></div>
             <div id="book-stage" class="glass rounded-2xl p-6 sm:p-10"></div>
 
             <div class="flex items-center justify-between gap-3 mt-5">
@@ -462,9 +501,10 @@
                 '<p class="mono text-[9px] uppercase tracking-[.3em] text-[#a4442f]">' + c.act + ' &middot; Chapter ' + c.n + '</p>' +
                 '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500">' + c.words + ' words</p>' +
             '</div>' +
-            (mode === 'slide' ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Title slide for chapter ' + c.n + ': ' + c.title + '"></div>' : '') +
-            '<h3 class="font-cinzel text-xl sm:text-2xl text-stone-100 mb-1">' + c.title + '</h3>' +
-            '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500 mb-6">' + c.place + '</p>' +
+            (mode === 'slide'
+                ? '<div class="slide"><img src="Sykes-Picot-Cards/ch' + String(c.n).padStart(2, '0') + '.svg" alt="Title slide for chapter ' + c.n + ': ' + c.title + '"></div>'
+                : '<h3 class="font-cinzel text-xl sm:text-2xl text-stone-100 mb-1">' + c.title + '</h3>' +
+                  '<p class="mono text-[9px] uppercase tracking-[.2em] text-stone-500 mb-6">' + c.place + '</p>') +
             '<div class="script">' + c.html + '</div></div>';
     }
 
