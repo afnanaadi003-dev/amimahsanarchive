@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">The Silence Engine — a screenplay in 47 chapters, by Amim Ahsan</title>
+  <desc id="d">A gold-clad bell hangs inside rings of vibration in a dark teal void, a sound wave runs flat into silence beneath it, and a small figure stands at the base holding a tape recorder.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#04121a"/><stop offset="0.5" stop-color="#061a24"/><stop offset="1" stop-color="#01060a"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="38%" r="52%">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.32"/>
+      <stop offset="0.42" stop-color="#0891b2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#fdecc4"/><stop offset="0.35" stop-color="#e0b359"/>
+      <stop offset="0.7" stop-color="#a8781f"/><stop offset="1" stop-color="#5d3f10"/>
+    </linearGradient>
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6d4a12"/><stop offset="0.45" stop-color="#f2d59a"/>
+      <stop offset="0.62" stop-color="#c08f2e"/><stop offset="1" stop-color="#4a3210"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.1"/>
+      <stop offset="0.28" stop-color="#22d3ee"/><stop offset="0.5" stop-color="#fde6b0"/>
+      <stop offset="0.72" stop-color="#22d3ee"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <radialGradient id="vig" cx="50%" cy="42%" r="76%">
+      <stop offset="0.45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.82"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.5" fill="#fff" opacity="0.045"/><circle cx="4.4" cy="4.2" r="0.34" fill="#fff" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#bg)"/>
+  <rect width="852" height="1280" fill="url(#halo)"/>
+
+  <!-- vibration rings -->
+  <g fill="none" stroke="#7dd3fc" stroke-width="1.1">
+    <ellipse cx="426" cy="455" rx="268" ry="268" opacity="0.10"/>
+    <ellipse cx="426" cy="455" rx="222" ry="222" opacity="0.16"/>
+    <ellipse cx="426" cy="455" rx="176" ry="176" opacity="0.24"/>
+    <ellipse cx="426" cy="455" rx="134" ry="134" opacity="0.30" stroke-dasharray="3 9"/>
+    <ellipse cx="426" cy="455" rx="322" ry="322" opacity="0.06" stroke-dasharray="1 14"/>
+  </g>
+
+  <!-- faint grid of the square -->
+  <g stroke="#22d3ee" opacity="0.07" stroke-width="1">
+    <path d="M60 760h732M60 800h732M60 840h732"/>
+    <path d="M180 720v200M300 720v200M420 720v200M540 720v200M660 720v200"/>
+  </g>
+
+  <!-- bell glow -->
+  <ellipse cx="426" cy="440" rx="150" ry="170" fill="#e0b359" opacity="0.16" filter="url(#soft)"/>
+
+  <!-- bell -->
+  <g>
+    <!-- crown / yoke -->
+    <path d="M368 268h116v22a16 16 0 0 1-16 16H384a16 16 0 0 1-16-16z" fill="url(#goldEdge)" opacity="0.9"/>
+    <path d="M378 300h96" stroke="#3a2709" stroke-width="6" opacity="0.7"/>
+    <!-- body -->
+    <path d="M426 306c-56 0-92 42-100 98l-14 92c-5 32-19 52-38 70h304c-19-18-33-38-38-70l-14-92c-8-56-44-98-100-98z"
+          fill="url(#gold)" stroke="#3f2a0b" stroke-width="2"/>
+    <!-- highlight -->
+    <path d="M392 330c-30 18-46 52-51 92l-12 82c-3 20-9 34-18 46" stroke="#fff6dd" stroke-width="4" opacity="0.45" fill="none" stroke-linecap="round"/>
+    <!-- inscription band -->
+    <path d="M370 470h112" stroke="#4a3210" stroke-width="2" opacity="0.5"/>
+    <path d="M366 486h120" stroke="#4a3210" stroke-width="1" opacity="0.35"/>
+    <!-- lip -->
+    <path d="M274 566h304c-6 14-26 22-152 22s-146-8-152-22z" fill="url(#goldEdge)" stroke="#3f2a0b" stroke-width="1.6"/>
+    <!-- clapper -->
+    <ellipse cx="426" cy="610" rx="26" ry="20" fill="#2a1c06" stroke="#c08f2e" stroke-width="1.4"/>
+  </g>
+
+  <!-- waveform: sound becoming silence -->
+  <g transform="translate(0,700)">
+    <line x1="60" y1="0" x2="792" y2="0" stroke="#1e3b46" stroke-width="1"/>
+    <path d="M60 0 C 92 -34, 108 30, 128 -12 S 158 44, 176 -26 S 206 38, 222 -6 S 246 30, 258 -20 S 286 26, 300 -4"
+          stroke="url(#wave)" stroke-width="2.2" fill="none" opacity="0.9"/>
+    <path d="M300 0 C 322 -40, 338 46, 356 -30 S 386 52, 404 -18 S 432 40, 452 -2 S 470 26, 480 -10 S 502 18, 516 -2"
+          stroke="url(#wave)" stroke-width="1.8" fill="none" opacity="0.65"/>
+    <path d="M516 0 C 536 -22, 548 24, 562 -14 S 584 28, 598 -20 S 622 22, 636 -6 S 656 16, 668 -3 S 686 10, 696 -1"
+          stroke="url(#wave)" stroke-width="1.4" fill="none" opacity="0.4"/>
+    <path d="M696 0 H 792" stroke="#fde6b0" stroke-width="2.4" opacity="0.85"/>
+    <circle cx="696" cy="0" r="3.4" fill="#fde6b0"/>
+  </g>
+
+  <!-- the figure with the recorder -->
+  <g fill="#010608">
+    <ellipse cx="426" cy="806" rx="70" ry="14" opacity="0.55"/>
+    <path d="M410 806c0-22 7-38 16-38s16 16 16 38z"/>
+    <circle cx="426" cy="754" r="10"/>
+  </g>
+  <rect x="440" y="770" width="12" height="9" rx="1.6" fill="#c08f2e" opacity="0.85"/>
+
+  <!-- frequency text -->
+  <g fill="#8ee9ff" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" opacity="0.42" letter-spacing="2">
+    <text x="68" y="676">7.83 Hz</text>
+    <text x="700" y="676">18.6</text>
+    <text x="66" y="1010">16%</text>
+    <text x="726" y="1010">4:00</text>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+
+  <!-- titles -->
+  <g text-anchor="middle">
+    <text x="426" y="1042" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#67e8f9"
+          letter-spacing="7" opacity="0.85">MASS-Q-RADE PRESENTS</text>
+    <text x="426" y="1108" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#f7ecd4"
+          letter-spacing="6">THE SILENCE</text>
+    <text x="426" y="1164" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#e0b359"
+          letter-spacing="10">ENGINE</text>
+    <line x1="286" y1="1186" x2="566" y2="1186" stroke="#3a5c68" stroke-width="1"/>
+    <text x="426" y="1212" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#9fb6c0"
+          letter-spacing="4">A SCREENPLAY IN 47 CHAPTERS</text>
+    <text x="426" y="1244" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#7d8f99"
+          letter-spacing="6">AMIM AHSAN</text>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#grain)"/>
+  <rect x="18" y="18" width="816" height="1244" fill="none" stroke="#1b2b36" stroke-width="1"/>
+</svg>

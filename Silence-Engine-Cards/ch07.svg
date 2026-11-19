@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Chapter 7 — AOIFE</title>
+  <desc id="d">Title card for chapter 7 of The Silence Engine, ACT I.</desc>
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#05121a"/><stop offset="0.6" stop-color="#071a23"/><stop offset="1" stop-color="#02070b"/>
+    </linearGradient>
+    <radialGradient id="rg7" cx="78%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gr7" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.5" fill="#fff" opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <rect width="640" height="360" fill="url(#bg7)"/>
+  <rect width="640" height="360" fill="url(#rg7)"/>
+
+  <g stroke="#1b2b36" stroke-width="1">
+    <path d="M40 40h40M40 40v40"/><path d="M600 40h-40M600 40v40"/>
+    <path d="M40 320h40M40 320v-40"/><path d="M600 320h-40M600 320v-40"/>
+  </g>
+
+  <text x="44" y="96" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#22d3ee"
+        letter-spacing="5" opacity="0.9">ACT I</text>
+  <text x="44" y="188" font-family="'JetBrains Mono',Consolas,monospace" font-size="112" font-weight="700"
+        fill="#22d3ee" opacity="0.18" letter-spacing="-4">07</text>
+  <text x="44" y="188" font-family="'JetBrains Mono',Consolas,monospace" font-size="112" font-weight="700"
+        fill="none" stroke="#22d3ee" stroke-width="1" letter-spacing="-4" opacity="0.5">07</text>
+
+  <text x="44" y="232" font-family="Georgia,'Times New Roman',serif" font-size="50" fill="#f7ecd4"
+        letter-spacing="1.5">AOIFE</text>
+
+  <path d="M40.0 286.0 L56.5 297.2 L72.9 303.0 L89.4 290.4 L105.9 312.0 L122.4 307.7 L138.8 308.5 L155.3 288.6 L171.8 285.6 L188.2 282.5 L204.7 289.7 L221.2 281.0 L237.6 282.8 L254.1 271.9 L270.6 272.6 L287.1 285.0 L303.5 275.1 L320.0 294.4 L336.5 294.3 L352.9 299.0 L369.4 296.4 L385.9 304.3 L402.4 291.5 L418.8 297.4 L435.3 292.1 L451.8 280.7 L468.2 285.5 L484.7 274.4 L501.2 288.2 L517.6 285.4 L534.1 276.7 L550.6 269.5 L567.1 272.4 L583.5 292.9 L600.0 281.6" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="44" cy="288" r="2.6" fill="#22d3ee"/>
+
+  <text x="596" y="336" text-anchor="end" font-family="'JetBrains Mono',Consolas,monospace" font-size="9"
+        fill="#5c7480" letter-spacing="3">THE SILENCE ENGINE</text>
+
+  <rect width="640" height="360" fill="url(#gr7)"/>
+</svg>
