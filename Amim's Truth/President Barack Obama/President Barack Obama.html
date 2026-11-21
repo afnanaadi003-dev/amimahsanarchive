@@ -56,6 +56,16 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 30px -5px rgba(217, 119, 6, 0.15);
         }
+
+        /* Real Power lookbook */
+        @keyframes rpKenBurns {
+            0% { transform: scale(1.02); }
+            100% { transform: scale(1.09); }
+        }
+        .rp-active-img { animation: rpKenBurns 9s ease-out forwards; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        #real-power { scroll-margin-top: 6rem; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
@@ -94,6 +104,7 @@
                     <a href="#bio" class="hover:text-amber-400 transition-colors py-1">Biography</a>
                     <a href="#works" class="hover:text-amber-400 transition-colors py-1">10 Great Works</a>
                     <a href="#philosophy" class="hover:text-amber-400 transition-colors py-1">Philosophy</a>
+                    <a href="#real-power" class="hover:text-amber-400 transition-colors py-1">Real Power</a>
                     <a href="#legacy" class="hover:text-amber-400 transition-colors py-1">Legacy</a>
                     <a href="#awards" class="hover:text-amber-400 transition-colors py-1">Awards</a>
                     <a href="#family" class="hover:text-amber-400 transition-colors py-1">Family</a>
@@ -123,6 +134,7 @@
             <a href="#bio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Biography &amp; Timeline</a>
             <a href="#works" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">10 Notable Works</a>
             <a href="#philosophy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Core Philosophy</a>
+            <a href="#real-power" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Real Power</a>
             <a href="#legacy" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Legacy &amp; Inspired Leaders</a>
             <a href="#awards" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Awards &amp; Honors</a>
             <a href="#family" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2 border-b border-slate-800/50">Family</a>
@@ -429,7 +441,75 @@
         </div>
     </section>
 
-    <!-- SECTION 5: LEGACY -->
+    <!-- SECTION 5: REAL POWER LOOKBOOK -->
+    <section id="real-power" class="relative py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800 overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#f59e0b 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
+                <div class="max-w-2xl space-y-4">
+                    <span class="inline-flex items-center gap-3 text-amber-500 font-mono text-xs uppercase tracking-[0.25em]">
+                        <span class="w-8 h-px bg-amber-500"></span> The Lookbook &middot; A Screenplay in Six Scenes
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-cinzel leading-tight">
+                        Real <span class="gold-gradient-text">Power</span>
+                    </h2>
+                    <p class="text-slate-300 font-merriweather leading-relaxed">
+                        Campaigns are argued in public. Power is exercised in rooms the public never enters &mdash; a motorcade at dusk, a desk with twenty-two pens, a call with no cameras. Six scenes from the Obama years, where the visible half of authority meets the half that is never photographed.
+                    </p>
+                </div>
+                <div class="flex items-center gap-6 shrink-0">
+                    <div>
+                        <div class="text-2xl font-extrabold text-white font-cinzel">2008 &rarr; 2017</div>
+                        <div class="text-[11px] font-mono uppercase tracking-widest text-slate-500 mt-1">Two terms</div>
+                    </div>
+                    <div class="w-px h-10 bg-slate-800"></div>
+                    <div>
+                        <div class="text-2xl font-extrabold text-amber-400 font-cinzel">06</div>
+                        <div class="text-[11px] font-mono uppercase tracking-widest text-slate-500 mt-1">Scenes</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="rpViewport" class="relative w-full h-[430px] sm:h-auto sm:aspect-[16/9] max-h-[600px] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl shadow-black/60 group select-none">
+                <div id="rpTrack" class="w-full h-full relative"></div>
+
+                <div class="absolute top-0 left-0 right-0 h-1 bg-white/10 z-20">
+                    <div id="rpProgress" class="h-full bg-gradient-to-r from-amber-600 to-amber-300 w-0"></div>
+                </div>
+
+                <div class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-slate-200">
+                    <span id="rpCurrent">01</span> <span class="text-slate-500">/</span> <span>06</span>
+                </div>
+
+                <button id="rpPrev" type="button" aria-label="Previous chapter"
+                    class="hidden sm:flex absolute left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/15 backdrop-blur-md items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105 active:scale-95 cursor-pointer">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="rpNext" type="button" aria-label="Next chapter"
+                    class="hidden sm:flex absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/15 backdrop-blur-md items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105 active:scale-95 cursor-pointer">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div id="rpDots" class="absolute bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-20 flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10"></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
+                <div id="rpThumbs" class="flex items-center gap-2.5 sm:gap-3 overflow-x-auto no-scrollbar max-w-full py-1 px-1"></div>
+                <div class="hidden lg:flex items-center gap-2 text-xs text-slate-500 shrink-0">
+                    <kbd class="px-2 py-1 rounded bg-slate-900 border border-white/10 font-mono text-[11px] text-slate-300">&larr;</kbd>
+                    <kbd class="px-2 py-1 rounded bg-slate-900 border border-white/10 font-mono text-[11px] text-slate-300">&rarr;</kbd>
+                    <span>to turn the page, or swipe</span>
+                </div>
+            </div>
+
+            <p class="mt-6 text-[11px] text-slate-500 font-mono">
+                Illustrative imagery &middot; dates and figures drawn from the public record.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 6: LEGACY -->
     <section id="legacy" class="py-20 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -471,7 +551,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6: AWARDS -->
+    <!-- SECTION 7: AWARDS -->
     <section id="awards" class="py-20 bg-slate-950 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -529,7 +609,7 @@
         </div>
     </section>
 
-    <!-- SECTION 7: FAMILY -->
+    <!-- SECTION 8: FAMILY -->
     <section id="family" class="py-20 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -563,7 +643,7 @@
         </div>
     </section>
 
-    <!-- SECTION 8: BOOKS -->
+    <!-- SECTION 9: BOOKS -->
     <section id="books" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -634,6 +714,220 @@
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
+    </script>
+
+    <script>
+        // Real Power lookbook — six illustrated chapters
+        (function () {
+            const CHAPTERS = [
+                {
+                    scene: 'Scene 01 · The Motorcade',
+                    slug: 'EXT. PENNSYLVANIA AVENUE — DUSK',
+                    time: '20 JAN 2009 · TAKE 01',
+                    title: 'The Procession',
+                    caption: '20 January 2009. The parade is the last public hour of the day. By evening the new administration inherits an economy shedding more than 700,000 jobs a month.',
+                    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=240&q=60',
+                    alt: 'Street canyon between office towers, looking toward the sky'
+                },
+                {
+                    scene: 'Scene 02 · The Treasury',
+                    slug: 'INT. TREASURY BRIEFING ROOM — NIGHT',
+                    time: 'FEB 2009 · TAKE 02',
+                    title: 'Leverage in the Shadows',
+                    caption: 'February 2009. The banks are too large to fail and too weak to lend. The argument is not whether to intervene, but who signs the terms — and who is told afterward.',
+                    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=240&q=60',
+                    alt: 'Glass towers seen from street level'
+                },
+                {
+                    scene: 'Scene 03 · The Desk',
+                    slug: 'INT. EAST ROOM — MORNING',
+                    time: '23 MAR 2010 · TAKE 03',
+                    title: 'Twenty-Two Pens',
+                    caption: '23 March 2010. The Affordable Care Act is signed with twenty-two pens, one for each of the votes it took to reach the desk. The ledger of those favors is not in the statute.',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=240&q=60',
+                    alt: 'A hand signing a document with a fountain pen'
+                },
+                {
+                    scene: 'Scene 04 · The Floor',
+                    slug: 'INT. SENATE CHAMBER — EVENING',
+                    time: '18 DEC 2010 · TAKE 04',
+                    title: 'Sixty-Five Votes',
+                    caption: '18 December 2010. In a lame-duck session most observers had written off, the Senate votes 65–31 to repeal “Don’t Ask, Don’t Tell.”',
+                    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=240&q=60',
+                    alt: 'A legislative chamber seen from the gallery'
+                },
+                {
+                    scene: 'Scene 05 · The Call',
+                    slug: 'INT. OVAL OFFICE — HOUR UNKNOWN',
+                    time: 'NO DATE · TAKE 05',
+                    title: 'No Cameras in the Room',
+                    caption: 'Most of the presidency had no audience at all: a handset, a short list, and a decision that would be explained later — if it was explained at all.',
+                    image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=240&q=60',
+                    alt: 'A man in a suit speaking on a telephone handset'
+                },
+                {
+                    scene: 'Scene 06 · The City',
+                    slug: 'EXT. McCORMICK PLACE — NIGHT',
+                    time: '10 JAN 2017 · TAKE 06',
+                    title: 'Who Holds the Pen',
+                    caption: '10 January 2017, Chicago. The farewell returns to the argument it began with: change is not handed down. It is organized.',
+                    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80',
+                    thumb: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=240&q=60',
+                    alt: 'City skyline at dawn'
+                }
+            ];
+
+            const track = document.getElementById('rpTrack');
+            if (!track) return;
+
+            const dots = document.getElementById('rpDots');
+            const thumbs = document.getElementById('rpThumbs');
+            const viewport = document.getElementById('rpViewport');
+            const counter = document.getElementById('rpCurrent');
+            const progress = document.getElementById('rpProgress');
+            const section = document.getElementById('real-power');
+            const DURATION = 6500;
+
+            let index = 0;
+            let paused = false;
+            let startTime = 0;
+            let frame = null;
+            let touchX = 0;
+
+            track.innerHTML = CHAPTERS.map((c, i) => `
+                <div class="rp-slide absolute inset-0 transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}">
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-amber-950/50"></div>
+                    <img src="${c.image}" alt="${c.alt}" loading="${i === 0 ? 'eager' : 'lazy'}" onerror="this.style.display='none'"
+                         class="absolute inset-0 w-full h-full object-cover object-center ${i === 0 ? 'rp-active-img' : ''}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-slate-950/10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/30 to-transparent"></div>
+                    <div class="absolute bottom-16 sm:bottom-12 left-5 sm:left-10 right-5 sm:right-56 space-y-2">
+                        <div class="hidden sm:flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] tracking-[0.18em] uppercase text-amber-200/85">
+                            <span class="text-slate-400">${c.time}</span>
+                            <span class="text-amber-500/50">·</span>
+                            <span>${c.slug}</span>
+                        </div>
+                        <span class="inline-block text-[10px] sm:text-xs font-mono tracking-widest uppercase text-amber-400 bg-amber-500/10 border border-amber-500/25 px-2.5 py-0.5 rounded-full">${c.scene}</span>
+                        <h3 class="text-[26px] sm:text-4xl font-bold text-white font-cinzel leading-tight">${c.title}</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-merriweather max-w-xl">${c.caption}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            dots.innerHTML = CHAPTERS.map((c, i) => `
+                <button type="button" aria-label="Go to ${c.title}" data-dot="${i}"
+                    class="h-2 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-6 bg-amber-400' : 'w-2 bg-white/40 hover:bg-white/70'}"></button>
+            `).join('');
+
+            thumbs.innerHTML = CHAPTERS.map((c, i) => `
+                <button type="button" aria-label="Preview ${c.title}" data-thumb="${i}"
+                    class="relative w-16 h-11 sm:w-24 sm:h-14 rounded-lg overflow-hidden shrink-0 border-2 bg-slate-800 transition-all duration-200 cursor-pointer ${i === 0 ? 'border-amber-400 scale-105 shadow-lg shadow-amber-950/50 opacity-100' : 'border-transparent opacity-55 hover:opacity-90'}">
+                    <img src="${c.thumb}" alt="" onerror="this.style.display='none'" class="w-full h-full object-cover">
+                </button>
+            `).join('');
+
+            function goTo(next) {
+                index = (next + CHAPTERS.length) % CHAPTERS.length;
+
+                document.querySelectorAll('.rp-slide').forEach((slide, i) => {
+                    const img = slide.querySelector('img');
+                    if (i === index) {
+                        slide.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                        slide.classList.add('opacity-100', 'z-10');
+                        if (img) {
+                            img.classList.remove('rp-active-img');
+                            void img.offsetWidth;
+                            img.classList.add('rp-active-img');
+                        }
+                    } else {
+                        slide.classList.remove('opacity-100', 'z-10');
+                        slide.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+                    }
+                });
+
+                document.querySelectorAll('[data-dot]').forEach((dot, i) => {
+                    dot.classList.toggle('w-6', i === index);
+                    dot.classList.toggle('bg-amber-400', i === index);
+                    dot.classList.toggle('w-2', i !== index);
+                    dot.classList.toggle('bg-white/40', i !== index);
+                });
+
+                document.querySelectorAll('[data-thumb]').forEach((thumb, i) => {
+                    const on = i === index;
+                    thumb.classList.toggle('border-amber-400', on);
+                    thumb.classList.toggle('scale-105', on);
+                    thumb.classList.toggle('shadow-lg', on);
+                    thumb.classList.toggle('shadow-amber-950/50', on);
+                    thumb.classList.toggle('opacity-100', on);
+                    thumb.classList.toggle('border-transparent', !on);
+                    thumb.classList.toggle('opacity-55', !on);
+                    if (on) thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                });
+
+                counter.textContent = String(index + 1).padStart(2, '0');
+                restart();
+            }
+
+            function restart() {
+                startTime = performance.now();
+                progress.style.width = '0%';
+                if (frame) cancelAnimationFrame(frame);
+                frame = requestAnimationFrame(tick);
+            }
+
+            function tick(now) {
+                if (paused) {
+                    startTime = now - (parseFloat(progress.style.width || 0) / 100) * DURATION;
+                    frame = requestAnimationFrame(tick);
+                    return;
+                }
+                const pct = Math.min(((now - startTime) / DURATION) * 100, 100);
+                progress.style.width = pct + '%';
+                if (now - startTime >= DURATION) goTo(index + 1);
+                else frame = requestAnimationFrame(tick);
+            }
+
+            document.getElementById('rpPrev').addEventListener('click', () => goTo(index - 1));
+            document.getElementById('rpNext').addEventListener('click', () => goTo(index + 1));
+
+            dots.addEventListener('click', (e) => {
+                const btn = e.target.closest('[data-dot]');
+                if (btn) goTo(Number(btn.dataset.dot));
+            });
+            thumbs.addEventListener('click', (e) => {
+                const btn = e.target.closest('[data-thumb]');
+                if (btn) goTo(Number(btn.dataset.thumb));
+            });
+
+            viewport.addEventListener('mouseenter', () => { paused = true; });
+            viewport.addEventListener('mouseleave', () => { paused = false; });
+
+            viewport.addEventListener('touchstart', (e) => {
+                touchX = e.changedTouches[0].screenX;
+                paused = true;
+            }, { passive: true });
+            viewport.addEventListener('touchend', (e) => {
+                paused = false;
+                const diff = touchX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 45) goTo(diff > 0 ? index + 1 : index - 1);
+            }, { passive: true });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+                const r = section.getBoundingClientRect();
+                const visible = r.top < window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.4;
+                if (!visible) return;
+                e.preventDefault();
+                goTo(e.key === 'ArrowRight' ? index + 1 : index - 1);
+            });
+
+            restart();
+        })();
     </script>
 </body>
 </html>
