@@ -1,0 +1,176 @@
+TITLE: THE LIGHT IS HERE
+MIN: 5
+@@SLATE
+Camera :: Locked off behind the counter, then a slow push down aisle nine — the camera keeps discovering that the store is bigger than the frame.
+Roll :: Digital, 800 ISO, fluorescent tubes overhead that hum at a frequency you feel in your teeth.
+Costume :: Leo in the store's blue apron over the same plain T-shirt, name tag slightly crooked. Sam in a cardigan with a pen through the buttonhole.
+Environment :: Kessler Hardware, 7:40 a.m.: bare bulbs in bins, a coffee machine that has never been cleaned, sawdust and rubber.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — MORNING</h4>
+      <p class="action">Fluorescent light. Aisles of drawers. LEO, twenty, stands on a stepladder replacing a tube that has been flickering since March. SAM KESSLER, sixty-three, holds the ladder without being asked.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">That one's been dying since March.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's been dying since 1998. It just got loud about it this year.</p></div>
+      <p class="action">He seats the tube. The hum stops. The aisle goes quiet in a way that feels like a held breath.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You know what it is about you? You hear it. Nobody hears it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's not a hearing thing.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — COUNTER — CONTINUOUS</h4>
+      <p class="action">A WOMAN in her forties sets a dead bulb on the counter like evidence.</p>
+      <div class="speech"><p class="cue">WOMAN</p><p class="dline">It's the same one I bought last time.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's not. Last time you bought warm white. This is daylight. Daylight in a living room makes everybody look like they're being interviewed.</p></div>
+      <div class="speech"><p class="cue">WOMAN</p><p class="dline">I don't want to be interviewed in my own living room.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Then take the 2700. It's the same price and it will make your husband look ten years younger.</p></div>
+      <p class="action">She laughs despite herself. Sam rings it up, watching Leo the way a man watches a horse he can no longer ride.</p>
+    </div>
+===CH===
+TITLE: AISLE NINE
+MIN: 6
+@@SLATE
+Camera :: Wide, then a top-down shot of the bulb bins — four hundred sockets, arranged by temperature, not alphabet.
+Roll :: Digital, 400 ISO, mixed sources; the aisle is lit by the product, so the light changes as Leo walks.
+Costume :: Leo's apron. Terrance in a school sweatshirt two sizes too big and sneakers with no laces.
+Environment :: Aisle nine: bulbs in cardboard trays, a hand-written index card taped to each shelf, a step stool with a split seat.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — AISLE NINE — AFTERNOON</h4>
+      <p class="action">Four hundred bulbs. Leo walks the aisle with a clipboard, checking stock. TERRANCE, eleven, follows two paces behind, matching his steps.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Why is this one on the top shelf?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Because it's the good one and I don't want to sell it.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That's a bad business model.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's a great business model. It's just a bad way to run a store.</p></div>
+      <p class="action">Terrance picks up a bulb, holds it to the light, and looks at the filament like it might say something.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — AISLE NINE — LATER</h4>
+      <p class="action">Leo hands Terrance a small card. On it, in pencil: 2200 / 2700 / 3200 / 4300 / 5600 / 6500.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's the whole job. Every light you'll ever stand in is one of those numbers.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Which one's the sun?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The sun isn't a number. The sun is a mood.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="paren">(writing it down)</p><p class="dline">Sun. Mood.</p></div>
+      <p class="action">Sam, at the end of the aisle, calls out without turning around.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Leo. You're teaching the inventory again.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm teaching the kid.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Same thing. Nothing in this store stays unless two people know where it is.</p></div>
+    </div>
+===CH===
+TITLE: THE CALL SHEET
+MIN: 5
+@@SLATE
+Camera :: Over the shoulder at the counter, then a flat shot of the call sheet under the counter lamp — the page is the only bright thing in the frame.
+Roll :: Digital, 1000 ISO, one counter lamp, the rest of the store falling away into shelves.
+Costume :: Ravi in a good coat that has been rained on. Leo in the apron, sleeves rolled, hands still dusty.
+Environment :: The counter at 4:50 p.m.: a receipt spike, a bowl of pens, a laminated sign that says WE DO NOT LEND TOOLS.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — COUNTER — LATE AFTERNOON</h4>
+      <p class="action">RAVI, thirty-eight, sets a folded call sheet on the counter. Rain on his coat. Leo reads it upside down without meaning to.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">I need a hundred practicals by Thursday. Tungsten. Nothing pretty. Lamps with shades, bare bulbs, anything that looks like it belongs in a kitchen somebody actually cooks in.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">A hundred.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">A hundred.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're shooting NIGHT MARKET.</p></div>
+      <p class="action">Ravi stops. Recalculates the room.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">How do you know that?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Because you ordered two hundred feet of blackout and a case of gaffer tape in June, and nobody buys blackout in June.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — BACK OFFICE — CONTINUOUS</h4>
+      <p class="action">Sam sits behind a desk with a ledger older than Leo. Ravi talks; Sam listens with his hands flat on the wood.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">We're a hardware store.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">You're the only store within ninety miles that has a hundred bulbs in stock.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">That's because I bought them in 2019 and nobody wanted them.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">I want them.</p></div>
+      <p class="action">Sam looks at Leo, who is pretending very hard to be stacking invoices.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You want the boy too.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">I want whoever knows where they are.</p></div>
+    </div>
+===CH===
+TITLE: DAY PLAY
+MIN: 6
+@@SLATE
+Camera :: Shoulder-mounted, walking behind Leo onto set — the crew exists in the background as a series of hands and tape.
+Roll :: Digital, 1600 ISO, blue hour; practicals already burning in windows that don't exist yet.
+Costume :: Leo in his own clothes for the first time in the series: a dark jacket, boots, no apron. He looks younger without it.
+Environment :: A closed market street at dusk: a fake stall, a real puddle, forty feet of cable in a figure eight.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — DUSK</h4>
+      <p class="action">A crew of twenty. A stall built from pallets. DUTCH, fifty-six, stands with her hands in her pockets, looking at a lamp that will not behave.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">You're the hardware store.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm the hardware store's assistant.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Can you make that lamp stop doing that?</p></div>
+      <p class="action">The lamp — a cheap shaded practical — strobes gently, like a heartbeat with a bad idea.</p>
+      <p class="action">Leo crouches. Opens the shade. Looks at the socket. Takes a small brass screw out of his pocket, which he has clearly been carrying for years.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(watching)</p><p class="dline">Where did you get that?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Drawer nine. There's about eighty of them.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — CONTINUOUS</h4>
+      <p class="action">The lamp settles. Steady, warm, ordinary. The whole frame improves by one small degree.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Cat. Look at this.</p></div>
+      <p class="action">CAT, thirty-two, the DP, looks through the monitor. Then at Leo. Then back at the monitor.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">That's the shot. That's the whole street.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="paren">(from the cable run)</p><p class="dline">It's a bulb.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">It's the bulb. There's a difference, and it's tonight's call time.</p></div>
+      <p class="action">Leo stands, wipes his hands on his jeans, and does not know what to do with his face.</p>
+    </div>
+===CH===
+TITLE: COLOR TEMPERATURE
+MIN: 6
+@@SLATE
+Camera :: Two-shot from the monitor tent, then a close-up on the monitor itself — the correction happening inside a small bright rectangle.
+Roll :: Digital, 1250 ISO, three sources in one frame: sodium street, tungsten practical, an LED that is lying.
+Costume :: Cat in a fleece and headphones around her neck. Ade in a cap, arms folded. Leo still in the jacket from last night's shoot.
+Environment :: The monitor tent at 1 a.m.: a folding table, a coffee that has gone cold, a taped-up schedule.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — NIGHT</h4>
+      <p class="action">On the monitor: the actress, JO, sixty-one, sits at a stall under a lamp. Half her face is orange. The other half is green.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">She looks like a traffic light.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">The street lamp is sodium. We can't move the street.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You don't move the street. You put a gel on your practical and you stop pretending the sodium isn't there.</p></div>
+      <p class="action">Silence. Ade turns slowly.</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">Who's the day player again?</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">He's the day player who's right. Get the half-blue.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — LATER</h4>
+      <p class="action">Leo holds a gel in front of the practical. Cat watches the monitor. The orange and green become one warm, believable night.</p>
+      <div class="speech"><p class="cue">JO</p><p class="paren">(from the stall, not moving)</p><p class="dline">Now I look like a woman who sells fish. Thank you.</p></div>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">Dutch. Keep him.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">He's got a job.</p></div>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">Then buy him out of it.</p></div>
+      <p class="action">Ade walks past with a coil of cable and says, quietly, not quite to Leo:</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">Two years I've been doing this. Two years.</p></div>
+    </div>
+===CH===
+TITLE: THE GENNY
+MIN: 7
+@@SLATE
+Camera :: Handheld in the dark, then a wide by headlight — the crew as shapes, lit only by torches and the dying warning light.
+Roll :: Digital, 3200 ISO, grain you can see; the frame goes soft at the edges, which is what the night actually looks like.
+Costume :: Leo in a hoodie with a store logo. Dutch in a waxed jacket. Ade in gloves, holding nothing, because there is no power to hold.
+Environment :: The far end of the market street: a 60kVA generator, a spider box, a hundred feet of cable, a fog that arrived without permission.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — 2:20 A.M.</h4>
+      <p class="action">The generator coughs. Stops. Every light dies at once, and the street becomes the street again.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="paren">(in the dark)</p><p class="dline">Tell me that's somebody's phone.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">That's the genny. Ade. Fuel?</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">Fuel's fine. It's the regulator. It's been hunting all night.</p></div>
+      <p class="action">Leo is already walking. Not running. Walking, the way you walk when you know exactly where the thing is.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — GENERATOR — CONTINUOUS</h4>
+      <p class="action">Torchlight. Leo opens the panel. Looks. Closes it. Looks at Dutch.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's not broken. It's cold and it's got bad fuel in it and the filter's half full of water.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">We can't get a filter at three in the morning.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">We can get a filter at three in the morning if somebody knows a store with a back door and an owner who doesn't sleep.</p></div>
+      <p class="action">He is already on the phone. It rings four times.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="paren">(over phone)</p><p class="dline">It's three in the morning and you're calling me from a field.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Drawer eleven. The small inline filter. And the spare key's still under the paint can.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="paren">(a long pause)</p><p class="dline">...I'll meet you there. Don't touch the till.</p></div>
+      <p class="action">The generator starts at 3:52. The street comes back on like a held breath let go.</p>
+    </div>
+===CH===

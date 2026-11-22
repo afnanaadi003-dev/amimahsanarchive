@@ -2,15 +2,15 @@ const fs = require('fs');
 const SERIES = require('./src/series');
 
 const cards = SERIES.map((s) => {
-  const live = s.n === 1;
-  const href = live ? 'series-01.html' : null;
+  const live = !!s.written;
+  const href = live ? 'series-0' + s.n + '.html' : null;
   const body = `
     <span class="sn">${String(s.n).padStart(2, '0')}</span>
     <h3>${s.title}</h3>
     <p class="log">${s.logline}</p>
     <p class="meta"><span>${s.chapters} chapters</span><span>${live ? 'Written' : 'In development'}</span></p>
     ${live
-      ? `<a class="go" href="${href}">Read series one <span>→</span></a>`
+      ? `<a class="go" href="${href}">Read series ${s.n} <span>→</span></a>`
       : `<span class="soon">Not yet written</span>`}`;
   return live
     ? `<article class="card live">${body}</article>`
@@ -62,8 +62,8 @@ footer a:hover{color:var(--gold)}
   <div class="stats">
     <div><b>24</b>Series</div>
     <div><b>720+</b>Chapters minimum</div>
-    <div><b>1</b>Written so far</div>
-    <div><b>30</b>Chapters in series one</div>
+    <div><b>2</b>Written so far</div>
+    <div><b>60</b>Chapters written</div>
   </div>
 
   <div class="grid">

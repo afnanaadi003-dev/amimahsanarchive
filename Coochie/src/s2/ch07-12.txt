@@ -1,0 +1,172 @@
+TITLE: THE CARD
+MIN: 6
+@@SLATE
+Camera :: Two-shot across a folding table, then a slow tilt down to the card — the scene is about what the card does not say.
+Roll :: Digital, 1000 ISO, unit base at midday: hard sun through a pop-up tent, everybody squinting.
+Costume :: Nadia in a windbreaker with a union pin. Leo in yesterday's clothes. Dutch in sunglasses she does not take off.
+Environment :: Unit base in a car park: chairs, a water cooler, a schedule pinned to a board with a knife through it.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. UNIT BASE — DAY</h4>
+      <p class="action">NADIA, fifty, sets a laminated card on the table between them. Leo reads it twice.</p>
+      <div class="speech"><p class="cue">NADIA</p><p class="dline">Three hundred and forty days. That's the apprenticeship. Then the exam. Then, if the local has room, the card.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I've been doing this for six weeks.</p></div>
+      <div class="speech"><p class="cue">NADIA</p><p class="dline">You've been doing this for six weeks on a non-union show that's paying you under the rate and calling it a day rate.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Nadia.</p></div>
+      <div class="speech"><p class="cue">NADIA</p><p class="dline">I'm not here to take the job away from him. I'm here to tell him what the job is.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. UNIT BASE — LATER</h4>
+      <p class="action">Nadia gone. Leo still holding the card. Dutch sits down opposite him and takes her sunglasses off for the first time.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Here's what nobody tells you. The card is not a compliment. It's a port.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">A port?</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Somewhere to dock when the weather turns. You can learn everything in the world about light and still lose a job because the show has to hire from the list. That's what the card is for. Not for the good days.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And the store?</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">The store is not a port. The store is a harbour. It's shallower, but it's yours.</p></div>
+      <p class="action">Leo folds the card into his back pocket, which is the first decision he makes in the series.</p>
+    </div>
+===CH===
+TITLE: THE LADDER
+MIN: 7
+@@SLATE
+Camera :: Low angle looking up the ladder, then a hard cut to the floor — the fall happens between frames, which is worse.
+Roll :: Digital, 2000 ISO, one work light on a stand and the rest of the warehouse black.
+Costume :: Leo in a harness he has not clipped. Ade in a harness he has. Work gloves with the fingers cut out.
+Environment :: A warehouse with a 22-foot ceiling, a scissor lift on charge, and one aluminium ladder with a bent foot.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. WAREHOUSE — NIGHT</h4>
+      <p class="action">A rigging job for tomorrow's scene. Leo climbs the ladder to hang a frame. Ade watches from the floor with his arms folded.</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">Clip in.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's two feet.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">It's twenty-two feet, and it's two feet from the top. Clip in.</p></div>
+      <p class="action">Leo clips in. Or half clips in — the carabiner goes through the loop but not the ring. From the floor it looks the same.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. WAREHOUSE — MOMENTS LATER</h4>
+      <p class="action">The ladder's bent foot slides. The frame comes down. Leo comes down with it, four feet, and lands badly on his side.</p>
+      <p class="action">Sound: aluminium, a breath, then nothing. Ade is there in under a second.</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">Don't move. Leo. Don't move.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(on the floor, winded)</p><p class="dline">The frame. Is the frame bent?</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">You're asking about the frame.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's a rental.</p></div>
+      <p class="action">Ade laughs once, horribly, and then puts his jacket under Leo's head.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOSPITAL — WAITING — LATER</h4>
+      <p class="action">Ade sits with a paper cup. Dutch stands. Leo's wrist is wrapped. Nothing is broken except the week.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Two weeks off the ladder. You'll do the board. You'll do the paperwork. You'll learn what a permit costs.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's not lighting.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">That's exactly lighting. Half of lighting is knowing what the job is allowed to be.</p></div>
+    </div>
+===CH===
+TITLE: SIX TO TWO
+MIN: 5
+@@SLATE
+Camera :: The same aisle nine shot from chapter two, now at 6 a.m. with the lights half on — the store looks like it's remembering itself.
+Roll :: Digital, 1250 ISO, cold dawn through the front glass, warm tubes above.
+Costume :: Leo's apron over a wrist brace. Sam in a coat, hat still on, keys in hand.
+Environment :: The store before opening: cash drawer out, mop bucket, a delivery on the floor that nobody has signed for.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — DAWN</h4>
+      <p class="action">Leo mops one-handed. Sam does the till with the slow competence of a man who has done it eleven thousand times.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You were on a ladder.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I was clipped in.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You were clipped in the way people are clipped in when they've decided nothing can happen to them.</p></div>
+      <p class="action">Leo says nothing. Sam closes the drawer.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Six to two. That's your shift. You want to do the nights, that's your business. But at six you're here, and at two you're gone, and in between you're not a film person, you're a clerk.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — AISLE NINE — LATER</h4>
+      <p class="action">A customer asks Leo a question about a door handle. Leo answers it perfectly. Then stares at the bulbs.</p>
+      <div class="speech"><p class="cue">CUSTOMER</p><p class="dline">Are you all right, son?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm great. It's a good handle. It'll outlive us both.</p></div>
+      <p class="action">The customer leaves, confused but satisfied. Leo stands alone in the aisle, and the fluorescent hum comes back.</p>
+    </div>
+===CH===
+TITLE: THE HANDOVER
+MIN: 6
+@@SLATE
+Camera :: Static two-shot, forty seconds, no cut — the whole chapter is two people not saying the thing.
+Roll :: Digital, 800 ISO, closing time: the front lights off, one bulb over the counter, the street beyond going blue.
+Costume :: Sam in his coat and hat. Leo without the apron for the first time in the store.
+Environment :: The counter at 6:10 p.m.: the closed sign turned, a mop, a box of bulbs marked HOLD.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — CLOSING — NIGHT</h4>
+      <p class="action">Sam counts the till. Leo stands with his hands at his sides. A box sits on the counter between them.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">The show called. They want you full time until wrap.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">They offered to pay the store for the hours. Which is a polite way of saying they know I can't say no.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You can say no.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">I can. I'm not going to.</p></div>
+      <p class="action">He sets the box of bulbs on the counter and pushes it over.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Take these. Not for the show. For you. A hundred bulbs is a hundred bulbs, and one day you'll be somewhere with no store and you'll want to know what you've got.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. KESSLER HARDWARE — STREET — CONTINUOUS</h4>
+      <p class="action">Leo carries the box to his car. Sam locks the door, and through the glass, the store is dark except for aisle nine, where a single tube stays on.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You've got one on.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Since when?</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Since March. I like knowing where the aisle is.</p></div>
+    </div>
+===CH===
+TITLE: NIGHT EXTERIOR
+MIN: 6
+@@SLATE
+Camera :: Very wide, then a long lens on the crew as a chain of small movements — the shot is about scale, and about how small the people are in it.
+Roll :: Digital, 2500 ISO, moonlit blue with a warm pocket where the stall is.
+Costume :: Leo in the store hoodie. Dutch in a head torch. Everyone else in everything they own.
+Environment :: A field behind the market: mud, a fake tree, a moon box, eleven crew, and a horizon that won't stay dark.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. FIELD — NIGHT</h4>
+      <p class="action">The camera points at a tree that does not exist in the story. Cat wants the horizon darker. Dutch wants the tree to read.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">The sky's too bright. It's supposed to be three hours before dawn.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Then we flag the sky.</p></div>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">With what? We've got two 12x12s and a field.</p></div>
+      <p class="action">Leo looks at the field. Then at the crew's vehicles. Then at the equipment truck.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">We've got four trucks and a tarp the size of a tennis court.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(after a beat)</p><p class="dline">Say that again, slower.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. FIELD — LATER</h4>
+      <p class="action">Trucks parked in a line. Black tarp strung between them, twenty feet up, blocking the village lights. The horizon goes dark like a curtain coming down.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="paren">(at the monitor)</p><p class="dline">Oh, that's evil. That's beautiful.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">That's a tarp.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">That's eleven thousand dollars of night, is what that is. Ade. Log it as a grip day.</p></div>
+      <p class="action">Leo, alone at the edge of the field, looks at the dark horizon he made and grins like a kid.</p>
+    </div>
+===CH===
+TITLE: THE MOON BOX
+MIN: 6
+@@SLATE
+Camera :: Macro on hands, then a wide of the barn — the chapter is a build sequence, and the build is the story.
+Roll :: Digital, 1600 ISO, a work lamp, a kettle, and a lot of tape.
+Costume :: Leo in a jacket with a pencil behind his ear. Terrance in a coat three sizes too big, invited along.
+Environment :: Sam's barn: pallets, a table saw, an old storm window, and a wall of jars.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BARN — NIGHT</h4>
+      <p class="action">Leo builds a moon box out of a pallet, a storm window, four bulbs from the box Sam gave him, and a dimmer switch from drawer nine.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That's a window.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's a soft source. The window is just the delivery system.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Why not just use the moon?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Because the moon doesn't take direction, and the moon is four hundred thousand kilometres away, and I've got a shoot on Thursday.</p></div>
+      <p class="action">He switches it on. Cold, even, unearthly light fills the barn. Terrance's face changes.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BARN — LATER</h4>
+      <p class="action">Leo sits on an upturned crate, eating a sandwich. Terrance sits opposite, holding the dimmer like it's a phone.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Are you going to be in movies?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm going to be the reason you can see the movies.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That's not the same thing.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(chewing)</p><p class="dline">No. It's not.</p></div>
+      <p class="action">A long pause. The moon box hums.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Can I come Thursday?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're eleven.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">I'm twelve on Thursday.</p></div>
+    </div>
+===CH===

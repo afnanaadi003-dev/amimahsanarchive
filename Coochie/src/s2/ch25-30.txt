@@ -1,0 +1,180 @@
+TITLE: THE WALL
+MIN: 6
+@@SLATE
+Camera :: Slow dolly along the drawer wall — a hundred and eight labels passing like headstones.
+Roll :: Digital, 1250 ISO, one work light, the rest of the store dark behind the camera.
+Costume :: Sam in the cardigan. Leo in the apron, which he will not wear again after this chapter.
+Environment :: The back wall of the store: a hundred and eight drawers, hand-lettered labels, a gap where one label was removed.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — BACK WALL — NIGHT</h4>
+      <p class="action">Sam opens drawers and does not close them. Screws. Washers. A brass hinge. Eighty small inline filters. A drawer of keys to nothing.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">My father lettered these in 1961. He had a system. Nothing alphabetical. Everything by what it's for.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And the empty one?</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">That was "MISC." I took the label off in 1994 because I got tired of not knowing.</p></div>
+      <p class="action">He closes the empty drawer.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">The building's sold. End of February. They're putting in a phone repair shop and a nail bar.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — BACK WALL — LATER</h4>
+      <p class="action">Leo stands in front of the wall. Sam sits on an upturned crate.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What happens to the drawers?</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Skip. Unless somebody wants a hundred and eight drawers.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I want a hundred and eight drawers.</p></div>
+      <p class="action">Sam looks up. Something moves behind his face that he does not allow to arrive.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">What for?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I don't know yet. I just know I want them.</p></div>
+    </div>
+===CH===
+TITLE: THE OTHER FILM
+MIN: 6
+@@SLATE
+Camera :: Two-shot at the counter, then a slow push — the frame remembers series one and is being polite about it.
+Roll :: Digital, 1000 ISO, afternoon, the store half-emptied: shelves showing their outlines.
+Costume :: Maya in a good coat and a bad bag. Leo in a T-shirt, no apron, hands full of cable.
+Environment :: The store mid-liquidation: price stickers on everything, a box marked SOLD, a notebook on the counter.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — COUNTER — AFTERNOON</h4>
+      <p class="action">MAYA, twenty-one, sets a notebook on the counter. It's the same notebook. The cover has been taped.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I need a gaffer.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You need a store that sells lights.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I need both and I've got two hundred dollars and a church basement.</p></div>
+      <p class="action">They look at each other. Two years of not saying it.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">How's the word?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Still mine. Yours?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Still a word.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — AISLE NINE — LATER</h4>
+      <p class="action">Maya walks the aisle. Half the bins are empty. She picks up a bulb, holds it to the light, exactly like Terrance did.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">They offered me a real budget. Twelve thousand. From the festival thing.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's not a real budget.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's twelve thousand more than the last one. I'd pay you. Properly. Not much, but properly.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">When?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">March.</p></div>
+      <p class="action">A beat. March. The notebook page with the phone number is still in his wallet.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Nothing. March is a busy month.</p></div>
+    </div>
+===CH===
+TITLE: THE INTERVIEW
+MIN: 5
+@@SLATE
+Camera :: Static, frontal, documentary-style — Leo is being looked at and the camera looks with them.
+Roll :: Digital, 800 ISO, big-box lighting: four hundred bulbs at 4000K, no shadows anywhere, a very clean floor.
+Costume :: Leo in a shirt he owns for funerals. The MANAGER in a fleece with a lanyard.
+Environment :: A back office with a window into aisle twelve: one hundred feet of identical shelving.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. SUPERCENTRE — BACK OFFICE — DAY</h4>
+      <p class="action">THE MANAGER, forty, has Leo's application on the desk. Leo's hands are flat on his knees.</p>
+      <div class="speech"><p class="cue">MANAGER</p><p class="dline">You've got six years of retail and eleven weeks of film. Where do you see yourself in five years?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Running a lighting department.</p></div>
+      <div class="speech"><p class="cue">MANAGER</p><p class="dline">We have a lighting department.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I know. That's why I'm here.</p></div>
+      <div class="speech"><p class="cue">MANAGER</p><p class="paren">(writing)</p><p class="dline">Good. Starting rate is fifteen twenty an hour, thirty-two hours, no nights.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. SUPERCENTRE — CAR PARK — LATER</h4>
+      <p class="action">Leo stands in the car park. The building behind him is enormous and lit like an aquarium. He does not go back in.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(to himself, quietly)</p><p class="dline">No nights.</p></div>
+      <p class="action">He takes out his phone. The union letter is folded in his wallet. The notebook page is folded behind it. He looks at both.</p>
+      <p class="action">Then he puts the phone away and walks to his car, past forty carts, under a light that is the wrong colour.</p>
+    </div>
+===CH===
+TITLE: THE BILL
+MIN: 6
+@@SLATE
+Camera :: Handheld at the kitchen table, then a top-down of the papers — the numbers are the antagonist and the camera treats them like one.
+Roll :: Digital, 2000 ISO, one bulb, a calculator with a dim screen.
+Costume :: Leo in a hoodie. Mona in scrubs, coat still on, not sitting down.
+Environment :: The kitchen: a hospital bill, a car repair estimate, a store liquidation sheet, three cups.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S KITCHEN — NIGHT</h4>
+      <p class="action">Three papers on the table. Leo has arranged them in a row, which is his version of panic.</p>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">The car's four hundred. The bill's eleven hundred after insurance. I'm not asking you for it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">I'm telling you because you're twenty and you keep doing arithmetic in your head like it's a secret.</p></div>
+      <p class="action">Leo turns the calculator around. The number is not good.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">March is six thousand. Six months, three states. I'd be gone.</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">And?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And Sam's building sells in February.</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">Sam is sixty-three and has a pension and a sister in Florida. You're twenty.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S KITCHEN — LATER</h4>
+      <p class="action">Mona finally sits. Takes the bill. Folds it. Puts it in her bag.</p>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">I worked nights for eleven years so you could have a choice. Not so you could spend it on me.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What if the choice is staying?</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">Then it had better be a real plan and not a feeling with a light on it.</p></div>
+      <p class="action">She kisses the top of his head on her way out to a shift.</p>
+    </div>
+===CH===
+TITLE: THE LIGHT IS STILL HERE
+MIN: 7
+@@SLATE
+Camera :: Slow 360 around the empty store at night — the last chapter that is allowed to be nostalgic.
+Roll :: Digital, 1600 ISO, one bulb on a stand in the middle of the floor, everything else dark.
+Costume :: Leo in a work jacket with a pencil behind his ear. No apron. Sam in his coat, hat in his hands.
+Environment :: The store with the shelves gone: bare walls, drawer frames still bolted up, a chalk mark where the counter was.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — EMPTY — NIGHT</h4>
+      <p class="action">The shelves are gone. The drawer wall remains, a hundred and eight empty boxes. One bulb burns on a stand.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You've got until the end of the month and then the keys go back.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I want the back room. Six hundred a month, and I'll take the drawers and the bulbs and the insurance in my name.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Six hundred is a favour. I don't do favours. I do rent.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Then eight hundred and I fix the roof.</p></div>
+      <p class="action">Sam laughs — the first real one in the series — and puts out his hand.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — EMPTY — LATER</h4>
+      <p class="action">Leo alone. He calls Dutch. It rings twice.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(over phone)</p><p class="dline">You're calling about March.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm calling about March. I'm not coming.</p></div>
+      <p class="action">A long silence on the line. Then, not unkindly:</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Say why. Not for me. Say it out loud so you can hear it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Because the light is here. Everybody else can rent it from somewhere. Here, it's mine, and it's a hundred and eight drawers, and there's a kid who comes in after school.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(a pause)</p><p class="dline">...Then put your name on the door, and answer the phone, and don't be cheap with the cable.</p></div>
+      <p class="action">She hangs up first, which is a kindness.</p>
+    </div>
+===CH===
+TITLE: OPENING TIME
+MIN: 7
+@@SLATE
+Camera :: Handheld, warm, moving through a crowd of eleven people — the same eleven as a series-one party, older by two years.
+Roll :: Digital, 1250 ISO, daylight through a cleaned window, four hundred bulbs all on at once.
+Costume :: Leo in a work shirt with a hand-lettered name tag. Terrance in an apron, which is too big. Sam in the cardigan.
+Environment :: The back room, transformed: the drawer wall re-lettered, a counter made of a door, a sign painted on plywood.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. AISLE NINE LIGHTING — OPENING DAY</h4>
+      <p class="action">A plywood sign over the door. Hand-painted: AISLE NINE — LIGHTING, RENTAL, REPAIR. Under it, smaller: IF WE DON'T HAVE IT, WE'LL BUILD IT.</p>
+      <p class="action">Eleven people in a room built for four. Sam cuts a ribbon that is actually a length of gaffer tape. Applause.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="paren">(to Leo, over the noise)</p><p class="dline">You lettered the drawers yourself.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I used your father's system. By what it's for.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">And MISC?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I filled it. It's spare lamps and a bottle of water. You never know.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. AISLE NINE LIGHTING — COUNTER — LATER</h4>
+      <p class="action">Maya at the counter with a rental sheet. Terrance behind it with a clipboard, taking it very seriously.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Two moon boxes, four practicals, one generator, and a gaffer for eleven days.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="paren">(checking the sheet)</p><p class="dline">The gaffer's expensive.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I know. I've met him.</p></div>
+      <p class="action">Leo comes out of the back with a coil of cable over his shoulder, sees Maya, and grins.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">March?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">March.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. AISLE NINE LIGHTING — DUSK</h4>
+      <p class="action">The shop is closed. Leo turns off the bulbs one bank at a time, and leaves one on — the one over the drawer wall.</p>
+      <p class="action">Through the window: a boy on a bike, a shop with a light in it, and a street going blue.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="paren">(from the doorway)</p><p class="dline">You leaving that on?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Yeah.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Why?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">So people know where we are.</p></div>
+      <p class="action">He locks the door. Walks home. The light stays on behind him, all the way down the street.</p>
+    </div>

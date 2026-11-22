@@ -1,0 +1,177 @@
+TITLE: RAIN TOWER
+MIN: 7
+@@SLATE
+Camera :: Handheld in weather — lens spotted, focus breathing, the frame constantly almost failing.
+Roll :: Digital, 4000 ISO, sodium street, rain, and a plastic sheet catching light in a way nobody planned.
+Costume :: Everyone in waterproofs over costumes. Leo in a poncho made from a bin bag. Dutch in a hat that has been rained on since 1994.
+Environment :: The market set at 11 p.m., rain arriving sideways, four HMI heads on stands, a hundred feet of cable in water.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — NIGHT — RAIN</h4>
+      <p class="action">Rain. Not film rain. Weather. The crew moves like a single animal. Leo is on the lights.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Kill the heads. Everything above knee height, kill it.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">We lose the shot.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">We lose the crew, we lose the film. Kill them.</p></div>
+      <p class="action">Leo is already unplugging. He stops at the third head, looks at the cable run, and sees what nobody else has.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The run's in a puddle. It's been in a puddle since the first take.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — CONTINUOUS</h4>
+      <p class="action">Leo lifts the cable and loops it over a stall rail, then a second rail, then a third, making a dry path that reads, from a distance, like decoration.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">Dutch. Look at the dressing.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">He's not dressing. He's draining.</p></div>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">It's the best-dressed street we've had all week.</p></div>
+      <p class="action">Rain on the plastic. A whole street of small lights reflected twice. The shot is better in the rain and everyone knows it.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(to Leo, quietly)</p><p class="dline">That's the job. Not the light. The water getting to the light.</p></div>
+    </div>
+===CH===
+TITLE: THE FIRE MARSHAL
+MIN: 6
+@@SLATE
+Camera :: A static wide of the set with one extra person in it — the marshal is framed like a bad omen.
+Roll :: Digital, 1000 ISO, overcast afternoon, flat light, no shadows: the least cinematic day of the shoot.
+Costume :: The marshal in a hi-vis vest and a clipboard. Ravi in the good coat, now visibly tired.
+Environment :: The market set in daylight: painted flats, a fake awning, a real fire exit that has been blocked by a prop stall.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET SET — DAY</h4>
+      <p class="action">THE FIRE MARSHAL, fifty, walks the set with a clipboard. Ravi walks beside him, a half-step behind, like a man following a doctor.</p>
+      <div class="speech"><p class="cue">MARSHAL</p><p class="dline">This stall is in front of an exit.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">It's a prop stall. It's not real.</p></div>
+      <div class="speech"><p class="cue">MARSHAL</p><p class="dline">The door's real. The people are real. The stall's the only thing here that isn't, and it's the one thing stopping them.</p></div>
+      <p class="action">Ravi looks around for help. Dutch is not going to help. Leo, holding a coil of cable, is.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">If we move it four feet, it still reads as a stall and the exit clears.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET SET — LATER</h4>
+      <p class="action">The stall, moved. The marshal measures the gap with his arm. Nods. Writes.</p>
+      <div class="speech"><p class="cue">MARSHAL</p><p class="dline">Who are you?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Lighting.</p></div>
+      <div class="speech"><p class="cue">MARSHAL</p><p class="dline">Lighting doesn't usually know about exits.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Lighting is the only department that has to be able to leave in a hurry.</p></div>
+      <p class="action">The marshal laughs once and hands Ravi the form. Ravi looks at Leo with an expression that is one-third gratitude and two-thirds arithmetic.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="paren">(quietly)</p><p class="dline">You just saved me four thousand dollars.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I moved a stall.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">That's what saving four thousand dollars looks like.</p></div>
+    </div>
+===CH===
+TITLE: BEST BOY
+MIN: 6
+@@SLATE
+Camera :: Long lens on Ade across the set, then cut to Leo — the distance between them is the subject.
+Roll :: Digital, 1250 ISO, golden hour on a street of painted flats.
+Costume :: Ade in the crew cap he wears like a rank. Leo in the same jacket he's worn for a week.
+Environment :: The truck: shelves, labelled bins, a whiteboard with names on it, and a schedule that has been rewritten four times.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. EQUIPMENT TRUCK — EVENING</h4>
+      <p class="action">Ade is inventorying. Leo climbs in. The truck is too small for the conversation.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(from outside)</p><p class="dline">Ade. Leo's best boy from tomorrow. Show him the board.</p></div>
+      <p class="action">Ade stops. Puts down the pen. Does not turn around.</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">I've been best boy on this show since prep.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">You've been best boy since prep. Now you're gaffer's second, and he's best boy, and next week you're both going to be too busy to be this upset about it.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">That's not a promotion.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">No. It's a demotion with a raise. Welcome to the industry.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. EQUIPMENT TRUCK — LATER</h4>
+      <p class="action">Dutch gone. Ade turns around at last.</p>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">You know what I did for two years? Coffee. Cable. Driving. And every time I put a light somewhere, someone moved it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">You don't. You walked in with a screw in your pocket and a store full of bulbs and everybody acted like the lights came on for the first time.</p></div>
+      <p class="action">Leo considers this honestly, which is worse than arguing.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You want the board?</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="paren">(a beat)</p><p class="dline">No. I want the board to be right.</p></div>
+      <p class="action">He hands Leo the pen.</p>
+    </div>
+===CH===
+TITLE: THE CLOSE-UP
+MIN: 6
+@@SLATE
+Camera :: 85mm close-up, the only shot in the series with no cutaway — the audience is trapped in the face.
+Roll :: Digital, 800 ISO, one soft source at 45 degrees, an eye light made from a phone.
+Costume :: Jo in a headscarf and a coat that has been wet for three takes. Leo in a hoodie, crouched out of frame.
+Environment :: The stall, night, two practicals, a bowl of fake fish, and forty people holding their breath.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STALL — NIGHT</h4>
+      <p class="action">Jo sits. The camera is a foot from her face. She has done the scene twice and it has been good both times and nobody has been moved.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="paren">(quietly, to Dutch)</p><p class="dline">She's doing the crying. She's not feeling the crying.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Then it's a light problem.</p></div>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">It's an acting problem.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Everything's a light problem until it isn't.</p></div>
+      <p class="action">Leo, kneeling by the practical, looks at Jo's eyes. Then at the source. Then he does something nobody asked for: he dims the practical by a third.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STALL — TAKE THREE</h4>
+      <p class="action">The frame darkens. Jo's face is now mostly shadow with two bright points in it.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">...and I told him the price and he looked at me like I'd made the fish myself.</p></div>
+      <p class="action">She stops. Her eyes go. Not a performance — a leak.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="paren">(barely audible)</p><p class="dline">Rolling.</p></div>
+      <p class="action">After the cut, Jo sits still for a moment. Then looks off-frame at Leo.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">What did you do?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I made it harder to see. You did the rest.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">Don't do that again without telling me.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I won't.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="paren">(standing, patting his arm)</p><p class="dline">Do it again tomorrow.</p></div>
+    </div>
+===CH===
+TITLE: BLACKOUT
+MIN: 7
+@@SLATE
+Camera :: Wide, then the exposure dropping as the town goes dark — the camera adapts slower than the eye, and that lag is the drama.
+Roll :: Digital, 6400 ISO, generator light only, a town with no streetlights, stars that were always there.
+Costume :: Leo in a jacket with cable ties in every pocket. Dutch with a torch in her teeth.
+Environment :: The whole block dark, the set the only lit thing in the county, a substation humming its last.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — NIGHT</h4>
+      <p class="action">The town goes dark. Not the set — the set runs on a generator. Everything around it: houses, streetlamps, the 7-Eleven, gone.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">How long?</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Substation. Four hours, maybe six.</p></div>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">Then we're the only light in town and every neighbour within a mile is going to come and look at it.</p></div>
+      <p class="action">Beat. Cat and Dutch look at each other.</p>
+      <div class="speech"><p class="cue">CAT</p><p class="dline">...That's the shot.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET STREET — LATER</h4>
+      <p class="action">Neighbours arrive in coats, holding torches and children. They stand at the edge of the set, watching, faces lit by the film.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(to Leo)</p><p class="dline">You've got twenty minutes to make them look like a crowd and not a complaint.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Then give me the warm ones. All of them. And kill the cold fill.</p></div>
+      <p class="action">Leo pulls the last four bulbs from the box Sam gave him, screws them into clamp lights, and hands them to neighbours like lanterns.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(to a woman with a pram)</p><p class="dline">Hold this at chest height and don't look at the lens.</p></div>
+      <div class="speech"><p class="cue">WOMAN</p><p class="dline">What is it?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's the light. You're the light.</p></div>
+      <p class="action">Wide: forty people holding warm bulbs in the dark, the market lit from inside the crowd. The best frame of the film, made for free.</p>
+    </div>
+===CH===
+TITLE: THE NEIGHBOUR
+MIN: 6
+@@SLATE
+Camera :: A two-shot through a garden fence, then a reverse that puts the film crew outside looking in.
+Roll :: Digital, 1600 ISO, 2 a.m. blue, one porch light, a kettle in the background.
+Costume :: Mr. Petrosky in a dressing gown and a very good coat over it. Leo in the same hoodie. Dutch holding two mugs.
+Environment :: A front garden: a fence, a birdbath, a recycling bin with the film's permit sticking out of it.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. FRONT GARDEN — 2 A.M.</h4>
+      <p class="action">MR. PETROSKY, seventy-one, stands at his gate. He is not shouting. That's what makes it serious.</p>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">This is the eleventh night.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Twelfth. The eleventh was Thursday.</p></div>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">I'm not calling anybody. I did that once, on another film, in 1997, and I've regretted it for twenty-nine years.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Then why are you standing in your dressing gown?</p></div>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">Because nobody has ever asked me whether it was all right.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. FRONT GARDEN — LATER</h4>
+      <p class="action">Three mugs of tea on the birdbath. Leo, Dutch and Petrosky, sitting on garden furniture at two in the morning.</p>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">My wife was an extra in a film in 1974. She's dead now. I've still got the call sheet.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Does it have her name on it?</p></div>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">It has "WOMAN AT BUS STOP." She was thrilled. She was twenty-six.</p></div>
+      <p class="action">Dutch looks at Leo. Leo looks at the permit in the recycling bin and goes to fetch it.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">We shoot here again Thursday. Do you want to be in it?</p></div>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="paren">(a long pause)</p><p class="dline">...As what?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Man at a window. Looking out. Being annoyed at a market that isn't there.</p></div>
+      <div class="speech"><p class="cue">PETROSKY</p><p class="dline">That I can do.</p></div>
+    </div>
+===CH===

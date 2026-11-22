@@ -1,0 +1,168 @@
+TITLE: WRAP GIFT
+MIN: 5
+@@SLATE
+Camera :: Handheld, warm, too close — a wrap party filmed by someone who has had two drinks and loves everyone.
+Roll :: Digital, 3200 ISO, a generator still running, string lights that were a dressing the whole time.
+Costume :: Leo in a clean shirt. Dutch in a crew jacket with the show's logo. Ade in the cap, finally without it.
+Environment :: The market set, struck halfway: flats leaning, cable coiled, a table of food that the crew has already destroyed.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MARKET SET — WRAP NIGHT</h4>
+      <p class="action">Sixty people, a folding table, a cake with a drawing of a lamp on it. Ravi stands on a pallet with a bottle.</p>
+      <div class="speech"><p class="cue">RAVI</p><p class="dline">Eleven weeks. Four hundred and six set-ups. One rewrite in a car park. Thank you. That's the speech.</p></div>
+      <p class="action">Cheers. Leo stands at the edge, holding a plate he isn't eating from.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="paren">(appearing beside him)</p><p class="dline">You're not drinking.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm working tomorrow.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">The show wrapped.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The store didn't.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MARKET SET — LATER</h4>
+      <p class="action">The wrap gift: a cooler bag with the show's logo, a multi-tool, and an envelope. Leo opens the envelope. Inside, a crew list. His name, halfway down, under ELECTRIC.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(reading)</p><p class="dline">"Leo Okafor. Electric."</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="paren">(passing, not stopping)</p><p class="dline">It's not a credit. It's a certificate.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">For what?</p></div>
+      <div class="speech"><p class="cue">ADE</p><p class="dline">For being on it.</p></div>
+      <p class="action">Leo folds the crew list and puts it in his back pocket, next to the union card.</p>
+    </div>
+===CH===
+TITLE: THE OFFER
+MIN: 6
+@@SLATE
+Camera :: The equipment truck, empty, from the doorway — Dutch and Leo at opposite ends of a long steel box.
+Roll :: Digital, 1250 ISO, one fluorescent, the doors open onto a grey car park.
+Costume :: Dutch in her good coat. Leo with the cooler bag he is embarrassed to be carrying.
+Environment :: The truck on the last morning: shelves bare, labels left behind, a broom nobody has used.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. EQUIPMENT TRUCK — MORNING</h4>
+      <p class="action">Dutch is writing in a notebook. Leo stands. She does not look up.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Next show is in March. Six months, three states, good rate. I need a best boy who can run a truck and doesn't panic.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's a job offer.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">It's a job offer.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I'm twenty.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">I was nineteen when I did my first show. I slept in the truck. It's not a reason.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. EQUIPMENT TRUCK — LATER</h4>
+      <p class="action">Car park. Dutch smokes. Leo doesn't.</p>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">Here's the thing nobody tells you at twenty. If you go, you'll be good. You'll be very good in about four years. And you'll come back here at thirty and the store will be a phone repair shop and you'll feel nothing, which will frighten you.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And if I stay?</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">If you stay, you'll be the best lighting man in a hundred miles and there'll be nobody to tell.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's not an answer.</p></div>
+      <div class="speech"><p class="cue">DUTCH</p><p class="dline">No. It's a decision. Those don't come with answers, they come with a date.</p></div>
+      <p class="action">She hands him the notebook page. March 3rd. A phone number. He does not put it in his pocket. He holds it.</p>
+    </div>
+===CH===
+TITLE: THE COUNTER
+MIN: 5
+@@SLATE
+Camera :: The store from outside, through the glass, at 5:55 a.m. — the frame waits for the lights to come on.
+Roll :: Digital, 1600 ISO, blue exterior, then the tubes flickering to life one bank at a time.
+Costume :: Leo in the apron again, over the crew hoodie. Sam in a coat with a flask.
+Environment :: Kessler Hardware before opening: four hundred bulbs, no customers, a radio playing something from 1987.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — DAWN</h4>
+      <p class="action">Leo turns the lights on bank by bank. Sam watches from the door with two coffees.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You're early.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're earlier.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">I'm the owner. I'm allowed to be sentimental about a building.</p></div>
+      <p class="action">He hands Leo a coffee. They stand in aisle nine.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">So. What did it feel like?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Like being useful for eleven weeks and then stopping.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">That's every job, son. That's why they call it work and not weather.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — COUNTER — LATER</h4>
+      <p class="action">A customer comes in at 6:02. Leo straightens, smiles, and is instantly, completely a clerk.</p>
+      <div class="speech"><p class="cue">CUSTOMER</p><p class="dline">Do you have anything that makes a room feel bigger?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(without hesitation)</p><p class="dline">Aisle nine. Two lamps on opposite walls, both warm, neither in the middle. The middle's what makes a room small.</p></div>
+      <p class="action">Sam, at the counter, hides a smile in his coffee.</p>
+    </div>
+===CH===
+TITLE: THE APPRENTICE
+MIN: 5
+@@SLATE
+Camera :: Low, from Terrance's height, then a slow rise to Leo's — the camera grows up during the chapter.
+Roll :: Digital, 800 ISO, late afternoon, dust in a sunbeam, the store at its most beautiful.
+Costume :: Terrance with a notebook now. Leo in the apron, sleeves rolled.
+Environment :: Aisle nine, a step stool, an index card that says TER — DO NOT SELL.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — AISLE NINE — AFTERNOON</h4>
+      <p class="action">Terrance, twelve now, sits on the step stool with the notebook. Leo is restocking.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">I wrote down what you said. About the numbers.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Read it back.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">"Every light is one of six numbers except the sun which is a mood."</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's right.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That's not science.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">No. It's the part before the science.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — BACK ROOM — LATER</h4>
+      <p class="action">Leo shows him the back room: a workbench, a set of clamp lights, and the moon box from the barn, still standing.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">This is the shop. Not the store. The shop.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Does Sam know?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Sam gave me the bulbs.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That's not the same as knowing.</p></div>
+      <p class="action">Leo looks at the moon box, then at the door to the shop floor, and understands something unwelcome.</p>
+    </div>
+===CH===
+TITLE: STOCK COUNT
+MIN: 6
+@@SLATE
+Camera :: Static wide of the whole store from the top of a ladder — for once the camera is at Leo's old height.
+Roll :: Digital, 1000 ISO, closing time, every bank on, the store lit for an audit.
+Costume :: Sam in shirtsleeves, no cardigan, which is how you know. Leo in the apron. An ACCOUNTANT with a tablet.
+Environment :: Every aisle at once: four hundred bulbs, forty drawers, and a back room that has not been swept since 1994.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — CLOSING — NIGHT</h4>
+      <p class="action">An accountant walks the aisles with a tablet. Sam follows. Leo watches from the counter.</p>
+      <div class="speech"><p class="cue">ACCOUNTANT</p><p class="dline">Your stock value is down eleven percent and your foot traffic is down thirty-one.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">There's a big box store forty minutes away.</p></div>
+      <div class="speech"><p class="cue">ACCOUNTANT</p><p class="dline">There's a big box store eleven minutes away. It opened in August.</p></div>
+      <p class="action">Sam says nothing. Leo does the arithmetic in his head and hates the answer.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. KESSLER HARDWARE — BACK OFFICE — LATER</h4>
+      <p class="action">Sam at the desk. Leo in the doorway. The ledger open between them.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">How long?</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Eighteen months. Maybe twenty if I stop paying myself, which I stopped doing in April, so.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You didn't tell me.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You were on a ladder in a field. What were you going to do, come back and sell hammers?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Maybe.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="paren">(a long look)</p><p class="dline">Don't say maybe to a man with eighteen months. Say it to the bank.</p></div>
+    </div>
+===CH===
+TITLE: THE LETTER
+MIN: 6
+@@SLATE
+Camera :: Over Leo's shoulder on the envelope, then a reverse — we watch him read it and we do not see the page.
+Roll :: Digital, 800 ISO, kitchen table at night, one overhead bulb he has never replaced.
+Costume :: Leo in a T-shirt. Mona in scrubs, just home, keys still in her hand.
+Environment :: A small kitchen: a calendar with shifts on it, a hospital lanyard on a hook, a fridge with one photo.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S KITCHEN — NIGHT</h4>
+      <p class="action">An envelope from the union. Leo opens it with a knife, carefully, the way his mother opens bills.</p>
+      <div class="speech"><p class="cue">MONA</p><p class="paren">(entering)</p><p class="dline">Is that the letter?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's the letter.</p></div>
+      <p class="action">He reads. Mona watches his face, which is the only part of him that gives anything away.</p>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">Well?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">"We regret to inform you that the apprenticeship intake for the coming year has been filled."</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">Filled.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Filled.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S KITCHEN — LATER</h4>
+      <p class="action">Mona sits down opposite. Takes the letter. Reads it properly, twice.</p>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">"Apply again next cycle."</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Next cycle's a year.</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">Then you'll be twenty-one and you'll know more than the people who got in.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's a nurse's answer.</p></div>
+      <div class="speech"><p class="cue">MONA</p><p class="dline">That's everybody's answer. It's just that nurses say it at three in the morning, when it's true.</p></div>
+      <p class="action">She takes his hand briefly, then goes to the fridge and starts making something to eat, because this family fixes things by feeding them.</p>
+    </div>
+===CH===

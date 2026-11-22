@@ -223,6 +223,7 @@ section.block{max-width:1240px;margin:0 auto;padding:clamp(46px,7vw,84px) clamp(
 .pgbtn.on{background:var(--gold);border-color:var(--gold);color:#16120b;font-weight:600}
 .pager-note{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .pager-note b{color:var(--ink);font-weight:500}
+.pager[data-edge="start"] [data-pg="prev"],.pager[data-edge="end"] [data-pg="next"]{opacity:.4}
 .chapter-page .chapter{border-top:0}
 </style>
 </head>
@@ -240,7 +241,7 @@ section.block{max-width:1240px;margin:0 auto;padding:clamp(46px,7vw,84px) clamp(
 
 <header class="hero">
   <div class="poster-wrap">
-    <img class="poster" src="poster.svg" alt="Coochie poster: a backyard at golden hour, a notebook on a picnic table, the title set in marker capitals">
+    <img class="poster" src="poster.svg" alt="Coochie poster">
   </div>
   <div class="hero-copy">
     <p class="kicker">Series One of Twenty-Four</p>
@@ -1528,7 +1529,7 @@ section.block{max-width:1240px;margin:0 auto;padding:clamp(46px,7vw,84px) clamp(
 </section>
 
 <footer class="foot">
-  <p>Coochie · series one of twenty-four · a film by Amim Ahsan</p>
+  <p>Coochie · series 1 of twenty-four · a film by Amim Ahsan</p>
   <p><button class="tbtn" data-watch="1">▶ Watch from the beginning</button> &nbsp; <a class="tbtn" href="index.html">All 24 series</a></p>
 </footer>
 
@@ -1644,8 +1645,7 @@ document.querySelectorAll('[data-pg]').forEach((btn) => btn.addEventListener('cl
 }));
 document.querySelectorAll('[data-chapter]').forEach((btn) => btn.addEventListener('click', () => {
   const n = Number(btn.dataset.chapter);
-  const page = Math.ceil(n / 5);
-  goPage(page, false);
+  goPage(Math.ceil(n / 5), false);
   const el = document.getElementById('ch-' + n);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }));
