@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Tamar bat Shallum</title>
+  <desc id="d">Stylised portrait of Tamar bat Shallum, keeper of the night watch at the First Temple of Jerusalem — a widow in a linen head veil, lit by a small clay lamp, with snow falling behind her.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070d18"/>
+      <stop offset="55%" stop-color="#0d1725"/>
+      <stop offset="100%" stop-color="#04070d"/>
+    </linearGradient>
+    <radialGradient id="lampGlow" cx="30%" cy="72%" r="58%">
+      <stop offset="0%" stop-color="#f3c96b" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#d4a03c" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0a1220" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="velvet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b2b3d"/>
+      <stop offset="50%" stop-color="#132031"/>
+      <stop offset="100%" stop-color="#0a1421"/>
+    </linearGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9d6e2"/>
+      <stop offset="45%" stop-color="#93a8bd"/>
+      <stop offset="100%" stop-color="#5c7189"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8c9a6"/>
+      <stop offset="60%" stop-color="#cf9f77"/>
+      <stop offset="100%" stop-color="#9d6f4e"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3c96b" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#f3c96b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#fff3d1" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <rect width="400" height="500" fill="url(#lampGlow)"/>
+
+  <!-- distant temple wall behind her -->
+  <g opacity="0.35" stroke="#2b3d52" stroke-width="1" fill="none">
+    <path d="M0 96h400"/>
+    <path d="M0 118h400"/>
+    <path d="M34 96v58M78 96v58M122 96v58M166 96v58M210 96v58M254 96v58M298 96v58M342 96v58M386 96v58"/>
+    <path d="M0 154h400" stroke-width="2"/>
+  </g>
+
+  <!-- snow -->
+  <g fill="#e8f1fb" opacity="0.75">
+    <circle cx="42" cy="58" r="1.9"/><circle cx="88" cy="30" r="1.2"/><circle cx="132" cy="74" r="1.5"/>
+    <circle cx="176" cy="38" r="1"/><circle cx="214" cy="64" r="1.7"/><circle cx="258" cy="26" r="1.2"/>
+    <circle cx="300" cy="70" r="1.4"/><circle cx="344" cy="40" r="2"/><circle cx="372" cy="86" r="1.1"/>
+    <circle cx="26" cy="122" r="1.3"/><circle cx="66" cy="168" r="1.6"/><circle cx="118" cy="140" r="1"/>
+    <circle cx="352" cy="150" r="1.5"/><circle cx="384" cy="188" r="1.2"/><circle cx="20" cy="212" r="1.4"/>
+    <circle cx="140" cy="196" r="1.1"/><circle cx="316" cy="212" r="1.3"/><circle cx="236" cy="112" r="1.1"/>
+    <circle cx="196" cy="150" r="1.4"/><circle cx="58" cy="258" r="1.2"/><circle cx="378" cy="250" r="1"/>
+  </g>
+
+  <!-- shoulders / mantle -->
+  <path d="M52 500c6-74 44-118 104-136 20-6 68-6 88 0 60 18 98 62 104 136z" fill="url(#velvet)"/>
+  <path d="M52 500c6-74 44-118 104-136 20-6 68-6 88 0 60 18 98 62 104 136z" fill="none" stroke="#22364b" stroke-width="1.5"/>
+  <!-- mantle folds -->
+  <g stroke="#2b4258" stroke-width="1.4" fill="none" opacity="0.85">
+    <path d="M120 500c4-56 18-96 40-118"/>
+    <path d="M168 500c2-50 8-88 18-112"/>
+    <path d="M232 500c-2-50-8-88-18-112"/>
+    <path d="M280 500c-4-56-18-96-40-118"/>
+  </g>
+  <!-- warm rim light on mantle from the lamp -->
+  <path d="M60 500c6-70 42-112 100-130" fill="none" stroke="url(#rim)" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- neck -->
+  <path d="M172 300h56v54c0 14-12 22-28 22s-28-8-28-22z" fill="#b98a63"/>
+  <path d="M172 318c18 10 38 10 56 0v-8h-56z" fill="#8f6446" opacity="0.6"/>
+
+  <!-- veil falling behind the shoulders -->
+  <path d="M132 168c0-62 30-104 68-104s68 42 68 104c0 52-14 96-26 148h-84c-12-52-26-96-26-148z" fill="url(#veil)" opacity="0.92"/>
+  <path d="M132 168c0-62 30-104 68-104s68 42 68 104c0 52-14 96-26 148h-84c-12-52-26-96-26-148z" fill="none" stroke="#e6eef7" stroke-width="1" opacity="0.4"/>
+
+  <!-- face -->
+  <path d="M200 96c34 0 58 26 58 62 0 20-3 38-9 54-8 22-26 48-49 48s-41-26-49-48c-6-16-9-34-9-54 0-36 24-62 58-62z" fill="url(#skin)"/>
+  <!-- shadow side of the face -->
+  <path d="M200 96c-34 0-58 26-58 62 0 20 3 38 9 54 8 22 26 48 49 48V96z" fill="#7d5637" opacity="0.22"/>
+  <!-- brow / cheek shading -->
+  <g fill="#8d5f3f" opacity="0.30">
+    <path d="M158 168c14-8 32-10 48-6-16 8-34 12-48 6z"/>
+    <path d="M212 186c14 0 26 6 32 16-12-4-22-4-32-2z"/>
+    <path d="M160 214c10 10 24 16 40 16-18 4-34-2-46-12z"/>
+  </g>
+
+  <!-- eyes -->
+  <g>
+    <path d="M164 176c8-6 20-6 27 0-8 7-19 7-27 0z" fill="#f4ecdf"/>
+    <circle cx="177" cy="176" r="4.6" fill="#2a1d12"/>
+    <circle cx="175.6" cy="174.4" r="1.5" fill="#fff" opacity="0.85"/>
+    <path d="M164 176c8-6 20-6 27 0" fill="none" stroke="#43301f" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M162 168c9-4 20-4 29 1" fill="none" stroke="#4a3624" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g>
+    <path d="M209 176c8-6 20-6 27 0-8 7-19 7-27 0z" fill="#f4ecdf"/>
+    <circle cx="222" cy="176" r="4.6" fill="#2a1d12"/>
+    <circle cx="220.6" cy="174.4" r="1.5" fill="#fff" opacity="0.85"/>
+    <path d="M209 176c8-6 20-6 27 0" fill="none" stroke="#43301f" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M207 168c9-4 20-4 29 1" fill="none" stroke="#4a3624" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- nose -->
+  <path d="M199 182v28c0 4 4 7 8 7" fill="none" stroke="#a4714c" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+  <!-- mouth -->
+  <path d="M184 232c7 4 14 5 20 3 4-1 8-3 11-6" fill="none" stroke="#8a4f43" stroke-width="3" stroke-linecap="round"/>
+  <path d="M186 240c8 5 18 5 26 0" fill="none" stroke="#6d3d33" stroke-width="1.6" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- head veil over the hair, framing the face -->
+  <path d="M142 172c-4-58 22-96 58-96s62 38 58 96c-2 26-8 46-14 62-2-34-6-58-14-74-10-20-20-26-30-26s-20 6-30 26c-8 16-12 40-14 74-6-16-12-36-14-62z" fill="url(#veil)"/>
+  <path d="M142 172c-4-58 22-96 58-96s62 38 58 96" fill="none" stroke="#eaf2fb" stroke-width="1.2" opacity="0.5"/>
+  <!-- veil folds -->
+  <g stroke="#dfe9f3" stroke-width="1" fill="none" opacity="0.35">
+    <path d="M156 190c-2-52 16-84 44-88"/>
+    <path d="M244 190c2-52-16-84-44-88"/>
+    <path d="M150 216c-4-40 4-72 18-90"/>
+    <path d="M250 216c4-40-4-72-18-90"/>
+  </g>
+  <!-- earring -->
+  <circle cx="146" cy="204" r="3.6" fill="#d4af37"/>
+  <circle cx="146" cy="212" r="2.2" fill="#e8cf8a"/>
+
+  <!-- clay lamp at lower left -->
+  <g transform="translate(58 336)">
+    <ellipse cx="0" cy="0" rx="26" ry="34" fill="#241a12" opacity="0.35" filter="url(#soft)"/>
+    <path d="M-18 6c0-14 8-22 18-22s18 8 18 22c0 8-8 14-18 14S-18 14-18 6z" fill="#8a5a30"/>
+    <path d="M-18 6c0-14 8-22 18-22s18 8 18 22" fill="none" stroke="#a9743c" stroke-width="1.6"/>
+    <path d="M18 2l16-6-6 12z" fill="#8a5a30"/>
+    <path d="M0 -18c-5-8-2-14 0-18 3 5 6 10 0 18z" fill="#f6d27a"/>
+    <ellipse cx="0" cy="-14" rx="6" ry="10" fill="#ffcf6b" opacity="0.55" filter="url(#soft)"/>
+  </g>
+
+  <!-- foreground snow (sharp) -->
+  <g fill="#f2f7fd" opacity="0.9">
+    <circle cx="96" cy="392" r="2.1"/><circle cx="300" cy="356" r="2.4"/><circle cx="342" cy="416" r="1.7"/>
+    <circle cx="140" cy="440" r="1.9"/><circle cx="262" cy="470" r="1.6"/><circle cx="56" cy="452" r="1.4"/>
+  </g>
+
+  <!-- frame + grain -->
+  <rect x="1" y="1" width="398" height="498" fill="none" stroke="#d4af37" stroke-opacity="0.35" stroke-width="2"/>
+  <rect width="400" height="500" filter="url(#grain)" opacity="0.05"/>
+</svg>
