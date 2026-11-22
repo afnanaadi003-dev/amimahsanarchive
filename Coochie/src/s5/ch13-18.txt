@@ -1,0 +1,171 @@
+TITLE: THE FUNERAL HOME
+MIN: 6
+@@SLATE
+Camera :: A quiet room with a screen and twelve chairs, then a close-up of a shoebox of photographs — the camera learns a face from paper before it meets it on glass.
+Roll :: Digital, 2000 ISO, wall sconces and one window with a blind the colour of milk.
+Costume :: OWEN TATE in a dark suit that fits, which in this county is a statement. A daughter in her fifties in a cardigan.
+Environment :: Tate & Sons Funeral Home: a viewing room, a screen on a stand, a box of tissues on every third chair, a guest book with a pen on a chain.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. TATE &amp; SONS — ARRANGEMENT ROOM — MORNING</h4>
+      <p class="action">OWEN TATE, thirty-nine, spreads forty photographs on a table like a card trick.</p>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">Eleven minutes. Music at the end. No photos of her in the last two years — the family asked.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Why the last two years?</p></div>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">Because that's what she looked like when she was ill, and they want to remember the other one. It's not a lie. It's a choice about which true thing to put on the wall.</p></div>
+      <p class="action">June starts scanning. Owen stands behind her with his hands folded, which is a habit from work and also just who he is.</p>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">You've done this before.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">My father's shop has been in this county for nineteen years. I've done everything before.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. TATE &amp; SONS — VIEWING ROOM — AFTERNOON</h4>
+      <p class="action">Twelve chairs. Fourteen people. A screen showing a woman in a garden in 1994, holding a hose, laughing at somebody off camera.</p>
+      <p class="action">The daughter is in the front row with her hands in her lap, absolutely composed.</p>
+      <div class="speech"><p class="cue">OWEN</p><p class="paren">(whispering, at the back)</p><p class="dline">Watch her hands.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">What?</p></div>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">Nobody cries with their face first. It's the hands.</p></div>
+      <p class="action">On screen, the woman turns and says something to the camera. The daughter's hands come apart.</p>
+    </div>
+===CH===
+TITLE: ELEVEN MINUTES
+MIN: 7
+@@SLATE
+Camera :: The screen from the back of the room, with the audience's heads in the lower third — the same composition as a church basement, in a different room.
+Roll :: Digital, 3200 ISO, the screen is the only light source; the sconces are turned off out of respect.
+Costume :: The family in dark clothes. Owen at the door in his suit. June at the projector stand in her fleece, because she is staff.
+Environment :: The viewing room at two in the afternoon: twelve chairs, a box of tissues, a photograph of the deceased by the door in a frame that has been reused.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. TATE &amp; SONS — VIEWING ROOM — AFTERNOON</h4>
+      <p class="action">Eleven minutes. A garden, a kitchen, a bowling alley, a dog that is dead too. Then a photograph that is not of the family at all: a man in a cap on a boat, holding up a fish.</p>
+      <p class="action">The room makes a sound. The daughter leans forward.</p>
+      <div class="speech"><p class="cue">DAUGHTER</p><p class="dline">That's Uncle Ray.</p></div>
+      <div class="speech"><p class="cue">SON</p><p class="paren">(from the second row)</p><p class="dline">That's the wrong uncle.</p></div>
+      <div class="speech"><p class="cue">DAUGHTER</p><p class="dline">That's Uncle Ray from the boat. Mom kept his picture in the drawer with the batteries.</p></div>
+      <p class="action">The room laughs — the good kind, the kind that comes out of a funeral like a bird out of a bush. Owen's shoulders come down an inch.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. TATE &amp; SONS — CORRIDOR — LATER</h4>
+      <p class="action">The family has gone. Owen is stacking chairs. June is coiling cable.</p>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">You left the fish in.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I left the fish in.</p></div>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">I checked the sequence twice. It wasn't in the sequence.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It was in the box. It was a photograph in the box with the others. Somebody kept it.</p></div>
+      <p class="action">Owen puts a chair against the wall and looks at her.</p>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">That was the best eleven minutes I've shown in that room in five years and I show eleven minutes three times a week.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It wasn't mine to leave in.</p></div>
+      <div class="speech"><p class="cue">OWEN</p><p class="dline">No. It was hers. That's why it worked.</p></div>
+    </div>
+===CH===
+TITLE: THE MUSIC VIDEO
+MIN: 7
+@@SLATE
+Camera :: A warehouse at midnight, handheld, following a man who is performing for a camera he has never met — the camera is a guest at a party it is also responsible for.
+Roll :: Digital, 6400 ISO, two LED panels, a smoke machine from a party store, a torch taped to a stand.
+Costume :: KJ MARLO in a puffer jacket and sunglasses at night. Eight friends in matching hoodies. DUKE in a coat with a phone in each hand.
+Environment :: A rented warehouse on the edge of the county: a concrete floor, a pallet of something covered in a tarp, a boom box, a car with its headlights on.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. WAREHOUSE — MIDNIGHT</h4>
+      <p class="action">KJ MARLO, twenty-two, walks the length of the concrete floor toward the camera, rapping under his breath, then again with his chest out.</p>
+      <div class="speech"><p class="cue">KJ</p><p class="dline">How's it look?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Dark.</p></div>
+      <div class="speech"><p class="cue">KJ</p><p class="dline">Dark is the point.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">There's dark and there's unlit. Right now you're unlit.</p></div>
+      <p class="action">Duke appears at her shoulder with a phone in each hand.</p>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">Whatever it costs, we've got it. We've got six hundred dollars and a car.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. WAREHOUSE — CONTINUOUS</h4>
+      <p class="action">June moves one panel. Then the other. KJ turns into the light and becomes, immediately, a person you would look at.</p>
+      <div class="speech"><p class="cue">KJ</p><p class="paren">(to the friends)</p><p class="dline">See that? That's the difference. That's why we're paying her.</p></div>
+      <div class="speech"><p class="cue">DUKE</p><p class="paren">(quietly, to June)</p><p class="dline">We're paying you four hundred and the rest is for the smoke machine.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Keep the smoke machine. Turn it off in twenty minutes or you'll have fog in the lens and a bill.</p></div>
+      <p class="action">He grins at her like she has just said something cool, and she realises she has.</p>
+    </div>
+===CH===
+TITLE: THE SECOND UNIT
+MIN: 6
+@@SLATE
+Camera :: A car park at three in the morning, then a low angle on a car's headlights in fog — the camera is doing the unglamorous half of the job.
+Roll :: Digital, 12,800 ISO, headlights, a street lamp, and the smoke machine finally earning its money.
+Costume :: Duke in his coat with the collar up. June in a puffer she borrowed. Two friends asleep in a car.
+Environment :: The warehouse car park at 3 a.m.: gravel, a chain-link fence, a puddle, a car doing slow circles for a shot nobody will watch twice.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. WAREHOUSE CAR PARK — 3 A.M.</h4>
+      <p class="action">The car rolls through the fog at four miles an hour. Duke stands beside June with his hands jammed in his pockets.</p>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">He's going to be big.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Maybe.</p></div>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">He's twenty-two and he's got the thing. You can see it in a frame. You're the one who said the light was wrong and he didn't argue, he just moved.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">That's not the thing. That's being twenty-two.</p></div>
+      <p class="action">Duke counts money out of a fold in his coat and hands it over: four hundred, in twenties, slightly damp.</p>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">The rest is Thursday.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">There is no rest.</p></div>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">There's always a rest. It's just usually somebody else's.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. WAREHOUSE CAR PARK — LATER</h4>
+      <p class="action">Dawn. The smoke has gone. KJ is asleep in the passenger seat of his own car with his sunglasses still on. The two friends are asleep in the back.</p>
+      <p class="action">June packs the camera in the open boot of her truck, and stops, and looks at the three of them.</p>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">You want a coffee? There's a place opens at five.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I've got a shop to open at eight.</p></div>
+      <div class="speech"><p class="cue">DUKE</p><p class="dline">Then sleep in the shop.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I do.</p></div>
+    </div>
+===CH===
+TITLE: THE MEN IN THE CAR
+MIN: 6
+@@SLATE
+Camera :: A long lens through a windscreen at dusk, so the world is a framed rectangle with a watermark of rain — the camera is being used as a witness, which it did not agree to.
+Roll :: Digital, 25,600 ISO, a motel sign, a security light, and a car's dashboard glow.
+Costume :: LORNA BECK in a fleece and a baseball cap, a thermos in the cup holder, a notebook on the passenger seat.
+Environment :: A motel on the county road: twelve doors, one ice machine, a truck with a trailer, a man in a hoodie smoking under the awning.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LORNA BECK'S CAR — DUSK</h4>
+      <p class="action">Lorna, fifty-one, has been parked here for three hours. She eats a sandwich with one hand and checks the frame with the other.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">This is the part nobody believes. Ninety percent of this job is sitting.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="paren">(on the phone)</p><p class="dline">And the other ten?</p></div>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">Writing down a licence plate in the dark and hoping the camera got it.</p></div>
+      <p class="action">A man comes out of room seven. Gets into a truck. Drives away without lights for the first fifty yards.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">There he is. There's the man who says he was in Cleveland.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — NEXT DAY</h4>
+      <p class="action">Lorna returns the camera. She stands at the counter too long, which is not something she does.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Card's in the case?</p></div>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">Card's in the case. And I want you to know I'm paying cash because the client is paying cash and I don't want a record.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The rental's a record. It's a receipt.</p></div>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">The rental's a camera on a shelf. What's on the card is a man's life.</p></div>
+      <p class="action">She puts the cash down and leaves. June looks at the card in her hand for a while before she deletes anything.</p>
+    </div>
+===CH===
+TITLE: THE PROCESS SERVER
+MIN: 7
+@@SLATE
+Camera :: Mounted on a back seat facing out, wide, low — the camera is a passenger and does not get a vote.
+Roll :: Digital, 3200 ISO, street light through a windscreen, a windscreen wiper, a folder on the seat.
+Costume :: Lorna in a blazer over the fleece today. A man in a dressing gown on a porch.
+Environment :: A residential street at seven in the morning: bins out, a dog behind a fence, a porch light still on.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LORNA BECK'S CAR — 7 A.M.</h4>
+      <p class="action">Lorna checks the folder: a name, an address, a photograph. Then she looks at the house and at the man on the porch in a dressing gown, taking in the bins.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="paren">(to herself)</p><p class="dline">That's not him. That's not him at all.</p></div>
+      <p class="action">She gets out anyway. The camera keeps running, pointed at the porch, because it was left running and nobody stopped it.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="paren">(off screen)</p><p class="dline">Excuse me. Are you Mr. Sutter?</p></div>
+      <div class="speech"><p class="cue">MAN</p><p class="paren">(off screen)</p><p class="dline">I'm his brother. He's inside. He's not well.</p></div>
+      <p class="action">A pause. Then Lorna's voice again, quieter, doing arithmetic with her own licence to carry a folder.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — LATER</h4>
+      <p class="action">June is playing the clip on the monitor. Lorna stands behind her with her arms folded.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">I served the wrong brother. The papers are on the wrong man's table and it's my name on the affidavit.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Does the camera help you or hurt you?</p></div>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">It proves I asked the right question and got the wrong answer. Which is worse, because now it's on a card.</p></div>
+      <p class="action">She looks at June. Not at the monitor. At June.</p>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">Wipe it.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It's your rental. It's your footage.</p></div>
+      <div class="speech"><p class="cue">LORNA</p><p class="dline">Then wipe it. Please.</p></div>
+      <p class="action">June's hand stays on the mouse. The clip loops. The man in the dressing gown takes in the bins again and again.</p>
+    </div>

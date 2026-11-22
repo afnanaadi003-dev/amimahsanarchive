@@ -4,7 +4,7 @@ module.exports = [
   { n: 2, title: 'THE LIGHT IS HERE', logline: 'A hardware-store clerk who knows where the light is joins a real crew for one autumn and has to choose between the road and the shop.', chapters: 30, written: true },
   { n: 3, title: 'TWENTY-SEVEN PEOPLE', logline: 'Six strangers in a church basement discover they are the entire audience for something that has already happened.', chapters: 30, written: true },
   { n: 4, title: 'DUAL-PURPOSE BRANDING', logline: 'A marketing student renames herself after a product and cannot get the old name off her birth certificate.', chapters: 30, written: true },
-  { n: 5, title: 'THE LOANER', logline: 'A camera worth more than a car changes hands eleven times in one county and comes back with a different life on it.', chapters: 31 },
+  { n: 5, title: 'THE LOANER', logline: 'A camera worth more than a car changes hands eleven times in one county and comes back with a different life on it.', chapters: 31, written: true },
   { n: 6, title: 'NO DIVING', logline: 'The last summer at a public pool scheduled for demolition, told by the lifeguard who never learned to swim.', chapters: 30 },
   { n: 7, title: 'GRANDMA JO', logline: 'An eighty-two-year-old woman testifies about a word painted on a closet door forty years ago.', chapters: 32 },
   { n: 8, title: 'THE PALETTE', logline: 'A boy builds a set out of broken pallets and finds out what his father threw away.', chapters: 30 },

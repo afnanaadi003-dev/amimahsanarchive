@@ -1,0 +1,170 @@
+TITLE: THE FLOOD
+MIN: 6
+@@SLATE
+Camera :: Handheld in rain, then a wide of a river where a road used to be — the camera gets wet and does not complain, because it is being paid.
+Roll :: Digital, 3200 ISO, grey light and headlights; rain on the lens element held there and wiped with a chamois every eleven seconds.
+Costume :: RUTH-ANNE COBB in a hi-vis jacket with EMERGENCY MANAGEMENT on the back. June in a rain jacket over the fleece.
+Environment :: The county road at the river: water over the tarmac, a submerged sign, a truck parked too close, a man in a boat.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. COUNTY ROAD — RIVER CROSSING — MORNING</h4>
+      <p class="action">Water where the road was. A stop sign with only its top half above the surface. RUTH-ANNE COBB, fifty-eight, stands in the rain with a clipboard she has given up on and a phone in a plastic bag.</p>
+      <div class="speech"><p class="cue">RUTH-ANNE</p><p class="dline">Get the waterline on the Ellis place and then get the culvert. The county needs pictures or the state doesn't send money.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">How much money?</p></div>
+      <div class="speech"><p class="cue">RUTH-ANNE</p><p class="dline">Enough to fix the road, which means enough to matter, which means they will want it documented like a crime scene.</p></div>
+      <p class="action">June films the waterline: a brown stain across a porch, four feet up. Then a child's bicycle against a fence, half in the mud.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. ELLIS PLACE — PORCH — LATER</h4>
+      <p class="action">An old woman on a porch with a blanket around her shoulders, being looked at by a neighbour. Ruth-Anne crouches in front of her.</p>
+      <div class="speech"><p class="cue">RUTH-ANNE</p><p class="dline">Mrs. Ellis. I need to ask you four questions and then I'll leave you alone.</p></div>
+      <div class="speech"><p class="cue">MRS. ELLIS</p><p class="dline">Ask them standing up. I'm not an invalid, I'm wet.</p></div>
+      <p class="action">Ruth-Anne stands up. June keeps the camera low, at the height of the porch, so the woman is looking slightly down at all of them.</p>
+      <div class="speech"><p class="cue">RUTH-ANNE</p><p class="paren">(afterwards, walking away)</p><p class="dline">You put the camera down there on purpose.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">She's eighty-one and she's sitting. I'm not going to film her from above like a problem.</p></div>
+    </div>
+===CH===
+TITLE: THE INSURANCE FORM
+MIN: 7
+@@SLATE
+Camera :: A repair bench with the camera open, then a form on a counter — the camera is now the subject and does not like it.
+Roll :: Digital, 1250 ISO, a shop lamp with a magnifier, and the green neon outside doing what it does.
+Costume :: June in the fleece with her sleeves rolled. A repair tech in his thirties with an anti-static strap.
+Environment :: A back room in a camera shop two counties over: a bench, a soldering iron, a wall of drawers labelled in a hand that is not hers.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REPAIR SHOP — BENCH — AFTERNOON</h4>
+      <p class="action">The camera is open on the bench like something in surgery. The tech, DEV, thirty-four, has a torch in his teeth.</p>
+      <div class="speech"><p class="cue">DEV</p><p class="dline">Water got in at the top plate. Not a lot. Enough.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Can you save it?</p></div>
+      <div class="speech"><p class="cue">DEV</p><p class="dline">I can save it. The question is whether you want to pay to save it.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">How much.</p></div>
+      <div class="speech"><p class="cue">DEV</p><p class="dline">Nineteen hundred. And it'll never be a rental camera again. Rentals get dropped, and dropped cameras get sold to schools.</p></div>
+      <p class="action">June looks at the body on the bench: serial 0447, open, ordinary, expensive.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — NEXT WEEK</h4>
+      <p class="action">The insurance form: nine pages, a box for the serial number, a box for the date of loss, a box that says DESCRIBE THE CIRCUMSTANCES.</p>
+      <p class="action">June writes: <i>Rented to county emergency management for flood documentation. Rain. Not negligence.</i></p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">They'll deny it.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then they'll deny it in writing and I'll have a piece of paper that says I tried.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">The premium's already fourteen hundred a year. If we claim, it goes up.</p></div>
+      <p class="action">June signs the form. Then she puts the pen down and looks at the framed photograph on the wall: her father, fifty-one, holding this camera like a trophy.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It's insured for forty-two. The whole shop is insured for forty-two.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">That's what it costs to be in this business.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">No. That's what it costs to stay in it.</p></div>
+    </div>
+===CH===
+TITLE: THE PLAY
+MIN: 6
+@@SLATE
+Camera :: A community theater from the back row, then a slow push down the aisle — the camera is the only audience member who came for the whole run.
+Roll :: Digital, 6400 ISO, stage light at 3200K and a follow spot that keeps losing its target.
+Costume :: HANK MOREAU in a black sweater and a headset. Twelve actors in period costume, two of them clearly borrowed from a church.
+Environment :: The Bell County Playhouse: ninety seats, a stage with a hand-painted backdrop of a town, a piano in the pit, a smell of dust and hairspray.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PLAYHOUSE — BACK ROW — EVENING</h4>
+      <p class="action">HANK MOREAU, sixty-three, sits in the back with the camera on a tripod beside him, watching his own play through a monitor because he cannot watch it any other way.</p>
+      <div class="speech"><p class="cue">HANK</p><p class="dline">This is the last performance. The building's been sold to a church that needs a youth hall.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">So this is the record.</p></div>
+      <div class="speech"><p class="cue">HANK</p><p class="dline">This is the record. Twelve people who've been rehearsing since August and a man in the third row who's seen it five times.</p></div>
+      <p class="action">On stage, a girl in a white dress climbs a ladder and says a line about the moon. The follow spot misses her by a foot.</p>
+      <div class="speech"><p class="cue">HANK</p><p class="paren">(into the headset)</p><p class="dline">Spot. Spot. She's on the ladder, not in the kitchen.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PLAYHOUSE — STAGE — LATER</h4>
+      <p class="action">After the curtain. The company stands in a half-circle on the stage, in costume, holding plastic cups.</p>
+      <div class="speech"><p class="cue">HANK</p><p class="dline">I've directed in this room for thirty-one years. I've done forty-two plays and I have never once had a full house.</p></div>
+      <div class="speech"><p class="cue">ACTOR</p><p class="dline">How many tonight?</p></div>
+      <div class="speech"><p class="cue">HANK</p><p class="dline">Fifty-six. And a camera.</p></div>
+      <p class="action">He raises his cup. They raise theirs. The camera, on the tripod at the back, keeps rolling through the toast because nobody remembered to stop it.</p>
+      <div class="speech"><p class="cue">HANK</p><p class="paren">(to June, quietly)</p><p class="dline">Keep the whole thing. Including the spot missing her. That's the play.</p></div>
+    </div>
+===CH===
+TITLE: THE LAST RENTAL
+MIN: 6
+@@SLATE
+Camera :: A counter at closing time, two people and a case — the camera is on the shelf and the shelf is the scene.
+Roll :: Digital, 2000 ISO, one bench lamp, the neon off for the night, the street dark.
+Costume :: Kofi in a good jacket, which is how you can tell he is nervous. June in the fleece with her keys in her hand.
+Environment :: The shop at 6:10 p.m., chairs up, till counted, a box by the door marked SALE.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — EVENING</h4>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Mr. Duarte said you might rent to me. Personally.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Mr. Duarte is a teacher with a school purchase order. You're sixteen with a jacket.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I've got three hundred dollars. I saved it from the summer.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The insurance excess alone is four thousand.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I know. I read the form.</p></div>
+      <p class="action">June stops. Looks at him properly for the first time.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">You read the form.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">It's on the counter. It says serial 0447 and it says insured value forty-two thousand. I read it while you were in the back.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — CONTINUOUS</h4>
+      <p class="action">June takes the camera out of the case and sets it on the counter, which is not where a forty-two-thousand-dollar camera goes.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Weekend. Back Monday by noon. If it leaves the county I will find out, and if it gets rained on I will find out, and if you put it on a tripod on a gravel road and walk away, I will find out.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Yes ma'am.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">And I'm not taking your three hundred dollars.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Why not?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Because I'd have to write a form for it, and if I write a form then the insurance is on you and the insurance is a joke.</p></div>
+      <p class="action">She hands him the case without writing anything, which is the mistake the entire rest of the series is built on.</p>
+    </div>
+===CH===
+TITLE: THE CARD
+MIN: 7
+@@SLATE
+Camera :: A camera case on a counter, closed, then opened — the camera treats the object like a letter that has been posted through a door.
+Roll :: Digital, 2500 ISO, Monday morning light through a shop window with the sign turned to CLOSED.
+Costume :: June in her coat, not yet taken off. Marcus with a clipboard.
+Environment :: The shop on Monday at 11:40: a delivery at the door, a kettle just boiled, the ledger open at today's page.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — MONDAY</h4>
+      <p class="action">Kofi sets the case on the counter at 11:40, twenty minutes early. He looks like a boy who has not slept and has been trying to decide something.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Anything broken?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Anything wet?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">No.</p></div>
+      <p class="action">He stands there. Then he says, all in one breath:</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">There's a card in it. It's not mine. I mean it is mine, I put it in, but the footage isn't only mine. I found the other card in the pocket of the case and I watched it and then I did something and I'm sorry.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — CONTINUOUS</h4>
+      <p class="action">June opens the case. In the media slot, a card with a strip of tape on it that says, in a sixteen-year-old's handwriting: <i>WATCH ALL OF IT.</i></p>
+      <p class="action">She looks at Kofi. He does not run, which is somehow worse.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">How many clips?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Forty-one.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Of what?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Of the year. Of everybody who used it. I had it for two days and I spent one of them watching and the other one filming the last thing.</p></div>
+      <p class="action">June puts the card into the reader. The monitor fills with a wedding.</p>
+    </div>
+===CH===
+TITLE: THE FIRST NAME
+MIN: 7
+@@SLATE
+Camera :: The monitor, then June's face, then the monitor again — a shot-reverse-shot with a screen, which is the only way to film somebody watching.
+Roll :: Digital, 1600 ISO, the workbench lamp off, the screen doing all the lighting.
+Costume :: June with her coat still on and one hand over her mouth. Marcus leaning on the bench behind her.
+Environment :: The workbench at noon with the shop's sign still on CLOSED and a customer knocking twice and going away.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — NOON</h4>
+      <p class="action">Clip one: the Ferris wedding, shot properly, the father's speech, the bride barefoot. Then — the part Denny deleted — the kitchen, twenty-two minutes, a man talking about his wife.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">That's the drive in the drawer.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">That's the drive in the drawer.</p></div>
+      <p class="action">Clip two: the church livestream, and then forty seconds of empty sanctuary, morning light on eleven pews, no sound but the building.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">He kept the empty room.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Everybody keeps the empty room. Nobody else watches it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — LATER</h4>
+      <p class="action">Clip nine: the funeral home, the fish, the laugh. Clip twelve: the warehouse, KJ Marlo turning into the light. Clip nineteen: the flood, the waterline, the bicycle.</p>
+      <p class="action">June is not moving. Marcus has stopped asking questions.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">He's cut it. It's not raw. He's been editing for two days.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">A sixteen-year-old.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">A sixteen-year-old with a forty-two-thousand-dollar camera and no supervision.</p></div>
+      <p class="action">Clip twenty-six begins with a room she knows: Riverbend Care, second floor, the window with the bird feeder outside it.</p>
+      <p class="action">June's hand goes flat on the bench.</p>
+    </div>

@@ -1,0 +1,205 @@
+TITLE: THE WOMAN IN THE CHURCH
+MIN: 6
+@@SLATE
+Camera :: A church office the size of a closet, then a shoebox of index cards — the camera gives paper the close-ups.
+Roll :: Digital, 2500 ISO, a desk lamp and a window onto a car park; the radiator ticking.
+Costume :: Shanice in her work clothes, lanyard off. Reid in a sweater with his glasses on a cord.
+Environment :: The church office: a desk, two chairs, a filing cabinet, a box of prayer cards with a slot cut in the lid.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PRESBYTERIAN — OFFICE — AFTERNOON</h4>
+      <p class="action">June puts a tablet on the desk and plays forty seconds: an empty sanctuary, morning light, eleven pews.</p>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">I left it running.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">You left it running and a sixteen-year-old kept it and cut it into a film about this county.</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Play it again.</p></div>
+      <p class="action">She plays it again. Reid watches the empty room with his hands folded, the way he watches everything.</p>
+      <div class="speech"><p class="cue">REID</p><p class="dline">I've pastored in that room for nineteen years. I've never once seen it from there.</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">It looks like it's waiting for something.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PRESBYTERIAN — OFFICE — CONTINUOUS</h4>
+      <p class="action">June takes the prayer box off the cabinet and turns it over. Cards slide out onto the desk: forty, fifty, more.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Which one's mine?</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">They don't have names. That's the point.</p></div>
+      <p class="action">June reads them one at a time. A hip. A son in Ohio. A dog. A marriage. A man's eyesight.</p>
+      <p class="action">Then one in pencil: <i>For the man in the camera. I hope he gets home.</i></p>
+      <div class="speech"><p class="cue">REID</p><p class="dline">You can take it. It's addressed to him.</p></div>
+      <p class="action">June folds it once and puts it in the inside pocket of her coat, which is where she keeps the logbook key.</p>
+    </div>
+===CH===
+TITLE: THE BOY WHO WANTED TO BE A DIRECTOR
+MIN: 7
+@@SLATE
+Camera :: Two people on either side of a workbench, seated, the camera at the height of the bench — a conversation between equals, which it is not yet.
+Roll :: Digital, 2000 ISO, one lamp; the shop dark behind them.
+Costume :: Kofi in the good jacket again. June in the fleece, arms folded, then not folded.
+Environment :: The workbench at seven at night: the camera in its case, a card in a reader, two mugs, a ledger with a page open.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — EVENING</h4>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">How did you get into Riverbend?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I walk in. Nobody stops a kid with a camera. They think you're doing a project.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">And you asked him questions.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I asked him if he wanted to say anything to the person who owns the camera.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Why.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Because there's a picture of him on your wall holding it, and because my grandfather was in that place for two years and nobody ever asked him anything.</p></div>
+      <p class="action">June sits back. The shop is very quiet.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">You understand what you did.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I took a camera into a care home and filmed a man who couldn't get up.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">You filmed my father without asking me.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">I asked him.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">He can't say more than four words in a row.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">He said yes twice.</p></div>
+      <p class="action">June looks at him for a long moment. Then she opens the ledger and turns it around.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">There's no line for you in this book. I didn't write one. That's my mistake, not yours. But every single thing that came back to this shop got a line, and now there's a card in my reader with forty-one clips on it and no paperwork at all.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Then write the line.</p></div>
+    </div>
+===CH===
+TITLE: THE RENTER WHO DIDN'T PAY
+MIN: 6
+@@SLATE
+Camera :: Two people in a shop with the sign off, then a close-up of a ledger page being filled in — the film's smallest and most important action.
+Roll :: Digital, 2500 ISO, bench lamp and street light; the ledger is the brightest thing in the room.
+Costume :: Marcus with his coat on, halfway out. June at the counter with the blue pen.
+Environment :: The counter at eight at night: the ledger, a card, a case, a receipt book with a carbon sheet.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — NIGHT</h4>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">You gave a forty-two-thousand-dollar camera to a sixteen-year-old with no form.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Yes.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">If he'd dropped it, the insurance wouldn't have paid, the shop would have been finished, and you'd have been the one who did it. Not him. You.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">And you'd have done it anyway.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I did do it anyway.</p></div>
+      <p class="action">Marcus stands there with his coat half on. Then he takes it off and sits down on the stool.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — CONTINUOUS</h4>
+      <p class="action">June writes in the ledger, in block capitals, in the same pen her father used:</p>
+      <p class="action"><i>14 Nov — KOFI (school) — 0447 body + 2 lenses — no charge — returned Mon. Cleaned. Runs like a dream.</i></p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">"Runs like a dream."</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It's what he wrote.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">It rattles at 3200.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then it rattles like a dream.</p></div>
+      <p class="action">She closes the book. Marcus laughs — the first laugh in the shop in this whole series — and it goes on a beat too long.</p>
+    </div>
+===CH===
+TITLE: THE OFFER
+MIN: 7
+@@SLATE
+Camera :: A man in a good coat in a shop full of old gear, then a low angle on a case being opened on a counter — money and machinery in the same frame.
+Roll :: Digital, 1250 ISO, a grey afternoon, the window doing most of the work.
+Costume :: VIKRAM SOOD in a coat worth more than the counter. June in the fleece, which she has not changed out of in two days.
+Environment :: The shop on a Thursday: a case open, a coffee bought for her that she has not touched, a folder of paperwork.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — AFTERNOON</h4>
+      <p class="action">VIKRAM SOOD, forty-seven, handles the camera the way a jeweller handles a stone: quickly, expertly, without affection.</p>
+      <div class="speech"><p class="cue">VIKRAM</p><p class="dline">Thirty-eight for the body and the two lenses. I'll take the batteries and the cards at valuation. Call it forty.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Forty-two is the insured value.</p></div>
+      <div class="speech"><p class="cue">VIKRAM</p><p class="dline">Insured value is what you tell an insurer. Forty is what a man with a van and a cheque book offers you on a Thursday.</p></div>
+      <p class="action">He sets it down and looks at the room: the pegboard, the ledger, the photograph on the wall.</p>
+      <div class="speech"><p class="cue">VIKRAM</p><p class="dline">This shop hasn't turned a profit since 2019 and you know it. I'm not insulting you. I'm the only person in this county who knows what that thing is.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. RIVERBEND CARE — ROOM — AFTERNOON</h4>
+      <p class="action">The invoice on the bed table, under a glass of water: $4,180. Gene Hollis, seventy-one, asleep in the chair by the window with a blanket over his knees.</p>
+      <p class="action">June sits with him. She has the folder from Vikram in her bag and does not take it out.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">A man offered me forty thousand dollars today for the camera.</p></div>
+      <p class="action">Gene's eyes open. He looks at her. Then at the window.</p>
+      <div class="speech"><p class="cue">GENE</p><p class="paren">(slowly)</p><p class="dline">Which one.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The Marchetti. 0447.</p></div>
+      <p class="action">He is quiet for a long time. Then he lifts one hand and taps the arm of the chair twice, which is how he has said no since April.</p>
+    </div>
+===CH===
+TITLE: THE LAST INTERVIEW
+MIN: 8
+@@SLATE
+Camera :: A care-home room from a chair's height, the camera on a tripod at the foot of the bed — the composition is deliberately humble, because the boy who shot it was being polite.
+Roll :: Digital, 6400 ISO, a window with a bird feeder and a lamp with a paper shade; the light is warm and slightly too yellow.
+Costume :: Gene in a cardigan over pyjamas, a blanket, one slipper. Kofi, off camera, in his school jacket.
+Environment :: Riverbend Care, room 214: a bed, a chair, a bird feeder, a framed photograph of a shop on the nightstand, a television showing nothing.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. RIVERBEND CARE — ROOM 214 — AFTERNOON</h4>
+      <p class="action">The clip is nine minutes long. Gene Hollis sits in the chair by the window. Off camera, a boy's voice.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="paren">(off camera)</p><p class="dline">What's the camera?</p></div>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">Marchetti. Italian. Bought in... two thousand nine. Forty-one thousand dollars and my wife didn't speak to me for a week.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="paren">(off camera)</p><p class="dline">Was it worth it?</p></div>
+      <p class="action">Gene laughs, which turns into a cough, which he waves away with one hand.</p>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">It's been to four hundred weddings and two floods and one funeral home and a music video where a boy wore sunglasses at night. Worth it.</p></div>
+      <p class="action">He looks out of the window at the bird feeder.</p>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">Ask me the other thing. The one you came for.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. RIVERBEND CARE — ROOM 214 — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">KOFI</p><p class="paren">(off camera)</p><p class="dline">Does she know?</p></div>
+      <p class="action">A long pause. Gene's hand finds the arm of the chair.</p>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">She thinks she's keeping it open for me. She's keeping it open for her. There's a difference and it's the whole... it's the whole thing.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="paren">(off camera)</p><p class="dline">What should I tell her?</p></div>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">Tell her: sell the camera. Don't sell the logbook.</p></div>
+      <p class="action">He stops. Breathes. Tries again, and this time it comes out clean.</p>
+      <div class="speech"><p class="cue">GENE</p><p class="dline">And tell her she's better than me. She's been better than me since 2014 and I never said it because a man doesn't say it.</p></div>
+      <p class="action">The bird feeder moves. The clip ends on Gene looking at it, and the last thing on the card is four seconds of a sixteen-year-old's hand reaching in to stop the recording.</p>
+    </div>
+===CH===
+TITLE: THE CAMERA COMES BACK
+MIN: 8
+@@SLATE
+Camera :: The shop from the street at night, full of people — the camera stays outside for a beat, then comes in through the door.
+Roll :: Digital, 3200 ISO, workbench lamps on stands, a projector borrowed from the school, a sheet tacked over the pegboard.
+Costume :: Everyone's coat. Marcus in a shirt. Kofi in the good jacket with a shirt underneath it.
+Environment :: Hollis Camera Rentals on a Friday night: thirty people, a shop counter used as a buffet, a sheet on the wall, a card reader on a stool.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — SHOP FLOOR — NIGHT</h4>
+      <p class="action">Thirty people in a rental shop. Denny Boyle at the back, embarrassed. Ferris, the father of the bride, in his work coat. Owen Tate with his hands folded. Brenda Salas. Lorna Beck, arms crossed, near the door. Shanice and Pastor Reid. Hank Moreau. Ruth-Anne Cobb. KJ Marlo with his hood down.</p>
+      <p class="action">Kofi stands by the projector with his hands in his pockets.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">This is a film about this county, made by a sixteen-year-old with a camera he shouldn't have had.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">It's about eleven people who all used the same camera in one year and never met each other.</p></div>
+      <div class="speech"><p class="cue">DENNY</p><p class="paren">(from the back)</p><p class="dline">Can we not put the kitchen in it?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The kitchen's the best part, Denny.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — SHOP FLOOR — LATER</h4>
+      <p class="action">The film runs twenty-six minutes. The wedding, the sanctuary, the milkman, the growth chart, the fish, the warehouse, the waterline, the play, the motel, the care home.</p>
+      <p class="action">When it ends, nobody claps for a second. Then Owen Tate starts it, and it goes around the room like weather.</p>
+      <div class="speech"><p class="cue">VIKRAM</p><p class="paren">(from the doorway, coat on)</p><p class="dline">Is the camera still for sale?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The camera's for sale.</p></div>
+      <div class="speech"><p class="cue">VIKRAM</p><p class="dline">Forty.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Forty. And I keep the logbook and the cards.</p></div>
+      <p class="action">Vikram looks around the shop at thirty people in coats, and nods, once, the way a man nods when he has understood that he is not the main character.</p>
+    </div>
+===CH===
+TITLE: SERIAL 0447, AGAIN
+MIN: 8
+@@SLATE
+Camera :: A counter, a form, two people writing — the camera returns to the composition of chapter one and finds it changed.
+Roll :: Digital, 1600 ISO, morning light through the window with the sign turned to OPEN.
+Costume :: June in a shirt, no fleece, hair down. Kofi in the school jacket, a form in front of him.
+Environment :: Hollis Camera Rentals, three weeks later: a new camera body in a new case, the pegboard tidier, the framed photograph still on the wall, the ledger open.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — MORNING</h4>
+      <p class="action">A rental form on the counter. Serial number box: 0612. Name: KOFI ADJEI. Kit: body, 2 lenses, 3 batteries. Charge: $60.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Sixty dollars.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Sixty dollars. That's the rate for a student, and it's on a form, and the form means the insurance is on me, which means I'm the one who's nervous instead of you.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">What's it for?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">The county's paying for a film about the flood. Ruth-Anne got a grant and the grant says local vendor, and I'm the local vendor.</p></div>
+      <p class="action">Kofi signs. June countersigns. Then she writes the line in the ledger in block capitals:</p>
+      <p class="action"><i>8 Dec — KOFI (county) — 0612 — $60 — runs like a dream.</i></p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — CONTINUOUS</h4>
+      <p class="action">He picks up the case. At the door he turns around.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">June. The old one. 0447. Where's it going?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">A rental house in the city. It'll be on a shelf with two hundred others and nobody will ever know it was in a flood.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">That's sad.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It's a camera. It's got one job and it's going to keep doing it.</p></div>
+      <p class="action">She looks at the wall: the photograph of her father at fifty-one, grinning, holding a camera that is now in a van somewhere on Route 6.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">And it's not the only thing in this shop that did its job.</p></div>
+      <p class="action">She takes the prayer card out of her coat pocket and pins it to the pegboard, next to the key hooks, where the next person will see it and not know what it means.</p>
+    </div>

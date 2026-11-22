@@ -1,0 +1,166 @@
+TITLE: THE AV CART
+MIN: 6
+@@SLATE
+Camera :: A school corridor at 7:40 a.m., then a slow pan of a cart that has been repaired with tape — the camera is one more piece of equipment being wheeled to work.
+Roll :: Digital, 2000 ISO, fluorescent tubes and a window at the end of the hall with wire mesh in the glass.
+Costume :: MR. DUARTE in a tie and a cardigan, keys on a lanyard. Kofi in a school jacket over a hoodie.
+Environment :: Bell County High: a corridor of lockers, a trophy case from 1998, a cart with a camera case, a projector, and a coil of cable.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — CORRIDOR — MORNING</h4>
+      <p class="action">MR. DUARTE, fifty-two, pulls the cart. KOFI, sixteen, walks beside it with his hands in his pockets, which is the closest thing to help he can offer without being asked.</p>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">The district cut the media budget by sixty percent, so we are renting this for two days instead of owning one for ten years.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">That's a bad deal.</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">That's a lease. Everybody in this building is on one.</p></div>
+      <p class="action">He stops the cart outside room 12 and unlocks the door with a key that has a piece of tape on it that says AV.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Mr. Duarte. What's it worth?</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">More than my car, less than my house, and if you drop it we will be paying it off until you're thirty.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — ROOM 12 — CONTINUOUS</h4>
+      <p class="action">Room 12: twenty desks, a whiteboard, a poster of a film set that says EVERYBODY STARTS SOMEWHERE, and a window with a view of the parking lot.</p>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">Assignment. One minute. One subject. You may not interview a teacher and you may not interview each other.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Who's left?</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">That's the assignment.</p></div>
+      <p class="action">Kofi looks out the window at the parking lot. Then at the camera on the cart. Then back out the window, where a man is sitting in a truck with the engine off.</p>
+    </div>
+===CH===
+TITLE: THE STUDENT'S FILM
+MIN: 7
+@@SLATE
+Camera :: A one-minute film, shown in full, then the room watching it — the camera does not editorialize about the film, which is the respect it deserves.
+Roll :: Digital, 800 ISO, a school parking lot at 2:40 p.m. and the last of the October light.
+Costume :: Kofi in his own jacket now, no hoodie. The subject in a work coat with a name patch.
+Environment :: The visitor's row of the parking lot: four spaces, a lamp post, a delivery truck with the engine off and a man eating a sandwich.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — ROOM 12 — AFTERNOON</h4>
+      <p class="action">Kofi's film. One minute. A static frame on a truck in a school lot. A man in the cab, eating a sandwich with the door open.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="paren">(V.O.)</p><p class="dline">This is Mr. Odell. He delivers the milk. He's been doing it for twenty-six years and he has never been inside this building.</p></div>
+      <p class="action">On screen, the man looks up at the school, chewing. Then he looks back at his sandwich.</p>
+      <div class="speech"><p class="cue">ODELL</p><p class="paren">(on screen)</p><p class="dline">My daughter went here. I used to wave at her window. She never waved back, because you don't, at that age.</p></div>
+      <p class="action">The film ends on the truck pulling away. The room is quiet. Duarte does not say anything for a moment.</p>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">Where did you put the camera?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">On the curb. Low. So he'd be looking down at it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — ROOM 12 — CONTINUOUS</h4>
+      <p class="action">After the bell. Kofi is packing the cart. Duarte is writing in a gradebook.</p>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">You know what you did that the others didn't?</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Waited.</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">You waited and you didn't ask him to be interesting. That's the whole job. The rest is lenses.</p></div>
+      <p class="action">Kofi lifts the camera out of the case to put it back, and stops. Reads the plate.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Serial 0447.</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">Don't get attached. It goes back Friday.</p></div>
+    </div>
+===CH===
+TITLE: THE STAFF ROOM
+MIN: 6
+@@SLATE
+Camera :: A staff room from the doorway, then closer, past a microwave and a stack of marking — the camera is not welcome here and knows it.
+Roll :: Digital, 2500 ISO, a window with a blind half down, a kettle, a fluorescent that flickers on a two-second cycle.
+Costume :: Duarte in his cardigan. Two teachers in lanyards. A principal in a suit jacket over a polo.
+Environment :: The staff room at lunch: six chairs, a table with a fruit bowl nobody eats from, a noticeboard of memos about the parking lot.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — STAFF ROOM — LUNCH</h4>
+      <p class="action">Duarte is showing the principal Kofi's film on a laptop. Two other teachers lean in because a laptop in a staff room is a magnet.</p>
+      <div class="speech"><p class="cue">PRINCIPAL</p><p class="dline">This is good.</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">This is the best thing a student has made in this building in nine years.</p></div>
+      <div class="speech"><p class="cue">PRINCIPAL</p><p class="dline">Can we put it on the district channel?</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">It's a film about a milkman who's never been inside the school. It's not a recruitment video.</p></div>
+      <div class="speech"><p class="cue">PRINCIPAL</p><p class="dline">Everything's a recruitment video. I don't make the rules. I make the newsletter.</p></div>
+      <p class="action">Duarte closes the laptop. The fluorescent flickers twice, like it is agreeing with somebody.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY HIGH — CORRIDOR — AFTERNOON</h4>
+      <p class="action">Duarte wheels the cart back to the office to be picked up. Kofi walks with him again, hands out of his pockets this time, carrying the case.</p>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">Can I ask you something dumb?</p></div>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">Those are the only questions worth the walk.</p></div>
+      <div class="speech"><p class="cue">KOFI</p><p class="dline">How do you know if you're good, or if you're just the only one doing it?</p></div>
+      <p class="action">Duarte stops the cart outside the office.</p>
+      <div class="speech"><p class="cue">DUARTE</p><p class="dline">You don't. Not for about ten years. What you do is keep the camera pointed at something that isn't you and hope the difference shows up in the footage.</p></div>
+    </div>
+===CH===
+TITLE: THE CLEANING
+MIN: 7
+@@SLATE
+Camera :: Macro on a swab, then a wide of a woman alone in a shop at nine at night — the camera keeps its distance and lets the room be big.
+Roll :: Digital, 1600 ISO, one bench lamp and the neon from the street, green on one wall.
+Costume :: June in the fleece with her hair tied up. A coat over the back of the chair, not worn.
+Environment :: The workbench at nine at night: a bottle of sensor fluid, a bin of swabs, a care-home invoice under a magnet on the pegboard.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — NIGHT</h4>
+      <p class="action">June cleans the camera. The same four movements, in the same order, which she has done maybe eleven thousand times.</p>
+      <p class="action">The invoice under the magnet: RIVERBEND CARE — MONTHLY — $4,180.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="paren">(from the door)</p><p class="dline">You're still here.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I'm always still here.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">The Schenectady people emailed again. They'll give you thirty-eight for the body and the two lenses.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Thirty-eight thousand.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">Thirty-eight thousand. That's nine months at Riverbend.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — CONTINUOUS</h4>
+      <p class="action">June sets the camera in the case and latches it. Then she opens the ledger to a page from 2009 and reads her father's handwriting: <i>0447 out — Ferris wedding — return Mon. Cleaned. Runs like a dream.</i></p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">He wrote the same thing every time. "Runs like a dream."</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">Did it?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It overheats in direct sun and the fan rattles at anything over 3200. He loved it more than the shop.</p></div>
+      <p class="action">She closes the ledger. Puts the invoice in her bag. Turns off the bench lamp.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">June. Nine months is nine months.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">I know what nine months is. I've been counting them since April.</p></div>
+    </div>
+===CH===
+TITLE: THE LISTING
+MIN: 6
+@@SLATE
+Camera :: A house shot the way houses are shot on the internet: wide, bright, empty — then a cut to the same room shot badly, from a corner where a person would stand.
+Roll :: Digital, 6400 ISO pulled down to 400, every blind open, every lamp on, a cleaner's van in the drive.
+Costume :: BRENDA SALAS in a blazer and sneakers, a tablet in one hand and a lint roller in the other.
+Environment :: 14 Elm Street: four bedrooms, new floors, a kitchen with a bowl of lemons nobody will eat, a sign in the yard.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. 14 ELM STREET — LIVING ROOM — MORNING</h4>
+      <p class="action">Brenda moves a chair two inches. Then back one inch. Then she stands behind the camera and looks at the frame like a general.</p>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">This is the house. This is the one that gets me out of this county.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="paren">(operating)</p><p class="dline">You're selling a house, not leaving.</p></div>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">June. I have sold forty-one houses in four years. I am one good listing from a brokerage with my name on the window, and this is the listing.</p></div>
+      <p class="action">She looks through the viewfinder, adjusts the frame, and nods.</p>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">Wide. Slow. And don't put the neighbours in it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. 14 ELM STREET — UPSTAIRS HALLWAY — LATER</h4>
+      <p class="action">The camera goes up the stairs. Brenda walks ahead, opening doors, narrating a life that is not hers.</p>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">Primary bedroom, ensuite, walk-in. And this is the little room — office, nursery, whatever you need.</p></div>
+      <p class="action">The little room: pale blue walls, a growth chart still taped to the doorframe, three pencil marks with dates, the last one in 2019.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Brenda.</p></div>
+      <div class="speech"><p class="cue">BRENDA</p><p class="paren">(already moving)</p><p class="dline">We'll paint over it. They always paint over it.</p></div>
+      <p class="action">June keeps the camera on the doorframe for four seconds longer than she needs to.</p>
+    </div>
+===CH===
+TITLE: THE HOUSE ON ELM
+MIN: 7
+@@SLATE
+Camera :: The same house at dusk, lit by the camera's own lamp, empty and honest — the film quietly abandons the sales pitch.
+Roll :: Digital, 10,000 ISO, one practical and a torch; the rooms go soft and blue at the edges.
+Costume :: June in her coat with the collar up. Brenda with her blazer buttoned and her tablet put away.
+Environment :: 14 Elm Street at dusk: no furniture, a kettle left on the counter, a mark on the wall where a crucifix hung, a back door that doesn't lock.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. 14 ELM STREET — KITCHEN — DUSK</h4>
+      <p class="action">Brenda has gone to the car to take a call. June stays, because the light in the kitchen has gone the colour of the inside of an egg, and because there is a kettle on the counter.</p>
+      <p class="action">She turns the camera on the kettle. Then on the mark on the wall. Then she opens a cupboard, which is empty except for a child's plastic cup.</p>
+      <div class="speech"><p class="cue">BRENDA</p><p class="paren">(from the doorway)</p><p class="dline">What are you doing?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Getting the room.</p></div>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">The room's empty. Empty sells.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Empty sells to people who want to put their own life in it. This room already had one and somebody's going to feel it and not know why.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. 14 ELM STREET — FRONT PORCH — NIGHT</h4>
+      <p class="action">Brenda sits on the porch step with her tablet face down beside her. June packs the camera.</p>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">The family that lived here — the wife died. The husband's in assisted living in the city and the daughter's selling it from Ohio and she's never seen the inside.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then send her the four seconds with the growth chart.</p></div>
+      <div class="speech"><p class="cue">BRENDA</p><p class="dline">That's not a listing.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">No. That's the thing the listing's for.</p></div>
+      <p class="action">Brenda looks at the dark house for a while. Then she picks up her tablet and does not open it.</p>
+    </div>

@@ -6,6 +6,7 @@ const doneChapters = done.reduce((a, s) => a + s.chapters, 0);
 const cards = SERIES.map((s) => {
   const live = !!s.written;
   const href = live ? 'series-0' + s.n + '.html' : null;
+  const poster = live && s.n === 1 ? 'poster.svg' : live ? `poster-0${s.n}.svg` : 'poster-blank.svg';
   const body = `
     <span class="sn">${String(s.n).padStart(2, '0')}</span>
     <h3>${s.title}</h3>
@@ -14,9 +15,7 @@ const cards = SERIES.map((s) => {
     ${live
       ? `<a class="go" href="${href}">Read series ${s.n} <span>→</span></a>`
       : `<span class="soon">Not yet written</span>`}`;
-  return live
-    ? `<article class="card live">${body}</article>`
-    : `<article class="card">${body}</article>`;
+  return `<article class="card${live ? ' live' : ''}" style="background:url('${poster}') no-repeat center/cover">${body}</article>`;
 }).join('\n');
 
 const html = `<!doctype html>

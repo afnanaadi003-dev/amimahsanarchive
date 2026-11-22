@@ -1,0 +1,169 @@
+TITLE: SERIAL 0447
+MIN: 6
+@@SLATE
+Camera :: Static on a workbench, then a slow orbit of the object itself — the camera is the only thing in the film that is never filmed by itself.
+Roll :: Digital, 1600 ISO, a shop with one window and six years of dust in the light.
+Costume :: June in a fleece with the shop's name embroidered badly. Marcus in a hoodie and exam gloves.
+Environment :: Hollis Camera Rentals: a counter, a wall of cases, a pegboard of batteries, a kettle, a framed photograph of a man holding this exact camera in 2009.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — MORNING</h4>
+      <p class="action">A cinema camera in a foam cutout, body the size of a shoebox, matte black, serial number stamped on the plate: 0447. JUNE HOLLIS, thirty-four, cleans the sensor with a swab, one pass, then a second because the first one made her nervous.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">You clean that thing like it's a baby.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">It's worth more than the truck outside.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">The truck outside is worth nine hundred dollars.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then it's worth more than seven trucks.</p></div>
+      <p class="action">She sets it in the case, closes the latches, and writes on the rental form in block capitals: SERIAL 0447 — OUT.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — CONTINUOUS</h4>
+      <p class="action">The shop's logbook is older than June's career: a hardback ledger, columns for date, name, kit, and a column at the far right headed CONDITION, which her father filled in for nineteen years in the same blue pen.</p>
+      <p class="action">On the wall, the framed photograph: GENE HOLLIS, fifty-one, holding serial 0447 on the day he bought it, standing in this room, grinning like a man who has just done something irresponsible.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">Another email from the city. They want a number by Friday.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then give them a number. Give them the number that means we're thinking about it.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">They've had that number for four months.</p></div>
+      <p class="action">June opens the ledger to today's date, and there, at the top of the page in her father's handwriting from before the stroke, is a line she did not write.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="paren">(quietly)</p><p class="dline">Dad.</p></div>
+    </div>
+===CH===
+TITLE: THE WEDDING, FIRST
+MIN: 6
+@@SLATE
+Camera :: Handheld at a wedding, the camera moving like a guest who has been told to keep moving — then a cut to the same wedding through a viewfinder.
+Roll :: Digital, 800 ISO, a rented hall with string lights and a DJ's blue wash competing with the candles.
+Costume :: DENNY BOYLE in a black shirt with the sleeves rolled, a camera harness, and two of everything.
+Environment :: The Bell County Grange Hall: folding tables, a cake, a sign that says WELCOME TO THE BEGINNING, a generator humming outside.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — MORNING</h4>
+      <p class="action">DENNY BOYLE, thirty-eight, counts cash onto the counter in twenties, licking his thumb like a man in a film about a man counting cash.</p>
+      <div class="speech"><p class="cue">DENNY</p><p class="dline">Three days. Saturday to Monday. I'll bring it back cleaner than I got it.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Nobody brings it back cleaner. Bring it back on time.</p></div>
+      <div class="speech"><p class="cue">DENNY</p><p class="dline">June. It's the biggest wedding in the county this year. Two hundred guests. The bride's father's a contractor.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then charge him for the second camera.</p></div>
+      <p class="action">He laughs and takes the case. The bell over the door does what it has done since 2004.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. GRANGE HALL — RECEPTION — NIGHT</h4>
+      <p class="action">String lights. A DJ. Two hundred people and a floor that has hosted every dance in this county since the war. Denny moves through it with the camera on his shoulder, and the camera — serial 0447 — records a room at 6400 ISO like it is daylight.</p>
+      <p class="action">He finds the bride's father, a big man in a rented jacket, standing at the edge of the floor with a drink he has not touched.</p>
+      <div class="speech"><p class="cue">DENNY</p><p class="paren">(off camera)</p><p class="dline">Mr. Ferris. Say something for the film.</p></div>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">I've been trying to think of something all night.</p></div>
+      <div class="speech"><p class="cue">DENNY</p><p class="dline">Then say that.</p></div>
+      <p class="action">Ferris looks into the lens. The lights go blue and then gold behind him.</p>
+    </div>
+===CH===
+TITLE: THE FATHER OF THE BRIDE
+MIN: 6
+@@SLATE
+Camera :: Locked on a tripod at the back of the hall, long lens, so the speech is watched the way the room watched it.
+Roll :: Digital, 3200 ISO, one follow spot and a hundred phones held up like candles.
+Costume :: Ferris with his jacket off now, tie loosened. The bride in white, barefoot, holding her shoes.
+Environment :: The head table: a cake, three glasses, a microphone with a dying battery, a banner made at a print shop in the county seat.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. GRANGE HALL — HEAD TABLE — NIGHT</h4>
+      <p class="action">Ferris takes the microphone. The room settles. The camera is the only thing still moving.</p>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">I built the house she grew up in with my own hands and I have never been able to fix the door at the top of the stairs. It sticks in August. It's still going to stick in August when you come over, and I want you to know that's not a door, that's a father-in-law.</p></div>
+      <p class="action">Laughter. Somebody's glass goes over. The bride puts her hand over her mouth.</p>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">Her mother would have said it better and shorter. I've got the long version and I've got it for the rest of my life.</p></div>
+      <p class="action">He stops. Looks at his daughter. Then at the floor, because he cannot do both.</p>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">That's it. That's the speech.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. GRANGE HALL — KITCHEN — LATER</h4>
+      <p class="action">The kitchen: a steel sink, two women from the church washing glasses, a door propped open to the dark. Ferris is in there alone, holding the counter.</p>
+      <p class="action">Denny comes in with the camera still on his shoulder, because he has learned that the good part is always after the speech.</p>
+      <div class="speech"><p class="cue">DENNY</p><p class="dline">You all right?</p></div>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">Her mother died in March.</p></div>
+      <p class="action">Denny lowers the camera. Then, after a moment, raises it again, because the man is still talking and that is the job.</p>
+      <div class="speech"><p class="cue">FERRIS</p><p class="dline">She wanted to be here. She'd have been in that kitchen telling me to sit down and stop making it about me. So I'm standing in the kitchen.</p></div>
+    </div>
+===CH===
+TITLE: TWENTY MINUTES OF TAPE
+MIN: 6
+@@SLATE
+Camera :: A monitor in a dark shop, then a reverse to June's face lit by it — the film becomes a person watching film.
+Roll :: Digital, 1280 ISO, screen light; the shop's neon sign bleeding through the blind.
+Costume :: June in the fleece, sleeves pushed up, a mug going cold on the bench.
+Environment :: The workbench at ten at night: a monitor, a card reader, a ledger, a stack of unopened post.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — NIGHT</h4>
+      <p class="action">Denny brought the camera back on Monday, four hours late, with a scratch on the case and a card still in it.</p>
+      <p class="action">June is checking the sensor when the monitor fills with a kitchen.</p>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">He left twenty minutes on the card.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">He always leaves something on the card.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">This is not something. This is a man in a kitchen.</p></div>
+      <p class="action">On screen: Ferris, in the kitchen, twenty-two minutes, talking about his wife. The camera does not move.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Does she know he kept this?</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">Denny gave her the highlight reel. This is not in the reel.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — WORKBENCH — CONTINUOUS</h4>
+      <p class="action">June watches to the end. Then she rewinds and watches the last four minutes again with her arms folded.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Copy it. Put it on a drive and label it.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">And do what with it?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Nothing. Put it in the drawer with the others.</p></div>
+      <div class="speech"><p class="cue">MARCUS</p><p class="dline">There are twelve drives in that drawer.</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Then it'll be thirteen.</p></div>
+      <p class="action">She wipes the card and puts it back in the case, and the whole thing takes nine seconds, which is how long it takes to delete a man's wife.</p>
+    </div>
+===CH===
+TITLE: THE CHURCH LIVESTREAM
+MIN: 6
+@@SLATE
+Camera :: From the back of a sanctuary, high, wide, then a slow push toward the pulpit — the camera behaves like a congregation member who is afraid to move.
+Roll :: Digital, 2500 ISO, stained glass and two LED panels bought with a grant.
+Costume :: PASTOR ALTON REID in a robe and running shoes. SHANICE, nineteen, in a cardigan with a lanyard.
+Environment :: Bell County Presbyterian: eleven pews, four occupied, a camera on a tripod in the aisle, a laptop on a music stand.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PRESBYTERIAN — SANCTUARY — SUNDAY</h4>
+      <p class="action">Pastor Alton Reid, sixty, checks the laptop, the frame, the sound level. Shanice holds up a hand with three fingers and folds them down one at a time.</p>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Are we on?</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">We're on. There's four people watching.</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">In the building or on the internet?</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">Both. Two and two.</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Then it's a congregation. Start the recording.</p></div>
+      <p class="action">He steps into the light. The camera — worth more than the van in the lot — holds on a man in a robe talking to nine people and two strangers with a laptop.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PRESBYTERIAN — SANCTUARY — LATER</h4>
+      <p class="action">After the service. Chairs stacked. Reid sits in the front pew with his shoes off, which he does not do in front of many people.</p>
+      <div class="speech"><p class="cue">REID</p><p class="dline">You know what the camera's for?</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">So people who can't come can watch.</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">So people who don't come can be asked. There's a difference. The first one is charity. The second one is an invitation, and it's harder, because an invitation can be refused.</p></div>
+      <p class="action">Shanice looks at the frame on the laptop: an empty sanctuary, eleven pews, the camera still rolling.</p>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">Should I stop it?</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Leave it a minute. The room's nicer empty than we are.</p></div>
+    </div>
+===CH===
+TITLE: THE PRAYER REQUEST
+MIN: 6
+@@SLATE
+Camera :: Close on a card in a hymn rack, then a slow tilt up to a face — the camera treats paper the way other films treat faces.
+Roll :: Digital, 3200 ISO, one window and a hanging bulb; the sanctuary at four in the afternoon.
+Costume :: Shanice in her coat, a pencil behind her ear. Reid in a sweater now, no robe.
+Environment :: The sanctuary after everyone has gone: a vacuum cleaner in the aisle, a box of prayer cards, a piano with the lid down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. BELL COUNTY PRESBYTERIAN — SANCTUARY — AFTERNOON</h4>
+      <p class="action">Shanice is emptying the hymn racks. In the third pew, a card in handwriting she does not recognize.</p>
+      <div class="speech"><p class="cue">SHANICE</p><p class="paren">(reading)</p><p class="dline">"For the man in the camera. I hope he gets home."</p></div>
+      <p class="action">She turns it over. Nothing. No name, no date.</p>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Put it in the box.</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">It doesn't say who it's for.</p></div>
+      <div class="speech"><p class="cue">REID</p><p class="dline">Then it's for whoever reads it. That's how a box works.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOLLIS CAMERA RENTALS — COUNTER — NEXT DAY</h4>
+      <p class="action">Shanice returns the camera herself, in the case, with the tripod plate still attached, which is the mark of an amateur and also of someone who was careful.</p>
+      <div class="speech"><p class="cue">JUNE</p><p class="dline">Plate goes in the pocket.</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">Sorry. Sorry. It's my first time returning one of these.</p></div>
+      <p class="action">June takes the plate off, drops it in the pocket, and hands her the receipt.</p>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">Can I ask — is the man who owns this okay?</p></div>
+      <div class="speech"><p class="cue">JUNE</p><p class="paren">(after a beat)</p><p class="dline">He's at Riverbend. He had a stroke in April.</p></div>
+      <div class="speech"><p class="cue">SHANICE</p><p class="dline">Then somebody's praying for him. It's in the box.</p></div>
+      <p class="action">June looks at her for a long moment, then writes PAID IN FULL across the form, which she has never done.</p>
+    </div>

@@ -23,7 +23,14 @@ const PARTS = {
     { from: 11, to: 20, name: 'Part Two — The Campaign' },
     { from: 21, to: 30, name: 'Part Three — The Coat' },
   ],
+  5: [
+    { from: 1, to: 10, name: 'Part One — Rental' },
+    { from: 11, to: 21, name: 'Part Two — The County' },
+    { from: 22, to: 31, name: 'Part Three — The Card' },
+  ],
 };
+
+const NUM_WORD = { 30: 'Thirty', 31: 'Thirty-One', 32: 'Thirty-Two', 33: 'Thirty-Three' };
 
 const decode = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&mdash;/g, '—').replace(/&[a-z]+;/g, ' ');
 const words = (s) => decode(s).split(/\s+/).filter(Boolean).length;
@@ -178,6 +185,44 @@ const CONFIGS = [
     castHead: 'Cast of the Year',
     castSub: 'Twelve who are in it',
   },
+  {
+    n: 5,
+    chapters: 31,
+    file: 'src/s5',
+    out: 'series-05.html',
+    poster: 'poster-05.svg',
+    title: 'The Loaner',
+    tagline: 'Eleven hands. One county. One camera.',
+    kicker: 'Series Five of Twenty-Four',
+    logline: 'A camera worth more than a car goes out on rent eleven times in a year, and comes back with a film nobody ordered on it.',
+    metaTitle: 'The Loaner — Series 5 · A Film by Amim Ahsan',
+    metaDesc: 'The Loaner — series five of Coochie. A cinema camera passes through eleven hands in one county and returns with a film nobody commissioned; thirty-one chapters, paginated, with a screening mode.',
+    synopsis: [
+      'Serial 0447 is a Marchetti, bought in 2009 for forty-one thousand dollars by a man who did not tell his wife. Nineteen years later his daughter runs the rental shop, cleans the sensor every morning, and cannot make the numbers work.',
+      'In one year the camera goes out eleven times: a wedding, a livestreamed church service, a high-school assignment, a house listing, a funeral, a music video and its second unit, a motel stakeout, a process serving, a flood, a community play, and one weekend it should never have gone out at all.',
+      'PULL:Everybody keeps the empty room. Nobody else watches it.',
+      'It comes back with forty-one clips on a card: not the year as it happened, but the year as a sixteen-year-old watched it — cut together, with one interview at the end that June Hollis was not supposed to see. Thirty-one chapters about an object that has no idea what it is being used for, and the people who keep pointing it at each other.',
+    ],
+    setting: 'One year · one county · one camera',
+    genre: 'Ensemble · working life · filmmaking',
+    cast: [
+      ['June Hollis', '34, the shop', 'Cleans the sensor like a baby. Counts months the way other people count rent.'],
+      ['Gene Hollis', '71, the owner', 'Bought 0447 in 2009 and never told his wife. Says no by tapping the arm of a chair.'],
+      ['Marcus Oyelaran', '26, the counter', 'Checks the gear in and says the thing nobody wants said.'],
+      ['Kofi Adjei', '16, the last rental', 'Read the insurance form. Wanted to be a director. Took a camera into a care home.'],
+      ['Denny Boyle', '38, the wedding', 'Leaves twenty minutes on every card and calls it a highlight reel.'],
+      ['Pastor Alton Reid', '60, the livestream', 'Nine in the pews and two on the internet, and calls it a congregation.'],
+      ['Mr. Duarte', '52, the AV cart', 'Rents what the district used to own. Teaches the difference between waiting and asking.'],
+      ['Brenda Salas', '44, the listing', 'Forty-one houses in four years and one good listing away from her name on a window.'],
+      ['Owen Tate', '39, the funeral home', 'Shows eleven minutes three times a week. Knows that nobody cries with their face first.'],
+      ['Lorna Beck', '51, the investigator', 'Sits for three hours to write down one plate, and asks the wrong brother the right question.'],
+      ['Ruth-Anne Cobb', '58, the county', 'Needs pictures or the state doesn\'t send money.'],
+      ['Vikram Sood', '47, the buyer', 'Offers forty on a Thursday and is the only person in the county who knows what it is.'],
+    ],
+    synSub: 'Series five · one year',
+    castHead: 'Cast of the County',
+    castSub: 'Twelve who hold it',
+  },
 ];
 
 const filmHeadSrc = fs.readFileSync('../Baharam.html', 'utf8');
@@ -201,6 +246,7 @@ function makeHead(cfg) {
 .pager-note b{color:var(--ink);font-weight:500}
 .pager[data-edge="start"] [data-pg="prev"],.pager[data-edge="end"] [data-pg="next"]{opacity:.4}
 .chapter-page .chapter{border-top:0}
+@media (max-width:680px){.sec-head{flex-wrap:wrap;gap:6px}}
 </style>`);
   return head;
 }
@@ -227,7 +273,8 @@ function build(cfg) {
     const scenes = scenePart.trim();
     return { n, title: title.toUpperCase(), min, rows, scenes, scenesCount: (scenes.match(/<div class="scene">/g) || []).length, w: words(scenes) };
   });
-  if (chapters.length !== 30) throw new Error(cfg.n + ': expected 30 chapters, got ' + chapters.length);
+  const expected = cfg.chapters || 30;
+  if (chapters.length !== expected) throw new Error(cfg.n + ': expected ' + expected + ' chapters, got ' + chapters.length);
 
   const totalWords = chapters.reduce((a, c) => a + c.w, 0);
   const totalScenes = chapters.reduce((a, c) => a + c.scenesCount, 0);
@@ -302,7 +349,7 @@ ${group.map(chapterHtml).join('\n')}
       <a class="btn btn-ghost" href="#script">Read the screenplay</a>
     </div>
     <div class="fact-row">
-      <div class="fact"><b>30</b><span>Chapters</span></div>
+      <div class="fact"><b>${chapters.length}</b><span>Chapters</span></div>
       <div class="fact"><b>${totalScenes}</b><span>Scenes</span></div>
       <div class="fact"><b>${totalWords.toLocaleString('en-US')}</b><span>Words</span></div>
       <div class="fact"><b>${pages.length}</b><span>Pages</span></div>
@@ -318,7 +365,7 @@ ${group.map(chapterHtml).join('\n')}
     </div>
     <div>
       <ul class="spec">
-        <li><span>Format</span><span>Series · 30 chapters minimum</span></li>
+        <li><span>Format</span><span>Series · ${chapters.length} chapters</span></li>
         <li><span>Genre</span><span>${cfg.genre}</span></li>
         <li><span>Setting</span><span>${cfg.setting}</span></li>
         <li><span>Language</span><span>English</span></li>
@@ -338,7 +385,7 @@ ${cast}
 </section>
 
 <section class="block" id="chapters">
-  <div class="sec-head"><h2>Thirty Chapters</h2><p>Three parts · five chapters a page</p></div>
+  <div class="sec-head"><h2>${NUM_WORD[chapters.length] || chapters.length} Chapters</h2><p>Three parts · five chapters a page</p></div>
 ${chipIndex}
 </section>
 
