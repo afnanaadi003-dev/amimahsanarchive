@@ -1,0 +1,173 @@
+TITLE: REYES MOTORS
+MIN: 7
+@@SLATE
+Camera :: A slow dolly across a car lot at golden hour, past six cars and a banner, to a girl standing where the banner meets the asphalt.
+Roll :: Digital, 800 ISO, actual sunset, which is the only free light in the county.
+Costume :: Dolly in the blazer and sneakers, because she came from work. Ray in the polo. A photographer in a hoodie.
+Environment :: Reyes Motors: a 1978 sign with two dead letters, a showroom with a coffee machine, balloons from a sale in April still tied to a mirror.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. REYES MOTORS — LOT — DUSK</h4>
+      <p class="action">The banner is up before she has signed anything: CIVIC IS HERE. Six feet tall, over the used row, with a space left for the photograph.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You printed it already.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">It's a banner. Banners are cheap and hope is expensive.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Dad. This is my literal name on a car lot.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">And it's my literal name over the door, and I've been standing under it for thirty-one years. Welcome to the family business. It's the same business. It was always the same business.</p></div>
+      <p class="action">The photographer crouches. Dolly looks at the banner, and the light does the thing the light does at six forty in October, and she lets him take the picture.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. REYES MOTORS — SHOWROOM DOOR — CONTINUOUS</h4>
+      <p class="action">Inside, through glass, Ray's office: a desk, a phone, a photograph of Dolores-the-grandmother on the wall beside a calendar from 2019.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You still have her picture up.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">She worked here three nights a week for six years. Cleaning. After the hotel, before the home. She wouldn't take money from me so I put her on payroll and she cleaned the showroom like it was a church.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I didn't know that.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">There's a lot you don't know, and most of it you can't put on a banner.</p></div>
+      <p class="action">He picks up the phone. Dolly watches her own name go up over the used row in six-foot letters.</p>
+    </div>
+===CH===
+TITLE: TWO HUNDRED THOUSAND
+MIN: 7
+@@SLATE
+Camera :: A billboard from a moving car, then a hard cut to a phone screen scrolling — the camera becomes the algorithm for exactly one minute.
+Roll :: Digital, 6400 ISO for the phone (the screen is the only light), 200 ISO for the billboard at dusk.
+Costume :: Dolly in the same blazer, three weeks older. Tolu in a studio hoodie.
+Environment :: A bedroom at eleven at night: a mattress on a frame, boxes half packed, a phone lighting the ceiling.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. ROUTE 6 — BILLBOARD — DUSK</h4>
+      <p class="action">A billboard: CIVIC IS HERE — REYES MOTORS — and a photograph of a girl standing under a banner, looking like she has just decided something.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="paren">(in the car, filming it)</p><p class="dline">That's you. That's your face at forty feet.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's my face at forty feet being used to sell a hatchback.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">How many people have seen it?</p></div>
+      <p class="action">Dolly looks at her phone. Then at the billboard. Then at her phone.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Two hundred thousand.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — BEDROOM — NIGHT</h4>
+      <p class="action">The comment section, scrolling. Somebody has found the court record. Somebody has posted the court record. Somebody has posted her high-school yearbook photo beside the billboard.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">Don't read them.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I'm reading them for research.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">You're reading them for punishment.</p></div>
+      <p class="action">A comment in the middle of the screen: "her poor mother." Dolly puts the phone face down on the mattress.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Two hundred thousand people have an opinion about my mother and none of them have met her.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">That's what you wanted.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's what I said I wanted.</p></div>
+    </div>
+===CH===
+TITLE: THE LETTER
+MIN: 7
+@@SLATE
+Camera :: Overhead of a letter on a conference table, then a slow push into the letterhead — the camera reads the fine print because nobody else has.
+Roll :: Digital, 1250 ISO, flat office light, the letter whiter than anything else in the room.
+Costume :: Bernie with her sleeves rolled. Dolly still in her coat.
+Environment :: The conference room on a Monday: a coffee ring on the table, a chair nobody has pushed in since Friday.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — CONFERENCE ROOM — MONDAY</h4>
+      <p class="action">Bernie slides the letter across without a word. Three pages. A law firm in another state. The words CEASE AND DESIST in the subject line.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="paren">(reading)</p><p class="dline">"Use of the mark CIVIC in commerce..."</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">You can be called it. You cannot sell with it. That's the whole letter in one sentence, and the other two pages are a man billing by the hour.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It's my name.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">It's their name. It's been their name since 1972. You got here forty years late and you're the one with the birth certificate.</p></div>
+      <p class="action">Dolly reads the letter twice, then sets it down with enormous care.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">So I can't use my own name on a poster.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">You can use it on a poster. You can't use it on a poster with a car in it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — CONFERENCE ROOM — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">So we take the car out.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">Then it's a poster about a girl who changed her name, which is a documentary, which nobody buys a hatchback from.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Then we don't sell the hatchback.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">Reyes Motors is paying us forty-one thousand dollars and my name is on the invoice.</p></div>
+      <p class="action">Dolly picks up the letter and reads the signature line out loud, slowly, the way you read something to make it smaller.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">"Yours in good faith."</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">They always say that. It's the only line in the letter that costs nothing.</p></div>
+    </div>
+===CH===
+TITLE: THE CREDIT REPORT
+MIN: 6
+@@SLATE
+Camera :: A phone screen held at an angle, then a two-shot across a leasing office desk — the camera is on the wrong side of the desk and stays there.
+Roll :: Digital, 2500 ISO, an office with a window unit and a poster of a waterfront nobody in this town has seen.
+Costume :: Dolly in the blazer, because she dressed for a lease. The agent in a cardigan with a lanyard.
+Environment :: A leasing office: a desk, a printer, a bowl of individually wrapped mints, a filing cabinet with a drawer that doesn't close.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAPLE COURT — LEASING OFFICE — AFTERNOON</h4>
+      <p class="action">The agent, DEB, fifty-one, has the application on screen and is frowning at it in a way that has nothing to do with Dolly's income.</p>
+      <div class="speech"><p class="cue">DEB</p><p class="dline">Your credit file comes back in two pieces.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Two pieces.</p></div>
+      <div class="speech"><p class="cue">DEB</p><p class="dline">One's a Reyes, D. with eight years of history and one late payment in 2021. The other's a Reyes, C. with the same social and no history at all. The system thinks one of them is a fraud.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">They're the same person. I have the court order.</p></div>
+      <div class="speech"><p class="cue">DEB</p><p class="dline">I believe you. The system doesn't have an opinion, which is worse than having the wrong one.</p></div>
+      <p class="action">She prints something and hands it over. DISPUTE FORM. Another form. Dolly has become a woman who carries forms.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MAPLE COURT — PARKING LOT — CONTINUOUS</h4>
+      <p class="action">Dolly sits on the hood of her father's loaner car with the dispute form in her lap and calls the number on the back. Hold music. She counts the loops: nine.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="paren">(into the phone, evenly)</p><p class="dline">Yes. Reyes, C. R-E-Y-E-S. No, there's no middle initial. There was, but the court removed it.</p></div>
+      <p class="action">A pause. She closes her eyes.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Because a brand doesn't carry a middle name.</p></div>
+      <p class="action">She opens her eyes. Says it again, quieter, to herself, and hears how it sounds standing in a parking lot in the actual world.</p>
+    </div>
+===CH===
+TITLE: THE EX
+MIN: 6
+@@SLATE
+Camera :: Static two-shot across a café table, the camera at eye level, so the conversation has nowhere to hide.
+Roll :: Digital, 4000 ISO, window light and a bulb, a paper cup in the foreground.
+Costume :: Dolly in a sweater, no blazer. NICO in a work jacket with a name patch that is not his own.
+Environment :: A coffee shop at four in the afternoon: a chalkboard, a bad painting, a man wiping a table that is already clean.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. CAFÉ — CORNER TABLE — AFTERNOON</h4>
+      <p class="action">NICO, twenty-three, sets down two cups and sits. He has been looking at her for a full minute without saying anything.</p>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">Dolores.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Civic.</p></div>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">I saw the billboard. My mother saw the billboard. My mother called me and asked if you were in a cult.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It's not a cult, it's a campaign.</p></div>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">That's what a cult would say.</p></div>
+      <p class="action">She laughs. He doesn't, quite, and then he does, and for a second it is two years ago in this same café.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. CAFÉ — CORNER TABLE — LATER</h4>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">Can I say the obvious thing?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You're going to.</p></div>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">I liked the old one.</p></div>
+      <p class="action">Dolly turns her cup a quarter turn.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">The old one was a name you could say in a nice voice while you were breaking up with me.</p></div>
+      <div class="speech"><p class="cue">NICO</p><p class="paren">(after a moment)</p><p class="dline">That's fair.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">No, it isn't. It's just true. There's a difference and I'm learning it in public.</p></div>
+      <p class="action">They sit. The man wipes the table again.</p>
+      <div class="speech"><p class="cue">NICO</p><p class="dline">For what it's worth, I think the billboard's good. It's a good picture of you.</p></div>
+    </div>
+===CH===
+TITLE: THE PANEL
+MIN: 7
+@@SLATE
+Camera :: From the end of a long table, three interviewers in a row and one candidate small at the far end — a composition borrowed from every bad meeting in the world.
+Roll :: Digital, 1600 ISO, a room with a view of a car park and a strip light with a flicker.
+Costume :: Dolly in a suit she borrowed from Tolu's sister. Three interviewers in the uniform of a company that makes flooring.
+Environment :: A regional agency's boardroom: a whiteboard, a bowl of sweets, a framed award for something from 2016.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MERIDIAN GROUP — BOARDROOM — MORNING</h4>
+      <p class="action">Three interviewers. A woman with a folder, a man with a laptop, and a man who has not spoken.</p>
+      <div class="speech"><p class="cue">INTERVIEWER 1</p><p class="dline">Your résumé says Dolores Reyes. Your portfolio says Civic Reyes. Explain the discrepancy.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I changed my name legally in June. The résumé is a PDF from March.</p></div>
+      <div class="speech"><p class="cue">INTERVIEWER 2</p><p class="dline">And the campaign. Was that your concept?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">The concept was mine. The execution was a team of six and a photographer who did not get paid enough.</p></div>
+      <div class="speech"><p class="cue">INTERVIEWER 1</p><p class="dline">It did two hundred thousand views.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It did two hundred thousand views and sold eleven cars, which is four more than the month before, so it worked about as well as a balloon.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MERIDIAN GROUP — BOARDROOM — CONTINUOUS</h4>
+      <p class="action">The silent man finally speaks. He has a nice watch and a terrible question.</p>
+      <div class="speech"><p class="cue">INTERVIEWER 3</p><p class="dline">Would you do it again?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Which part?</p></div>
+      <div class="speech"><p class="cue">INTERVIEWER 3</p><p class="dline">The name.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I'd do the name. I wouldn't do the banner.</p></div>
+      <div class="speech"><p class="cue">INTERVIEWER 3</p><p class="dline">Interesting. We're actually launching a rebrand in Q1 and we'd love someone who's lived it. Not strategy. Content. A face for the campaign.</p></div>
+      <p class="action">Dolly looks at the three of them for a long moment. Then she picks up her folder and stands.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I have a face. I'm trying to get a job where I'm allowed to use the rest of it.</p></div>
+    </div>

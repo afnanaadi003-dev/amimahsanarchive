@@ -1,0 +1,175 @@
+TITLE: ROOM 214, AGAIN
+MIN: 7
+@@SLATE
+Camera :: The same static setup as chapter five, from the same seat, with one more person in the benches — the camera is deliberately unimpressed by the symmetry.
+Roll :: Digital, 2500 ISO, the same hum; a window unit labouring in the cold.
+Costume :: Dolly in a plain coat, no blazer. Marisol in church clothes on a Wednesday. Judge Ward with the same glasses on the same chain.
+Environment :: Room 214 in January: four people, a flag, a water pitcher, a radiator clanking like it is being polite.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. COURTHOUSE — ROOM 214 — MORNING</h4>
+      <p class="action">Ward reads the file. She has read this file before, in a different name, and both of them know it.</p>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">You're asking the court to change Civic Reyes to Dolores Civic Reyes.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Yes, Your Honour.</p></div>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Six months ago you stood in that spot and told me a brand doesn't carry a middle name.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Six months ago I was wrong about a number of things and that was the first one.</p></div>
+      <p class="action">Ward takes her glasses off. In the benches, Marisol sits with her hands folded and her chin up.</p>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Who is Dolores?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">My grandmother. She cleaned a hotel laundry for twenty-two years and a showroom for six more, and a man called her Dee because her name took too long, and she wrote on the back of a ledger page that it wasn't her name, and then she went to work.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. COURTHOUSE — ROOM 214 — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">And your mother?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">My mother is sitting behind me and she named me after that woman because she wanted her to live forever, and I took it off in a courtroom and she sat in the corridor for four hours and didn't say a word about it until it mattered.</p></div>
+      <p class="action">Ward looks at Marisol, who does not look away.</p>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Ma'am, do you consent to this?</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">I do, Your Honour.</p></div>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Then the court's work is easy. Granted. Publish it for three weeks.</p></div>
+      <p class="action">She signs. Then she looks up, and for the first time in two hearings, she smiles.</p>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Now. Which one do you answer to?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Civic, mostly. Dolores when my mother's angry.</p></div>
+      <div class="speech"><p class="cue">WARD</p><p class="dline">Then it's doing two jobs. I believe that was the assignment.</p></div>
+    </div>
+===CH===
+TITLE: THE CAMPAIGN, AGAIN
+MIN: 6
+@@SLATE
+Camera :: A kitchen table covered in paper, shot from above, then a two-shot of two people building something out of nothing on a Tuesday night.
+Roll :: Digital, 3200 ISO, a lamp and a laptop, and a printer that jams every fourth page.
+Costume :: Civic in a sweater with her sleeves pushed up. Tolu with a ruler and a marker.
+Environment :: The apartment at last, unpacked: books on a shelf, a framed photograph of Dolores on the sill, a printer on a chair.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — NIGHT</h4>
+      <p class="action">Three versions of the same advertisement, printed, laid out in a row. Civic is looking at them the way a surgeon looks at an X-ray.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">Who's the client again?</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">There isn't one. My mother's department at the hospital bills insurance companies for a living and gets yelled at for it, and they have no budget.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">So you're doing free work for a hospital.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I'm doing free work for eleven people who sit in a basement and answer phones.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">That's not a campaign. That's a gift.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">A gift with a strategy deck. Look at the second one.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — LATER</h4>
+      <p class="action">The second layout is one line of type on white and a photograph of a woman at a desk with a headset, taken by Tolu on a phone in a break room.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">It's just a person. There's no product.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">The product is the person. That's dual-purpose. The name on the badge does two jobs: it tells you who you're talking to and it tells you she's the one who has to say no to you.</p></div>
+      <p class="action">Tolu reads the line out loud, slowly, because it is good.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">"Her name is Marisol. She will answer on the second ring."</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Third ring. She always gives it two to finish the sentence.</p></div>
+    </div>
+===CH===
+TITLE: THE AD THEY DIDN'T RUN
+MIN: 7
+@@SLATE
+Camera :: A sixty-second spot, shot on a phone and a borrowed lens, played in full — the camera stops being a camera and becomes the work.
+Roll :: Digital, 800 ISO, a break room with a window, four ceiling tiles, a real headset on a real desk.
+Costume :: Eleven people in the clothes they came to work in, no styling, no matching shirts.
+Environment :: The billing department at the hospital: a basement room with eleven desks, a printer the size of a fridge, a coffee machine with a hand-written sign.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HOSPITAL — BILLING DEPARTMENT — DAY</h4>
+      <p class="action">A sixty-second film. No music. A fixed frame on an empty desk and a chair with a cardigan over the back.</p>
+      <p class="action">A woman sits down. Headset on. She says: "Billing, this is Angela." Then cut.</p>
+      <p class="action">Another desk. "Billing, this is Ruth." Cut. Another. "Billing, this is Dolores."</p>
+      <p class="action">Civic, off camera: "Say your whole name."</p>
+      <p class="action">A pause. Then, on camera, the woman tries again, and this time it is her whole name, all four syllables of it, and she smiles at the end of it like she has put something down.</p>
+      <div class="speech"><p class="cue">CIVIC</p><p class="paren">(V.O.)</p><p class="dline">Eleven people answer this phone. They are the reason your mother's surgery was approved and the reason it was denied, and they did not make either decision.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOSPITAL — BILLING DEPARTMENT — CONTINUOUS</h4>
+      <p class="action">The film goes on: eleven names, eleven faces, one line at the bottom of the frame at the end.</p>
+      <p class="action">HER NAME IS ON THE FORM. BE NICE TO HER.</p>
+      <p class="action">Then black. No logo. No phone number. Nothing to buy.</p>
+      <p class="action">The room watches it on a laptop balanced on a filing cabinet. When it ends, nobody says anything for a moment.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="paren">(finally)</p><p class="dline">You put my name in it.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">You're the second ring.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">Third.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I know. I fixed it.</p></div>
+      <p class="action">Angela, at the next desk, is crying and pretending to check the printer.</p>
+    </div>
+===CH===
+TITLE: THE NAME ON THE DOOR
+MIN: 6
+@@SLATE
+Camera :: A door with fresh lettering, shot flat-on, then a slow pan around a small room — the camera surveys a kingdom of four desks.
+Roll :: Digital, 1250 ISO, north light through a big window and a bare bulb they haven't replaced yet.
+Costume :: Civic in a shirt with the sleeves rolled. Tolu in overalls with paint on them, because she painted the wall.
+Environment :: A second-floor office above a bakery: four desks, two of them empty, a filing cabinet, a tiny kitchen, a window onto a street with a bus stop.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. 14B MARKET STREET — MORNING</h4>
+      <p class="action">The door is open. The lettering on the glass is white vinyl, applied slightly crooked by two people who had never applied vinyl before.</p>
+      <p class="action">REYES &amp; CO. — NAMES, STORIES, AND THE THINGS PEOPLE CALL THEMSELVES.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">It's crooked.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">It's a quarter inch. Nobody will notice.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">I will notice every day for the rest of my life.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Good. Then you'll be here.</p></div>
+      <p class="action">Inside, on the wall behind the desks, three names in vinyl: DOLORES REYES. MARISOL REYES. And, in smaller type underneath: and everybody they answered for.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES &amp; CO. — OFFICE — CONTINUOUS</h4>
+      <p class="action">The first client is a woman who wants to rename her late husband's plumbing business without losing the forty years of reputation in the name.</p>
+      <div class="speech"><p class="cue">CLIENT</p><p class="dline">Everyone knew the name. If I change it, I'm starting over at sixty-one.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Then we don't change it. We add to it. "And Son" was doing two jobs for your husband. Now it can do one for you.</p></div>
+      <div class="speech"><p class="cue">CLIENT</p><p class="dline">And Daughter.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">And Daughter.</p></div>
+      <p class="action">Tolu writes it on the board. The client looks at it for a long time, then takes out a chequebook, which is the entire economic model of this company.</p>
+    </div>
+===CH===
+TITLE: THE OPPOSITION
+MIN: 7
+@@SLATE
+Camera :: A video hearing on a laptop screen, then a two-shot of Civic and Tolu at the kitchen table — the camera treats a federal proceeding like a phone call, because it is one.
+Roll :: Digital, 5000 ISO, a screen, a lamp, a mug that has been reheated twice.
+Costume :: Civic in a shirt for the top half and pyjama bottoms for the bottom, which the camera is polite about.
+Environment :: The apartment at 8:40 in the morning, a hearing scheduled for 9: a laptop, a folder of exhibits, a cat that walks across the keyboard once.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — MORNING</h4>
+      <p class="action">On screen: a trademark attorney, a hearing officer, and Blake Hollister in a quarter-zip.</p>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">This is an opposition proceeding. The applicant seeks registration of CIVIC REYES for apparel. The opposer claims prior use and a personal name.</p></div>
+      <div class="speech"><p class="cue">ATTORNEY</p><p class="dline">The mark is a surname and a common word. My client coined the combination.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I coined it in a courtroom in June. It's on a government document with a docket number. His application is dated August.</p></div>
+      <p class="action">She holds the certified copy up to the camera. The hearing officer asks her to move it closer. She does.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — LATER</h4>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">Mr. Hollister, what is your connection to the name?</p></div>
+      <div class="speech"><p class="cue">BLAKE</p><p class="dline">It's a case study. It's a great case study. I think the story has commercial value and I think the person who told it best should own the telling.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">You didn't tell it. You watched me tell it and then you printed it on a tote bag.</p></div>
+      <p class="action">A pause on the line. Blake's attorney says something to him with the mute on.</p>
+      <div class="speech"><p class="cue">BLAKE</p><p class="paren">(unmuted)</p><p class="dline">For what it's worth, the shirts sold out.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Of course they did. They were the cheapest thing in the room.</p></div>
+      <p class="action">She closes the laptop. Tolu puts a mug in front of her. The ruling will come in eight months, and neither of them will think about it once.</p>
+    </div>
+===CH===
+TITLE: DUAL-PURPOSE
+MIN: 8
+@@SLATE
+Camera :: The back of a seminar room, then a slow push to the front where a guest speaker stands — the framing from chapter one, returned to, with someone else in the chair.
+Roll :: Digital, 1600 ISO, classroom fluorescents; the same stained projector screen, rolled up.
+Costume :: Civic in the same blazer, which fits differently now because she has it taken in. A student in a hoodie with a laptop covered in stickers.
+Environment :: Room 118, three years later: the same whiteboard, the same blind, a new cohort, and Dr. Sokolov sitting on the edge of the desk.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. WEXLER HALL — ROOM 118 — MORNING</h4>
+      <p class="action">Sokolov introduces her in nine words, which is a joke that only two people in the room get.</p>
+      <div class="speech"><p class="cue">SOKOLOV</p><p class="dline">Civic Reyes. Former student. Ran the assignment further than I intended.</p></div>
+      <p class="action">Civic stands. She has a deck of twelve slides and does not open it.</p>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I changed my name in June of my senior year because I thought a name was a product decision. I was right about the mechanism and wrong about the price.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Here's the number. Two hundred thousand people saw a billboard with my face on it. Eleven people bought a car. My mother didn't call me for nineteen days. The campaign worked. That's the part nobody tells you — it worked, and it still cost more than it made.</p></div>
+      <p class="action">A hand goes up in the second row. A student with a sticker-covered laptop.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. WEXLER HALL — ROOM 118 — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">STUDENT</p><p class="dline">So would you do it again?</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I did do it again. I went back to the same courtroom and added the name back. Cost me another four hundred and thirty-five dollars.</p></div>
+      <div class="speech"><p class="cue">STUDENT</p><p class="dline">So you bought the name twice.</p></div>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">I bought two names and got one person. That's dual-purpose.</p></div>
+      <p class="action">Laughter. Then the last question, from the back, from a girl in a hoodie who has been quiet the whole hour.</p>
+      <div class="speech"><p class="cue">GIRL</p><p class="dline">What's your name?</p></div>
+      <p class="action">Civic looks at Sokolov. Sokolov shrugs, which is her way of saying the floor is yours.</p>
+      <div class="speech"><p class="cue">CIVIC</p><p class="dline">Dolores Civic Reyes. I answer to Civic. I answer to Dolores when my mother's angry. Both of them come when I'm called.</p></div>
+      <p class="action">She closes the deck she never opened. On the back of the last slide, in her own handwriting, is the line the whole series has been about: a name is a coat. Wear the one that fits. Hang the other one up.</p>
+    </div>

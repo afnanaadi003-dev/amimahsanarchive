@@ -1,0 +1,182 @@
+TITLE: NEW DOCUMENTS
+MIN: 7
+@@SLATE
+Camera :: A montage cut to the rhythm of rubber stamps: long lens on a counter, then a close-up of each card as it comes back with a different name on it.
+Roll :: Digital, 2000 ISO, government light; each location lit slightly differently and all of them badly.
+Costume :: Dolly in the blazer for the first three, then a hoodie, because the blazer was a costume and the hoodie is a person.
+Environment :: Six counters in four days: the DMV, a credit union, a pharmacy, a library, a payroll portal, and a phone held to an ear for fifty-one minutes.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. DMV — COUNTER — MORNING</h4>
+      <p class="action">A ticket, a wait, a woman with a stamp. MS. PRUITT, sixty-one, has the expression of someone who has outlasted nine computer systems.</p>
+      <div class="speech"><p class="cue">PRUITT</p><p class="dline">Reason for the visit.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Name change.</p></div>
+      <div class="speech"><p class="cue">PRUITT</p><p class="dline">Court order.</p></div>
+      <p class="action">Dolly slides it over. Pruitt reads it twice, then looks up.</p>
+      <div class="speech"><p class="cue">PRUITT</p><p class="dline">Civic.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Civic.</p></div>
+      <div class="speech"><p class="cue">PRUITT</p><p class="dline">You're the third this month. There was a boy in April who's now legally Mack. Not Mac. Mack, like the truck.</p></div>
+      <p class="action">She types. The printer makes a sound like a small animal.</p>
+      <div class="speech"><p class="cue">PRUITT</p><p class="dline">New photo. Stand on the line. Don't smile, we're not doing smiles this year.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. PUBLIC LIBRARY — FRONT DESK — AFTERNOON</h4>
+      <p class="action">A library card comes across the counter. CIVIC REYES. The librarian, a woman in her thirties with a lanyard full of pins, hands it over.</p>
+      <div class="speech"><p class="cue">LIBRARIAN</p><p class="dline">You had one of these before. Under another name.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Does it follow me over?</p></div>
+      <div class="speech"><p class="cue">LIBRARIAN</p><p class="dline">The books do. The card's new. You've got two holds and eleven dollars in fines from 2019.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That was a different person.</p></div>
+      <div class="speech"><p class="cue">LIBRARIAN</p><p class="dline">It's the same library.</p></div>
+      <p class="action">Dolly pays the eleven dollars in cash. She keeps the receipt, which is the only document in her life that has no name on it at all.</p>
+    </div>
+===CH===
+TITLE: THE FIRST DAY
+MIN: 6
+@@SLATE
+Camera :: A slow pan across the back of a lecture hall, then a close-up of the attendance sheet with one name crossed out and another written in.
+Roll :: Digital, 3200 ISO, tiered seating and overhead lights, forty students and one very tired projector.
+Costume :: Dolly in the hoodie, hair down, no blazer. Blake in the quarter-zip with a lanyard.
+Environment :: A lecture hall built for two hundred and filled with forty: empty seats, a microphone nobody uses, a clock with a second hand that jumps.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. WEXLER HALL — LECTURE THEATRE — MORNING</h4>
+      <p class="action">Sokolov reads the roll from a printout, her pen moving down the list.</p>
+      <div class="speech"><p class="cue">SOKOLOV</p><p class="dline">Reyes.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Here.</p></div>
+      <div class="speech"><p class="cue">SOKOLOV</p><p class="dline">Reyes, D. or Reyes, C.?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">C.</p></div>
+      <p class="action">Sokolov writes something on the sheet and does not look up. Blake turns around in his seat.</p>
+      <div class="speech"><p class="cue">BLAKE</p><p class="dline">It's real? You actually did it?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">The court was very nice about it.</p></div>
+      <div class="speech"><p class="cue">BLAKE</p><p class="dline">What does your mother call you?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's a different campaign.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. WEXLER HALL — LECTURE THEATRE — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">SOKOLOV</p><p class="dline">Nine words. Introduce yourself in nine words. Not eight, not ten. I'll count.</p></div>
+      <p class="action">The room squirms. A boy says "My name is Jason and I'm from Albany," which is eight, and Sokolov makes him do it again with feeling.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I'm Civic. I'm named after something you already own.</p></div>
+      <p class="action">Sokolov counts on her fingers. Nine. Then she nods, once, and moves on, and that nod is worth more than the court order.</p>
+      <div class="speech"><p class="cue">SOKOLOV</p><p class="dline">Now the hard part. The world will not update as fast as the paperwork. For about six months you are going to be a rumour in your own life. Enjoy it. It's the only time anyone will ever be interested in your name instead of your work.</p></div>
+    </div>
+===CH===
+TITLE: SUNDAY DINNER
+MIN: 7
+@@SLATE
+Camera :: A dining table shot from the doorway, then closer and closer into the plates — a family film in a narrow room.
+Roll :: Digital, 2500 ISO, one overhead light with a paper shade, a candle that nobody lights anymore.
+Costume :: Ray in a good shirt with the cuffs folded. Marisol in an apron over a dress. Tía ROSALBA in red. Dolly in the hoodie, which is a statement.
+Environment :: The Reyes house: a dining table for six in a room for four, a china cabinet with photographs on top, a chair at the head that no one has sat in since April.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — DINING ROOM — EVENING</h4>
+      <p class="action">Arroz, pollo, a bowl of limes. Ray serves. Marisol passes plates. Tía ROSALBA, fifty-nine, has already heard and has opinions she is saving for dessert.</p>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">So. Big week.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Big week.</p></div>
+      <div class="speech"><p class="cue">ROSALBA</p><p class="dline">The DMV called me. They wanted to know if I knew a Civic Reyes and I said I don't know any Civic, but I know a Dolores who's going to be very sorry.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">They called you?</p></div>
+      <div class="speech"><p class="cue">ROSALBA</p><p class="dline">You gave them my name as a reference. I'm your aunt. I'm the reference for everything.</p></div>
+      <p class="action">Marisol eats. She eats with the concentration of a woman doing a job.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — DINING ROOM — LATER</h4>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Look. I sold cars for thirty-one years. You know what a name is worth on a lot? Four thousand dollars. That's the difference between a car with a name and a car without one. Same engine.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's the thesis, Dad.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Then your thesis is right and your mother is still not going to pass you the limes.</p></div>
+      <p class="action">Marisol sets down her fork.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">I named you after your grandmother because I wanted her to live forever and I wanted you to know whose hands fed you. You have made that into a marketing exercise and I am supposed to be a good sport about it at dinner.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Mama.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">Eat your chicken. It's Sunday.</p></div>
+    </div>
+===CH===
+TITLE: WHAT THE NAME MEANS
+MIN: 7
+@@SLATE
+Camera :: Two-shot at a kitchen sink, then a close-up of a shoebox on the counter with the lid still on.
+Roll :: Digital, 3200 ISO, under-cabinet light and the window over the sink.
+Costume :: Marisol with her sleeves pushed up, apron off now. Dolly leaning against the counter with a dish towel.
+Environment :: The kitchen after dinner: a sink of plates, a radio on low, a box on the counter that was not there before dinner.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — NIGHT</h4>
+      <p class="action">They wash up together the way they have for twenty years: Marisol washes, Dolly dries, neither of them talks about the thing.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She hated it too, you know.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Who?</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">Your grandmother. Dolores. She used to say her name sounded like a church she didn't go to.</p></div>
+      <p class="action">Dolly stops drying.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She worked laundry at the Hotel Wescott for twenty-two years. Nights. She had a name tag that said DOLORES in plastic letters and the manager called her Dee because he said the whole thing took too long.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">So she'd understand.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She'd understand better than me. That's not the same as being happy about it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — CONTINUOUS</h4>
+      <p class="action">Marisol puts the last plate in the rack, dries her hands, and puts one hand flat on the lid of the box.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">This was hers. It came home from the home in a bag and I haven't opened it.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Open it.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Mama.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">I said no. I'll open it when I can, and you'll open it when I'm dead, and that's how it works in this family. Don't improve it.</p></div>
+      <p class="action">She takes the box and puts it back on top of the refrigerator, where it has been for eight months.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She used to say a name is a coat. Wear the one that fits. Hang the other one up. Don't throw it away.</p></div>
+    </div>
+===CH===
+TITLE: THE INTERNSHIP
+MIN: 6
+@@SLATE
+Camera :: Handheld behind Dolly through a glass door and a reception desk, then a shot of a badge coming out of a printer — the badge is the establishing shot.
+Roll :: Digital, 1250 ISO, an office with good light and bad carpet.
+Costume :: Dolly in a new blazer, bought for the internship, tags cut out that morning. Bernie in a good shirt and no jacket, because it's her agency.
+Environment :: Halo & Partners: eleven desks, a wall of cereal boxes from campaigns nobody remembers, a fish tank with one fish.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — RECEPTION — MORNING</h4>
+      <p class="action">BERNIE CHO, forty-one, comes out to get her personally, which is either a good sign or a bad one.</p>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">You're the one who changed her name.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I'm the one who changed her name.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">I read your project. Half the people here think it's the stupidest thing they've ever heard and the other half are furious they didn't think of it.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Which half are you in?</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">I'm in the half that has to explain it to a client on Thursday. Here's your badge.</p></div>
+      <p class="action">The badge comes out of the printer. It says DOLLY REYES, because HR processed her in March.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It's the old name.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">It's a badge. The badge is never the fun part.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — DESK POD — CONTINUOUS</h4>
+      <p class="action">Bernie walks her to a desk with a monitor and a phone and a stack of old campaign decks.</p>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">You're on the Reyes Motors account. Local dealership. Family-owned. They've been with us nine years and they're the only client who pays on time, so don't be clever with them.</p></div>
+      <p class="action">Dolly sits down slowly, the way you sit when the floor has moved.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Reyes Motors.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">Reyes Motors.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's my father's dealership.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="paren">(after a beat)</p><p class="dline">...Of course it is.</p></div>
+    </div>
+===CH===
+TITLE: THE PITCH
+MIN: 7
+@@SLATE
+Camera :: Across a conference table, low, so the client's coffee cup is huge in the foreground and the agency is small behind it.
+Roll :: Digital, 1600 ISO, a glass-walled room with a bad blind and a projector nobody can focus.
+Costume :: Bernie in a good shirt. Dolly in the blazer, which is beginning to look like a uniform. Ray in a dealership polo and a jacket, because he's nervous.
+Environment :: The Halo conference room: a table for eight, four chairs, a wall of sticky notes, a whiteboard with a phrase circled twice.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — CONFERENCE ROOM — THURSDAY</h4>
+      <p class="action">Ray Reyes sits across from his daughter and shakes her hand, because there are three other people in the room and this is a client meeting.</p>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Miss Reyes.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Mr. Reyes.</p></div>
+      <p class="action">Bernie's eyes go between them once and then decide to be professional about it forever.</p>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">Your problem, as I understand it, is that nobody walks into a dealership any more. They walk into a website, and the website looks like every other website, and then they buy the car from a man in another county.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">We're not the cheapest. We're not the biggest. We're the ones who've been on that lot since 1978 and my father's name is still on the sign.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">So we sell the name.</p></div>
+      <p class="action">Dolly looks up. There it is — the whole thing, in a glass room, with her father across the table.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HALO &amp; PARTNERS — CONFERENCE ROOM — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">The name on the sign is Reyes. Not Civic.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">I know what the name is.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You're going to want to put me in the campaign. Local girl, local name, changed her name to a word that's on the back of a car.</p></div>
+      <p class="action">Bernie does not deny it. Ray, who has been a salesman for thirty-one years, sees the exact moment his daughter understands the deal she is in.</p>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">It's a good campaign.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It's a great campaign. That's what's wrong with it.</p></div>
+      <div class="speech"><p class="cue">BERNIE</p><p class="dline">Write the deck. Thursday. If it's terrible, we'll do the one with the balloons.</p></div>
+    </div>

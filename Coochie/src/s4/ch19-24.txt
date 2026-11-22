@@ -1,0 +1,172 @@
+TITLE: THE OTHER CIVIC
+MIN: 7
+@@SLATE
+Camera :: A laptop screen on a bed, then a slow pull back to show the whole room — the camera withdraws from the evidence.
+Roll :: Digital, 6400 ISO, screen light; a lamp that has been left on since yesterday.
+Costume :: Dolly in a hoodie with a coffee stain. Tolu in a coat, halfway out the door.
+Environment :: The apartment at seven in the morning: boxes labelled KITCHEN and BOOKS, a mattress, a phone charging on the floor.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — BEDROOM — MORNING</h4>
+      <p class="action">A link. A trademark application. CIVIC REYES — goods and services: apparel, namely T-shirts, hats, and tote bags. Applicant: BLAKE HOLLISTER.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">He trademarked me.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="paren">(from the doorway)</p><p class="dline">He what?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Blake. He filed for "Civic Reyes" as a brand. T-shirts. Hats. Tote bags. He's selling my name on a tote bag.</p></div>
+      <p class="action">Tolu comes back into the room, puts down the bag, and sits on the floor because the mattress is full of laptop.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">Can he do that?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">He can file. Anyone can file. It costs three hundred and fifty dollars and a description.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">That's less than my rent.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">That's the point. It's cheaper to own a name than to have one.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — BEDROOM — LATER</h4>
+      <p class="action">Dolly scrolls. Blake's website is four hours old and already has a countdown on it.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">"The girl who became a brand. Official merchandise."</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">Is any of it true?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">All of it is true. That's what he's good at. He takes true things and puts them on a shirt.</p></div>
+      <p class="action">She closes the laptop. Sits for a moment. Then opens it again, because there is nothing else to do with a morning like this.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">You should call a lawyer.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">A lawyer costs four hundred dollars an hour and my name is worth three hundred and fifty. Do the math.</p></div>
+    </div>
+===CH===
+TITLE: WHAT THE NAME COSTS
+MIN: 7
+@@SLATE
+Camera :: Overhead of a notebook page with two columns, then a slow drift to the window — the camera does the arithmetic with her for a while.
+Roll :: Digital, 5000 ISO, an overcast Sunday, no lights on in the apartment.
+Costume :: Dolly in a sweatshirt and thick socks. Tolu in a blanket, sitting on the counter.
+Environment :: The kitchen on a Sunday with nothing happening: two chairs, one mug, a radiator, a window with rain on it.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — SUNDAY</h4>
+      <p class="action">Two columns. On the left, in her handwriting: 435 court. 210 publication. 96 certified copies. 4,100 lost lease deposit. 11,000 the job that didn't happen.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">That's not fair. The job didn't happen because they wanted a face, not because of the name.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">The name is why they wanted the face.</p></div>
+      <p class="action">On the right column: 2,800 the campaign fee. 600 the merch Blake has already sold. And then a number with a question mark beside it.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">What's the question mark?</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">What it costs my mother.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. APARTMENT — KITCHEN — CONTINUOUS</h4>
+      <p class="action">Tolu gets down off the counter and sits opposite her, which is a thing she only does for serious conversations.</p>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">You haven't asked for rent in two months.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You painted the whole apartment.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">I painted one wall and I got paint on the ceiling. Dolly. Take the rent.</p></div>
+      <p class="action">Dolly looks at the notebook. Then she writes a number in the left column, under the others, and underlines it: 1,400.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">My mother hasn't called me in nineteen days.</p></div>
+      <div class="speech"><p class="cue">TOLU</p><p class="dline">That's not a cost. That's a person.</p></div>
+    </div>
+===CH===
+TITLE: THE GRANDMOTHER
+MIN: 7
+@@SLATE
+Camera :: A cassette going into a deck, then the two women sitting very still while a dead woman talks — the camera holds on the space between them.
+Roll :: Digital, 4000 ISO, one lamp and a kitchen window; the tape hiss is the loudest thing in the scene.
+Costume :: Marisol in a housedress and her glasses, which she only wears at home. Dolly still in her coat.
+Environment :: The Reyes kitchen in the evening: the box on the table at last, the lid off, a tape recorder from the church rummage sale.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — EVENING</h4>
+      <p class="action">The box is open. Inside: a rosary, a name tag with plastic letters, a photograph of a hotel laundry, a folded page from a ledger, and a cassette labelled in felt pen: DOLORES — LIBRARY — 2019.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">The library did a project. Old people talking about the town. She did forty minutes and she never told me what she said.</p></div>
+      <p class="action">Dolly puts the tape in. Presses play. Tape hiss. Then a voice, dry and amused, with an accent that has been in this country for fifty-eight years.</p>
+      <div class="speech"><p class="cue">DOLORES</p><p class="paren">(V.O., on tape)</p><p class="dline">They ask me my name and I say Dolores and they write it down. Every time they write it down I think: that's not it either. But it's on the paper, so it must be.</p></div>
+      <p class="action">Marisol's hand goes to her mouth.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">DOLORES</p><p class="paren">(on tape)</p><p class="dline">The manager at the hotel, he couldn't say it. He said Dee. For twenty-two years I was Dee to a man who never once asked me if I liked it. And I said yes, Dee is fine. Because the shift started at eleven and my daughter needed shoes.</p></div>
+      <p class="action">She pauses on the tape. You can hear a chair.</p>
+      <div class="speech"><p class="cue">DOLORES</p><p class="paren">(on tape)</p><p class="dline">A name is a coat. You wear the one that fits the weather. When the weather changes, you hang it up and you put on another one, and you do not throw the first one away, because your mother made it and because it will fit somebody else.</p></div>
+      <p class="action">Dolly stops the tape. The kitchen is very quiet.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She never said that to me.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">She said it to a librarian.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">That's the most her thing I've ever heard.</p></div>
+    </div>
+===CH===
+TITLE: THE LEDGER
+MIN: 6
+@@SLATE
+Camera :: Macro on a page of a ledger, then a slow tilt up to two faces reading it — the camera gives the arithmetic the screen time.
+Roll :: Digital, 4000 ISO, a page gone the colour of weak tea; the pencil marks are still legible.
+Costume :: Dolly with the sleeve of her coat pulled down over her hand, handling the page like a relic.
+Environment :: The kitchen table: a single page, a glass of water nobody drinks, a photograph of the hotel laundry face down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — NIGHT</h4>
+      <p class="action">One page of a ledger, torn out and folded in four. Columns in pencil: DATE, NAME, IN, OUT. The names are in a neat hand that is not Dolores's.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="paren">(reading)</p><p class="dline">"Reyes, D. — 11:00 — 7:00." Fifty-two times.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">Fifty-two weeks. She kept the page because one week she worked seven nights and the manager wrote "Dee" in the book and she wanted the proof that it was her.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Proof of what?</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">That she was there. That's all a name is for, mija. It's a mark that says I was in this room.</p></div>
+      <p class="action">Dolly turns the page over. On the back, in the same pencil, in a different hand: <i>Dee is not my name.</i></p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — CONTINUOUS</h4>
+      <p class="action">Dolly sets the page down. She is crying in the specific, annoyed way of someone who did not plan to.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She wrote that in 1983 and she went back the next night.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I'd have quit.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">You'd have sued. She had a daughter and a rent and no English on paper. She wrote it on the back of a page nobody would ever read and then she made coffee.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">So what do I do with that?</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">You read it and you don't put it on a poster.</p></div>
+    </div>
+===CH===
+TITLE: THE OFFER
+MIN: 8
+@@SLATE
+Camera :: A kitchen-table negotiation shot like a boardroom scene — the camera does not condescend to the room, which is the point.
+Roll :: Digital, 3200 ISO, one pendant light, a document with a number on it in a plastic folder.
+Costume :: Ray in his good jacket, still in work clothes underneath. Dolly in a sweater. Marisol in the doorway, not sitting.
+Environment :: The Reyes kitchen at nine at night: a folder, three cups, a calculator that has been used and put down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — NIGHT</h4>
+      <p class="action">Ray sets a folder on the table. Inside: a one-page agreement, prepared by the dealership's lawyer, and a number.</p>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Thirty thousand dollars. They buy the campaign, the photographs, and the right to use the name in the ads. You get a release and a cheque.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">They can't use the name. There's a letter.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">They can use it as a person. "Civic Reyes, of Reyes Motors." A local girl, a local name, a family that's been on that lot since 1978.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">So I'm the mascot.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">You're the story. There's a difference and it's about thirty thousand dollars.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. REYES HOUSE — KITCHEN — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Why are you bringing this to me?</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Because the lot is down eleven percent and the bank called twice and because you're my daughter and I would rather ask you than a stranger.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You'd rather ask me because a stranger would say no.</p></div>
+      <p class="action">Ray doesn't answer. Marisol comes in from the doorway and sits down at last, in the chair at the head of the table that nobody has used since April.</p>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">Marisol.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">She's not for sale and neither is the name. Take the folder off my table.</p></div>
+      <p class="action">Ray sits back. He looks at the folder for a long moment, then closes it, and puts it in his jacket, and says the truest thing he has said all series.</p>
+      <div class="speech"><p class="cue">RAY</p><p class="dline">I've been selling for thirty-one years. I don't know how to do the other thing.</p></div>
+    </div>
+===CH===
+TITLE: THE SECOND PETITION
+MIN: 6
+@@SLATE
+Camera :: The same corridor, the same window, the same chained pen — the camera returns to the exact position it used in chapter four.
+Roll :: Digital, 2000 ISO, the same flat light, one season later.
+Costume :: Dolly in her own coat, her own money in an envelope, no blazer.
+Environment :: The county courthouse, first floor: a different clerk, the same fourteen plastic chairs, a Christmas tree nobody has taken down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. COUNTY COURTHOUSE — CLERK'S WINDOW — MORNING</h4>
+      <p class="action">The form again. Eleven boxes. This time she fills them in without stopping.</p>
+      <div class="speech"><p class="cue">CLERK</p><p class="dline">Reason for the change.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">Family.</p></div>
+      <div class="speech"><p class="cue">CLERK</p><p class="dline">That's a first.</p></div>
+      <p class="action">He looks at the form. Then at her. Then at the form.</p>
+      <div class="speech"><p class="cue">CLERK</p><p class="dline">You were in here in June.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">I was in here in June.</p></div>
+      <div class="speech"><p class="cue">CLERK</p><p class="dline">Most people don't come back. Four hundred and thirty-five dollars.</p></div>
+      <p class="action">She puts an envelope on the counter. It has a number written on it in her own hand and it is exactly right.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. COURTHOUSE STEPS — CONTINUOUS</h4>
+      <p class="action">Marisol is on the steps. Not inside, not on a bench in the corridor — on the steps, waiting, with her coat buttoned wrong.</p>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">You're out here.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">I'm out here and this time I'm coming in.</p></div>
+      <div class="speech"><p class="cue">DOLLY</p><p class="dline">It's a form. It's not a hearing.</p></div>
+      <div class="speech"><p class="cue">MARISOL</p><p class="dline">Then I'll watch you fill out a form.</p></div>
+      <p class="action">She holds out her hand for the pen, which is the closest thing to an apology this family has.</p>
+    </div>
