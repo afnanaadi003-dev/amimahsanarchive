@@ -156,7 +156,7 @@ footer{padding:25px 0;background:#eae8df;color:var(--muted);font-size:11px}
 const raw = [
 ["Mass-Q-Rade: The Falling Star","Amim Ahsan","Mystery & Series","2026","The first Mass-Q-Rade book — the doorway into the fiction series the Amim Ahsan Archive is built around. Published on this site.",0,"","../Mass-Q-Rade-Book-Covers/book-1.png","../Mass-Q-Rade%20Book%201%20-%20The%20Falling%20Star.html"],
 ["Dreams from My Father","Barack Obama","Memoir","1995","A personal journey through identity, family, race and the search for belonging.",468548,"/works/OL3246382W"],
-["The Founding Fathers of Zionism","Benzion Netanyahu","History","2012","Essays on the thinkers and organizers who built the political Zionist movement before the state of Israel existed.",7680851,"/works/OL17489526W"],
+["The Founding Fathers of Zionism","Benzion Netanyahu","History","2012","Essays on the thinkers and organizers who built the political Zionist movement before the state of Israel existed.",7680851,"/works/OL17489526W","","The%20Founding%20Fathers%20of%20Zionism.html"],
 ["To Kill a Mockingbird","Harper Lee","Classic Fiction","1960","A landmark novel about justice, empathy and childhood in the American South.",14351077,"/works/OL3140822W"],
 ["1984","George Orwell","Dystopian","1949","A chilling vision of surveillance, propaganda and authoritarian power.",10541663,"/works/OL24143668W"],
 ["Pride and Prejudice","Jane Austen","Classic Fiction","1813","A witty romance exploring manners, class, first impressions and personal growth.",14348537,"/works/OL66554W"],
@@ -279,8 +279,9 @@ function draw(){let a=filtered(),total=Math.max(1,Math.ceil(a.length/size));page
 function showBook(id){let b=books.find(x=>x.id===id);if(!b)return;
 let ol=b.work?"https://openlibrary.org"+b.work:"https://openlibrary.org/search?q="+encodeURIComponent(b.title+" "+b.author);
 let gb="https://www.google.com/search?tbm=bks&q="+encodeURIComponent(b.title+" "+b.author);
-let note=b.href?"This is one of Amim Ahsan's own books. The full text is published free on this site — open it below.":"Open Library keeps the catalogue record, edition details and lending copies for this book. Borrow from a library or buy from a bookseller to read it.";
-let links=(b.href?`<a class="btn" href="${b.href}">Read this book on this site ↗</a>`:"")+(b.cover?`<a class="btn${b.href?" light":""}" href="${ol}" target="_blank" rel="noopener">Open Library record ↗</a><a class="btn light" href="${gb}" target="_blank" rel="noopener">Find it on Google Books ↗</a>`:"");
+let own=b.href&&b.author==="Amim Ahsan";
+let note=own?"This is one of Amim Ahsan's own books. The full text is published free on this site — open it below.":b.href?"This book has its own page on this site: what it is, why it is on the list, and where to read it — open it below.":"Open Library keeps the catalogue record, edition details and lending copies for this book. Borrow from a library or buy from a bookseller to read it.";
+let links=(b.href?`<a class="btn" href="${b.href}">${own?"Read this book on this site":"Open the book's page"} ↗</a>`:"")+(b.cover?`<a class="btn${b.href?" light":""}" href="${ol}" target="_blank" rel="noopener">Open Library record ↗</a><a class="btn light" href="${gb}" target="_blank" rel="noopener">Find it on Google Books ↗</a>`:"");
 $("details").innerHTML=`${cover(b,1)}<div class="cat" style="margin-top:20px">${esc(b.category)} · ${esc(b.year)}</div><h2>${esc(b.title)}</h2><b>By ${esc(b.author)}</b><p>${esc(b.description)}</p><p>${note}</p><div class="modallinks">${links}</div>`;
 $("modalbg").classList.add("open")}
 function closeModal(){$("modalbg").classList.remove("open")}
