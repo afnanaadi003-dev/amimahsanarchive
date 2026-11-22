@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">Twenty-Seven People — series three of Coochie</title>
+  <desc id="d">A church basement at night: rows of empty folding chairs facing a bedsheet screen, lit by one hanging bulb.</desc>
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1216"/>
+      <stop offset="0.5" stop-color="#141a20"/>
+      <stop offset="1" stop-color="#070a0d"/>
+    </linearGradient>
+    <linearGradient id="sheet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8d2c2" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#cfc7b4" stop-opacity="0.03"/>
+    </linearGradient>
+    <radialGradient id="bulb" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffd79a" stop-opacity="0.5"/>
+      <stop offset="0.45" stop-color="#e8a960" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#e8a960" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="38%" r="80%">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.6" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.8"/>
+    </radialGradient>
+    <g id="chair">
+      <rect x="0" y="0" width="58" height="42" rx="3" fill="#12171c" stroke="#333c45" stroke-width="2"/>
+      <rect x="7" y="8" width="44" height="27" rx="2" fill="none" stroke="#3b4650" stroke-width="1.2" opacity="0.65"/>
+      <path d="M7 42 V92 M51 42 V92" stroke="#2d363f" stroke-width="5" stroke-linecap="round"/>
+      <path d="M3 63 H55" stroke="#2d363f" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#room)"/>
+
+  <!-- title block -->
+  <g text-anchor="middle">
+    <text x="440" y="150" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="9" fill="#e8dcc7" fill-opacity="0.7">A FILM BY AMIM AHSAN</text>
+    <text x="440" y="264" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="84" fill="#f6ecda">Twenty-Seven</text>
+    <text x="440" y="348" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="84" fill="#f6ecda">People</text>
+    <line x1="352" y1="388" x2="528" y2="388" stroke="#f0bd7c" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="440" y="424" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="6" fill="#f2e6d2" fill-opacity="0.8">SERIES THREE OF TWENTY-FOUR</text>
+    <text x="440" y="454" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="4" fill="#f2e6d2" fill-opacity="0.45">30 CHAPTERS · 24 SERIES</text>
+  </g>
+
+  <!-- bedsheet screen -->
+  <g transform="rotate(-0.5 426 560)">
+    <rect x="228" y="492" width="396" height="170" fill="url(#sheet)" stroke="#39424a" stroke-width="2"/>
+    <path d="M228 578 H624" stroke="#0a0d10" stroke-opacity="0.4" stroke-width="2"/>
+  </g>
+  <circle cx="252" cy="508" r="3" fill="#8d8778"/><circle cx="426" cy="503" r="3" fill="#8d8778"/>
+  <circle cx="600" cy="508" r="3" fill="#8d8778"/>
+
+  <!-- hanging bulb -->
+  <line x1="768" y1="0" x2="768" y2="420" stroke="#1c2126" stroke-width="4"/>
+  <circle cx="768" cy="476" r="118" fill="url(#bulb)"/>
+  <path d="M758 422 h20 v10 h-20z" fill="#2b3138"/>
+  <circle cx="768" cy="448" r="11" fill="#ffd79a"/>
+
+  <!-- chairs: back to front -->
+  <g opacity="0.42">
+    <use href="#chair" transform="translate(88,690) scale(0.6)"/>
+    <use href="#chair" transform="translate(160,686) scale(0.6)"/>
+    <use href="#chair" transform="translate(232,691) scale(0.6)"/>
+    <use href="#chair" transform="translate(304,687) scale(0.6)"/>
+    <use href="#chair" transform="translate(376,691) scale(0.6)"/>
+    <use href="#chair" transform="translate(448,687) scale(0.6)"/>
+    <use href="#chair" transform="translate(520,691) scale(0.6)"/>
+    <use href="#chair" transform="translate(592,687) scale(0.6)"/>
+    <use href="#chair" transform="translate(664,691) scale(0.6)"/>
+  </g>
+  <g opacity="0.64">
+    <use href="#chair" transform="translate(44,772) scale(0.84)"/>
+    <use href="#chair" transform="translate(140,766) scale(0.84)"/>
+    <use href="#chair" transform="translate(236,772) scale(0.84)"/>
+    <use href="#chair" transform="translate(332,766) scale(0.84)"/>
+    <use href="#chair" transform="translate(428,772) scale(0.84)"/>
+    <use href="#chair" transform="translate(524,766) scale(0.84)"/>
+    <use href="#chair" transform="translate(620,772) scale(0.84)"/>
+    <use href="#chair" transform="translate(716,766) scale(0.84)"/>
+  </g>
+  <g>
+    <use href="#chair" transform="translate(-40,880) scale(1.2)"/>
+    <use href="#chair" transform="translate(104,872) scale(1.2)"/>
+    <use href="#chair" transform="translate(248,880) scale(1.2)"/>
+    <use href="#chair" transform="translate(392,872) scale(1.2)"/>
+    <use href="#chair" transform="translate(536,880) scale(1.2)"/>
+    <use href="#chair" transform="translate(680,872) scale(1.2)"/>
+    <use href="#chair" transform="translate(824,880) scale(1.2)"/>
+  </g>
+
+  <!-- floor -->
+  <rect x="0" y="1016" width="852" height="264" fill="#090c10"/>
+  <path d="M0 1016 H852" stroke="#222a32" stroke-width="2"/>
+
+  <!-- film strip -->
+  <g opacity="0.45">
+    <rect x="40" y="116" width="32" height="212" fill="#191e23" stroke="#2c343b" stroke-width="1.5"/>
+    <rect x="47" y="124" width="18" height="196" fill="#2a3239" opacity="0.55"/>
+    <g fill="#0a0d10">
+      <rect x="45" y="126" width="8" height="8" rx="1"/><rect x="58" y="126" width="8" height="8" rx="1"/>
+      <rect x="45" y="146" width="8" height="8" rx="1"/><rect x="58" y="146" width="8" height="8" rx="1"/>
+      <rect x="45" y="166" width="8" height="8" rx="1"/><rect x="58" y="166" width="8" height="8" rx="1"/>
+      <rect x="45" y="186" width="8" height="8" rx="1"/><rect x="58" y="186" width="8" height="8" rx="1"/>
+      <rect x="45" y="206" width="8" height="8" rx="1"/><rect x="58" y="206" width="8" height="8" rx="1"/>
+      <rect x="45" y="226" width="8" height="8" rx="1"/><rect x="58" y="226" width="8" height="8" rx="1"/>
+      <rect x="45" y="246" width="8" height="8" rx="1"/><rect x="58" y="246" width="8" height="8" rx="1"/>
+      <rect x="45" y="266" width="8" height="8" rx="1"/><rect x="58" y="266" width="8" height="8" rx="1"/>
+      <rect x="45" y="286" width="8" height="8" rx="1"/><rect x="58" y="286" width="8" height="8" rx="1"/>
+      <rect x="45" y="306" width="8" height="8" rx="1"/><rect x="58" y="306" width="8" height="8" rx="1"/>
+    </g>
+  </g>
+
+  <g text-anchor="middle">
+    <text x="426" y="1130" font-family="Georgia, serif" font-style="italic" font-size="21" fill="#f2e6d2" fill-opacity="0.8">The film was never finished. Neither was the audience.</text>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+</svg>

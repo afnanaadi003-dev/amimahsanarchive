@@ -1,0 +1,190 @@
+TITLE: SIX CHAIRS
+MIN: 5
+@@SLATE
+Camera :: Locked off at the back of the hall, watching the chairs fill one at a time — the camera counts before the people do.
+Roll :: 16mm for the inserts of the reels; digital, 3200 ISO, for the basement, where the only sources are a hanging bulb and an exit sign.
+Costume :: Arnie in a cardigan buttoned to the throat and a tie he has not worn since 1989. Corin in a wet coat. Everyone else in what they wore to work.
+Environment :: St. Alban's parish hall, 6:40 p.m., January: linoleum, a piano nobody tunes, six folding chairs in a room built for forty.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — EVENING</h4>
+      <p class="action">Six folding chairs. Two rows of three. ARNIE STETLER, eighty-four, sets the last one down, squares it with his foot, and sits in the front row alone. The hall could hold forty. A coffee urn clicks somewhere behind him.</p>
+      <p class="action">The door at the top of the stairs opens. CORIN VALE, twenty-two, comes down with rain on his coat and a notebook he is already holding open.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Is this the screening?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">This is the audience.</p></div>
+      <p class="action">Corin looks at the six chairs. Then at the room. Then at Arnie.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Where is everybody?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">You're it, so far. Sit anywhere. Sit where you'd sit if there were forty people, that way you're not sitting where somebody told you to.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">The door opens four more times. NADINE OKAFOR, forty-one, in scrubs and a coat over them. WALTER PIKE, seventy-nine, with a stick he does not lean on. LUIS BARROS, forty-six, holding a clipboard like it is a reason. TESSA NG, seventeen, headphones around her neck, sent here by a school.</p>
+      <p class="action">Each of them says one sentence to Arnie. He writes nothing down.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">You sent me a card that says I'm in a film.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">You are.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">I'm seventy-nine.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">So's the film.</p></div>
+      <p class="action">PASTOR DEE ALCOTT, fifty-four, comes down the stairs with a plate of cookies and sets it on the piano.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Thank you for coming. I know the invitation was strange. Arnie typed it himself and I read it twice and I couldn't find a single thing to fix.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Twenty-seven cards. Six of you came.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="paren">(a beat)</p><p class="dline">That's four more than I expected.</p></div>
+    </div>
+===CH===
+TITLE: THE BASEMENT
+MIN: 6
+@@SLATE
+Camera :: Slow pan of the hall's four corners, ending on the closet door — the only door in the room with a lock.
+Roll :: Digital, 2500 ISO, an exit sign doing more work than the bulb.
+Costume :: Dee in a clerical collar and a fleece over it. Luis in a hi-vis vest he has not taken off. Tessa in a school hoodie with a mascot on it.
+Environment :: The hall in winter: damp stone, a radiator that ticks, forty years of pancake breakfasts in the walls.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Tessa holds her phone up. Then higher. Then to the ceiling.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">There's no signal down here.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">There's no signal down here, there's no signal in the sanctuary, and there's no signal in the office. The building is one hundred and thirty years old and it was built out of rock by people who did not want to be reached.</p></div>
+      <p class="action">Luis is walking the wall with his clipboard, thumb against the plaster.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">You've got a crack from the sill to the sill. The flashing's gone. This isn't a roof, it's a suggestion.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Four thousand.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Forty-two hundred with the gutter.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">We have nine hundred.</p></div>
+      <p class="action">Luis stops writing. Looks at her.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">I can't pass this roof.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">I know. I'm not asking you to lie. I'm asking you to come back on Tuesday.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — LATER</h4>
+      <p class="action">Corin has found the projector: a Bell &amp; Howell on a trolley with one bad wheel, dust on it like felt. Beside it, a closet door with a hasp and a padlock.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Is this it?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's it.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">What's in the closet?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Forty years.</p></div>
+      <p class="action">Tessa looks up from her phone, which has nothing on it, at a boy her own age talking to an old man about a closet. She puts the phone in her pocket. She does not take it out again for the rest of the night.</p>
+    </div>
+===CH===
+TITLE: THE LIST
+MIN: 6
+@@SLATE
+Camera :: Overhead of the index card on the piano lid, then a slow push until the names fill the frame — the audience reading before the characters do.
+Roll :: Digital, 4000 ISO, one bulb; the card is the brightest object in the room.
+Costume :: Arnie's reading glasses on a cord. Nadine's coat still on. Walter's cap in his hands, not on his head.
+Environment :: The piano lid, scarred by forty years of coffee cups; the card is soft at the corners from handling.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Arnie sets a five-by-eight index card on the piano lid and turns it so they can read it. Twenty-seven names, typed, two columns, a pencil initial beside some of them.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's the list. That's all I have that says any of us were there.</p></div>
+      <p class="action">They gather. Walter finds himself in four seconds and does not say anything for a while.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Pike, W. Third shift.</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="paren">(reading)</p><p class="dline">Dunne, C. Fourth name down.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="paren">(quietly)</p><p class="dline">Barros, M.</p></div>
+      <p class="action">Corin reads the whole card twice, top to bottom, the way you read a page you are afraid of. Then he looks up.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">There's no Vane on this.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Ellis Vane made the film. He's not on his own list.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">The list isn't people who made it. It's people who are in it.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Then why am I here?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Because you answered.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — LATER</h4>
+      <p class="action">Tessa has the card now. She reads it the way she reads a menu: fast, then again.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">There's twenty-seven names and six chairs.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">There are six chairs because there are six of you.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Then the other twenty-one were supposed to stand?</p></div>
+      <p class="action">Arnie looks at the chairs. He had not thought of it that way, and it shows.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">...I'll bring more chairs.</p></div>
+    </div>
+===CH===
+TITLE: NAME FOUR
+MIN: 6
+@@SLATE
+Camera :: Two-shot across the piano, then a close-up of Nadine's hands on the card — she is holding it like a prescription.
+Roll :: Digital, 3200 ISO; the exit sign has gone from green to a kind of opinion.
+Costume :: Nadine in scrubs under her coat, badge still clipped on. Walter with his cap on now.
+Environment :: Cold has settled into the hall; the radiator ticks like it is counting down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — NIGHT</h4>
+      <p class="action">Nadine sits with the card on her knees.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">Cora Dunne is my mother.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">She doesn't know what year it is. She knows the song from the coffee commercial and she knows my father's birthday and she thinks the mill is still open.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Then she's the only one.</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">She got the card. I opened it. "You are one of twenty-seven. The film is forty years late. Please come."</p></div>
+      <p class="action">She looks at the empty chair beside her.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">She kept a ledger of who worked what. Every shift, in a book, for eleven years. She'd know all twenty-seven of these names in her sleep.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">She wrote most of them for me.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Walter has not sat down. He is standing in front of the six chairs like a man at a bus stop.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">There weren't twenty-seven of us on that floor.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">There were eleven. Eleven on the third shift, and that's counting the boy who swept.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">So who are the other sixteen?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Office. Maintenance. Two drivers. The nurse. The woman who did the payroll up to the last Friday.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">That's a list of the whole building.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's what I've been trying to tell you for forty years. It's not a list of the film. It's a list of everybody who was standing in it.</p></div>
+    </div>
+===CH===
+TITLE: THE CAN
+MIN: 6
+@@SLATE
+Camera :: Low, inside the closet, looking out at their legs in the doorway — the camera is in the closet and the people are the ones outside.
+Roll :: Digital, 8000 ISO, near-total darkness, one torch held at chest height so the light rakes across the shelves.
+Costume :: Corin with his coat open now, sleeves pushed up. Arnie with the key already out.
+Environment :: A closet under the stairs: three shelves, a box of hymnals, a tin of nails, and a rusted film can.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — CLOSET — NIGHT</h4>
+      <p class="action">Arnie opens the padlock with a key he does not have to look for. The door swings. The smell is metal and vinegar.</p>
+      <p class="action">Corin's torch finds it: a 16mm can, rust blooming across the lid, a strip of paper tape on the side in blue ink.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="paren">(reading)</p><p class="dline">"THE LONG NIGHT SHIFT. Vane. 1985."</p></div>
+      <p class="action">He lifts the lid. Three reels, wrapped in their own leader, each with a number in grease pencil on the hub.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">One. Two. Four.</p></div>
+      <p class="action">He turns them over. He looks at Arnie.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Where's three?</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — CLOSET — CONTINUOUS</h4>
+      <p class="action">Arnie does not answer at once. He takes the lid from Corin, sets it down, and lines the three reels up on the shelf with the numbers facing out.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Reel three never came out of that building.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">You don't know that.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I know everything about that night except the parts I was in.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="paren">(from the doorway)</p><p class="dline">Arnie.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Three's gone. We have one, two, four, and a projector that hasn't turned since the Reagan administration. That's the screening.</p></div>
+      <p class="action">He walks out. Walter watches him go with the flat, patient look of a man who has known him since 1962.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">He's lying.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">How can you tell?</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">He lined them up by number. Arnie never lines anything up unless he's thinking about what he's not saying.</p></div>
+    </div>
+===CH===
+TITLE: THE PROJECTOR
+MIN: 7
+@@SLATE
+Camera :: Static frame on the projector's lens, then a whip to the wall as the first light hits it — the screen is a bedsheet, and the bedsheet is the moment.
+Roll :: Digital, 6400 ISO, and then 16mm projected at 24 frames a second, which is a different kind of light entirely.
+Costume :: Corin on his knees with a screwdriver behind his ear. Arnie in his shirtsleeves, tie loosened, transformed.
+Environment :: A bedsheet pinned to the wall with drawing pins; a table lamp used as an exciter lamp; a sewing machine belt from the church's rummage sale.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — NIGHT</h4>
+      <p class="action">The projector is open on the floor like a patient. Corin has the belt in his hand: a perished loop of rubber that crumbles when he touches it.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">This hasn't been made since 1974.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Then it's a miracle it lasted this long. Try the rummage room. There's a sewing machine in there that nobody has sewn on since the Carter administration.</p></div>
+      <p class="action">Cut to: Corin holding a Singer belt up against the old one. Same length. Different century.</p>
+      <p class="action">He fits it. He threads the film. He checks the loop, checks it again, and looks at Arnie.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Both sprockets. Top and bottom. If you're wrong even one hole, it will eat the film and I will let it eat you.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">The lamp comes on. The motor turns. A rectangle of white light hits the bedsheet, and the countdown leader begins: 5, 4, 3, 2.</p>
+      <p class="action">Nobody breathes. Tessa stands up without meaning to.</p>
+      <p class="action">The leader runs out. The frame goes to black. Then: a room full of looms, in daylight, in 1985.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="paren">(very quietly)</p><p class="dline">Oh.</p></div>
+      <p class="action">Arnie's hand is on the trolley. He is not watching the screen. He is watching Walter watch the screen.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's the first frame he ever shot. He shot it on a Tuesday because the light came through the roof glass at four and he said it looked like the building was on fire.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">You were there?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I was the one holding the door so the light wouldn't change.</p></div>
+    </div>

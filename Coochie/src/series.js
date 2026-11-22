@@ -2,7 +2,7 @@
 module.exports = [
   { n: 1, title: 'COOCHIE', logline: 'Two teenagers make a film about the word that was used on them, and find out what it costs to say it out loud.', chapters: 30, written: true },
   { n: 2, title: 'THE LIGHT IS HERE', logline: 'A hardware-store clerk who knows where the light is joins a real crew for one autumn and has to choose between the road and the shop.', chapters: 30, written: true },
-  { n: 3, title: 'TWENTY-SEVEN PEOPLE', logline: 'Six strangers in a church basement discover they are the entire audience for something that has already happened.', chapters: 30 },
+  { n: 3, title: 'TWENTY-SEVEN PEOPLE', logline: 'Six strangers in a church basement discover they are the entire audience for something that has already happened.', chapters: 30, written: true },
   { n: 4, title: 'DUAL-PURPOSE BRANDING', logline: 'A marketing student renames herself after a product and cannot get the old name off her birth certificate.', chapters: 30 },
   { n: 5, title: 'THE LOANER', logline: 'A camera worth more than a car changes hands eleven times in one county and comes back with a different life on it.', chapters: 31 },
   { n: 6, title: 'NO DIVING', logline: 'The last summer at a public pool scheduled for demolition, told by the lifeguard who never learned to swim.', chapters: 30 },

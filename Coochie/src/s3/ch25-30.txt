@@ -1,0 +1,181 @@
+TITLE: THE INVITATIONS
+MIN: 7
+@@SLATE
+Camera :: Close on a fountain pen moving across an envelope, then a handheld montage of front doors — the camera stays outside, at the distance of a stranger.
+Roll :: Digital, 1250 ISO, daylight going grey; snow in the air that does not settle.
+Costume :: Arnie in his overcoat and a scarf, hat on, a satchel of envelopes over his shoulder. Cora's cardigan under Nadine's coat.
+Environment :: Wren's Crossing on a Saturday: eleven front doors, three porch lights on, one dog, a street of houses built for mill families.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — MORNING</h4>
+      <p class="action">Twenty-seven envelopes on the piano lid. Arnie is writing them by hand, one at a time, with a fountain pen and a blotter he has brought from home.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">We could print labels. It would take four minutes.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">It took me four months to send the last ones. I'm not making the same mistake twice.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">The mistake was the labels?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">The mistake was the mail. You don't invite a person to a thing like this through a slot in the door. You knock.</p></div>
+      <p class="action">He caps the pen, stacks the envelopes, and puts them in a canvas satchel.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Sunday at four. You'll run the projector. I'll be in the back row being no help at all.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. WREN'S CROSSING — VARIOUS FRONT DOORS — DAY</h4>
+      <p class="action">A montage of doors, in the cold, at the distance of a stranger. Arnie knocks. Each door opens differently.</p>
+      <p class="action">Door one: a woman in her fifties takes the envelope, reads the name, and says, "My father's been dead since 2004." Arnie: "I know. It's got his name on it and there's a chair."</p>
+      <p class="action">Door two: an old man looks at the envelope and does not take it. "I don't want to see that building." Arnie: "It's not the building. It's the break room." A long pause. He takes it.</p>
+      <p class="action">Door three: a woman cries in the doorway with the door still on the chain and says thank you four times.</p>
+      <p class="action">Door four: Gerry, in his feed cap, holding a coffee.</p>
+      <div class="speech"><p class="cue">GERRY</p><p class="dline">You're the one from the diner.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I'm the one from the diner. Your father's on the list. There's a chair for him and a chair for you.</p></div>
+      <div class="speech"><p class="cue">GERRY</p><p class="dline">I'll come if you don't put me in the movie.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">You're not in the movie. You're in the audience. It's the better part.</p></div>
+    </div>
+===CH===
+TITLE: THE PROJECTIONIST
+MIN: 7
+@@SLATE
+Camera :: Low angle from the floor as Arnie goes down — the camera does not cut, and neither does anyone in the room.
+Roll :: Digital, 3200 ISO, the projector lamp throwing its beam past him onto the sheet, so he falls through the light.
+Costume :: Arnie in his good suit, because it is Sunday and he has dressed for it. Corin in a shirt that has been ironed by someone who loves him.
+Environment :: The hall on Sunday morning; the bedsheet up; two reels on the trolley; the smell of coffee and floor wax.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — SUNDAY MORNING</h4>
+      <p class="action">A test run. Reel one, first four feet, just to check the loop. Arnie stands at the projector with his hand on the flywheel the way another man would rest a hand on a dog.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Hear that? That's the shutter. When it's right, it sounds like a person breathing.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">It sounds like a machine.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Everything sounds like a machine until you've listened to it for sixty years.</p></div>
+      <p class="action">He puts his hand flat on his chest. Looks mildly surprised, as though someone has tapped him on the shoulder.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Corin.</p></div>
+      <p class="action">Then he goes down, and the beam goes across him, and the sheet goes white.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HOSPITAL — CORRIDOR — AFTERNOON</h4>
+      <p class="action">Fluorescent light. A vending machine. Corin in a chair with the projector belt in his hands, still holding it, four hours later.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="paren">(from the bed, off)</p><p class="dline">Is it four o'clock yet?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">It's one.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Then get out of that chair and go put the sheet up.</p></div>
+      <p class="action">Corin comes to the doorway. Arnie is propped up, grey, wired to two things, and entirely himself.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">They said your heart.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">They always say my heart. It's a very reliable organ and it's had enough of me. Listen. Both sprockets. Top and bottom. And don't let anybody touch the loop between reels, because there's a splice in reel two at the nine-minute mark and it's older than you are.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">I can't do this without you.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">You can. That's the whole trouble with young people. You keep being able to do things.</p></div>
+    </div>
+===CH===
+TITLE: THE CUT
+MIN: 7
+@@SLATE
+Camera :: Overhead of hands at a splicing block, then a two-shot across the church table — two people and a razor, which is the oldest editing room there is.
+Roll :: Digital, 2500 ISO, a desk lamp; the cement smells like bananas and nobody mentions it.
+Costume :: Corin with his sleeves rolled and a plaster on one finger. Tessa with her headphones around her neck, not on.
+Environment :: A folding table in the parish hall: a razor blade, a roll of splicing tape, a block of wood, sixteen feet of new film, a laptop showing nine clips.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — SATURDAY NIGHT</h4>
+      <p class="action">Reel four, the new one, is being built by hand on a folding table. Corin has the splicing block. Tessa has the laptop. Walter is asleep in a chair with his mouth open and nobody wakes him.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Nine testimonies. Forty minutes of tape on my phone and I've cut it to six minutes.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Six minutes is right. Ellis's reel four is four minutes. That's a ten-minute ending.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Then what's the last shot?</p></div>
+      <p class="action">Corin lays the strip of film along the block. Looks at it. Looks at the empty chair in the corner of the hall, the one they have been filming people in for a week.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">The chair.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">The chair's empty.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">The chair's a chair. It's not empty. Nothing in a film is empty.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Walter wakes up with a start, the way old men do, and finds them looking at him.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Did I say anything?</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">You snored.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Then I didn't say anything. Put my piece at the front. I want to be over with before anybody's had a chance to decide about me.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">It's not a piece, Mr. Pike.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">It's a piece. Everything's a piece. Just don't put music on it.</p></div>
+      <p class="action">Corin cuts. The razor goes through the film with a sound like a small door closing.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">No music.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Good. Then it's true.</p></div>
+    </div>
+===CH===
+TITLE: TWENTY-SEVEN CHAIRS
+MIN: 7
+@@SLATE
+Camera :: Wide from the stairs, high, so the whole hall is in frame — the camera counts the chairs from above, the way Arnie did on the first night.
+Roll :: Digital, 1600 ISO, Sunday, 3:40 p.m.; the sheet is up and the light through the basement windows is going gold.
+Costume :: Dee in her collar and her best shoes. Luis in a jacket and tie. Tessa with her hair down, which is a plot point.
+Environment :: Twenty-seven folding chairs in four rows, a coffee urn, two plates of cookies, a stack of printed corrections by the door.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — SUNDAY AFTERNOON</h4>
+      <p class="action">Twenty-seven chairs. It takes four people to set them out and it takes a while, because Dee keeps straightening them and Luis keeps measuring the rows.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="paren">(counting)</p><p class="dline">Twenty-seven.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Twenty-seven. One for every card in the rack.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">And if more than twenty-seven come?</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Then we'll have had a better afternoon than 1985.</p></div>
+      <p class="action">Corin is threading the projector with the belt Arnie gave him. He does the loop, checks the sprockets, checks them again, and puts his hand on the flywheel the way Arnie did.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">You all right?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">I'm going to run a forty-year-old film in a church basement for a room full of strangers and my projector man is in the hospital. I'm excellent.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — 4 P.M.</h4>
+      <p class="action">They come down the stairs one at a time, in coats, taking the printed correction from the table by the door because Dee is holding it out and nobody can refuse her.</p>
+      <p class="action">Gerry, in his feed cap, sits in the back row and takes his hat off.</p>
+      <p class="action">Nadine wheels Cora in, and the room stands up without being asked.</p>
+      <p class="action">Marge Kovac comes last, with a pen behind her ear, and sits in the front row like a woman at her own trial.</p>
+    </div>
+===CH===
+TITLE: THE LAST REEL
+MIN: 8
+@@SLATE
+Camera :: Behind the projector, then the screen, then faces — the camera keeps choosing between the film and the people, which is the whole question of the series.
+Roll :: 16mm projection on a bedsheet at 24 fps, three reels, then one reel that is eleven days old and already looks like it belongs.
+Costume :: The room in coats and good shoes; Cora with her scarf; Gerry with his hat in his hands.
+Environment :: 4:20 p.m. in Alcott Hall; twenty-seven chairs; the radiator; the cookies going around twice.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — SUNDAY</h4>
+      <p class="action">Lights out. Reel one. The mill yard, the roof glass, the light coming down in shafts. A man on screen says his name and laughs at himself.</p>
+      <p class="action">In the third row, a woman puts her hand over her mouth. In the back, Gerry leans forward until his elbows are on his knees.</p>
+      <div class="speech"><p class="cue">GERRY</p><p class="paren">(whispering, to nobody)</p><p class="dline">That's my father. That's my father's hat.</p></div>
+      <p class="action">Reel two. Seven minutes and forty seconds of Walter at loom fourteen. Nobody moves. Somebody in the fourth row is crying and doing it silently, which is worse.</p>
+      <p class="action">Reel three. The break room. The offer. The hands going up, one, two, five, nine, ten, and the pan to the doorway where a forty-five-year-old man keeps his hand in his pocket.</p>
+      <p class="action">In the room, every head turns to the back, where Arnie is sitting in his wheelchair in the aisle with a nurse's hand on the chair and his eyes on the screen.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">On screen: Ellis's four minutes. His kitchen table. Toast. Forty seconds of a twenty-nine-year-old man looking into a lens and chewing, and then the mill corridor, and then white.</p>
+      <p class="action">Then the splice.</p>
+      <p class="action">Walter, on the bedsheet, in colour, in a chair, saying: "Walter Pike. Third shift, nine years on loom fourteen."</p>
+      <p class="action">Then Luis. Then Nadine. Then a woman of eighty in a cardigan who says her father's name because her father cannot. Then a man in Ohio on a phone screen, held up to the camera by his granddaughter. Then nine more.</p>
+      <p class="action">Then the empty chair. Fourteen seconds. The lamp beside it. Nobody in the room breathes.</p>
+      <p class="action">Then, over black, in a young man's voice, from 1985: "That's all I've got. I'll finish it Friday."</p>
+      <p class="action">The reel runs out. The sheet goes white. Corin's hand is shaking on the flywheel.</p>
+    </div>
+===CH===
+TITLE: THE AUDIENCE
+MIN: 8
+@@SLATE
+Camera :: The room with the lights up, wide, then close on faces as they turn to each other — the final shot is not the screen, and never was.
+Roll :: Digital, 1250 ISO, four in the afternoon in January, which is the best light a church basement will ever get.
+Costume :: Coats back on, hats in hands, Cora's scarf loose at her throat.
+Environment :: The hall after a film: twenty-seven chairs, thirty-four people, a plate with two cookies left and a stack of corrections half taken.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — LATE AFTERNOON</h4>
+      <p class="action">Nobody moves for a long time. Then Dee stands up and turns the lights on, and the room blinks like people coming out of a matinee.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">That was a film by Ellis Vane, who was twenty-nine, and it was finished this week by the people in this room.</p></div>
+      <p class="action">Gerry stands up in the back row. He is a big man in a feed cap and he is not crying, quite.</p>
+      <div class="speech"><p class="cue">GERRY</p><p class="dline">My father took the buyout.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="paren">(turning)</p><p class="dline">Your father voted yes at eleven fifty-two at night and then worked two weeks for nothing and then drove me to the hospital when my back went. He took the money because there was money, son. It came out of the pension because we'd saved it. That's not a buyout, that's a trade.</p></div>
+      <p class="action">Gerry sits down slowly. Then he stands up again and says, to the whole room, "I'm sorry," and the room says, in about nine different ways, "don't be."</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — LATER</h4>
+      <p class="action">Chairs folding. Cookies. Marge's correction going out the door in seventeen coat pockets.</p>
+      <p class="action">Arnie is parked by the piano with the reel in his lap, the new one, the one that is eleven days old.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Well?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">You let it run past the splice without losing the loop.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">I fixed the splice this morning.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="paren">(a long pause)</p><p class="dline">Then it's yours.</p></div>
+      <p class="action">Tessa has her phone propped on a hymnal, filming the room: the chairs going back against the wall, the corrections leaving, Cora asleep in her chair with her cup still in her hand.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="paren">(to Corin)</p><p class="dline">Do we take the chairs down?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Leave one out.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Why?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Because somebody's going to want to sit down, and I'd rather they found a chair than a slab.</p></div>
+      <p class="action">She laughs. He doesn't. The phone keeps running. On the bedsheet, still pinned to the wall, the last of the daylight makes a rectangle the exact shape of a screen.</p>
+    </div>

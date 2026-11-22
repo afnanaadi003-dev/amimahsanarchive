@@ -1,0 +1,185 @@
+TITLE: WHAT THE TOWN BELIEVES
+MIN: 6
+@@SLATE
+Camera :: Wide through the diner window from the street, then inside at table height — the camera sits where a customer would sit and eavesdrops.
+Roll :: Digital, 1600 ISO, eight in the morning, fluorescent tubes and a griddle's steam.
+Costume :: Walter in his coat with the collar up. Corin with the notebook closed for once. Gerry in a feed cap and a jacket from a seed company.
+Environment :: Wren's Diner: eleven stools, a pie case with two pies, a wall of photographs of the mill that nobody has taken down.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. WREN'S DINER — MORNING</h4>
+      <p class="action">Two eggs, toast, coffee. Behind the register, a wall of photographs: the mill in snow, the mill in sun, the mill with a banner across the front for its fiftieth anniversary.</p>
+      <p class="action">At the counter, GERRY, sixty-eight, is telling the waitress a story he has told her before.</p>
+      <div class="speech"><p class="cue">GERRY</p><p class="dline">They took the buyout. Every one of them. Six hundred dollars and a handshake and my father was on that shift and he never worked again.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="paren">(quietly, to Walter)</p><p class="dline">Say something.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">You were in the room.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">And he was eight years old and his father came home and said the mill was closing and then he was quiet for the rest of his life. You can't argue with a man about a thing he's been sure of for forty years at seven in the morning.</p></div>
+      <p class="action">Gerry pays. He nods at Walter on the way out, and Walter nods back, and neither of them says a word.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. WREN'S DINER — CONTINUOUS</h4>
+      <p class="action">They stand on the sidewalk in the cold with their coffee. Across the street, the lot where the mill was: a slab, a bollard, a sign.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">So the whole town thinks they sold out.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">The whole town thinks they sold out, and the men who didn't are dead or in Florida, and the ones left don't talk about it because talking about it sounds like bragging.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">It's not bragging. It's a fact.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">A fact that makes everybody in this town feel like a fool for forty years. You want to hand a man that at the counter before he's had his coffee?</p></div>
+      <p class="action">He starts walking. Then, without turning around:</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">But I'd like to hand it to them by Sunday.</p></div>
+    </div>
+===CH===
+TITLE: TESTIMONY
+MIN: 7
+@@SLATE
+Camera :: Two cameras: Tessa's phone propped on a hymnal, and the church's old camcorder on a tripod — the frame is a chair against a bedsheet with one lamp beside it.
+Roll :: Digital, 1250 ISO, one 60-watt bulb at 3200K, which is the warmest light in the building and the reason this looks like 1985.
+Costume :: Walter in his good shirt, cap off, hands folded. Corin behind the camera with his sleeves pushed up.
+Environment :: Alcott Hall with the chairs stacked and one chair out; the bedsheet pulled flat; a card table with a glass of water nobody drinks.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — DAY</h4>
+      <p class="action">One chair. One lamp. A bedsheet. Tessa has put her phone on a hymnal and is framing it with the seriousness of a person who has just discovered she has a job.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">What are we calling this?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Testimony.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Good. This church has been in the testimony business since 1894. It's mostly been the sad kind. I'd like to try the other kind.</p></div>
+      <p class="action">Walter sits in the chair. He looks at the lens. He looks at Corin.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">What do I say?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Your name, and one sentence about that night. Nothing else. If you want to say more, don't.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Walter clears his throat.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Walter Pike. Third shift, nine years on loom fourteen.</p></div>
+      <p class="action">He stops. He looks at the floor. He starts again, and this time his voice has a grain in it.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">On the third of October, 1985, eleven of us worked two weeks without pay so the pension would stay whole for the men who couldn't leave. Nobody made us. We voted.</p></div>
+      <p class="action">Silence. The camcorder's red light. Tessa, behind her phone, has stopped breathing.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">That's it. That's the whole thing. It took forty years to be one sentence.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="paren">(from the back)</p><p class="dline">Print it. Don't print it — there's no film — turn it off and write it down before he changes his mind.</p></div>
+    </div>
+===CH===
+TITLE: THE CHAIR IN THE HALL
+MIN: 6
+@@SLATE
+Camera :: Static on the empty chair, then a slow push as Luis sits down — the camera does not cut away when he can't speak.
+Roll :: Digital, 1600 ISO, the same 60-watt bulb; the bedsheet behind is not quite flat, and the crease looks like a road.
+Costume :: Luis in a shirt without the hi-vis vest for the first time. He has shaved. He is holding his clipboard and then puts it on the floor.
+Environment :: The hall at 3 p.m.; a school bus going past overhead; the radiator doing its thing.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — AFTERNOON</h4>
+      <p class="action">Luis sits in the chair. The red light is on. He opens his mouth.</p>
+      <p class="action">Nothing.</p>
+      <p class="action">Corin does not stop recording. Tessa does not look away. Thirty seconds. A minute.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="paren">(finally)</p><p class="dline">Miguel Barros. Third shift. He fixed the looms.</p></div>
+      <p class="action">He stops. His jaw works.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="paren">(gently)</p><p class="dline">Your name.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">That is my name.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Say yours.</p></div>
+      <p class="action">Long pause. The radiator ticks.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Luis Barros. My father voted yes on the third of October and then he left in '86 and he never told me why, and I have spent thirty years thinking he was a coward, and I was wrong about him in a way I can't apologize for.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">He gets up. Walks to the wall. Puts his forehead against it.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="paren">(to Corin, whispering)</p><p class="dline">Do we cut that?</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">No.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">It's — that's a lot.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">He said it into a camera on purpose. If we cut it, we're deciding for him what he's allowed to have said.</p></div>
+      <p class="action">Dee comes down the stairs with a glass of water, sets it on the piano, and goes back up without a word.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="paren">(to the wall)</p><p class="dline">Can I do it again? I want to do it once without crying.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Son. Nobody in the history of film has ever done it once without crying.</p></div>
+    </div>
+===CH===
+TITLE: THE ROOF, AGAIN
+MIN: 7
+@@SLATE
+Camera :: Handheld at the top of a ladder in the rain, then a wide from the parking lot with one figure on the roof and a torch below — the church as a ship.
+Roll :: Digital, 6400 ISO, sodium street light and a phone torch; rain in the beam like static.
+Costume :: Luis in a jacket over a hoodie, no gloves, soaked. Dee holding an umbrella that has already given up.
+Environment :: The church roof at 9 p.m.: slate, a gutter hanging by one bracket, a flashing pulled away from the chimney.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. ST. ALBAN'S — ROOF — NIGHT</h4>
+      <p class="action">Rain. A ladder against the parish hall. Luis goes up with a torch in his teeth and a tube of roofing cement in his jacket.</p>
+      <p class="action">Dee stands in the lot with an umbrella turned inside out, shouting upward.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">You wrote the report!</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="paren">(over the rain)</p><p class="dline">I wrote the report and then I got up here and looked!</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">And?</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">It's not the roof! It's the flashing at the chimney! It's been pouring down the inside of the wall for eleven years and the roof is fine!</p></div>
+      <p class="action">He works. The rain gets worse. Dee watches a man in her parking lot become, briefly, entirely happy.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. ST. ALBAN'S — ROOF — LATER</h4>
+      <p class="action">Half an hour. Luis comes down the ladder with his hands black and his hair flat to his head.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">How much?</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Three hundred and forty dollars in materials and a Saturday. Not forty-two hundred. Three forty.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">You just voided your own inspection.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">I voided my inspection. The roof's fine. Somebody else can sign it and I'll be in the back row with a cookie.</p></div>
+      <p class="action">Dee laughs — the first full laugh out of anyone in this series — and it goes up the side of the church and comes back down.</p>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Luis.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Yeah.</p></div>
+      <div class="speech"><p class="cue">DEE</p><p class="dline">Your father voted yes.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="paren">(after a moment)</p><p class="dline">My father voted yes.</p></div>
+    </div>
+===CH===
+TITLE: CORA
+MIN: 7
+@@SLATE
+Camera :: Handheld at seated height, following Nadine's mother into the hall — the camera stays at the height of a woman in a wheelchair, so the room keeps looking up at her.
+Roll :: Digital, 2000 ISO, the afternoon bulb; a cardigan the colour of the inside of a shell.
+Costume :: Cora in a good cardigan and a scarf, hair done by someone who loves her. Nadine in her scrubs, badge turned around.
+Environment :: Alcott Hall in the afternoon with the chairs out and the bedsheet down; the urn on because the urn is always on when there are guests.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — AFTERNOON</h4>
+      <p class="action">Nadine wheels her mother in. CORA DUNNE, eighty-one, looks around the hall with the flat, courteous attention of a woman being shown a room she has not seen before and does not intend to comment on.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">Mama. This is where the church is. We're going to watch something.</p></div>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">Is it the mill?</p></div>
+      <p class="action">Nadine stops. Arnie, at the projector, turns around.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">Yes. It's the mill.</p></div>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">Then I'll have a cup. There's no point watching the mill without a cup.</p></div>
+      <p class="action">Dee is already pouring. Cora takes it with both hands and does not drink it. She holds it the way she held it in 1985, and every person in the room sees it.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — LATER</h4>
+      <p class="action">Reel three, projected onto the sheet, with the sound low. Cora watches the break room fill with people she knew.</p>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">That's Walter. He's got all his hair.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="paren">(from the back)</p><p class="dline">I've got most of it, Cora.</p></div>
+      <p class="action">On screen: the hands go up. Twenty-six of them. The camera pans to the doorway.</p>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">Twenty-six to one.</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="paren">(carefully)</p><p class="dline">Do you remember who the one was?</p></div>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">Arnie. He had a wife in the hospital and he put his hand in his pocket and I thought: that's the bravest no I ever saw, because he knew what we'd think.</p></div>
+      <p class="action">Arnie is standing very still beside the projector.</p>
+      <div class="speech"><p class="cue">CORA</p><p class="paren">(without turning)</p><p class="dline">Did you take the money, Arnie?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I took it.</p></div>
+      <div class="speech"><p class="cue">CORA</p><p class="dline">Good. Somebody had to.</p></div>
+    </div>
+===CH===
+TITLE: THE CLIPPING
+MIN: 6
+@@SLATE
+Camera :: Overhead of a yellowed clipping on a coffee table, then a reverse to Marge in her chair — she is framed by forty years of newspapers, which is the point.
+Roll :: Digital, 2500 ISO, one floor lamp with a fringed shade; the newsprint is the brightest thing in the room.
+Costume :: Marge Kovac, eighty-one, in a cardigan and pearls, with a pen behind her ear out of habit.
+Environment :: A front room in Wren's Crossing: stacks of the county paper tied with string, a cat, a clock that is four minutes fast.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MARGE KOVAC'S HOUSE — AFTERNOON</h4>
+      <p class="action">The clipping, on the coffee table, under a coaster so it will not blow away.</p>
+      <p class="action">WREN'S CROSSING MILL MEN TAKE BUYOUT; PENSION UNCERTAIN. October 1986. By M. Kovac.</p>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">I was twenty-six and I had forty minutes and a press release from a man in a coat.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">You never talked to the men?</p></div>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">I called four of them. Three wouldn't come to the phone and the fourth said "we did all right" and I wrote it up as a buyout because that's what the release said and I had a deadline and an editor who liked a clean sentence.</p></div>
+      <p class="action">She picks up the clipping, folds it along a crease it already has, and puts it down again.</p>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">Forty years. I've had that in a drawer for forty years and every time I open the drawer I close it again.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MARGE KOVAC'S HOUSE — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">We're finishing his film. There's a screening on Sunday and there'll be a chair with your name on it and I'd like to put a correction on the church table next to the cookies.</p></div>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">A correction.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Five hundred words. I'll run them off at the library. You write them, I'll print them, and we'll put them by the door.</p></div>
+      <p class="action">Marge looks at him for a long moment. Then she takes the pen from behind her ear and puts it down on the clipping like a woman laying a card.</p>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">Five hundred words. I'll do it tonight and I'll do it mean.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Do it kind.</p></div>
+      <div class="speech"><p class="cue">MARGE</p><p class="dline">I'll do it kind and mean. That's the best kind of correction.</p></div>
+    </div>

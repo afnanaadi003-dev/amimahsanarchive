@@ -1,0 +1,171 @@
+TITLE: THE COAT ROOM
+MIN: 6
+@@SLATE
+Camera :: Handheld, tight, in a room the width of a corridor — two people and a row of hooks, nothing else to look at.
+Roll :: Digital, 6400 ISO, the door propped open so a stripe of hall light falls between them.
+Costume :: Coats still on. Luis's hi-vis vest now unzipped. Nadine with her badge turned around.
+Environment :: The coat room: thirty hooks, four coats, a bench, a box of lost gloves nobody has claimed since 2011.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — COAT ROOM — NIGHT</h4>
+      <p class="action">Reel one is over. The projector is still warm. Luis has come in here to be alone and Nadine has followed him because she saw him leave.</p>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">My father's in that film. I've never seen a picture of him at that age. Not one.</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">Where is he now?</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Allentown. He left in '86 and he sent money and he never came back for a Christmas. He died in 2011 and the man at the funeral home asked me what he did for a living and I said "he fixed looms" and I don't know if that's true. I don't know what he did in that building.</p></div>
+      <p class="action">Nadine sits down on the bench. After a moment, Luis sits too, at the other end, like two people waiting for a bus.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">My mother has a ledger. Eleven years of shifts in her handwriting. It's in a box under her bed at the home and she thinks it's a grocery list now.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">Can you get it?</p></div>
+      <div class="speech"><p class="cue">NADINE</p><p class="dline">I can get it. I don't know if I can read it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — COAT ROOM — LATER</h4>
+      <p class="action">Tessa appears in the doorway with her coat already on and her phone in her hand, filming the empty hooks.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Sorry. I'm supposed to log four hours. I've been logging the wrong things.</p></div>
+      <div class="speech"><p class="cue">LUIS</p><p class="dline">What were you logging?</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Sorting the hymnals. There's four hundred hymnals. Nobody's sung out of one since before I was born.</p></div>
+      <p class="action">She turns the phone around and shows them: the six chairs, the bedsheet, the projector, the plate of cookies with one cookie gone.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">This is the only thing that's happened in this building in a year.</p></div>
+    </div>
+===CH===
+TITLE: WHAT ARNIE REMEMBERS
+MIN: 7
+@@SLATE
+Camera :: Arnie in a hard side light, seated on the piano bench; the lens sits slightly below his eye line, so he is looking down at us the way he looked down at a card rack.
+Roll :: Digital, 3200 ISO, one bulb behind him making a halo he did not ask for.
+Costume :: Cardigan, tie, and a plastic watch with a cracked crystal, stopped.
+Environment :: The hall at 9:40 p.m.; the urn has been emptied and switched off, and the room sounds different without it.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — NIGHT</h4>
+      <p class="action">Arnie sits on the piano bench with his hands on his knees. Corin sits on the floor in front of him with the notebook. Dee is folding chairs in the background and pretending not to listen.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">What was your job?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Timekeeper. I punched the cards. Four hundred and six people in that building and I knew every one of them by their card, not their face.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">So the list —</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">The list is the rack. Twenty-seven cards in the rack on the third shift, the night he was there. I typed it off the rack the next morning because I thought somebody would want to know who was standing in the frame.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">And nobody wanted to know.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">The film never came out. Why would they want to know who was in it?</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">What happened to him?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Route 9. October. He was driving back from the lab in Scranton with four reels on the seat beside him and he went off the road at the curve by the quarry. They said he fell asleep. He was twenty-nine and he'd been awake for three days and he had four reels on the seat, so yes. He fell asleep.</p></div>
+      <p class="action">Nobody says anything. The urn, switched off, ticks as it cools.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">Why now?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Because I'm eighty-four.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">That's not an answer.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">It's the only one I've got that's true. The other one is that I've been carrying this closet around since before your mother was born and my knees have opinions about it.</p></div>
+      <p class="action">Dee sets the last chair against the wall and does not turn around.</p>
+    </div>
+===CH===
+TITLE: REEL ONE
+MIN: 7
+@@SLATE
+Camera :: The screen itself, shot from behind the audience so their heads are in the lower third and the film is the sky.
+Roll :: 16mm, 1985, Ektachrome that has gone pink at the edges; projected at 24 fps onto a bedsheet.
+Costume :: On screen: work shirts, aprons, a foreman's white shirt with the sleeves rolled. In the room: five people in January coats.
+Environment :: Alcott Hall with the lights out; the radiator ticking; a bedsheet with a crease down the middle that becomes a road for the length of the film.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — NIGHT</h4>
+      <p class="action">The lamp comes on. Reel one, second screening, this time with the chairs turned around and the sheet pulled tight.</p>
+      <p class="action">On screen: the mill yard at four in the afternoon. Roof glass. Light coming down in shafts so solid you could put a ladder in them. Men walking in through the gate, not acting, not looking at the camera.</p>
+      <div class="speech"><p class="cue">ELLIS</p><p class="paren">(V.O., young, close to the mic)</p><p class="dline">It's four o'clock. In about forty minutes the sun will come through that glass and the whole floor will look like a church, and then it will look like a mill again. I'd like somebody to say their name before that happens.</p></div>
+      <p class="action">A man on screen looks up, squints into the lens, and says: "Pike. Walter Pike." Then he laughs at himself and goes back to work.</p>
+      <p class="action">In the room, Walter puts his hand over his mouth.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">The reel runs. Twelve minutes of people saying names into a camera. A woman holds up a lunch box. A boy sweeps. The light moves across the floor exactly as promised and the whole frame turns gold and then ordinary.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="paren">(whispering, to no one)</p><p class="dline">He got it. He got the whole thing in one take.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">He got it in four takes and picked the one where the light was honest.</p></div>
+      <p class="action">On screen, the camera pans past a woman in a cardigan at a card rack, punching a clock for someone else. She looks up, sees the lens, and waves it away with the flat of her hand.</p>
+      <div class="speech"><p class="cue">NADINE</p><p class="paren">(standing up)</p><p class="dline">That's my mother.</p></div>
+      <p class="action">The reel runs out. The sheet goes white, then dark. Nobody moves to turn on the light.</p>
+    </div>
+===CH===
+TITLE: THE NIGHT SHIFT
+MIN: 6
+@@SLATE
+Camera :: Wide of the empty lot from the road, then a slow walk-in behind Walter — no cut, because the walk is the scene.
+Roll :: Digital, 12,800 ISO, sodium street light, frost on the slab making it look wet.
+Costume :: Walter's coat over his good shirt, cap on now. Tessa in her hoodie with the hood up.
+Environment :: The mill site, 11 p.m.: a concrete slab, weeds through the joints, one bollard, a sign that says NO TRESPASSING in a font from 1994.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. MILL SITE — NIGHT</h4>
+      <p class="action">A flat concrete slab the size of a football field, weeds in the seams, frost on it. Walter stands at the edge with his hands in his pockets. Tessa has followed him four blocks without being invited.</p>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">This is it?</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">This is the loading dock. You're standing in the parking lot. The building went from here to the road and it was four floors and the top floor was all glass.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">It's a slab.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">It's a slab now. In 1985 there were two hundred and forty looms in there and when they all ran at once you could feel it in your fillings.</p></div>
+      <p class="action">He walks out onto the concrete and stops at a particular place, counting his own steps.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Third shift. Eleven of us, from eleven at night to seven in the morning. And for the first hour there was no supervisor, so for one hour a night the building belonged to us.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MILL SITE — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">What did you do with the hour?</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">We ate. Somebody brought a radio. Cora made coffee in a pot the size of a bucket and if you were late she'd give you the cup with the chip in it.</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">That's it?</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">What did you expect?</p></div>
+      <div class="speech"><p class="cue">TESSA</p><p class="dline">I don't know. Something.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">It was something. It was the best hour of my life and I was getting paid four dollars and ten cents to be in it.</p></div>
+      <p class="action">Tessa takes her phone out, then puts it away. The wind moves the weeds.</p>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">You can film it. I don't mind. Just don't film it like it's sad. It wasn't sad. It got sad later.</p></div>
+    </div>
+===CH===
+TITLE: WALTER IN THE FRAME
+MIN: 7
+@@SLATE
+Camera :: Behind Walter's head, then a slow drift to the side so we see his face and the screen at once — the living man and the twenty-nine-year-old, in profile, in the same light.
+Roll :: Digital for the room; 16mm for the reel, which is scratched down the left third from a bad loop in 1985.
+Costume :: Walter has taken his cap off and is holding it. The man on screen is wearing the same shape of cap.
+Environment :: Reel two: the third-shift floor at 2 a.m., one bank of lights on, the rest of the mill a cathedral of dark.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — NIGHT</h4>
+      <p class="action">Reel two. The mill at two in the morning, lit by one row of sodium fixtures. A loom runs. A man tends it.</p>
+      <p class="action">The camera does not cut. It holds on WALTER PIKE, twenty-nine, and it goes on holding. His hands move. He checks a thread. He listens to the machine the way a doctor listens to a chest.</p>
+      <div class="speech"><p class="cue">ELLIS</p><p class="paren">(V.O.)</p><p class="dline">How long have you been on this one?</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="paren">(on screen, not looking up)</p><p class="dline">Nine years. Same loom. They tried to move me once and I told them the loom would take it personally.</p></div>
+      <p class="action">In the room, Walter laughs — one short sound — and then stops laughing.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <p class="action">Four minutes of a man working. Nothing happens. Nobody asks for the light to be turned on.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="paren">(quietly, to Arnie)</p><p class="dline">How long does he hold this?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">Seven minutes and forty seconds. He ran the whole magazine. Said he wanted to see if a person could be interesting for that long without being asked to be.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="paren">(without turning around)</p><p class="dline">He asked me a question first.</p></div>
+      <p class="action">On screen, Ellis's voice, off camera, quiet: "What do you think about when it's like this?"</p>
+      <p class="action">On screen, Walter does not answer for a long time. Then: "Whether I'm doing it right."</p>
+      <p class="action">In the room, the seventy-nine-year-old Walter stands up, walks to the back of the hall, and stands facing the wall with his cap in his hands until the reel runs out.</p>
+    </div>
+===CH===
+TITLE: THE LONG TAKE
+MIN: 7
+@@SLATE
+Camera :: The screen, then a very slow tilt down from the bedsheet to the can on the floor and the empty hub where reel three should be.
+Roll :: 16mm on screen, going magenta; digital for the room, going colder as the night goes on.
+Costume :: Coats back on. Dee's collar gone soft. Arnie has not moved from the trolley in two hours.
+Environment :: 1:20 a.m. in a church hall; the building settling; four cookies left on the plate.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — 1:20 A.M.</h4>
+      <p class="action">Reel four. It begins with Ellis at his own kitchen table, forty seconds of him eating toast and looking at the lens, and then it becomes the mill's break room, then a corridor, then nothing.</p>
+      <p class="action">Then leader. Then white. Then the reel spins out and slaps the take-up.</p>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">That's it?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's it.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">That's a hundred feet. That's four minutes. Where's the rest of the reel?</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">There is no rest of the reel. He spliced what he had and he drove to Scranton to have it printed and he never got there.</p></div>
+      <p class="action">Corin is on his feet now, going through the can, the lid, the floor, as if a reel might be hiding in a church hall he has already searched twice.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ST. ALBAN'S — PARISH HALL — CONTINUOUS</h4>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Four reels. One, two, and four are here. Reel three is missing. You said it never came out of the building.</p></div>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">That's what I said.</p></div>
+      <div class="speech"><p class="cue">CORIN</p><p class="dline">Then the film isn't unfinished because he died. It's unfinished because you have a piece of it.</p></div>
+      <p class="action">Silence. Dee, in the doorway, does not intervene. Walter comes back from the wall and stands where he can see Arnie's face.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">I've had forty years to say a sentence and I can't get it out in front of a boy with a notebook.</p></div>
+      <div class="speech"><p class="cue">WALTER</p><p class="dline">Say it in front of me, then.</p></div>
+      <p class="action">Arnie looks at him for a long moment. Then he takes his keys out, and picks the church key off the ring, and sets it on the piano lid.</p>
+      <div class="speech"><p class="cue">ARNIE</p><p class="dline">It's in my garage. It's been in a coffee can for thirty-nine years. And I'd appreciate it if one of you went and got it, because I can't be in the room when it plays.</p></div>
+    </div>

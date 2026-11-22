@@ -1,5 +1,7 @@
 const fs = require('fs');
 const SERIES = require('./src/series');
+const done = SERIES.filter((s) => s.written);
+const doneChapters = done.reduce((a, s) => a + s.chapters, 0);
 
 const cards = SERIES.map((s) => {
   const live = !!s.written;
@@ -62,8 +64,8 @@ footer a:hover{color:var(--gold)}
   <div class="stats">
     <div><b>24</b>Series</div>
     <div><b>720+</b>Chapters minimum</div>
-    <div><b>2</b>Written so far</div>
-    <div><b>60</b>Chapters written</div>
+    <div><b>${done.length}</b>Written so far</div>
+    <div><b>${doneChapters}</b>Chapters written</div>
   </div>
 
   <div class="grid">
