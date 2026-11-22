@@ -1,0 +1,241 @@
+TITLE: THE BACKYARD
+MIN: 5
+@@SLATE
+Camera :: Handheld at head height, then locked off for the notebook — the two kids are always slightly off-centre, as if the frame hasn't decided about them yet.
+Roll :: Digital, 400 ISO, golden hour with cicadas; everything is one stop over.
+Costume :: Maya in oversized vintage denim with a marker stain on the knee. Leo in a plain T-shirt he will wear in all thirty chapters.
+Environment :: A sunlit suburban backyard: patchy lawn, a battered picnic table, a melting popsicle, a distant lawnmower.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. SUNLIT SUBURBAN BACKYARD — LATE AFTERNOON</h4>
+      <p class="action">Cicadas. The lawn is patchy, the maple is thick, and the light comes down through it in coins.</p>
+      <p class="action">MAYA, nineteen, sits cross-legged on a faded quilt with a spiral notebook on her knee. Beside her, LEO, nineteen, throws a bruised tennis ball straight up and catches it with a dull thwack. He has not missed in eleven years.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We're not calling it a movie.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What are we calling it?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">A film. A feature. Something with a poster and a runtime and a man in a tuxedo saying the name out loud.</p></div>
+      <p class="action">Leo catches the ball. Considers.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You want a tuxedo.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I want the tuxedo to be somebody else's problem. I want the name to be ours.</p></div>
+      <p class="action">She writes something in the notebook. He does not look, which is a small act of love.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. SUNLIT SUBURBAN BACKYARD — LATE AFTERNOON</h4>
+      <p class="action">Close on Maya's hand. She stops sketching. Above it, in bold looping cursive: COOCHIE.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(without looking over)</p><p class="dline">You're still stuck on the title.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's not just a title, Leo. It's a statement. A reclamation. You say it out loud in a quiet room and suddenly everyone forgets how to breathe.</p></div>
+      <p class="action">Leo catches the ball. Pauses. Turns his head.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Or they just think you're naming a stray cat.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="paren">(smirking)</p><p class="dline">That's the beauty of it. Dual-purpose branding.</p></div>
+      <p class="action">She snaps the notebook shut. The sound is sharp in the lazy air.</p>
+      <p class="action">She stands, brushes grass off her jeans, and looks at the orange horizon.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">If we're making this film, we don't whisper around the edges. We put the whole messy, awkward truth right on the marquee.</p></div>
+      <p class="action">Wide: two silhouettes against a burning amber sky, and the streetlights coming on one by one, humming.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. SUNLIT SUBURBAN BACKYARD — DUSK</h4>
+      <p class="action">The popsicle has melted into the table. Leo picks up the notebook and opens it, which he was not invited to do.</p>
+      <p class="action">Pages: a horse. A bridge. A woman with a sword. A boy falling off a roof. A banner that says TWENTY-FOUR.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What's the two-four?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Series. Twenty-four of them.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Twenty-four series of what?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Of this. Of the thing we're doing. Thirty chapters each, minimum. Some of them will need more and we'll give them more, because a story that's cut to fit is a story that's lying about its size.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's seven hundred and twenty chapters.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Seven hundred and twenty <em>minimum</em>.</p></div>
+      <p class="action">Leo closes the notebook very slowly, like a man closing a door on a room with a fire in it.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Okay. We start with one.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We start with one.</p></div>
+    </div>
+===CH===
+TITLE: DUAL-PURPOSE BRANDING
+MIN: 5
+@@SLATE
+Camera :: The kitchen table from across the room, half-blocked by a fridge magnet collection — the film keeps being watched by the house.
+Roll :: Digital, 800 ISO, fridge-light white and one warm bulb.
+Costume :: Maya's denim. Leo's T-shirt. Ruth's cardigan, sleeves pushed up like she's about to do surgery.
+Environment :: A kitchen with a fridge covered in magnets, bills under one of them, and a table that has held every argument in this family.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — NIGHT</h4>
+      <p class="action">A laptop. A bowl of grapes nobody is eating. Maya stands; Leo sits; RUTH, fifty-one, leans on the counter with her arms folded in a way that is not unfriendly but is not a chair.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's a word that was used against us and now it's ours. That's the whole pitch.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Whose "us"?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Girls. Us. The ones who got called it in a hallway and had to decide whether to laugh.</p></div>
+      <p class="action">Ruth picks up a grape. Eats it. Takes her time.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">And you're going to make it a movie about that.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I'm going to make it about two kids who make a movie about that, and get it wrong, and get it right, and have to show it to twenty-seven people in a church basement.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Twenty-seven. That's specific.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I'm optimistic.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — LATER</h4>
+      <p class="action">Leo has his hands around a mug he isn't drinking from.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Leo. Your job.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Hardware store. Four days a week. Six to two.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">And the camera?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I can borrow one. My cousin has one he's afraid of.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Good. Afraid is better than broken. — Maya. Show me the budget.</p></div>
+      <p class="action">Maya slides the notebook across. Ruth reads it. Her face does something complicated and then settles.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">There is no budget.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">There's a list of things we don't have to pay for.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">That's a budget with better manners.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Also true.</p></div>
+      <p class="action">Ruth puts the notebook down and pushes the grapes toward Leo, which is a yes.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — NIGHT</h4>
+      <p class="action">The fridge hums. Leo is cutting cardboard on the floor, making a clapperboard. Maya writes the title on it in marker: COOCHIE.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">If we say it seven hundred and twenty times, does it stop being a joke?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">That's the experiment.</p></div>
+      <p class="action">She snaps the clapper. It makes a flat cardboard sound, and they both look at it like it owes them money.</p>
+    </div>
+===CH===
+TITLE: THE NOTEBOOK
+MIN: 5
+@@SLATE
+Camera :: Macro on the notebook; the handwriting becomes the chapter's only narrator.
+Roll :: Digital, 200 ISO, desk lamp, no fill.
+Costume :: Maya in a hoodie with a hole in the cuff.
+Environment :: Her bedroom: tape marks on the wall where posters used to be, a shelf of notebooks with dates on the spines.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S BEDROOM — NIGHT</h4>
+      <p class="action">A desk lamp, a paper cup of coffee long gone cold, and the notebook open at the first page of an outline.</p>
+      <p class="action">Maya writes standing up, which she does when it's going well.</p>
+      <p class="action">Close on the page: ACT ONE — WE DECIDE. ACT TWO — WE BUILD IT. ACT THREE — THEY WATCH IT.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="paren">(to herself)</p><p class="dline">Act two is where the money goes and the weather turns and somebody breaks. Except we have no money, the weather is humid, and everybody's fine. So act two has to break somewhere else.</p></div>
+      <p class="action">She crosses out BREAKS and writes, after a while, LEARNS WHAT IT COSTS.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S BEDROOM — LATER</h4>
+      <p class="action">The shelf of notebooks. She pulls one down at random. It falls open to a page from when she was fourteen: a drawing of a horse, and beneath it, in careful letters, the word SORRY.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Okay. That's a different film.</p></div>
+      <p class="action">She puts it back. Takes the new notebook. Sits down. Writes one line at the top of a blank page and underlines it twice.</p>
+      <p class="action">The line: EVERYBODY IN THIS MOVIE IS AFRAID OF ONE WORD.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S BEDROOM — LATE</h4>
+      <p class="action">Leo at the window, outside, on the lawn, holding a flashlight up under his chin like a kid telling a ghost story. He mouths something.</p>
+      <p class="action">Maya opens the window.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I got the camera.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's eleven o'clock.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's eleven o'clock and I have a camera and we have a film with no budget. This is the best night of our lives and you're doing homework.</p></div>
+      <p class="action">Maya looks at the notebook. Then at him. Then she closes it, and the lamp, and the window, and the sound of her feet on the stairs is the scene change.</p>
+    </div>
+===CH===
+TITLE: THE WORD AT DINNER
+MIN: 6
+@@SLATE
+Camera :: A single slow push across the dinner table, past four plates, stopping on the salt.
+Roll :: Digital, 800 ISO, warm ceiling light; everyone slightly shiny in the heat.
+Costume :: Sunday clothes that are just weekday clothes, ironed.
+Environment :: A dining table with a tablecloth that only comes out for this, and a window unit rattling.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S DINING ROOM — SUNDAY</h4>
+      <p class="action">Four people: Ruth, Maya, Maya's uncle DALE, and Maya's grandmother JO, eighty-two, who is not deaf and lets people think she is.</p>
+      <div class="speech"><p class="cue">DALE</p><p class="dline">So. The film.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">The film.</p></div>
+      <div class="speech"><p class="cue">DALE</p><p class="dline">What's it called?</p></div>
+      <p class="action">A pause with a very specific temperature.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Coochie.</p></div>
+      <p class="action">Dale's fork stops. Jo's does not.</p>
+      <div class="speech"><p class="cue">DALE</p><p class="dline">You're not serious.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I'm extremely serious.</p></div>
+      <div class="speech"><p class="cue">DALE</p><p class="dline">Ruth. Say something.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">I'm eating.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S DINING ROOM — SUNDAY</h4>
+      <p class="action">Jo puts down her fork, wipes her mouth, and takes her time.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">When I was nineteen, a boy called me something in a parking lot and I went home and wrote it on the inside of my closet door. Then I painted over it and wrote my own name on top.</p></div>
+      <div class="speech"><p class="cue">DALE</p><p class="dline">Ma.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">I'm not finished. — The paint was cheap and the word came back through. It's still there. I know it's still there because I sold the house and the new people painted it again and I drove past and could still see the shape.</p></div>
+      <p class="action">Nobody says anything. The window unit rattles.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">If she wants to put it on a marquee, let her put it on a marquee. It's a word with a lot of use in it.</p></div>
+      <p class="action">Maya looks at her grandmother for a long moment, and Jo goes back to her food like she's said nothing at all.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — NIGHT</h4>
+      <p class="action">Dishes. Ruth washes, Maya dries.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">She's not wrong, you know. About the use in it.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I know.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">But a word with use in it can also be used. That's the risk. You'll find that out around the screening, I expect.</p></div>
+      <p class="action">She hands over a wet plate. Maya takes it the way you take a warning you intend to ignore.</p>
+    </div>
+===CH===
+TITLE: LEO'S JOB
+MIN: 5
+@@SLATE
+Camera :: The hardware store shot like a cathedral — high shelves, dust in the light, a boy at a counter with a laminate badge.
+Roll :: Digital, 640 ISO, fluorescent tubes and one open door's worth of sun.
+Costume :: Leo in a store apron over the T-shirt; SAM in a cap with a pencil behind his ear.
+Environment :: A family hardware store: bins of screws, a wall of paint chips, a bell over the door, a radio tuned to the AM.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. HALLORAN HARDWARE — MORNING</h4>
+      <p class="action">Leo at the counter, weighing nails for a woman who is not in a hurry. SAM, sixty, behind him, sorting a bin of washers into another bin.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You're doing that wrong.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's a scale.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">It's a scale and you're weighing them like they're diamonds. Put the scoop in, take a scoop, guess, then weigh. Nobody's building a bridge.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Somebody's always building a bridge.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Not with three-inch galvanized, they're not.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HALLORAN HARDWARE — LATER</h4>
+      <p class="action">The customer gone. Sam leans on the counter. Leo is drawing something on the back of a receipt.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">That the film?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's a shot list.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Looks like a floor plan.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's both. If I know where the camera goes I know where the crew goes and if I know where the crew goes nobody stands in the light.</p></div>
+      <p class="action">Sam looks at him for a moment too long.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You know what you are?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Nineteen and paid badly.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">You're the guy who knows where the light is. That's a whole career, if you want it.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. HALLORAN HARDWARE — CLOSING</h4>
+      <p class="action">Sam counts the register. Leo sweeps.</p>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Take the wood.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What wood?</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">The pallet in the back. Broken one. You're building something, you're always building something, and I'm not going to sell you lumber you can't afford and I'm not going to give you the good stuff either, because then you'd expect it.</p></div>
+      <p class="action">Leo looks at the pallet. Then at Sam, who is not looking at him.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Thanks.</p></div>
+      <div class="speech"><p class="cue">SAM</p><p class="dline">Sign for it. It's still inventory.</p></div>
+    </div>
+===CH===
+TITLE: THE BORROWED CAMERA
+MIN: 6
+@@SLATE
+Camera :: Lens-mounted wide, so the film briefly sees itself — then normal, as if embarrassed.
+Roll :: Digital, 800 ISO, a garage with one work lamp.
+Costume :: Leo's cousin ANDRE in a hoodie and slides; Leo reverent.
+Environment :: A garage: a motorbike in parts, a drum kit, and a camera bag on a workbench like a relic.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. ANDRE'S GARAGE — EVENING</h4>
+      <p class="action">ANDRE, twenty-four, opens the bag with the care of a man who has replaced this camera once already.</p>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Rules. One: it does not leave the county. Two: it does not get rained on. Three: if you break it, you tell me before you tell anybody else, and we deal with it before your mother finds out.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Deal with what?</p></div>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Exactly the question a man who's going to break it asks.</p></div>
+      <p class="action">He sets it on the bench. Leo reaches for it and stops, which Andre notices and approves of.</p>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Two batteries. Four cards. The lens is slow in low light, so if you're shooting at night, shoot at night with a lamp, don't be a hero.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">How much is it worth?</p></div>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Don't ask that. If you know, you'll hold it like it's worth that, and then the film looks like a man holding a camera.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. ANDRE'S GARAGE — EVENING</h4>
+      <p class="action">Andre shows him the record button. Leo presses it. The red light comes on and the room gets very quiet.</p>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Say something.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Testing.</p></div>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Say something true.</p></div>
+      <p class="action">Leo looks at the little screen. At himself, small and green-lit.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I've wanted to do this since I was eleven and I've never said it out loud.</p></div>
+      <p class="action">Andre stops the recording.</p>
+      <div class="speech"><p class="cue">ANDRE</p><p class="dline">Good. That's take one. Now you can make a film, because you've already got one true thing in the can and nobody can take it out.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. ANDRE'S DRIVEWAY — NIGHT</h4>
+      <p class="action">Leo walks home with the bag on his shoulder, one hand on the strap. He is being extremely careful and it looks like a man carrying a baby.</p>
+      <p class="action">At the corner, he stops, sets the bag down, and puts both hands on his knees, and breathes.</p>
+      <p class="action">Then he picks it up again and keeps walking.</p>
+    </div>

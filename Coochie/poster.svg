@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="1280" viewBox="0 0 852 1280" role="img" aria-labelledby="t d">
+  <title id="t">Coochie — series one of twenty-four</title>
+  <desc id="d">A backyard at golden hour: a picnic table with an open notebook, a fence, a maple, a tennis ball in the air, and the title Coochie in marker capitals.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6c877"/>
+      <stop offset="0.35" stop-color="#e89b52"/>
+      <stop offset="0.62" stop-color="#b9603c"/>
+      <stop offset="0.86" stop-color="#7d4034"/>
+      <stop offset="1" stop-color="#3a2323"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b4a24"/>
+      <stop offset="0.4" stop-color="#33331b"/>
+      <stop offset="1" stop-color="#14130d"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff3d0" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#ffcf85" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffb066" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="45%" r="72%">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#000" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+
+  <rect width="852" height="1280" fill="url(#sky)"/>
+  <circle cx="470" cy="742" r="230" fill="url(#sun)"/>
+
+  <!-- branch, top left -->
+  <g fill="none" stroke="#20131a" stroke-width="7" stroke-linecap="round" opacity="0.9">
+    <path d="M-10 40 C 90 60, 150 100, 210 150"/>
+    <path d="M60 58 C 80 34, 110 24, 140 20"/>
+    <path d="M130 96 C 150 70, 178 58, 208 54"/>
+  </g>
+
+  <!-- fence -->
+  <g fill="#2c1e1a">
+    <rect x="0" y="700" width="852" height="10" opacity="0.55"/>
+    <rect x="0" y="770" width="852" height="8" opacity="0.45"/>
+    <g opacity="0.8">
+      <rect x="18" y="630" width="34" height="180"/><rect x="70" y="626" width="34" height="184"/>
+      <rect x="122" y="632" width="34" height="178"/><rect x="174" y="628" width="34" height="182"/>
+      <rect x="226" y="634" width="34" height="176"/><rect x="278" y="630" width="34" height="180"/>
+      <rect x="330" y="626" width="34" height="184"/><rect x="382" y="632" width="34" height="178"/>
+      <rect x="434" y="628" width="34" height="182"/><rect x="486" y="634" width="34" height="176"/>
+      <rect x="538" y="630" width="34" height="180"/><rect x="590" y="626" width="34" height="184"/>
+      <rect x="642" y="632" width="34" height="178"/><rect x="694" y="628" width="34" height="182"/>
+      <rect x="746" y="634" width="34" height="176"/><rect x="798" y="630" width="34" height="180"/>
+    </g>
+  </g>
+
+  <!-- ground -->
+  <path d="M0 806 Q426 786 852 806 L852 1280 L0 1280 Z" fill="url(#grass)"/>
+
+  <!-- picnic table -->
+  <g fill="#1b1512">
+    <rect x="236" y="880" width="380" height="22" rx="3"/>
+    <rect x="252" y="902" width="18" height="120"/>
+    <rect x="582" y="902" width="18" height="120"/>
+    <rect x="300" y="918" width="252" height="14"/>
+    <rect x="296" y="932" width="16" height="86" opacity="0.9"/>
+    <rect x="540" y="932" width="16" height="86" opacity="0.9"/>
+  </g>
+
+  <!-- notebook -->
+  <g transform="translate(352 842) rotate(-6)">
+    <rect width="150" height="104" rx="6" fill="#f4ead6"/>
+    <rect x="8" y="10" width="134" height="2" fill="#c9bda3"/>
+    <rect x="8" y="20" width="118" height="2" fill="#d8cbb0"/>
+    <rect x="8" y="30" width="126" height="2" fill="#d8cbb0"/>
+    <text x="75" y="72" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="21" fill="#2a2118" letter-spacing="1">Coochie</text>
+    <text x="75" y="92" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" letter-spacing="3" fill="#6f6455">TAKE ONE</text>
+  </g>
+
+  <!-- tennis ball in the air -->
+  <circle cx="596" cy="760" r="17" fill="#d9e06a"/>
+  <path d="M584 752 q14 10 0 22" fill="none" stroke="#f2f5c2" stroke-width="2.5" opacity="0.9"/>
+  <path d="M608 754 q-12 9 0 20" fill="none" stroke="#f2f5c2" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- title -->
+  <g text-anchor="middle">
+    <text x="426" y="176" font-family="Helvetica, Arial, sans-serif" font-size="21" letter-spacing="11" fill="#fdf1da" fill-opacity="0.85">A FILM BY AMIM AHSAN</text>
+    <text x="426" y="326" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="104" letter-spacing="1" fill="#fff6e2">Coochie</text>
+    <line x1="356" y1="360" x2="496" y2="360" stroke="#ffe6bd" stroke-opacity="0.55" stroke-width="1.5"/>
+    <text x="426" y="404" font-family="Helvetica, Arial, sans-serif" font-size="16" letter-spacing="6" fill="#fff3e0" fill-opacity="0.9">SERIES ONE OF TWENTY-FOUR</text>
+    <text x="426" y="446" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="4" fill="#fff3e0" fill-opacity="0.65">30 CHAPTERS · 24 SERIES</text>
+  </g>
+
+  <g text-anchor="middle">
+    <text x="426" y="1178" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#fdf1da" fill-opacity="0.85">Put the whole messy, awkward truth on the marquee.</text>
+  </g>
+
+  <rect width="852" height="1280" fill="url(#vig)"/>
+</svg>

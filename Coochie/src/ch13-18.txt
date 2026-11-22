@@ -1,0 +1,168 @@
+TITLE: THE GARAGE STUDIO
+MIN: 5
+@@SLATE
+Camera :: A slow 360 pan of the garage, ending on the corner they have decided is a set.
+Roll :: Digital, 1600 ISO — the noisiest image in the series, on purpose.
+Costume :: Leo in a jacket he found; Maya in a clapperboard-holding posture that is already a character.
+Environment :: A garage with blankets stapled to the ceiling, two work lamps, a bedsheet backdrop, and a chair that is the whole set.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — NIGHT</h4>
+      <p class="action">Blankets on the walls. A bedsheet. Two work lamps, one of them propped on a paint can with a book.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Say it back to me.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Key light is the one with the book under it. Fill is the one that's going to fall over. Don't walk between them or you'll look like a thumb.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">And if it falls over, keep rolling, because a falling lamp is the most honest thing in this garage.</p></div>
+      <p class="action">Leo adjusts the book. The lamp holds. They both look at it like it might bolt.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — LATER</h4>
+      <p class="action">The crew — nine of them — sitting on the floor eating hot dogs. Terrance whistles through his teeth. Jo is in a folding chair with a plate.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">The light's wrong.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It's a garage.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">It's a garage with a shadow behind the girl's ear that makes her look like she's lying. Move the book-lamp two feet left.</p></div>
+      <p class="action">Leo moves it. The shadow goes. Everybody looks at Jo, who goes back to her hot dog.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Grandma, do you want a job?</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">I'll take the credit and none of the hours.</p></div>
+    </div>
+===CH===
+TITLE: THE BOY WHO CAN CRY
+MIN: 5
+@@SLATE
+Camera :: Tight on DESHAWN's face, held far too long, which is the joke and then isn't.
+Roll :: Digital, 800 ISO, the garage set, one lamp.
+Costume :: Deshawn, seventeen, in a school polo he has been told to keep clean.
+Environment :: The garage set, a chair, a glass of water, eleven people holding still.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — NIGHT</h4>
+      <p class="action">DESHAWN sits in the chair. The crew is arranged behind the camera like a wedding photo.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">You're not crying because you're sad. You're crying because you promised yourself you wouldn't and then you did.</p></div>
+      <div class="speech"><p class="cue">DESHAWN</p><p class="dline">About what?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">About the word. Somebody said it to you in the hallway and you laughed, and you've been thinking about the laugh ever since.</p></div>
+      <p class="action">Deshawn looks at the floor. Then at the camera. Then at the floor.</p>
+      <p class="action">And then he cries, easily, like turning on a tap, and everybody in the garage stops breathing.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(whispering)</p><p class="dline">Cut. — Cut.</p></div>
+      <div class="speech"><p class="cue">DESHAWN</p><p class="paren">(wiping his face)</p><p class="dline">Was that okay?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">That was the film. Everything before this was the trailer.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — LATER</h4>
+      <p class="action">The crew has gone. Deshawn lingers by the door.</p>
+      <div class="speech"><p class="cue">DESHAWN</p><p class="dline">The hallway thing. It happened. Sophomore year. I laughed because he was bigger than me and I didn't know what else to do with my face.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Do you want me to take it out?</p></div>
+      <div class="speech"><p class="cue">DESHAWN</p><p class="dline">No. Put my real name on it. If it's going to be in a film, it's going to have my name on it.</p></div>
+      <p class="action">Maya writes DESHAWN, REAL NAME in the notebook. Underlines it once.</p>
+    </div>
+===CH===
+TITLE: THE SIXTY-THIRD TAKE
+MIN: 5
+@@SLATE
+Camera :: The same angle sixty-three times, intercut so the audience feels the repetition in their spine.
+Roll :: Digital, 800 ISO, the garage getting hotter with each take.
+Costume :: Maya's hoodie off, sleeves on the others rolled.
+Environment :: The garage set, now with a fan that everyone is standing in front of between takes.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — NIGHT</h4>
+      <p class="action">Take thirty-eight. Maya says a line. Leo shakes his head.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Again.</p></div>
+      <p class="action">Take forty-four. The lamp falls over. Nobody moves. Take forty-four continues.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What's wrong with it?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're acting.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I'm playing a character.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're playing a character playing a character. Do the line like you're tired and it's late and you want to go home.</p></div>
+      <p class="action">Take sixty-three. Maya looks straight down the lens and says the line flat, exhausted, and it lands like a dropped plate.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(quietly)</p><p class="dline">That's it. That's the one.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — LATER</h4>
+      <p class="action">They sit on the floor with the fan. Maya has her knees up.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Sixty-three times. For one line.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Sixty-three times for the whole film, if it works.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">And if it doesn't?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Then we had a very long night in a garage and I got to watch you get good at something.</p></div>
+      <p class="action">She looks at him. He is looking at the fan. The fan is the only thing moving in the shot.</p>
+    </div>
+===CH===
+TITLE: THE HEAT
+MIN: 4
+@@SLATE
+Camera :: Heat-haze wide, the crew dissolving into the shimmer.
+Roll :: Digital, 100 ISO, hard noon, everything overexposed by half a stop.
+Costume :: Everything wet through.
+Environment :: A driveway, a cooler full of melted ice, a hose nobody has the energy to use.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE DRIVEWAY — NOON</h4>
+      <p class="action">One hundred and four degrees. The crew is lying on the concrete in the shade of a car.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">I'm not dead. I want that in the film.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're eleven. You can't be in a film about dying.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">I can if I'm very convincing.</p></div>
+      <p class="action">Maya puts the hose over her head. Stands there. Nobody speaks for a while.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We're not shooting the party scene today.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The party scene is the whole second act.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">The party scene is the whole second act and we have eleven people, one garage, and no extras. So we shoot it at night, in the garage, and we lie about the party.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. THE DRIVEWAY — LATER</h4>
+      <p class="action">Ice from the cooler, distributed into paper cups. The crew drinks it like medicine.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">In my day we shot in the heat and we didn't have a fan.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Grandma, you've never shot anything.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">In my day we still didn't have a fan.</p></div>
+    </div>
+===CH===
+TITLE: THE PARTY SCENE
+MIN: 6
+@@SLATE
+Camera :: The garage dressed as a party: coloured bulbs, too many people in too small a frame, the camera turning like it's looking for someone.
+Roll :: Digital, 3200 ISO, coloured practicals only.
+Costume :: Everyone in something borrowed; Maya in a dress over jeans, which the film will never explain.
+Environment :: The garage at night with a sheet painted to look like a crowd, a speaker, and eleven people playing forty.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — NIGHT</h4>
+      <p class="action">Coloured bulbs. A speaker. Eleven people arranged in layers to look like forty. The bedsheet now has a crowd painted on it, badly, and the joke is that they've hung it behind the real crowd.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Everybody talk. Not words. Noise. Like a room.</p></div>
+      <p class="action">They talk. It sounds like a room and not a party, and Maya hears the difference.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It sounds like eleven people in a garage.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It is eleven people in a garage.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Then let's shoot the truth. The film's about the party you weren't at, and everybody's been to that party.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. LEO'S GARAGE — NIGHT</h4>
+      <p class="action">New setup. Maya alone in the middle of the noise, not dancing, holding a cup. The camera goes around her once and comes back to her face.</p>
+      <p class="action">The noise drops out of the mix entirely. Silence, with everybody's mouths moving.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="paren">(to camera, quietly)</p><p class="dline">Everybody here is having the best night of their life and I'm standing in the middle of it doing arithmetic.</p></div>
+      <p class="action">Leo holds the shot. The crew keeps miming. Somebody's arm gets tired and they keep going anyway, and that is the take they use.</p>
+    </div>
+===CH===
+TITLE: THE POLICE CALL
+MIN: 5
+@@SLATE
+Camera :: Handheld from the driveway, the porch light behind the officers — a scene lit like a memory.
+Roll :: Digital, 3200 ISO, blue and red spill on wet asphalt.
+Costume :: Leo in the T-shirt and a jacket he grabbed at the door. Maya's dress over jeans, now inside out.
+Environment :: A driveway at 1 a.m., a squad car, a neighbour in a bathrobe pretending not to watch.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. LEO'S DRIVEWAY — 1 A.M.</h4>
+      <p class="action">Two officers. One of them is holding a clipboard and looks bored in a way that is careful.</p>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">Somebody called in a noise complaint. Says there's a party.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">There's a film.</p></div>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">There's a film at one in the morning in a garage.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">There's a film at one in the morning in a garage.</p></div>
+      <p class="action">The officer looks at the sign on the garage door: COOCHIE — SCENE 24 — QUIET PLEASE.</p>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">What's a coochie?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's the name of the film.</p></div>
+      <div class="speech"><p class="cue">OFFICER</p><p class="dline">What's the film about?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">About a girl who gets asked that question in a driveway at one in the morning.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. LEO'S DRIVEWAY — LATER</h4>
+      <p class="action">The squad car pulls away. The street is very quiet. Everyone stands in the driveway not looking at each other.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">That was the best take of my life.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">We weren't rolling.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">I know. I was acting.</p></div>
+      <p class="action">Maya laughs, once, too loud for the hour, and then the rest of them do too, and the neighbour's porch light goes off.</p>
+    </div>

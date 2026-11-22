@@ -1,0 +1,163 @@
+TITLE: CASTING THE NEIGHBORHOOD
+MIN: 4
+@@SLATE
+Camera :: A series of front-door framings, each one a little closer than the last.
+Roll :: Digital, 400 ISO, midday sun with no diffusion.
+Costume :: Whoever answered the door.
+Environment :: Six porches, one cul-de-sac, a folding table with a cardboard sign: CASTING — TODAY ONLY.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE CUL-DE-SAC — MIDDAY</h4>
+      <p class="action">A folding table. A cardboard sign. Maya with the notebook, Leo with the camera.</p>
+      <p class="action">A line of nine people, most of them under sixteen, one of them seventy.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Name, age, and one thing you can do that nobody asked you to do.</p></div>
+      <div class="speech"><p class="cue">KID</p><p class="dline">Terrance. Eleven. I can whistle through my teeth.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Terrance, you're in the film.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="paren">(quietly)</p><p class="dline">We don't have a part for him.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We do now. He's the boy who whistles through his teeth. That's a character and it's better than anything in my notebook.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. THE CUL-DE-SAC — LATER</h4>
+      <p class="action">The last person in line: JO, with a folding chair, sitting because standing is for people with time.</p>
+      <div class="speech"><p class="cue">JO</p><p class="dline">I can make a pie and I can hold a grudge for forty years.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Grandma.</p></div>
+      <div class="speech"><p class="cue">JO</p><p class="dline">You need somebody old in this film. Otherwise it's a film about people who think they invented being nineteen.</p></div>
+      <p class="action">Maya writes her down. Leo, behind the camera, is laughing silently, shoulders going.</p>
+    </div>
+===CH===
+TITLE: THE RIVAL
+MIN: 5
+@@SLATE
+Camera :: Two-shot across a parking lot, both kids leaning on cars that belong to their parents.
+Roll :: Digital, 320 ISO, hard afternoon sun, long shadows.
+Costume :: PRIYA in a black T-shirt and a lanyard from a film camp; Maya in denim.
+Environment :: A grocery store parking lot, a cart return, a heat shimmer off the asphalt.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. GROCERY STORE PARKING LOT — AFTERNOON</h4>
+      <p class="action">PRIYA, nineteen, has a phone, a ring light, and the calm of a person who has already won something.</p>
+      <div class="speech"><p class="cue">PRIYA</p><p class="dline">I heard you're making a movie called Coochie.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I heard you're making one about a lighthouse.</p></div>
+      <div class="speech"><p class="cue">PRIYA</p><p class="dline">A lighthouse is a metaphor. It's got structure. What's yours got?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">A word that makes adults look at the tablecloth.</p></div>
+      <p class="action">Priya laughs, and it is not entirely unkind.</p>
+      <div class="speech"><p class="cue">PRIYA</p><p class="dline">Shock is a marketing plan, not a script. When the laugh's over, what's in the second act?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Come to the screening and find out.</p></div>
+      <div class="speech"><p class="cue">PRIYA</p><p class="dline">I will. — Maya. If it's bad, I'll say so.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I'd be insulted if you didn't.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S CAR — AFTERNOON</h4>
+      <p class="action">Maya sits in the driver's seat of a parked car with the engine off and her hands on the wheel.</p>
+      <p class="action">She takes out the notebook. Opens to act two. Looks at LEARNS WHAT IT COSTS for a long time.</p>
+      <p class="action">Then she writes under it: SHE FINDS OUT WHO SHE'S WILLING TO BE BAD IN FRONT OF.</p>
+      <p class="action">She closes it, starts the car, and pulls out without checking her mirror, and a horn sounds, and she laughs once, alone.</p>
+    </div>
+===CH===
+TITLE: THE FIRST SHOT
+MIN: 5
+@@SLATE
+Camera :: The actual first shot of the film-within-the-film, then the same shot ruined by a passing truck.
+Roll :: Digital, 800 ISO, 6:40 a.m. light — the only beautiful light they will get for free.
+Costume :: Maya in the hoodie; Leo in the T-shirt; both with wet shoes from the grass.
+Environment :: A sidewalk at dawn, a mailbox, one streetlight still on, dew on everything.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE SIDEWALK — DAWN</h4>
+      <p class="action">Leo has the camera on a borrowed tripod made of a ladder and a clamp. Maya stands on the sidewalk holding a paper cup.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Walk toward me. Don't look at the camera. Don't look at the cup. Look at the thing you're walking toward.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What am I walking toward?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're the one who wrote it. — Two. One.</p></div>
+      <p class="action">She walks. It is very ordinary and it is exactly right, and neither of them says so.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. THE SIDEWALK — DAWN</h4>
+      <p class="action">Take two. Take seven. Take eleven, in which a garbage truck goes past and the whole shot shakes.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Keep it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The truck is in it.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">The truck is the town. Keep it.</p></div>
+      <p class="action">Leo looks at her. Then at the little screen. Then he nods and writes TRUCK — GOOD in the notebook margin.</p>
+    </div>
+===CH===
+TITLE: THE DEEP END
+MIN: 5
+@@SLATE
+Camera :: Low, at water level, so the pool looks like an ocean and the two of them look small.
+Roll :: Digital, 400 ISO, turquoise water, white concrete, noon glare.
+Costume :: Swimsuits; Maya's has a torn strap held with a safety pin.
+Environment :: A public pool in the hour before it opens; a lifeguard chair, a coiled hose, a sign that says NO DIVING.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE PUBLIC POOL — MORNING</h4>
+      <p class="action">Maya and Leo sit on the edge of the deep end with their feet in the water. The pool is empty and blue and enormous.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Say the thing you've been not saying since the parking lot.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What if it's just a dirty word in a nice font.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Okay.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">That's it? Okay?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You said it. It's out. Now we can either make the film or sit here until the lifeguard comes.</p></div>
+      <p class="action">Maya looks at the water. Then she stands up and jumps in, badly, and comes up laughing with her hair over her face.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It's cold. Get in.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. THE PUBLIC POOL — MORNING</h4>
+      <p class="action">They float on their backs, side by side, looking at the sky.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">If it's bad, we'll make another one.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">If it's bad, we'll make twenty-three more.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You're going to say that all summer, aren't you.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">All twenty-four summers.</p></div>
+    </div>
+===CH===
+TITLE: THE SOUND OF A LAWNMOWER
+MIN: 4
+@@SLATE
+Camera :: Static wide of the whole street; the crew moves inside the frame like ants.
+Roll :: Digital, 200 ISO, flat white afternoon.
+Costume :: Everybody in the same clothes as yesterday, because it is that week.
+Environment :: Six lawns, one mower, a boy pushing it who is not in the crew.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE STREET — AFTERNOON</h4>
+      <p class="action">Take fourteen. Dialogue. And a lawnmower starts two houses down and does not stop.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We can wait.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">We've waited forty minutes. He's doing the whole yard. Then he'll do the next one.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What if we record the dialogue after?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Then we'll be the film with bad sound and a lawnmower in it.</p></div>
+      <p class="action">They look at each other. Then Maya walks across the lawn, says something to the boy, and comes back.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">He'll do the far side first. We have twelve minutes.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What did you tell him?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">The truth. That we're making a film and he's ruining it.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">And he was fine with that?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">He asked to be in it.</p></div>
+    </div>
+===CH===
+TITLE: THE MOTHER
+MIN: 6
+@@SLATE
+Camera :: Over Ruth's shoulder, so the audience is on the side of the person being argued with — the film does this once, deliberately.
+Roll :: Digital, 800 ISO, kitchen at night, one overhead light.
+Costume :: Ruth in her work clothes, still on, shoes off.
+Environment :: Bills on the table, a laptop with the film's budget spreadsheet, a clock that is seven minutes fast.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — NIGHT</h4>
+      <p class="action">Ruth takes off her shoes at the door, sits, and pulls the laptop toward her without asking.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Sixty-one dollars and forty cents.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">That's the whole spend.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">For a feature film.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">For a feature film.</p></div>
+      <p class="action">Ruth scrolls. Stops. Scrolls back.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">You've bought propane, a bedsheet, and one hundred and forty hot dogs.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">The hot dogs are for the crew.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">How many people are in your crew?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Eleven. And they're all nineteen and none of them are getting paid and half of them are lying to their parents about where they are.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — LATER</h4>
+      <p class="action">Ruth closes the laptop. The clock is seven minutes fast. Neither of them looks at it.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">When I was your age I did something stupid and it took me nine years to finish it.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What was it?</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">A degree. — I'm not saying don't. I'm saying finish. If you start this and don't finish it, the not-finishing will follow you around, and it'll be bigger than the film ever was.</p></div>
+      <p class="action">Maya nods. Ruth gets up, takes a twenty out of her purse, and puts it under the laptop.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Mom.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">For the hot dogs. Everybody eats at the screening. That's not a film rule, that's a life rule.</p></div>
+    </div>

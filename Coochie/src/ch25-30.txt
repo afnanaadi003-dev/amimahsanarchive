@@ -1,0 +1,167 @@
+TITLE: THE TEACHER
+MIN: 5
+@@SLATE
+Camera :: Classroom at the end of the day, blinds half-closed, dust in the stripes of light.
+Roll :: Digital, 640 ISO, late-afternoon sun through venetian blinds.
+Costume :: MR. HALLORAN in a tie loosened at 3:40; Maya in the denim.
+Environment :: A classroom with a bookshelf, a dead plant, and thirty years of posters behind the map.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. THE CLASSROOM — 3:40 P.M.</h4>
+      <p class="action">MR. HALLORAN, sixty, marks papers with a green pen. Maya sits on a desk, not in it.</p>
+      <div class="speech"><p class="cue">HALLORAN</p><p class="dline">I heard about your screening. Twenty-seven people in a church basement.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It was free. The hot dogs helped.</p></div>
+      <div class="speech"><p class="cue">HALLORAN</p><p class="dline">Twenty-seven people is not nothing. Most films I see in this room have an audience of one and she's grading them.</p></div>
+      <p class="action">He reaches into a drawer and takes out a folded pamphlet, worn soft at the corners: a regional student film festival.</p>
+      <div class="speech"><p class="cue">HALLORAN</p><p class="dline">Deadline's the fifteenth. Entry fee's thirty dollars. I'll pay it and you'll pay me back when you're rich.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">What if we get rejected?</p></div>
+      <div class="speech"><p class="cue">HALLORAN</p><p class="dline">Then you'll have been rejected by a festival, which is a completely different thing from being rejected by a person.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. THE CLASSROOM — LATER</h4>
+      <p class="action">Maya reads the form. Terms and conditions. Categories. A line that says ALL ENTRIES MUST BE UNDER FIFTEEN MINUTES.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It says under fifteen. We're twelve. We're actually eligible.</p></div>
+      <div class="speech"><p class="cue">HALLORAN</p><p class="dline">That's why I gave it to you. If you were nineteen minutes I'd have thrown it out and spared you.</p></div>
+      <p class="action">She folds the form and puts it in the notebook, which is the first time she has treated a sheet of paper like a responsibility.</p>
+    </div>
+===CH===
+TITLE: THE FESTIVAL FORM
+MIN: 5
+@@SLATE
+Camera :: Overhead on the paperwork, then a slow tilt up to the two of them asleep at the table.
+Roll :: Digital, 800 ISO, kitchen at midnight.
+Costume :: Pajamas, hoodies, socks with holes.
+Environment :: The kitchen table: a laptop, a printed form, a cheque for thirty dollars, two cups of tea gone cold.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — MIDNIGHT</h4>
+      <p class="action">Leo types with two fingers. Maya dictates. The form asks for a LOGLINE in 25 WORDS OR FEWER.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Two teenagers make a film about the word that was used on them, and find out what it costs to say it out loud.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's twenty-four words.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">We have one word left. Use it on the title.</p></div>
+      <p class="action">He types the title. They look at it on the screen, in a form field, in a font that belongs to a bank.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">It looks smaller here.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Everything looks smaller in a form. That's what forms are for.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — 1 A.M.</h4>
+      <p class="action">The cursor hovers over SUBMIT. Maya's hand is on the mouse. Leo is watching.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">You want to do it or should I?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">You printed the flyers. I'll do the submitting.</p></div>
+      <p class="action">She clicks.</p>
+      <p class="action">The screen says THANK YOU. YOUR ENTRY HAS BEEN RECEIVED.</p>
+      <p class="action">They sit there for a moment, and then Maya gets up and does a small, terrible dance around the kitchen, and Leo watches her do it with the expression of a man who has decided to be in all twenty-four series.</p>
+    </div>
+===CH===
+TITLE: THE REJECTION EMAIL
+MIN: 5
+@@SLATE
+Camera :: The laptop screen, the room reflected in it, one figure sitting still.
+Roll :: Digital, 1600 ISO, the only light is the screen.
+Costume :: Maya in a hoodie with the hood up.
+Environment :: The bedroom at 6:12 a.m., curtains shut, the laptop fan audible.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S BEDROOM — 6:12 A.M.</h4>
+      <p class="action">An email. Subject: YOUR SUBMISSION. The body is four sentences long and three of them are kind.</p>
+      <p class="action">Close on the words: WE RECEIVED AN UNPRECEDENTED NUMBER OF ENTRIES THIS YEAR.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="paren">(reading aloud, flat)</p><p class="dline">"Unfortunately, we are unable to include your film in this year's programme. We wish you the best with future work."</p></div>
+      <p class="action">She closes the laptop. Sits in the dark. Then opens it again, and reads it a second time, as if the words might have changed overnight.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. MAYA'S KITCHEN — MORNING</h4>
+      <p class="action">Ruth at the counter with coffee. Maya comes in with the laptop and puts it down, open, facing her mother.</p>
+      <div class="speech"><p class="cue">RUTH</p><p class="paren">(reading)</p><p class="dline">"Unprecedented number of entries." Do you know how many festivals say that?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">All of them.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">All of them. — Are you finished?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">I don't know.</p></div>
+      <div class="speech"><p class="cue">RUTH</p><p class="dline">Good. That's an honest answer, and it's not a no.</p></div>
+    </div>
+===CH===
+TITLE: THE SECOND SCREENING
+MIN: 6
+@@SLATE
+Camera :: The same church basement, different night, more chairs — the film repeats its own first act with the opposite result.
+Roll :: Digital, 3200 ISO, projector light, warmer than before.
+Costume :: The crew in the same clothes, immaculate.
+Environment :: The basement with fifty chairs, a working microphone, and a hand-painted sign: SECOND SCREENING — COOCHIE.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">INT. CHURCH BASEMENT — NIGHT</h4>
+      <p class="action">Fifty chairs. Sixty people, some standing at the back. Leo's aunt is doing a brisk trade in coffee.</p>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="paren">(to Maya, at the door)</p><p class="dline">I invited my whole class. And my teacher. And my teacher's class.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Terrance, we have sixty hot dogs.</p></div>
+      <div class="speech"><p class="cue">TERRANCE</p><p class="dline">Then I'll eat last. I'm eleven. I'm used to it.</p></div>
+      <p class="action">Maya looks at the room: her mother, Jo in the front row with her arms folded, Sam in the back with his cap on, Priya with her notebook and her arms crossed, Mr. Halloran in the corner pretending to be off duty.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">INT. CHURCH BASEMENT — LATER</h4>
+      <p class="action">The film plays. The laugh scene gets a laugh that is the right shape this time. The party scene gets silence. The crying scene gets a room that has forgotten it is a room.</p>
+      <p class="action">Then the credits. Then sixty people clapping at different times, badly, together.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="paren">(at the front, holding the dead microphone)</p><p class="dline">The festival said no. So we're doing it here, where the chairs are free and the hot dogs are cheap. Thank you for coming twice.</p></div>
+      <div class="speech"><p class="cue">SOMEONE AT THE BACK</p><p class="dline">When's the next one?</p></div>
+      <p class="action">Maya looks at Leo. Leo looks at Maya. Neither of them has an answer and both of them know it is a yes.</p>
+    </div>
+===CH===
+TITLE: THE WORD, AGAIN
+MIN: 5
+@@SLATE
+Camera :: A quiet walk-and-talk, the camera ahead of them walking backwards — the only romantic shot in the series.
+Roll :: Digital, 800 ISO, sodium streetlights.
+Costume :: Hoodies; the summer ending.
+Environment :: A residential street at night, sprinklers off, a cat under a car, one porch light on their side.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. THE STREET — NIGHT</h4>
+      <p class="action">They walk home from the screening carrying the empty hot dog trays.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Say it.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Say what?</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">The word. The way you'd say it at the dinner table now.</p></div>
+      <p class="action">Maya stops. Considers. Then says it clearly, without flinching, and it sounds like a title.</p>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Coochie.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Yeah. It's just a word now.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">It was always just a word. It was the room that gave it teeth.</p></div>
+      <p class="action">They walk on. The porch light goes off as they pass it, and neither of them notices.</p>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. MAYA'S DRIVEWAY — NIGHT</h4>
+      <p class="action">They put the trays down by the bin. Stand there.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">So. Twenty-three more.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Twenty-three more.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I should get paid for this one.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">You got a hot dog.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I got sixty hot dogs. It's the most I've ever been worth.</p></div>
+      <p class="action">She laughs. He goes inside. She stands in the driveway a moment, looking at the garage.</p>
+    </div>
+===CH===
+TITLE: THE NEXT ONE
+MIN: 6
+@@SLATE
+Camera :: The backyard again, same framing as the first chapter, one season later — nothing about the frame changed, everything about the people did.
+Roll :: Digital, 400 ISO, late afternoon, cicadas quieter.
+Costume :: Maya in the denim, mended at the knee. Leo in a new T-shirt, which is the only sign that time passed.
+Environment :: The backyard, the quilt, the picnic table, a notebook with SERIES 2 written on the front.
+@@SCENES
+<div class="scene">
+      <h4 class="slug">EXT. SUNLIT SUBURBAN BACKYARD — LATE AFTERNOON</h4>
+      <p class="action">Same table. Same quilt. A new notebook, thicker, with SERIES 2 on it in marker.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">What's the second one about?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">A boy who works in a hardware store and knows where the light is.</p></div>
+      <p class="action">Leo stops throwing the ball. It lands on the lawn and he doesn't get it.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">That's me.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">That's you.</p></div>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">I don't know if I want to be a film.</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Nobody knows. That's the first chapter.</p></div>
+    </div>
+<div class="scene">
+      <h4 class="slug">EXT. SUNLIT SUBURBAN BACKYARD — LATE AFTERNOON</h4>
+      <p class="action">She opens the new notebook to the first page and writes a single line, then turns it so he can read it.</p>
+      <p class="action">The line: EVERYBODY IS AFRAID OF BEING A WORD SOMEBODY ELSE CHOSE.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Thirty chapters?</p></div>
+      <div class="speech"><p class="cue">MAYA</p><p class="dline">Thirty minimum.</p></div>
+      <p class="action">Leo picks up the ball. Throws it. Catches it.</p>
+      <div class="speech"><p class="cue">LEO</p><p class="dline">Okay. Roll camera.</p></div>
+      <p class="action">Wide: two silhouettes against a burning amber sky, and the streetlights coming on one by one, humming.</p>
+      <p class="action">The cardboard clapperboard snaps shut.</p>
+      <p class="action">BLACK.</p>
+    </div>
