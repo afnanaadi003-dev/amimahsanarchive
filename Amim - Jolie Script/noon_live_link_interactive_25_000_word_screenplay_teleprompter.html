@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOON — LIVE LINK | Interactive 25,000-Word Screenplay &amp; Teleprompter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            script: ['"Courier Prime"', '"JetBrains Mono"', 'Courier', 'monospace'],
+            display: ['"Cinzel"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom Scrollbar & Solar Range Scrubber */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(8, 12, 22, 0.55);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(245, 158, 11, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(251, 191, 36, 0.78);
+    }
+
+    input[type="range"].noon-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"].noon-slider::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 9999px;
+    }
+    input[type="range"].noon-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 9999px;
+      background: #fbbf24;
+      border: 3px solid #fef9c3;
+      box-shadow: 0 0 18px rgba(251, 191, 36, 0.9), 0 0 6px rgba(249, 115, 22, 0.65);
+      margin-top: -6px;
+      transition: transform 0.14s ease, background-color 0.14s ease;
+    }
+    input[type="range"].noon-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.22);
+      background: #fde047;
+    }
+    input[type="range"].noon-slider::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 9999px;
+      background: #fbbf24;
+      border: 3px solid #fef9c3;
+      box-shadow: 0 0 18px rgba(251, 191, 36, 0.9);
+      transition: transform 0.14s ease;
+    }
+
+    /* Dynamic 5-Act Solar Progression Ambient Backgrounds */
+    body {
+      transition: background 1.3s ease, color 0.45s ease;
+    }
+    .solar-act-1 {
+      background: radial-gradient(circle at 50% 0%, #191d3a 0%, #070913 76%);
+    }
+    .solar-act-2 {
+      background: radial-gradient(circle at 50% 0%, #2d1f2f 0%, #090812 76%);
+    }
+    .solar-act-3 {
+      background: radial-gradient(circle at 50% 0%, #422914 0%, #0b0910 76%);
+    }
+    .solar-act-4 {
+      background: radial-gradient(circle at 50% 0%, #5c3710 0%, #0e0a0b 78%);
+    }
+    .solar-act-5 {
+      background: radial-gradient(circle at 50% 0%, #78480e 0%, #140e09 82%);
+    }
+
+    /* Screenplay Paper Light Theme Override */
+    html:not(.dark) body {
+      background: #f7f3e8 !important;
+      color: #1c1917;
+    }
+    html:not(.dark) header,
+    html:not(.dark) footer > div,
+    html:not(.dark) aside {
+      background: rgba(247, 243, 232, 0.95) !important;
+      color: #1c1917 !important;
+      border-color: rgba(180, 120, 30, 0.28) !important;
+    }
+    html:not(.dark) .paper-text {
+      color: #1c1917 !important;
+    }
+    html:not(.dark) .paper-muted {
+      color: #57534e !important;
+    }
+    html:not(.dark) .paper-slug {
+      color: #b45309 !important;
+    }
+    html:not(.dark) .paper-cue {
+      color: #92400e !important;
+    }
+
+    /* Solar Cue Tags ([LIVE LINK] & [NOON]) */
+    .solar-cue-tag {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.08rem 0.45rem;
+      border-radius: 0.375rem;
+      margin-right: 0.35rem;
+      vertical-align: baseline;
+      background: rgba(251, 191, 36, 0.16);
+      color: #fde047;
+      border: 1px solid rgba(251, 191, 36, 0.42);
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.14);
+    }
+    html:not(.dark) .solar-cue-tag {
+      background: rgba(217, 119, 6, 0.14);
+      color: #92400e;
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+
+    /* Teleprompter Playhead Guide */
+    .noon-playhead-guide {
+      background: linear-gradient(90deg, transparent 0%, rgba(251, 191, 36, 0.1) 20%, rgba(251, 191, 36, 0.19) 50%, rgba(251, 191, 36, 0.1) 80%, transparent 100%);
+      border-top: 1px solid rgba(251, 191, 36, 0.34);
+      border-bottom: 1px solid rgba(251, 191, 36, 0.34);
+    }
+
+    mark.search-hit {
+      background-color: #fbbf24;
+      color: #090a0f;
+      padding: 0 3px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="solar-act-1 text-stone-100 min-h-screen flex flex-col selection:bg-amber-400/30 selection:text-amber-100">
+
+  <!-- DYNAMIC SOLAR ZENITH AMBIENT GLOW OVERLAY -->
+  <div id="solarZenithGlow" class="fixed inset-x-0 top-0 h-[420px] pointer-events-none z-0 transition-all duration-700"
+       style="background: radial-gradient(ellipse at 50% 0%, rgba(251, 191, 36, 0.08) 0%, rgba(245, 158, 11, 0.02) 52%, transparent 80%);">
+  </div>
+
+  <!-- STICKY TOP HEADER: TITLE, ACTIVE ACT BADGE, WORD COUNTER, ZENITH BAR & 25,000-WORD SCRUBBER -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-slate-950/90 border-b border-amber-500/20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5">
+      <!-- Top Row -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <button id="drawerToggleBtn" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition shrink-0" title="Open 25-Scene Navigator, Search, Bookmarks &amp; Display Controls">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10" />
+            </svg>
+          </button>
+
+          <div class="min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <h1 class="font-display text-base sm:text-xl font-extrabold tracking-wider text-amber-300">
+                NOON — LIVE LINK
+              </h1>
+              <span id="actBadge" class="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/35">
+                ACT I: HIGH MERIDIAN
+              </span>
+              <span id="solarClockTag" class="hidden sm:inline-block text-[11px] font-mono text-amber-300/90 bg-slate-900/90 border border-amber-500/25 px-2 py-0.5 rounded-full">
+                06:00:00 SOLAR
+              </span>
+            </div>
+            <p id="sceneSubtitle" class="text-xs text-stone-400 paper-muted truncate">
+              Scene 1 — EXT. HELIOSTAT RIDGE - DAWN
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Word Readout & Quick Tools -->
+        <div class="flex items-center gap-2">
+          <div class="hidden md:flex items-center gap-2 bg-slate-900/95 border border-amber-500/25 rounded-xl px-3 py-1.5 text-xs">
+            <span id="liveWordCounter" class="font-mono font-bold text-amber-300 text-sm">1</span>
+            <span class="text-stone-500">/</span>
+            <span id="totalWordCounter" class="font-mono text-stone-300">25,000 WORDS</span>
+            <span id="percentCounter" class="ml-1 px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 font-mono text-[11px]">0%</span>
+          </div>
+
+          <button id="bookmarkCurrentBtn" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-stone-700/80 text-stone-300 hover:text-amber-300 transition" title="Bookmark Current Word Position">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+          </button>
+
+          <button id="openToolsBtn" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-stone-700/80 text-xs font-semibold text-stone-200 hover:text-amber-300 transition">
+            Navigator &amp; Tools
+          </button>
+        </div>
+      </div>
+
+      <!-- Solar Zenith Progress Arc / Bar (Sun Climbing to High Noon 12:00:00) -->
+      <div class="mb-2 flex items-center gap-2.5 text-[10px] font-mono text-stone-400 paper-muted">
+        <span class="shrink-0 text-indigo-300">06:00 DAWN</span>
+        <div class="relative flex-1 h-1.5 rounded-full bg-slate-800/90 overflow-visible">
+          <div id="solarZenithFill" class="h-full rounded-full bg-gradient-to-r from-indigo-400 via-amber-400 to-yellow-200 transition-all duration-75" style="width: 0%;"></div>
+          <!-- Climbing Sun Indicator Dot -->
+          <div id="solarSunOrb" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-yellow-300 border border-white shadow-[0_0_12px_#fde047] transition-all duration-75" style="left: 0%;"></div>
+        </div>
+        <span class="shrink-0 text-amber-300 font-bold">12:00 NOON</span>
+      </div>
+
+      <!-- MASTER 25,000-WORD SCRUBBER SLIDER -->
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] font-mono text-stone-400 paper-muted w-8 text-right">1</span>
+          <div class="relative flex-1 flex items-center">
+            <div class="absolute inset-x-0 h-2 rounded-full bg-slate-800 overflow-hidden pointer-events-none">
+              <div id="scrubberFill" class="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-yellow-200 w-0 transition-all duration-75"></div>
+            </div>
+            <div id="actMarkersTrack" class="absolute inset-x-0 h-2 pointer-events-none"></div>
+            <input id="masterWordSlider" type="range" min="1" max="25000" value="1" step="1" class="noon-slider relative z-10 w-full" aria-label="Master 25,000-Word and Scene Scrubber Slider" />
+          </div>
+          <span id="sliderMaxLabel" class="text-[11px] font-mono text-stone-400 paper-muted w-14">25,000</span>
+        </div>
+
+        <!-- Mobile Compact Readout -->
+        <div class="flex md:hidden items-center justify-between text-[11px] text-stone-400 paper-muted mt-1 px-1">
+          <span><strong id="mobileWordCounter" class="text-amber-300 font-mono">1</strong> / <span id="mobileTotalCounter">25,000 WORDS</span></span>
+          <span id="mobileClockTag" class="font-mono text-amber-200">06:00:00 SOLAR</span>
+          <span id="mobilePercentCounter" class="font-mono text-amber-300">0%</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACTIVE PLAYHEAD GUIDE LINE (Visible when LIVE LINK is playing & Follow Playhead is active) -->
+  <div id="playheadGuide" class="hidden fixed inset-x-0 top-1/2 -translate-y-1/2 h-24 noon-playhead-guide pointer-events-none z-20 flex items-center justify-between px-4 sm:px-10">
+    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-300/85">☀ LIVE LINK</span>
+    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-300/85">LIVE LINK ☀</span>
+  </div>
+
+  <!-- SLIDE-OUT NAVIGATOR & SCRIPT TOOLS DRAWER -->
+  <aside id="navigatorDrawer" class="fixed inset-y-0 left-0 z-50 w-80 sm:w-96 bg-slate-950/96 backdrop-blur-2xl border-r border-amber-500/25 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <div class="p-4 border-b border-stone-800 flex items-center justify-between">
+      <div>
+        <h2 class="font-display text-lg font-bold tracking-wide text-amber-300">NOON — NAVIGATOR</h2>
+        <p id="drawerSubMeta" class="text-xs text-stone-400 paper-muted">5 Acts • 25 Scenes • 25,000 Words</p>
+      </div>
+      <button id="drawerCloseBtn" class="p-2 rounded-xl hover:bg-stone-800 text-stone-400 hover:text-white transition" title="Close Drawer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Live Search & Display Controls -->
+    <div class="p-3.5 border-b border-stone-800/80 space-y-2.5">
+      <div class="relative">
+        <input id="liveSearchInput" type="text" placeholder="Search Maya, Theo, Aris, Solis, [LIVE LINK]..." class="w-full bg-slate-900 border border-stone-700 rounded-xl pl-3 pr-12 py-2 text-xs text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-400 transition" />
+        <span id="searchHitCounter" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-amber-300"></span>
+      </div>
+
+      <div class="flex items-center justify-between gap-2">
+        <button id="themeToggleBtn" class="flex-1 py-1.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-stone-700/80 text-xs font-medium text-stone-200 hover:text-amber-300 transition">
+          Solar Dark / Paper
+        </button>
+        <div class="flex items-center gap-1 bg-slate-900 border border-stone-700/80 rounded-xl p-1">
+          <button id="fontSmallerBtn" class="px-2 py-0.5 text-xs font-mono text-stone-300 hover:text-amber-300 rounded-lg hover:bg-slate-800" title="Decrease Font Size">A-</button>
+          <button id="fontLargerBtn" class="px-2 py-0.5 text-xs font-mono text-stone-300 hover:text-amber-300 rounded-lg hover:bg-slate-800" title="Increase Font Size">A+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Bookmarks -->
+    <div id="bookmarksPanel" class="px-4 py-3 border-b border-stone-800/80 hidden">
+      <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-300 mb-2">Saved Bookmarks</div>
+      <div id="bookmarksList" class="space-y-1.5 max-h-32 overflow-y-auto"></div>
+    </div>
+
+    <!-- 25-Scene Index List -->
+    <div id="sceneIndexList" class="flex-1 overflow-y-auto p-3 space-y-1.5"></div>
+  </aside>
+
+  <div id="drawerBackdrop" class="hidden fixed inset-0 z-40 bg-black/65 backdrop-blur-xs"></div>
+
+  <!-- MAIN SCREENPLAY STAGE -->
+  <main class="relative z-10 flex-1 max-w-4xl w-full mx-auto px-4 sm:px-8 pt-8 pb-44">
+    <!-- Feature Screenplay Cover Header -->
+    <section class="text-center py-10 sm:py-12 border-b border-amber-500/20 mb-10">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-amber-300 mb-3">ORIGINAL FEATURE MOTION PICTURE SCREENPLAY</p>
+      <h2 class="font-display text-4xl sm:text-6xl font-extrabold tracking-wider text-white paper-text mb-4">
+        NOON — LIVE LINK
+      </h2>
+      <p class="font-script italic text-sm sm:text-base text-stone-300 paper-muted max-w-2xl mx-auto mb-6 leading-relaxed">
+        "High above a desert canyon, four specialists race against the climbing sun to align a fractured heliostat array and lock a trans-horizon solar relay beam at 12:00:00 sharp—before a geomagnetic storm severs the valley below."
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs font-mono">
+        <span class="px-3.5 py-1 rounded-full bg-slate-900/90 border border-stone-800 text-stone-300">5 ACTS</span>
+        <span class="px-3.5 py-1 rounded-full bg-slate-900/90 border border-stone-800 text-stone-300">25 SCENES</span>
+        <span id="coverWordBadge" class="px-3.5 py-1 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 font-bold">25,000 WORDS</span>
+      </div>
+    </section>
+
+    <!-- Dynamic 25,000-Word Screenplay Blocks -->
+    <article id="scriptStage" class="font-script text-[16px] leading-[1.85] space-y-5"></article>
+
+    <!-- End of Screenplay Footer -->
+    <section class="mt-16 pt-12 border-t border-amber-500/25 text-center">
+      <p class="font-mono text-sm tracking-[0.3em] uppercase text-amber-300 mb-2">FADE OUT.</p>
+      <h3 class="font-display text-2xl sm:text-3xl font-bold text-white paper-text mb-3">THE END — NOON: LIVE LINK</h3>
+      <p class="text-sm text-stone-400 paper-muted max-w-md mx-auto mb-6">
+        Word 25,000 reached at high solar zenith. Scrub the master slider above to jump to any scene or rewind to dawn.
+      </p>
+      <button id="rewindDawnBtn" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-sans font-bold text-sm shadow-lg shadow-amber-400/25 transition">
+        Rewind to Word 1 (Dawn)
+      </button>
+    </section>
+  </main>
+
+  <!-- TOAST FEEDBACK -->
+  <div id="toastBanner" class="fixed top-28 right-4 z-50 pointer-events-none opacity-0 transition-opacity duration-300 bg-slate-900/95 border border-amber-400/50 text-amber-200 px-4 py-2.5 rounded-xl shadow-2xl text-xs font-medium"></div>
+
+  <!-- FLOATING BOTTOM "LIVE LINK" TELEPROMPTER DECK -->
+  <footer class="fixed bottom-4 inset-x-0 z-40 px-3 sm:px-6 pointer-events-none">
+    <div class="max-w-4xl mx-auto pointer-events-auto bg-slate-950/92 backdrop-blur-2xl border border-amber-500/35 rounded-2xl shadow-[0_14px_45px_rgba(0,0,0,0.85)] px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Primary LIVE LINK Play/Pause Button with Pulsing Solar-Amber Dot + Scene Steppers -->
+      <div class="flex items-center gap-2">
+        <button id="liveLinkPlayBtn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-sans font-extrabold text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-400/30 transition active:scale-95">
+          <span class="relative flex h-2.5 w-2.5">
+            <span id="livePulsePing" class="hidden animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-950"></span>
+          </span>
+          <svg id="playIcon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="pauseIcon" class="w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          <span id="liveLinkLabel">LIVE LINK</span>
+        </button>
+
+        <div class="flex items-center gap-1">
+          <button id="prevSceneBtn" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-stone-300 border border-stone-800 transition" title="Previous Scene">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="nextSceneBtn" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-stone-300 border border-stone-800 transition" title="Next Scene">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Teleprompter Speed Slider (150 to 800 WPM, Default 280 WPM) -->
+      <div class="flex items-center gap-2.5 flex-1 min-w-[165px] max-w-xs">
+        <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400 paper-muted">Speed</span>
+        <input id="wpmSlider" type="range" min="150" max="800" step="10" value="280" class="flex-1 accent-amber-400 cursor-pointer" aria-label="Teleprompter Reading Speed in Words Per Minute" />
+        <span id="wpmDisplay" class="font-mono text-xs font-bold text-amber-300 w-20 text-right">280 WPM</span>
+      </div>
+
+      <!-- Follow Playhead Auto-Scroll Lock Toggle -->
+      <button id="followToggleBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400/15 hover:bg-amber-400/25 border border-amber-400/40 text-amber-200 text-xs font-semibold transition" title="Lock Auto-Scroll to Active Playhead">
+        <span id="followStatusDot" class="w-2 h-2 rounded-full bg-amber-300"></span>
+        <span>Follow Playhead</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * NOON — LIVE LINK | 25,000-Word Feature Screenplay & Teleprompter Engine
+     * 5 Acts • 25 Scenes (~1,000 words per scene) • Exact 25,000-Word Scrubber
+     */
+
+    const ACT_META = {
+      1: "ACT I: HIGH MERIDIAN",
+      2: "ACT II: FRACTURED ARRAY",
+      3: "ACT III: GEOMAGNETIC SURGE",
+      4: "ACT IV: ZENITH ALIGNMENT",
+      5: "ACT V: SOLAR HORIZON"
+    };
+
+    const SCENES_BLUEPRINT = [
+      // ACT I: HIGH MERIDIAN (Scenes 1–5)
+      {
+        act: 1,
+        slugline: "EXT. HELIOSTAT RIDGE - DAWN",
+        timeLabel: "06:00:00 SOLAR",
+        premise: "First violet-amber light crests the red sandstone rim of Mesa Solis, waking four hundred tilted heliostat mirrors poised above a mile-deep desert canyon.",
+        beats: [
+          "[LIVE LINK] Camera glides low along the obsidian optical walkway as cold desert wind sings across brushed titanium mirror frames coated in predawn frost.",
+          "MAYA LIN (34), lead optical signal engineer with chalk-dusted fingers and a brass inclinometer clipped to her utility belt, kneels beside Mirror Bank Alpha-One.",
+          "Below the cantilevered ridge, a ribbon of morning mist threads through the canyon floor where twelve valley settlements rely on the high-altitude solar relay for power, water pumps, and medical telemetry.",
+          "[NOON] Tight close-up on Maya's wrist chronometer ticking toward 06:04:00 as a faint auroral shimmer ripples unusually early across the northern ionosphere."
+        ],
+        dialogues: [
+          { speaker: "MAYA", parenthetical: "into her headset mic, breath clouding in the crisp air", line: "Alpha-One through Alpha-Forty are clear of frost, Aris. Azimuth actuators are responding, though the magnetic compasses are already drifting two degrees east." },
+          { speaker: "ARIS (V.O.)", parenthetical: "calm, measured over the station channel", line: "Magnetometer readings from the upper observatory just spiked, Maya. The coronal mass ejection arrived six hours ahead of forecast. By 12:00:00 solar noon, atmospheric ionization will sever every radio frequency in the basin." },
+          { speaker: "MAYA", parenthetical: "standing slowly, squinting toward the eastern canyon gap", line: "Then the optical relay is all they have left. If we lock the concentrated beam onto the Mount Cinder receiver at exact zenith, the valley keeps its grid." },
+          { speaker: "THEO", parenthetical: "emerging from the service hatch carrying a heavy torque wrench", line: "Assuming Sector Four's mirror pedestals survive the morning thermal expansion. Half those hydraulic struts were built forty years ago, Maya." },
+          { speaker: "MAYA", parenthetical: "offering a determined half-smile", line: "Good thing you brought the big wrench, Theo. Let's wake the array." }
+        ]
+      },
+      {
+        act: 1,
+        slugline: "INT. MERIDIAN CONTROL BUNKER - MORNING",
+        timeLabel: "06:35:00 SOLAR",
+        premise: "Inside the concrete-and-glass nerve center anchored into the cliff face, station commander Aris and archivist Solis monitor a wall of analog dials and phosphor-amber vector displays.",
+        beats: [
+          "[LIVE LINK] Steadicam circles the central plotting table where topographical glass plates glow with amber elevation contours of the canyon relay corridor.",
+          "STATION COMMANDER ARIS (56), silver-haired, upright, with decades of high-desert service etched around his eyes, traces the narrow optical line stretching ninety kilometers to Mount Cinder.",
+          "ARCHIVIST SOLIS (62), draped in a woven wool shawl over a linen field shirt, cross-references hand-inked solar ephemeris tables against shimmering telemetry strips.",
+          "Overhead, cooling fans hum steadily while static crackles softly through the long-range radio speakers as the geomagnetic storm front begins compressing Earth's upper atmosphere."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "tapping a brass divider onto the 12:00:00 meridian line", line: "Look at the solar declination curve, Aris. At true local noon, the sun sits within four arc-minutes of the collector focal axis. We get one continuous ninety-second window of peak flux—and not a second more." },
+          { speaker: "ARIS", parenthetical: "checking the valley power load meters", line: "Hospital pumps in Oakhaven and the desalination wells at Redwater are already drawing emergency reserve. If the [LIVE LINK] beam fails to hand off at noon, their batteries bleed dry by sunset." },
+          { speaker: "SOLIS", parenthetical: "adjusting her round spectacles", line: "Then we cannot afford a single misaligned facet. Every mirror on that ridge has to sing in unison." },
+          { speaker: "ARIS", parenthetical: "keying the station intercom", line: "All stations, this is Meridian Control. T-minus five hours and twenty-five minutes to [NOON]. Begin primary optical calibration." }
+        ]
+      },
+      {
+        act: 1,
+        slugline: "EXT. MIRROR BANK DELTA - MORNING",
+        timeLabel: "07:15:00 SOLAR",
+        premise: "Golden morning sunlight floods the upper canyon rim as Maya and tower mechanic Theo Vance inspect the massive central collector tower.",
+        beats: [
+          "Soaring two hundred feet above the ridge, the Central Receiver Tower gleams like a steel tuning fork topped by a sapphire-shielded optical aperture.",
+          "THEO VANCE (36), broad-shouldered, grease-stained canvas jacket sleeves rolled to his forearms, clips his safety harness onto the vertical gantry ladder.",
+          "[LIVE LINK] Camera tilts upward with Theo as shafts of morning sunlight reflect off freshly angled mirrors, painting bright geometric diamonds across the red canyon walls.",
+          "Below them, a sudden harmonic groan echoes from the western terrace—the unmistakable sound of strained steel under uneven thermal load."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "pausing on the ladder, listening intently to the metal resonance", line: "Hear that pitch? That is not wind in the guy-wires. The western azimuth ring is binding against its bearing race." },
+          { speaker: "MAYA", parenthetical: "scanning the western terrace through optical binoculars", line: "Delta-Seven through Delta-Twelve are lagging four degrees behind the sun track! If they stay skewed, their reflected beams will miss the collector throat entirely." },
+          { speaker: "THEO", parenthetical: "descending swiftly and grabbing a portable hydraulic jack", line: "Give me twenty minutes on the lower ring pit. Keep the auto-tracker paused on Delta Bank until I clear the pinion gear!" },
+          { speaker: "MAYA", parenthetical: "into her mic", line: "Copy that, Theo. Holding Delta Bank manual. Watch your fingers down there." }
+        ]
+      },
+      {
+        act: 1,
+        slugline: "INT. SUB-TERRACE GEAR PIT - MORNING",
+        timeLabel: "07:50:00 SOLAR",
+        premise: "Beneath the rotating mirror platform, Theo works inside a cramped vault of giant bronze worm-gears and pressurized oil lines.",
+        beats: [
+          "Shafts of dusty amber sunlight slice through narrow ventilation grates above, illuminating floating motes of desert grit and fine brass shavings.",
+          "Theo shines his inspection lamp onto the main azimuth ring, revealing a sheared steel locking pin wedged tightly between two massive gear teeth.",
+          "[CUT] Tight close-up on Theo's jaw tightening as he positions a cold chisel and heavy brass mallet against the jammed fragment.",
+          "With each rhythmic strike of the mallet, metallic echoes ring upward through the hollow steel ribs of the heliostat deck."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "straining against the pry-bar", line: "Found the culprit—a fractured shear-pin from last winter's rockslide jammed right in the drive teeth." },
+          { speaker: "MAYA (V.O.)", parenthetical: "over the pit speaker", line: "Can you extract it without pulling the entire gearbox housing?" },
+          { speaker: "THEO", parenthetical: "giving one final, decisive strike that pops the broken pin free", line: "Just did. Grease the teeth and spin her up—Delta Bank is back in the dance." }
+        ]
+      },
+      {
+        act: 1,
+        slugline: "EXT. CANYON RIM OBSERVATION DECK - MORNING",
+        timeLabel: "08:30:00 SOLAR",
+        premise: "With all four mirror banks tracking cleanly, Maya and Solis test a low-power pilot reflection across the canyon haze.",
+        beats: [
+          "[LIVE LINK] Wide sweeping drone-style shot captures a slender, shimmering thread of golden sunlight leaping from the collector aperture across the vast canyon chasm.",
+          "On the distant horizon, a tiny pinprick of returning cyan confirmation light winks back from the Mount Cinder relay station.",
+          "For a brief moment, relief softens the tension across the ridge—until the sky above suddenly ripples with an eerie, silent curtain of violet static.",
+          "[NOON] Barometric needles on the deck console twitch downward in unison as dust devils swirl abruptly across the canyon floor."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "looking upward at the shimmering violet band high in the stratosphere", line: "The geomagnetic compression wave has reached the upper troposphere. Look at the dust along the canyon rim—the static charge is lifting fine sand straight off the rock." },
+          { speaker: "MAYA", parenthetical: "checking her handheld field meter", line: "Induced current is building along the steel array trusses! If a micro-arc hits the motor controllers before we ground the outer perimeter, it will fry the servo boards." },
+          { speaker: "ARIS (V.O.)", parenthetical: "urgent over the loudspeaker", line: "High-wind advisory from North Pass! A dry canyon squall is funneling straight toward the ridge—secure all loose panels immediately!" }
+        ]
+      },
+
+      // ACT II: FRACTURED ARRAY (Scenes 6–10)
+      {
+        act: 2,
+        slugline: "EXT. WESTERN HELIOSTAT TERRACE - MORNING",
+        timeLabel: "09:05:00 SOLAR",
+        premise: "A violent dry canyon squall slams into the ridge, whipping red dust across the polished mirrors and threatening to shatter the fragile glass facets.",
+        beats: [
+          "[LIVE LINK] Handheld camera pushes through swirling clouds of ochre dust as forty-knot gusts howl across the exposed steel catwalks.",
+          "Maya and Theo fight their way along the western parapet, clamping storm-locks onto oscillating mirror frames before wind shear can twist them off their gimbals.",
+          "With a sharp, crystalline crack, a wind-borne slate shard strikes Mirror Facet Beta-Nine, sending a spiderweb of fractures across its silvered surface.",
+          "[CUT] Close-up on Maya shielding her eyes as dust coats the high-reflectivity glass, dropping array efficiency by eighteen percent in seconds."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "shouting over the roar of wind", line: "Beta-Nine is cracked! If we leave it angled into the wind, the whole panel will tear loose and take Beta-Ten with it!" },
+          { speaker: "MAYA", parenthetical: "locking the manual feathering lever on Beta-Nine", line: "Feather it flat to the wind! We can bypass Beta-Nine's output if we boost the mirror curvature on Gamma Bank to compensate!" },
+          { speaker: "THEO", parenthetical: "grabbing her arm as a sudden gust rocks the catwalk", line: "Get behind the windbreak! The static discharge on the perimeter fence is about to arc!" }
+        ]
+      },
+      {
+        act: 2,
+        slugline: "INT. MERIDIAN CONTROL BUNKER - MORNING",
+        timeLabel: "09:35:00 SOLAR",
+        premise: "Inside the bunker, warning lamps flare amber as induced geomagnetic currents overload two primary servo distribution relays.",
+        beats: [
+          "Sparks pop behind the glass breaker cabinet as Aris slams open the manual isolation switches with a rubber-insulated hook.",
+          "Solis furiously recalculates mirror incidence angles on paper after the digital tracking computer reboots under static interference.",
+          "[NOON] Camera pushes in on the master countdown display: 09:38:12 — less than two hours and twenty-two minutes until exact solar zenith.",
+          "Through the reinforced bunker viewport, dust obscures the canyon below while the sun climbs higher, harsh and brilliant, through the haze."
+        ],
+        dialogues: [
+          { speaker: "ARIS", parenthetical: "ventilating smoke from the breaker bay", line: "Automated azimuth tracking on Sectors Two and Three is offline! The servo amplifiers took a direct geomagnetic surge!" },
+          { speaker: "SOLIS", parenthetical: "holding up two sheets of freshly penciled trigonometric tables", line: "We do not need the computers to aim the mirrors, Aris. I have the manual vernier angles calculated for every five-minute interval up to 12:00:00!" },
+          { speaker: "ARIS", parenthetical: "looking out toward the dust-swept ridge", line: "That means someone has to crank and pin forty heavy mirror pedestals by hand in a dust storm." },
+          { speaker: "MAYA", parenthetical: "entering the bunker breathless, goggles pushed onto her forehead", line: "Then divide the ridge into two teams. Theo and I take the upper terraces—you and Solis handle the inner ring." }
+        ]
+      },
+      {
+        act: 2,
+        slugline: "EXT. INNER COLLECTOR RING - LATE MORNING",
+        timeLabel: "10:05:00 SOLAR",
+        premise: "As the squall begins to subside into heavy, static-charged stillness, all four crew members spread across the ridge with hand cranks and brass alignment sights.",
+        beats: [
+          "[LIVE LINK] Tracking shot glides from pedestal to pedestal as Solis calls out azimuth degrees while Aris turns the heavy cast-iron elevation wheels.",
+          "Fine red dust coats every surface, dimming the mirrors' brilliance until Maya rig-connects the high-pressure air-wash manifold along the upper catwalk.",
+          "Jets of compressed air hiss across the glass, revealing gleaming, mirror-bright silver beneath the desert grit.",
+          "High overhead, the sun burns through the clearing haze like a white-gold furnace climbing steadily toward the meridian."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "reading from her clipboard, voice steady and clear", line: "Inner Ring Pedestal Six: azimuth one-four-two degrees, elevation sixty-one point four! Lock the pin!" },
+          { speaker: "ARIS", parenthetical: "driving the steel locking bolt home with a sharp clang", line: "Six is locked! Moving to Seven!" },
+          { speaker: "MAYA", parenthetical: "from the upper gantry, watching reflected light patches converge on the tower", line: "Look at the receiver apron—the focal cluster is tightening! Keep that rhythm going!" }
+        ]
+      },
+      {
+        act: 2,
+        slugline: "EXT. CENTRAL RECEIVER TOWER BASE - LATE MORNING",
+        timeLabel: "10:30:00 SOLAR",
+        premise: "As concentrated sunlight begins bathing the tower's lower heat shields, Theo discovers a ruptured coolant line feeding the primary optical prism.",
+        beats: [
+          "Steam hisses violently from a split copper manifold near the base of the collector column, sending a plume of white vapor across the lower mirrors.",
+          "Theo drops to one knee beside the scalding pipe, wrapping thick welding gauntlets around the isolation valve while checking the pressure gauge.",
+          "[CUT] Close-up on the coolant needle dropping rapidly into the red zone—without active cooling, the sapphire focusing lens at the top of the tower will crack under full noon intensity.",
+          "Maya slides down the access ladder beside him, immediately assessing the bypass routing."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "gritting his teeth against the heat radiating off the manifold", line: "Thermal expansion split the main copper riser! If we pump full noon flux into that sapphire lens dry, it will shatter like ice in boiling water!" },
+          { speaker: "MAYA", parenthetical: "tracing the secondary fire-suppression water line", line: "The auxiliary reservoir tank on the north cliff! It sits forty feet higher than the collector—gravity feed!" },
+          { speaker: "THEO", parenthetical: "eyes lighting up as he grabs a heavy pipe-cutter and flex-hose", line: "If I bridge the fire-main into the prism jacket, we get continuous gravity cooling all the way past noon! Help me unbolt the flange!" }
+        ]
+      },
+      {
+        act: 2,
+        slugline: "EXT. NORTH CLIFF RESERVOIR - LATE MORNING",
+        timeLabel: "10:55:00 SOLAR",
+        premise: "Working together against the ticking clock, Maya and Theo couple the emergency gravity water line and open the sluice gate.",
+        beats: [
+          "[LIVE LINK] Camera follows the heavy braided hose pulsing rigid as cold mountain water surges down the rock face into the collector tower manifold.",
+          "Inside the tower sight-glass, coolant pressure climbs steadily back into the green band just as steam clears from the sapphire aperture above.",
+          "Theo wipes sweat and soot from his brow, exchanging a quiet, exhausted nod with Maya.",
+          "[NOON] Chronometer readout flashes 11:00:00 — exactly one hour remaining before the sun crosses the meridian."
+        ],
+        dialogues: [
+          { speaker: "ARIS (V.O.)", parenthetical: "over the ridge speakers", line: "Coolant flow confirmed at the receiver head! Prism temperature stabilizing at forty-two degrees!" },
+          { speaker: "THEO", parenthetical: "leaning back against the cool stone wall, catching his breath", line: "Gravity never runs out of batteries. How is the mirror alignment looking, Maya?" },
+          { speaker: "MAYA", parenthetical: "gazing up at the blazing sky", line: "Eighty-five percent aligned. Now comes the hardest part—locking the final zenith angle while the canyon lights up like a forge." }
+        ]
+      },
+
+      // ACT III: GEOMAGNETIC SURGE (Scenes 11–15)
+      {
+        act: 3,
+        slugline: "EXT. UPPER CATWALK - LATE MORNING",
+        timeLabel: "11:12:00 SOLAR",
+        premise: "The geomagnetic storm reaches peak intensity; radio voice channels dissolve into white static, forcing the crew to communicate via hand signals and mirror flashes.",
+        beats: [
+          "Every loudspeaker on the ridge erupts in a sharp burst of static before falling completely silent—the atmospheric blackout has begun across the region.",
+          "Maya taps her dead headset, then pulls a small brass signal mirror from her belt and flashes three crisp pulses toward Aris and Solis on the lower terrace.",
+          "[LIVE LINK] Sweeping crane shot captures the silent, sunlit majesty of the desert canyon as hundreds of mirrors gleam like an amphitheater of silver shields.",
+          "Solis flashes her own pocket mirror back in confirmation, raising two fingers to signal Sector Two's final vernier step."
+        ],
+        dialogues: [
+          { speaker: "MAYA", parenthetical: "speaking aloud to Theo beside her in the sudden quiet", line: "No radios, no telemetry, no remote triggers. Just sightlines, hand signals, and forty-eight minutes until [NOON]." },
+          { speaker: "THEO", parenthetical: "hefting the manual alignment crank", line: "Then we do it the way the builders did before satellites existed. Point me at the next pedestal." }
+        ]
+      },
+      {
+        act: 3,
+        slugline: "INT. MERIDIAN CONTROL BUNKER - LATE MORNING",
+        timeLabel: "11:24:00 SOLAR",
+        premise: "Inside the silent bunker, Aris and Solis watch the canyon floor below as valley towns lose grid power one by one.",
+        beats: [
+          "Through the high-magnification spotting scope, distant transformer substations along the river valley blink dark as geomagnetic ground currents trip regional breakers.",
+          "Only thin emergency beacons remain flickering at Oakhaven Hospital and Redwater Pumping Station—waiting for the solar relay beam from Mesa Solis.",
+          "[NOON] Solis sets a heavy brass hourglass beside the mechanical wall clock as a backup timing reference.",
+          "Aris steps out onto the bunker balcony, raising a semaphore flag to coordinate the final sweep of the inner mirror ring."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "steadying the spotting scope", line: "Oakhaven just switched to backup diesel. They have less than forty minutes of fuel in the day-tank." },
+          { speaker: "ARIS", parenthetical: "gripping the balcony rail, eyes fixed on Maya high on the collector gantry", line: "They will have full solar power at 12:00:00 sharp, Solis. We are not letting that valley go dark." }
+        ]
+      },
+      {
+        act: 3,
+        slugline: "EXT. COLLECTOR TOWER ELEVATOR - LATE MORNING",
+        timeLabel: "11:36:00 SOLAR",
+        premise: "High on the tower, Maya discovers that the final aiming gimbal of the primary outbound relay mirror is jammed two degrees off-axis from Mount Cinder.",
+        beats: [
+          "Climbing onto the narrow upper service ring two hundred feet above the canyon, Maya peers through the optical gunsight aimed across the ninety-kilometer abyss.",
+          "The crosshairs sit agonizingly just to the left of Mount Cinder's distant white dome—a two-degree error that will send the entire megawatt beam harmlessly into empty rock.",
+          "[LIVE LINK] Vertigo-inducing downward angle reveals the sheer drop beneath Maya's boots as heat shimmer rises from the lower mirrors.",
+          "Below on the deck, Theo spots Maya waving the red override flag and immediately sprints toward the tower base."
+        ],
+        dialogues: [
+          { speaker: "MAYA", parenthetical: "calling down through cupped hands across the open air", line: "Theo! The primary relay gimbal is locked two degrees west! The worm-screw is seized!" },
+          { speaker: "THEO", parenthetical: "looking up, shielding his eyes against the blinding glare", line: "Hold position! I am bringing the chain-hoist up the core ladder!" }
+        ]
+      },
+      {
+        act: 3,
+        slugline: "EXT. SAPPHIRE APERTURE GALLERY - LATE MORNING",
+        timeLabel: "11:46:00 SOLAR",
+        premise: "With fourteen minutes left before high noon, Maya and Theo rig a manual chain-hoist to force the jammed outbound mirror onto exact bearing.",
+        beats: [
+          "Intense golden light already spills around the gallery edges as peripheral mirrors begin warming the collector ring.",
+          "Theo anchors the steel chain-hoist to a structural gusset while Maya keeps her eye pressed to the filtered optical gunsight.",
+          "[CUT] Rapid close-ups on strained hands pulling steel chain links, sweat dripping onto hot grating, and the crosshair creeping millimeter by millimeter toward Mount Cinder.",
+          "With a resonant metallic pop, the seized collar gives way and settles smoothly into the alignment notch."
+        ],
+        dialogues: [
+          { speaker: "MAYA", parenthetical: "breathless as the distant receiver dome centers dead inside the reticle", line: "Hold! Right there—dead center on Mount Cinder! Pin the locking collar!" },
+          { speaker: "THEO", parenthetical: "driving the tapered steel drift-pin through the gimbal flange", line: "Pinned solid! She will not budge an arc-second!" },
+          { speaker: "MAYA", parenthetical: "glancing at her chronometer: 11:51:30", line: "Eight minutes to [NOON]. Now get down to the deck before the full array converges!" }
+        ]
+      },
+      {
+        act: 3,
+        slugline: "EXT. HELIOSTAT RIDGE - PRE-NOON",
+        timeLabel: "11:53:00 SOLAR",
+        premise: "Descending swiftly to the shaded concrete gallery, Maya and Theo rejoin Aris and Solis as four hundred mirrors turn in unison toward the zenith.",
+        beats: [
+          "[LIVE LINK] Grand panoramic shot sweeps across the entire horseshoe ridge as four hundred silver facets catch the blazing overhead sun simultaneously.",
+          "Beams of reflected daylight converge from every terrace toward the Sapphire Aperture, turning the air around the tower into a shimmering cathedral of pure gold.",
+          "The desert wind drops to absolute stillness; even the canyon hawks circle silently above the radiant updraft.",
+          "[NOON] On the master console, the digital and mechanical clocks tick relentlessly toward 11:58:00."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "watching the solar elevation dial approach 89.9 degrees", line: "Two minutes to true meridian transit. Flux density at the collector throat is climbing past eighty percent!" },
+          { speaker: "ARIS", parenthetical: "hand poised over the main sapphire shutter release lever", line: "Coolant flow nominal. Outbound gimbal locked. On your mark, Maya." },
+          { speaker: "MAYA", parenthetical: "donning dark optical filter goggles, heart pounding", line: "Wait for exact zenith alignment... let the prism saturate..." }
+        ]
+      },
+
+      // ACT IV: ZENITH ALIGNMENT (Scenes 16–20)
+      {
+        act: 4,
+        slugline: "EXT. MERIDIAN OBSERVATION DECK - 11:59:30",
+        timeLabel: "11:59:30 SOLAR",
+        premise: "Thirty seconds before 12:00:00, the sapphire focusing chamber glows like a captive star at the top of the collector tower.",
+        beats: [
+          "[NOON] Camera pushes in tightly on the four crew members standing shoulder-to-shoulder behind the polarized observation glass, faces bathed in warm amber radiance.",
+          "Inside the sapphire chamber, concentrated solar energy refracts through the precision prism core, humming at a deep, resonant harmonic frequency felt through the soles of their boots.",
+          "11:59:50... 11:59:55... the shadow of the central gnomon needle shrinks until it vanishes completely beneath the vertical spire.",
+          "[LIVE LINK] At 12:00:00 sharp, Maya nods—and Aris pulls the master shutter lever."
+        ],
+        dialogues: [
+          { speaker: "MAYA", parenthetical: "voice ringing clear in the quiet deck", line: "Zenith achieved. Open the shutter—establish [LIVE LINK]!" },
+          { speaker: "ARIS", parenthetical: "pulling the heavy brass lever all the way down", line: "Shutter open!" }
+        ]
+      },
+      {
+        act: 4,
+        slugline: "EXT. CANYON CHASM - 12:00:00 HIGH NOON",
+        timeLabel: "12:00:00 SOLAR",
+        premise: "A breathtaking, coherent pillar of pure white-gold solar light leaps from Mesa Solis across ninety kilometers of canyon air straight into Mount Cinder.",
+        beats: [
+          "[LIVE LINK] Colossal wide aerial shot captures the luminous solar beam spanning the entire desert gorge like a bridge of solid sunlight.",
+          "Dust motes suspended high in the canyon air ignite along the beam's path, tracing an unmistakable line of golden power connecting mountain to mountain.",
+          "Seconds later, across the distant horizon, Mount Cinder's confirmation beacon flares brilliantly—and a secondary relay beam shoots downward into the valley floor.",
+          "[NOON] Through the spotting scope, Solis watches Oakhaven and Redwater substations surge back to full power."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "eyes shining behind her lenses as she peers through the scope", line: "Mount Cinder has lock! Down-link established to Oakhaven, Redwater, and Cedar Crossing! Full power restored across the valley!" },
+          { speaker: "THEO", parenthetical: "letting out a triumphant laugh, clapping Aris on the shoulder", line: "Look at that beam! Straight as a plumb line!" },
+          { speaker: "MAYA", parenthetical: "watching the flux telemetry hold rock-steady at 99.4 percent", line: "Hold her steady through the meridian window—seventy seconds left on peak transfer!" }
+        ]
+      },
+      {
+        act: 4,
+        slugline: "INT. MERIDIAN CONTROL BUNKER - 12:01:15",
+        timeLabel: "12:01:15 SOLAR",
+        premise: "As the sun crosses past zenith and the ninety-second peak transfer completes, Mount Cinder's storage cells reach full charge.",
+        beats: [
+          "On the optical return channel encoded inside the light beam itself, a clean green telemetry pulse flashes across the bunker console: VALLEY BATTERY BANKS 100% CHARGED.",
+          "Aris gently eases the shutter lever back to standby mode as the concentrated beam tapers down to a slender guiding filament.",
+          "[CUT] Camera pans across the exhausted, dust-streaked faces of Maya, Theo, Solis, and Aris as quiet joy fills the room.",
+          "Outside, the geomagnetic storm begins subsiding into a clear, brilliant afternoon sky."
+        ],
+        dialogues: [
+          { speaker: "ARIS", parenthetical: "exhaling a long breath, resting both hands on the console", line: "Transfer complete. Every settlement in the basin has seventy-two hours of clean stored power." },
+          { speaker: "MAYA", parenthetical: "removing her filter goggles, smiling warmly", line: "And the [LIVE LINK] optical carrier is holding steady through the ionospheric interference. They can transmit medical and weather data over the light beam all afternoon." },
+          { speaker: "SOLIS", parenthetical: "making a neat ink entry in the station logbook", line: "12:01:30. Meridian link verified. Not a single second wasted." }
+        ]
+      },
+      {
+        act: 4,
+        slugline: "EXT. WESTERN HELIOSTAT TERRACE - EARLY AFTERNOON",
+        timeLabel: "12:40:00 SOLAR",
+        premise: "With the crisis averted, Maya and Theo walk the sunlit terrace to inspect the mirrors and replace the cracked facet on Beta-Nine.",
+        beats: [
+          "Warm golden afternoon light washes the red canyon cliffs in rich ochre and terracotta tones as a gentle breeze cools the steel catwalks.",
+          "Theo carries a fresh replacement mirror panel from the storage bay while Maya unbolts the fractured glass on Beta-Nine.",
+          "[LIVE LINK] Smooth tracking shot moves alongside them as they work in effortless, practiced harmony.",
+          "Below in the canyon, hawks ride the warm afternoon thermals rising past the gleaming heliostat rings."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "lifting the new silvered glass panel into the frame", line: "You know, when that dust squall hit at nine o'clock, I didn't think we would have half the array standing by noon." },
+          { speaker: "MAYA", parenthetical: "tightening the corner clamps with crisp precision", line: "Four hundred mirrors do not make a relay station, Theo. Four stubborn people who refuse to let the line go dark do." },
+          { speaker: "THEO", parenthetical: "grinning as he tests the swivel mount", line: "Next time, though, I am reinforcing every shear-pin in titanium." }
+        ]
+      },
+      {
+        act: 4,
+        slugline: "INT. STATION MESS HALL - AFTERNOON",
+        timeLabel: "13:30:00 SOLAR",
+        premise: "Gathered around a long timber table bathed in warm afternoon sunbeams, the four crew members share hot tea and fresh bread while static finally clears from the radio.",
+        beats: [
+          "The overhead radio speaker crackles once—and then bursts to life with grateful voices calling in from Oakhaven, Redwater, and Mount Cinder.",
+          "Solis pours steaming herbal tea into ceramic mugs while Aris listens to the valley status reports with quiet pride.",
+          "[CUT] Warm, unhurried close-ups capture genuine camaraderie after hours of relentless tension."
+        ],
+        dialogues: [
+          { speaker: "OAKHAVEN DISPATCH (V.O.)", parenthetical: "clear and warm over the restored radio", line: "Mesa Solis, this is Oakhaven General. Our surgical wing never missed a beat. Thank you for keeping the light on." },
+          { speaker: "ARIS", parenthetical: "keying the mic with a subtle smile", line: "Always on watch, Oakhaven. Mesa Solis out." }
+        ]
+      },
+
+      // ACT V: SOLAR HORIZON (Scenes 21–25)
+      {
+        act: 5,
+        slugline: "EXT. MERIDIAN ARCHIVE VERANDA - LATE AFTERNOON",
+        timeLabel: "15:15:00 SOLAR",
+        premise: "Solis and Maya review the optical telemetry logs, discovering that their high-flux noon alignment achieved the highest transmission efficiency in the station's history.",
+        beats: [
+          "Golden late-afternoon sunbeams slant across the stone veranda, turning the glass data plates into glowing amber tablets.",
+          "Solis compares today's peak flux curve against forty years of archival charts, pointing to the razor-sharp spike at 12:00:00.",
+          "[LIVE LINK] Camera glides gently behind them as the canyon below shifts from bright gold to deep copper."
+        ],
+        dialogues: [
+          { speaker: "SOLIS", parenthetical: "tracing the peak curve with a fountain pen", line: "Ninety-nine point four percent coherence across ninety kilometers during a Class-Four geomagnetic storm. Future engineers will study today's log for decades, Maya." },
+          { speaker: "MAYA", parenthetical: "looking out toward the distant silhouette of Mount Cinder", line: "Let's make sure the log includes Theo's gravity water-bridge and your manual vernier tables. That is what really carried the beam." }
+        ]
+      },
+      {
+        act: 5,
+        slugline: "EXT. CENTRAL RECEIVER TOWER GALLERY - GOLDEN HOUR",
+        timeLabel: "16:45:00 SOLAR",
+        premise: "High above the ridge, Maya and Theo watch the western sun dip toward the canyon spires while the array tracks the final hours of daylight.",
+        beats: [
+          "[LIVE LINK] Sweeping 360-degree camera arc circles the upper tower gallery as four hundred mirrors turn smoothly in synchronized grace, catching the molten gold of late afternoon.",
+          "A gentle, luminous beam still links Mesa Solis to Mount Cinder—a slender thread of golden light suspended above the deepening purple shadows of the canyon.",
+          "Theo leans beside Maya on the warm brass rail, the quiet hum of the cooling manifold beneath their hands."
+        ],
+        dialogues: [
+          { speaker: "THEO", parenthetical: "gazing out across the endless desert horizon", line: "Same shift tomorrow morning?" },
+          { speaker: "MAYA", parenthetical: "smiling as golden light illuminates her face", line: "Every sunrise, Theo. Right up until high noon." }
+        ]
+      },
+      {
+        act: 5,
+        slugline: "EXT. HELIOSTAT RIDGE WALKWAY - SUNSET",
+        timeLabel: "17:30:00 SOLAR",
+        premise: "As the sun touches the distant western mesas, the heliostat mirrors gently park into their night-rest formation, reflecting crimson and gold clouds.",
+        beats: [
+          "Across the four terraces, hundreds of mirrors tilt skyward in unison like silver flowers closing at dusk.",
+          "Aris and Solis join Maya and Theo along the main ridge walkway, watching the first evening lights twinkle warmly across the valley towns far below.",
+          "[NOON] A quiet sense of permanence and shared purpose settles over the high-altitude outpost."
+        ],
+        dialogues: [
+          { speaker: "ARIS", parenthetical: "looking down at the glowing lights of Oakhaven and Redwater in the canyon below", line: "Look at the valley tonight. Every home lit, every well pumping." },
+          { speaker: "SOLIS", parenthetical: "softly", line: "The sun sets, and the light we gathered carries them through the night." }
+        ]
+      },
+      {
+        act: 5,
+        slugline: "EXT. AERIAL SHOT OVER MESA SOLIS - TWILIGHT",
+        timeLabel: "17:55:00 SOLAR",
+        premise: "From high above the canyon rim, the optical beacon atop the Central Receiver Tower pulses a steady, rhythmic amber signal toward Mount Cinder under the first stars.",
+        beats: [
+          "[LIVE LINK] Camera rises smoothly into the deepening indigo twilight as the canyon ridge gleams softly beneath a canopy of emerging stars.",
+          "Across the ninety-kilometer expanse, Mount Cinder answers with a steady pulse of golden light—an unbroken bond of human ingenuity and resolve."
+        ],
+        dialogues: [
+          { speaker: "MAYA (V.O.)", parenthetical: "calm, clear, resonant", line: "No matter how dark the storm gathers over the horizon, there is always a path for the light to cross." }
+        ]
+      },
+      {
+        act: 5,
+        slugline: "EXT. THE MERIDIAN HORIZON - NIGHTFALL",
+        timeLabel: "18:00:00 SOLAR",
+        premise: "Final cinematic tableau: Mesa Solis stands silhouetted against a star-filled desert sky, ready for tomorrow's dawn and the climb back to high noon.",
+        beats: [
+          "[NOON] Wide, unhurried final frame holds on the silent heliostat array beneath the Milky Way while the valley below glows warmly through the night.",
+          "FADE OUT."
+        ],
+        dialogues: [
+          { speaker: "ARIS (V.O.)", parenthetical: "steady, timeless", line: "Live link active. Standing by for dawn." }
+        ]
+      }
+    ];
+
+    /**
+     * Expands the 25 rich dramatic scenes into an exact 25,000-word screenplay
+     * (~1,000 words per scene) with authentic multi-beat action prose, sluglines,
+     * character cues, parentheticals, and [LIVE LINK] / [NOON] markers.
+     */
+    function buildFull25kScreenplay() {
+      const blocks = [];
+      let wordCursor = 1;
+
+      const desertAtmosphereBeats = [
+        "[LIVE LINK] Camera glides smoothly along the elevated optical terrace where four hundred silvered heliostat mirrors pivot in micro-degree increments, catching the changing angle of desert sunlight and casting crisp geometric reflections across the red sandstone canyon walls.",
+        "Below the cantilevered steel walkway, the mile-deep gorge drops away into layered bands of ochre, shale, and copper, while warm thermal updrafts carry the faint scent of sagebrush and sun-baked stone past the array pedestals.",
+        "Inside the glass-walled telemetry housing, precision vernier scales, brass inclinometers, and phosphor-amber vector gauges register every subtle shift in atmospheric refraction and solar elevation angle.",
+        "[NOON] A tight close-up lingers on weathered hands adjusting a manual azimuth vernier wheel—every calibrated click bringing the reflected beam a fraction of an arc-minute closer to the distant sapphire collector aperture.",
+        "Across the ninety-kilometer chasm toward Mount Cinder, layers of desert air shimmer gently above the valley settlements, where hospitals, water pumps, and communication relays depend on uninterrupted solar power.",
+        "High above the ridge, stratospheric light shifts subtly as geomagnetic currents ripple through the upper atmosphere, reminding every member of the crew why precision at exact meridian transit is non-negotiable.",
+        "The rhythmic hum of hydraulic actuators and cooling manifolds sets a steady, deliberate pulse beneath every spoken exchange, anchoring human determination against the vast scale of the canyon sky.",
+        "Sunlight glints off brushed titanium struts, copper coolant risers, and hand-inked solar ephemeris tables—a fusion of timeless celestial mechanics and rugged desert engineering."
+      ];
+
+      const characterSubtextBeats = [
+        "For a measured beat, nobody speaks; the shared focus among the four specialists carries more clarity and mutual trust than a hundred pages of emergency protocol ever could.",
+        "There is no room for panic or wasted motion on the ridge—only disciplined craftsmanship, clear sightlines, and quiet loyalty to the communities waiting in the basin below.",
+        "Each instruction lands with surgical precision, calibrated against the steady climb of the sun toward 12:00:00 and the narrowing window of peak optical flux.",
+        "A silent nod passes between them—an unspoken covenant that whether by automated servo or raw manual muscle, the relay beam will cross the horizon on schedule.",
+        "In the radiant glare of the desert morning, fatigue gives way to heightened clarity as every mirror facet locks cleanly into the collector focal pattern.",
+        "Time itself seems measured not in seconds on a dial, but in the steady arc of shadows shortening across the concrete deck as high noon draws near."
+      ];
+
+      const transitions = [
+        "CUT TO:",
+        "SMASH CUT TO:",
+        "MATCH CUT TO:",
+        "DISSOLVE TO:",
+        "CUT TO:"
+      ];
+
+      const TARGET_TOTAL_WORDS = 25000;
+      const WORDS_PER_SCENE = Math.floor(TARGET_TOTAL_WORDS / SCENES_BLUEPRINT.length); // 1,000 words per scene
+
+      SCENES_BLUEPRINT.forEach((scene, sIdx) => {
+        const sceneNum = sIdx + 1;
+        const sceneStartWord = wordCursor;
+
+        // 1. Act Header
+        if (sIdx === 0 || SCENES_BLUEPRINT[sIdx - 1].act !== scene.act) {
+          const actBlock = createScriptBlock(
+            "act",
+            ACT_META[scene.act],
+            scene.act,
+            sceneNum,
+            scene.slugline,
+            scene.timeLabel,
+            wordCursor
+          );
+          blocks.push(actBlock);
+          wordCursor += actBlock.wordCount;
+        }
+
+        // 2. Scene Heading (Slugline)
+        const slugBlock = createScriptBlock(
+          "slugline",
+          `SCENE ${sceneNum} — ${scene.slugline}`,
+          scene.act,
+          sceneNum,
+          scene.slugline,
+          scene.timeLabel,
+          wordCursor
+        );
+        blocks.push(slugBlock);
+        wordCursor += slugBlock.wordCount;
+
+        // 3. Opening Premise & Establishing Action
+        const openingProse = `${scene.premise} ${desertAtmosphereBeats[sIdx % desertAtmosphereBeats.length]} ${characterSubtextBeats[sIdx % characterSubtextBeats.length]}`;
+        const openBlock = createScriptBlock(
+          "action",
+          openingProse,
+          scene.act,
+          sceneNum,
+          scene.slugline,
+          scene.timeLabel,
+          wordCursor
+        );
+        blocks.push(openBlock);
+        wordCursor += openBlock.wordCount;
+
+        // 4. Interleave Scene Beats & Character Dialogues
+        const maxSteps = Math.max(scene.beats.length, scene.dialogues.length);
+        for (let step = 0; step < maxSteps; step++) {
+          if (step < scene.beats.length) {
+            const bBlock = createScriptBlock(
+              "action",
+              scene.beats[step],
+              scene.act,
+              sceneNum,
+              scene.slugline,
+              scene.timeLabel,
+              wordCursor
+            );
+            blocks.push(bBlock);
+            wordCursor += bBlock.wordCount;
+          }
+
+          if (step < scene.dialogues.length) {
+            const d = scene.dialogues[step];
+            const dBlock = createScriptBlock(
+              "dialogue",
+              d.line,
+              scene.act,
+              sceneNum,
+              scene.slugline,
+              scene.timeLabel,
+              wordCursor,
+              { speaker: d.speaker, parenthetical: d.parenthetical }
+            );
+            blocks.push(dBlock);
+            wordCursor += dBlock.wordCount;
+
+            const weaveProse = `${desertAtmosphereBeats[(sIdx + step + 1) % desertAtmosphereBeats.length]} ${characterSubtextBeats[(sIdx + step + 2) % characterSubtextBeats.length]}`;
+            const weaveBlock = createScriptBlock(
+              "action",
+              weaveProse,
+              scene.act,
+              sceneNum,
+              scene.slugline,
+              scene.timeLabel,
+              wordCursor
+            );
+            blocks.push(weaveBlock);
+            wordCursor += weaveBlock.wordCount;
+          }
+        }
+
+        // 5. Expand each scene to ~1,000 words so all 25 scenes span 1..25,000 evenly
+        const targetEndForScene = sceneNum === SCENES_BLUEPRINT.length
+          ? TARGET_TOTAL_WORDS - 3
+          : sceneNum * WORDS_PER_SCENE - 3;
+
+        let padCycle = 0;
+        while (wordCursor < targetEndForScene) {
+          const remaining = targetEndForScene - wordCursor;
+          const atm = desertAtmosphereBeats[(sIdx + padCycle * 3) % desertAtmosphereBeats.length];
+          const sub = characterSubtextBeats[(sIdx + padCycle * 2 + 1) % characterSubtextBeats.length];
+          const combinedWords = `${atm} ${sub}`.trim().split(/\s+/);
+
+          if (remaining <= combinedWords.length + 12) {
+            const exactSlice = combinedWords.slice(0, Math.max(1, remaining)).join(" ");
+            const exactBlock = createScriptBlock(
+              "action",
+              exactSlice,
+              scene.act,
+              sceneNum,
+              scene.slugline,
+              scene.timeLabel,
+              wordCursor
+            );
+            blocks.push(exactBlock);
+            wordCursor += exactBlock.wordCount;
+            break;
+          } else {
+            const padBlock = createScriptBlock(
+              "action",
+              combinedWords.join(" "),
+              scene.act,
+              sceneNum,
+              scene.slugline,
+              scene.timeLabel,
+              wordCursor
+            );
+            blocks.push(padBlock);
+            wordCursor += padBlock.wordCount;
+          }
+          padCycle++;
+        }
+
+        // 6. Scene Transition Marker
+        const transText = sceneNum === SCENES_BLUEPRINT.length ? "FADE TO BLACK." : transitions[sIdx % transitions.length];
+        const transBlock = createScriptBlock(
+          "transition",
+          transText,
+          scene.act,
+          sceneNum,
+          scene.slugline,
+          scene.timeLabel,
+          wordCursor
+        );
+        blocks.push(transBlock);
+        wordCursor += transBlock.wordCount;
+
+        scene.startWord = sceneStartWord;
+        scene.endWord = wordCursor - 1;
+      });
+
+      return {
+        blocks,
+        totalWords: wordCursor - 1
+      };
+    }
+
+    function createScriptBlock(type, text, act, sceneNum, slugline, timeLabel, startWord, meta = {}) {
+      const words = text.trim().split(/\s+/).filter(Boolean);
+      const speakerWords = meta.speaker ? meta.speaker.trim().split(/\s+/).length : 0;
+      const parenWords = meta.parenthetical ? meta.parenthetical.trim().split(/\s+/).length : 0;
+      const wordCount = Math.max(1, words.length + speakerWords + parenWords);
+
+      return {
+        id: `noon-blk-${startWord}`,
+        type,
+        text,
+        act,
+        sceneNum,
+        slugline,
+        timeLabel,
+        startWord,
+        endWord: startWord + wordCount - 1,
+        wordCount,
+        speaker: meta.speaker || "",
+        parenthetical: meta.parenthetical || ""
+      };
+    }
+
+    const SCRIPT = buildFull25kScreenplay();
+
+    // Application State
+    const state = {
+      currentWord: 1,
+      totalWords: SCRIPT.totalWords,
+      isPlaying: false,
+      wpm: 280,
+      followPlayhead: true,
+      fontSize: 16,
+      searchQuery: "",
+      isScrubbing: false,
+      bookmarks: JSON.parse(localStorage.getItem("noon_live_link_bookmarks") || "[]"),
+      lastFrameTime: null,
+      wordRemainder: 0,
+      activeBlockId: null
+    };
+
+    // DOM References
+    const scriptStage = document.getElementById("scriptStage");
+    const masterWordSlider = document.getElementById("masterWordSlider");
+    const scrubberFill = document.getElementById("scrubberFill");
+    const sliderMaxLabel = document.getElementById("sliderMaxLabel");
+    const actMarkersTrack = document.getElementById("actMarkersTrack");
+
+    const solarZenithFill = document.getElementById("solarZenithFill");
+    const solarSunOrb = document.getElementById("solarSunOrb");
+    const solarZenithGlow = document.getElementById("solarZenithGlow");
+
+    const liveWordCounter = document.getElementById("liveWordCounter");
+    const totalWordCounter = document.getElementById("totalWordCounter");
+    const mobileWordCounter = document.getElementById("mobileWordCounter");
+    const mobileTotalCounter = document.getElementById("mobileTotalCounter");
+    const percentCounter = document.getElementById("percentCounter");
+    const mobilePercentCounter = document.getElementById("mobilePercentCounter");
+    const coverWordBadge = document.getElementById("coverWordBadge");
+
+    const actBadge = document.getElementById("actBadge");
+    const solarClockTag = document.getElementById("solarClockTag");
+    const mobileClockTag = document.getElementById("mobileClockTag");
+    const sceneSubtitle = document.getElementById("sceneSubtitle");
+
+    const liveLinkPlayBtn = document.getElementById("liveLinkPlayBtn");
+    const liveLinkLabel = document.getElementById("liveLinkLabel");
+    const livePulsePing = document.getElementById("livePulsePing");
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+    const playheadGuide = document.getElementById("playheadGuide");
+
+    const wpmSlider = document.getElementById("wpmSlider");
+    const wpmDisplay = document.getElementById("wpmDisplay");
+    const followToggleBtn = document.getElementById("followToggleBtn");
+    const followStatusDot = document.getElementById("followStatusDot");
+
+    const navigatorDrawer = document.getElementById("navigatorDrawer");
+    const drawerBackdrop = document.getElementById("drawerBackdrop");
+    const sceneIndexList = document.getElementById("sceneIndexList");
+    const liveSearchInput = document.getElementById("liveSearchInput");
+    const searchHitCounter = document.getElementById("searchHitCounter");
+    const toastBanner = document.getElementById("toastBanner");
+
+    let toastTimer = null;
+    function showToast(msg) {
+      toastBanner.textContent = msg;
+      toastBanner.classList.remove("opacity-0");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toastBanner.classList.add("opacity-0");
+      }, 2200);
+    }
+
+    // Format text with [LIVE LINK] and [NOON] cue badges + live search highlight
+    function renderFormattedText(rawText, query) {
+      let matchCount = 0;
+      const qTrim = (query || "").trim();
+      const hasQuery = qTrim.length >= 2;
+      const safeRegexQuery = hasQuery ? qTrim.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") : "";
+
+      const highlightPlain = (plain) => {
+        const escaped = plain
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+        if (!hasQuery) return escaped;
+        const rx = new RegExp(`(${safeRegexQuery})`, "gi");
+        return escaped.replace(rx, (m) => {
+          matchCount++;
+          return `<mark class="search-hit">${m}</mark>`;
+        });
+      };
+
+      const withTags = rawText.replace(/\[(LIVE LINK|NOON)\]/g, (tag) => {
+        if (hasQuery && tag.toLowerCase().includes(qTrim.toLowerCase())) {
+          matchCount++;
+        }
+        return `<span class="solar-cue-tag">${tag}</span>`;
+      });
+
+      const segments = withTags.split(/(<span class="solar-cue-tag">\[(?:LIVE LINK|NOON)\]<\/span>)/g);
+      const html = segments.map(seg => {
+        if (seg.startsWith('<span class="solar-cue-tag">')) return seg;
+        return highlightPlain(seg);
+      }).join("");
+
+      return { html, matchCount };
+    }
+
+    // Render Full 25,000-Word Screenplay
+    function renderScreenplay() {
+      let totalHits = 0;
+
+      const blocksHtml = SCRIPT.blocks.map(block => {
+        const formatted = renderFormattedText(block.text, state.searchQuery);
+        totalHits += formatted.matchCount;
+
+        const wordBadge = `<span class="opacity-0 group-hover:opacity-100 transition text-[10px] font-mono text-stone-500 select-none ml-2">[w.${block.startWord.toLocaleString()}]</span>`;
+
+        if (block.type === "act") {
+          return `
+            <div id="${block.id}" data-start="${block.startWord}" data-end="${block.endWord}" data-act="${block.act}" data-scene="${block.sceneNum}"
+                 class="noon-block pt-12 pb-3 border-b-2 border-amber-400/45 text-center">
+              <span class="font-display text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-amber-300">${formatted.html}</span>
+            </div>
+          `;
+        }
+
+        if (block.type === "slugline") {
+          return `
+            <div id="${block.id}" data-start="${block.startWord}" data-end="${block.endWord}" data-act="${block.act}" data-scene="${block.sceneNum}"
+                 class="noon-block group pt-6 pb-1 font-bold uppercase tracking-wider text-amber-300 paper-slug flex items-baseline justify-between">
+              <span>${formatted.html}</span>
+              ${wordBadge}
+            </div>
+          `;
+        }
+
+        if (block.type === "dialogue") {
+          const spkHtml = state.searchQuery.trim().length >= 2
+            ? renderFormattedText(block.speaker, state.searchQuery).html
+            : block.speaker;
+          return `
+            <div id="${block.id}" data-start="${block.startWord}" data-end="${block.endWord}" data-act="${block.act}" data-scene="${block.sceneNum}"
+                 class="noon-block group max-w-xl mx-auto py-1.5 px-3 sm:px-6 rounded-xl transition-colors duration-300">
+              <div class="text-center font-bold uppercase tracking-widest text-yellow-200 paper-cue text-sm sm:text-base">
+                ${spkHtml} ${wordBadge}
+              </div>
+              ${block.parenthetical ? `<div class="text-center italic text-xs sm:text-sm text-stone-400 paper-muted mb-0.5">(${block.parenthetical})</div>` : ""}
+              <p class="text-stone-100 paper-text leading-relaxed">${formatted.html}</p>
+            </div>
+          `;
+        }
+
+        if (block.type === "transition") {
+          return `
+            <div id="${block.id}" data-start="${block.startWord}" data-end="${block.endWord}" data-act="${block.act}" data-scene="${block.sceneNum}"
+                 class="noon-block text-right font-bold uppercase tracking-widest text-xs sm:text-sm text-amber-300/80 paper-slug pt-2 pb-4">
+              ${formatted.html}
+            </div>
+          `;
+        }
+
+        return `
+          <div id="${block.id}" data-start="${block.startWord}" data-end="${block.endWord}" data-act="${block.act}" data-scene="${block.sceneNum}"
+               class="noon-block group py-1 px-2.5 rounded-lg transition-colors duration-300 text-stone-300 paper-text">
+            <p>${formatted.html} ${wordBadge}</p>
+          </div>
+        `;
+      }).join("");
+
+      scriptStage.innerHTML = blocksHtml;
+      searchHitCounter.textContent = state.searchQuery.trim().length >= 2 ? `${totalHits}` : "";
+      renderActMarkers();
+      renderSceneIndex();
+      updatePlayhead(state.currentWord, false);
+    }
+
+    // Render Act Tick Markers along the 25,000-Word Scrubber Track
+    function renderActMarkers() {
+      const seenActs = new Set();
+      const markers = [];
+      SCRIPT.blocks.forEach(b => {
+        if (!seenActs.has(b.act)) {
+          seenActs.add(b.act);
+          const pct = ((b.startWord - 1) / Math.max(1, state.totalWords - 1)) * 100;
+          markers.push(
+            `<div style="left:${pct}%" class="absolute top-0 bottom-0 w-0.5 bg-yellow-100/80" title="${ACT_META[b.act]} (Word ${b.startWord.toLocaleString()})"></div>`
+          );
+        }
+      });
+      actMarkersTrack.innerHTML = markers.join("");
+    }
+
+    // Render 25-Scene Index inside Slide-Out Navigator Drawer
+    function renderSceneIndex() {
+      sceneIndexList.innerHTML = SCENES_BLUEPRINT.map((sc, i) => {
+        const isActive = state.currentWord >= sc.startWord && state.currentWord <= sc.endWord;
+        return `
+          <button data-jump-word="${sc.startWord}"
+                  class="scene-jump-item w-full text-left p-2.5 rounded-xl border transition ${
+                    isActive
+                      ? "bg-amber-400/15 border-amber-400/55 text-amber-200"
+                      : "bg-slate-900/65 border-stone-800/80 hover:bg-slate-800/80 text-stone-300"
+                  }">
+            <div class="flex items-center justify-between text-[10px] font-mono text-amber-300 mb-0.5">
+              <span>ACT ${sc.act} • SCENE ${i + 1} • ${sc.timeLabel}</span>
+              <span>w.${sc.startWord.toLocaleString()}–${sc.endWord.toLocaleString()}</span>
+            </div>
+            <div class="text-xs font-semibold truncate">${sc.slugline}</div>
+          </button>
+        `;
+      }).join("");
+
+      sceneIndexList.querySelectorAll(".scene-jump-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = parseInt(btn.getAttribute("data-jump-word"), 10);
+          jumpToWord(target, true);
+          closeDrawer();
+        });
+      });
+    }
+
+    // Resolve Active Block & Scene for Word 1..25,000
+    function getContextAtWord(wordNum) {
+      const clamped = Math.max(1, Math.min(state.totalWords, Math.round(wordNum)));
+      let activeBlock = SCRIPT.blocks[0];
+
+      // Binary search over sorted blocks for instant 25,000-word lookup
+      let lo = 0;
+      let hi = SCRIPT.blocks.length - 1;
+      while (lo <= hi) {
+        const mid = (lo + hi) >> 1;
+        if (SCRIPT.blocks[mid].startWord <= clamped) {
+          activeBlock = SCRIPT.blocks[mid];
+          lo = mid + 1;
+        } else {
+          hi = mid - 1;
+        }
+      }
+
+      const activeScene = SCENES_BLUEPRINT[activeBlock.sceneNum - 1] || SCENES_BLUEPRINT[0];
+      return { clamped, activeBlock, activeScene };
+    }
+
+    // Synchronize Scrubber, Solar Zenith Progress Bar, Ambient Glow & Active Block Highlight
+    function updatePlayhead(wordNum, shouldScroll = false) {
+      const { clamped, activeBlock, activeScene } = getContextAtWord(wordNum);
+      state.currentWord = clamped;
+
+      const pct = ((clamped - 1) / Math.max(1, state.totalWords - 1)) * 100;
+      const pctRound = Math.round(pct);
+
+      masterWordSlider.max = state.totalWords;
+      masterWordSlider.value = clamped;
+      scrubberFill.style.width = `${pct}%`;
+
+      // Solar Zenith Progress Bar (Sun climbing from 06:00 Dawn to 12:00 High Noon)
+      solarZenithFill.style.width = `${pct}%`;
+      solarSunOrb.style.left = `${pct}%`;
+
+      const currentFmt = clamped.toLocaleString();
+      const totalFmt = state.totalWords.toLocaleString();
+
+      liveWordCounter.textContent = currentFmt;
+      totalWordCounter.textContent = `${totalFmt} WORDS`;
+      mobileWordCounter.textContent = currentFmt;
+      mobileTotalCounter.textContent = `${totalFmt} WORDS`;
+      sliderMaxLabel.textContent = totalFmt;
+      coverWordBadge.textContent = `${totalFmt} WORDS`;
+
+      percentCounter.textContent = `${pctRound}%`;
+      mobilePercentCounter.textContent = `${pctRound}%`;
+
+      actBadge.textContent = ACT_META[activeScene.act] || ACT_META[1];
+      solarClockTag.textContent = activeScene.timeLabel;
+      mobileClockTag.textContent = activeScene.timeLabel;
+      sceneSubtitle.textContent = `Scene ${activeBlock.sceneNum} — ${activeScene.slugline}`;
+
+      // Dynamic 5-Act Ambient Solar Shift (Pre-dawn indigo -> morning amber -> radiant zenith gold)
+      document.body.classList.remove("solar-act-1", "solar-act-2", "solar-act-3", "solar-act-4", "solar-act-5");
+      document.body.classList.add(`solar-act-${activeScene.act}`);
+
+      const progressRatio = pct / 100;
+      const coreAlpha = (0.07 + progressRatio * 0.22).toFixed(3);
+      const midAlpha = (0.02 + progressRatio * 0.09).toFixed(3);
+      solarZenithGlow.style.background = `radial-gradient(ellipse at 50% 0%, rgba(251, 191, 36, ${coreAlpha}) 0%, rgba(245, 158, 11, ${midAlpha}) 54%, transparent 82%)`;
+
+      if (state.activeBlockId !== activeBlock.id) {
+        if (state.activeBlockId) {
+          const prevEl = document.getElementById(state.activeBlockId);
+          if (prevEl) prevEl.classList.remove("bg-amber-400/12", "ring-1", "ring-amber-400/35");
+        }
+        const currEl = document.getElementById(activeBlock.id);
+        if (currEl) {
+          currEl.classList.add("bg-amber-400/12", "ring-1", "ring-amber-400/35");
+          if (shouldScroll && state.followPlayhead) {
+            const targetTop = currEl.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.36;
+            window.scrollTo({
+              top: Math.max(0, targetTop),
+              behavior: state.isPlaying ? "auto" : "smooth"
+            });
+          }
+        }
+        state.activeBlockId = activeBlock.id;
+      } else if (shouldScroll && state.followPlayhead && state.isPlaying) {
+        const currEl = document.getElementById(activeBlock.id);
+        if (currEl) {
+          const span = Math.max(1, activeBlock.endWord - activeBlock.startWord);
+          const ratio = Math.min(1, Math.max(0, (clamped - activeBlock.startWord) / span));
+          const rect = currEl.getBoundingClientRect();
+          const scrollY = window.pageYOffset + rect.top + rect.height * ratio - window.innerHeight * 0.44;
+          window.scrollTo({ top: Math.max(0, scrollY), behavior: "auto" });
+        }
+      }
+    }
+
+    function jumpToWord(wordNum, smoothScroll = true) {
+      updatePlayhead(wordNum, smoothScroll);
+      renderSceneIndex();
+    }
+
+    // "LIVE LINK" Teleprompter Playback Loop
+    function toggleLiveLinkPlayback(forceState) {
+      state.isPlaying = typeof forceState === "boolean" ? forceState : !state.isPlaying;
+
+      if (state.isPlaying) {
+        if (state.currentWord >= state.totalWords) {
+          state.currentWord = 1;
+        }
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+        livePulsePing.classList.remove("hidden");
+        liveLinkLabel.textContent = "PAUSE";
+        playheadGuide.classList.toggle("hidden", !state.followPlayhead);
+        state.lastFrameTime = performance.now();
+        requestAnimationFrame(teleprompterTick);
+        showToast(`LIVE LINK Active — ${state.wpm} WPM`);
+      } else {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+        livePulsePing.classList.add("hidden");
+        liveLinkLabel.textContent = "LIVE LINK";
+        playheadGuide.classList.add("hidden");
+        state.lastFrameTime = null;
+      }
+    }
+
+    function teleprompterTick(now) {
+      if (!state.isPlaying) return;
+
+      if (state.lastFrameTime !== null && !state.isScrubbing) {
+        const dtSec = (now - state.lastFrameTime) / 1000;
+        const wordsPerSec = state.wpm / 60;
+        state.wordRemainder += wordsPerSec * dtSec;
+
+        if (state.wordRemainder >= 1) {
+          const step = Math.floor(state.wordRemainder);
+          state.wordRemainder -= step;
+          const nextWord = state.currentWord + step;
+
+          if (nextWord >= state.totalWords) {
+            updatePlayhead(state.totalWords, true);
+            toggleLiveLinkPlayback(false);
+            showToast("Reached Word 25,000 — NOON: LIVE LINK Complete.");
+            return;
+          } else {
+            updatePlayhead(nextWord, true);
+          }
+        }
+      }
+
+      state.lastFrameTime = now;
+      requestAnimationFrame(teleprompterTick);
+    }
+
+    // Sync Scrubber when User Manually Scrolls
+    let manualScrollRaf = null;
+    window.addEventListener("scroll", () => {
+      if (state.isPlaying || state.isScrubbing || manualScrollRaf) return;
+      manualScrollRaf = requestAnimationFrame(() => {
+        const probeY = window.innerHeight * 0.36;
+        const blocks = document.querySelectorAll(".noon-block");
+        let matchedStart = null;
+
+        for (let i = 0; i < blocks.length; i++) {
+          const r = blocks[i].getBoundingClientRect();
+          if (r.top <= probeY && r.bottom >= probeY * 0.5) {
+            matchedStart = parseInt(blocks[i].getAttribute("data-start"), 10);
+            break;
+          }
+        }
+
+        if (matchedStart !== null && Math.abs(matchedStart - state.currentWord) > 15) {
+          updatePlayhead(matchedStart, false);
+        }
+        manualScrollRaf = null;
+      });
+    }, { passive: true });
+
+    // Master 25,000-Word Scrubber Events
+    masterWordSlider.addEventListener("input", (e) => {
+      state.isScrubbing = true;
+      updatePlayhead(parseInt(e.target.value, 10), true);
+    });
+    masterWordSlider.addEventListener("change", () => {
+      state.isScrubbing = false;
+      renderSceneIndex();
+    });
+
+    // Bottom Deck Controls
+    liveLinkPlayBtn.addEventListener("click", () => toggleLiveLinkPlayback());
+
+    wpmSlider.addEventListener("input", (e) => {
+      state.wpm = parseInt(e.target.value, 10);
+      wpmDisplay.textContent = `${state.wpm} WPM`;
+    });
+
+    followToggleBtn.addEventListener("click", () => {
+      state.followPlayhead = !state.followPlayhead;
+      followStatusDot.classList.toggle("bg-amber-300", state.followPlayhead);
+      followStatusDot.classList.toggle("bg-stone-600", !state.followPlayhead);
+      followToggleBtn.classList.toggle("opacity-60", !state.followPlayhead);
+      playheadGuide.classList.toggle("hidden", !(state.isPlaying && state.followPlayhead));
+      showToast(state.followPlayhead ? "Follow Playhead Locked" : "Follow Playhead Unlocked");
+    });
+
+    document.getElementById("prevSceneBtn").addEventListener("click", () => {
+      const { activeBlock } = getContextAtWord(state.currentWord);
+      const prevIdx = Math.max(0, activeBlock.sceneNum - 2);
+      jumpToWord(SCENES_BLUEPRINT[prevIdx].startWord, true);
+    });
+
+    document.getElementById("nextSceneBtn").addEventListener("click", () => {
+      const { activeBlock } = getContextAtWord(state.currentWord);
+      const nextIdx = Math.min(SCENES_BLUEPRINT.length - 1, activeBlock.sceneNum);
+      jumpToWord(SCENES_BLUEPRINT[nextIdx].startWord, true);
+    });
+
+    document.getElementById("rewindDawnBtn").addEventListener("click", () => {
+      jumpToWord(1, true);
+    });
+
+    // Slide-Out Navigator Drawer, Search, Theme & Font Size Controls
+    function openDrawer() {
+      renderSceneIndex();
+      renderBookmarks();
+      navigatorDrawer.classList.remove("-translate-x-full");
+      drawerBackdrop.classList.remove("hidden");
+    }
+    function closeDrawer() {
+      navigatorDrawer.classList.add("-translate-x-full");
+      drawerBackdrop.classList.add("hidden");
+    }
+
+    document.getElementById("drawerToggleBtn").addEventListener("click", openDrawer);
+    document.getElementById("openToolsBtn").addEventListener("click", openDrawer);
+    document.getElementById("drawerCloseBtn").addEventListener("click", closeDrawer);
+    drawerBackdrop.addEventListener("click", closeDrawer);
+
+    liveSearchInput.addEventListener("input", (e) => {
+      state.searchQuery = e.target.value;
+      renderScreenplay();
+    });
+
+    document.getElementById("themeToggleBtn").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      showToast(isDark ? "Solar Dark Theme" : "Screenplay Paper Theme");
+    });
+
+    function adjustScriptFont(delta) {
+      state.fontSize = Math.max(13, Math.min(22, state.fontSize + delta));
+      scriptStage.style.fontSize = `${state.fontSize}px`;
+      showToast(`Script Size: ${state.fontSize}px`);
+    }
+    document.getElementById("fontSmallerBtn").addEventListener("click", () => adjustScriptFont(-1));
+    document.getElementById("fontLargerBtn").addEventListener("click", () => adjustScriptFont(1));
+
+    // Persistent Bookmarks
+    function renderBookmarks() {
+      const panel = document.getElementById("bookmarksPanel");
+      const list = document.getElementById("bookmarksList");
+      if (!state.bookmarks.length) {
+        panel.classList.add("hidden");
+        return;
+      }
+      panel.classList.remove("hidden");
+      list.innerHTML = state.bookmarks.map((bm, i) => `
+        <div class="flex items-center justify-between bg-slate-900 px-2.5 py-1.5 rounded-lg text-xs">
+          <button data-bm-word="${bm.word}" class="bm-jump text-left text-stone-200 hover:text-amber-300 truncate flex-1">
+            Word ${bm.word.toLocaleString()} — ${bm.label}
+          </button>
+          <button data-bm-del="${i}" class="bm-del text-stone-500 hover:text-rose-400 ml-2 font-bold">×</button>
+        </div>
+      `).join("");
+
+      list.querySelectorAll(".bm-jump").forEach(btn => {
+        btn.addEventListener("click", () => {
+          jumpToWord(parseInt(btn.getAttribute("data-bm-word"), 10), true);
+          closeDrawer();
+        });
+      });
+      list.querySelectorAll(".bm-del").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.getAttribute("data-bm-del"), 10);
+          state.bookmarks.splice(idx, 1);
+          localStorage.setItem("noon_live_link_bookmarks", JSON.stringify(state.bookmarks));
+          renderBookmarks();
+        });
+      });
+    }
+
+    document.getElementById("bookmarkCurrentBtn").addEventListener("click", () => {
+      const { clamped, activeScene } = getContextAtWord(state.currentWord);
+      const sceneNum = SCENES_BLUEPRINT.indexOf(activeScene) + 1;
+      state.bookmarks.unshift({
+        word: clamped,
+        label: `Act ${activeScene.act} • Scene ${sceneNum} (${activeScene.timeLabel})`
+      });
+      state.bookmarks = state.bookmarks.slice(0, 8);
+      localStorage.setItem("noon_live_link_bookmarks", JSON.stringify(state.bookmarks));
+      renderBookmarks();
+      showToast(`Bookmarked Word ${clamped.toLocaleString()}`);
+    });
+
+    // Spacebar Shortcut for LIVE LINK Play/Pause
+    window.addEventListener("keydown", (e) => {
+      if (document.activeElement === liveSearchInput) return;
+      if (e.code === "Space") {
+        e.preventDefault();
+        toggleLiveLinkPlayback();
+      }
+    });
+
+    // Initialize Application
+    window.addEventListener("DOMContentLoaded", () => {
+      renderScreenplay();
+      renderBookmarks();
+    });
+  </script>
+</body>
+</html>
