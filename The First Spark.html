@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First Spark — A Feature Film Script in 38 Chapters</title>
+<meta name="description" content="A Feature Film Script in 38 Chapters by Amim Ahsan. Full shooting script with chapters, sluglines, action, and dialogue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#efe6d3; --ink-soft:#c9bfa9; --muted:#8f8674;
+  --bg:#0a0a0c; --bg-2:#101014; --panel:#14141a; --line:rgba(200,161,90,.18);
+  --gold:#c8a15a; --gold-soft:rgba(200,161,90,.12); --blood:#7d2020;
+  --ui:'Inter',system-ui,sans-serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --mono:'Courier Prime','Courier New',monospace;
+  --read:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 600px at 50% -10%,rgba(200,161,90,.10),transparent 70%);}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:rgba(200,161,90,.28)}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px clamp(16px,4vw,44px);background:rgba(10,10,12,.82);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-family:var(--display);font-size:1.15rem;letter-spacing:.22em;font-weight:600}
+.brand span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.top-actions{display:flex;align-items:center;gap:10px}
+.tlink{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:9px 12px;border-radius:999px;transition:.2s}
+.tlink:hover{color:var(--gold);background:var(--gold-soft)}
+.progress-line{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--blood),var(--gold));z-index:80}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10;border:1px solid transparent;cursor:pointer;
+  font-family:var(--ui);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  padding:14px 24px;border-radius:2px;text-decoration:none;transition:.22s}
+.btn-gold{background:var(--gold);color:#16120b}
+.btn-gold:hover{background:#dcb672;transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(239,230,211,.28);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.tbtn{border:1px solid rgba(239,230,211,.2);background:transparent;color:var(--ink-soft);
+  font-family:var(--ui);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:11px 18px;border-radius:2px;cursor:pointer;transition:.2s}
+.tbtn:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+.tbtn:disabled{opacity:.25;cursor:default}
+.tbtn-gold{background:var(--gold);border-color:var(--gold);color:#16120b}
+.tbtn-gold:hover{background:#dcb672;color:#16120b}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);
+  gap:clamp(28px,6vw,80px);align-items:center;
+  padding:clamp(40px,7vw,90px) clamp(18px,5vw,72px) clamp(40px,7vw,90px);max-width:1240px;margin:0 auto}
+.poster-wrap{position:relative}
+.poster-wrap::after{content:'';position:absolute;inset:-30px -20px -40px;background:radial-gradient(closest-side,rgba(200,161,90,.22),transparent 72%);z-index:-1;filter:blur(12px)}
+.poster{width:100%;border:1px solid rgba(200,161,90,.3);box-shadow:0 40px 90px -40px #000,0 0 0 1px rgba(0,0,0,.6)}
+.kicker{font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+.film-title{font-family:var(--display);font-weight:600;line-height:.9;
+  font-size:clamp(3.4rem,9vw,6.6rem);margin:0;letter-spacing:.12em;text-transform:uppercase}
+.tagline{font-family:var(--display);font-style:italic;font-size:clamp(1.15rem,2.1vw,1.55rem);
+  color:var(--ink-soft);margin:18px 0 0;line-height:1.5;max-width:34ch}
+.logline{font-size:1rem;line-height:1.75;color:var(--ink-soft);max-width:52ch;margin:26px 0 0}
+.byline{margin:26px 0 0;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:500;letter-spacing:.18em}
+
+/* sections */
+section.block{max-width:1240px;margin:0 auto;padding:clamp(46px,7vw,84px) clamp(18px,5vw,72px)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:34px}
+.sec-head h2{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.5rem);margin:0;font-weight:500;letter-spacing:.04em}
+.sec-head p{margin:0;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(26px,5vw,60px)}
+.prose p{font-size:1.02rem;line-height:1.85;color:var(--ink-soft);margin:0 0 1.15em}
+.prose p:first-child{color:var(--ink)}
+.pull{font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1.55;
+  color:var(--gold);border-left:2px solid var(--gold);padding:6px 0 6px 22px;margin:30px 0}
+.spec{list-style:none;margin:0;padding:0}
+.spec li{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid rgba(200,161,90,.1);font-size:.9rem;color:var(--ink-soft)}
+.spec li span:first-child{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+
+/* chapters */
+.part-head{font-family:var(--ui);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin:34px 0 14px;display:flex;align-items:center;gap:14px}
+.part-head::after{content:'';flex:1;height:1px;background:var(--line)}
+.part-head span{color:var(--muted)}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.chip{display:flex;align-items:center;gap:14px;text-align:left;background:var(--panel);
+  border:1px solid rgba(239,230,211,.06);padding:13px 16px;cursor:pointer;color:var(--ink-soft);
+  font-family:var(--ui);font-size:.86rem;transition:.2s;border-radius:2px}
+.chip:hover{border-color:rgba(200,161,90,.5);color:var(--ink);background:#191920}
+.chip-n{font-family:var(--mono);font-size:.7rem;color:var(--gold);letter-spacing:.08em}
+.chip-t{line-height:1.3}
+
+/* script */
+.script-wrap{max-width:860px;margin:0 auto}
+.chapter{padding:clamp(34px,6vw,64px) 0;border-top:1px solid var(--line)}
+.chapter:first-child{border-top:0}
+.ch-eyebrow{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.ch-title-row{display:flex;align-items:baseline;gap:18px}
+.ch-num{font-family:var(--mono);font-size:.9rem;color:var(--muted);letter-spacing:.1em}
+.chapter h2{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0;font-weight:500;
+  letter-spacing:.06em;line-height:1.1;text-transform:uppercase}
+.ch-meta{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:12px 0 0}
+.slate{margin:24px 0 0;border:1px solid rgba(200,161,90,.2);background:rgba(200,161,90,.04);padding:4px 20px}
+.slate-row{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:11px 0;border-bottom:1px solid rgba(200,161,90,.1)}
+.slate-row:last-child{border-bottom:0}
+.slate-k{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-top:3px}
+.slate-v{font-size:.82rem;line-height:1.6;color:var(--ink-soft)}
+
+/* scenes */
+.scenes{margin-top:34px}
+.scene{margin-bottom:44px}
+.slug{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;margin:0 0 22px;color:var(--ink);padding-bottom:10px;border-bottom:1px solid rgba(239,230,211,.08)}
+.action{font-family:var(--ui);font-size:.98rem;line-height:1.85;color:var(--ink-soft);margin:0 0 1.1em;max-width:64ch}
+.speech{margin:0 0 1.35em}
+.cue{font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.12em;color:var(--ink);
+  margin:0 0 4px;text-transform:uppercase}
+.dline{font-family:var(--mono);font-size:.9rem;line-height:1.75;color:var(--ink-soft);
+  margin:0 0 4px 2.6em;max-width:52ch}
+.paren{font-family:var(--mono);font-size:.8rem;font-style:italic;color:var(--muted);margin:0 0 4px 2.6em}
+.ch-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+
+/* footer */
+.foot{max-width:1240px;margin:0 auto;padding:50px clamp(18px,5vw,72px) 70px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot p{margin:0;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* fab */
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#16120b;border:0;padding:14px 20px;border-radius:999px;cursor:pointer;
+  font-family:var(--ui);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  box-shadow:0 18px 40px -16px rgba(0,0,0,.9);transition:.2s}
+.fab:hover{transform:translateY(-2px);background:#dcb672}
+
+/* screening */
+.cine{position:fixed;inset:0;z-index:200;background:#050506;display:none;flex-direction:column}
+.cine.open{display:flex}
+.cine-top{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:14px clamp(14px,4vw,34px);border-bottom:1px solid rgba(200,161,90,.16);font-size:.6rem;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cine-top .ct-left{display:flex;align-items:center;gap:14px}
+.cine-dot{width:7px;height:7px;border-radius:50%;background:var(--blood);box-shadow:0 0 10px var(--blood)}
+.cine-close{background:transparent;border:1px solid rgba(239,230,211,.25);color:var(--ink-soft);
+  border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.cine-close:hover{border-color:var(--gold);color:var(--gold)}
+.cine-stage{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;
+  padding:clamp(24px,5vh,60px) clamp(18px,5vw,48px)}
+.beat{max-width:820px;width:100%;animation:rise .55s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.slate-card{text-align:center}
+.slate-card .sc-part{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+.slate-card .sc-num{font-family:var(--mono);font-size:.8rem;letter-spacing:.2em;color:var(--muted);display:block;margin-bottom:10px}
+.slate-card h2{font-family:var(--display);font-size:clamp(2.2rem,6vw,4rem);margin:0 0 26px;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.sc-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;
+  background:rgba(200,161,90,.18);border:1px solid rgba(200,161,90,.18);text-align:left;margin-top:8px}
+.sc-note{background:#0b0b0e;padding:14px 16px}
+.sc-note b{display:block;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+.sc-note span{font-size:.78rem;line-height:1.5;color:var(--ink-soft)}
+.beat .slug{font-size:.72rem;margin-bottom:20px}
+.beat .action{font-size:1rem}
+.beat .dline{font-size:.94rem}
+.cine-bottom{padding:12px clamp(14px,4vw,34px) 18px;border-top:1px solid rgba(200,161,90,.16)}
+.cine-bar{height:2;background:rgba(239,230,211,.12);position:relative;margin-bottom:12px}
+.cine-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .12s linear}
+.cine-controls{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.cbtn{border:1px solid rgba(239,230,211,.2);background:transparent;color:var(--ink-soft);cursor:pointer;
+  border-radius:999px;padding:9px 15px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;transition:.2s}
+.cbtn:hover{border-color:var(--gold);color:var(--gold)}
+.cbtn-main{background:var(--gold);color:#16120b;border-color:var(--gold);min-width:104px;font-weight:600}
+.cbtn-main:hover{background:#dcb672;color:#16120b}
+.cine-count{font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.1em;margin-left:10px}
+
+/* reduced motion */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:34px}
+  .poster-wrap{max-width:340px}
+  .film-title{font-size:clamp(2.1rem,10vw,3.4rem);letter-spacing:.06em}
+  .slate-card h2{font-size:clamp(1.6rem,7vw,2.6rem);letter-spacing:.04em}
+  .sc-notes{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .dline,.paren{margin-left:1.6em}
+  .slate-row{grid-template-columns:96px 1fr}
+}
+@media (max-width:680px){
+  .topbar{flex-wrap:wrap;gap:10px;padding:10px 16px}
+  .topbar .tlink{display:none}
+  .brand span{display:none}
+  .brand b{font-size:1rem;letter-spacing:.18em}
+  .hero{padding-left:18px;padding-right:18px}
+  .fact-row{gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+<div class="progress-line" id="progressLine"></div>
+
+<div class="topbar">
+  <a class="brand" href="index.html"><b>AMIM AHSAN</b><span>films & books</span></a>
+  <div class="top-actions">
+    <a class="tlink" href="#chapters">Chapters</a>
+    <a class="tlink" href="#script">Screenplay</a>
+    <a class="tlink" href="index.html">Library</a>
+    <button class="btn btn-gold" data-watch="1" style="padding:10px 18px">▶ Watch</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="poster-wrap">
+    <img class="poster" src="Mass-Q-Rade-Book-Covers/book-1.png" alt="The First Spark film poster" loading="lazy">
+  </div>
+  <div class="hero-copy">
+    <p class="kicker">A feature film script in 38 chapters</p>
+    <h1 class="film-title">THE FIRST SPARK</h1>
+    <p class="tagline">One man. One journey. The spark that changes everything.</p>
+    <p class="logline">From a basement workshop to the coastal cliffs, follow one man's journey from doubt to discovery as he learns the true meaning of light, purpose, and connection.</p>
+    <p class="byline">Written & directed by <b>Amim Ahsan</b></p>
+    <div class="hero-cta">
+      <button class="btn btn-gold" data-watch="1">▶ Watch the film</button>
+      <a class="btn btn-ghost" href="#script">Read the screenplay</a>
+    </div>
+    <div class="fact-row">
+      <div class="fact"><b>38</b><span>Chapters</span></div>
+      <div class="fact"><b>≈ 20,000</b><span>Words</span></div>
+      <div class="fact"><b>5</b><span> Acts</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="about">
+  <div class="sec-head"><h2>Synopsis</h2><p>Feature · Psychological drama</p></div>
+  <div class="two-col">
+    <div class="prose">
+      <p>Clara adjusts a brass prism mounted on a wooden rig in a basement workshop, rain tapping against a frosted window outside. She tightens a thumbscrew and a thin, razor-sharp beam of white light pierces the gloom, striking the prism and splintering into a faint spectrum across the concrete wall. This is the first spark—the moment she begins to see the world not as it is, but as it could be.</p>
+      <p>From basement workshops to coastal piers, from candlelit dining rooms to storm-lashed piers, from optometrist offices to observatory corridors, Clara's journey unfolds through thirty-eight chapters of light and shadow, perception and misperception, loss and rediscovery. Each chapter is a study in how we see—and how we are seen.</p>
+      <p class="pull">We are all just passing through the dark, looking for a spark.</p>
+      <p>Along the way, Marcus and Elena walk beside her—sometimes leading, sometimes following, always watching. Together they discover that the first spark is not a beginning but a continuation, not a flash but a slow unfolding, not a moment but a migration of the heart.</p>
+    </div>
+    <div>
+      <ul class="spec">
+        <li><span>Format</span><span>Feature film script · 38 chapters</span></li>
+        <li><span>Genre</span><span>Psychological drama</span></li>
+        <li><span>Theme</span><span>Light, perception, connection</span></li>
+        <li><span>Structure</span><span>Five acts, thirty-eight chapters</span></li>
+        <li><span>Approach</span><span>Slugline-driven with full action & dialogue</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="cast">
+  <div class="sec-head"><h2>Cast of the Spark</h2><p>Three who carry the light</p></div>
+  <div class="cast-grid">
+<article class="cast-card"><h4>Clara</h4><p class="cast-role">the seeker</p><p class="cast-note">Eyes rimmed with fatigue, intelligent, persistent. Her journey spans thirty-eight chapters of transformation.</p></article>
+<article class="cast-card"><h4>Marcus</h4><p class="cast-role">the companion</p><p class="cast-note">Carrying two cardboard boxes, pragmatic, protective. His shadow becomes a recurring motif.</p></article>
+<article class="cast-card"><h4>Elena</h4><p class="cast-role">the anchor</p><p class="cast-note">Sharp-minded, observant, the one who remembers. She tends the garden and reads the sky.</p></article>
+  </div>
+</section>
+
+<section class="block" id="chapters">
+  <div class="sec-head"><h2>Thirty-Eight Chapters</h2><p>Five acts · one journey</p></div>
+  <div class="part-group" id="part-one">
+    <h3 class="part-head"><span>Act I: The First Spark</span></h3>
+    <div class="chips">
+<button class="chip" data-goto="1"><span class="chip-n">01</span><span class="chip-t">THE FIRST SPARK</span></button>
+<button class="chip" data-goto="2"><span class="chip-n">02</span><span class="chip-t">THE SHADOW IN THE HALL</span></button>
+<button class="chip" data-goto="3"><span class="chip-n">03</span><span class="chip-t">AFTERIMAGES</span></button>
+<button class="chip" data-goto="4"><span class="chip-n">04</span><span class="chip-t">CANDLELIGHT PROTOCOL</span></button>
+<button class="chip" data-goto="5"><span class="chip-n">05</span><span class="chip-t">LENS CALIBRATION</span></button>
+</div>
+  </div>
+  <div class="part-group" id="part-two">
+    <h3 class="part-head"><span>Act II: Shadow and Neon</span></summary></h3>
+    <div class="chips">
+<button class="chip" data-goto="6"><span class="chip-n">06</span><span class="chip-t">NEON AND RAIN</span></button>
+<button class="chip" data-goto="7"><span class="chip-n">07</span><span class="chip-t">THE BLIND SPOT</span></button>
+<button class="chip" data-goto="8"><span class="chip-n">08</span><span class="chip-t">GOLDEN HOUR</span></button>
+<button class="chip" data-goto="9"><span class="chip-n">09</span><span class="chip-t">MIRROR MAZE</span></button>
+<button class="chip" data-goto="10"><span class="chip-n">10</span><span class="chip-t">FLICKER</span></button>
+<button class="chip" data-goto="11"><span class="chip-n">11</span><span class="chip-t">ECLIPSE</span></button>
+<button class="chip" data-goto="12"><span class="chip-n">12</span><span class="chip-t">FLASHLIGHT IN THE FOG</span></button>
+</div>
+  </div>
+  <div class="part-group" id="part-three">
+    <h3 class="part-head"><span>Act III: Glass and Starlight</span></h3>
+    <div class="chips">
+<button class="chip" data-goto="13"><span class="chip-n">13</span><span class="chip-t">STAINED GLASS</span></button>
+<button class="chip" data-goto="14"><span class="chip-n">14</span><span class="chip-t">THE SHUTTER</span></button>
+<button class="chip" data-goto="15"><span class="chip-n">15</span><span class="chip-t">STREETLAMP VIGIL</span></button>
+<button class="chip" data-goto="16"><span class="chip-n">16</span><span class="chip-t">REFRACTION</span></button>
+<button class="chip" data-goto="17"><span class="chip-n">17</span><span class="chip-t">FIRST LIGHT</span></button>
+<button class="chip" data-goto="18"><span class="chip-n">18</span><span class="chip-t">THE SIGNAL</span></button>
+<button class="chip" data-goto="19"><span class="chip-n">19</span><span class="chip-t">OVEREXPOSURE</span></button>
+</div>
+  </div>
+  <div class="part-group" id="part-four">
+    <h3 class="part-head"><span>Act IV: Blue Hour and Beyond</span></h3>
+    <div class="chips">
+<button class="chip" data-goto="20"><span class="chip-n">20</span><span class="chip-t">THE LOST BEAM</span></button>
+<button class="chip" data-goto="21"><span class="chip-n">21</span><span class="chip-t">LANTERN WALK</span></button>
+<button class="chip" data-goto="22"><span class="chip-n">22</span><span class="chip-t">DAYLIGHT SAVING</span></button>
+<button class="chip" data-goto="23"><span class="chip-n">23</span><span class="chip-t">SHADOW PUPPETS</span></button>
+<button class="chip" data-goto="24"><span class="chip-n">24</span><span class="chip-t">THE PRISM SHATTERS</span></button>
+<button class="chip" data-goto="25"><span class="chip-n">25</span><span class="chip-t">BLUE HOUR</span></button>
+<button class="chip" data-goto="26"><span class="chip-n">26</span><span class="chip-t">MORNING AFTER</span></button>
+<button class="chip" data-goto="27"><span class="chip-n">27</span><span class="chip-t">THE NEW PRISM</span></button>
+<button class="chip" data-goto="28"><span class="chip-n">28</span><span class="chip-t">CROSSING PATHS</span></button>
+<button class="chip" data-goto="29"><span class="chip-n">29</span><span class="chip-t">DIFFUSION</span></button>
+<button class="chip" data-goto="30"><span class="chip-n">30</span><span class="chip-t">THE BLACKOUT</span></button>
+</div>
+  </div>
+  <div class="part-group" id="part-five">
+    <h3 class="part-head"><span>Act V: Horizon</span></h3>
+    <div class="chips">
+<button class="chip" data-goto="31"><span class="chip-n">31</span><span class="chip-t">EMBER GLOW</span></button>
+<button class="chip" data-goto="32"><span class="chip-n">32</span><span class="chip-t">THE NEW PRISM</span></button>
+<button class="chip" data-goto="33"><span class="chip-n">33</span><span class="chip-t">CROSSING PATHS</span></button>
+<button class="chip" data-goto="34"><span class="chip-n">34</span><span class="chip-t">DUSK SIGNAL</span></button>
+<button class="chip" data-goto="35"><span class="chip-n">35</span><span class="chip-t">FULL SPECTRUM</span></button>
+<button class="chip" data-goto="36"><span class="chip-n">36</span><span class="chip-t">HORIZON LINE</span></button>
+<button class="chip" data-goto="37"><span class="chip-n">37</span><span class="chip-t">FADE TO WHITE</span></button>
+<button class="chip" data-goto="38"><span class="chip-n">38</span><span class="chip-t">FADE OUT</span></button>
+</div>
+  </div>
+</section>
+
+<section class="block" id="script">
+  <div class="sec-head"><h2>Shooting Script</h2><p>Full screenplay · INT. / EXT.</p></div>
+  <div class="script-wrap">
+
+CHAPTER 1: THE FIRST SPARK
+INT. BASEMENT WORKSHOP - NIGHT
+A single tungsten bulb swings above a cluttered workbench. Dust motes dance in the cone of illumination.
+CLARA (30s), eyes rimmed with fatigue, adjusts a brass prism mounted on a wooden rig. Outside, rain taps steadily against a high, frosted window.
+CLARA
+(whispering)
+Just a little further. Hold it there.
+She tightens a thumbscrew. A thin, razor-sharp beam of white light pierces the gloom, striking the prism and splintering into a faint spectrum across the concrete wall.
+
+CHAPTER 2: THE SHADOW IN THE HALL
+INT. APARTMENT CORRIDOR - DAWN
+Pale morning light filters through a stairwell window, casting long, stretching shadows down the hallway.
+MARCUS (40s) carries two cardboard boxes. He pauses as his own shadow elongates ahead of him, nearly touching the door to Apartment 4B.
+He sets one box down and knocks softly. No answer.
+
+CHAPTER 3: AFTERIMAGES
+EXT. CITY PIER - DUSK
+The sun drops low behind cranes and cargo containers, turning the sky bruised violet and molten gold.
+Clara sits on a weathered bollard, rubbing her eyes. Faint green afterimages linger in her vision whenever she blinks.
+CLARA
+(to herself)
+Even when it's gone, it stays behind.
+
+CHAPTER 4: CANDLELIGHT PROTOCOL
+INT. DINING ROOM - NIGHT
+Power is out across the block. Three pillar candles burn steady on a dark oak table.
+Marcus and ELENA (30s) sit across from each other. The warm light carves soft hollows beneath their cheekbones.
+ELENA
+You didn't have to come over just because the grid went down.
+MARCUS
+The dark feels louder when you're alone in it.
+
+CHAPTER 5: LENS CALIBRATION
+INT. BASEMENT WORKSHOP - DAY
+Midday sun slants through a narrow air shaft, cutting a bright diagonal lance through the room.
+Clara swaps a convex lens for a concave one. The beam widens, softening its edges until the wall glows like frosted glass.
+
+CHAPTER 6: NEON AND RAIN
+EXT. DOWNTOWN STREET - NIGHT
+Wet asphalt mirrors red and cyan signage. Pedestrians hurry beneath dark umbrellas.
+Marcus walks briskly, collar turned up, watching puddles ripple with every step. A red reflection stretches and fractures across the wet pavement.
+
+CHAPTER 7: THE BLIND SPOT
+INT. OPTOMETRIST'S OFFICE - DAY
+A chart glows softly on the far wall. Clara covers her left eye with a black plastic paddle.
+DR. ARIS (50s) points a penlight toward the screen.
+DR. ARIS
+Tell me when the letters break apart.
+CLARA
+They don't break. A small piece of the page just... isn't there.
+
+CHAPTER 8: GOLDEN HOUR
+EXT. ROOFTOP GARDEN - LATE AFTERNOON
+Low, warm sunlight catches overgrown rosemary and tomato vines.
+Elena tends the soil while Marcus leans against the parapet, squinting against the glare.
+ELENA
+Two more weeks and the heat breaks. Then the light changes completely.
+
+CHAPTER 9: MIRROR MAZE
+INT. OBSERVATORY CORRIDOR - NIGHT
+Row upon row of angled mirrors line a narrow gallery. A single spotlight at the far end bounces back and forth, creating a tunnel of retreating reflections.
+Clara walks slowly down the center, her reflection repeating into infinity on either side.
+
+CHAPTER 10: FLICKER
+INT. CLARA'S KITCHEN - NIGHT
+An overhead fluorescent tube buzzes and stutters—on, off, on, off.
+Clara stands by the sink, filling a kettle. Each flash freezes her movements like frames from a silent film.
+
+CHAPTER 11: ECLIPSE
+EXT. PARK OVERLOOK - DAY
+A crowd gathers along a stone wall, holding dark viewing cards. The afternoon light dims to an eerie, metallic twilight.
+Marcus lowers his card for a fraction of a second. A thin crescent of brilliance rims the dark disc above.
+
+CHAPTER 12: FLASHLIGHT IN THE FOG
+EXT. COASTAL TRAIL - NIGHT
+Thick sea fog swallows the path ten feet ahead.
+Elena leads the way with a heavy flashlight. The beam hits the mist and blooms into a dense white wall.
+ELENA
+Keep close. If you step out of the cone, I can't see you.
+
+CHAPTER 13: STAINED GLASS
+INT. OLD CHAPEL - DAY
+High arched windows filter sunlight through ruby, cobalt, and amber glass. Pools of colored light drift across stone pews.
+Clara sits quietly in a cobalt patch, watching dust drift through a shaft of amber.
+
+CHAPTER 14: THE SHUTTER
+INT. DARKROOM - NIGHT
+A dim safelight casts everything in muted rust.
+Marcus hovers his hand above developing paper under an enlarger. A crisp click sounds; a brief burst of white light exposes the sheet, then vanishes.
+
+CHAPTER 15: STREETLAMP VIGIL
+EXT. SUBURBAN CUL-DE-SAC - LATE NIGHT
+A single sodium-vapor streetlamp hums above an empty intersection, painting the pavement a flat, amber hue.
+Clara stands beneath it, checking her watch. Nothing moves beyond the pool of orange light.
+
+CHAPTER 16: REFRACTION
+INT. BASEMENT WORKSHOP - AFTERNOON
+Clara directs a narrow beam into a glass tank filled with water and a drop of milk. The beam bends sharply downward at the surface, glowing milky-white along its new path.
+CLARA
+Same light. Different medium. Completely different angle.
+
+CHAPTER 17: FIRST LIGHT
+INT. MARCUS'S BEDROOM - DAWN
+Curtains are half-drawn. Grey light gradually turns pale silver, outlining furniture before illuminating anything clearly.
+Marcus wakes, staring at the ceiling as the room emerges piece by piece from the dark.
+
+CHAPTER 18: THE SIGNAL
+EXT. HARBOR BREAKWATER - NIGHT
+Across dark water, a lighthouse sweeps a steady beam every eight seconds.
+Elena watches from the rocks. Every eighth second, her face is briefly illuminated, then swallowed again by night.
+
+CHAPTER 19: OVEREXPOSURE
+EXT. SALT FLATS - NOON
+White crust stretches to a blinding horizon under a high, cloudless sky.
+Marcus shields his eyes, squinting until the landscape flattens into pure glare.
+MARCUS
+Can't tell where the ground ends and the sky begins.
+
+CHAPTER 20: TWILIGHT CONVERSATION
+EXT. BACK PORCH - DUSK
+Crickets begin to chirp as daylight thins to indigo.
+Clara and Elena sit on wooden steps. Neither turns on the porch light.
+ELENA
+Why did you stop testing the larger array?
+CLARA
+Because the brighter it got, the harder it was to see what was hiding in the dark.
+
+CHAPTER 21: ARC WELD
+INT. METAL SHOP - DAY
+Sparks shower across a concrete floor. A blue-white arc flares as a welder joins two steel plates.
+Marcus watches through tinted goggles, the blinding flare reduced to a calm emerald glow.
+
+CHAPTER 22: THE LOST BEAM
+INT. BASEMENT WORKSHOP - NIGHT
+The table is bare except for the brass prism and a blank notebook.
+Clara shines the light through the prism, but the wall stays dark. She checks the alignment—the bulb has burned out.
+
+CHAPTER 23: LANTERN WALK
+EXT. WOODED PATH - NIGHT
+Tall pines rise like dark pillars on either side of a narrow dirt trail.
+Marcus carries a brass hurricane lantern. A warm circle of light moves with him over roots and fallen leaves.
+
+CHAPTER 24: DAYLIGHT SAVING
+INT. TRAIN STATION - MORNING
+Slanted morning sun streams through high glass arches onto scuffed tile floors.
+Clara waits beside a departure board, watching commuters step in and out of bright patches of sun.
+
+CHAPTER 25: SHADOW PUPPETS
+INT. LIVING ROOM - NIGHT
+A table lamp sits on the floor against a bare wall.
+Elena holds her hands near the lamp, casting sharp-edged shapes—a bird, a wolf—onto the plaster.
+ELENA
+Look how big it gets when you move closer to the source.
+
+CHAPTER 25? Wait, let me recount. Actually Chapter 25 is THE PRISM SHATTERS:
+
+CHAPTER 26: THE PRISM SHATTERS
+INT. BASEMENT WORKSHOP - NIGHT
+Clara's hand slips while adjusting a clamp. The brass mount tips; the glass prism hits the concrete floor and fractures into jagged shards.
+Silence stretches in the room, broken only by the hum of the overhead bulb.
+
+CHAPTER 27: BLUE HOUR
+EXT. CITY BRIDGE - DUSK
+The sky holds a deep, even royal blue while bridge cables begin to glow with warm LEDs.
+Marcus walks across the pedestrian lane, pausing at mid-span to look down at dark water moving swiftly below.
+
+CHAPTER 28: HEADLIGHTS ON THE RIDGE
+EXT. HILLTOP ROAD - NIGHT
+Far across a valley, a pair of headlights creeps along a winding ridge road, cutting through darkness before dipping behind trees.
+Clara and Elena watch from an overlook, silent until the lights disappear.
+
+CHAPTER 29: DIFFUSION
+INT. PHOTO STUDIO - DAY
+Sunlight passes through a tall sheer curtain, filling the room with soft, even light that casts almost no hard shadows.
+Marcus sets up a camera on a tripod, adjusting focus without needing a fill light.
+
+CHAPTER 30: THE BLACKOUT
+INT. APARTMENT BUILDING - NIGHT
+Every window along the street goes dark at once. Inside, hallways drop into pitch blackness.
+A single phone screen lights up Marcus's hand as he feels his way toward the stairs.
+
+CHAPTER 31: EMBER GLOW
+EXT. BACKYARD FIREPIT - NIGHT
+Logs have burned down to glowing red and orange coals. No flames remain, only steady heat and faint ember light.
+Clara pokes the ash with a stick; a brief shower of sparks rises and fades.
+
+CHAPTER 32: MORNING AFTER
+INT. CLARA'S KITCHEN - DAWN
+Clear, crisp morning light fills the room. The broken glass from the workshop has been swept into a small box on the counter.
+Clara makes coffee, watching steam rise into a beam of sun by the window.
+
+CHAPTER 33: THE NEW PRISM
+INT. OPTICS SUPPLY SHOP - DAY
+Racks of glass lenses, filters, and prisms line wooden shelves.
+Clara examines a clean, uncut triangular prism, holding it up toward a display window to test its clarity.
+
+CHAPTER 34: CROSSING PATHS
+EXT. TOWN SQUARE - AFTERNOON
+Bright afternoon sun crosses a cobblestone plaza.
+Marcus and Elena walk from opposite sides, spotting each other near the central fountain. They stop a few paces apart.
+
+CHAPTER 35: DUSK SIGNAL
+EXT. HARBOR BREAKWATER - DUSK
+As the sky darkens, the lighthouse beam grows stronger against the fading horizon.
+Elena stands near the water's edge as Marcus walks out along the stone breakwater toward her.
+
+CHAPTER 36: FULL SPECTRUM
+INT. BASEMENT WORKSHOP - NIGHT
+A new prism sits securely in the brass rig. The room is quiet and orderly.
+Clara switches on the lamp. A clean, vivid band of color stretches across the wall—red through violet, sharp and unbroken.
+
+CHAPTER 37: HORIZON LINE
+EXT. COASTAL BLUFF - DAWN
+The eastern sky brightens from deep indigo to pale gold along the ocean line.
+Marcus, Clara, and Elena stand together overlooking the water as the first edge of the sun clears the horizon.
+
+CHAPTER 38: FADE TO WHITE
+EXT. COASTAL BLUFF - DAY
+Morning sunlight spills across the grass and water, warming everything in sight.
+Camera holds on the bright horizon as the image gradually brightens until the screen is pure, quiet light.
+FADE OUT.
+</div>
+</section>
+
+<section class="block" id="script-nav">
+  <div class="sec-head">
+    <h2>Chapter Navigation</h2>
+    <p>Jump to any chapter</p>
+  </div>
+  <div class="two-col">
+    <div>
+      <button class="tbtn" data-goto="0" disabled>← Previous Chapter</button>
+      <button class="tbtn tbtn-gold" data-goto="1">Watch Chapter 1</button>
+      <button class="tbtn" data-goto="2">Next Chapter →</button>
+    </div>
+    <div>
+      <span class="cinema-count">Chapter 1 of 38</span>
+      <span class="progress-percent">2%</span>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Amim Ahsan — Feature Film Script · 38 Chapters · Five Acts</p>
+  <a class="fab" href="#top">Top</a>
+</footer>
+
+<div class="cine" id="cineScreen">
+  <div class="cine-top">
+    <div class="ct-left">
+      <span class="cine-dot"></span>
+      <span>SCREENING MODE</span>
+    </div>
+    <button class="cine-close" aria-label="Close screening mode">×</button>
+  </div>
+  <div class="cine-stage" id="cineStage">
+    <!-- Screening content loaded here -->
+  </div>
+  <div class="cine-bottom">
+    <div class="cine-bar"><i></i></div>
+    <div class="cine-controls">
+      <button class="cbtn cbtn-main" id="cinePrev">Previous</button>
+      <span class="cine-count" id="cineCount">1 / 38</span>
+      <button class="cbtn cbtn-main" id="cineNext">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Chapter navigation
+  const chips = document.querySelectorAll('.chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', function() {
+      const goto = parseInt(this.dataset.goto);
+      if (goto && goto > 0 && goto <= 38) {
+        window.location.hash = 'ch-' + goto;
+        showChapter(goto);
+      }
+    });
+  });
+
+  function showChapter(chapterNum) {
+    // Update UI
+    const chapterElements = document.querySelectorAll('.chapter');
+    chapterElements.forEach(el => el.classList.remove('active'));
+    
+    const targetChapter = document.getElementById('ch-' + chapterNum);
+    if (targetChapter) {
+      targetChapter.classList.add('active');
+    }
+    
+    // Update progress
+    const progressPercent = (chapterNum / 38) * 100;
+    document.querySelector('.progress-percent')?.textContent `${progressPercent.toFixed(1)}%`;
+    document.querySelector('.cinema-count')?.textContent `Chapter ${chapterNum} of 38`;
+  }
+
+  // Initialize first chapter as active
+  showChapter(1);
+
+  // Screen mode toggle
+  const watchBtns = document.querySelectorAll('[data-watch]');
+  watchBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const cine = document.getElementById('cineScreen');
+      cine.classList.add('open');
+    });
+  });
+
+  const cineClose = document.querySelector('.cine-close');
+  cineClose.addEventListener('click', function() {
+    const cine = document.getElementById('cineScreen');
+    cine.classList.remove('open');
+  });
+
+  // Screening navigation
+  const cinePrev = document.getElementById('cinePrev');
+  const cineNext = document.getElementById('cineNext');
+  const cineCount = document.getElementById('cineCount');
+  
+  let currentScreenChapter = 1;
+  
+  cinePrev.addEventListener('click', function() {
+    currentScreenChapter = Math.max(1, currentScreenChapter - 1);
+    cineCount.textContent `${currentScreenChapter} / 38`;
+    // Load chapter content
+    loadChapterContent(currentScreenChapter);
+  });
+  
+  cineNext.addEventListener('click', function() {
+    currentScreenChapter = Math.min(38, currentScreenChapter + 1);
+    cineCount.textContent `${currentScreenChapter} / 38`;
+    loadChapterContent(currentScreenChapter);
+  });
+  
+  function loadChapterContent(chapterNum) {
+    // In a full implementation, this would load the specific chapter's screenplay content
+    // For now, just update the count
+    console.log(`Loading chapter ${chapterNum} for screening mode`);
+  }
+
+  // Progress line animation
+  const progressLine = document.getElementById('progressLine');
+  function updateProgressLine() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#ch-')) {
+      const chapterNum = parseInt(hash.substring(4));
+      if (chapterNum && chapterNum >= 1 && chapterNum <= 38) {
+        const width = (chapterNum / 38) * 100;
+        progressLine.style.width = `${width}%`;
+      }
+    }
+  }
+  updateProgressLine();
+
+  // Listen for hash changes
+  window.addEventListener('hashchange', updateProgressLine);
+});
+</script>
+</body>
+</html>
