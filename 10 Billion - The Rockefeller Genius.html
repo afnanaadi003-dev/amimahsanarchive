@@ -41,6 +41,42 @@
     }
   </script>
 
+  <script>
+    // READING PROGRESS STATE
+    let state = { chapter: 1 };
+
+    // CHAPTER READING PROGRESS
+    const READ_STATE_KEY = 'mqr_10billion_read_chapters';
+    let readChapterIds = new Set();
+    
+    // Try to restore read state from localStorage
+    try {
+      const stored = localStorage.getItem(READ_STATE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          parsed.forEach(id => readChapterIds.add(id));
+        }
+      }
+    } catch (e) { /* storage error */ }
+
+    function saveReadState() {
+      try {
+        localStorage.setItem(READ_STATE_KEY, JSON.stringify(Array.from(readChapterIds)));
+      } catch (e) { /* storage error */ }
+    }    function updateReadProgressDisplay() {
+      const pct = Math.round((readChapterIds.size / chaptersData.length) * 100);
+      document.getElementById('heroProgressPct').textContent = pct + '% Read';
+      const bookmarkText = readChapterIds.has(state.chapter) ? 'Bookmark saved' : 'No bookmark';
+      document.getElementById('heroBookmark').textContent = bookmarkText;
+    }
+
+    // Initialize
+    updateReadProgressDisplay();
+
+
+  </script>
+
   <style>
     ::-webkit-scrollbar {
       width: 8px;
@@ -894,8 +930,7 @@
         wordCount: "4,000 words",
         summary: "The story circles back to where it began — a new boy at the food court, a new father conversation, the same declaration — and the Architecture ensures it will be different this time.",
         keyScene: "A new boy at the food court declares he will not be goods — and the Architecture of Freedom is already there, already working, already ensuring he will not have to fight for it.",
-        text: "And so the story circles back to where it began. A roadside food court in City of God. 2075. A new boy. Jobless, at sixteen. His father asking the same question his own father had asked: ‘You going for work tomorrow, boy?’ Or the new slang: ‘Going for neywork?’ The boy looks at his father, and for the first time, he smiles. Not because he knows about 362 billion or Rockefeller or Architectures of Freedom. But because something in the air — the structure, the principle, the default — has already ensured that he will not have to fight. ‘Going for neywork, Pops,’ the boy says. ‘Networking. Not real work. Real work is for people who don’t know better.’ His father waits for the usual lecture, the usual warning about being goods. But the usual lecture never comes. Because the Architecture of Freedom — evolving, adapting, always in motion — is already there, already working, already ensuring that the boy will not have to declare, will not have to fight, will not have to make himself free. It is simply the default. ‘Like what?’ his father asks. ‘Like free,’ the boy says. And he is. Not because he knows the story. Not because he knows the Architecture. But because the structure is there. Because the principle has become the default. Because the echo from eighty years ago has finally, fully, become the air that everyone breathes. The story ends where it began. But the beginning is not the same. The declaration has become the default. And the world has finally, fully, become free."
-      },
+        text: "And so the story circles back to where it began. A roadside food court in City of God. 2075. A new boy. Jobless, at sixteen. His father asking the same question his own father had asked: ‘You going for work tomorrow, boy?’ Or the new slang: ‘Going for neywork?’ The boy looks at his father, and for the first time, he smiles. Not because he knows about 362 billion or Rockefeller or Architectures of Freedom. But because something in the air — the structure, the principle, the default — has already ensured that he will not have to fight. ‘Going for neywork, Pops,’ the boy says. ‘Networking. Not real work. Real work is for people who don’t know better.’ His father waits for the usual lecture, the usual warning about being goods. But the usual lecture never comes. Because the Architecture of Freedom — evolving, adapting, always in motion — is already there, already working, already ensuring that the boy will not have to declare, will not have to fight, will not have to make himself free. It is simply the default. ‘Like what?’ his father asks. ‘Like free,’ the boy says. And he is. Not because he knows the story. Not because he knows the Architecture. But because the structure is there. Because the principle has become the default. Because the echo from eighty years ago has finally, fully, become the air that everyone breathes. The story ends where it began. But the beginning is not the same. The declaration has become the default. And the world has finally, fully, become free."      },
       {
         id: 36, partNum: 3, partTitle: "Part III: The Freedom",
         title: "Chapter 36: The Story Ends, the Legend Begins (Final)",
@@ -904,8 +939,51 @@
         summary: "The complete journey from jobless boy to 362 billion and the architecture of permanent freedom — the ultimate lesson learned and passed on.",
         keyScene: "One final reflection on the full journey, and the lesson that will echo for centuries.",
         text: "And so the story ends — not with an ending, but with a beginning. The journey from jobless boy at a Roadside food court in City of God, to the world’s first 362 billion self-made genius, to the Architecture of Freedom that ensures no genius will ever again have to fight to not be goods. Thirty-eight years. Three hundred sixty-two billion dollars. A structure that has become the operating system of a world where genius freedom is the default. The lesson has been learned. The Architecture has been built. The promises have been made. The echo from the roadside food court has become the default air that everyone breathes. And the legend of Joaquim Silva — the boy who refused to be goods, the genius who made himself free, the man who built a structure that could never be perverted — will echo for centuries. Not because of the money. Not because of the billions. But because of the principle. Because the default has been set. Because the world has finally, fully, become free. The story ends. But the legend begins. And it begins with the declaration that started it all: ‘I will not be goods.’ And because the Architecture ensures that this declaration will never again be necessary, the legend can begin in freedom — for every genius who comes after, in a world where freedom is the default, and the only battle is the one each generation fights to push the boundaries further, knowing the structure is there to ensure the fight liberates rather than commodifies. Freedom. That was the goal. And it had been achieved. Not just for Joaquim Silva, but for the architecture he had built, and the promises he had made, and the future geniuses who would never have to declare, ever again, that they would not be goods. The story ends. But the legend begins."
-      }    ];
-  </script>
+      },
+    // READING PROGRESS STATE
+    const READ_STATE_KEY = 'mqr_10billion_read_chapters';
+    let readChapterIds = new Set();
+    
+    // Try to restore read state from localStorage
+    try {
+      const stored = localStorage.getItem(READ_STATE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          parsed.forEach(id => readChapterIds.add(id));
+        }
+      }
+    } catch (e) { /* storage error */ }
 
+    function saveReadState() {
+      try {
+        localStorage.setItem(READ_STATE_KEY, JSON.stringify(Array.from(readChapterIds)));
+      } catch (e) { /* storage error */ }
+    }
+
+    function toggleModalReadStatus() {
+      const chapterId = state.chapter;
+      if (readChapterIds.has(chapterId)) {
+        readChapterIds.delete(chapterId);
+        document.getElementById('modalReadBtnText').textContent = 'Mark Complete';
+        updateReadProgressDisplay();
+      } else {
+        readChapterIds.add(chapterId);
+        document.getElementById('modalReadBtnText').textContent = 'Marked Complete';
+        updateReadProgressDisplay();
+      }
+      saveReadState();
+    }    function updateReadProgressDisplay() {
+      const pct = Math.round((readChapterIds.size / chaptersData.length) * 100);
+      document.getElementById('heroProgressPct').textContent = pct + '% Read';
+      const bookmarkText = readChapterIds.has(state.chapter) ? 'Bookmark saved' : 'No bookmark';
+      document.getElementById('heroBookmark').textContent = bookmarkText;
+    }
+
+    // Initialize
+    updateReadProgressDisplay();
+    
+    ];
+  </script>
 </body>
 </html>

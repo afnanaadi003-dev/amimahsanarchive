@@ -208,6 +208,11 @@
                         <div class="glass-panel rounded-xl border border-slate-800 shadow-2xl p-2 w-64">
                             <a href="#books" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">All Books</a>
                             <a href="Green%20World/3%20Friends/3%20Friends.html" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">3 Friends</a>
+                            <a href="#film" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">Film</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#film" class="hover:text-amberGold transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amberGold hover:after:w-full after:transition-all">Film</a>
                             <a href="The%20Last%20Word.html" class="block px-3 py-2.5 rounded-lg text-xs tracking-wider uppercase text-slate-300 hover:text-amberGold hover:bg-slate-800/60">The Last Word</a>
                         </div>
                     </div>
@@ -478,6 +483,7 @@
                     <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all bg-amberGold text-slate-950 border border-amberGold">ALL WORKS</button>
                     <button data-filter="series" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">NOVEL SERIES</button>
                     <button data-filter="novels" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">STANDALONE NOVELS</button>
+                    <button data-filter="10billion" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">10 BILLION</button>
                     <button data-filter="essays" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all glass-card text-slate-300 hover:text-amberGold border border-slate-700">PHILOSOPHICAL THESES</button>
                 </div>
             </div>
@@ -603,6 +609,39 @@
                             <span class="text-xs text-slate-400">By Amim Ahsan</span>
                             <button onclick="openModal('invisibleworker')" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
                                 Details <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: 10 Billion - The Rockefeller Genius -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">FINANCIAL EPIC</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">10 Billion</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">The Rockefeller Genius</p>
+                        </div>
+                        <img 
+                            src="https://i.ibb.co.com/10billion-cover.jpg" 
+                            alt="10 Billion: The Rockefeller Genius book cover" 
+                            loading="lazy"
+                            onerror="this.remove()"
+                            class="absolute inset-0 z-20 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Standalone Novel</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                From the roadside food courts of 1980s Rio de Janeiro to the gilded towers of global finance, Joaquim Silva rises from joblessness to become one of history's most improbable self-made billionaires.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <button onclick="openChapterModal(1)" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Start Reading Chapter 1 <i class="fa-solid fa-angle-right"></i>
                             </button>
                         </div>
                     </div>
@@ -811,6 +850,222 @@
                         <div class="flex items-center justify-between border-t border-slate-800 pt-4">
                             <span class="text-xs text-slate-400">By Amim Ahsan</span>
                             <a href="Mass-Q-Rade%20Book%2014%20-%20The%20Exact%20Man.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 1 - The Falling Star -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Falling Star</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 1</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-1.png" alt="Mass-Q-Rade: Book One — The Falling Star book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book One</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                The mysterious falling star that crashed into City of God changed everything. Q's sub-dermal neural interface awakens, and a new era of possibility begins.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%201%20-%20The%20Falling%20Star.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 2 - The Silent Advocate -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Silent Advocate</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 2</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-2.png" alt="Mass-Q-Rade: Book Two — The Silent Advocate book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Two</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                In a world where silence is mandatory, Q's voice becomes the only resistance. The bio-spoofer activates, and a new fight for freedom begins.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%202%20-%20The%20Silent%20Advocate.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 3 - The Broken Healer -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Broken Healer</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 3</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-3.png" alt="Mass-Q-Rade: Book Three — The Broken Healer book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Three</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                Q faces the most dangerous mission of his life: healing the incurable. The Erased Teacher's methodology reaches its limits, and a new hope emerges from the shadows.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%203%20-%20The%20Broken%20Healer.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 4 - The Forgotten Soldier -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-violet-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Forgotten Soldier</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 4</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-4.png" alt="Mass-Q-Rade: Book Four — The Forgotten Soldier book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Four</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                The Aegis Marine Mining Consortium stops at nothing to protect its interests. Q infiltrates the Consortium, and the lines between friend and foe blur like never before.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%204%20-%20The%20Forgotten%20Soldier.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 9 - The Stateless Refugee -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Stateless Refugee</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 9</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-9-stateless.svg" alt="Mass-Q-Rade: Book Nine — The Stateless Refugee book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Nine</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                Fatima Al-Hassan crosses the Aegean with no country to return to, and is offered the weight of one. A journey of exile, identity, and the right to belong.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%209%20-%20The%20Stateless%20Refugee.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 10 - The Caged Artist -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Caged Artist</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 10</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-10-caged.svg" alt="Mass-Q-Rade: Book Ten — The Caged Artist book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Ten</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                Kim Jong-soo paints the state's most beautiful lie and is offered a brush that cannot be arrested. Art becomes the weapon, and the cage becomes a studio.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%2010%20-%20The%20Caged%20Artist.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 11 - The Fallen Priest -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-violet-950 via-slate-900 to-cyan-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Fallen Priest</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 11</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-11-priest.svg" alt="Mass-Q-Rade: Book Eleven — The Fallen Priest book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Eleven</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                The protean priest who vanished without a trace. Q infiltrates the inner circle, and the walls begin to close in. Secrets surface, choices must be made, and the price of truth becomes deadly.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%2011%20-%20The%20Fallen%20Priest.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
+                                Read <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Card: Mass-Q-Rade Book 12 - The Unseen Engineer -->
+                <div class="book-card glass-card rounded-2xl overflow-hidden flex flex-col group" data-category="series">
+                    <div class="h-64 bg-slate-900 relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-slate-900 to-amber-950 opacity-80"></div>
+                        <div class="relative text-center z-10 p-4 border border-amberGold/30 rounded-xl bg-slate-950/60 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
+                            <span class="text-amberGold font-cinzel text-xs tracking-widest mb-1">PSYCHOLOGICAL THRILLER</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-slate-100">The Unseen Engineer</h3>
+                            <p class="text-xs text-slate-400 mt-2 font-serif italic">Mass-Q-Rade &middot; Book 12</p>
+                        </div>
+                        <img src="Mass-Q-Rade-Book-Covers/book-12-engineer.svg" alt="Mass-Q-Rade: Book Twelve — The Unseen Engineer book cover" loading="lazy" onerror="this.remove()" class="absolute inset-0 z-20 w-full h-full object-contain p-3 bg-obsidian transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-amber-500/10 text-amberGold text-[11px] font-semibold tracking-wider mb-3">Series &mdash; Book Twelve</span>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+                                The architect of silent systems. Q breaks into the engineering core, and the blueprints of control are revealed. Power flows where it was never meant to go.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xs text-slate-400">By Amim Ahsan</span>
+                            <a href="Mass-Q-Rade%20Book%2012%20-%20The%20Unseen%20Engineer.html" class="text-xs font-semibold text-amberGold hover:underline flex items-center gap-1">
                                 Read <i class="fa-solid fa-angle-right"></i>
                             </a>
                         </div>
@@ -1470,8 +1725,147 @@
             </div>
         </section>
 
+        <!-- Featured Film: Alien Interact -->
+        <section id="alien-interact" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 relative bg-black">
+                    <img src="Amim - Jolie Script/alien_interactive_30_000_word_feature_screenplay_teleprompter.html" alt="Alien Interact — feature screenplay" loading="lazy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+                </div>
+                <div class="lg:col-span-8 p-8 sm:p-10 space-y-5 bg-gradient-to-br from-slate-950 via-obsidian to-amberGold/40">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">A Feature Film by Amim Ahsan</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100 leading-none tracking-[0.12em]">ALIEN INTERACT</h2>
+                        <p class="font-serif italic text-slate-400 mt-3">A first-contact story that will change everything.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light max-w-2xl">
+                        Thirty-thousand words of feature screenplay. Q's neural interface meets an extraterrestrial presence. Thirty-eight pages of abduction, investigation, and the moment humanity discovers it is not alone.
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <a href="Amim - Jolie Script/alien_interactive_30_000_word_feature_screenplay_teleprompter.html" class="px-6 py-3.5 rounded-xl bg-amberGold hover:bg-amber-300 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-amberGold/30 flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-play"></i> Watch the Film
+                        </a>
+                        <a href="Amim - Jolie Script/alien_interactive_30_000_word_feature_screenplay_teleprompter.html#script" class="px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-amberGold/50 text-slate-200 text-sm font-medium tracking-wide transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines text-amberGold"></i> Read the Screenplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Film: He Came Wild -->
+        <section id="he-came-wild" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 relative bg-black">
+                    <img src="Amim - Jolie Script/he_came_wild_interactive_10_000_word_screenplay_live_cinema_reader.html" alt="He Came Wild — feature screenplay" loading="lazy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+                </div>
+                <div class="lg:col-span-8 p-8 sm:p-10 space-y-5 bg-gradient-to-br from-slate-950 via-obsidian to-amberGold/40">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">A Feature Film by Amim Ahsan</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100 leading-none tracking-[0.12em]">HE CAME WILD</h2>
+                        <p class="font-serif italic text-slate-400 mt-3">The wild is not empty. It is waiting.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light max-w-2xl">
+                        Ten-thousand words of feature screenplay. Q ventures into the wilderness and encounters a reality beyond the city's control. A story of freedom, danger, and the primal call of the wild.
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <a href="Amim - Jolie Script/he_came_wild_interactive_10_000_word_screenplay_live_cinema_reader.html" class="px-6 py-3.5 rounded-xl bg-amberGold hover:bg-amber-300 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-amberGold/30 flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-play"></i> Watch the Film
+                        </a>
+                        <a href="Amim - Jolie Script/he_came_wild_interactive_10_000_word_screenplay_live_cinema_reader.html#script" class="px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-amberGold/50 text-slate-200 text-sm font-medium tracking-wide transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines text-amberGold"></i> Read the Screenplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Film: Noon Live Link -->
+        <section id="noon-live-link" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 relative bg-black">
+                    <img src="Amim - Jolie Script/noon_live_link_interactive_25_000_word_screenplay_teleprompter.html" alt="Noon Live Link — feature screenplay" loading="lazy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+                </div>
+                <div class="lg:col-span-8 p-8 sm:p-10 space-y-5 bg-gradient-to-br from-slate-950 via-obsidian to-amberGold/40">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">A Feature Film by Amim Ahsan</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100 leading-none tracking-[0.12em]">NOON LIVE LINK</h2>
+                        <p class="font-serif italic text-slate-400 mt-3">Connecting moments across time.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light max-w-2xl">
+                        Twenty-five-thousand words of feature screenplay. A live link between past and present. Q discovers a connection that transcends the linear flow of time. Twenty-five pages of connection, memory, and the moment everything changes.
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <a href="Amim - Jolie Script/noon_live_link_interactive_25_000_word_screenplay_teleprompter.html" class="px-6 py-3.5 rounded-xl bg-amberGold hover:bg-amber-300 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-amberGold/30 flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-play"></i> Watch the Film
+                        </a>
+                        <a href="Amim - Jolie Script/noon_live_link_interactive_25_000_word_screenplay_teleprompter.html#script" class="px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-amberGold/50 text-slate-200 text-sm font-medium tracking-wide transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines text-amberGold"></i> Read the Screenplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Film: Plea to Heaven -->
+        <section id="plea-to-heaven" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 relative bg-black">
+                    <img src="Amim - Jolie Script/plea_to_heaven_interactive_screenplay_live_reader.html" alt="Plea to Heaven — feature screenplay" loading="lazy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+                </div>
+                <div class="lg:col-span-8 p-8 sm:p-10 space-y-5 bg-gradient-to-br from-slate-950 via-obsidian to-amberGold/40">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">A Feature Film by Amim Ahsan</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100 leading-none tracking-[0.12em]">PLEA TO HEAVEN</h2>
+                        <p class="font-serif italic text-slate-400 mt-3">A prayer in the darkest night.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light max-w-2xl">
+                        Interactive screenplay live reader. Q's darkest hour. A plea sent from the edge of oblivion. An intimate journey of desperation, faith, and the moment heaven answers.
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <a href="Amim - Jolie Script/plea_to_heaven_interactive_screenplay_live_reader.html" class="px-6 py-3.5 rounded-xl bg-amberGold hover:bg-amber-300 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-amberGold/30 flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-play"></i> Watch the Film
+                        </a>
+                        <a href="Amim - Jolie Script/plea_to_heaven_interactive_screenplay_live_reader.html#reader" class="px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-amberGold/50 text-slate-200 text-sm font-medium tracking-wide transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open text-amberGold"></i> Read the Screenplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Film: X Blade Move -->
+        <section id="x-blade-move" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl overflow-hidden border border-amberGold/25 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 relative bg-black">
+                    <img src="Amim - Jolie Script/x_blade_move_interactive_screenplay_kinetic_teleprompter.html" alt="X Blade Move — feature screenplay" loading="lazy" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+                </div>
+                <div class="lg:col-span-8 p-8 sm:p-10 space-y-5 bg-gradient-to-br from-slate-950 via-obsidian to-amberGold/40">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amberGold font-semibold block mb-2">A Feature Film by Amim Ahsan</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100 leading-none tracking-[0.12em]">X BLADE MOVE</h2>
+                        <p class="font-serif italic text-slate-400 mt-3">Kinetic energy. The blade that cuts time.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light max-w-2xl">
+                        Kinetic teleprompter screenplay. Q faces a kinetic threat that moves faster than thought. An interactive screenplay with real-time pacing. Sixteen pages of kinetic energy, movement, and the moment time itself is cut.
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                        <a href="Amim - Jolie Script/x_blade_move_interactive_screenplay_kinetic_teleprompter.html" class="px-6 py-3.5 rounded-xl bg-amberGold hover:bg-amber-300 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-amberGold/30 flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-play"></i> Watch the Film
+                        </a>
+                        <a href="Amim - Jolie Script/x_blade_move_interactive_screenplay_kinetic_teleprompter.html#kinetic" class="px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-amberGold/50 text-slate-200 text-sm font-medium tracking-wide transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-project-diagram text-amberGold"></i> Read the Kinetic Screenplay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Featured Screenplay: Sykes–Picot -->
-        <section id="sykes-picot" class="pb-4 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="glass-panel rounded-3xl overflow-hidden border border-amber-600/25 grid grid-cols-1 lg:grid-cols-12">
                 <div class="lg:col-span-4 relative bg-black">
                     <img src="Mass-Q-Rade-Book-Covers/sykes-picot-poster.svg" alt="Sykes–Picot — screenplay poster, an ink map divided by a single ochre line" loading="lazy" class="w-full h-full object-contain p-4">
@@ -1500,6 +1894,26 @@
                             <i class="fa-solid fa-images text-amber-400"></i> The 42 Slides
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Film Pagination -->
+        <section id="film-pagination" class="pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="flex flex-col sm:flex-row justify-center gap-2 mb-4">
+                    <button class="px-4 py-2 rounded-lg bg-amberGold text-slate-950 font-semibold tracking-wider transition-all hover:bg-amber-300" onclick="window.scrollTo({top: 1554, behavior: 'smooth'})">← Previous Film</button>
+                    <button class="px-4 py-2 rounded-lg bg-amberGold text-slate-950 font-semibold tracking-wider transition-all hover:bg-amber-300" onclick="window.scrollTo({top: 1655, behavior: 'smooth'})">Next Film →</button>
+                </div>
+                <div class="flex flex-wrap justify-center gap-2 text-xs text-slate-400">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
                 </div>
             </div>
         </section>
