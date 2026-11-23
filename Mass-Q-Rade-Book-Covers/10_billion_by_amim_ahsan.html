@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 Billion — A Novel by Amim Ahsan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cinzel for 1980s luxury editorial titles, Lora for comfortable book prose, Inter for UI controls -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'Georgia', 'serif'],
+            serif: ['Lora', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#0A0B0E',
+            charcoal: '#12141B',
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              dark: '#997A1E',
+            },
+            sepia: {
+              bg: '#F4EFE6',
+              surface: '#EAE2D3',
+              text: '#231F1A',
+              muted: '#5C5346',
+              border: '#D6CBB8'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-obsidian text-[#F2EFE9] font-sans antialiased selection:bg-gold/30 selection:text-gold-light transition-colors duration-300 overflow-x-hidden" id="app-body">
+
+  <!-- Top Fixed Reading Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-white/5">
+    <div id="reading-progress" class="h-full bg-gradient-to-r from-gold-dark via-gold to-gold-light transition-all duration-150 w-0"></div>
+  </div>
+
+  <!-- Sticky Top Navigation Header -->
+  <header id="top-nav" class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/85 border-b border-gold/20 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <!-- Left: TOC Toggle & Brand -->
+      <div class="flex items-center gap-3">
+        <button id="open-drawer-btn" aria-label="Open Chapter Index" class="p-2.5 rounded-xl border border-gold/25 bg-white/5 hover:bg-gold/15 text-gold transition flex items-center gap-2 text-sm font-medium">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h12M4 18h16" />
+          </svg>
+          <span class="hidden sm:inline">Chapters</span>
+        </button>
+
+        <button id="scroll-top-btn" class="text-left group">
+          <div class="font-display text-sm sm:text-base font-bold tracking-widest text-gold uppercase group-hover:text-gold-light transition">10 Billion</div>
+          <div id="nav-chapter-indicator" class="text-[11px] opacity-65 truncate max-w-[140px] sm:max-w-[240px]">By Amim Ahsan</div>
+        </button>
+      </div>
+
+      <!-- Right: Reader Controls (Font Size, Bookmark, Theme Toggle) -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Font Size Selector -->
+        <div class="flex items-center rounded-xl border border-gold/20 bg-white/5 p-0.5" role="group" aria-label="Font Size">
+          <button data-size="sm" class="font-size-btn px-2.5 py-1.5 rounded-lg text-xs font-medium transition hover:text-gold" title="Small Text">A-</button>
+          <button data-size="md" class="font-size-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold transition bg-gold text-obsidian" title="Medium Text">A</button>
+          <button data-size="lg" class="font-size-btn px-2.5 py-1.5 rounded-lg text-xs font-medium transition hover:text-gold" title="Large Text">A+</button>
+        </div>
+
+        <!-- Bookmark Current Chapter -->
+        <button id="bookmark-btn" title="Bookmark this chapter" class="p-2.5 rounded-xl border border-gold/20 bg-white/5 hover:bg-gold/15 transition text-gold">
+          <svg id="bookmark-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+          </svg>
+        </button>
+
+        <!-- Theme Toggle (Midnight Obsidian vs Warm Sepia Paper) -->
+        <button id="theme-toggle-btn" title="Switch Reading Theme" class="p-2.5 rounded-xl border border-gold/20 bg-white/5 hover:bg-gold/15 transition flex items-center gap-1.5 text-xs font-medium">
+          <span id="theme-icon">☀️</span>
+          <span id="theme-label" class="hidden md:inline">Sepia</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cinematic 1980s Manhattan Book Cover / Hero Section -->
+  <section id="hero-cover" class="relative overflow-hidden border-b border-gold/20 bg-gradient-to-b from-[#07080B] via-[#0E1017] to-obsidian text-[#F2EFE9] py-16 sm:py-24 px-4">
+    <!-- Subtle Atmospheric Gold Radial Glow & Manhattan Skyline SVG Silhouette -->
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(212,175,55,0.16),transparent_65%)]"></div>
+    <svg class="pointer-events-none absolute bottom-0 left-0 right-0 w-full h-36 sm:h-52 opacity-20 text-gold" viewBox="0 0 1440 220" preserveAspectRatio="none" fill="currentColor">
+      <path d="M0,220 L0,170 L45,170 L45,130 L85,130 L85,160 L120,160 L120,95 L165,95 L165,150 L210,150 L210,70 L240,70 L240,50 L255,50 L255,70 L280,70 L280,145 L330,145 L330,110 L385,110 L385,165 L430,165 L430,40 L455,20 L480,40 L480,155 L535,155 L535,85 L590,85 L590,140 L640,140 L640,30 L675,30 L675,15 L690,15 L690,30 L725,30 L725,135 L780,135 L780,90 L835,90 L835,160 L890,160 L890,55 L945,55 L945,145 L1005,145 L1005,80 L1060,80 L1060,155 L1115,155 L1115,45 L1145,25 L1175,45 L1175,140 L1230,140 L1230,100 L1295,100 L1295,165 L1360,165 L1360,120 L1440,120 L1440,220 Z" />
+    </svg>
+
+    <div class="relative max-w-4xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs tracking-[0.22em] uppercase font-medium">
+        <span>First Digital Edition</span>
+        <span>•</span>
+        <span>Complete 42 Chapters + Epilogue</span>
+      </div>
+
+      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-gold-light via-gold to-gold-dark drop-shadow">
+        10 BILLION
+      </h1>
+
+      <p class="font-serif italic text-lg sm:text-2xl text-[#D8D1C5] max-w-2xl mx-auto">
+        A Novel of 1980s New York — The City of God
+      </p>
+
+      <div class="pt-1">
+        <span class="text-xs sm:text-sm uppercase tracking-[0.28em] text-gold/90 font-semibold">
+          By Amim Ahsan
+        </span>
+      </div>
+
+      <p class="text-sm sm:text-base text-[#A8A196] max-w-xl mx-auto leading-relaxed">
+        From empty pockets on Manhattan sidewalks to a $362 billion empire under the shadow of giants—and the ultimate price of true freedom.
+      </p>
+
+      <!-- Hero Action Buttons -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <button id="start-reading-btn" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-obsidian font-semibold text-sm sm:text-base tracking-wide shadow-lg shadow-gold/20 hover:brightness-110 transition">
+          Start Reading — Chapter 1
+        </button>
+
+        <button id="resume-bookmark-btn" class="hidden px-6 py-3.5 rounded-xl border border-gold/40 bg-gold/10 text-gold-light hover:bg-gold/20 font-medium text-sm sm:text-base transition">
+          Resume Bookmark
+        </button>
+
+        <button id="hero-index-btn" class="px-6 py-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-[#F2EFE9] font-medium text-sm sm:text-base transition">
+          Browse Chapter Index
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Reader Workspace -->
+  <main id="reader-container" class="max-w-3xl mx-auto px-4 sm:px-8 py-12 sm:py-16 min-h-[75vh]">
+    <!-- Chapter Metadata Header -->
+    <div class="mb-8 pb-6 border-b border-gold/20">
+      <div class="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-gold font-semibold mb-3">
+        <span id="chapter-part-label">Part I: Hunger in the City of God</span>
+        <span id="chapter-read-time" class="opacity-80">2 min read</span>
+      </div>
+      <h2 id="chapter-title" class="font-display text-2xl sm:text-4xl font-bold leading-tight">
+        Chapter 1: Words Before Dawn
+      </h2>
+    </div>
+
+    <!-- Chapter Narrative Content -->
+    <article id="chapter-content" class="font-serif text-lg sm:text-xl leading-[1.9] space-y-6 transition-all duration-200">
+      <!-- Populated dynamically via JavaScript -->
+    </article>
+
+    <!-- Bottom Chapter Navigation Controls -->
+    <nav aria-label="Chapter Navigation" class="mt-14 pt-8 border-t border-gold/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+      <button id="prev-chapter-btn" class="flex-1 px-5 py-4 rounded-2xl border border-gold/25 bg-white/5 hover:bg-gold/15 disabled:opacity-30 disabled:pointer-events-none transition text-left group">
+        <div class="text-[11px] uppercase tracking-widest text-gold mb-1">← Previous</div>
+        <div id="prev-chapter-name" class="font-serif text-sm sm:text-base font-medium truncate">Start of Book</div>
+      </button>
+
+      <button id="bottom-index-btn" class="px-5 py-4 rounded-2xl border border-gold/20 bg-white/5 hover:bg-gold/10 transition text-center text-xs uppercase tracking-widest text-gold font-semibold">
+        All Chapters
+      </button>
+
+      <button id="next-chapter-btn" class="flex-1 px-5 py-4 rounded-2xl border border-gold/30 bg-gold/10 hover:bg-gold/20 disabled:opacity-30 disabled:pointer-events-none transition text-right group">
+        <div class="text-[11px] uppercase tracking-widest text-gold mb-1">Next →</div>
+        <div id="next-chapter-name" class="font-serif text-sm sm:text-base font-medium truncate">Chapter 2: Crossing Into New York</div>
+      </button>
+    </nav>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gold/15 py-10 px-4 text-center text-xs opacity-70 space-y-2">
+    <div class="font-display tracking-widest uppercase text-gold text-sm">10 Billion — By Amim Ahsan</div>
+    <p>1980s New York • The City of God • Interactive Digital Edition</p>
+  </footer>
+
+  <!-- Slide-out Table of Contents Drawer -->
+  <div id="toc-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+
+  <aside id="toc-drawer" aria-label="Table of Contents" class="fixed top-0 left-0 bottom-0 w-full max-w-md bg-[#0E1016] text-[#F2EFE9] border-r border-gold/25 z-50 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-gold/20 flex items-center justify-between">
+      <div>
+        <div class="font-display text-lg font-bold text-gold tracking-wider">10 BILLION</div>
+        <div class="text-xs text-[#A8A196]">Complete Table of Contents • By Amim Ahsan</div>
+      </div>
+      <button id="close-drawer-btn" aria-label="Close Chapter Index" class="p-2.5 rounded-xl border border-white/10 hover:bg-white/10 text-[#F2EFE9] transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Search & Bookmark Filter -->
+    <div class="p-4 border-b border-gold/15 space-y-3 bg-black/20">
+      <div class="relative">
+        <input id="chapter-search-input" type="text" placeholder="Search chapters, titles, or keywords..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-gold/20 text-sm text-[#F2EFE9] placeholder-[#8E877D] focus:outline-none focus:border-gold" />
+        <svg class="w-4 h-4 text-gold/70 absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+      </div>
+      <div id="drawer-bookmark-banner" class="hidden flex items-center justify-between px-3 py-2 rounded-xl bg-gold/15 border border-gold/30 text-xs">
+        <span id="drawer-bookmark-text" class="text-gold-light truncate">Bookmarked: Chapter 1</span>
+        <button id="drawer-jump-bookmark" class="ml-2 font-semibold text-gold underline shrink-0">Jump</button>
+      </div>
+    </div>
+
+    <!-- Scrollable Chapter List -->
+    <div id="toc-list" class="flex-1 overflow-y-auto p-4 space-y-6">
+      <!-- Populated dynamically via JS -->
+    </div>
+  </aside>
+
+  <!-- Toast Notification Banner -->
+  <div id="toast-msg" class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl bg-charcoal border border-gold/40 text-gold-light text-xs sm:text-sm shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    Bookmark saved
+  </div>
+
+  <script>
+    // Complete Novel Data: All 42 Chapters + Epilogue ("10 Billion" by Amim Ahsan)
+    const BOOK_CHAPTERS = [
+      {
+        id: 1,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 1: Words Before Dawn",
+        paragraphs: [
+          "The kettle on the stove hadn’t even finished whistling when Rayan stood by the window, watching the dark stretch toward the river. Outside, the city was waking up with a low, restless hum. Inside, the quiet belonged to a father and son who didn’t waste words.",
+          "\"You’re sure about going into New York with nothing lined up?\" Arthur asked, leaning against the counter with a mug of black coffee. He didn’t sound angry—just steady, the way a man sounds when he’s seen enough storms to recognize the clouds.",
+          "\"I’m sure,\" Rayan said, zipping his jacket. \"If I wait for a safe door to open here, I’ll spend my whole life waiting.\"",
+          "Arthur nodded slowly. \"Ambition is a good engine, Rayan. Just don’t let it drive you off a cliff without brakes. Remember where your spine comes from.\"",
+          "\"Always, Dad.\"",
+          "Rayan stepped out into the crisp morning air, carrying a worn bag, a sharp mind, and a hunger that felt bigger than the skyline waiting ahead."
+        ]
+      },
+      {
+        id: 2,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 2: Crossing Into New York",
+        paragraphs: [
+          "By mid-morning, New York swallowed him whole.",
+          "It was the 1980s—loud, brash, unapologetic, and electric. Yellow cabs cut through traffic like hornets; suit jackets moved briskly between steel-and-glass towers; steam curled from manholes while neon signs hummed even in daylight. To Rayan, it didn’t look like a normal city. It looked like a colosseum—the City of God, where mortals fought for crowns and the winners wrote history.",
+          "He walked for hours, soaking in the rhythm of the streets, feeling both small and strangely at home."
+        ]
+      },
+      {
+        id: 3,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 3: Closed Doors",
+        paragraphs: [
+          "The first office building had brass revolving doors and a lobby polished like ice.",
+          "\"Do you have an appointment?\" the receptionist asked without looking up.",
+          "\"Not yet,\" Rayan said, offering a calm, direct smile. \"I’m looking to start at the bottom and prove myself.\"",
+          "\"Everything goes through HR or by referral. Sorry.\"",
+          "By four o’clock, the polite nos had turned into curt head-shakes and security guards pointing toward the exit. No résumé got past the front desk. No one wanted to take a chance on a newcomer with no pedigree."
+        ]
+      },
+      {
+        id: 4,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 4: The Weight of Being Jobless",
+        paragraphs: [
+          "Night fell fast between the skyscrapers, turning the avenues into canyons of headlights and shadow.",
+          "Rayan sat on a concrete bench with his hands shoved deep into his pockets, counting the few bills left in his wallet. Being jobless in a city that worshipped momentum felt heavy—like swimming against a tide everyone else rode effortlessly.",
+          "Tomorrow, he told himself, jaw tight. Tomorrow I stop asking for permission to exist in the room."
+        ]
+      },
+      {
+        id: 5,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 5: Glass Towers and Sidewalks",
+        paragraphs: [
+          "Morning in Midtown didn’t arrive gently—it crashed in with delivery trucks, shouting brokers, and the sharp click of leather soles against concrete. Rayan stood outside the towering glass walls of the financial district, hands tucked into his coat pockets, looking up until the steel lines seemed to pierce the overcast sky.",
+          "Inside those lobbies, men in tailored suits moved with effortless certainty, holding briefcases and leather folders like badges of citizenship. Out here on the sidewalk, Rayan was invisible—just another pair of worn shoes on gray pavement.",
+          "He tried three more offices before noon. At the first, security didn’t even let him reach the elevators. At the second, a junior clerk took his name on a scrap of paper and dropped it straight into a tray buried beneath dozens of others. At the third, an executive stepped past him without breaking stride, eyes locked on a pager clipped to his belt.",
+          "Yet Rayan didn’t walk away discouraged. He stood across the street for an hour, watching who entered, when messengers arrived, how drivers waited by black sedans, and which side doors stayed unguarded. If the front doors were locked to men without names, he needed to understand how the building breathed."
+        ]
+      },
+      {
+        id: 6,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 6: Roadside Food Court",
+        paragraphs: [
+          "By eight that evening, cold wind funneled down the avenues, carrying the smell of rain, exhaust, and sizzling oil. Rayan’s stomach felt hollow, and his legs ached from twelve miles of pavement.",
+          "He stopped at a crowded roadside food court tucked between a scaffolding-wrapped corner and a flickering neon deli sign. Plastic stools sat under warm halogen bulbs; steam rolled off metal grills stacked with skewers, flatbreads, fried noodles, and Styrofoam cups of cheap black coffee. Cab drivers, construction workers, and off-duty clerks stood shoulder-to-shoulder, eating fast before heading back into the night.",
+          "Rayan counted out four crumpled dollar bills and bought a hot paper plate of rice and grilled meat. He leaned against a steel rail, taking slow bites while watching the street.",
+          "Around him, nobody looked defeated. Everyone here was grinding for a foothold in the same concrete jungle. For the first time since arriving in New York, the tight knot in Rayan’s chest loosened. Hunger wasn’t a curse—it was fuel."
+        ]
+      },
+      {
+        id: 7,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 7: A Glimpse of the Rockefeller Orbit",
+        paragraphs: [
+          "After finishing his food, Rayan walked north toward Midtown’s grander plazas, letting the cold air clear his head. That was when he stopped dead in his tracks.",
+          "Rising ahead was a sweeping limestone-and-granite complex bathed in warm architectural floodlights—sculpted stone, flags snapping in the night wind, pristine courtyards, and private security standing with quiet authority near brass-trimmed entrances. Even someone new to the city knew the weight carried by that name: Rockefeller.",
+          "Rayan stood at the edge of the plaza, watching sleek black town cars glide up to the curb and discharge men whose faces never appeared on the evening news, yet whose signatures moved markets across oceans.",
+          "It hit him like cold water: The people grinding in offices fight over salaries. The people behind walls like this own the ground the offices stand on.",
+          "He stared at the illuminated stone until the city’s noise faded into a dull hum. For the first time, Rayan wasn’t thinking about finding a job. He was thinking about leverage."
+        ]
+      },
+      {
+        id: 8,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 8: The Spark of Genius",
+        paragraphs: [
+          "That night, in a cramped rented room with a radiator that hissed like an angry cat, Rayan didn’t sleep.",
+          "He spread scrap notebooks, discarded financial newspapers pulled from café tables, and a cheap ballpoint pen across a wobbly desk. Something inside his mind had clicked into overdrive—sharp, restless, almost electric. Every conversation he’d overheard near Wall Street, every pattern he’d noticed outside those glass towers, began locking together like gears.",
+          "He stopped seeing New York as a maze of locked doors and started seeing it as a system of inefficiencies: undervalued commercial blocks, slow-moving institutional capital, mid-tier suppliers starving for quick liquidity while old-money trusts sat on mountains of idle cash.",
+          "By four in the morning, three notebooks were filled with arrows, margin calculations, and deal structures drawn in tight, urgent handwriting. His eyes burned, his fingers were stained with ink, and a quiet, dangerous smile touched his lips. The boy who had walked into New York begging for a desk was gone."
+        ]
+      },
+      {
+        id: 9,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 9: After Midnight With Elena",
+        paragraphs: [
+          "Two evenings later, Rayan met Elena in a dimly lit jazz lounge off Fifth Avenue—a place where velvet booths swallowed whispers and crystal glasses caught the amber glow of bar lamps.",
+          "She was sharp-eyed, poised, and moved like someone who had spent her life around men who signed seven-figure checks without blinking. From the moment they spoke, there was no small talk—only electric curiosity, traded glances, and the pull of two minds testing each other’s edges.",
+          "Hours later, in her high-ceilinged apartment overlooking the wet glitter of Midtown traffic, the armor came off. In the quiet heat and tangled sheets after midnight, the city’s noise seemed miles below them. For the first time in weeks, Rayan wasn’t calculating angles or counting bills—he was simply present, breathing in the stillness beside her.",
+          "Yet even as Elena traced slow lines along his shoulder in the dark, her voice carried a subtle, deliberate edge: \"You think too small when you look at bank loans, Rayan. In this city, banks lend umbrellas when it’s sunny. Old money buys the weather.\""
+        ]
+      },
+      {
+        id: 10,
+        part: "Part I: Hunger in the City of God",
+        title: "Chapter 10: The Whispered Blueprint",
+        paragraphs: [
+          "Rayan lay awake long after Elena drifted off, staring at the ceiling as streetlamps cast pale bars across the plaster. Her words echoed through his head until they collided with everything he had mapped out in his notebooks.",
+          "He slipped out of bed, pulled on his shirt, and sat at her glass dining table with a notepad and a silver pen from her desk.",
+          "If traditional banks were too rigid, and small investors lacked scale, then the missing bridge was an asymmetric acquisition vehicle—a lean, fast-moving syndicate designed to consolidate distressed urban leases, logistics corridors, and undervalued energy-linked holdings before institutional giants even finished their committee reviews.",
+          "By sunrise, the concept had teeth. When Elena woke and read the single-page summary he left beside her coffee cup, her eyebrows lifted slowly. \"Now that,\" she murmured, \"isn’t a pitch for a branch manager. That’s the kind of architecture Rockefeller desks actually read.\""
+        ]
+      },
+      {
+        id: 11,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 11: Putting the Pitch on Paper",
+        paragraphs: [
+          "Over the next four days, Rayan worked like a man possessed. He traded sleep for libraries, public registry archives, and borrowed typewriters, cross-checking property liens, shipping schedules, and corporate filings across all five boroughs.",
+          "He stripped away every ounce of fluff until the proposal stood at twelve razor-sharp pages: clean numbers, hard collateral buffers, downside protection, and a return profile engineered specifically for legacy capital seeking high-yield expansion without public exposure.",
+          "Every line had a purpose. There were no pleas for opportunity—only cold math and undeniable leverage."
+        ]
+      },
+      {
+        id: 12,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 12: The Signal From Above",
+        paragraphs: [
+          "Elena didn’t promise miracles; she simply placed a single unmarked manila folder into the hands of an intermediary who moved quietly between private family offices and Midtown boardrooms.",
+          "For six days, nothing happened. Rayan walked the streets, drank cheap coffee, and kept his nerves locked behind a calm expression.",
+          "On the seventh afternoon, as rain tapped against his windowpane, the rotary phone on his hallway wall rang once, twice, three times. When Rayan picked up, a measured, unhurried voice on the other end didn’t state a name or a company—only an address in Rockefeller Plaza, a private elevator code, and a time: Tomorrow morning. Nine o'clock sharp. Come alone."
+        ]
+      },
+      {
+        id: 13,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 13: The Meeting",
+        paragraphs: [
+          "The private elevator opened directly into a paneled suite high above Midtown, where rain streaked the tall windows and the city looked like an intricate board game laid out in gray and gold.",
+          "Across a dark mahogany table sat an older man with silver hair, calm eyes, and hands folded over Rayan’s twelve-page proposal. There were no secretaries, no lawyers hovering at his shoulder—only quiet, absolute authority.",
+          "\"Most men who walk into this building want money,\" the man said evenly. \"You brought structure. Tell me why you think you can execute this without collapsing under the weight.\"",
+          "Rayan didn’t flinch. He walked through the numbers, the collateral buffers, and the speed advantage of moving beneath institutional radar. For forty minutes, every question was a test; every answer hit like steel on anvil. When the questioning stopped, the older man simply nodded once."
+        ]
+      },
+      {
+        id: 14,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 14: The Price of Entry",
+        paragraphs: [
+          "Before a single dollar was wired, the terms were laid bare without sugarcoating.",
+          "Legacy wealth never backed strangers out of charity. Rayan would receive credit lines, discreet backing, and introductions that opened doors across Wall Street—but in return, his name would stay out of the papers, his failures would never touch the Rockefeller crest, and when strategic priorities shifted, he was expected to align without hesitation.",
+          "\"You’re buying speed,\" the senior representative told him coldly. \"Make sure you remember whose tracks you’re running on.\"",
+          "Rayan signed the documents with a steady hand, knowing full well he had just stepped onto a blade."
+        ]
+      },
+      {
+        id: 15,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 15: The Gift of Freedom",
+        paragraphs: [
+          "Two days later, the capital cleared—an initial nine-figure facility structured through layered holding entities, paired with an explicit mandate: Operate independently. No committees. No weekly oversight. Deliver results.",
+          "Walking out onto Fifth Avenue in the crisp afternoon sun, Rayan felt the weight of the past months evaporate. For the first time in his life, he had operational freedom—the power to move, acquire, and build at the speed of his own mind. Yet deep down, a quiet voice reminded him that freedom granted by giants always came with an invisible perimeter."
+        ]
+      },
+      {
+        id: 16,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 16: First Millions in the Neon",
+        paragraphs: [
+          "Rayan wasted no time. Within three weeks, he closed his first distressed commercial corridor acquisition in Lower Manhattan, restructured the leases before competitors knew the properties were in play, and flipped a minority tranche at a massive premium.",
+          "The neon glow of 1980s New York suddenly felt different—not hostile, not indifferent, but electric with opportunity. His first personal millions hit his accounts before winter ended, transforming his cramped rented room into a sleek Midtown command suite lined with ticker machines, telephones, and late-night strategy maps."
+        ]
+      },
+      {
+        id: 17,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 17: Inside the Machine",
+        paragraphs: [
+          "As his deals scaled, Rayan began seeing the hidden machinery beneath New York’s skyline.",
+          "He learned how municipal zoning stalled for one developer while clearing overnight for another; how rumor campaigns moved stock prices hours before press releases; and how a single quiet phone call from Rockefeller-linked desks could freeze a rival’s credit line mid-negotiation. It was intoxicating and ruthless—a world where laws were written in ink, but outcomes were decided in whispers."
+        ]
+      },
+      {
+        id: 18,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 18: The Ten-Billion Milestone",
+        paragraphs: [
+          "By the summer of 1985, Rayan’s holding network crossed $10 billion in controlled assets—spanning prime Manhattan real estate, maritime freight terminals, telecommunications stakes, and high-yield arbitrage desks.",
+          "The night the final audit confirmed the figure, Rayan stood alone on his terrace with a glass of water, watching helicopters blink across the Hudson. Ten billion had once sounded like a myth from another planet. Now, staring out at the glittering City of God, he realized it was merely the foundation."
+        ]
+      },
+      {
+        id: 19,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 19: Shadows in the Penthouse",
+        paragraphs: [
+          "With ten billion came enemies who didn’t fight in the open.",
+          "Rival syndicates began probing his shell companies, regulatory inquiries surfaced out of nowhere, and unmarked envelopes arrived at his office containing photos of his late-night meetings. Success hadn’t bought peace—it had painted a target on his back. Rayan hired private security, encrypted his lines, and trusted fewer people every month."
+        ]
+      },
+      {
+        id: 20,
+        part: "Part II: Summoned by Giants",
+        title: "Chapter 20: Elena’s Inner Circle",
+        paragraphs: [
+          "Amid the tightening pressure, Elena remained beside him—sharper, more dazzling, and increasingly woven into New York’s elite circles.",
+          "Yet Rayan started noticing small discrepancies: late-night phone calls cut short when he entered the room, sudden familiarity with rival financiers he hadn’t introduced her to, and subtle nudges steering him toward certain acquisitions over others. He wanted to believe she was purely his ally, even as instinct whispered that her world had layers he hadn’t mapped."
+        ]
+      },
+      {
+        id: 21,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 21: Riding the Eighties Wave",
+        paragraphs: [
+          "The late 1980s roared like an engine pushed past redline. Leveraged buyouts, global currency swings, and deregulation turned Wall Street into a furnace of creation and excess.",
+          "Rayan thrived in the chaos. Moving with surgical precision, he leveraged his Rockefeller-backed liquidity into cross-border energy stakes, sovereign debt swaps, and prime urban developments across New York, London, and Tokyo. Every bet compounded; every crisis became an entry point."
+        ]
+      },
+      {
+        id: 22,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 22: The City of God Bows",
+        paragraphs: [
+          "By 1987, doors that had once slammed in Rayan’s face swung open before his car even reached the curb.",
+          "Bankers waited in his lobby; politicians sought his quiet counsel; titans of industry lowered their voices when he stepped into private dining clubs. The boy who had once eaten cheap rice on a plastic stool beside a roadside food court now commanded the Manhattan skyline. Yet beneath the tailored suits and roaring billions, the true cost of sitting at the summit was only beginning to show."
+        ]
+      },
+      {
+        id: 23,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 23: Crossing the Hundred-Billion Line",
+        paragraphs: [
+          "Scale changed the rules of physics. Once Rayan’s consortium crossed $100 billion in consolidated valuation, he was no longer competing with Wall Street firms—he was negotiating directly beside central banks, sovereign wealth desks, and global industrial cartels.",
+          "Every move he made shifted currencies and commodity futures across time zones. Power ceased to feel like a street fight; it became cold, architectural, and relentless, demanding constant vigilance just to keep the empire balanced."
+        ]
+      },
+      {
+        id: 24,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 24: Three Hundred and Sixty-Two Billion",
+        paragraphs: [
+          "In the autumn of 1988, following a sweeping sequence of cross-continental energy mergers, maritime monopolies, and leveraged liquidity plays, internal ledgers recorded an unprecedented peak: $362 billion in total controlled empire value.",
+          "The number sat on a single sheet of cream bond paper in Rayan’s silent office—a figure larger than the economies of entire nations. Outside his windows, 1980s New York glittered like a crown at his feet, yet Rayan felt an eerie stillness, as though he had climbed so high the air could barely carry sound."
+        ]
+      },
+      {
+        id: 25,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 25: Untouchable on Paper",
+        paragraphs: [
+          "On paper, Rayan Vance was untouchable. His holdings were buffered by layers of trusts, offshore clearing houses, and Rockefeller-linked institutional credibility.",
+          "In reality, the higher he rose, the narrower his margin for error became. Every rival waited for a stumble; every regulator looked for a crack; and the silent partners in Rockefeller Plaza watched his balance sheets with cold, unsentimental precision."
+        ]
+      },
+      {
+        id: 26,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 26: The Costly Mistake",
+        paragraphs: [
+          "The turning point arrived not out of greed, but out of instinct to protect what he loved.",
+          "When an aggressive federal inquiry and a hostile syndicate targeted a vulnerable asset tied closely to his inner circle—and to Elena’s past dealings—Rayan bypassed his usual layered safeguards. Moving too fast to shield the exposure, he personally guaranteed an unhedged bridge position using core holding collateral. It was a rare emotional miscalculation in a career built on cold math—and the market smelled blood within hours."
+        ]
+      },
+      {
+        id: 27,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 27: Cracks in the Fortress",
+        paragraphs: [
+          "By Monday morning, the fault line widened into a tremor.",
+          "Counterparties demanded immediate margin calls; rival funds shorted his exposed energy paper; and credit desks that had smiled a week earlier suddenly froze liquidity. For the first time since entering New York, Rayan watched billions evaporate across ticker screens while telephones rang nonstop through the night."
+        ]
+      },
+      {
+        id: 28,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 28: When Giants Pull Back",
+        paragraphs: [
+          "Rayan went straight to the quiet mahogany room in Rockefeller Plaza expecting reinforcement. Instead, he met polite, icy distance.",
+          "\"We backed your discipline, Rayan, not your sentiment,\" the senior representative said calmly, folding his hands. \"If you cannot contain the fire on your side of the wall, we will seal the doors.\"",
+          "In that instant, Rayan understood the truth: the \"freedom\" they had given him was only a leash long enough to reach the edge of their risk tolerance."
+        ]
+      },
+      {
+        id: 29,
+        part: "Part III: The $362 Billion Climb",
+        title: "Chapter 29: Call to His Father",
+        paragraphs: [
+          "At three in the morning, with his office floor littered with telex sheets and cold coffee cups, Rayan picked up a plain landline and dialed a number he hadn’t called enough over the past five years.",
+          "Arthur answered on the second ring, his voice steady and unhurried. Rayan didn’t boast about hundreds of billions or hide behind corporate jargon—he simply told his father the truth: the storm had hit, and paper empires burned fast.",
+          "\"Come home for a day, son,\" Arthur said quietly. \"Bring your head clear. We’ll talk like men.\""
+        ]
+      },
+      {
+        id: 30,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 30: Arthur’s Solid Ground",
+        paragraphs: [
+          "Unlike Rayan’s world of digital ledgers and leveraged derivatives, Arthur had spent decades building real, physical substance—regional supply yards, debt-free land deeds, industrial equipment, and loyal trade partnerships built on handshakes that held through every recession.",
+          "When Rayan arrived, Arthur didn’t lecture him. Instead, he laid out unencumbered titles, physical commodity reserves, and hard goods free of Wall Street liens—real assets that couldn’t be shorted, frozen by a clearinghouse, or wiped out by a rumor."
+        ]
+      },
+      {
+        id: 31,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 31: Wealth You Can Hold",
+        paragraphs: [
+          "Standing in his father’s warehouse beside stacked timber, steel shipments, and stamped property deeds, Rayan felt something click back into place inside his chest.",
+          "Paper billions could vanish in an afternoon of panic, yet real goods—tangible, debt-free, grounded in human need—stood firm regardless of what ticker tapes screamed in Manhattan. With his father’s unleveraged foundation anchoring him, Rayan suddenly saw how to restructure his survival without begging old-money trusts for mercy."
+        ]
+      },
+      {
+        id: 32,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 32: Elena’s Fault Line",
+        paragraphs: [
+          "Returning to New York armed with a clean restructuring plan, Rayan uncovered the final shock waiting inside his own penthouse.",
+          "Reviewing private transaction logs to trace how rivals had learned his exact collateral exposure so quickly, Rayan found the leak—and it led straight back to Elena. Under pressure from her own hidden debts and ambitious circle, she had quietly passed key timing details to an opposing syndicate, triggering the very trap Rayan had risked his empire to shield her from."
+        ]
+      },
+      {
+        id: 33,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 33: The Betrayal Unmasked",
+        paragraphs: [
+          "When Rayan confronted her in the dim glow of the living room, Elena didn’t deny it. Her composure cracked just enough to reveal the truth: she had admired his rise, profited from his proximity, and still hedged her bets when danger closed in.",
+          "Rayan didn’t raise his voice or shatter a single glass. Looking at her, he felt neither rage nor heartbreak—only total clarity. The illusion was over."
+        ]
+      },
+      {
+        id: 34,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 34: Severing the Strings",
+        paragraphs: [
+          "The next morning, Rayan walked back into Rockefeller Plaza—not as a petitioner, but as a man closing an account.",
+          "Using his father’s unencumbered physical assets as clean collateral, he refinanced his core obligations independently, settled every outstanding facility down to the last cent, and slid the signed release papers across the mahogany table. He returned their capital, cancelled their silent claims, and walked out before the senior representative could utter a word."
+        ]
+      },
+      {
+        id: 35,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 35: The Reckoning in New York",
+        paragraphs: [
+          "Back on Wall Street, adversaries who had gathered like vultures expecting Rayan’s collapse found themselves facing a leaner, debt-free operator who owed nothing to banks, syndicates, or legacy dynasties.",
+          "With no leverage left for rivals to squeeze and no hidden masters pulling his strings, Rayan dismantled the hostile short positions piece by piece. By late afternoon, the funds that had bet on his ruin were scrambling to cover their losses, turning the City of God’s fiercest storm into the moment Rayan finally stood on his own terms."
+        ]
+      },
+      {
+        id: 36,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 36: Walking Away From the Cage",
+        paragraphs: [
+          "Over the following week, Rayan liquidated the sprawling web of offshore shells, vanity holdings, and political obligations that had once made him look like a king while keeping him trapped in a glass cage.",
+          "He kept only clean, productive enterprises anchored in real trade and solid infrastructure—far smaller than the staggering $362 billion peak on paper, yet entirely his own. No board could summon him, no old-money trust could dictate his loyalties, and no secret clause hung over his future. For the first time since setting foot in Manhattan, his signature answered to no one else."
+        ]
+      },
+      {
+        id: 37,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 37: Dawn Over the Hudson",
+        paragraphs: [
+          "Before leaving the city behind for a quiet stretch upstate, Rayan met Arthur along the Hudson waterfront just as the first gray light broke over the river.",
+          "They stood near the water with two paper cups of hot coffee, watching tugboats push barges through the morning mist—a quiet mirror of the roadside food courts and early mornings where the journey began. Arthur looked at his son, noting the calm in his eyes that hadn’t been there during the height of the billions.",
+          "\"You look lighter,\" Arthur said simply.",
+          "\"I finally dropped everything that wasn’t mine to carry,\" Rayan replied, a genuine smile reaching his face."
+        ]
+      },
+      {
+        id: 38,
+        part: "Part IV: Real Goods & True Freedom",
+        title: "Chapter 38: Free",
+        paragraphs: [
+          "The late-1980s skyline still towered behind him—loud, glittering, and endlessly hungry—as Rayan drove north out of New York with the windows cracked open to the crisp morning air.",
+          "He had walked into the City of God with empty pockets, touched the heights of $362 billion under the shadow of giants, survived betrayal, and learned from his father the difference between numbers on a screen and ground beneath his feet. Nobody had handed him freedom in a mahogany boardroom, and nobody could take it away.",
+          "Rayan had made himself free."
+        ]
+      },
+      {
+        id: 39,
+        part: "Epilogue Arc & Epilogue",
+        title: "Chapter 39: The Road North",
+        paragraphs: [
+          "Two hundred miles north of Manhattan, the concrete canyons gave way to timbered hills, quiet river towns, and open sky. Rayan checked into a modest lakeside inn with a single leather bag, no pager, and no phone ringing beside his bed.",
+          "For the first time in years, silence didn’t feel like an ambush waiting to happen. He walked the gravel shore at dusk, listening to wind in the pines instead of ticker tape, letting the adrenaline of the 1980s drain slowly out of his bones."
+        ]
+      },
+      {
+        id: 40,
+        part: "Epilogue Arc & Epilogue",
+        title: "Chapter 40: Rebuilding From Soil and Steel",
+        paragraphs: [
+          "By spring, Rayan partnered directly with Arthur—not as a Wall Street financier moving paper, but as an operator building tangible regional infrastructure: freight depots, grain storage terminals, and clean manufacturing yards grounded in real goods and honest contracts.",
+          "Every deal was debt-free, every handshake backed by physical value, and every worker paid fairly on time. The margins were quieter than Manhattan’s billions, yet every dollar carried weight you could touch."
+        ]
+      },
+      {
+        id: 41,
+        part: "Epilogue Arc & Epilogue",
+        title: "Chapter 41: Echoes From Manhattan",
+        paragraphs: [
+          "Months later, a courier delivered a thick cream envelope from New York—no return crest, only a brief handwritten note from the old Rockefeller intermediary acknowledging that the syndicates Rayan had dismantled were still picking through the wreckage, and hinting that a seat at the table remained open if he ever wished to return.",
+          "Rayan read the lines once beside the woodstove, folded the paper neatly, and dropped it into the embers. Watching the ink curl into ash, he felt nothing at all—not pride, not temptation, just complete indifference to a game he had already outgrown."
+        ]
+      },
+      {
+        id: 42,
+        part: "Epilogue Arc & Epilogue",
+        title: "Chapter 42: The Legacy of Free Men",
+        paragraphs: [
+          "Years on, standing beside Arthur at the edge of their newly expanded river terminal as barges loaded cargo into the morning sun, Rayan looked out over what they had built from scratch.",
+          "He had once chased $362 billion in the City of God believing wealth would buy him autonomy. In the end, he discovered the truth his father had carried all along: true freedom isn’t measured by how much of the world you control, but by the fact that nothing in the world owns you."
+        ]
+      },
+      {
+        id: 43,
+        part: "Epilogue Arc & Epilogue",
+        title: "Epilogue: Ten Years After the City of God",
+        paragraphs: [
+          "Ten years after walking away from the glittering towers of 1980s New York, the autumn wind along the northern river valley carried the clean scent of pine, damp earth, and cold water rather than diesel exhaust and hot concrete.",
+          "Rayan stood on the weathered timber porch of the riverside house he had built with his own specifications—no glass walls, no armed lobby, no ticker machines clicking through the night. Down by the water, barges moved slowly along the current toward the regional freight depots he and Arthur had spent a decade expanding into one of the most resilient physical supply networks on the East Coast.",
+          "Arthur was nearing seventy now, his hair silver, his posture still straight as an oak beam. He walked up the porch steps carrying two heavy ceramic mugs of black coffee, handing one to his son before leaning against the wooden railing.",
+          "\"The morning shipment from the southern yards cleared early,\" Arthur said, looking out over the mist rising off the river. \"Every invoice settled. Zero debt on the books.\"",
+          "Rayan wrapped his hands around the warm mug and smiled. \"Funny how quiet real work is. No headlines, no emergency calls at three in the morning—just things people actually use.\"",
+          "Back in Manhattan, the financial world had moved on to new names, new bubbles, and new men chasing phantom numbers across glowing screens. Every few years, a financial historian or investigative journalist tried to piece together the legend of the unnamed operator who had briefly commanded $362 billion in the late eighties before vanishing overnight—leaving behind zero debt, zero scandal, and no trail to follow. None of them ever looked twice at a quiet logistics partner living two hundred miles north of Wall Street.",
+          "From inside the house came the sound of footsteps and laughter—a life built slowly, honestly, without hidden agendas or borrowed crowns.",
+          "Rayan took a slow sip of coffee as the morning sun broke fully over the ridge, lighting the river in gold. He had once entered the City of God believing freedom was something powerful men granted you from the top of a skyscraper. Looking at the horizon now, he knew the truth: freedom was simply the courage to walk away from every table you didn’t need to sit at—and build your own ground from scratch.",
+          "The End."
+        ]
+      }
+    ];
+
+    // Application State
+    let currentIndex = 0;
+    let fontSize = 'md'; // 'sm' | 'md' | 'lg'
+    let isSepia = false;
+    let bookmarkedChapterId = null;
+
+    // Safe localStorage wrapper
+    function loadSavedState() {
+      try {
+        const savedIdx = localStorage.getItem('ten_billion_chapter_idx');
+        const savedBookmark = localStorage.getItem('ten_billion_bookmark');
+        const savedSize = localStorage.getItem('ten_billion_font_size');
+        const savedTheme = localStorage.getItem('ten_billion_theme');
+
+        if (savedIdx !== null && !isNaN(parseInt(savedIdx, 10))) {
+          const parsed = parseInt(savedIdx, 10);
+          if (parsed >= 0 && parsed < BOOK_CHAPTERS.length) currentIndex = parsed;
+        }
+        if (savedBookmark !== null) {
+          bookmarkedChapterId = parseInt(savedBookmark, 10);
+        }
+        if (savedSize && ['sm', 'md', 'lg'].includes(savedSize)) {
+          fontSize = savedSize;
+        }
+        if (savedTheme === 'sepia') {
+          isSepia = true;
+        }
+      } catch (e) {
+        console.warn('Storage unavailable, using defaults.');
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem('ten_billion_chapter_idx', String(currentIndex));
+        localStorage.setItem('ten_billion_font_size', fontSize);
+        localStorage.setItem('ten_billion_theme', isSepia ? 'sepia' : 'obsidian');
+        if (bookmarkedChapterId !== null) {
+          localStorage.setItem('ten_billion_bookmark', String(bookmarkedChapterId));
+        }
+      } catch (e) {
+        // Ignore storage restrictions
+      }
+    }
+
+    // Toast feedback helper
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast-msg');
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2400);
+    }
+
+    // Render Chapter Content
+    function renderChapter(index, smoothScroll = true) {
+      if (index < 0 || index >= BOOK_CHAPTERS.length) return;
+      currentIndex = index;
+      const chapter = BOOK_CHAPTERS[currentIndex];
+
+      // Update Metadata
+      document.getElementById('chapter-part-label').textContent = chapter.part;
+      document.getElementById('chapter-title').textContent = chapter.title;
+      document.getElementById('nav-chapter-indicator').textContent = chapter.title;
+
+      // Estimate reading time (~200 wpm)
+      const wordCount = chapter.paragraphs.join(' ').split(/\s+/).length;
+      const minutes = Math.max(1, Math.ceil(wordCount / 200));
+      document.getElementById('chapter-read-time').textContent = `${minutes} min read`;
+
+      // Render Paragraphs
+      const contentEl = document.getElementById('chapter-content');
+      contentEl.innerHTML = '';
+      chapter.paragraphs.forEach((text, pIdx) => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        if (pIdx === 0) {
+          p.className = 'first-letter:font-display first-letter:text-4xl sm:first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-2 first-letter:float-left first-letter:leading-none';
+        }
+        if (text === 'The End.') {
+          p.className = 'font-display text-center text-xl sm:text-2xl tracking-[0.25em] uppercase text-gold pt-6 font-bold';
+        }
+        contentEl.appendChild(p);
+      });
+
+      // Update Prev/Next Buttons
+      const prevBtn = document.getElementById('prev-chapter-btn');
+      const nextBtn = document.getElementById('next-chapter-btn');
+      const prevName = document.getElementById('prev-chapter-name');
+      const nextName = document.getElementById('next-chapter-name');
+
+      if (currentIndex === 0) {
+        prevBtn.disabled = true;
+        prevName.textContent = 'Beginning of Novel';
+      } else {
+        prevBtn.disabled = false;
+        prevName.textContent = BOOK_CHAPTERS[currentIndex - 1].title;
+      }
+
+      if (currentIndex === BOOK_CHAPTERS.length - 1) {
+        nextBtn.disabled = true;
+        nextName.textContent = 'End of Novel';
+      } else {
+        nextBtn.disabled = false;
+        nextName.textContent = BOOK_CHAPTERS[currentIndex + 1].title;
+      }
+
+      updateBookmarkUI();
+      renderTOC(document.getElementById('chapter-search-input').value);
+      saveState();
+
+      if (smoothScroll) {
+        const readerTop = document.getElementById('reader-container').offsetTop - 70;
+        window.scrollTo({ top: Math.max(0, readerTop), behavior: 'smooth' });
+      }
+    }
+
+    // Apply Font Size
+    function applyFontSize() {
+      const contentEl = document.getElementById('chapter-content');
+      contentEl.classList.remove('text-base', 'sm:text-lg', 'text-lg', 'sm:text-xl', 'text-xl', 'sm:text-2xl');
+
+      if (fontSize === 'sm') {
+        contentEl.classList.add('text-base', 'sm:text-lg');
+      } else if (fontSize === 'lg') {
+        contentEl.classList.add('text-xl', 'sm:text-2xl');
+      } else {
+        contentEl.classList.add('text-lg', 'sm:text-xl');
+      }
+
+      document.querySelectorAll('.font-size-btn').forEach(btn => {
+        if (btn.dataset.size === fontSize) {
+          btn.classList.add('bg-gold', 'text-obsidian', 'font-semibold');
+        } else {
+          btn.classList.remove('bg-gold', 'text-obsidian', 'font-semibold');
+        }
+      });
+      saveState();
+    }
+
+    // Apply Theme (Midnight Obsidian vs Warm Sepia Paper)
+    function applyTheme() {
+      const body = document.getElementById('app-body');
+      const topNav = document.getElementById('top-nav');
+      const themeIcon = document.getElementById('theme-icon');
+      const themeLabel = document.getElementById('theme-label');
+
+      if (isSepia) {
+        body.classList.remove('bg-obsidian', 'text-[#F2EFE9]');
+        body.classList.add('bg-sepia-bg', 'text-sepia-text');
+        topNav.classList.remove('bg-obsidian/85');
+        topNav.classList.add('bg-sepia-bg/90');
+        themeIcon.textContent = '🌙';
+        themeLabel.textContent = 'Obsidian';
+      } else {
+        body.classList.remove('bg-sepia-bg', 'text-sepia-text');
+        body.classList.add('bg-obsidian', 'text-[#F2EFE9]');
+        topNav.classList.remove('bg-sepia-bg/90');
+        topNav.classList.add('bg-obsidian/85');
+        themeIcon.textContent = '☀️';
+        themeLabel.textContent = 'Sepia';
+      }
+      saveState();
+    }
+
+    // Bookmark UI Updates
+    function updateBookmarkUI() {
+      const currentChapter = BOOK_CHAPTERS[currentIndex];
+      const icon = document.getElementById('bookmark-icon');
+      const isBookmarked = bookmarkedChapterId === currentChapter.id;
+
+      if (isBookmarked) {
+        icon.setAttribute('fill', 'currentColor');
+      } else {
+        icon.setAttribute('fill', 'none');
+      }
+
+      // Hero resume button & drawer banner
+      const resumeBtn = document.getElementById('resume-bookmark-btn');
+      const drawerBanner = document.getElementById('drawer-bookmark-banner');
+      const drawerText = document.getElementById('drawer-bookmark-text');
+
+      if (bookmarkedChapterId !== null) {
+        const bmChap = BOOK_CHAPTERS.find(c => c.id === bookmarkedChapterId);
+        if (bmChap) {
+          resumeBtn.classList.remove('hidden');
+          resumeBtn.textContent = `Resume Bookmark (${bmChap.title.split(':')[0]})`;
+          drawerBanner.classList.remove('hidden');
+          drawerText.textContent = `Saved: ${bmChap.title}`;
+        }
+      }
+    }
+
+    // Render Table of Contents grouped by Part
+    function renderTOC(filterQuery = '') {
+      const tocList = document.getElementById('toc-list');
+      tocList.innerHTML = '';
+      const q = filterQuery.trim().toLowerCase();
+
+      const filtered = BOOK_CHAPTERS.filter(ch => {
+        if (!q) return true;
+        return (
+          ch.title.toLowerCase().includes(q) ||
+          ch.part.toLowerCase().includes(q) ||
+          ch.paragraphs.some(p => p.toLowerCase().includes(q))
+        );
+      });
+
+      if (filtered.length === 0) {
+        tocList.innerHTML = `<div class="text-center py-8 text-sm text-[#8E877D]">No chapters matching "${filterQuery}"</div>`;
+        return;
+      }
+
+      // Group by part
+      const groups = {};
+      filtered.forEach(ch => {
+        if (!groups[ch.part]) groups[ch.part] = [];
+        groups[ch.part].push(ch);
+      });
+
+      Object.entries(groups).forEach(([partName, chapters]) => {
+        const section = document.createElement('div');
+        section.className = 'space-y-1.5';
+
+        const heading = document.createElement('div');
+        heading.className = 'text-[11px] uppercase tracking-[0.18em] text-gold font-semibold px-2 pb-1 border-b border-gold/15';
+        heading.textContent = partName;
+        section.appendChild(heading);
+
+        chapters.forEach(ch => {
+          const actualIdx = BOOK_CHAPTERS.findIndex(item => item.id === ch.id);
+          const isActive = actualIdx === currentIndex;
+          const isBm = bookmarkedChapterId === ch.id;
+
+          const btn = document.createElement('button');
+          btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-sm transition flex items-center justify-between gap-2 ${
+            isActive
+              ? 'bg-gold/20 border border-gold/40 text-gold-light font-semibold'
+              : 'hover:bg-white/5 text-[#D8D1C5]'
+          }`;
+
+          const titleSpan = document.createElement('span');
+          titleSpan.className = 'truncate font-serif';
+          titleSpan.textContent = ch.title;
+          btn.appendChild(titleSpan);
+
+          if (isBm) {
+            const bmBadge = document.createElement('span');
+            bmBadge.className = 'text-gold text-xs shrink-0';
+            bmBadge.title = 'Bookmarked';
+            bmBadge.textContent = '★';
+            btn.appendChild(bmBadge);
+          }
+
+          btn.addEventListener('click', () => {
+            renderChapter(actualIdx, true);
+            closeDrawer();
+          });
+
+          section.appendChild(btn);
+        });
+
+        tocList.appendChild(section);
+      });
+    }
+
+    // Drawer Open / Close Handlers
+    const tocBackdrop = document.getElementById('toc-backdrop');
+    const tocDrawer = document.getElementById('toc-drawer');
+
+    function openDrawer() {
+      tocBackdrop.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        tocBackdrop.classList.remove('opacity-0');
+        tocDrawer.classList.remove('-translate-x-full');
+      });
+    }
+
+    function closeDrawer() {
+      tocBackdrop.classList.add('opacity-0');
+      tocDrawer.classList.add('-translate-x-full');
+      setTimeout(() => {
+        tocBackdrop.classList.add('hidden');
+      }, 300);
+    }
+
+    // Scroll Progress Bar Listener
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      document.getElementById('reading-progress').style.width = `${pct}%`;
+    });
+
+    // Event Listeners Setup
+    document.getElementById('open-drawer-btn').addEventListener('click', openDrawer);
+    document.getElementById('hero-index-btn').addEventListener('click', openDrawer);
+    document.getElementById('bottom-index-btn').addEventListener('click', openDrawer);
+    document.getElementById('close-drawer-btn').addEventListener('click', closeDrawer);
+    tocBackdrop.addEventListener('click', closeDrawer);
+
+    document.getElementById('start-reading-btn').addEventListener('click', () => {
+      renderChapter(0, true);
+    });
+
+    document.getElementById('scroll-top-btn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('prev-chapter-btn').addEventListener('click', () => {
+      if (currentIndex > 0) renderChapter(currentIndex - 1, true);
+    });
+
+    document.getElementById('next-chapter-btn').addEventListener('click', () => {
+      if (currentIndex < BOOK_CHAPTERS.length - 1) renderChapter(currentIndex + 1, true);
+    });
+
+    document.getElementById('bookmark-btn').addEventListener('click', () => {
+      const currentChapter = BOOK_CHAPTERS[currentIndex];
+      if (bookmarkedChapterId === currentChapter.id) {
+        bookmarkedChapterId = null;
+        try { localStorage.removeItem('ten_billion_bookmark'); } catch (e) {}
+        document.getElementById('resume-bookmark-btn').classList.add('hidden');
+        document.getElementById('drawer-bookmark-banner').classList.add('hidden');
+        showToast('Bookmark removed');
+      } else {
+        bookmarkedChapterId = currentChapter.id;
+        saveState();
+        showToast(`Bookmarked: ${currentChapter.title}`);
+      }
+      updateBookmarkUI();
+      renderTOC(document.getElementById('chapter-search-input').value);
+    });
+
+    document.getElementById('resume-bookmark-btn').addEventListener('click', () => {
+      if (bookmarkedChapterId !== null) {
+        const idx = BOOK_CHAPTERS.findIndex(c => c.id === bookmarkedChapterId);
+        if (idx !== -1) renderChapter(idx, true);
+      }
+    });
+
+    document.getElementById('drawer-jump-bookmark').addEventListener('click', () => {
+      if (bookmarkedChapterId !== null) {
+        const idx = BOOK_CHAPTERS.findIndex(c => c.id === bookmarkedChapterId);
+        if (idx !== -1) {
+          renderChapter(idx, true);
+          closeDrawer();
+        }
+      }
+    });
+
+    document.querySelectorAll('.font-size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        fontSize = btn.dataset.size;
+        applyFontSize();
+      });
+    });
+
+    document.getElementById('theme-toggle-btn').addEventListener('click', () => {
+      isSepia = !isSepia;
+      applyTheme();
+    });
+
+    document.getElementById('chapter-search-input').addEventListener('input', (e) => {
+      renderTOC(e.target.value);
+    });
+
+    // Keyboard Arrow Navigation (when not typing in search input)
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement === document.getElementById('chapter-search-input')) return;
+      if (e.key === 'Escape') closeDrawer();
+      if (e.key === 'ArrowRight' && currentIndex < BOOK_CHAPTERS.length - 1) {
+        renderChapter(currentIndex + 1, true);
+      } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        renderChapter(currentIndex - 1, true);
+      }
+    });
+
+    // Initialize Reader on Load
+    loadSavedState();
+    applyTheme();
+    applyFontSize();
+    renderChapter(currentIndex, false);
+  </script>
+</body>
+</html>
