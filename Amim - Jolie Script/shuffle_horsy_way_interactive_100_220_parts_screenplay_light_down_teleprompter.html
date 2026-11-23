@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHUFFLE — HORSY WAY | Interactive 100–220 Parts Screenplay &amp; Light-Down Teleprompter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            script: ['"Courier Prime"', 'Courier', 'monospace'],
+            display: ['"Cinzel"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom Saddle & Lantern Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(12, 10, 9, 0.72);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(217, 119, 6, 0.42);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(251, 191, 36, 0.78);
+    }
+
+    /* Horsy Way Scrubber Input (Transparent overlay over custom galloping-horse thumb) */
+    input[type="range"].horsy-scrubber-input {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"].horsy-scrubber-input::-webkit-slider-runnable-track {
+      height: 14px;
+      border-radius: 9999px;
+    }
+    input[type="range"].horsy-scrubber-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 28px;
+      width: 34px;
+      border-radius: 9999px;
+      background: transparent;
+      cursor: grab;
+    }
+    input[type="range"].horsy-scrubber-input:active::-webkit-slider-thumb {
+      cursor: grabbing;
+    }
+    input[type="range"].horsy-scrubber-input::-moz-range-thumb {
+      height: 28px;
+      width: 34px;
+      border-radius: 9999px;
+      background: transparent;
+      border: none;
+      cursor: grab;
+    }
+
+    /* Compact Secondary Sliders (Parts Count, Light Down Dimmer, WPM) */
+    input[type="range"].saddle-mini-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"].saddle-mini-slider::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 9999px;
+      background: rgba(68, 64, 60, 0.65);
+    }
+    input[type="range"].saddle-mini-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 15px;
+      width: 15px;
+      border-radius: 9999px;
+      background: #f59e0b;
+      border: 2px solid #fef3c7;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+      margin-top: -4.5px;
+      transition: transform 0.12s ease;
+    }
+    input[type="range"].saddle-mini-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.18);
+    }
+    input[type="range"].saddle-mini-slider::-moz-range-thumb {
+      height: 15px;
+      width: 15px;
+      border-radius: 9999px;
+      background: #f59e0b;
+      border: 2px solid #fef3c7;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+    }
+
+    /* Galloping Horse Subtle Stride Animation during Playback or Scrubbing */
+    @keyframes horseGallop {
+      0%, 100% {
+        transform: translate(-50%, -50%) rotate(-3deg) translateY(0px);
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(4deg) translateY(-2.5px);
+      }
+    }
+    .horse-galloping {
+      animation: horseGallop 0.42s infinite ease-in-out;
+    }
+
+    /* Warm Parchment Light Mode Override */
+    html:not(.dark) body {
+      background: #f3ece0 !important;
+      color: #1c1917 !important;
+    }
+    html:not(.dark) header,
+    html:not(.dark) footer > div,
+    html:not(.dark) aside {
+      background: rgba(243, 236, 224, 0.95) !important;
+      color: #1c1917 !important;
+      border-color: rgba(146, 64, 14, 0.25) !important;
+    }
+    html:not(.dark) .paper-text {
+      color: #1c1917 !important;
+    }
+    html:not(.dark) .paper-muted {
+      color: #57534e !important;
+    }
+    html:not(.dark) .paper-slug {
+      color: #92400e !important;
+    }
+    html:not(.dark) .paper-cue {
+      color: #78350f !important;
+    }
+
+    /* Trail / Shuffle Cue Badges */
+    .trail-cue-tag {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      padding: 0.08rem 0.42rem;
+      border-radius: 0.375rem;
+      margin-right: 0.35rem;
+      vertical-align: baseline;
+      background: rgba(217, 119, 6, 0.16);
+      color: #fcd34d;
+      border: 1px solid rgba(217, 119, 6, 0.4);
+    }
+    html:not(.dark) .trail-cue-tag {
+      background: rgba(180, 83, 9, 0.12);
+      color: #92400e;
+      border-color: rgba(180, 83, 9, 0.38);
+    }
+
+    /* Active Teleprompter Playhead Guide */
+    .horsy-playhead-guide {
+      background: linear-gradient(90deg, transparent 0%, rgba(217, 119, 6, 0.08) 20%, rgba(251, 191, 36, 0.15) 50%, rgba(217, 119, 6, 0.08) 80%, transparent 100%);
+      border-top: 1px solid rgba(245, 158, 11, 0.32);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.32);
+    }
+
+    mark.search-hit {
+      background-color: #f59e0b;
+      color: #0c0a09;
+      padding: 0 3px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-100 transition-colors duration-500">
+
+  <!-- DYNAMIC AMBIENT SKY & LIGHT-DOWN TWILIGHT BACKDROP -->
+  <div id="ambientTwilightCanvas" class="fixed inset-0 pointer-events-none z-0 transition-all duration-500"
+       style="background: radial-gradient(circle at 50% 0%, rgba(180, 83, 9, 0.24) 0%, rgba(28, 25, 23, 0.94) 68%, #090807 100%);">
+  </div>
+
+  <!-- LIGHT DOWN DIMMER VEIL (Smoothly dims stage contrast from 100% Dusk down to 0% Pitch Midnight) -->
+  <div id="lightDownVeil" class="fixed inset-0 pointer-events-none z-30 transition-opacity duration-300"
+       style="background-color: rgba(3, 5, 12, 0.18);">
+  </div>
+
+  <!-- STICKY TOP HEADER: TITLE, PARTS COUNT (100-220), LIGHT DOWN DIMMER & HORSY WAY SLIDER -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-stone-950/90 border-b border-amber-600/25 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5">
+      <!-- Top Row: Title, Trail Stage Badge, Part & Word Readout, Quick Actions -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <button id="drawerToggleBtn" class="p-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-amber-400 border border-amber-600/35 transition shrink-0" title="Open 100–220 Parts Navigator, Search, Bookmarks &amp; Display Tools">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10" />
+            </svg>
+          </button>
+
+          <div class="min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <h1 class="font-display text-base sm:text-xl font-extrabold tracking-wider text-amber-300">
+                SHUFFLE — HORSY WAY
+              </h1>
+              <span id="trailStageBadge" class="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-200 border border-amber-500/35">
+                STAGE I: CANYON TRAILHEAD
+              </span>
+              <span id="shuffleOrderBadge" class="hidden sm:inline-block text-[11px] font-mono text-stone-300 bg-stone-900/90 border border-stone-700/80 px-2 py-0.5 rounded-full">
+                CHRONOLOGICAL ORDER
+              </span>
+            </div>
+            <p id="activePartSubtitle" class="text-xs text-stone-400 paper-muted truncate">
+              Part 1 / 160 — EXT. HORSY WAY TRAILHEAD - DUSK
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Part & Word Counters + Quick Light Down & Tools Buttons -->
+        <div class="flex items-center gap-2">
+          <div class="hidden lg:flex items-center gap-2 bg-stone-900/95 border border-amber-600/25 rounded-xl px-3 py-1.5 text-xs">
+            <span id="livePartCounter" class="font-mono font-bold text-amber-300">PART 1 / 160</span>
+            <span class="text-stone-600">•</span>
+            <span id="liveWordCounter" class="font-mono text-stone-300">1 / 14,400 WORDS</span>
+            <span id="progressPctBadge" class="ml-1 px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 font-mono text-[11px]">0%</span>
+          </div>
+
+          <button id="headerLightDownBtn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-amber-500/35 text-xs font-semibold text-amber-200 transition" title="Step Light Down Dimmer (100% Dusk → 65% Lantern → 30% Moonlit → 5% Pitch Midnight)">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <span id="headerLightLabel" class="font-mono">LIGHT 75%</span>
+          </button>
+
+          <button id="bookmarkBtn" class="p-2 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700/80 text-stone-300 hover:text-amber-300 transition" title="Bookmark Current Part">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+          </button>
+
+          <button id="openToolsBtn" class="px-3 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700/80 text-xs font-semibold text-stone-200 hover:text-amber-300 transition">
+            Parts &amp; Tools
+          </button>
+        </div>
+      </div>
+
+      <!-- Second Row: Configurable Parts Count (100–220), Shuffle Controls & Light Down Dimmer Slider -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-2.5 pt-1 border-t border-stone-800/70">
+        <!-- Parts Count Slider (100 to 220 Parts, Default 160) + Shuffle/Restore -->
+        <div class="flex items-center gap-2 bg-stone-900/75 border border-stone-800/90 rounded-xl px-3 py-1.5">
+          <span class="text-[11px] font-mono font-bold uppercase text-amber-300/90 shrink-0">Parts:</span>
+          <span class="text-[10px] font-mono text-stone-400">100</span>
+          <input id="partsCountSlider" type="range" min="100" max="220" step="1" value="160" class="saddle-mini-slider flex-1 min-w-[80px]" aria-label="Configure Total Script Parts from 100 to 220" />
+          <span class="text-[10px] font-mono text-stone-400">220</span>
+          <span id="partsCountValue" class="font-mono text-xs font-bold text-amber-300 w-16 text-right shrink-0">160 PTS</span>
+          <button id="headerShuffleBtn" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/35 border border-amber-400/45 text-[11px] font-mono font-bold text-amber-200 transition shrink-0" title="Shuffle Order of All Parts">
+            SHUFFLE
+          </button>
+          <button id="restoreOrderBtn" class="hidden px-2 py-1 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-600 text-[10px] font-mono text-stone-300 transition shrink-0" title="Restore Chronological Part Order">
+            Reset
+          </button>
+        </div>
+
+        <!-- LIGHT DOWN Dimmer Slider (100% Dusk down to 0% Pitch Midnight) -->
+        <div class="flex items-center gap-2 bg-stone-900/75 border border-stone-800/90 rounded-xl px-3 py-1.5">
+          <span class="text-[11px] font-mono font-bold uppercase text-amber-300/90 shrink-0">Light Down:</span>
+          <span class="text-[10px] font-mono text-indigo-300 shrink-0">0% Night</span>
+          <input id="lightDownSlider" type="range" min="0" max="100" step="1" value="75" class="saddle-mini-slider flex-1 min-w-[80px]" aria-label="Light Down Ambient Twilight Dimmer" />
+          <span class="text-[10px] font-mono text-amber-300 shrink-0">100% Dusk</span>
+          <span id="lightDownReadout" class="font-mono text-[11px] font-bold text-amber-200 w-24 text-right shrink-0">75% Lantern</span>
+        </div>
+      </div>
+
+      <!-- Third Row: HORSY WAY SCRUBBER SLIDER WITH GALLOPING HORSE EMBLEM -->
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] font-mono text-stone-400 paper-muted w-12 text-right shrink-0">Part 1</span>
+          <div class="relative flex-1 h-7 flex items-center">
+            <!-- Saddle-Leather & Brass Trail Track -->
+            <div class="absolute inset-x-0 h-2.5 rounded-full bg-stone-900 border border-amber-700/45 overflow-hidden pointer-events-none shadow-inner">
+              <div id="horsyTrackFill" class="h-full bg-gradient-to-r from-amber-800 via-amber-500 to-yellow-300 w-0 transition-all duration-75"></div>
+            </div>
+            <!-- Trail Milestone Tick Marks -->
+            <div id="trailMilestonesTrack" class="absolute inset-x-0 h-2.5 pointer-events-none"></div>
+            <!-- Galloping Horse Thumb Badge -->
+            <div id="horseThumbRider"
+                 class="pointer-events-none absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 flex items-center justify-center w-8 h-6 rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 border-2 border-amber-100 shadow-[0_0_16px_rgba(245,158,11,0.9)] transition-left duration-75"
+                 style="left: 0%;">
+              <!-- Crisp Galloping Horse Silhouette SVG -->
+              <svg class="w-4 h-4 text-stone-950 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.5 7.2c-.4-.7-1.2-1.1-2-1.2l-1.4-.2-.8-1.5c-.2-.4-.7-.5-1.1-.3-.3.2-.5.6-.4 1l.3 1.1-2.6.9-2.2-1.4c-.5-.3-1.1-.3-1.6 0L6.3 7.1c-.5.3-.8.9-.7 1.5l.4 2.1-2.3 2.5c-.4.4-.4 1.1 0 1.5.4.4 1.1.4 1.5 0l2.2-2.3 1.4.4-1.3 4.5c-.2.6.2 1.2.8 1.4.6.2 1.2-.2 1.4-.8l1.2-4.2 2.9.6 1.5 3.6c.2.6.9.8 1.5.6.6-.2.8-.9.6-1.5l-1.3-3.2 1.8-1.9 1.6.3c.7.1 1.4-.3 1.6-1l.5-1.7c.2-.6.1-1.3-.2-1.8z"/>
+              </svg>
+            </div>
+            <!-- Native Interactive Range Input -->
+            <input id="horsyScrubber" type="range" min="1" max="160" value="1" step="1" class="horsy-scrubber-input relative z-30 w-full" aria-label="Horsy Way Part Scrubber Slider" />
+          </div>
+          <span id="scrubberMaxPartLabel" class="text-[11px] font-mono text-stone-400 paper-muted w-16 shrink-0">Part 160</span>
+        </div>
+
+        <!-- Mobile Compact Readout -->
+        <div class="flex lg:hidden items-center justify-between text-[11px] text-stone-400 paper-muted mt-1 px-1">
+          <span id="mobilePartCounter" class="font-mono font-bold text-amber-300">PART 1 / 160</span>
+          <span id="mobileWordCounter" class="font-mono">1 / 14,400 WORDS</span>
+          <span id="mobilePctBadge" class="font-mono text-amber-300">0%</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACTIVE TELEPROMPTER PLAYHEAD GUIDE -->
+  <div id="playheadGuide" class="hidden fixed inset-x-0 top-1/2 -translate-y-1/2 h-24 horsy-playhead-guide pointer-events-none z-20 flex items-center justify-between px-4 sm:px-10">
+    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-300/85">🐎 HORSY WAY</span>
+    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-300/85">HORSY WAY 🐎</span>
+  </div>
+
+  <!-- SLIDE-OUT PARTS NAVIGATOR & SCRIPT TOOLS DRAWER -->
+  <aside id="navigatorDrawer" class="fixed inset-y-0 left-0 z-50 w-80 sm:w-96 bg-stone-950/96 backdrop-blur-2xl border-r border-amber-600/30 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <div class="p-4 border-b border-stone-800 flex items-center justify-between">
+      <div>
+        <h2 class="font-display text-lg font-bold tracking-wide text-amber-300">HORSY WAY — PARTS</h2>
+        <p id="drawerMetaSummary" class="text-xs text-stone-400 paper-muted">160 Parts • Frontier-Noir Screenplay</p>
+      </div>
+      <button id="drawerCloseBtn" class="p-2 rounded-xl hover:bg-stone-800 text-stone-400 hover:text-white transition" title="Close Drawer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Live Search & Theme / Font Size Controls -->
+    <div class="p-3.5 border-b border-stone-800/80 space-y-2.5">
+      <div class="relative">
+        <input id="liveSearchInput" type="text" placeholder="Search Mara, Boone, Silas, Cinder, [LANTERN]..." class="w-full bg-stone-900 border border-stone-700 rounded-xl pl-3 pr-12 py-2 text-xs text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-400 transition" />
+        <span id="searchHitBadge" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-mono font-bold text-amber-300"></span>
+      </div>
+
+      <div class="flex items-center justify-between gap-2">
+        <button id="themeToggleBtn" class="flex-1 py-1.5 px-3 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700/80 text-xs font-medium text-stone-200 hover:text-amber-300 transition">
+          Cinema Dark / Parchment
+        </button>
+        <div class="flex items-center gap-1 bg-stone-900 border border-stone-700/80 rounded-xl p-1">
+          <button id="fontSmallerBtn" class="px-2 py-0.5 text-xs font-mono text-stone-300 hover:text-amber-300 rounded-lg hover:bg-stone-800" title="Smaller Font">A-</button>
+          <button id="fontLargerBtn" class="px-2 py-0.5 text-xs font-mono text-stone-300 hover:text-amber-300 rounded-lg hover:bg-stone-800" title="Larger Font">A+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Bookmarks -->
+    <div id="bookmarksPanel" class="px-4 py-3 border-b border-stone-800/80 hidden">
+      <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-300 mb-2">Saved Trail Bookmarks</div>
+      <div id="bookmarksList" class="space-y-1.5 max-h-32 overflow-y-auto"></div>
+    </div>
+
+    <!-- 100–220 Parts Jump Index -->
+    <div id="partsIndexList" class="flex-1 overflow-y-auto p-3 space-y-1.5"></div>
+  </aside>
+
+  <div id="drawerBackdrop" class="hidden fixed inset-0 z-40 bg-black/65 backdrop-blur-xs"></div>
+
+  <!-- MAIN SCREENPLAY STAGE -->
+  <main class="relative z-10 flex-1 max-w-4xl w-full mx-auto px-4 sm:px-8 pt-8 pb-44">
+    <!-- Title Header Block -->
+    <section class="text-center py-10 sm:py-12 border-b border-amber-600/25 mb-10">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-amber-400 mb-3">MODULAR FRONTIER-NOIR SCREENPLAY</p>
+      <h2 class="font-display text-4xl sm:text-6xl font-extrabold tracking-wider text-white paper-text mb-4">
+        SHUFFLE — HORSY WAY
+      </h2>
+      <p class="font-script italic text-sm sm:text-base text-stone-300 paper-muted max-w-2xl mx-auto mb-6 leading-relaxed">
+        "Along a hundred leagues of canyon switchbacks, river fords, and lantern-lit waystations, outrider Mara Bell and tracker Boone Vance escort a locked cipher satchel through gathering twilight—where every shuffle of the trail reveals a new ambush or hidden ally."
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs font-mono">
+        <span id="coverPartsBadge" class="px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 font-bold">160 PARTS (100–220)</span>
+        <span id="coverWordsBadge" class="px-3.5 py-1 rounded-full bg-stone-900/90 border border-stone-800 text-stone-300">14,400 WORDS</span>
+        <span id="coverLightBadge" class="px-3.5 py-1 rounded-full bg-stone-900/90 border border-stone-800 text-amber-200">LIGHT DOWN: 75%</span>
+      </div>
+    </section>
+
+    <!-- Windowed Parts Container -->
+    <article id="scriptStage" class="font-script text-[16px] leading-[1.85]"></article>
+
+    <!-- End of Trail Footer -->
+    <section class="mt-16 pt-12 border-t border-amber-600/25 text-center">
+      <p class="font-mono text-sm tracking-[0.3em] uppercase text-amber-400 mb-2">FADE INTO MIDNIGHT.</p>
+      <h3 class="font-display text-2xl sm:text-3xl font-bold text-white paper-text mb-3">END OF TRAIL — SHUFFLE: HORSY WAY</h3>
+      <p class="text-sm text-stone-400 paper-muted max-w-md mx-auto mb-6">
+        Reached the final part. Adjust the Parts slider (100–220), hit SHUFFLE to remix the trail sequence, or scrub back to Part 1.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button id="footerShuffleBtn" class="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-amber-500/45 text-amber-300 font-sans font-bold text-sm transition">
+          Shuffle Parts &amp; Rewind
+        </button>
+        <button id="rewindPartOneBtn" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 hover:from-amber-400 hover:to-yellow-200 text-stone-950 font-sans font-bold text-sm shadow-lg shadow-amber-500/25 transition">
+          Ride Back to Part 1
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastBanner" class="fixed top-32 right-4 z-50 pointer-events-none opacity-0 transition-opacity duration-300 bg-stone-900/95 border border-amber-400/50 text-amber-200 px-4 py-2.5 rounded-xl shadow-2xl text-xs font-medium"></div>
+
+  <!-- FLOATING BOTTOM "SHUFFLE / PLAY" TELEPROMPTER & LIGHT DOWN DECK -->
+  <footer class="fixed bottom-4 inset-x-0 z-40 px-3 sm:px-6 pointer-events-none">
+    <div class="max-w-5xl mx-auto pointer-events-auto bg-stone-950/92 backdrop-blur-2xl border border-amber-600/35 rounded-2xl shadow-[0_14px_45px_rgba(0,0,0,0.88)] px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-wrap items-center justify-between gap-2.5">
+      
+      <!-- Primary Play/Pause + Prev/Next Part + Shuffle Parts -->
+      <div class="flex items-center gap-2">
+        <button id="teleprompterPlayBtn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 hover:from-amber-400 hover:to-yellow-200 text-stone-950 font-sans font-extrabold text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-500/25 transition active:scale-95">
+          <svg id="playIcon" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="pauseIcon" class="w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          <span id="playBtnLabel">PLAY TRAIL</span>
+        </button>
+
+        <div class="flex items-center gap-1">
+          <button id="prevPartBtn" class="p-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-300 border border-stone-800 transition" title="Previous Part">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="nextPartBtn" class="p-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-300 border border-stone-800 transition" title="Next Part">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <button id="bottomShuffleBtn" class="px-3 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 border border-amber-500/40 text-amber-300 font-mono font-bold text-xs transition active:scale-95" title="Shuffle Order of All Parts">
+          SHUFFLE PARTS
+        </button>
+      </div>
+
+      <!-- Reading Pace Slider (120 to 750 WPM) -->
+      <div class="flex items-center gap-2 flex-1 min-w-[150px] max-w-xs">
+        <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400 paper-muted">Pace</span>
+        <input id="wpmSlider" type="range" min="120" max="750" step="10" value="260" class="saddle-mini-slider flex-1" aria-label="Teleprompter Reading Pace in Words Per Minute" />
+        <span id="wpmDisplay" class="font-mono text-xs font-bold text-amber-300 w-20 text-right">260 WPM</span>
+      </div>
+
+      <!-- Quick Light Down Step + Follow Playhead Toggle -->
+      <div class="flex items-center gap-2">
+        <button id="bottomLightDownBtn" class="px-3 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700/90 text-xs font-mono font-semibold text-amber-200 transition" title="Dim Light Down Level">
+          LIGHT DOWN
+        </button>
+
+        <button id="followToggleBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-200 text-xs font-semibold transition" title="Lock Auto-Scroll to Active Playhead">
+          <span id="followStatusDot" class="w-2 h-2 rounded-full bg-amber-300"></span>
+          <span class="hidden sm:inline">Follow Playhead</span>
+          <span class="sm:hidden">Follow</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * SHUFFLE — HORSY WAY
+     * Dynamic 100–220 Parts Modular Screenplay, Galloping Horse Scrubber & Light-Down Twilight Dimmer
+     */
+
+    const TRAIL_STAGES = [
+      "STAGE I: CANYON TRAILHEAD",
+      "STAGE II: REDWATER FORD",
+      "STAGE III: LANTERN SWITCHBACKS",
+      "STAGE IV: MIDNIGHT WAYSTATION",
+      "STAGE V: IRON BRIDGE SUMMIT"
+    ];
+
+    // Core modular story library expanded cleanly across 100 to 220 parts
+    const MODULAR_EPISODES = [
+      {
+        location: "EXT. HORSY WAY TRAILHEAD - DUSK",
+        cue: "[HOOFBEAT]",
+        action: "Amber sunset bleeds across the sandstone rim as MARA BELL (34), outrider in a weathered oilskin duster, tightens the latigo strap on her bay mare Cinder and checks the brass-bound cipher satchel.",
+        speaker: "MARA",
+        parenthetical: "patting Cinder's neck as canyon wind rises",
+        dialogue: "Hundred leagues of switchbacks between here and Iron Bridge, old girl. Keep your footing steady when the lantern light drops."
+      },
+      {
+        location: "EXT. REDWATER RIVER FORD - TWILIGHT",
+        cue: "[LANTERN]",
+        action: "TRACKER BOONE VANCE (39) holds a hooded brass storm-lantern low over dark, fast-moving water, reading fresh iron-shod hoofprints pressed into wet gravel along the opposite bank.",
+        speaker: "BOONE",
+        parenthetical: "squinting into the deepening indigo mist",
+        dialogue: "Three riders crossed less than twenty minutes ahead of us, Mara. Heavy mounts, riding hard without lamps—they know this trail by feel."
+      },
+      {
+        location: "INT. COPPER CREEK WAYSTATION - NIGHT",
+        cue: "[SADDLE]",
+        action: "Inside a timber-beamed relay cabin smelling of woodsmoke and saddle soap, station keeper SILAS GREENE (61) slides a hand-drawn canyon elevation map across the scarred oak counter.",
+        speaker: "SILAS",
+        parenthetical: "tapping a charcoal cross beside Devil's Backbone",
+        dialogue: "The lower gorge flooded after yesterday's cloudburst. If you take the Horsy Way upper ledge after dark, dim your lanterns—spotters watch the rim from Wolf Crag."
+      },
+      {
+        location: "EXT. DEVIL'S BACKBONE SWITCHBACK - NIGHT",
+        cue: "[TRAIL]",
+        action: "Single-file along a narrow granite shelf suspended above black pine canopy, Cinder and Boone's roan gelding pick their way past loose shale while crescent moonlight silvers the canyon edge.",
+        speaker: "MARA",
+        parenthetical: "reining in slightly at a blind hairpin turn",
+        dialogue: "Hold up, Boone. Listen beneath the wind—someone just muffled a bit-chain behind those boulders."
+      },
+      {
+        location: "EXT. PINE HOLLOW AMBUSH - NIGHT",
+        cue: "[HOOFBEAT]",
+        action: "A trip-line snaps across the trail; sparks shower off granite as Boone wheels his gelding sideways, shielding Mara while she spurs Cinder cleanly over a fallen cedar trunk.",
+        speaker: "BOONE",
+        parenthetical: "firing a magnesium flare into the upper branches",
+        dialogue: "Ride! Don't look back until you clear the timberline—I'll draw their flankers down the dry wash!"
+      },
+      {
+        location: "INT. OLD STONE MILL STABLES - NIGHT",
+        cue: "[LANTERN]",
+        action: "Sheltered inside an abandoned stone mill beneath slatted moonlight, Mara rubs Cinder down with dry burlap while inspecting the intact wax seal on the cipher satchel.",
+        speaker: "MARA",
+        parenthetical: "whispering as footsteps crunch outside on gravel",
+        dialogue: "Steady now. One breath, one step—if that's Boone at the latch, he'll whistle the meadowlark call twice."
+      },
+      {
+        location: "EXT. SILVER MESA OVERLOOK - MIDNIGHT",
+        cue: "[TRAIL]",
+        action: "Reunited atop the wind-scoured mesa, Mara and Boone watch three distant torch-bearers circling aimlessly through the mist-choked canyon far below.",
+        speaker: "BOONE",
+        parenthetical: "holstering his field glass with a dry grin",
+        dialogue: "Let them chase shadows in the wash. From here to the summit relay, the Horsy Way belongs to the fastest hooves."
+      },
+      {
+        location: "EXT. IRON BRIDGE RELAY TOWER - PRE-DAWN",
+        cue: "[SADDLE]",
+        action: "Mist curls off the suspension planks as Mara dismounts at the northern signal tower, handing the unharmed cipher satchel to the waiting courier captain just as first violet light touches the peaks.",
+        speaker: "MARA",
+        parenthetical: "loosening Cinder's cinch with exhausted pride",
+        dialogue: "Delivered on schedule, Captain. Every mile of the Horsy Way accounted for."
+      }
+    ];
+
+    const TRANSITIONS = [
+      "CUT TO:",
+      "DISSOLVE TO:",
+      "SMASH CUT TO:",
+      "MATCH CUT TO:",
+      "FADE THROUGH TWILIGHT TO:"
+    ];
+
+    // Application State
+    const state = {
+      totalParts: 160,         // Configurable 100..220
+      currentPart: 1,          // 1..totalParts
+      isShuffled: false,
+      partsList: [],           // Active ordered array of part objects
+      canonicalParts: [],      // Unshuffled chronological list
+      totalWords: 0,
+      isPlaying: false,
+      wpm: 260,
+      followPlayhead: true,
+      lightLevel: 75,          // 100% Dusk down to 0% Pitch Midnight
+      fontSize: 16,
+      searchQuery: "",
+      isScrubbing: false,
+      bookmarks: JSON.parse(localStorage.getItem("shuffle_horsy_way_bookmarks") || "[]"),
+      lastFrameTime: null,
+      wordProgressAccumulator: 0,
+      renderedWindow: { minPart: 1, maxPart: 12 }
+    };
+
+    // DOM Elements
+    const scriptStage = document.getElementById("scriptStage");
+    const horsyScrubber = document.getElementById("horsyScrubber");
+    const horsyTrackFill = document.getElementById("horsyTrackFill");
+    const horseThumbRider = document.getElementById("horseThumbRider");
+    const trailMilestonesTrack = document.getElementById("trailMilestonesTrack");
+    const scrubberMaxPartLabel = document.getElementById("scrubberMaxPartLabel");
+
+    const partsCountSlider = document.getElementById("partsCountSlider");
+    const partsCountValue = document.getElementById("partsCountValue");
+    const restoreOrderBtn = document.getElementById("restoreOrderBtn");
+    const shuffleOrderBadge = document.getElementById("shuffleOrderBadge");
+
+    const lightDownSlider = document.getElementById("lightDownSlider");
+    const lightDownReadout = document.getElementById("lightDownReadout");
+    const headerLightLabel = document.getElementById("headerLightLabel");
+    const lightDownVeil = document.getElementById("lightDownVeil");
+    const ambientTwilightCanvas = document.getElementById("ambientTwilightCanvas");
+    const coverLightBadge = document.getElementById("coverLightBadge");
+
+    const trailStageBadge = document.getElementById("trailStageBadge");
+    const activePartSubtitle = document.getElementById("activePartSubtitle");
+    const livePartCounter = document.getElementById("livePartCounter");
+    const mobilePartCounter = document.getElementById("mobilePartCounter");
+    const liveWordCounter = document.getElementById("liveWordCounter");
+    const mobileWordCounter = document.getElementById("mobileWordCounter");
+    const progressPctBadge = document.getElementById("progressPctBadge");
+    const mobilePctBadge = document.getElementById("mobilePctBadge");
+    const coverPartsBadge = document.getElementById("coverPartsBadge");
+    const coverWordsBadge = document.getElementById("coverWordsBadge");
+    const drawerMetaSummary = document.getElementById("drawerMetaSummary");
+
+    const teleprompterPlayBtn = document.getElementById("teleprompterPlayBtn");
+    const playBtnLabel = document.getElementById("playBtnLabel");
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+    const playheadGuide = document.getElementById("playheadGuide");
+
+    const wpmSlider = document.getElementById("wpmSlider");
+    const wpmDisplay = document.getElementById("wpmDisplay");
+    const followToggleBtn = document.getElementById("followToggleBtn");
+    const followStatusDot = document.getElementById("followStatusDot");
+
+    const navigatorDrawer = document.getElementById("navigatorDrawer");
+    const drawerBackdrop = document.getElementById("drawerBackdrop");
+    const partsIndexList = document.getElementById("partsIndexList");
+    const liveSearchInput = document.getElementById("liveSearchInput");
+    const searchHitBadge = document.getElementById("searchHitBadge");
+    const toastBanner = document.getElementById("toastBanner");
+
+    let toastTimer = null;
+    function showToast(msg) {
+      toastBanner.textContent = msg;
+      toastBanner.classList.remove("opacity-0");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toastBanner.classList.add("opacity-0");
+      }, 2200);
+    }
+
+    /**
+     * Generates N chronological parts (100 <= N <= 220) along the Horsy Way trail,
+     * computing exact cumulative word offsets for teleprompter & scrubber tracking.
+     */
+    function generateCanonicalParts(count) {
+      const clampedCount = Math.max(100, Math.min(220, count));
+      const parts = [];
+
+      const atmosphericBeats = [
+        "Lantern amber flickers across polished saddle leather as hooves strike rhythmic sparks against rain-slicked canyon granite.",
+        "Below the winding switchback, twilight mist pools deep inside the gorge while pine boughs creak in the rising night wind.",
+        "Dust motes drift through narrow shafts of moonlight slanting between timber waystation beams and hanging bridle brass.",
+        "Every mile marker along the Horsy Way tests nerve, balance, and quiet trust between rider and mount."
+      ];
+
+      for (let i = 0; i < clampedCount; i++) {
+        const origNum = i + 1;
+        const stageIdx = Math.min(4, Math.floor((i / clampedCount) * 5));
+        const ep = MODULAR_EPISODES[i % MODULAR_EPISODES.length];
+        const atm = atmosphericBeats[(i * 3) % atmosphericBeats.length];
+        const trans = origNum === clampedCount ? "FADE OUT." : TRANSITIONS[i % TRANSITIONS.length];
+
+        const actionText = `${ep.cue} ${ep.action} ${atm}`;
+        const dialogueText = ep.dialogue;
+
+        parts.push({
+          origIndex: origNum,
+          stageIndex: stageIdx,
+          stageTitle: TRAIL_STAGES[stageIdx],
+          location: ep.location,
+          action: actionText,
+          speaker: ep.speaker,
+          parenthetical: ep.parenthetical,
+          dialogue: dialogueText,
+          transition: trans
+        });
+      }
+
+      return rebuildPartOffsets(parts);
+    }
+
+    function rebuildPartOffsets(orderedList) {
+      let wordCursor = 1;
+      orderedList.forEach((part, idx) => {
+        part.displayNumber = idx + 1;
+        const rawCombined = `${part.location} ${part.action} ${part.speaker} ${part.parenthetical} ${part.dialogue} ${part.transition}`;
+        const wc = Math.max(25, rawCombined.trim().split(/\s+/).filter(Boolean).length);
+        part.wordCount = wc;
+        part.startWord = wordCursor;
+        part.endWord = wordCursor + wc - 1;
+        wordCursor += wc;
+      });
+      state.totalWords = wordCursor - 1;
+      return orderedList;
+    }
+
+    // Fisher-Yates Shuffle for Modular Script Parts
+    function shufflePartsSequence() {
+      const copy = [...state.canonicalParts];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      state.isShuffled = true;
+      state.partsList = rebuildPartOffsets(copy);
+      restoreOrderBtn.classList.remove("hidden");
+      shuffleOrderBadge.textContent = "SHUFFLED SEQUENCE";
+      shuffleOrderBadge.classList.add("text-amber-300", "border-amber-500/45");
+
+      renderScriptWindow(true);
+      renderPartsIndex();
+      jumpToPart(1, true);
+      showToast(`Shuffled all ${state.totalParts} parts into a new trail sequence!`);
+    }
+
+    function restoreChronologicalOrder() {
+      state.isShuffled = false;
+      state.partsList = rebuildPartOffsets([...state.canonicalParts]);
+      restoreOrderBtn.classList.add("hidden");
+      shuffleOrderBadge.textContent = "CHRONOLOGICAL ORDER";
+      shuffleOrderBadge.classList.remove("text-amber-300", "border-amber-500/45");
+
+      renderScriptWindow(true);
+      renderPartsIndex();
+      jumpToPart(1, true);
+      showToast(`Restored chronological order (${state.totalParts} parts)`);
+    }
+
+    // Format text with [HOOFBEAT], [LANTERN], [SADDLE], [TRAIL] badges + live search highlight
+    function formatScriptText(rawText, query) {
+      let hits = 0;
+      const qTrim = (query || "").trim();
+      const hasQuery = qTrim.length >= 2;
+      const safeRx = hasQuery ? qTrim.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") : "";
+
+      const highlightSegment = (plain) => {
+        const escaped = plain
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+        if (!hasQuery) return escaped;
+        const rx = new RegExp(`(${safeRx})`, "gi");
+        return escaped.replace(rx, (m) => {
+          hits++;
+          return `<mark class="search-hit">${m}</mark>`;
+        });
+      };
+
+      const withBadges = rawText.replace(/\[(HOOFBEAT|LANTERN|SADDLE|TRAIL)\]/g, (tag) => {
+        if (hasQuery && tag.toLowerCase().includes(qTrim.toLowerCase())) hits++;
+        return `<span class="trail-cue-tag">${tag}</span>`;
+      });
+
+      const chunks = withBadges.split(/(<span class="trail-cue-tag">\[(?:HOOFBEAT|LANTERN|SADDLE|TRAIL)\]<\/span>)/g);
+      const html = chunks.map(ch => {
+        if (ch.startsWith('<span class="trail-cue-tag">')) return ch;
+        return highlightSegment(ch);
+      }).join("");
+
+      return { html, hits };
+    }
+
+    function renderSinglePartHtml(part, query) {
+      const actFmt = formatScriptText(part.action, query);
+      const dlgFmt = formatScriptText(part.dialogue, query);
+      const slugFmt = formatScriptText(part.location, query);
+      const spkFmt = formatScriptText(part.speaker, query);
+      const totalHits = actFmt.hits + dlgFmt.hits + slugFmt.hits + spkFmt.hits;
+
+      const origBadge = state.isShuffled
+        ? `<span class="ml-2 text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">ORIG #${part.origIndex}</span>`
+        : "";
+
+      return {
+        hits: totalHits,
+        html: `
+          <section id="horsy-part-${part.displayNumber}" data-part="${part.displayNumber}"
+                   class="horsy-part-card py-6 px-3 sm:px-6 rounded-2xl border border-stone-800/65 bg-stone-900/25 mb-5 transition-colors duration-300">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 pb-2 mb-3 border-b border-stone-800/70">
+              <div class="font-bold uppercase tracking-wider text-amber-300 paper-slug text-sm sm:text-base">
+                PART ${part.displayNumber} — ${slugFmt.html} ${origBadge}
+              </div>
+              <span class="text-[11px] font-mono text-stone-500">
+                Words ${part.startWord.toLocaleString()}–${part.endWord.toLocaleString()}
+              </span>
+            </div>
+
+            <p class="text-stone-200 paper-text leading-relaxed mb-4">
+              ${actFmt.html}
+            </p>
+
+            <div class="max-w-xl mx-auto py-2 px-3 sm:px-6 rounded-xl bg-stone-950/35">
+              <div class="text-center font-bold uppercase tracking-widest text-amber-200 paper-cue text-sm sm:text-base">
+                ${spkFmt.html}
+              </div>
+              <div class="text-center italic text-xs sm:text-sm text-stone-400 paper-muted mb-1">
+                (${part.parenthetical})
+              </div>
+              <p class="text-stone-100 paper-text leading-relaxed">
+                ${dlgFmt.html}
+              </p>
+            </div>
+
+            <div class="text-right font-bold uppercase tracking-widest text-xs text-amber-400/80 paper-slug mt-3">
+              ${part.transition}
+            </div>
+          </section>
+        `
+      };
+    }
+
+    /**
+     * Windowed / Chunked Rendering Engine for 100–220 Parts:
+     * Renders active parts around the playhead (or all parts during live search)
+     * with lightweight proportional placeholders for offscreen parts so scrubbing is 60fps smooth.
+     */
+    function renderScriptWindow(forceRebuild = false) {
+      const centerPart = state.currentPart;
+      const qTrim = state.searchQuery.trim();
+      const isSearching = qTrim.length >= 2;
+
+      const minPart = isSearching ? 1 : Math.max(1, centerPart - 10);
+      const maxPart = isSearching ? state.totalParts : Math.min(state.totalParts, centerPart + 10);
+
+      if (
+        !forceRebuild &&
+        !isSearching &&
+        state.renderedWindow.minPart === minPart &&
+        state.renderedWindow.maxPart === maxPart
+      ) {
+        return;
+      }
+
+      state.renderedWindow = { minPart, maxPart };
+      let totalSearchHits = 0;
+
+      const html = state.partsList.map(part => {
+        const inWindow = part.displayNumber >= minPart && part.displayNumber <= maxPart;
+        if (!inWindow) {
+          return `
+            <div data-part-placeholder="${part.displayNumber}" data-part="${part.displayNumber}"
+                 style="min-height: 290px;"
+                 class="horsy-part-placeholder py-5 px-4 mb-5 rounded-2xl border border-stone-800/35 flex items-center justify-between opacity-50">
+              <span class="text-xs font-mono uppercase tracking-wider text-amber-400/75">
+                PART ${part.displayNumber} — ${part.location}
+              </span>
+              <span class="text-[11px] font-mono text-stone-500">
+                Words ${part.startWord.toLocaleString()}–${part.endWord.toLocaleString()}
+              </span>
+            </div>
+          `;
+        }
+
+        const rendered = renderSinglePartHtml(part, state.searchQuery);
+        totalSearchHits += rendered.hits;
+        return rendered.html;
+      }).join("");
+
+      scriptStage.innerHTML = html;
+      searchHitBadge.textContent = isSearching ? `${totalSearchHits}` : "";
+    }
+
+    // Render Trail Stage Milestone Ticks along Horsy Way Scrubber
+    function renderTrailMilestones() {
+      const ticks = [];
+      for (let s = 1; s <= 4; s++) {
+        const pct = (s / 5) * 100;
+        ticks.push(
+          `<div style="left:${pct}%" class="absolute top-0 bottom-0 w-0.5 bg-amber-200/70" title="${TRAIL_STAGES[s]}"></div>`
+        );
+      }
+      trailMilestonesTrack.innerHTML = ticks.join("");
+    }
+
+    // Render 100–220 Parts Index inside Slide-Out Navigator Drawer
+    function renderPartsIndex() {
+      partsIndexList.innerHTML = state.partsList.map(part => {
+        const isActive = part.displayNumber === state.currentPart;
+        return `
+          <button data-jump-part="${part.displayNumber}"
+                  class="part-jump-item w-full text-left p-2.5 rounded-xl border transition ${
+                    isActive
+                      ? "bg-amber-500/18 border-amber-400/60 text-amber-200"
+                      : "bg-stone-900/65 border-stone-800/80 hover:bg-stone-800/80 text-stone-300"
+                  }">
+            <div class="flex items-center justify-between text-[10px] font-mono text-amber-400 mb-0.5">
+              <span>PART ${part.displayNumber}${state.isShuffled ? ` (ORIG #${part.origIndex})` : ""}</span>
+              <span>w.${part.startWord.toLocaleString()}</span>
+            </div>
+            <div class="text-xs font-semibold truncate">${part.location}</div>
+          </button>
+        `;
+      }).join("");
+
+      partsIndexList.querySelectorAll(".part-jump-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const targetPart = parseInt(btn.getAttribute("data-jump-part"), 10);
+          jumpToPart(targetPart, true);
+          closeDrawer();
+        });
+      });
+    }
+
+    // Update LIGHT DOWN Dimmer & Ambient Twilight Stage
+    function applyLightDownLevel(level) {
+      const clamped = Math.max(0, Math.min(100, Math.round(level)));
+      state.lightLevel = clamped;
+      lightDownSlider.value = clamped;
+
+      let moodLabel = "Lantern";
+      if (clamped >= 85) moodLabel = "Dusk";
+      else if (clamped >= 55) moodLabel = "Lantern";
+      else if (clamped >= 25) moodLabel = "Moonlit";
+      else moodLabel = "Midnight";
+
+      lightDownReadout.textContent = `${clamped}% ${moodLabel}`;
+      headerLightLabel.textContent = `LIGHT ${clamped}%`;
+      coverLightBadge.textContent = `LIGHT DOWN: ${clamped}% (${moodLabel.toUpperCase()})`;
+
+      // Veil opacity increases smoothly as Light Down decreases (100% -> 0.04, 0% -> 0.68)
+      const veilOpacity = (0.04 + ((100 - clamped) / 100) * 0.64).toFixed(3);
+      lightDownVeil.style.backgroundColor = `rgba(3, 5, 12, ${veilOpacity})`;
+
+      // Top horizon glow shifts from warm sunset amber (100%) to cool indigo moonlight (0%)
+      const amberStrength = ((clamped / 100) * 0.28).toFixed(3);
+      const indigoStrength = (((100 - clamped) / 100) * 0.22).toFixed(3);
+      ambientTwilightCanvas.style.background = `radial-gradient(circle at 50% 0%, rgba(217, 119, 6, ${amberStrength}) 0%, rgba(30, 27, 75, ${indigoStrength}) 52%, #070606 100%)`;
+    }
+
+    // Step Light Down through preset twilight levels on quick button click
+    function stepLightDown() {
+      const presets = [100, 75, 45, 20, 5];
+      let next = presets.find(p => p < state.lightLevel - 3);
+      if (next === undefined) next = 100;
+      applyLightDownLevel(next);
+      showToast(`Light Down: ${next}%`);
+    }
+
+    // Synchronize Horsy Way Scrubber, Galloping Horse Rider, Counters & Active Part Highlight
+    function syncPlayheadToPart(partNumber, shouldScroll = false) {
+      const clampedPart = Math.max(1, Math.min(state.totalParts, Math.round(partNumber)));
+      state.currentPart = clampedPart;
+
+      renderScriptWindow(false);
+
+      const partObj = state.partsList[clampedPart - 1] || state.partsList[0];
+      const pct = ((clampedPart - 1) / Math.max(1, state.totalParts - 1)) * 100;
+      const pctRound = Math.round(pct);
+
+      horsyScrubber.max = state.totalParts;
+      horsyScrubber.value = clampedPart;
+      horsyTrackFill.style.width = `${pct}%`;
+      horseThumbRider.style.left = `${pct}%`;
+
+      scrubberMaxPartLabel.textContent = `Part ${state.totalParts}`;
+      livePartCounter.textContent = `PART ${clampedPart} / ${state.totalParts}`;
+      mobilePartCounter.textContent = `PART ${clampedPart} / ${state.totalParts}`;
+
+      const wordFmt = `${partObj.startWord.toLocaleString()} / ${state.totalWords.toLocaleString()} WORDS`;
+      liveWordCounter.textContent = wordFmt;
+      mobileWordCounter.textContent = wordFmt;
+
+      progressPctBadge.textContent = `${pctRound}%`;
+      mobilePctBadge.textContent = `${pctRound}%`;
+
+      trailStageBadge.textContent = partObj.stageTitle;
+      activePartSubtitle.textContent = `Part ${clampedPart} / ${state.totalParts} — ${partObj.location}`;
+
+      // Highlight Active Part Card
+      document.querySelectorAll(".horsy-part-card").forEach(el => {
+        el.classList.remove("border-amber-400/75", "bg-amber-500/10", "ring-1", "ring-amber-400/40");
+      });
+
+      const activeCard = document.getElementById(`horsy-part-${clampedPart}`);
+      if (activeCard) {
+        activeCard.classList.add("border-amber-400/75", "bg-amber-500/10", "ring-1", "ring-amber-400/40");
+        if (shouldScroll && state.followPlayhead) {
+          const targetTop = activeCard.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.34;
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: state.isPlaying ? "auto" : "smooth"
+          });
+        }
+      }
+    }
+
+    function jumpToPart(partNumber, smoothScroll = true) {
+      syncPlayheadToPart(partNumber, smoothScroll);
+      renderPartsIndex();
+    }
+
+    // Reconfigure Total Parts Count (100 to 220)
+    function updateTotalPartsCount(newCount) {
+      const clamped = Math.max(100, Math.min(220, parseInt(newCount, 10) || 160));
+      state.totalParts = clamped;
+      state.canonicalParts = generateCanonicalParts(clamped);
+      state.isShuffled = false;
+      state.partsList = rebuildPartOffsets([...state.canonicalParts]);
+
+      restoreOrderBtn.classList.add("hidden");
+      shuffleOrderBadge.textContent = "CHRONOLOGICAL ORDER";
+      shuffleOrderBadge.classList.remove("text-amber-300", "border-amber-500/45");
+
+      partsCountSlider.value = clamped;
+      partsCountValue.textContent = `${clamped} PTS`;
+      coverPartsBadge.textContent = `${clamped} PARTS (100–220)`;
+      coverWordsBadge.textContent = `${state.totalWords.toLocaleString()} WORDS`;
+      drawerMetaSummary.textContent = `${clamped} Parts • Frontier-Noir Screenplay`;
+
+      if (state.currentPart > clamped) state.currentPart = clamped;
+      renderScriptWindow(true);
+      renderPartsIndex();
+      syncPlayheadToPart(state.currentPart, false);
+    }
+
+    // Teleprompter Playback Loop
+    function toggleTeleprompter(forceState) {
+      state.isPlaying = typeof forceState === "boolean" ? forceState : !state.isPlaying;
+
+      if (state.isPlaying) {
+        if (state.currentPart >= state.totalParts) {
+          state.currentPart = 1;
+        }
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+        playBtnLabel.textContent = "HALT TRAIL";
+        horseThumbRider.classList.add("horse-galloping");
+        playheadGuide.classList.toggle("hidden", !state.followPlayhead);
+        state.lastFrameTime = performance.now();
+        requestAnimationFrame(teleprompterStep);
+        showToast(`Riding Horsy Way — ${state.wpm} WPM`);
+      } else {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+        playBtnLabel.textContent = "PLAY TRAIL";
+        horseThumbRider.classList.remove("horse-galloping");
+        playheadGuide.classList.add("hidden");
+        state.lastFrameTime = null;
+      }
+    }
+
+    function teleprompterStep(now) {
+      if (!state.isPlaying) return;
+
+      if (state.lastFrameTime !== null && !state.isScrubbing) {
+        const dtSec = (now - state.lastFrameTime) / 1000;
+        const wordsPerSec = state.wpm / 60;
+        state.wordProgressAccumulator += wordsPerSec * dtSec;
+
+        const currentPartObj = state.partsList[state.currentPart - 1] || state.partsList[0];
+        if (state.wordProgressAccumulator >= currentPartObj.wordCount) {
+          state.wordProgressAccumulator -= currentPartObj.wordCount;
+          if (state.currentPart >= state.totalParts) {
+            syncPlayheadToPart(state.totalParts, true);
+            toggleTeleprompter(false);
+            showToast(`Reached Part ${state.totalParts} — End of Horsy Way.`);
+            return;
+          } else {
+            syncPlayheadToPart(state.currentPart + 1, true);
+          }
+        }
+      }
+
+      state.lastFrameTime = now;
+      requestAnimationFrame(teleprompterStep);
+    }
+
+    // Sync Scrubber when User Manually Scrolls
+    let scrollRaf = null;
+    window.addEventListener("scroll", () => {
+      if (state.isPlaying || state.isScrubbing || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        const probeY = window.innerHeight * 0.36;
+        const nodes = document.querySelectorAll(".horsy-part-card, .horsy-part-placeholder");
+        let detectedPart = null;
+
+        for (let i = 0; i < nodes.length; i++) {
+          const r = nodes[i].getBoundingClientRect();
+          if (r.top <= probeY && r.bottom >= probeY * 0.25) {
+            detectedPart = parseInt(nodes[i].getAttribute("data-part"), 10);
+            break;
+          }
+        }
+
+        if (detectedPart !== null && detectedPart !== state.currentPart) {
+          syncPlayheadToPart(detectedPart, false);
+        }
+        scrollRaf = null;
+      });
+    }, { passive: true });
+
+    // Horsy Way Scrubber Slider Events
+    horsyScrubber.addEventListener("input", (e) => {
+      state.isScrubbing = true;
+      horseThumbRider.classList.add("horse-galloping");
+      syncPlayheadToPart(parseInt(e.target.value, 10), true);
+    });
+    horsyScrubber.addEventListener("change", () => {
+      state.isScrubbing = false;
+      if (!state.isPlaying) horseThumbRider.classList.remove("horse-galloping");
+      renderPartsIndex();
+    });
+
+    // Parts Count Slider (100–220) Events
+    partsCountSlider.addEventListener("input", (e) => {
+      const val = parseInt(e.target.value, 10);
+      partsCountValue.textContent = `${val} PTS`;
+    });
+    partsCountSlider.addEventListener("change", (e) => {
+      const val = parseInt(e.target.value, 10);
+      updateTotalPartsCount(val);
+      showToast(`Script configured to ${val} parts`);
+    });
+
+    // Shuffle & Restore Buttons
+    document.getElementById("headerShuffleBtn").addEventListener("click", shufflePartsSequence);
+    document.getElementById("bottomShuffleBtn").addEventListener("click", shufflePartsSequence);
+    document.getElementById("footerShuffleBtn").addEventListener("click", shufflePartsSequence);
+    restoreOrderBtn.addEventListener("click", restoreChronologicalOrder);
+
+    // Light Down Dimmer Controls
+    lightDownSlider.addEventListener("input", (e) => {
+      applyLightDownLevel(parseInt(e.target.value, 10));
+    });
+    document.getElementById("headerLightDownBtn").addEventListener("click", stepLightDown);
+    document.getElementById("bottomLightDownBtn").addEventListener("click", stepLightDown);
+
+    // Bottom Teleprompter Controls
+    teleprompterPlayBtn.addEventListener("click", () => toggleTeleprompter());
+
+    wpmSlider.addEventListener("input", (e) => {
+      state.wpm = parseInt(e.target.value, 10);
+      wpmDisplay.textContent = `${state.wpm} WPM`;
+    });
+
+    followToggleBtn.addEventListener("click", () => {
+      state.followPlayhead = !state.followPlayhead;
+      followStatusDot.classList.toggle("bg-amber-300", state.followPlayhead);
+      followStatusDot.classList.toggle("bg-stone-600", !state.followPlayhead);
+      followToggleBtn.classList.toggle("opacity-60", !state.followPlayhead);
+      playheadGuide.classList.toggle("hidden", !(state.isPlaying && state.followPlayhead));
+      showToast(state.followPlayhead ? "Follow Playhead Locked" : "Follow Playhead Unlocked");
+    });
+
+    document.getElementById("prevPartBtn").addEventListener("click", () => {
+      jumpToPart(Math.max(1, state.currentPart - 1), true);
+    });
+    document.getElementById("nextPartBtn").addEventListener("click", () => {
+      jumpToPart(Math.min(state.totalParts, state.currentPart + 1), true);
+    });
+    document.getElementById("rewindPartOneBtn").addEventListener("click", () => {
+      jumpToPart(1, true);
+    });
+
+    // Slide-Out Drawer, Search, Theme & Font Size Controls
+    function openDrawer() {
+      renderPartsIndex();
+      renderBookmarks();
+      navigatorDrawer.classList.remove("-translate-x-full");
+      drawerBackdrop.classList.remove("hidden");
+    }
+    function closeDrawer() {
+      navigatorDrawer.classList.add("-translate-x-full");
+      drawerBackdrop.classList.add("hidden");
+    }
+
+    document.getElementById("drawerToggleBtn").addEventListener("click", openDrawer);
+    document.getElementById("openToolsBtn").addEventListener("click", openDrawer);
+    document.getElementById("drawerCloseBtn").addEventListener("click", closeDrawer);
+    drawerBackdrop.addEventListener("click", closeDrawer);
+
+    liveSearchInput.addEventListener("input", (e) => {
+      state.searchQuery = e.target.value;
+      renderScriptWindow(true);
+      syncPlayheadToPart(state.currentPart, false);
+    });
+
+    document.getElementById("themeToggleBtn").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      showToast(isDark ? "Cinema Dark Theme" : "Warm Parchment Theme");
+    });
+
+    function adjustScriptFont(delta) {
+      state.fontSize = Math.max(13, Math.min(22, state.fontSize + delta));
+      scriptStage.style.fontSize = `${state.fontSize}px`;
+      showToast(`Script Size: ${state.fontSize}px`);
+    }
+    document.getElementById("fontSmallerBtn").addEventListener("click", () => adjustScriptFont(-1));
+    document.getElementById("fontLargerBtn").addEventListener("click", () => adjustScriptFont(1));
+
+    // Persistent Trail Bookmarks
+    function renderBookmarks() {
+      const panel = document.getElementById("bookmarksPanel");
+      const list = document.getElementById("bookmarksList");
+      if (!state.bookmarks.length) {
+        panel.classList.add("hidden");
+        return;
+      }
+      panel.classList.remove("hidden");
+      list.innerHTML = state.bookmarks.map((bm, i) => `
+        <div class="flex items-center justify-between bg-stone-900 px-2.5 py-1.5 rounded-lg text-xs">
+          <button data-bm-part="${bm.part}" class="bm-jump text-left text-stone-200 hover:text-amber-300 truncate flex-1">
+            Part ${bm.part} — ${bm.label}
+          </button>
+          <button data-bm-del="${i}" class="bm-del text-stone-500 hover:text-rose-400 ml-2 font-bold">×</button>
+        </div>
+      `).join("");
+
+      list.querySelectorAll(".bm-jump").forEach(btn => {
+        btn.addEventListener("click", () => {
+          jumpToPart(parseInt(btn.getAttribute("data-bm-part"), 10), true);
+          closeDrawer();
+        });
+      });
+      list.querySelectorAll(".bm-del").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.getAttribute("data-bm-del"), 10);
+          state.bookmarks.splice(idx, 1);
+          localStorage.setItem("shuffle_horsy_way_bookmarks", JSON.stringify(state.bookmarks));
+          renderBookmarks();
+        });
+      });
+    }
+
+    document.getElementById("bookmarkBtn").addEventListener("click", () => {
+      const currentObj = state.partsList[state.currentPart - 1] || state.partsList[0];
+      state.bookmarks.unshift({
+        part: state.currentPart,
+        label: currentObj.location
+      });
+      state.bookmarks = state.bookmarks.slice(0, 8);
+      localStorage.setItem("shuffle_horsy_way_bookmarks", JSON.stringify(state.bookmarks));
+      renderBookmarks();
+      showToast(`Bookmarked Part ${state.currentPart}`);
+    });
+
+    // Spacebar Shortcut for Play/Pause
+    window.addEventListener("keydown", (e) => {
+      if (document.activeElement === liveSearchInput) return;
+      if (e.code === "Space") {
+        e.preventDefault();
+        toggleTeleprompter();
+      }
+    });
+
+    // Boot Application
+    window.addEventListener("DOMContentLoaded", () => {
+      renderTrailMilestones();
+      updateTotalPartsCount(160);
+      applyLightDownLevel(75);
+      renderBookmarks();
+    });
+  </script>
+</body>
+</html>
