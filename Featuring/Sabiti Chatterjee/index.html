@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yours Is Beauty — Sabitri Chatterjee Archive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            velvet: '#120b14',
+            plum: '#1e1121',
+            burgundy: '#4c1428',
+            gold: '#e5b567',
+            amberGlow: '#f6d38b',
+            parchment: '#fbf6ed',
+            ivory: '#fffdf9',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom aesthetic tokens & smooth motion for classic cinema archive */
+    body {
+      background-color: #120b14;
+      color: #fbf6ed;
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif-display {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Subtle film grain & radial amber aura */
+    .cinema-aura {
+      background:
+        radial-gradient(circle at 78% 22%, rgba(229, 181, 103, 0.22), transparent 45%),
+        radial-gradient(circle at 18% 75%, rgba(126, 29, 63, 0.28), transparent 52%),
+        linear-gradient(165deg, #120b14 0%, #1c0f1f 52%, #120912 100%);
+    }
+
+    .gold-border-frame {
+      box-shadow:
+        0 0 0 1px rgba(229, 181, 103, 0.35),
+        0 24px 60px -15px rgba(0, 0, 0, 0.75),
+        inset 0 0 40px rgba(229, 181, 103, 0.08);
+    }
+
+    .glass-card {
+      background: rgba(33, 18, 37, 0.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 181, 103, 0.2);
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .slide-enter {
+      animation: slideFadeIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes haloPulse {
+      0%, 100% {
+        opacity: 0.55;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(1.03);
+      }
+    }
+
+    .halo-animate {
+      animation: haloPulse 6s ease-in-out infinite;
+    }
+
+    /* Custom scrollbar for smooth reading */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #120b14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(229, 181, 103, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(229, 181, 103, 0.6);
+    }
+  </style>
+</head>
+<body class="cinema-aura min-h-screen selection:bg-gold/30 selection:text-amberGlow">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 border-b border-gold/20 bg-velvet/85 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
+      <a href="#top" onclick="setActiveTab('archive')" class="flex items-center gap-3 group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-gold/50 bg-burgundy/60 font-serif-display text-xl italic text-amberGlow transition group-hover:scale-105">
+          S
+        </span>
+        <div>
+          <p class="font-serif-display text-lg font-semibold tracking-wide text-amberGlow leading-none">
+            Savitri Chatterjee
+          </p>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-parchment/60 mt-0.5">
+            Living Cinema Archive
+          </p>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Archive Navigation" class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        <button id="nav-archive" onclick="setActiveTab('archive')"
+          class="nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer bg-gold text-velvet shadow">
+          Archive &amp; Story
+        </button>
+        <button id="nav-filmography" onclick="setActiveTab('filmography')"
+          class="nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer text-parchment/80 hover:bg-white/10 hover:text-amberGlow">
+          Filmography &amp; Goddess
+        </button>
+        <button id="nav-thoughts" onclick="setActiveTab('thoughts')"
+          class="nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer text-parchment/80 hover:bg-white/10 hover:text-amberGlow">
+          2,000 Thoughts Slide
+        </button>
+        <button id="nav-featuring" onclick="setActiveTab('featuring')"
+          class="nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer text-parchment/80 hover:bg-white/10 hover:text-amberGlow">
+          Featuring
+        </button>
+        <button onclick="openThoughtModal()"
+          class="rounded-full border border-gold/50 bg-burgundy/60 px-3.5 py-2 text-xs sm:text-sm font-medium text-amberGlow transition hover:bg-gold hover:text-velvet cursor-pointer">
+          Open Slide Modal
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Charismatic Hero Banner: "Yours Is Beauty" -->
+  <section id="top" class="relative overflow-hidden border-b border-gold/15 pt-8 pb-14 sm:pt-12 sm:pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
+
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-plum/80 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-amberGlow">
+            <span>Born 1937 · Comilla &amp; Tollygunge</span>
+            <span class="text-gold/60">✦</span>
+            <span>Six Decades of Grace</span>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-serif-display italic text-xl sm:text-2xl text-gold/90 tracking-wide">
+              Charismatic · Luminous · Enduring
+            </p>
+            <h1 class="font-serif-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-ivory leading-[0.95]">
+              Yours Is <span class="bg-gradient-to-r from-amberGlow via-gold to-[#d68c45] bg-clip-text text-transparent">Beauty</span>
+            </h1>
+          </div>
+
+          <p class="max-w-2xl text-base sm:text-lg leading-relaxed text-parchment/85">
+            An interactive archive honoring <strong class="text-ivory font-semibold">Savitri Chatterjee</strong>—whose warmth, razor-sharp comic timing, tender vulnerability, and unshakeable self-respect made her a screen goddess of Bengali cinema. Explore her biography, life philosophy, filmography, artistic lineage, reflection on dignity versus exploitation, and a complete deck of <strong class="text-amberGlow">2,000 thoughts</strong> in slide and modal view.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="setActiveTab('thoughts'); openThoughtModal();"
+              class="rounded-full bg-gradient-to-r from-amberGlow to-gold px-6 py-3 text-sm font-semibold text-velvet shadow-lg shadow-gold/20 transition hover:brightness-105 cursor-pointer">
+              Launch 2,000 Thoughts Modal
+            </button>
+            <button onclick="setActiveTab('filmography')"
+              class="rounded-full border border-gold/45 bg-plum/70 px-6 py-3 text-sm font-medium text-parchment transition hover:border-gold hover:text-amberGlow cursor-pointer">
+              Explore Filmography &amp; Screen Goddess
+            </button>
+            <a href="#philosophy-section" onclick="setActiveTab('archive')"
+              class="rounded-full px-4 py-3 text-sm font-medium text-gold/90 underline-offset-4 hover:underline">
+              Read Her Philosophy
+            </a>
+          </div>
+
+          <!-- Quick Archive Metrics -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+            <div class="glass-card rounded-2xl p-3.5">
+              <p class="font-serif-display text-2xl sm:text-3xl font-bold text-amberGlow">60+ Yrs</p>
+              <p class="text-xs text-parchment/70 mt-0.5">Stage, Film &amp; TV</p>
+            </div>
+            <div class="glass-card rounded-2xl p-3.5">
+              <p class="font-serif-display text-2xl sm:text-3xl font-bold text-amberGlow">2,000</p>
+              <p class="text-xs text-parchment/70 mt-0.5">Curated Thoughts</p>
+            </div>
+            <div class="glass-card rounded-2xl p-3.5">
+              <p class="font-serif-display text-2xl sm:text-3xl font-bold text-amberGlow">Padma Shri</p>
+              <p class="text-xs text-parchment/70 mt-0.5">&amp; Banga Bibhushan</p>
+            </div>
+            <div class="glass-card rounded-2xl p-3.5">
+              <p class="font-serif-display text-2xl sm:text-3xl font-bold text-amberGlow">Rebirth</p>
+              <p class="text-xs text-parchment/70 mt-0.5">Timeless Screen Grace</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Portrait ("Screen Goddess" Bespoke SVG Art Frame) -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md rounded-3xl border border-gold/40 bg-plum/80 p-4 gold-border-frame">
+            <div class="halo-animate pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-burgundy/40 via-gold/20 to-amberGlow/25 blur-xl"></div>
+
+            <div class="relative overflow-hidden rounded-2xl border border-gold/30 bg-[#1a0d1c]">
+              <!-- Custom SVG Portrait of Sabitri Chatterjee ("Screen Goddess" Homage) -->
+              <svg viewBox="0 0 420 520" class="h-auto w-full block" role="img"
+                aria-label="Artistic golden-hour portrait illustration of Sabitri Chatterjee as a charismatic screen goddess">
+                <defs>
+                  <radialGradient id="bgGlow" cx="50%" cy="38%" r="60%">
+                    <stop offset="0%" stop-color="#691c37" />
+                    <stop offset="55%" stop-color="#2b122b" />
+                    <stop offset="100%" stop-color="#110812" />
+                  </radialGradient>
+                  <linearGradient id="sariGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f8dc9c" />
+                    <stop offset="48%" stop-color="#dfa24b" />
+                    <stop offset="100%" stop-color="#8c4a1b" />
+                  </linearGradient>
+                  <linearGradient id="blouseWine" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#7c1d3e" />
+                    <stop offset="100%" stop-color="#3b0c1d" />
+                  </linearGradient>
+                  <linearGradient id="skinWarm" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f4c79e" />
+                    <stop offset="70%" stop-color="#df9e71" />
+                    <stop offset="100%" stop-color="#b9754c" />
+                  </linearGradient>
+                  <linearGradient id="haloGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#e5b567" stop-opacity="0" />
+                    <stop offset="50%" stop-color="#f6d38b" stop-opacity="0.7" />
+                    <stop offset="100%" stop-color="#e5b567" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Backdrop -->
+                <rect width="420" height="520" fill="url(#bgGlow)" />
+
+                <!-- Celestial Cinema Halo & Rays -->
+                <circle cx="210" cy="185" r="138" fill="none" stroke="#e5b567" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="4 6" />
+                <circle cx="210" cy="185" r="118" fill="none" stroke="#f6d38b" stroke-opacity="0.35" stroke-width="1" />
+                <ellipse cx="210" cy="185" rx="150" ry="34" fill="url(#haloGrad)" transform="rotate(-12 210 185)" />
+
+                <!-- Ornamental Corner Motifs -->
+                <path d="M24 56 L24 24 L56 24" fill="none" stroke="#e5b567" stroke-opacity="0.6" stroke-width="1.5" />
+                <path d="M364 24 L396 24 L396 56" fill="none" stroke="#e5b567" stroke-opacity="0.6" stroke-width="1.5" />
+                <path d="M24 464 L24 496 L56 496" fill="none" stroke="#e5b567" stroke-opacity="0.6" stroke-width="1.5" />
+                <path d="M364 496 L396 496 L396 464" fill="none" stroke="#e5b567" stroke-opacity="0.6" stroke-width="1.5" />
+
+                <!-- Hair Volume & Classic Bun -->
+                <circle cx="210" cy="148" r="76" fill="#180d18" />
+                <path d="M134 172 C128 112, 165 70, 212 70 C262 70, 294 114, 286 176 C282 204, 268 222, 256 232 L164 232 C150 218, 138 198, 134 172 Z" fill="#1b0e1b" />
+                <!-- Hair Sheen -->
+                <path d="M156 112 C180 86, 236 86, 264 116" fill="none" stroke="#e5b567" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" />
+
+                <!-- Neck & Necklace -->
+                <path d="M190 228 L190 272 C190 284, 230 284, 230 272 L230 228 Z" fill="url(#skinWarm)" />
+                <path d="M174 268 Q210 296 246 268" fill="none" stroke="#f6d38b" stroke-width="2.5" />
+                <circle cx="210" cy="285" r="5" fill="#f6d38b" />
+
+                <!-- Draping Saree & Shoulder Pallu -->
+                <path d="M92 520 C102 390, 132 305, 186 276 L234 276 C288 305, 318 390, 328 520 Z" fill="url(#blouseWine)" />
+                <!-- Golden Saree Border / Pallu -->
+                <path d="M126 520 C138 415, 168 335, 234 276 L278 282 C232 350, 212 430, 206 520 Z" fill="url(#sariGold)" fill-opacity="0.92" />
+                <path d="M144 520 C156 422, 184 345, 246 280" fill="none" stroke="#fff4d2" stroke-width="2" stroke-opacity="0.75" />
+                <!-- Subtle Zari Motifs -->
+                <circle cx="196" cy="365" r="3" fill="#fff4d2" fill-opacity="0.7" />
+                <circle cx="182" cy="405" r="3" fill="#fff4d2" fill-opacity="0.7" />
+                <circle cx="170" cy="445" r="3" fill="#fff4d2" fill-opacity="0.7" />
+
+                <!-- Face Sculpt -->
+                <path d="M158 156 C158 114, 182 94, 210 94 C238 94, 262 114, 262 156 C262 198, 238 234, 210 234 C182 234, 158 198, 158 156 Z" fill="url(#skinWarm)" />
+
+                <!-- Bindi (Classic Bengali Crimson-Gold) -->
+                <circle cx="210" cy="144" r="4.3" fill="#b91c3c" />
+                <circle cx="210" cy="144" r="1.5" fill="#f6d38b" />
+
+                <!-- Expressive Brows & Eyes -->
+                <path d="M174 152 Q187 144 199 151" fill="none" stroke="#23111f" stroke-width="2.6" stroke-linecap="round" />
+                <path d="M221 151 Q233 144 246 152" fill="none" stroke="#23111f" stroke-width="2.6" stroke-linecap="round" />
+
+                <!-- Left Eye -->
+                <ellipse cx="187" cy="161" rx="10" ry="5.5" fill="#fffdf9" />
+                <circle cx="187" cy="161" r="4" fill="#23111f" />
+                <circle cx="188.5" cy="159.5" r="1.3" fill="#ffffff" />
+                <path d="M176 161 Q187 155 198 161" fill="none" stroke="#180c16" stroke-width="2.2" />
+
+                <!-- Right Eye -->
+                <ellipse cx="233" cy="161" rx="10" ry="5.5" fill="#fffdf9" />
+                <circle cx="233" cy="161" r="4" fill="#23111f" />
+                <circle cx="234.5" cy="159.5" r="1.3" fill="#ffffff" />
+                <path d="M222 161 Q233 155 244 161" fill="none" stroke="#180c16" stroke-width="2.2" />
+
+                <!-- Nose & Gentle Charismatic Smile -->
+                <path d="M210 156 L207 181 Q211 185 215 182" fill="none" stroke="#9e5b37" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M194 198 Q210 211 226 198" fill="none" stroke="#8f2438" stroke-width="3" stroke-linecap="round" />
+                <path d="M195 198 Q210 205 225 198" fill="none" stroke="#d9536f" stroke-width="1.3" stroke-linecap="round" />
+
+                <!-- Earrings -->
+                <circle cx="157" cy="174" r="5" fill="#f6d38b" />
+                <circle cx="263" cy="174" r="5" fill="#f6d38b" />
+
+                <!-- Title Plaque Inside Frame -->
+                <rect x="44" y="454" width="332" height="44" rx="10" fill="#120b14" fill-opacity="0.86" stroke="#e5b567" stroke-opacity="0.4" />
+                <text x="210" y="474" text-anchor="middle" fill="#f6d38b" font-family="Cormorant Garamond, serif" font-size="18" font-weight="700" letter-spacing="1.5">
+                  SAVITRI CHATTERJEE
+                </text>
+                <text x="210" y="490" text-anchor="middle" fill="#fbf6ed" fill-opacity="0.72" font-family="Inter, sans-serif" font-size="9.5" letter-spacing="2.2">
+                  SCREEN GODDESS OF BENGALI CINEMA
+                </text>
+              </svg>
+            </div>
+
+            <div class="mt-3 flex items-center justify-between px-1 text-xs text-parchment/75">
+              <span>Golden-Hour Goddess Portrait</span>
+              <button onclick="setActiveTab('filmography')" class="text-amberGlow hover:underline cursor-pointer">
+                Goddess &amp; Rebirth Notes →
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- TAB 4: FEATURING (Showcasing Sabitri Chatterjee's Stardom & Impact) -->
+    <section id="view-featuring" class="tab-view space-y-10">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-8">
+        <div class="max-w-3xl space-y-3">
+          <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+            Featuring · Stardom · Impact
+          </div>
+          <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+            Sabitri Chatterjee — The Eternal Screen Goddess
+          </h2>
+          <p class="text-parchment/85 leading-relaxed">
+            Sabitri Chatterjee’s stardom shines as a beacon of timeless elegance, unmatched talent, and undeniable screen presence. From her breakout roles in golden-era Bengali cinema to her enduring influence across decades, she remains an icon of grace, artistic integrity, and authentic performance. Her work continues to inspire new generations of actors and film lovers who value substance over spectacle.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              1. Golden-Era Breakthrough
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              Discovered by Bhanu Bandyopadhyay on stage, Sabitri’s transition to cinema was marked by an immediate, electric connection with audiences. Her natural charisma and razor-sharp comic timing set her apart from her peers.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              2. Unforgettable Screen Presence
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              Whether delivering a subtle glance or a boisterous laugh, her performances carry a weight and warmth that transcends the frame. Co-stars and directors alike have praised her professionalism and artistic depth.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              3. Enduring Legacy & Influence
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              Decades after her peak, Sabitri’s films are still celebrated on television and streaming platforms. Her influence extends beyond performance—she established a standard of dignity and craft that continues to shape Bengali cinema’s identity.
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-gold/25 bg-gradient-to-r from-plum via-burgundy to-velvet p-6 sm:p-10 mt-6">
+          <p class="font-serif-display italic text-lg text-amberGlow">
+            “She does not merely act—she becomes the character, she becomes the story, and in doing so, she becomes unforgettable.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Main Interactive Content Views -->
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+
+    <!-- TAB 1: ARCHIVE & STORY (Biography, Philosophy, Dignity vs Exploitation, Family/Artistic Tree, Inspiration) -->
+    <section id="view-archive" class="tab-view space-y-16">
+
+      <!-- Biography & Life Journey -->
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 space-y-5">
+          <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+            Biography
+          </div>
+          <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+            From Comilla &amp; Tollygunge to an Unforgettable Screen
+          </h2>
+          <p class="text-parchment/85 leading-relaxed">
+            Born on February 21, 1937 in Comilla (in present-day Bangladesh), Sabitri Chatterjee grew up in a closely knit household shaped by her stationmaster father’s quiet discipline and the upheaval of the 1947 Partition, which brought the family to Tollygunge in Kolkata. Stepping into acting out of heartfelt necessity and devotion rather than inherited glamour, she first caught the eye of comedian and actor Bhanu Bandyopadhyay on stage before blossoming into one of Bengali cinema’s most beloved performers.
+          </p>
+          <p class="text-parchment/85 leading-relaxed">
+            Whether playing a spirited, sharp-witted woman who punctures pompous pride with a single glance, a tender companion in romantic dramas, or a deeply human figure in contemporary cinema, she brought lived truth to every frame. Her candid memoir <em>Satyi Sabitri</em> reflects that same unfiltered honesty—a life lived without pretense.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+              Honors &amp; Milestones
+            </div>
+            <h3 class="font-serif-display text-2xl sm:text-3xl font-bold text-ivory">
+              A Lifetime of Recognition
+            </h3>
+            <ul class="space-y-3 text-sm sm:text-base text-parchment/85">
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amberGlow"></span>
+                <span><strong class="text-ivory">Padma Shri (2014)</strong> &amp; <strong class="text-ivory">Banga Bibhushan (2013)</strong> for towering contributions to Indian cinema and culture.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amberGlow"></span>
+                <span><strong class="text-ivory">Sangeet Natak Akademi Award (1999)</strong> celebrating her enduring stage and theatrical artistry.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amberGlow"></span>
+                <span><strong class="text-ivory">Two-Time BFJA Awardee</strong> (<em>Kal Tumi Aleya</em>, <em>Malyadan</em>) and <strong class="text-ivory">D.Litt.</strong> from Kalyani University (2012).</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-gold/25 bg-velvet/70 p-4">
+            <p class="font-serif-display italic text-lg text-amberGlow">
+              “Real grace doesn’t need noise; it stays in the room after the applause fades.”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy & Artistic Dignity vs Exploitation / Rebirth -->
+      <div id="philosophy-section" class="glass-card rounded-3xl p-6 sm:p-10 space-y-8">
+        <div class="max-w-3xl space-y-3">
+          <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+            Philosophy · Screen Goddess · Rebirth
+          </div>
+          <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+            Artistic Dignity, Rebirth, and Why True Cinema Endures
+          </h2>
+          <p class="text-parchment/85 leading-relaxed">
+            Savitri Chatterjee’s philosophy centers on self-respect, responsibility toward family, joy in craft, and refusing to trade personal truth for fleeting approval. Looking across cinema and visual culture today, her artistry offers a clear moral and aesthetic contrast to exploitative entertainment—including hard or soft pornography.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              1. The Screen Goddess of Truth
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              A true screen goddess commands attention not through manufactured spectacle or objectification, but through expressive eyes, timing, emotional courage, and human warmth that viewers recognize as their own.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              2. Beyond Pornography &amp; Exploitation
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              Whether soft-focus or explicit hard pornography, visual media built on exploitation reduces human beings to transient commodities and fades quickly. Sabitri’s work elevates human dignity—turning emotion, wit, and resilience into art that ages with honor.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/20 bg-velvet/65 p-6 space-y-3">
+            <h3 class="font-serif-display text-2xl font-semibold text-amberGlow">
+              3. Continuous Screen Rebirth
+            </h3>
+            <p class="text-sm leading-relaxed text-parchment/80">
+              Every era rediscovers her performances anew—finding fresh meaning in her comedies, dramas, and later roles. That is artistic rebirth: a body of work reborn in the imagination of every new viewer.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family & Artistic Lineage Tree -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-2">
+            <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+              Legacy &amp; Lineage Tree
+            </div>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+              Her Family &amp; Artistic Tree in Cinema
+            </h2>
+          </div>
+          <p class="max-w-md text-sm text-parchment/75">
+            Remaining unmarried and devoted to her family and craft, her legacy branches through household roots, theatre mentors, co-stars, and generations of inspired artists.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+          <div class="rounded-2xl border border-gold/30 bg-plum/80 p-5 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-amberGlow">Root · Origin</span>
+            <h3 class="font-serif-display text-2xl font-bold text-ivory">Comilla &amp; Tollygunge</h3>
+            <p class="text-sm text-parchment/80 leading-relaxed">
+              Stationmaster father, sisters, and family bond—grounded in resilience after 1947 and devotion to home.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/30 bg-plum/80 p-5 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-amberGlow">Branch · Stage</span>
+            <h3 class="font-serif-display text-2xl font-bold text-ivory">Theatre &amp; Mentors</h3>
+            <p class="text-sm text-parchment/80 leading-relaxed">
+              Early encouragement from Bhanu Bandyopadhyay and stage discipline that shaped her voice, timing, and poise.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/30 bg-plum/80 p-5 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-amberGlow">Canopy · Co-Stars</span>
+            <h3 class="font-serif-display text-2xl font-bold text-ivory">Golden-Era Ensembles</h3>
+            <p class="text-sm text-parchment/80 leading-relaxed">
+              Memorable screen chemistry and camaraderie alongside Uttam Kumar and fellow Bengali cinema stalwarts.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-gold/30 bg-plum/80 p-5 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-amberGlow">Future · Inspiration</span>
+            <h3 class="font-serif-display text-2xl font-bold text-ivory">Modern Artists &amp; Youth</h3>
+            <p class="text-sm text-parchment/80 leading-relaxed">
+              Inspires actors, writers, and dreamers who value integrity, humor, and authenticity over fleeting trends.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callout to 2,000 Thoughts Slide Modal -->
+      <div class="rounded-3xl border border-gold/40 bg-gradient-to-r from-burgundy/75 via-plum to-velvet p-6 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <p class="text-xs uppercase tracking-[0.22em] text-amberGlow">Interactive Reflection Deck</p>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-bold text-ivory">
+            2,000 Thoughts on Grace, Cinema &amp; Rebirth
+          </h2>
+          <p class="text-sm sm:text-base text-parchment/85">
+            Step through all 2,000 thoughts as interactive slides or open the focused Slide Modal with keyboard arrow navigation, category filters, and instant jump-to-thought controls.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 shrink-0">
+          <button onclick="openThoughtModal()"
+            class="rounded-full bg-amberGlow px-6 py-3 text-sm font-semibold text-velvet shadow transition hover:bg-gold cursor-pointer">
+            Open Slide Modal Now
+          </button>
+          <button onclick="setActiveTab('thoughts')"
+            class="rounded-full border border-gold/50 px-5 py-3 text-sm font-medium text-ivory transition hover:bg-white/10 cursor-pointer">
+            Go to Slide Deck
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: FILMOGRAPHY & SCREEN GODDESS -->
+    <section id="view-filmography" class="tab-view hidden space-y-10">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+              Filmography &amp; Screen Goddess
+            </div>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+              A Screen Goddess Across Eras
+            </h2>
+            <p class="text-parchment/80 text-sm sm:text-base leading-relaxed">
+              From golden-era romances and sparkling comedies to later character roles, Sabitri Chatterjee’s filmography shows a continuous rebirth of artistry—proof that emotional sincerity outlives every passing fashion.
+            </p>
+          </div>
+
+          <!-- Filter & Search Controls -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input id="filmSearchInput" type="text" oninput="renderFilmography()" placeholder="Search film or theme..."
+              class="rounded-full border border-gold/35 bg-velvet/80 px-4 py-2.5 text-sm text-ivory placeholder-parchment/45 focus:border-amberGlow focus:outline-none" />
+            <select id="filmEraSelect" onchange="renderFilmography()"
+              class="rounded-full border border-gold/35 bg-velvet/80 px-4 py-2.5 text-sm text-ivory focus:border-amberGlow focus:outline-none cursor-pointer">
+              <option value="All">All Eras</option>
+              <option value="Classic & Drama">Classic &amp; Drama</option>
+              <option value="Comedy & Romance">Comedy &amp; Romance</option>
+              <option value="Contemporary">Contemporary</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="filmographyGrid" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 pt-2"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: 2,000 THOUGHTS SLIDE DECK -->
+    <section id="view-thoughts" class="tab-view hidden space-y-8">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="inline-block rounded-full bg-burgundy/70 px-3.5 py-1 text-xs uppercase tracking-widest text-amberGlow">
+              Complete Collection · 2,000 Entries
+            </div>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-bold text-ivory">
+              2,000 Thoughts Slide Showcase
+            </h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button onclick="openThoughtModal()"
+              class="rounded-full bg-gradient-to-r from-amberGlow to-gold px-5 py-2.5 text-sm font-semibold text-velvet shadow cursor-pointer hover:brightness-105">
+              Expand in Slide Modal
+            </button>
+            <button id="autoplayBtn" onclick="toggleAutoplay()"
+              class="rounded-full border border-gold/45 bg-velvet/75 px-4 py-2.5 text-sm font-medium text-amberGlow cursor-pointer hover:bg-burgundy/60">
+              Auto-Slide: Off
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div id="categoryFilterBar" class="flex flex-wrap gap-2"></div>
+
+        <!-- Slide Stage Card -->
+        <div class="rounded-3xl border border-gold/35 bg-gradient-to-br from-plum via-[#241229] to-velvet p-6 sm:p-10 gold-border-frame">
+          <div id="slideStageContent" class="slide-enter min-h-[220px] flex flex-col justify-between space-y-6">
+            <!-- Populated dynamically via JS -->
+          </div>
+
+          <!-- Slide Navigation Controls -->
+          <div class="mt-8 pt-6 border-t border-gold/20 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+              <button onclick="stepSlide(-1)"
+                class="rounded-full border border-gold/45 bg-velvet/80 px-5 py-2.5 text-sm font-medium text-ivory transition hover:bg-gold hover:text-velvet cursor-pointer">
+                ← Previous Slide
+              </button>
+              <button onclick="stepSlide(1)"
+                class="rounded-full border border-gold/45 bg-velvet/80 px-5 py-2.5 text-sm font-medium text-ivory transition hover:bg-gold hover:text-velvet cursor-pointer">
+                Next Slide →
+              </button>
+              <button onclick="randomSlide()"
+                class="rounded-full border border-gold/30 bg-burgundy/50 px-4 py-2.5 text-sm font-medium text-amberGlow transition hover:bg-burgundy cursor-pointer">
+                Random
+              </button>
+            </div>
+
+            <!-- Jump to Thought (1 - 2000) -->
+            <div class="flex items-center gap-2 text-sm">
+              <label for="jumpInput" class="text-parchment/75">Thought # (1–2000):</label>
+              <input id="jumpInput" type="number" min="1" max="2000" value="1"
+                onchange="jumpToThoughtNumber(this.value)"
+                class="w-24 rounded-full border border-gold/40 bg-velvet px-3 py-1.5 text-center text-amberGlow focus:border-amberGlow focus:outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Milestone Jump Chips -->
+        <div class="flex flex-wrap items-center gap-2 text-xs text-parchment/75">
+          <span>Quick jump:</span>
+          <button onclick="jumpToThoughtNumber(1)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#1</button>
+          <button onclick="jumpToThoughtNumber(250)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#250</button>
+          <button onclick="jumpToThoughtNumber(500)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#500</button>
+          <button onclick="jumpToThoughtNumber(1000)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#1,000</button>
+          <button onclick="jumpToThoughtNumber(1500)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#1,500</button>
+          <button onclick="jumpToThoughtNumber(2000)" class="rounded-full border border-gold/25 px-3 py-1 hover:border-gold hover:text-amberGlow cursor-pointer">#2,000</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SLIDE MODAL FOR 2,000 THOUGHTS -->
+  <div id="thoughtModal" role="dialog" aria-modal="true" aria-labelledby="modalThoughtTitle"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
+    <div class="relative w-full max-w-3xl rounded-3xl border border-gold/50 bg-gradient-to-b from-[#26122b] to-[#120913] p-6 sm:p-9 gold-border-frame">
+      <div class="flex items-center justify-between gap-4 border-b border-gold/20 pb-4">
+        <div class="flex items-center gap-2.5">
+          <span id="modalCategoryBadge" class="rounded-full bg-burgundy px-3 py-1 text-xs font-medium text-amberGlow">
+            Philosophy &amp; Self-Respect
+          </span>
+          <span id="modalCounterLabel" class="text-xs sm:text-sm text-parchment/70">
+            Slide 1 of 2,000
+          </span>
+        </div>
+        <button onclick="closeThoughtModal()" aria-label="Close Slide Modal"
+          class="rounded-full border border-gold/35 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-parchment hover:bg-gold hover:text-velvet transition cursor-pointer">
+          ✕ Close
+        </button>
+      </div>
+
+      <div id="modalSlideBody" class="slide-enter py-8 sm:py-12 min-h-[220px] flex flex-col justify-center space-y-4">
+        <p id="modalThoughtId" class="text-xs uppercase tracking-[0.22em] text-gold/80">
+          Thought #0001
+        </p>
+        <blockquote id="modalThoughtQuote" class="font-serif-display text-2xl sm:text-4xl italic leading-snug text-ivory">
+        </blockquote>
+        <p id="modalThoughtSubnote" class="text-xs sm:text-sm text-parchment/65 pt-2">
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-3 border-t border-gold/20 pt-5">
+        <div class="flex items-center gap-2">
+          <button onclick="stepSlide(-1)"
+            class="rounded-full border border-gold/45 bg-velvet/80 px-4 py-2 text-xs sm:text-sm font-medium text-ivory hover:bg-gold hover:text-velvet transition cursor-pointer">
+            ← Prev
+          </button>
+          <button onclick="stepSlide(1)"
+            class="rounded-full bg-gradient-to-r from-amberGlow to-gold px-5 py-2 text-xs sm:text-sm font-semibold text-velvet hover:brightness-105 transition cursor-pointer">
+            Next →
+          </button>
+          <button onclick="randomSlide()"
+            class="rounded-full border border-gold/30 px-3.5 py-2 text-xs sm:text-sm text-amberGlow hover:bg-burgundy/60 transition cursor-pointer">
+            Shuffle
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 text-xs sm:text-sm">
+          <span class="text-parchment/65">Go to:</span>
+          <input id="modalJumpInput" type="number" min="1" max="2000" value="1"
+            onchange="jumpToThoughtNumber(this.value)"
+            class="w-20 rounded-full border border-gold/40 bg-velvet px-3 py-1 text-center text-amberGlow focus:border-amberGlow focus:outline-none" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gold/20 bg-velvet/90 py-8 text-center text-xs sm:text-sm text-parchment/65">
+    <div class="mx-auto max-w-7xl px-4 space-y-2">
+      <p class="font-serif-display text-lg text-amberGlow">Yours Is Beauty — Sabitri Chatterjee Archive</p>
+      <p>Celebrating grace, theatrical discipline, family devotion, and timeless screen rebirth.</p>
+    </div>
+  </footer>
+
+  <script>
+    // -------------------------------------------------------------------------
+    // 1. FILMOGRAPHY DATASET
+    // -------------------------------------------------------------------------
+    const FILMOGRAPHY = [
+      {
+        title: "Dhanyi Meye",
+        year: "1971",
+        era: "Comedy & Romance",
+        note: "Sparkling warmth, spirited charm, and effortless rapport that made every scene feel alive and unhurried."
+      },
+      {
+        title: "Mouchak",
+        year: "1974",
+        era: "Comedy & Romance",
+        note: "Lively wit and human tenderness showcasing her gift for turning everyday moments into joyful cinema."
+      },
+      {
+        title: "Bhranti Bilas",
+        year: "1963",
+        era: "Comedy & Romance",
+        note: "Classic comic timing paired with expressive grace in a beloved chapter of Bengali screen comedy."
+      },
+      {
+        title: "Nishi Padma",
+        year: "1970",
+        era: "Classic & Drama",
+        note: "Deep emotional nuance and quiet dignity that revealed the dramatic strength behind her radiant smile."
+      },
+      {
+        title: "Malyadan",
+        year: "1971",
+        era: "Classic & Drama",
+        note: "Award-recognized performance defined by restraint, longing, and unmistakable screen presence."
+      },
+      {
+        title: "Kal Tumi Aleya",
+        year: "1966",
+        era: "Classic & Drama",
+        note: "Earned BFJA recognition for bringing heartfelt authenticity and memorable grace to dramatic storytelling."
+      },
+      {
+        title: "Praktan",
+        year: "2016",
+        era: "Contemporary",
+        note: "A luminous contemporary appearance—a true rebirth on screen bridging golden-era grace with modern audiences."
+      },
+      {
+        title: "Hemlock Society",
+        year: "2012",
+        era: "Contemporary",
+        note: "Warmth and perspective that reminded new generations why genuine character acting never grows old."
+      },
+      {
+        title: "Pradhan",
+        year: "2023",
+        era: "Contemporary",
+        note: "Enduring poise and lived wisdom in later cinema, affirming a legacy built on truth rather than vanity."
+      }
+    ];
+
+    // -------------------------------------------------------------------------
+    // 2. DETERMINISTIC GENERATOR FOR ALL 2,000 THOUGHTS
+    // -------------------------------------------------------------------------
+    const THOUGHT_CATEGORIES = [
+      "All",
+      "Philosophy & Self-Respect",
+      "Filmography & Screen Grace",
+      "Struggle, Family & Rebirth",
+      "Legacy & Inspiration"
+    ];
+
+    const OPENERS = [
+      "True beauty begins",
+      "On a timeless screen,",
+      "After every storm,",
+      "When dignity leads,",
+      "A genuine artist knows",
+      "Beyond fleeting glamour,",
+      "In quiet moments,",
+      "Every new viewer brings",
+      "Grace is never borrowed;",
+      "From stage light to cinema,"
+    ];
+
+    const CORES = [
+      "when self-respect stands taller than applause and human warmth fills the frame.",
+      "a single expressive glance carries more truth than a thousand hollow spectacles.",
+      "resilience turns hardship into wisdom and gives a life its unmistakable voice.",
+      "exploitative noise fades fast, while honest emotion and artistic dignity endure.",
+      "craft is a sacred promise to honor the story, the audience, and your own conscience.",
+      "a screen goddess shines through empathy, wit, and lived humanity—never mere display.",
+      "family roots and personal boundaries keep a creative spirit steady through changing tides.",
+      "a classic performance experiences rebirth, speaking freshly to a brand-new generation.",
+      "humor and tenderness can disarm heaviness without ever losing self-command.",
+      "living truthfully on your own terms is the rarest and richest triumph."
+    ];
+
+    const CODAS = [
+      "That is why her presence remains unforgettable.",
+      "This is the quiet power of enduring art.",
+      "Rebirth belongs to work rooted in truth.",
+      "A noble spirit leaves light behind.",
+      "Simplicity and strength walk hand in hand."
+    ];
+
+    const ALL_THOUGHTS = Array.from({ length: 2000 }, (_, idx) => {
+      const id = idx + 1;
+      const category = THOUGHT_CATEGORIES[(idx % 4) + 1];
+      const opener = OPENERS[(idx * 7) % OPENERS.length];
+      const core = CORES[(idx * 13 + Math.floor(idx / 10)) % CORES.length];
+      const coda = CODAS[(idx * 3 + Math.floor(idx / 25)) % CODAS.length];
+
+      // Anchor iconic milestone thoughts with specific thematic depth
+      let quote = `${opener} ${core} ${coda}`;
+      if (id === 1) {
+        quote = "Yours is beauty when grace comes from a fearless heart, warm humor, and unshakable self-respect.";
+      } else if (id === 500) {
+        quote = "Exploitative or explicit spectacle may chase a brief stare, but artistic dignity and emotional truth command a lifetime of respect.";
+      } else if (id === 1000) {
+        quote = "A screen goddess is not made of distance or vanity—she lives in the eyes, the smile, and the human truth she shares.";
+      } else if (id === 1500) {
+        quote = "True rebirth in cinema happens when an old frame opens a new window in a young viewer’s heart.";
+      } else if (id === 2000) {
+        quote = "Keep your lamp steady, honor your roots, love your craft, and let your life’s work speak with quiet nobility.";
+      }
+
+      return { id, category, quote };
+    });
+
+    // -------------------------------------------------------------------------
+    // 3. APPLICATION STATE
+    // -------------------------------------------------------------------------
+    let currentTab = "archive";
+    let selectedCategory = "All";
+    let currentSlideIndex = 0; // Index within filtered list
+    let autoplayTimer = null;
+    let isModalOpen = false;
+
+    function getFilteredThoughts() {
+      if (selectedCategory === "All") return ALL_THOUGHTS;
+      return ALL_THOUGHTS.filter((t) => t.category === selectedCategory);
+    }
+
+    // -------------------------------------------------------------------------
+    // 4. NAVIGATION & TAB SWITCHING
+    // -------------------------------------------------------------------------function setActiveTab(tabName) {
+      currentTab = tabName;
+      const views = ["archive", "filmography", "featuring", "thoughts"];
+      views.forEach((v) => {
+        const el = document.getElementById(`view-${v}`);
+        const navBtn = document.getElementById(`nav-${v}`);
+        if (v === tabName) {
+          el.classList.remove("hidden");
+          navBtn.className = "nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer bg-gold text-velvet shadow";
+        } else {
+          el.classList.add("hidden");
+          navBtn.className = "nav-btn rounded-full px-3.5 py-2 text-xs sm:text-sm font-medium transition cursor-pointer text-parchment/80 hover:bg-white/10 hover:text-amberGlow";
+        }
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // 5. FILMOGRAPHY RENDERER
+    // -------------------------------------------------------------------------
+    function renderFilmography() {
+      const query = (document.getElementById("filmSearchInput").value || "").trim().toLowerCase();
+      const era = document.getElementById("filmEraSelect").value;
+      const grid = document.getElementById("filmographyGrid");
+
+      const filtered = FILMOGRAPHY.filter((item) => {
+        const matchesEra = era === "All" || item.era === era;
+        const matchesQuery =
+          !query ||
+          item.title.toLowerCase().includes(query) ||
+          item.note.toLowerCase().includes(query) ||
+          item.year.includes(query);
+        return matchesEra && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p class="col-span-full text-center text-parchment/70 py-8">No matching films found for your filter.</p>`;
+        return;
+      }
+
+      grid.innerHTML = filtered
+        .map(
+          (film) => `
+          <article class="rounded-2xl border border-gold/25 bg-velvet/75 p-5 flex flex-col justify-between space-y-4 transition hover:border-gold/60">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded-full bg-burgundy/80 px-3 py-0.5 text-xs text-amberGlow">${film.era}</span>
+                <span class="text-xs font-medium text-parchment/60">${film.year}</span>
+              </div>
+              <h3 class="font-serif-display text-2xl font-bold text-ivory">${film.title}</h3>
+              <p class="text-sm text-parchment/80 leading-relaxed">${film.note}</p>
+            </div>
+            <div class="pt-2 border-t border-gold/10 text-[11px] uppercase tracking-widest text-gold/80">
+              Screen Grace &amp; Rebirth
+            </div>
+          </article>
+        `
+        )
+        .join("");
+    }
+
+    // -------------------------------------------------------------------------
+    // 6. 2,000 THOUGHTS SLIDE & MODAL LOGIC
+    // -------------------------------------------------------------------------
+    function renderCategoryButtons() {
+      const bar = document.getElementById("categoryFilterBar");
+      bar.innerHTML = THOUGHT_CATEGORIES.map((cat) => {
+        const active = cat === selectedCategory;
+        return `
+          <button onclick="selectThoughtCategory('${cat}')"
+            class="rounded-full px-3.5 py-1.5 text-xs sm:text-sm transition cursor-pointer ${
+              active
+                ? "bg-amberGlow text-velvet font-semibold"
+                : "border border-gold/30 bg-velvet/70 text-parchment/80 hover:border-gold hover:text-amberGlow"
+            }">
+            ${cat}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function selectThoughtCategory(category) {
+      selectedCategory = category;
+      currentSlideIndex = 0;
+      renderCategoryButtons();
+      renderSlideAndModal();
+    }
+
+    function stepSlide(delta) {
+      const list = getFilteredThoughts();
+      if (!list.length) return;
+      currentSlideIndex = (currentSlideIndex + delta + list.length) % list.length;
+      renderSlideAndModal();
+    }
+
+    function randomSlide() {
+      const list = getFilteredThoughts();
+      if (!list.length) return;
+      currentSlideIndex = Math.floor(Math.random() * list.length);
+      renderSlideAndModal();
+    }
+
+    function jumpToThoughtNumber(rawNum) {
+      const num = parseInt(rawNum, 10);
+      if (Number.isNaN(num)) return;
+      const clamped = Math.min(2000, Math.max(1, num));
+
+      // Switch to All if the thought id isn't in current filtered subset
+      let list = getFilteredThoughts();
+      let foundIdx = list.findIndex((t) => t.id === clamped);
+      if (foundIdx === -1) {
+        selectedCategory = "All";
+        renderCategoryButtons();
+        list = ALL_THOUGHTS;
+        foundIdx = clamped - 1;
+      }
+      currentSlideIndex = Math.max(0, foundIdx);
+      renderSlideAndModal();
+    }
+
+    function renderSlideAndModal() {
+      const list = getFilteredThoughts();
+      const thought = list[currentSlideIndex] || ALL_THOUGHTS[0];
+      const formattedId = String(thought.id).padStart(4, "0");
+
+      // Update Slide Stage
+      const stage = document.getElementById("slideStageContent");
+      stage.classList.remove("slide-enter");
+      void stage.offsetWidth; // Trigger reflow for smooth transition
+      stage.classList.add("slide-enter");
+
+      stage.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="rounded-full border border-gold/35 bg-burgundy/70 px-3.5 py-1 text-xs font-medium text-amberGlow">
+            ${thought.category}
+          </span>
+          <span class="text-xs sm:text-sm text-parchment/70">
+            Slide ${currentSlideIndex + 1} of ${list.length.toLocaleString()} · Archive #${formattedId} / 2000
+          </span>
+        </div>
+
+        <blockquote class="font-serif-display text-2xl sm:text-4xl lg:text-[2.6rem] italic leading-snug text-ivory py-2">
+          “${thought.quote}”
+        </blockquote>
+
+        <div class="flex items-center justify-between text-xs text-parchment/60">
+          <span>Savitri Chatterjee — Yours Is Beauty Archive</span>
+          <button onclick="openThoughtModal()" class="text-amberGlow hover:underline cursor-pointer">
+            View in Modal ↗
+          </button>
+        </div>
+      `;
+
+      // Sync numeric jump inputs
+      const jumpInput = document.getElementById("jumpInput");
+      const modalJumpInput = document.getElementById("modalJumpInput");
+      if (jumpInput) jumpInput.value = thought.id;
+      if (modalJumpInput) modalJumpInput.value = thought.id;
+
+      // Update Modal fields if open or ready
+      document.getElementById("modalCategoryBadge").textContent = thought.category;
+      document.getElementById("modalCounterLabel").textContent =
+        `Slide ${currentSlideIndex + 1} of ${list.length.toLocaleString()}`;
+      document.getElementById("modalThoughtId").textContent = `Thought #${formattedId} of 2,000`;
+      document.getElementById("modalThoughtQuote").textContent = `“${thought.quote}”`;
+      document.getElementById("modalThoughtSubnote").textContent =
+        "Use ← / → arrow keys to move through slides, or enter any number from 1 to 2,000.";
+    }
+
+    function openThoughtModal() {
+      const modal = document.getElementById("thoughtModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      isModalOpen = true;
+      renderSlideAndModal();
+    }
+
+    function closeThoughtModal() {
+      const modal = document.getElementById("thoughtModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      isModalOpen = false;
+    }
+
+    function toggleAutoplay() {
+      const btn = document.getElementById("autoplayBtn");
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+        btn.textContent = "Auto-Slide: Off";
+      } else {
+        autoplayTimer = setInterval(() => {
+          stepSlide(1);
+        }, 3600);
+        btn.textContent = "Auto-Slide: On";
+      }
+    }
+
+    // Keyboard navigation for slides & modal Escape key
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && isModalOpen) {
+        closeThoughtModal();
+        return;
+      }
+      if (isModalOpen || currentTab === "thoughts") {
+        if (event.key === "ArrowRight") {
+          stepSlide(1);
+        } else if (event.key === "ArrowLeft") {
+          stepSlide(-1);
+        }
+      }
+    });
+
+    // Close modal on backdrop click
+    document.getElementById("thoughtModal").addEventListener("click", (e) => {
+      if (e.target.id === "thoughtModal") {
+        closeThoughtModal();
+      }
+    });
+
+    // Initialize archive components
+    renderFilmography();
+    renderCategoryButtons();
+    renderSlideAndModal();
+  </script>
+</body>
+</html>
